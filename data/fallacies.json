@@ -1,0 +1,3167 @@
+{
+  "source": "/Users/philstilwell/Google Drive/Desktop/oddsNends/photoshopWork/BLOGS/LogFall/Fallacies.ods",
+  "sheet": "ROOT",
+  "recordCount": 139,
+  "categories": [
+    {
+      "name": "Formal",
+      "slug": "formal",
+      "count": 15,
+      "members": [
+        "Affirmative conclusion from a negative premise",
+        "Affirming a disjunct",
+        "Affirming the consequent",
+        "Association fallacy",
+        "Begging the question",
+        "Denying the antecedent",
+        "Exclusive premises",
+        "Existential fallacy",
+        "Four terms fallacy",
+        "Illicit major",
+        "Inconsistent comparison",
+        "Masked man fallacy",
+        "Negative proof fallacy",
+        "Square logic",
+        "Undistributed middle"
+      ]
+    },
+    {
+      "name": "Mathematical",
+      "slug": "mathematical",
+      "count": 10,
+      "members": [
+        "Appeal to probability",
+        "Base rate fallacy",
+        "Broken window fallacy",
+        "Conjunction fallacy",
+        "Ecological fallacy",
+        "Gambler's fallacy",
+        "Hasty generalization",
+        "Linearity fallacy",
+        "Prosecutor's fallacy",
+        "Regression fallacy"
+      ]
+    },
+    {
+      "name": "Causal",
+      "slug": "causal",
+      "count": 10,
+      "members": [
+        "Appeal to motive",
+        "Circular cause and consequence",
+        "Correlation is not causation",
+        "Gambler's fallacy",
+        "Post hoc ergo propter hoc",
+        "Regression fallacy",
+        "Retrospective determinism",
+        "Single cause fallacy",
+        "Slippery slope",
+        "Wrong causal direction"
+      ]
+    },
+    {
+      "name": "Linguistic",
+      "slug": "linguistic",
+      "count": 16,
+      "members": [
+        "Contextomy",
+        "Continuum fallacy",
+        "Definist fallacy",
+        "Equivocation",
+        "Equivocation fallacy",
+        "Etymological fallacy",
+        "Fallacy of necessity",
+        "Genetic fallacy",
+        "Intentional fallacy",
+        "No True Scotsman",
+        "Overwhelming exception",
+        "Proof by verbosity",
+        "Reification",
+        "Semantic pixelization",
+        "Suppressed correlative",
+        "Suppressed correlative (DUPLICATE)"
+      ]
+    },
+    {
+      "name": "Conceptual",
+      "slug": "conceptual",
+      "count": 50,
+      "members": [
+        "Abstraction denial",
+        "Abstraction fallacy",
+        "Appeal to nature",
+        "Argumentum ad populum",
+        "Bottom-up condemnation",
+        "Bottom-up justification",
+        "Composition fallacy",
+        "Conjunction fallacy",
+        "Continuum fallacy",
+        "Definist fallacy",
+        "Denying a remote hypothetical",
+        "Denying the correlative",
+        "Division fallacy",
+        "Ecological fallacy",
+        "Fallacy of necessity",
+        "False analogy",
+        "False compromise",
+        "False dilemma",
+        "Faulty generalization",
+        "For the sake of argument denial",
+        "Genetic fallacy",
+        "Homunculus fallacy",
+        "Human standard fallacy",
+        "Impotent logical space",
+        "Incomplete comparison",
+        "Inconsistent comparison",
+        "Is-ought problem",
+        "Linearity fallacy",
+        "Naturalistic fallacy",
+        "Nirvana fallacy",
+        "No True Scotsman",
+        "Overwhelming exception",
+        "Package-deal fallacy",
+        "Pathetic fallacy",
+        "Perfect solution fallacy",
+        "Perfect standard",
+        "Perverted analogy",
+        "Proof by example",
+        "Reification",
+        "Sharpshooter fallacy",
+        "Single cause fallacy",
+        "Slippery slope",
+        "Special pleading",
+        "Suppressed correlative",
+        "Suppressed correlative (DUPLICATE)",
+        "Teleological fallacy",
+        "Top-down condemnation",
+        "Top-down faulty generalization",
+        "Top-down justification",
+        "Witness chain"
+      ]
+    },
+    {
+      "name": "Evidential",
+      "slug": "evidential",
+      "count": 46,
+      "members": [
+        "Absence of evidence fallacy",
+        "All or nothing fallacy",
+        "Appeal to accomplishment",
+        "Appeal to authority",
+        "Appeal to consequences",
+        "Appeal to tradition",
+        "Argument from fallacy",
+        "Argument from ignorance",
+        "Argument from silence",
+        "Argumentum ad populum",
+        "Artificial negation",
+        "Association fallacy",
+        "Bare assertion fallacy",
+        "Bottom-up condemnation",
+        "Bottom-up justification",
+        "Broken window fallacy",
+        "Cherry picking",
+        "Chronological snobbery",
+        "Circular cause and consequence",
+        "Demanding a mechanism",
+        "Demanding negative proof",
+        "Denial of the epistemic gradient",
+        "Denying a remote hypothetical",
+        "Epistemic/ontological conflation",
+        "False attribution",
+        "Faulty generalization",
+        "Hasty generalization",
+        "Impotent logical space",
+        "Luddite fallacy",
+        "Moving the goalpost",
+        "Naturalistic fallacy",
+        "Perfect solution fallacy",
+        "Piggy-back assumption",
+        "Proof by example",
+        "Redeeming illogic with evidence",
+        "Sentimental fallacy",
+        "Sharpshooter fallacy",
+        "Special pleading",
+        "Top-down condemnation",
+        "Top-down faulty generalization",
+        "Top-down justification",
+        "Track-record reset",
+        "Tu quoque",
+        "Two wrongs make a right",
+        "Wishful thinking",
+        "Witness chain"
+      ]
+    },
+    {
+      "name": "Perceptual",
+      "slug": "perceptual",
+      "count": 3,
+      "members": [
+        "Confidence as a validator",
+        "Epistemic/ontological conflation",
+        "Naturalistic fallacy"
+      ]
+    },
+    {
+      "name": "Perspectival",
+      "slug": "perspectival",
+      "count": 12,
+      "members": [
+        "Appeal to nature",
+        "Appeal to novelty",
+        "Chronological snobbery",
+        "Historian's fallacy",
+        "Homunculus fallacy",
+        "Human standard fallacy",
+        "Intentional fallacy",
+        "Pathetic fallacy",
+        "Psychologist's fallacy",
+        "Reification",
+        "Retrospective determinism",
+        "Spotlight fallacy"
+      ]
+    },
+    {
+      "name": "Epistemic",
+      "slug": "epistemic",
+      "count": 9,
+      "members": [
+        "All or nothing fallacy",
+        "Appeal to emotion",
+        "Argumentum ad populum",
+        "Artificial negation",
+        "Confidence as a validator",
+        "Denial of the epistemic gradient",
+        "Epistemic/ontological conflation",
+        "For the sake of argument denial",
+        "Wishful thinking"
+      ]
+    },
+    {
+      "name": "Tactical",
+      "slug": "tactical",
+      "count": 31,
+      "members": [
+        "Ad hominem",
+        "Appeal to accomplishment",
+        "Appeal to emotion",
+        "Appeal to novelty",
+        "Appeal to poverty",
+        "Appeal to wealth",
+        "Argument from repetition",
+        "Argumentum ad baculum",
+        "Association fallacy",
+        "Bare assertion fallacy",
+        "Cherry picking",
+        "Contextomy",
+        "Demanding negative proof",
+        "Empty refutation",
+        "Fallacy of many questions",
+        "False attribution",
+        "False surrender",
+        "If-by-whiskey",
+        "Judgmental language",
+        "Misleading vividness",
+        "Moving the goalpost",
+        "Perverted analogy",
+        "Poisoning the well",
+        "Proof by verbosity",
+        "Red herring",
+        "Straw man argument",
+        "Style over substance fallacy",
+        "Thought-terminating cliché",
+        "Tu quoque",
+        "Two wrongs make a right",
+        "Vague insulators"
+      ]
+    },
+    {
+      "name": "Emotional",
+      "slug": "emotional",
+      "count": 17,
+      "members": [
+        "Ad hominem",
+        "Appeal to authority",
+        "Appeal to consequences",
+        "Appeal to emotion",
+        "Appeal to fear",
+        "Appeal to flattery",
+        "Appeal to motive",
+        "Appeal to novelty",
+        "Appeal to pity",
+        "Appeal to ridicule",
+        "Appeal to spite",
+        "Appeal to tradition",
+        "Argumentum ad baculum",
+        "Confidence as a validator",
+        "Red herring",
+        "Sentimental fallacy",
+        "Wishful thinking"
+      ]
+    }
+  ],
+  "records": [
+    {
+      "name": "Absence of evidence fallacy",
+      "slug": "absence-of-evidence-fallacy",
+      "categories": [
+        "Evidential"
+      ],
+      "originalNumber": "",
+      "family": "",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Invoking the popular but wrong notion that finding no evidence for something is no evidence for the absence of that thing.",
+      "example": "The fact that you did not see me at your birthday party does not mean I was not there!",
+      "notes": "<br />&nbsp;<br /><blockquote><i>The absence of evidence it not evidence of absence.</i></blockquote>This argument, attributed to Carl Sagan, is often invoked when claims of a god comes under scrutiny. While the absence of evidence is not proof of absence, it is, to varying degrees, evidence of absence. The degree of evidence an absence of evidence is for the absence of anything will depend on the context. If there is no evidence of thing <i>X</i> in a location <i>Y</i>, the degree that will constitute evidence for the absence of that thing depends upon how we substantiate the variables. Is <i>X</i> a molecule, mouse or monster? Is <i>Y</i> a cup, couch or continent?",
+      "caseStudies": [
+        "After a Harvard Medical School study on the effects of prayer on heart surgery patients showed no statistical advantage of prayer, it was argued that \"the absence of evidence is not evidence of absence\".",
+        "Those who claim they have the biblical holy spirit helping them to make predictions or avoid logical fallacies in discussion, when confronted with evidence that they are, at best, only on par with those who do not claim to have a holy spirit, they often invoke this absence of evidence fallacy. They then often claim the burden of proof falls on those denying the existence of their holy spirit.",
+        "Donald Rumsfeld invoked the \"absence of evidence\" fallacy in reference to possible weapons of mass destruction in Iraq."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Abstraction denial",
+      "slug": "abstraction-denial",
+      "categories": [
+        "Conceptual"
+      ],
+      "originalNumber": "",
+      "family": "",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when an abstraction is denied existence or agency by claiming the substrate is the actual theater of agency.",
+      "example": "You can't claim that computers \"work\" since it is, in fact, merely transistors that are doing the actual processing.",
+      "notes": "In most cases, any individual who denies the emergent properties of any abstracted concept can be shown to be inconsistent by asking whether they believe in other emergent properties such as economic recessions, bird migrations, fashion trends, and insect swarming.",
+      "caseStudies": [
+        "Some have argued that it is wrong to say \"science works\" since it takes an actual scientist to do science. This is to deny the ability (and goal) of science as an institution to minimize subjective error in the quest for truth by taking the process out of the hands of its constituents (subjective scientists) and to place it in the hands of a method that includes peer review that maximizes objectivity.",
+        "One related issue is linguistic meaning. Some erroneously suggest that words themselves possess meaning rather the linguistic community in which those words are employed. Linguistic meaning is a product of convention, and is not immutably contained in the word itself. This causes individuals to irrationally demand others to adopt their own understanding of a term rather than simply seeking a common term that facilitates the communication of the concept."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Abstraction fallacy",
+      "slug": "abstraction-fallacy",
+      "categories": [
+        "Conceptual"
+      ],
+      "originalNumber": "",
+      "family": "",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when a law abstracted from observation is considered to be logically necessary.",
+      "example": "The law of gravity says that two objects of mass attract each other, so when physicists say gravity can repel, they don't know what they're talking about.",
+      "notes": "In the gravity example, the very physicist who christened the \"law of gravity\" also believe it repels in some cases. Each law is only reliable to the extent of its predictive success, and may come with stipulations. This is a type of faulty generalization that arises when induction justifiably categorizes an event or state extremely improbable. The fallacy arises when we say something that is physically improbable is logically impossible. A more detailed treatment of faulty generalizations can be found on the supplementary <a href=\"http://logfall.wordpress.com/inductive-errors/\">Inductive Errors</a> page.",
+      "caseStudies": [
+        "Consider the Law of Reciprocity. This law describes how healthy societies find cohesion when a critical level of altruism is reached among its constituents. However, its descriptive power does not in any way imply that societies will actualize cohesion based on altruism.",
+        "The Law of Diminishing Returns is another good example. This law is an inductive generalization from our economic interactions. This law does not constrain economics, nor is prior to it, but rather economic phenomena restrict our formulation of economic laws.",
+        "Moore's Law which states that the number of transistors that can be inexpensively placed on a circuit board doubles about every 2 years is another example. Due to physical constraints, this law is expected to fail at some point. This is also a type of <a href=\"http://logfall.wordpress.com/human-standard-fallacy/\">human standard fallacy</a> in which an artifact of human abstraction is given more authority than is warranted."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Ad hominem",
+      "slug": "ad-hominem",
+      "categories": [
+        "Tactical",
+        "Emotional"
+      ],
+      "originalNumber": "89",
+      "family": "Informal Fallacy",
+      "subCategory": "Red Herring",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Attacking the person instead of the argument.",
+      "example": "What would you know about economics? You filed for bankruptcy last year!",
+      "notes": "\"Ad hominem\" means \"to the individual\", and is often used as either a distraction from the main argument, or as a hostile emotional release against an opponent. This does not invalidate any argument it accompanies, but is generally considered poor form.",
+      "caseStudies": [],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Affirmative conclusion from a negative premise",
+      "slug": "affirmative-conclusion-from-a-negative-premise",
+      "categories": [
+        "Formal"
+      ],
+      "originalNumber": "29",
+      "family": "Formal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when a categorical syllogism has a positive conclusion, but at least one negative premise.",
+      "example": "I don't eat meat. People who eat meat have no compassion. Therefore, I have compassion.",
+      "notes": "<br />&nbsp;<br /><blockquote>If A ⊄ B and B ⊄ C then A ⊂ C.</blockquote>\nThis fallacy is made clear when we follow this same form and say \"If I'm not a goose, and geese don't play bingo, therefore I play bingo.\".",
+      "caseStudies": [
+        "This fallacy is often a part of tribalism in which the following type of argument is implicitly made.<blockquote>We don't do that. <br />People who do that are bad. <br />Therefore, we are good.</blockquote>."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Affirming a disjunct",
+      "slug": "affirming-a-disjunct",
+      "categories": [
+        "Formal"
+      ],
+      "originalNumber": "22",
+      "family": "Formal Fallacy",
+      "subCategory": "Propositional Fallacy",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Concluding that one logical disjunction must be false because the other disjunct is true; A or B; A; therefore not B.",
+      "example": "My new neighbor looked so happy, I knew he had either a girlfriend or a wife. He told me he has a wife, so I know he does not have a girlfriend.",
+      "notes": "<br />&nbsp;<br /><blockquote>P or Q <br /> P <br />Therefore, not Q </blockquote>\nThis fallacy is made clear when when follow this same form and say \"To have a girlfriend like Tom's, you have to be either rich or famous. He's rich, so he can't be famous.\" <br />Note that this fallacy does not hold for exclusive disjunctions where P and Q cannot both be true.",
+      "caseStudies": [
+        "Some politicians might argue that, to lower the deficit, we'll need to either cut programs or raise taxes, then suggest that, since they've already cut taxes, cutting programs wouldn't also contribute to alleviating the problem."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Affirming the consequent",
+      "slug": "affirming-the-consequent",
+      "categories": [
+        "Formal"
+      ],
+      "originalNumber": "23",
+      "family": "Formal Fallacy",
+      "subCategory": "Propositional Fallacy",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "The antecedent in a conditional is claimed to be true because the consequent is true; if A, then B; B, therefore A.",
+      "example": "Whenever it rains, people carry umbrellas. People are carrying umbrellas, so it must be raining.",
+      "notes": "<br />&nbsp;<br /><blockquote>If P, then Q <br />Q <br />Therefore, P</blockquote>.",
+      "caseStudies": [
+        "If Tom says \"All ducks can fly\", and Bob responds \"Not true. Bats can fly and they're not ducks\", Bob has fallaciously affirmed the consequent of Tom's statement as if Tom had said \"This animal can fly and is therefore a duck.\"."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "All or nothing fallacy",
+      "slug": "all-or-nothing-fallacy",
+      "categories": [
+        "Epistemic",
+        "Evidential"
+      ],
+      "originalNumber": "",
+      "family": "",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when it is implied that one must believe all or nothing of a particular set of beliefs.",
+      "example": "There are many historical documents that substantiate the notion that Saint Nicolas gave gifts to children. So to say he doesn't descend chimneys on Christmas Eve is against the historical facts.",
+      "notes": "",
+      "caseStudies": [
+        "Some theists cite evidence that some of the historical references in the bible are collaborated with extra-biblical sources, then imply that everything found within the bible, including the miracles, are also true.",
+        "Some atheists confront theists with arguments against the notion of eternal torment, though many theists do not believe in an actual burning hell."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Appeal to accomplishment",
+      "slug": "appeal-to-accomplishment",
+      "categories": [
+        "Tactical",
+        "Evidential"
+      ],
+      "originalNumber": "94",
+      "family": "Informal Fallacy",
+      "subCategory": "Red Herring",
+      "subSubCategory": "Appeal to authority",
+      "aliases": [],
+      "definition": "Occurs when an claim is deemed true based on the accomplishments of its sponsor.",
+      "example": "Isaac Newton had such an impact on science, so there must have been some value in his later work in alchemy.",
+      "notes": "Arguments are independent of the source. Intelligent people can have poor arguments, and unintelligent can produce strong arguments. Though it is human nature to over-emphasize the virtues or vices of the voice behind the argument, neither shoot nor celebrate the messenger. Worthy arguments stand on their own.",
+      "caseStudies": [
+        "The use of celebrities to sell products is based on this fallacy. The public grants a spokesperson with highly-visible accomplishments high credibility, even when endorsing products and ideas unrelated to their accomplishments.",
+        "Sir Arthur Conan Doyle, the brilliant creator of the very logical Sherlock Holmes series promoted belief in fairies."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Appeal to authority",
+      "slug": "appeal-to-authority",
+      "categories": [
+        "Emotional",
+        "Evidential"
+      ],
+      "originalNumber": "93",
+      "family": "Informal Fallacy",
+      "subCategory": "Red Herring",
+      "subSubCategory": "",
+      "aliases": [
+        "ad verecundiam"
+      ],
+      "definition": "Occurs when an claim is deemed true because of the position, authority or esteem of the person asserting it.",
+      "example": "My sociology professor says globalization has had a net negative effect on humanity, so it is obviously true.",
+      "notes": "If an authority gained their status or position due to a track record of success, then we have more warrant to prioritize consideration of their arguments. However, it is their actual arguments that must ultimately be considered. Taking credible authorities at their word is a useful heuristic, but it is a weaker form of evidence that is no real substitute for the actual arguments those authorities make.<br />&nbsp;<br /><blockquote><i>[I]t is not <i>what</i> the man of science believes that distinguishes him, but <i>how</i> and <i>why</i> he believes it. His beliefs are tentative, not dogmatic; they are based on evidence, not on authority or intuition.</i><br /><sub>Bertrand Russell, <i>A History of Western Philosophy</i> (Book-of-the-Month Club, 1995), p. 527. </sub></blockquote>.",
+      "caseStudies": [
+        "If the mayor of your town is in favor of legalizing marijuana, that is, in itself, not an argument in favor of legalizing marijuana.",
+        "If your hitherto reliable doctor recommends a certain type of cold medicine, you are warranted in accepting his recommendation. This does not, however, substitute for doing your own research if you have the time."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Appeal to consequences",
+      "slug": "appeal-to-consequences",
+      "categories": [
+        "Emotional",
+        "Evidential"
+      ],
+      "originalNumber": "97",
+      "family": "Informal Fallacy",
+      "subCategory": "Red Herring",
+      "subSubCategory": "Appeal to consequences",
+      "aliases": [],
+      "definition": "An argument that assumes the consequences of an idea, to some degree, reflect the veracity of the idea.",
+      "example": "If a virus erased my hard-drive, I'd loose all my work documents. It can't possibly happen.",
+      "notes": "This is usually an argument that plays on vested interests.",
+      "caseStudies": [
+        "It has been frequently argued that there can't possibly be a god since it would mean he has allowed evil and suffering in the world. The mere negative consequences do not deny the possibility of a god. You must also explain why a god would necessarily not permit evil and suffering in the world.",
+        "A common argument heard is that, because Hitler based his genocide on evolution, this is an indication that evolution is wrong.",
+        "A very common argument for an eternal soul is \"If we do not have a soul, then we would be without an objective purpose!\" The argument usually ends here with the implication that such a conclusion is unthinkable and unacceptable. An honest thinker dismisses no conclusion due to the emotional discomfort that accompanies it."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Appeal to emotion",
+      "slug": "appeal-to-emotion",
+      "categories": [
+        "Tactical",
+        "Emotional",
+        "Epistemic"
+      ],
+      "originalNumber": "96",
+      "family": "Informal Fallacy",
+      "subCategory": "Red Herring",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when a position is promoted through the manipulation of emotions, rather than through the presentation of an actual argument.",
+      "example": "It would be awesome to know that we were not alone in the universe. I can't help but believe space aliens exist out there somewhere.",
+      "notes": "This fallacy has itself been categorized as a tactical fallacy, but is a parent category for specific appeals to emotion that are not listed among the primary fallacies. <ul><li><a href=\"http://logfall.wordpress.com/?s=*emot\">All appeal to emotion fallacies</a></li></ul>.",
+      "caseStudies": [],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Appeal to fear",
+      "slug": "appeal-to-fear",
+      "categories": [
+        "Emotional"
+      ],
+      "originalNumber": "98",
+      "family": "Informal Fallacy",
+      "subCategory": "Red Herring",
+      "subSubCategory": "Appeal to consequences",
+      "aliases": [],
+      "definition": "An appeal to emotion where an argument is made by increasing fear and prejudice towards the opposing side.",
+      "example": "If you don't vote her into office, terrorism will accelerate, and our great nation will fall.",
+      "notes": "Appealing to fear works. You won't find many atheists in countries where atheism warrants the death penalty. Fear has long been co-opted to initiate wars and oppressive laws.",
+      "caseStudies": [
+        "Many religions claim that if you don't believe their \"loving\" god is the true god, you will be tortured forever.",
+        "Fear of death is what compels many cancer patients to accept the mendacious claims of snake-oil salesmen."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Appeal to flattery",
+      "slug": "appeal-to-flattery",
+      "categories": [
+        "Emotional"
+      ],
+      "originalNumber": "99",
+      "family": "Informal Fallacy",
+      "subCategory": "Red Herring",
+      "subSubCategory": "Appeal to consequences",
+      "aliases": [],
+      "definition": "An appeal to emotion in which the use of flattery is used to attract support for the argument.",
+      "example": "Your intelligence prevents you from rejecting the truth of my claim.",
+      "notes": "There is a fine line between flattery and honest kindness. Ignoring truth a bit to accommodate kindness is perhaps the most forgivable fallacy.",
+      "caseStudies": [],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Appeal to motive",
+      "slug": "appeal-to-motive",
+      "categories": [
+        "Emotional",
+        "Causal"
+      ],
+      "originalNumber": "104",
+      "family": "Informal Fallacy",
+      "subCategory": "Red Herring",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when a premise is dismissed, by calling into question the motives of its sponsor.",
+      "example": "The director gave her the leading role only because he wanted to date her.",
+      "notes": "While a questionable motive might allow us to expect a particular bias within the argument, it is the argument itself that must be assessed.",
+      "caseStudies": [],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Appeal to nature",
+      "slug": "appeal-to-nature",
+      "categories": [
+        "Conceptual",
+        "Perspectival"
+      ],
+      "originalNumber": "105",
+      "family": "Informal Fallacy",
+      "subCategory": "Red Herring",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "An argument in which something is deemed correct or good if it is natural, and is deemed incorrect or bad if it is unnatural.",
+      "example": "Birds are monogamous. Therefore, humans should also be monogamous.",
+      "notes": "It does not take much exploration of nature to realize that it is not a very coherent or desirable standard for human conduct. Nor is nature, as is, very amenable to human survival. This is why medicine perennially combats the influenza virus, and would eradicate it if possible. Interestingly, the most \"natural\" of all actions inherent to life is the striving for survival. This puts humans at odds with the rest of nature and what is \"natural\". This is why we ingest neither natural hemlock nor synthetic poisons.<br /><br />In many cases, once the act that is deemed \"unnatural\" is scrutinized, it is discovered that the act is merely emotionally unpalatable to the person making the categorization.",
+      "caseStudies": [
+        "Some claim that genetically modified crops are \"wrong\" for the sole reason that they are not what nature has naturally produced. There may be good reason for caution in growing genetically-modified crops, but the fact that they are merely \"unnatural\" is not good reason.",
+        "While there are sects that eschew medical intervention, most humans seek medical attention when they are injured rather than allowing nature to run its course.",
+        "Cocaine was once touted as a \"natural\" remedy for many ailments. Today, not many consider the use of cocaine to be a very wise treatment due to its addictive effects."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Appeal to novelty",
+      "slug": "appeal-to-novelty",
+      "categories": [
+        "Emotional",
+        "Perspectival",
+        "Tactical"
+      ],
+      "originalNumber": "106",
+      "family": "Informal Fallacy",
+      "subCategory": "Red Herring",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when a proposal is claimed to be superior or better solely based on it being new or modern.",
+      "example": "This brilliant strategy that the management has introduced is revolutionary and will change the way we do business!",
+      "notes": "This fallacy often results from the human tendency for change and new stimuli.",
+      "caseStudies": [],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Appeal to pity",
+      "slug": "appeal-to-pity",
+      "categories": [
+        "Emotional"
+      ],
+      "originalNumber": "100",
+      "family": "Informal Fallacy",
+      "subCategory": "Red Herring",
+      "subSubCategory": "Appeal to consequences",
+      "aliases": [],
+      "definition": "An argument in which the evoking of sympathy is used in an attempt to validate the argument.",
+      "example": "If there is no after-life, then the lives of tens of millions suffering in poverty have no meaning.",
+      "notes": "This is only a fallacy when it serves as a foundation for a belief in a particular claim.",
+      "caseStudies": [],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Appeal to poverty",
+      "slug": "appeal-to-poverty",
+      "categories": [
+        "Tactical"
+      ],
+      "originalNumber": "107",
+      "family": "Informal Fallacy",
+      "subCategory": "Red Herring",
+      "subSubCategory": "",
+      "aliases": [
+        "argumentum ad lazarum"
+      ],
+      "definition": "Suggesting the truth of a conclusion necessarily negatively correlates to it's proponent's financial situation.",
+      "example": "He can be trusted due to his humble upbringing in a one-room cabin deep in the mountains.",
+      "notes": "The converse of this fallacy is the <a href=\"logfall.wordpress.com/appeal-to-wealth/\">appeal to wealth</a> fallacy.",
+      "caseStudies": [
+        "The humble beginnings of many political candidates are often emphasized in an attempt to get the common citizen to identify with the candidate."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Appeal to probability",
+      "slug": "appeal-to-probability",
+      "categories": [
+        "Mathematical"
+      ],
+      "originalNumber": "3",
+      "family": "Formal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Assuming that, because something could happen, it is inevitable that it will happen.",
+      "example": "I'm bound to win the lottery if I just keep buying tickets.",
+      "notes": "A remote possibility does not equate to an inevitability for a finite life.",
+      "caseStudies": [
+        "The real possibility that a meteor will strike your house while you sleep does not warrant your concern."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Appeal to ridicule",
+      "slug": "appeal-to-ridicule",
+      "categories": [
+        "Emotional"
+      ],
+      "originalNumber": "101",
+      "family": "Informal Fallacy",
+      "subCategory": "Red Herring",
+      "subSubCategory": "Appeal to consequences",
+      "aliases": [],
+      "definition": "An argument in which the use of ridicule or shame is introduced in an attempt to invalidate the opposing position.",
+      "example": "So, since you believe in evolution, you have to believe your grandfather was an ape! Hilarious!",
+      "notes": "Ridicule is a fallacy only when it is used to persuade others to hold a certain belief.",
+      "caseStudies": [],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Appeal to spite",
+      "slug": "appeal-to-spite",
+      "categories": [
+        "Emotional"
+      ],
+      "originalNumber": "102",
+      "family": "Informal Fallacy",
+      "subCategory": "Red Herring",
+      "subSubCategory": "Appeal to consequences",
+      "aliases": [],
+      "definition": "An appeal to emotion in which an argument is made through exploiting bitterness towards the proponents of an opposing position.",
+      "example": "If you think we should bailout that bank, consider that the incompetent traders who created this financial fiasco will be celebrating with champagne while we, the common folk, will be paying even higher taxes.",
+      "notes": "What some might call an appeal to spite others might call an appeal to justice, so this fallacy can be quite fuzzy.",
+      "caseStudies": [],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Appeal to tradition",
+      "slug": "appeal-to-tradition",
+      "categories": [
+        "Emotional",
+        "Evidential"
+      ],
+      "originalNumber": "110",
+      "family": "Informal Fallacy",
+      "subCategory": "Red Herring",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when a claim is deemed correct on the basis that it has a long-standing tradition behind it.",
+      "example": "Polygamy is wrong because marriage here in our country has long been only between one man and one women.",
+      "notes": "All traditional practices were at one time new. The age of a practice neither validates or invalidates the practice. Patricide, child sacrifice and self-immolation were all well-established traditions at one time, yet are now generally abhorred.",
+      "caseStudies": [
+        "Both extremes on the issue of public nudity have invoked this fallacy to justify their position."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Appeal to wealth",
+      "slug": "appeal-to-wealth",
+      "categories": [
+        "Tactical"
+      ],
+      "originalNumber": "108",
+      "family": "Informal Fallacy",
+      "subCategory": "Red Herring",
+      "subSubCategory": "",
+      "aliases": [
+        "argumentum ad crumenam"
+      ],
+      "definition": "Suggesting the truth of a conclusion necessarily positively correlates to it's proponent's financial situation.",
+      "example": "If your ideas had any real merit, you'd be rich by now.",
+      "notes": "The converse of this fallacy is the <a href=\"logfall.wordpress.com/appeal-to-poverty/\">appeal to poverty</a> fallacy.",
+      "caseStudies": [
+        "The financial success of an individual is often cited as evidence for their competency to take the helm of additional ventures, some of which may require skills other than what a successful business person can offer."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Argument from fallacy",
+      "slug": "argument-from-fallacy",
+      "categories": [
+        "Evidential"
+      ],
+      "originalNumber": "4",
+      "family": "Formal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Assuming that, if an argument for some conclusion is fallacious, then the conclusion is false.",
+      "example": "Tom told me that, because all Cubans are human, and I am a human, therefore I am a Cuban. His argument is invalid, and therefore I am not a Cuban.",
+      "notes": "The fact that someone commits a fallacy when defending a claim does not make their claim false.",
+      "caseStudies": [
+        "This fallacy is common in heated discussions in which ad hominem attacks are frequent. Often the person attacked will point to the ad hominem, then declare their own position validated."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Argument from ignorance",
+      "slug": "argument-from-ignorance",
+      "categories": [
+        "Evidential"
+      ],
+      "originalNumber": "37",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [
+        "appeal to ignorance"
+      ],
+      "definition": "Assuming that something is true because it has not been proven false, or false because it has not been proven to be true.",
+      "example": "Fairies must exist since we've seen no evidence falsifying their existence.",
+      "notes": "Phrases that often accompany this fallacy include \"What are the odds!\" and \"Explain that!\" The inability of the (or a particular) human brain to grasp the stochastic or conceptual complexities of a particular concept do not warrant the introduction of magic or a god or luck as an explanation.<hr />Note that there is warrant to dismiss out-of-hand claims that are logically or physically impossible. If I claim I possess a square triangle, or a flying reindeer, you are warranted in stating unequivocally that I am wrong.",
+      "caseStudies": [
+        "Some say we are warranted in believing that the Loch Ness Monster exists since there is no evidence to the contrary.",
+        "Some who do not accept a particular scientific theory often point to a single node in the matrix of converging lines of evidence for the theory, point out its short-comings, then claim the theory is wrong. If you've lived next to Betty and Bob for 20 years who are presumably married, and happen to see Betty with an unidentified man one afternoon, you are not warranted in believing that Betty and Bob are not married."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Argument from repetition",
+      "slug": "argument-from-repetition",
+      "categories": [
+        "Tactical"
+      ],
+      "originalNumber": "35",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [
+        "argumentum ad nauseam"
+      ],
+      "definition": "Assuming that, because no one cares to discuss your position with you any longer, that your position is correct.",
+      "example": "I've been arguing with my wife for 20 years about my gambling habit. She finally stopped arguing with me, demonstrating that I've been right all these years.",
+      "notes": "The unfortunate thing about this fallacy is that it often works. The mere repetition of a fallacious argument will often lead to its entrenchment in a society.",
+      "caseStudies": [
+        "The tobacco companies persistently spread disinformation for years, and, in so doing, successfully converted many young people to the smoking that eventually killed them.",
+        "The dictators of many countries set up propaganda campaigns that simply repeat the largely mythical achievements of the \"glorious leader\"."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Argument from silence",
+      "slug": "argument-from-silence",
+      "categories": [
+        "Evidential"
+      ],
+      "originalNumber": "109",
+      "family": "Informal Fallacy",
+      "subCategory": "Red Herring",
+      "subSubCategory": "",
+      "aliases": [
+        "argumentum ex silentio"
+      ],
+      "definition": "A conclusion deemed true based on the lack of opposition.",
+      "example": "Because my opponent failed to address my point, my point is validated.",
+      "notes": "If a point is not addressed, rarely does it become anything other than an unaddressed point. However, this is context-dependent. If you see a vampire sitting across from you on the subway, and none of the other passengers seem interested, you might first consider what medication you might have taken that morning before wielding your wooden stake since the silence of the other passengers in such a setting would be unusual. The key question to ask is \"How unusual is this silence?\".",
+      "caseStudies": [
+        "The disinterest and subsequent silence of doctors on the claims of dubious medial remedies is often spun to imply their tacit support, or at minimum, their lack of opposition.",
+        "The phrase \"no comment\", which can be uttered for a wide variety of reasons, is often spun by the media to evoke suspicion of a secret or mystery."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Argumentum ad baculum",
+      "slug": "argumentum-ad-baculum",
+      "categories": [
+        "Emotional",
+        "Tactical"
+      ],
+      "originalNumber": "90",
+      "family": "Informal Fallacy",
+      "subCategory": "Red Herring",
+      "subSubCategory": "",
+      "aliases": [
+        "appeal to the stick",
+        "appeal to force"
+      ],
+      "definition": "Occurs when an argument is made through coercion or threats of force towards an opposing party.",
+      "example": "You've been a good employee up to this point, John. And I think you'll agree that shining my shoes is not at all as humiliating as losing your job.",
+      "notes": "This fallacy works superficially. You may gain the cooperation of many through the Machiavellian use of force, but historically, those who lived by the sword often died by the sword. And the sword never changed the truth of the matter.",
+      "caseStudies": [
+        "There are millions of people who believe that, if you do not also believe in their particular version of god, that you will be eternally tortured.",
+        "In some countries, apostasy from a particular religion is deemed worthy of death. To what degree does belief subconsciously conform to threats such as these?"
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Argumentum ad populum",
+      "slug": "argumentum-ad-populum",
+      "categories": [
+        "Evidential",
+        "Conceptual",
+        "Epistemic"
+      ],
+      "originalNumber": "91",
+      "family": "Informal Fallacy",
+      "subCategory": "Red Herring",
+      "subSubCategory": "",
+      "aliases": [
+        "appeal to belief",
+        "appeal to the majority",
+        "appeal to the people"
+      ],
+      "definition": "Occurs when a conclusion is claimed to be true solely because many people believe it to be true.",
+      "example": "Nearly everyone believes there are moral rules we must live by, so for you to claim these moral rules do not exist is ridiculous!",
+      "notes": "This fallacy is usually committed by those who start with the assumption that belief in something is evidence for the existence of that something. In other words, an epistemic commitment is indicative of ontological fact. they place much confidence in the reliability of the human mind to arrive at true beliefs. This assumption, however, must be tested. An easy test of this assumption would be to consider how many humans hold beliefs that are incomparable with the beliefs of most of the world. Given the many incompatible religious and political beliefs, it seems quite clear that our basic ability to formulate true beliefs is not very reliable, and therefore convention is not a very good measure of correctness. This unreliability becomes even more salient when we consider the many erroneous beliefs our own ancestors held but a few decades ago.",
+      "caseStudies": [
+        "Nearly everyone speeds while driving, but invoking this fact will probably not convine the police officer standing at your window. Nor should it convice him. Laws are often made based on the fact that too many people believe and do the very same thing."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Artificial negation",
+      "slug": "artificial-negation",
+      "categories": [
+        "Epistemic",
+        "Evidential"
+      ],
+      "originalNumber": "",
+      "family": "",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "The syntactic use of negation to wrongly imply an affirmative epistemic commitment.",
+      "example": "Where's your evidence for your belief that there are no unicorns? Your faith in the lack of unicorns is no different from my faith in the existence of unicorns.",
+      "notes": "A positive belief that there are no unicorns is not equivalent to no belief in unicorns. Having no belief in unicorns may be a result of never having heard of the concept of unicorns, or never having had sufficient evidence to believe they exist.",
+      "caseStudies": [
+        "Some suggest that the suspension of belief in a particular god-claim is itself an affirmative belief. The arguments goes \"It's not that you merely have no belief in my version of god; you believe that my god does not exist!\" This claim is then employed in an attempt to demonstrate that \"we both have faith\" or \"you have to provide evidence for your no-god belief.\" Believing that there is not enough evidence to believe a particular claim is not an affirmative belief; it is a negative belief, and does not require faith or possess the burden of proof."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Association fallacy",
+      "slug": "association-fallacy",
+      "categories": [
+        "Tactical",
+        "Evidential",
+        "Formal"
+      ],
+      "originalNumber": "92",
+      "family": "Informal Fallacy",
+      "subCategory": "Red Herring",
+      "subSubCategory": "",
+      "aliases": [
+        "guilt by association"
+      ],
+      "definition": "Occurs when a claim is deemed true or untrue based on an association with some irrelevant element.",
+      "example": "Jane is an exceptional pianist, and also pretty. Therefore, all pianists are pretty.",
+      "notes": "There may, however, be a relevant association between two qualities. If, for example, you note that pianists have long fingers, there may be a causal relationship between long fingers and pianists, though this needs to be substantiated with evidence and argumentation.\nThis is a type of proof by example fallacy. A more detailed treatment of proof by example fallacies can be found on the supplementary <a href=\"http://logfall.wordpress.com/inductive-errors/\">Inductive Errors</a> page.",
+      "caseStudies": [
+        "If you argue that, because Japanese are polite, they would never push each other, you have not seen a rush hour subway train in Tokyo. Pushing does not necessarily entail impoliteness.."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Bare assertion fallacy",
+      "slug": "bare-assertion-fallacy",
+      "categories": [
+        "Evidential",
+        "Tactical"
+      ],
+      "originalNumber": "",
+      "family": "",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [
+        "ipse-dixitism"
+      ],
+      "definition": "Occurs when a controversial premise is introduced without substantiation.",
+      "example": "My father Is 3 meters tall. Your father is only 1 meter tall. Therefore my father is taller than your father.",
+      "notes": "This fallacy is often accompanies by a phrase such as \"Trust me.\" It might be considered a self-referential <a href=\"http://logfall.wordpress.com/appeal-to-authority/\">appeal to authority</a>. A more rigorous and constrained discussion might allow you to ask \"What is you evidence for that claim?\" However, when bare assertions are constantly thrown out as red herrings, it may be best to abandon any hope of real dialog. <blockquote>\"<i>When I use a word\" Humpty Dumpty said, \"...it means just what I choose it to mean-neither more nor less.</i>\"<br />\n<sup>Lewis Carroll, Through the Looking Glass. </sup></blockquote>.",
+      "caseStudies": [
+        "Many economic or political arguments begin with bare assertions such as \"The economy can't grow without tax breaks, so we need to...\"."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Base rate fallacy",
+      "slug": "base-rate-fallacy",
+      "categories": [
+        "Mathematical"
+      ],
+      "originalNumber": "5",
+      "family": "Formal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Making a probability judgment without taking into account known empirical statistics about the probability.",
+      "example": "The rare disease detection device is 99% accurate, and it detected that I have a rare disease. Therefore I almost certainly do have a rare disease.",
+      "notes": "If there are 10 terrorists in a city of 1,000,000, and you have a device on the subway that detects terrorists with a seemingly very high accuracy rate of 99.9%, you are going to experience 100 false positives of innocent citizens for every terrorist you correctly identify.",
+      "caseStudies": [],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Begging the question",
+      "slug": "begging-the-question",
+      "categories": [
+        "Formal"
+      ],
+      "originalNumber": "38",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [
+        "petitio principii"
+      ],
+      "definition": "Occurs when the conclusion of an argument is implicitly or explicitly assumed in one of the premises.",
+      "example": "This medicine will definitely make you well since it can cure your disease.",
+      "notes": "This fallacy employs circularity, and is usually a disguised tautology.",
+      "caseStudies": [
+        "It's been argued that p1) holy books claim that a god can perform miracles, but p2) miracles are impossible, and C) therefore the holy books are wrong. This is begging the question in that you are essentially saying even though it is claimed that miracles are possible, miracles are not possible. A more precise definition of \"miracle\" might be called for here, then a demonstration of why p2 is true, perhaps not an easy task.",
+        "Some might beg the question by arguing that abortion is the unjustified killing of a human being and is therefore murder. Murder is illegal. So abortion should be made illegal.",
+        "Others might beg the question by arguing \"Paranormal phenomena exist because I have had experiences that have transcended what is normal.\"."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Bottom-up condemnation",
+      "slug": "bottom-up-condemnation",
+      "categories": [
+        "Conceptual",
+        "Evidential"
+      ],
+      "originalNumber": "",
+      "family": "",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [
+        "a dicto simpliciter ad dictum secundum quid",
+        "faulty generalization"
+      ],
+      "definition": "An argument of the following form. Group \"A\" has the negative quality \"x\" and \"a\" belongs to group \"A\". Therefore \"a\" has \"x\".",
+      "example": "Bankers are jerks, and because my neighbor is a banker, he must be a jerk.",
+      "notes": "A more detailed treatment of this fallacy can be found on the supplementary <a href=\"http://logfall.wordpress.com/inductive-errors/\">Inductive Errors</a> page.",
+      "caseStudies": [
+        "If you learn that you have a tumor, the fact that many tumors are malignant, inoperable and fatal does not mean that you should despair since many tumors can be successfully treated. More information about the type and stage of the tumor is needed before any conclusions can be drawn about your particular tumor.",
+        "If you have been bitten by the last 3 dogs you've approached, you are warranted in being cautious about the next dog you approach in a similar context. However, 3 data points is a rather small sample size to draw any general conclusions. The fact that you have been bitten 3 times in a row many not much reflect on the general disposition of dogs, but more on the context in which you encounter them such as while you are climbing through a window to rob someone."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Bottom-up justification",
+      "slug": "bottom-up-justification",
+      "categories": [
+        "Conceptual",
+        "Evidential"
+      ],
+      "originalNumber": "",
+      "family": "",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [
+        "a dicto simpliciter ad dictum secundum quid",
+        "faulty generalization"
+      ],
+      "definition": "An argument of the following form. Group \"A\" has the positive quality \"x\" and \"a\" belongs to group \"A\". Therefore \"a\" has \"x\".",
+      "example": "Bankers are nice people, and since my neighbor is a banker, he must be a nice guy.",
+      "notes": "A more detailed treatment of this fallacy can be found on the supplementary <a href=\"http://logfall.wordpress.com/inductive-errors/\">Inductive Errors</a> page.",
+      "caseStudies": [],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Broken window fallacy",
+      "slug": "broken-window-fallacy",
+      "categories": [
+        "Evidential",
+        "Mathematical"
+      ],
+      "originalNumber": "126",
+      "family": "Conditional/Questionable Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "An argument which disregards lost opportunity costs (typically non-obvious, difficult to determine or otherwise hidden) associated with destroying property of others, or other ways of externalizing costs onto others.",
+      "example": "After downtown vandalism, a mayor praises the damage for 'creating jobs' for glaziers while ignoring the shops, wages, and purchases that would have existed if the windows had never been broken.",
+      "notes": "",
+      "caseStudies": [],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Cherry picking",
+      "slug": "cherry-picking",
+      "categories": [
+        "Tactical",
+        "Evidential"
+      ],
+      "originalNumber": "77",
+      "family": "Informal Fallacy",
+      "subCategory": "Faulty Generalization",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Pointing out individual cases or data that seem to confirm a particular position, while ignoring cases or data that may contradict that position.",
+      "example": "I found 2 statistical studies that conclude violent video games do not actually increase violence among children. That's proof enough for me!",
+      "notes": "How many studies on violent video games have been conducted, and why are the others not included for a balanced assessment? This fallacy is similar to the <a href=\"http://logfall.wordpress.com/sharpshooter-fallacy/\">sharpshooter fallacy</a>.",
+      "caseStudies": [
+        "It is often claimed that the troubles someone experiences in life are due to some god's response to their ungodliness. These claims are made while ignoring the troubles of \"godly\" people. Pat Robertson claimed that the earthquake in Haiti was due to the Haitians making a pact with the devil years earlier.",
+        "When examining the the 10 years between 1998 and 2007 a 0.3-degree cooling trend in the average global temperature can be inferred. However, if we instead shift the decade to encompass the years 1997 to 2006, we see a 0.6-degree warming trend. Picking either span of 10 years to defend your position on global warming is fallacious."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Chronological snobbery",
+      "slug": "chronological-snobbery",
+      "categories": [
+        "Evidential",
+        "Perspectival"
+      ],
+      "originalNumber": "111",
+      "family": "Informal Fallacy",
+      "subCategory": "Red Herring",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when a conclusion is deemed incorrect because it was commonly held when something else that was clearly false was also commonly held.",
+      "example": "Why must we accept medieval art as having any value when it emerged from the same period in which people burned witches and believed in fairies?",
+      "notes": "This is a type of faulty generalization since the error is over-generalizing from a period of several wrong concepts to concluding that all concepts within that period were wrong. A more detailed treatment of faulty generalizations can be found on the supplementary <a href=\"http://logfall.wordpress.com/inductive-errors/\">Inductive Errors</a> page.",
+      "caseStudies": [
+        "Many early doctors held superstitions that would make us wary of visiting their office were they alive and holding the same beliefs today. This does not mean their practice of medicine was worthless for those alive in their day.."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Circular cause and consequence",
+      "slug": "circular-cause-and-consequence",
+      "categories": [
+        "Causal",
+        "Evidential"
+      ],
+      "originalNumber": "39",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [
+        "chicken",
+        "the egg problem"
+      ],
+      "definition": "Occurs when the consequence of the phenomenon is said to be an inescapable cause of the phenomenon when the truth may be otherwise.",
+      "example": "My music CD is not popular because people are not listening to it. And people are not listening to it because it is not popular. If they would only listen to it, it would become popular.",
+      "notes": "Note that the fallacy is not in identifying actual causal circularity, but in claiming that the circularity is unavoidable when it is not, or in claiming that the circularity validates the truthfulness of one of the premises. It may not be the case that your music CD would become popular even were there some way possible to get people to listen to it. Actual evidence will have to be introduced to show that the circularity is indeed vicious, and that the removal of the circularity would actually result in what the assumption claims.",
+      "caseStudies": [
+        "The nuclear arms race of the 20th century was based in part on the assumption that the other side would actually use their weapons should they ever gain a significant advantage in the race, an assumption that may not have been accurate.",
+        "An argument against evolution has been the proverbial chicken-or-the-egg problem in which it is suggested that the chicken is dependent on a prior egg, and an egg is dependent on a prior chicken. Evolutionary biologists believed both evolved jointly just as an embryo jointly develops its interdependent heart and brain."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Composition fallacy",
+      "slug": "composition-fallacy",
+      "categories": [
+        "Conceptual"
+      ],
+      "originalNumber": "48",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "Fallacy of distribution",
+      "aliases": [
+        "distribution fallacy"
+      ],
+      "definition": "The misconception that something true of the constituents of a whole must also necessarily be true of the whole.",
+      "example": "Paper money can be exchanged. An economy is composed of paper money, so an economy can be exchanged.",
+      "notes": "This is the converse of the <a href=\"http://logfall.wordpress.com/division-fallacy/\">division fallacy</a>.",
+      "caseStudies": [
+        "Were someone to argue \"The average Canadian makes only 90% of what the average American makes, so Canada's GDP is 90% of the GDP of the U.S.\", they would be committing the composition fallacy.",
+        "If you were to suggest that, because the average Japanese is 90% certain that ghosts exist, 90% of Japanese believe in ghosts, you would be committing the composition fallacy."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Confidence as a validator",
+      "slug": "confidence-as-a-validator",
+      "categories": [
+        "Epistemic",
+        "Emotional",
+        "Perceptual"
+      ],
+      "originalNumber": "",
+      "family": "",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when the certainty one feels in respect to a claim is submitted as evidence for the veracity of that claim.",
+      "example": "I've never swayed from my confidence that Santa is real, and there is no degree of evidence that can counter the way I feel.",
+      "notes": "This fallacy results from esteeming certainty as an objective validation of a proposition rather than as an emotion that could be misguided. Sometimes it is an emotional certainty that prevents the emotional pain that might result from following the evidence into disbelief, and other times it is triggered by a legitimate intuition that results in an emotional snowball of certainty that does not assess the possible evidential clues hidden in the intuition for validity.",
+      "caseStudies": [
+        "Theists often conflate the emotional confidence derived from other emotions such as peace and love with evidence for the existence of their god. This essentially makes belief circular; \"I know what I know\".<br />[<a href=\"http://speeches.byu.edu/reader/reader.php?id=10547\">Example</a>]."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Conjunction fallacy",
+      "slug": "conjunction-fallacy",
+      "categories": [
+        "Conceptual",
+        "Mathematical"
+      ],
+      "originalNumber": "6",
+      "family": "Formal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "The assumption that an outcome simultaneously satisfying multiple conditions is more probable than an outcome satisfying fewer of those same conditions.",
+      "example": "Because Susan is young, it is more probable that she is both a student and unmarried than that she is merely a student.",
+      "notes": "",
+      "caseStudies": [],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Contextomy",
+      "slug": "contextomy",
+      "categories": [
+        "Tactical",
+        "Linguistic"
+      ],
+      "originalNumber": "54",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "False attribution",
+      "aliases": [
+        "quoting out of context"
+      ],
+      "definition": "The selective excerpting of words from their original linguistic context in a way that distorts the intended meaning.",
+      "example": "My wife told me she needed me to take out the garbage. When she was moving out a week later, I told her she was a liar for having said she \"needed me\".",
+      "notes": "Those with faith in some form of holy scriptures often accuse each other of contextomy. This is probably more a function of the vagueness of the context which allows for multiple interpretations.",
+      "caseStudies": [
+        "The commander of British forces in Afghanistan, Mark Carleton-Smith said the following.<blockquote>\"We're not going to win this war. It's about reducing it to a manageable level of insurgency that's not a strategic threat and can be managed by the Afghan army.\"</blockquote>Only the first line was quoted by some media outlets, distorting the true intention of the commander.",
+        "The following is a quote by Charles Darwin.<blockquote>\"Why then is not every geological formation and every stratum full of such intermediate links? Geology assuredly does not reveal any such finely-graduated organic chain; and this, perhaps, is the most obvious and serious objection which can be urged against the theory. \"</blockquote>Taken out of context, this quote is easily perceived to be Darwin doubting his own theory. However, Darwin continued...<blockquote>\"The explanation lies, as I believe, in the extreme imperfection of the geological record. In the first place, it should always be borne in mind what sort of intermediate forms must, on the theory, have formerly existed... \"</blockquote>.",
+        "Consider this bible verse.<blockquote> Hosea 11:1 \"When Israel was a child, I loved him, and out of Egypt I called my son.\"</blockquote>Now note how Matthew later unequivocally denotes this verse in Hosea as a messianic prophecy. He is refering to Jesus' time in Egypt when he writes...<blockquote> Matthew 2:15 \"And was there until the death of Herod: that it might be fulfilled which was spoken of the Lord by the prophet, saying, Out of Egypt have I called my son.'\"</blockquote>But now let's return to the very next verse in Hosea.<blockquote> Hosea 11:2 \"But the more I called Israel, the further they went from me. They sacrificed to the Baals and they burned incense to images.\"</blockquote>Unless you want to say Jesus sacrificed to the Baals, you've got to say Matthew took this verse out of context."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Continuum fallacy",
+      "slug": "continuum-fallacy",
+      "categories": [
+        "Conceptual",
+        "Linguistic"
+      ],
+      "originalNumber": "40",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [
+        "fallacy of the beard"
+      ],
+      "definition": "Rejecting an argument on the grounds that one of it's concepts cannot be defined discretely into a precise category.",
+      "example": "You can't claim that your backpack is heavy until you give me a precise definition of \"heavy.\".",
+      "notes": "This fallacy highlights the need to employ terms that are as precise and quantified as possible. The fallacy is not always on the side of the person suggesting a proposition has no meaning until imprecise terms are defined. Sometime the burden of clarification is on the party who is making a claim. Claims can be so imprecise as to be impotent.",
+      "caseStudies": [
+        "One common example of the continuum fallacy is in a scenario in which one must determine what constitutes \"evidence\" and \"proof\"for a given proposition. If someone claims to be able to accurately predict coin flips, for example, just how many consecutive correctly predicted flips would constitute evidence (beyond statistical noise) for the claim? And how many flips would constitute proof of this ability? The take-away caveat is that we need to define our terms as rigorously as possible, and not try to constrain concepts that inherently fall on a continuum to discrete categories.",
+        "Imagine a client claims you took \"too long\" to deliver a product, and refuses to pay for the product. Claiming that \"too long\" is an incorrect term since other companies take longer to deliver is an instantiation of the continuum fallacy. It is best to clearly stipulate your terms of delivery to your clients prior to their ordering."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Correlation is not causation",
+      "slug": "correlation-is-not-causation",
+      "categories": [
+        "Causal"
+      ],
+      "originalNumber": "41",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [
+        "cum hoc ergo propter hoc"
+      ],
+      "definition": "Occurs when a correlation found between two variables is presumed to demonstrate a causal relationship.",
+      "example": "Children who eat breakfast have higher grades, so eating breakfast causes higher grades.",
+      "notes": "It may be that there is a 3rd factor causing both higher grades and eating breakfast such as more responsible parents who help children with homework as well as make sure they eat breakfast. While correlation is evidence for causation, especially when other factors have been controlled for, moving from correlation to causation demands a rigorous scientific protocol.",
+      "caseStudies": [
+        "It has been argued that religious belief is what has made America economically strong, and, conversely, that a lack of religious belief is what keeps crime rates so low in Japan. Neither claim is warranted if merely based on the coexistence of the 2 variables cited.",
+        "It seems quite clear that people who eat diet food are heavier than those who don't. What can we say about any possible arrow of causation between diet food and heavier people? Is there causation? Which direction is the causation? Is it necessarily uni-directional?",
+        "It has been claimed that people with red cars drive faster than people with blue cars. What is it about the color red that causes faster driving. Or is it that more aggressive personalities like both red and speed. Or is possible that the data used to conclude that drivers of red cars drive faster than blue cars is taken from a biased source? Do police target red cars more than they do blue cars, thereby skewing the data?"
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Definist fallacy",
+      "slug": "definist-fallacy",
+      "categories": [
+        "Linguistic",
+        "Conceptual"
+      ],
+      "originalNumber": "124",
+      "family": "Conditional/Questionable Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Involves the confusion between two notions by defining one in terms of the other.",
+      "example": "Justice is simply whatever the law permits, so once a policy is legal it is automatically just.",
+      "notes": "",
+      "caseStudies": [],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Demanding a mechanism",
+      "slug": "demanding-a-mechanism",
+      "categories": [
+        "Evidential"
+      ],
+      "originalNumber": "",
+      "family": "",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when overwhelming evidence for a phenomenon is rejected on the grounds that the causal mechanism is not known or understood.",
+      "example": "Scientists still can't explain how and why lightning occurs. Therefore, I am not obligated to assume that the cause is electromagnetic.",
+      "notes": "Though the existence of a coherent and predictive mechanism is significant evidence for belief in a particular phenomenon, very often, there are other forms of evidence that are sufficient to warrant belief, even when a mechanism is missing from the theory. Consider a scenario in which an individual claims to be able to predict the outcome of coin-flips on a fair coin. Your skepticism is warranted for perhaps the first 10-20 correctly predicted flips, but at some point, you will be compelled to concede that, even though you don't know the mechanism, the individual's claim warrants your belief.",
+      "caseStudies": [
+        "For many years, people were attributing the flight of the bumblebee to something miraculous since there was, at that time, no credible material mechanism available to explain how so small a wing surface could successfully levitate the relatively large mass of the bumblebee.",
+        "Some claim evolution cannot be accepted as fact until the mechanism is fully teased out, in spite of much converging evidence for evolution from many domains of research.",
+        "It is sometimes claimed that dualism, the belief that mind and brain are separate entities, warrants no credibility until a mechanism that explains how the immaterial can interface with the material is discovered and explained. However, if there was clear evidence of ESP in which the mind exhibited an independence of physical location, then that would possible constitute sufficient evidence for belief in dualism, even in the absence of a known mechanism."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Demanding negative proof",
+      "slug": "demanding-negative-proof",
+      "categories": [
+        "Tactical",
+        "Evidential"
+      ],
+      "originalNumber": "43",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Attempting to avoid the burden of proof for some claim by demanding proof of the contrary from whoever questions that claim.",
+      "example": "Can you prove I'm not wearing an invisible hat?",
+      "notes": "Similar to \"negative proof fallacy.\".",
+      "caseStudies": [],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Denial of the epistemic gradient",
+      "slug": "denial-of-the-epistemic-gradient",
+      "categories": [
+        "Epistemic",
+        "Evidential"
+      ],
+      "originalNumber": "",
+      "family": "",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Diminishing semantic resolution by creating artificially discrete epistemic categories.",
+      "example": "Either you believe in space aliens or you don't! Tell me whether you believe in space aliens!",
+      "notes": "Evidence commonly arrives in degrees. If belief is to be warranted, it must map to the evidence. Therefore, belief is necessarily non-discrete.",
+      "caseStudies": [
+        "Both theists and atheists often over-categorize the position of others by suggesting one must either belief or disbelieve in a god. However, unless you belief the evidence for a particular god arrives in discrete packets, it must be admitted that belief in that god will fall somewhere on a continuum."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Denying a remote hypothetical",
+      "slug": "denying-a-remote-hypothetical",
+      "categories": [
+        "Evidential",
+        "Conceptual"
+      ],
+      "originalNumber": "",
+      "family": "",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when a worthy hypothetical is rejected on grounds it is rare or improbable.",
+      "example": "Your scenario of having to choose between killing your child or your father or letting them both starve does is not applicable to my moral code since such a dilemma has probably never actually occurred in real life.",
+      "notes": "If someone suggests they are in possession of a universal moral law, then even the most improbable scenarios is fair game to test that universal moral law. If you say killing another human is always wrong, then you'll need to address any conceivable scenario in which one human is faced with the choice of killing another.",
+      "caseStudies": [
+        "One remote scenario and moral dilemma is a situation in which you have the opportunity to save several lives on a trail by pushing a single person onto the tracks, thus killing him. The fact that the scenario is improbable does not mean that it cannot be used to test the validity and consistency of a moral principle.",
+        "Another scenario and moral dilemma is a situation in which there are 10 persons of various ages, sizes, intelligences, talents and genders on a lifeboat with only enough food for 20 meals. How do you allot the food? This remote scenario is a legitimate test of a moral code.",
+        "Another remote scenario is a situation in which a mother, hiding with her child and 20 other innocent people from men with guns, must decide to smother her crying child in order to save herself and the 20 others."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Denying the antecedent",
+      "slug": "denying-the-antecedent",
+      "categories": [
+        "Formal"
+      ],
+      "originalNumber": "24",
+      "family": "Formal Fallacy",
+      "subCategory": "Propositional Fallacy",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when the consequent in an indicative conditional is claimed to be false because the antecedent is false; if A, then B; not A, therefore not B.",
+      "example": "If I were a movie star, I'd be popular. But I'm not a movie star, so I'm not popular.",
+      "notes": "<br />&nbsp;<br /><blockquote>If P, then Q <br />Not Q <br />Therefore, not P</blockquote>.",
+      "caseStudies": [
+        "Some might deny the antecedent by arguing \"If you work hard, you will get a good job. Therefore, if you do not work hard you will not get a good job.\"."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Denying the correlative",
+      "slug": "denying-the-correlative",
+      "categories": [
+        "Conceptual"
+      ],
+      "originalNumber": "8",
+      "family": "Formal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "Correlative based fallacy",
+      "aliases": [],
+      "definition": "Occurs when attempts are made at introducing alternatives where none exist.",
+      "example": "My girlfriend wanted to know whether I had cheated on her. I told her that perhaps it was impossible to have cheated on her since if I had cheated, it would mean we never really had a relationship to cheat on.",
+      "notes": "This fallacy is the converse of the <a href=\"http://logfall.wordpress.com/false-dilemma/\">false dilemma</a>.",
+      "caseStudies": [
+        "Theists commonly claim their particular god becomes so angry over the very first offense a human commits, that he immediately condemns that human to eternal torment. They then also claim that same god is \"patient\" and \"loving\" towards humans. If you have a god invariably and continuously committing impatient acts, you don't have a patient god.",
+        "Telling your date \"I'm in a complicated relationship\" is not an answer to their question \"Are you married?\" and is denying the correlative."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Division fallacy",
+      "slug": "division-fallacy",
+      "categories": [
+        "Conceptual"
+      ],
+      "originalNumber": "47",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "Fallacy of distribution",
+      "aliases": [
+        "distribution fallacy"
+      ],
+      "definition": "Occurs when one reasons logically that something true of an entire thing must also be true of all or some of its parts.",
+      "example": "Because a brain possesses thoughts, and a brain is composed of neurons, therefore these neurons pass thoughts back and forth.",
+      "notes": "This is the converse of the <a href=\"http://logfall.wordpress.com/composition-fallacy/\">composition fallacy</a>.",
+      "caseStudies": [
+        "Were someone to argue \"Canada's GDP is 10% of the GDP of the U.S., so the average Canadian makes only 10% of what the average American makes\", they would be committing the division fallacy.",
+        "If you were to suggest that, because 50% of Japanese believe in ghosts, the average Japanese is only half-certain that ghosts exist, you would be committing the division fallacy."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Ecological fallacy",
+      "slug": "ecological-fallacy",
+      "categories": [
+        "Mathematical",
+        "Conceptual"
+      ],
+      "originalNumber": "49",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "Fallacy of distribution",
+      "aliases": [
+        "distribution fallacy"
+      ],
+      "definition": "Inferences about the nature of specific individuals are based solely upon aggregate statistics collected for the group to which those individuals belong.",
+      "example": "Because the average German is taller than me, you won't find a German who is shorter than me.",
+      "notes": "Averages are useful when a higher resolution of the context would be cumbersome. However, there may be some contexts where an understanding of the actual distribution is required.",
+      "caseStudies": [
+        "In a part of town with many nursing homes and nursery schools, the average age may be 35. It would be a mistake, however, to then expect to see many middle-age individuals in that part of town.",
+        "The average income of many countries is largely uninformative since there exists a large gulf between the rich and poor."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Empty refutation",
+      "slug": "empty-refutation",
+      "categories": [
+        "Tactical"
+      ],
+      "originalNumber": "",
+      "family": "",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when an argument is said to be wrong, yet no information or explanation about what in the argument was wrong.",
+      "example": "You misrepresented my position in your argument, so your argument is clearly wrong.",
+      "notes": "If you claim someone has misrepresented your argument, you'll need to rigorously substantiate that. If you identify a flaw in someone's argument, take the time to detail that flaw rather than simply telling them they are wrong.",
+      "caseStudies": [],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Epistemic/ontological conflation",
+      "slug": "epistemic-ontological-conflation",
+      "categories": [
+        "Evidential",
+        "Epistemic",
+        "Perceptual"
+      ],
+      "originalNumber": "",
+      "family": "",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when the effects of a belief in a thing are assumed to be evidence for the existence of that thing.",
+      "example": "Those who believe they are intelligent, out-perform those who think they are not intelligent on IQ tests. Therefore they are more intelligent.",
+      "notes": "This fallacy is essentially that of ignoring the placebo effect or other mental effects of belief.",
+      "caseStudies": [
+        "Many of those who believe in homeopathy are usually heal after taking homeopathy medicine. It's supporters often claim this is proof for the efficacy of the medicine, and ignore possible placebo effects.",
+        "Some studies that allegedly show that theists are happier than atheists are extended as evidence for the power of god, rather than the power of belief in god."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Equivocation",
+      "slug": "equivocation",
+      "categories": [
+        "Linguistic"
+      ],
+      "originalNumber": "44",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "The misleading use of a term that has more than one meaning.",
+      "example": "The strange man told me he wanted to take me out. I had him arrested for making a death threat.",
+      "notes": "This example equivocates between the meaning of \"take out\" as an romantic activity, and \"take out\" as a murder.",
+      "caseStudies": [
+        "You've probably heard the argument that \"scientists can't even predict tomorrow's weather! What makes them thing they can predict the weather a decade from now?\" This equivocates between daily weather predictions and yearly weather predictions. Daily weather predictions for 10 years from now are no better than they are for 10 days from now, but that does not mean climate scientists cannot accurately predict general trends in weather.",
+        "Some people argue that, since humans wrote a holy book, a god did not write that particular holy book. This is an equivocation on the word \"write\" since it sometimes means \"to pen\" and other times \"to author\".",
+        "The word \"faith\" has recently been a word with diverse denotations that enable unproductive equivocation in dialog. Some will say \"where the evidence ends, there faith begins\", while in another context suggest that our belief that the sun will rise tomorrow is also \"faith\" though based on inductive reason and an understanding of the mechanism.",
+        "The term \"theory\" has 2 distinct meanings that are often conflated in equivocation when someone wishes to diminish the standing of a scientific theory. They simply replace the noble connotations associated with a scientific theory with the less-than-noble connotation of the vernacular use of \"theory\"."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Equivocation fallacy",
+      "slug": "equivocation-fallacy",
+      "categories": [
+        "Linguistic"
+      ],
+      "originalNumber": "20",
+      "family": "Formal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "In which a speaker will use a general definition of a term to denote a specific insinuation.",
+      "example": "My mother said that ice cream was good, but it maliciously fell on my shoe.",
+      "notes": "This example equivocates between \"good\" meaning \"of positive value\" and \"good\" meaning \"morally upright\".",
+      "caseStudies": [],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Etymological fallacy",
+      "slug": "etymological-fallacy",
+      "categories": [
+        "Linguistic"
+      ],
+      "originalNumber": "45",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when it is argued that the original or historical meaning of a word or phrase is necessarily similar to its actual present-day meaning.",
+      "example": "Because \"gay\" meant \"happy\" in the past, you can't call homosexuals \"gay\" unless they are happy.",
+      "notes": "Language inevitably changes. To be understood, a participant in the game of communication in any language will need to employ the language in the way it is currently conventionally used. Words are merely tools to convey concepts. When certain terms fail due to the speaker deviating from their conventional usage, the speaker, instead of demanding the denotation associated with the origin of the term, ought to either choose other terms that more clearly convey their ideas to the language community, or stipulate a provisional definition of the term. Words themselves contain no meaning other than what the language community has granted them.",
+      "caseStudies": [
+        "In recent years, there has been much wrangling over what the meaning of \"theist\", \"deist\", \"atheist\" and \"agnostic\" actually mean. The answer is, when terms become as hotly debated as these are, they have lost their meaning. It is difficult for concepts as nuanced as these are, to find a single term that accurately captures its full meaning. Instead of demanding others accept your own understanding or the historical meaning of a particular term, give a longer more nuanced explanation of your position. The convenience of a shorter term does not count for much if meaning is sacrificed.",
+        "Some have argued that the \"n\" word originally came from the Latin \"niger\", meaning \"black\", and therefore is not an offensive term. This completely ignores the conventional meaning it has today, and it is within convention that meaning is created. On the other side of this issue you have people attempting to remove the \"n\" word from Mark Twain books, perhaps not understanding that the term was not used disparagingly by all in that era. Negatively connoted terms can be salvaged by a linguistic community as was the term \"queer\" through the efforts of the gay community."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Exclusive premises",
+      "slug": "exclusive-premises",
+      "categories": [
+        "Formal"
+      ],
+      "originalNumber": "30",
+      "family": "Formal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when a categorical syllogism that is invalid because both of its premises are negative.",
+      "example": "No humans are birds. Some birds are not lawyers. Therefore some lawyers are not humans.",
+      "notes": "<br />&nbsp;<br /><blockquote>Some/all As are not Bs. <br />Some/all Bs are not Cs.<br />Therefore, no A is C.</blockquote>.",
+      "caseStudies": [
+        "Another example might be \"Since no republicans are democrats and some democrats are not farmers, it follows that some farmers are not republicans.\"."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Existential fallacy",
+      "slug": "existential-fallacy",
+      "categories": [
+        "Formal"
+      ],
+      "originalNumber": "26",
+      "family": "Formal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Argues to a conclusion that implies that a class has at least one member, but without such an implication in the premises.",
+      "example": "Creatures who hide in the woods are not aggressive. Bigfoot hides in the woods. Therefore Bigfoot is not aggressive.",
+      "notes": "This fallacy can be remedied by converting the assertions to conditionals with \"If ___ were ___, ...\".",
+      "caseStudies": [
+        "To post a sign saying shoplifters."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Fallacy of many questions",
+      "slug": "fallacy-of-many-questions",
+      "categories": [
+        "Tactical"
+      ],
+      "originalNumber": "51",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [
+        "complex question",
+        "fallacy of presupposition",
+        "loaded question",
+        "plurium interrogationum"
+      ],
+      "definition": "Occurs when someone asks a question that presupposes something that has not been proven or accepted by all the people involved.",
+      "example": "So Henry, have you stopped beating your wife?",
+      "notes": "This fallacy combines several assumptions into a interrogative statement that erroneously demands a single binary answer.",
+      "caseStudies": [
+        "Atheists are often asked a question similar to \"So, if you don't believe in the afterlife, why don't you commit suicide since you have nothing to live for?\" Not believing in the afterlife does not mean this life is not worth living.",
+        "Theists are sometimes asked by atheists \"Would you be as delusional if you did not believe in God?\" The word \"delusional\" inplies a mental illness that does not necessarily follow from belief in a god.",
+        "Theists sometimes ask atheists the more rhetorical question \"You hate God since you want to continue in your sin, right?\" This wrongly assumes it is possible to hate something you don't believe in, that you believe in the concept of sin, that you believe you are sinning, and that you hate god due to your choice of a sinful life."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Fallacy of necessity",
+      "slug": "fallacy-of-necessity",
+      "categories": [
+        "Linguistic",
+        "Conceptual"
+      ],
+      "originalNumber": "10",
+      "family": "Formal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "A degree of unwarranted necessity is placed in the conclusion based on the necessity of one or more of its premises.",
+      "example": "I'm a bachelor, and being a bachelor is necessarily being unmarried, therefore I can never marry since I need to be single.",
+      "notes": "Something may be logically necessary due to a definition, but this necessity does not carry over into the actual world in which one can choose to change their marital status.",
+      "caseStudies": [],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "False analogy",
+      "slug": "false-analogy",
+      "categories": [
+        "Conceptual"
+      ],
+      "originalNumber": "81",
+      "family": "Informal Fallacy",
+      "subCategory": "Faulty Generalization",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "A case in which the analogy fails to coherently maintain a parallel to the original concept on the point in question.",
+      "example": "Because physicists say mass equals energy, therefore mass can travel the speed of light.",
+      "notes": "If some system <i>A</i> has both function <i>X</i> and function <i>Y</i>, and some system <i>B</i> has a function <i>X′</i> corresponding to <i>A</i>'s function <i>X</i>, then the system <i>B</i> should also have a function <i>Y′</i> that is analogous to <i>A</i>'s function <i>Y</i> for the analogy to succeed.",
+      "caseStudies": [
+        "Consider the following argument. <blockquote>Teaching teenagers how to succeed in marriage prior to being married is like trying to teach someone how to ride a bicycle prior to placing them on a bicycle. </blockquote>This is a false analogy in that it assumes the same type of learning mechanism used for the muscular memory of cycling is also used for grasping the dynamics of marriage.",
+        "Consider the following argument. <blockquote>Dating is like gambling. You'll win a few, and lose a few.</blockquote>This is a false analogy in that it ignores the non-randon aspects of selecting a date."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "False attribution",
+      "slug": "false-attribution",
+      "categories": [
+        "Evidential",
+        "Tactical"
+      ],
+      "originalNumber": "53",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when an advocate appeals to an irrelevant, unqualified, unidentified, biased or fabricated source in support of an argument.",
+      "example": "A viral post claims a Nobel Prize winner proved a miracle cure works, but the quote is misattributed and the researcher never made the claim.",
+      "notes": "",
+      "caseStudies": [],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "False compromise",
+      "slug": "false-compromise",
+      "categories": [
+        "Conceptual"
+      ],
+      "originalNumber": "55",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Is the assertion that a compromise near the middle of two positions is correct.",
+      "example": "If the cyclist had been wearing a helmet as he ought to have, my drunk driving would not have killed him. The court should reduce my prison sentence from 10 to 5 years.",
+      "notes": "Note that not all compromises to a middle position are faulty as in price negotiations for a new car.",
+      "caseStudies": [
+        "If your spouse wants to spend the weekend in Las Vegas, and you would like to stay home in Los Angeles, offering the compromise of spending the weekend in the desert between the 2 cities would probably be a bad idea."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "False dilemma",
+      "slug": "false-dilemma",
+      "categories": [
+        "Conceptual"
+      ],
+      "originalNumber": "11",
+      "family": "Formal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [
+        "false dichotomy",
+        "middle ground"
+      ],
+      "definition": "Occurs when two alternative positions or choices are wrongly assumed to be the only ones possible.",
+      "example": "If you are not with us, you're against us!",
+      "notes": "One informative example is the statement \"<i>Either this rock is alive or dead.</i>\". This completely ignores the option that the rock is \"lifeless\", which does not carry the misleading connotation that \"dead\" carries. \"Dead\" implies having previously lived, while \"lifeless\" does not.\n<hr />A false dilemma is the inverse of the fallacy of <a href=\"http://logfall.wordpress.com/denying-the-correlative/\">denying the correlative</a>. The <a href=\"http://logfall.wordpress.com/single-cause-fallacy/\">single cause fallacy</a> is one type of false dilemma.",
+      "caseStudies": [
+        "One common false dilemma frequently heard during any war is as follows. <blockquote>Are you in favor of this war? If not, you can't call yourself a patriot.</blockquote>.",
+        "Theists often argue \"<i>You don't worship my god? Why do you hate him so much?</i>\" This completely ignores the possibility that someone does not worship a god because they don't believe in that particular god or don't believe in any god.",
+        "Often, two ideologies that are in conflict such as big pharmaceutical companies and alternative medicine are framed as a dilemma; the drugs of one side work, and the drugs of the other do not. This is a false dilemma since the claims of both sides could be correct...or incorrect. The improprieties or failures of neither side validate the claims of the other side, nor does the demonstration of efficacy on one side invalidate the claims of efficacy of the other side."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "False surrender",
+      "slug": "false-surrender",
+      "categories": [
+        "Tactical"
+      ],
+      "originalNumber": "118",
+      "family": "Informal Fallacy",
+      "subCategory": "Red Herring",
+      "subSubCategory": "Straw man argument",
+      "aliases": [
+        "agree to disagree"
+      ],
+      "definition": "Offering an unwarranted or premature truce on a point of contention in order to misrepresent opponent's position as unprovable or inconclusive.",
+      "example": "My belief that all swans are white isn't necessarily falsified by your photo of a black swan. We'll just have to agree to disagree.",
+      "notes": "This tactic is often employed by the side with the weakest argument.",
+      "caseStudies": [
+        "Culture X may concede that culture Y has the prerogative to continue with practices that culture X considers immoral, as long as culture Y makes the same concession for culture X. The ethical arguments for each practice are ignored.",
+        "Evolution opponents will often concede that both evolution and intelligent design are valid viewpoints, implying that neither can be falsified or demonstrated, and that they have equal evidential support."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Faulty generalization",
+      "slug": "faulty-generalization",
+      "categories": [
+        "Conceptual",
+        "Evidential"
+      ],
+      "originalNumber": "79",
+      "family": "Informal Fallacy",
+      "subCategory": "A dicto simpliciter ad dictium secundum quid",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when an inductive conclusion is unwarranted by the degree of evidence or ignores information that warrants an exception.",
+      "example": "He and his 4 brothers are bald, so his mother must also be bald.",
+      "notes": "A more detailed treatment of this fallacy can be found on the supplementary <a href=\"http://logfall.wordpress.com/inductive-errors/\">Inductive Errors</a> page.",
+      "caseStudies": [],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "For the sake of argument denial",
+      "slug": "for-the-sake-of-argument-denial",
+      "categories": [
+        "Conceptual",
+        "Epistemic"
+      ],
+      "originalNumber": "",
+      "family": "",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "An attempt to disallow an assumption introduced for the sake of argument because it is not actually believed.",
+      "example": "Your argument that Santa is not real because he would need to fly his sleigh at impossible speeds on Christmas Eve is not valid since you don't even believe in Santa.",
+      "notes": "This fallacy is often used in response to an \"<i>argumentum ad absurdum</i>\" in which assumptions are granted for the sake of argument to demonstrate that they lead to an incoherency. To plug an assumption into a argument to show the illogicality of that argument does not require an epistemic commitment to the assumption.",
+      "caseStudies": [
+        "Some atheists argue that \"any god that is both omnipotent and omniscient would not allow evil into the world.\" When theists dismiss this or a similar argument by saying \"you don't believe in god, so you can't use the notion of god in your assumptions\", they commit the fallacy of denying a hypothetical.",
+        "To argue \"If Bigfoot were real, physical evidence would have turned up by now\" carries no epistemic commitment to the existence of Bigfoot."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Four terms fallacy",
+      "slug": "four-terms-fallacy",
+      "categories": [
+        "Formal"
+      ],
+      "originalNumber": "31",
+      "family": "Formal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "A categorical syllogism that has four terms.",
+      "example": "All children like candy, and all boys are children. So, all girls like candy.",
+      "notes": "While we understand that all girls are also children, this fact needs to be included as an assumption for the argument to be valid.",
+      "caseStudies": [
+        "<blockquote>Power corrupts.<br />\nKnowledge is power.<br />\nTherefore knowledge corrupts.</blockquote>\nThis fallacy actually 4 terms since the term \"power\" as 2 different meanings."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Gambler's fallacy",
+      "slug": "gambler-s-fallacy",
+      "categories": [
+        "Mathematical",
+        "Causal"
+      ],
+      "originalNumber": "56",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [
+        "monte carlo fallacy",
+        "hot hand fallacy"
+      ],
+      "definition": "The incorrect belief that the likelihood of a random event can be affected by or predicted from other, independent events.",
+      "example": "The coin flip has resulted in 5 \"heads\" in a row. I'm overdue for a \"tails\".",
+      "notes": "True randomness will contain patches of what looks like uniformity to minds highly prone to extract patterns. The converse of the gambler's fallacy is the hot hand fallacy in which a winning steak is irrationally expected to continue.",
+      "caseStudies": [
+        "People often irrationally suppose that their 50th international flight is much more likely to end in tragedy than their 1st international flight. All things being equal, the risk is the same for every international flight.",
+        "For most gambling games, the chances of winning or losing the same amount remains constant with each game played. However, if coins are accumulating in a machine that must eventually pay out, there is an increased chance of winning with each play."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Genetic fallacy",
+      "slug": "genetic-fallacy",
+      "categories": [
+        "Linguistic",
+        "Conceptual"
+      ],
+      "originalNumber": "112",
+      "family": "Informal Fallacy",
+      "subCategory": "Red Herring",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when a conclusion is suggested based solely on something or someone's origin rather than its current meaning or context.",
+      "example": "Australia will never become a great nation considering it arose from penal colonies of mere criminals.",
+      "notes": "The value of ideas and strength of arguments can be assessed wholly independently of the conditions of their engendering.",
+      "caseStudies": [
+        "Some suggest that the cruel human experiments Nazi conducted cannot be scientifically reliable. The conditions surrounding the the data collection does not invalidate the reliability of that data.",
+        "Claiming that Christmas trees are somehow evil since they originated in pagan tradition would be a genetic fallacy.",
+        "Refusing to celebrate Halloween since it had its origin in superstition and myth would be a genetic fallacy."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Hasty generalization",
+      "slug": "hasty-generalization",
+      "categories": [
+        "Evidential",
+        "Mathematical"
+      ],
+      "originalNumber": "82",
+      "family": "Informal Fallacy",
+      "subCategory": "Faulty Generalization",
+      "subSubCategory": "",
+      "aliases": [
+        "fallacy of insufficient statistics",
+        "fallacy of insufficient sample",
+        "fallacy of the lonely fact",
+        "leaping to a conclusion",
+        "hasty induction",
+        "secundum quid"
+      ],
+      "definition": "Leaping to a conclusion with insufficient statistics or a insufficient sample size.",
+      "example": "I drove through the town and counted 20 residents, all of them women. The town has only female residents.",
+      "notes": "A hasty generalization might be a result of an insufficient sample size, imprecise measurements, or subjective reporting.\nThis is a type of faulty generalization. A more detailed treatment of faulty generalizations can be found on the supplementary <a href=\"http://logfall.wordpress.com/inductive-errors/\">Inductive Errors</a> page.",
+      "caseStudies": [
+        "A foreign journalist who wanted to report on New York fashion might jump to a hasty generalization if visiting New York on October 31st."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Historian's fallacy",
+      "slug": "historian-s-fallacy",
+      "categories": [
+        "Perspectival"
+      ],
+      "originalNumber": "57",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Assuming that decision makers of the past viewed events from the same perspective and had the same information as those subsequently analyzing the decision.",
+      "example": "If I had lived in medieval times, I would certainly not have thought the sun circled the earth as did all the other fools!",
+      "notes": "We often do not appreciate the strength of societal influence on our belief systems.",
+      "caseStudies": [
+        "Most people would like to think they would have not accepted slavery and other common practices we now consider barbaric had they lived a thousand years ago."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Homunculus fallacy",
+      "slug": "homunculus-fallacy",
+      "categories": [
+        "Conceptual",
+        "Perspectival"
+      ],
+      "originalNumber": "13",
+      "family": "Formal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when a lower level of perception is introduced to explain perception at a higher level, then explains the lower level by invoking the very terms of perception in question.",
+      "example": "Our brains see a face when light from that face enters our eyes, is passed to our neurons, and the face is finally recognized by our neurons.",
+      "notes": "To explain sight by saying our neurons \"see\" is to only add another seeing entity which must itself have a deeper brain that \"sees\", thus leading to an infinite regress.",
+      "caseStudies": [
+        "If someone were to argue that our brains make moral decisions by passing the relevant data to our soul which, in turn, makes the decision for the brain, then this simply defers the explanation of the concept of moral decision-making from the brain to the soul, demanding yet another explanation; how the soul makes moral decisions."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Human standard fallacy",
+      "slug": "human-standard-fallacy",
+      "categories": [
+        "Conceptual",
+        "Perspectival"
+      ],
+      "originalNumber": "2",
+      "family": "Formal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [
+        "appeal to law"
+      ],
+      "definition": "Occurs when a human law, categorization, definition or judgment is assumed to supersede objective fact.",
+      "example": "Because there is a law against chewing gum on Wednesdays, it is immoral to chew gum on Wednesdays.",
+      "notes": "A law against chewing gum on Wednesdays does not suddenly make the act immoral. If it was not immoral prior to a law forbidding it, why would a human law make it so?",
+      "caseStudies": [
+        "Some argue that the use of recreational drugs is immoral by virtue of there existing a human-authored law forbidding their usage.",
+        "Quite regularly, a coroner mistakenly declares someone dead, only to have them revive. In these cases, you'll often have family members claiming that it was a miracle that the patient did the impossible and rose from the \"dead\". As medicine advances, we can expect the current human definition of \"death\" pushed back to reflect the ever-increasing period within which resuscitation is possible.",
+        "Frequently, the dictionary definition of a term is invoked as the final authority on the way that term should be used. Clearly the writers of dictionaries assessed the conventional usage of words to formulate their entries. It is convention, not a human-made dictionary, that is the final authority on the denotation of a particular term. The only other option is to agree upon a stipulated definition of a term before engaging in dialog.",
+        "Prior to the word \"deconversion\" becoming mainstream, there were arguments by some theists that, because the word was not found in a dictionary, the concept it denoted was illegitimate.",
+        "When identifying a flaw in your opponent's thinking, there is often the tendency to invoke the \"official\" name of that fallacy, and hurl the name at your opponent and/or the audience hoping the poison you deem that fallacy to possess will invalidate your opponent's position. At times this is valid; if the fallacy is a formal fallacy, and your opponent's position is fully contingent upon the argument with the fallacy, then you have indeed defeated their position. However, fallacies are collected and named by humans, and many fallacies are not discretely fallacious; they fall on a continuum between rationality and error. It is, therefore, usually much more productive to spend the necessary time explaining why their argument is fallacious rather than calling it by name and looking with mock surprise at your \"irrational\" opponent (though there may be times where this may accomplish your agenda). This site is not the ultimate authority on logical fallacies, but is merely a tool."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "If-by-whiskey",
+      "slug": "if-by-whiskey",
+      "categories": [
+        "Tactical"
+      ],
+      "originalNumber": "50",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "An argument that appears to support both sides of an issue by employing terms that diminish the actual incompatability between the positions.",
+      "example": "If by \"affair\" you mean the hurtful action of cheating on your spouse, then I'm much against it. But if by \"affair\" you mean the inevitable outcome of an adventurous spirit, then I'm all for it.",
+      "notes": "",
+      "caseStudies": [],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Illicit major",
+      "slug": "illicit-major",
+      "categories": [
+        "Formal"
+      ],
+      "originalNumber": "32",
+      "family": "Formal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when a categorical syllogism is invalid because its major term is undistributed in the major premise but distributed in the conclusion.",
+      "example": "Because all pigs like mud, and no birds are pigs, therefore no birds like mud.",
+      "notes": "<br />&nbsp;<br /><blockquote>All As are Cs. <br />No Bs are As.<br />Therefore, no Bs are Cs.</blockquote>.",
+      "caseStudies": [
+        "Conservapedia once had an article devoted to showing a relationship between atheism and obesity. The general idea was that most atheists are obese, and no theists are atheists, and therefore few theists are obese."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Impotent logical space",
+      "slug": "impotent-logical-space",
+      "categories": [
+        "Evidential",
+        "Conceptual"
+      ],
+      "originalNumber": "",
+      "family": "",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when every possible outcome is predicted by a theory, thereby rendering it either redundant to what is materially expected or non-existent.",
+      "example": "We have only blurry photo evidence for the existence of alien space ships, but that's only because the aliens have technology that prevent our cameras from functioning properly.",
+      "notes": "This fallacy is similar to the <a href=\"logfall.wordpress.com/suppressed-correlative/\">suppressed correlative</a>.",
+      "caseStudies": [
+        "Some theists claim that their particular god answers prayer, but there is no possible outcome that does not fall within their definition of answered prayer. This makes their god equivalent to material cause and effect at best, but more probably non-existent.",
+        "Some atheists claim that,\" either you're an atheist or you're not. Make up your mind.\" This implies that absolute evidence is available for an absolute decision one way or the other. There is a smooth gradient of evidence on the question of a god, and therefore a justified belief will often necessarily fall somewhere on that gradient rather than on a discrete pole of belief or disbelief. This does not, of course, hold true for disbelief in gods that are logically impossible."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Incomplete comparison",
+      "slug": "incomplete-comparison",
+      "categories": [
+        "Conceptual"
+      ],
+      "originalNumber": "58",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when not enough information is provided to make a complete comparison.",
+      "example": "This watch is more accurate than that watch, so it's better to buy this one.",
+      "notes": "When buying a new watch, many factor such as price, functionality and style need to be taken into consideration.",
+      "caseStudies": [
+        "If a national health care package is deemed the only response to demographic gaps in health care coverage without proper consideration of long-term financial and social consequences, this is an incomplete comparison.",
+        "If you claim that young people today are wealthier than their parents had at the same age, you would be committing an incomplete comparison fallacy. You'll have to take into account monetary inflation, plus the changing perceived value placed on items and services such as health care, transportation, and computers."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Inconsistent comparison",
+      "slug": "inconsistent-comparison",
+      "categories": [
+        "Conceptual",
+        "Formal"
+      ],
+      "originalNumber": "59",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when complex nodes of comparison are used that make it falsely appear as if a complete comparison has been made.",
+      "example": "My son Arthur runs faster than Thomas, gets higher grades than George, and plays piano better than William. He's definitely the most talented boy.",
+      "notes": "This is a common fallacy employed by advertizers who compare their product against the least attractive competing product for each particular feature.",
+      "caseStudies": [
+        "If you claim your English skills are better than those of Tom and Andrew since Tom can't spell and and Andrew has a low vocabulary, you are committing the inconsistent comparison fallacy since you are simply cherry-picking those skills that favor you in a complex matrix of skills, and there may be other possible relevant measures of English for which you may be weaker than both Tom and Andrew."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Intentional fallacy",
+      "slug": "intentional-fallacy",
+      "categories": [
+        "Perspectival",
+        "Linguistic"
+      ],
+      "originalNumber": "60",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "The assumption that the meaning intended by an author of a concept is not relevant to the understanding of that concept.",
+      "example": "We ought to interpret \"right to bear arms\" within the context of our own time, and ignore the intent of the authors of the phrase.",
+      "notes": "Sometimes the evidence for the author's intentions is not in the actual literature, but must be extracted from other sources such as personal letters and notes.",
+      "caseStudies": [
+        "Some claim that Einstein was a theist based on some of his statements referring to \"God\". A more careful examination of his personal correspondence seems to suggest that he was, at most, a deist.",
+        "Some might suggest that Mark Twain's use of the \"n\" word belies the author's racism, not taking into consideration the more benign use of the term in that era, nor any literary device Twain might have been employing."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Is-ought problem",
+      "slug": "is-ought-problem",
+      "categories": [
+        "Conceptual"
+      ],
+      "originalNumber": "12",
+      "family": "Formal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [
+        "isolated ought"
+      ],
+      "definition": "The inappropriate inference that, because something is a particular way, it ought to be that way.",
+      "example": "Nearly all humans wear clothing in public, so it is immoral not to.",
+      "notes": "Any \"ought\" ought to be accompanied by an \"if\" if it is to have any meaning. For example, you can tell your friend he ought to hurry if he wants to catch the bus, but an \"ought\" isolated from an \"if\" carries no meaning. Even a statement such as \"You ought to listen to your parents\" carries an implicit \"if\". If you do as they say, you'll avoid undesirable consequences. Another example is in the context of a game of chess. You ought not cheat in chess because it is socially unacceptable; i.e., if you want to maintain social respect. Even religious-based moral \"oughts\" contain implicit \"if\"s as in \"You ought not lie if you want to please God and avoid eternal torment.\" \"Ought\"s cannot be divorced from \"if\"s.<br />&nbsp;<br />\n<blockquote>\"<i>In every system of morality, which I have hitherto met with, I have always remark'd, that the author proceeds for some time in the ordinary ways of reasoning, and establishes the being of a God, or makes observations concerning human affairs; when all of a sudden I am surpriz'd to find, that instead of the usual copulations of propositions, is, and is not, I meet with no proposition that is not connected with an ought, or an ought not. This change is imperceptible; but is however, of the last consequence. For as this ought, or ought not, expresses some new relation or affirmation, 'tis necessary that it shou'd be observ'd and explain'd; and at the same time that a reason should be given; for what seems altogether inconceivable, how this new relation can be a deduction from others, which are entirely different from it.</i>\"<br />David Hume in <i>Treatise of Human Nature</i> </blockquote>.",
+      "caseStudies": [
+        "Ayn Rand argued that one ought to act in a way consistent with one's own rational self-interests. The implicit \"if\" is presumably \"if you want to live a long and happy life.\" Yet it is never explained why a life of altruism cannot also lead to a long and happy life, and why it ought to be replaced by a more egoistic existence."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Judgmental language",
+      "slug": "judgmental-language",
+      "categories": [
+        "Tactical"
+      ],
+      "originalNumber": "113",
+      "family": "Informal Fallacy",
+      "subCategory": "Red Herring",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Insulting or pejorative language to influence the recipient's judgment.",
+      "example": "Your position on free community health checks is accepted only by prostitutes! Only whores would accept such a concept!",
+      "notes": "",
+      "caseStudies": [],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Linearity fallacy",
+      "slug": "linearity-fallacy",
+      "categories": [
+        "Conceptual",
+        "Mathematical"
+      ],
+      "originalNumber": "",
+      "family": "",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "The assumption that a phenomenon functions linearly, overlooking important factors that produce non-linearity.",
+      "example": "The mortality rate of cats falling 20 stories will be double that of cats falling 10 stories.",
+      "notes": "The mortality rate for cats falling from 10 stories may be lower than for those falling from 20 due to several non-linear factors including non-linear acceleration and terminal velocity, and the non-linear time for a cat to turn itself upright and relax.",
+      "caseStudies": [
+        "To suggest that a person drinking 10 alcoholic drinks will be half as impaired as a person who has had 5 alcoholic drinks is to fail to understand many possible non-linear factors.",
+        "Spending twice the current budget on education will probably not double the test scores of students.",
+        "Having twice the income of your neighbor will probably not make you twice as happy.",
+        "It's very seldom that drinking a $200 bottle of wine results in 10 times the pleasure of drinking a $20 bottle of wine due to the law of diminishing returns."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Luddite fallacy",
+      "slug": "luddite-fallacy",
+      "categories": [
+        "Evidential"
+      ],
+      "originalNumber": "125",
+      "family": "Conditional/Questionable Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Related to the belief that labour-saving technologies increase unemployment by reducing demand for labour.",
+      "example": "A city blocks warehouse automation on the ground that any labor-saving technology must reduce total employment, without considering how demand and new roles can shift elsewhere.",
+      "notes": "",
+      "caseStudies": [],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Masked man fallacy",
+      "slug": "masked-man-fallacy",
+      "categories": [
+        "Formal"
+      ],
+      "originalNumber": "14",
+      "family": "Formal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when the substitution of identical designators in a true statement leads to a potentially false one.",
+      "example": "Since I know who my girlfriend is, but don't know who ate all the ice cream, my girlfriend is not the person who ate the ice cream.",
+      "notes": "",
+      "caseStudies": [],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Misleading vividness",
+      "slug": "misleading-vividness",
+      "categories": [
+        "Tactical"
+      ],
+      "originalNumber": "83",
+      "family": "Informal Fallacy",
+      "subCategory": "Faulty Generalization",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Involves describing an occurrence, often exceptional, in vivid detail, to distort the actual severity of the problem.",
+      "example": "You should never date a Texas girl. My friend dated one, and she slashed the tires on his car and killed his dog.",
+      "notes": "",
+      "caseStudies": [],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Moving the goalpost",
+      "slug": "moving-the-goalpost",
+      "categories": [
+        "Tactical",
+        "Evidential"
+      ],
+      "originalNumber": "61",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "raising the bar",
+      "aliases": [],
+      "definition": "Occurs when the evidence presented to meet an initial standard of evidence is dismissed, and some greater standard of evidence is then imposed.",
+      "example": "I bet you can't lift this box! ... All right, I see you can lift that box, but I bet you can't lift this one over here!",
+      "notes": "It is often difficult for both sides of an issue to agree upon what would constitute sufficient evidence. However, such an agreement is foundational to any real progress in an honest discussion.",
+      "caseStudies": [
+        "There have been many claims throughout recent years made by dualists about the limits of brain science to explain mental processes with the implication that belief in dualism is therefore warranted. When new studies falsify these claims, new claims are introduced.",
+        "With many of the moon landing conspiracy theorists, as each of their claims is rebutted, they will move on to the next claim saying \"But what about...\" There appears to be no set degree of evidence that will convince them.",
+        "Consider the following popular internet post.<blockquote>Boy writes God a letter, \"Dear God, why do you let bad things happen in our schools?\" God replies,\"Dear son, I'm not allowed in your schools.\"</blockquote>If this particular god is giving his banishment from schools as the sole reason why bad things happen in those schools, then schools in which this particular god is allowed should not experience bad things. When presented with this corollary, those defending the quote often move the goalpost back to a more sensible and defensible position that makes the presence of bad people in schools the reason for bad things happening in those schools."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Naturalistic fallacy",
+      "slug": "naturalistic-fallacy",
+      "categories": [
+        "Perceptual",
+        "Conceptual",
+        "Evidential"
+      ],
+      "originalNumber": "15",
+      "family": "Formal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "The claim that if something is natural, pleasant, or popular, then it is good or right.",
+      "example": "I know I'm in love with a bank robber. But how could could it be wrong if it feels so right?",
+      "notes": "",
+      "caseStudies": [
+        "It has been argued that, the poverty of the uneducated is deserved because they choose not to further their education. This ignores the arguably vicious circular causation between a low education level and the inability to earn enough money to get an education. Conversely, there is nothing inherent to the status of the affluent that makes them \"worthy\" or \"deserving\" of their fate.",
+        "Some proponents of Social Darwinism suggested that, because evolution operates on the survival of the fittest, that we ought to extend this notion of survival of the fittest to social policies. There is no coherent reason why humans need to adopt nature's agenda as their own agenda."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Negative proof fallacy",
+      "slug": "negative-proof-fallacy",
+      "categories": [
+        "Formal"
+      ],
+      "originalNumber": "17",
+      "family": "Formal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Assuming that, because a premise cannot be proven false, the premise must be true; or that, because a premise cannot be proven true, the premise must be false.",
+      "example": "Can you prove I'm not wearing an invisible hat? If you can't, I'm justified in believing I am.",
+      "notes": "The degree of warrant for a given proposition is the degree of evidence that favors that proposition, not the absence of evidence that would falsify the proposition. The ability to say \"You can't prove I'm not right\" does not mean you are warranted in believing you are right.",
+      "caseStudies": [
+        "If someone claims that global warming is due to human activity, then justifies their position by saying \"You can't prove human activity is not the cause of global warming\", they have committed this fallacy.",
+        "In the U.S., until someone accused of a crime has been found guilty based on sufficient evidence, they are presumed innocent. This does not mean they <strong>are</strong> innocent of the crime. It is just that we start with the assumption that they are innocent until (if ever) sufficient evidence warrants our deeming them guilty."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Nirvana fallacy",
+      "slug": "nirvana-fallacy",
+      "categories": [
+        "Conceptual"
+      ],
+      "originalNumber": "16",
+      "family": "Formal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when a solution to a problem is said to have no value because it is not perfect.",
+      "example": "They shouldn't get married since they often have arguments.",
+      "notes": "This is very similar to the \"perfect solution fallacy.\" \"The perfect is the enemy of the good.\" ~Voltaire.",
+      "caseStudies": [],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "No True Scotsman",
+      "slug": "no-true-scotsman",
+      "categories": [
+        "Conceptual",
+        "Linguistic"
+      ],
+      "originalNumber": "76",
+      "family": "Informal Fallacy",
+      "subCategory": "Faulty Generalization",
+      "subSubCategory": "Accident (fallacy)",
+      "aliases": [],
+      "definition": "Occurs when a conventional categorization is denied based on unconventional or arbitrary criteria.",
+      "example": "How can you call yourself a patriot when you are against this war!",
+      "notes": "Those who employ this fallacy will often interject <i>ad hoc</i> or arbitrary criteria to maintain an artificial delineation.",
+      "caseStudies": [
+        "If a theist informs an atheist that his position is indefensible since Stalin was an atheist, it would be a <i>no true Scotsman</i> fallacy for the atheist to suggest that Stalin was not a <i>real</i> atheist. And it would be forfeiting the chance to point out the theist's own fallacy of <a href=\"http://logfall.wordpress.com/top-down-condemnation/\">top-down condemnation</a>.",
+        "If an atheist informs a Christian that his position is indefensible since Hitler was an Christian, it would be a <i>no true Scotsman</i> fallacy for the theist to suggest that Hitler was not a <i>real</i> Christian. And it would be forfeiting the chance to point out the atheist's own fallacy of <a href=\"http://logfall.wordpress.com/top-down-condemnation/\">top-down condemnation</a>."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Overwhelming exception",
+      "slug": "overwhelming-exception",
+      "categories": [
+        "Linguistic",
+        "Conceptual"
+      ],
+      "originalNumber": "84",
+      "family": "Informal Fallacy",
+      "subCategory": "Faulty Generalization",
+      "subSubCategory": "",
+      "aliases": [
+        "hasty generalization"
+      ],
+      "definition": "A generalization that is coupled with qualifications so restrictive that the generalization is essentially impotent.",
+      "example": "I'm the type of man who always pays for my date's dinner...except in the case where she want to go somewhere other than KFC.",
+      "notes": "An overwhelming exception is based on an accurate generalization, but is coupled with so many qualifications or such extreme qualifications that the generalization is rendered anemic and meaningless.",
+      "caseStudies": [
+        "Some theists argue that their god is patient...except for whenever someone sins...at which point the offender is deemed worthy of eternal torture by a now wrathful god...and everyone regularly sins.",
+        "Many citizens argue that their country is a peaceful country...except whenever it is provoked. The definition of \"provoke\" is then liberally defined to encompass any trivial offense of another country."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Package-deal fallacy",
+      "slug": "package-deal-fallacy",
+      "categories": [
+        "Conceptual"
+      ],
+      "originalNumber": "18",
+      "family": "Formal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Consists of assuming that things often grouped together by tradition or culture must always be grouped that way.",
+      "example": "She's likes bowling, so she certainly drinks beer as do most other bowlers.",
+      "notes": "This fallacy is measured in degrees. For example, you might be warranted in saying \"John will probably like this book since the last book he enjoyed was also science fiction.\".",
+      "caseStudies": [
+        "Because Judge John E. Jones III was appointed by George W. Bush, it was assumed by many that he would favor the right-leaning anti-evolutionists in the Dover trial over intelligent design. This turned out to not be the case.",
+        "Tiger Woods was a surprised to many who assumed that black golfers could never attain the skill-level of white golfers."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Pathetic fallacy",
+      "slug": "pathetic-fallacy",
+      "categories": [
+        "Conceptual",
+        "Perspectival"
+      ],
+      "originalNumber": "85",
+      "family": "Informal Fallacy",
+      "subCategory": "Faulty Generalization",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when an inanimate object is wrongly treated as if it has the characteristics of animate objects.",
+      "example": "Look at the flowers lean towards the sun. You're cruel to sit in their sunlight!",
+      "notes": "",
+      "caseStudies": [],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Perfect solution fallacy",
+      "slug": "perfect-solution-fallacy",
+      "categories": [
+        "Conceptual",
+        "Evidential"
+      ],
+      "originalNumber": "62",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [
+        "nirvana fallacy"
+      ],
+      "definition": "Occurs when an argument assumes that a perfect solution must exist and/or that a solution should be rejected because some part of the problem would still exist after it has been implemented.",
+      "example": "But, Dad! Your $20 is not going to replace the car I crashed! Keep your money!",
+      "notes": "<br />&nbsp;<br /><blockquote>\"<i>The perfect is the enemy of the good.</i>\" ~Voltaire</blockquote>.",
+      "caseStudies": [
+        "Some in the US claim that tighter border controls are \"not the solution\" to the problem of illegal immigration, and ignore the fact that tighter borders might make a significant difference.",
+        "Some argue \"You can't stop illicit drug use, so there is no sense in having laws against illicit drugs.\" Changing the referent from illicit drugs to murder highlights the fallacy."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Perfect standard",
+      "slug": "perfect-standard",
+      "categories": [
+        "Conceptual"
+      ],
+      "originalNumber": "",
+      "family": "",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when an ideal of perfection is placed in contrast to a gradient of many imperfect states, implying that there are only 2 discrete categories.",
+      "example": "I remember you once shouted in anger at your brother. You are essentially an angry person.",
+      "notes": "Those employing this fallacy are removing semantic resolution from the issue, and are demanding others to categorize quite disparate degrees of phenomena into only 2 categories. This is similar to <a href=\"logfall.wordpress.com/semantic-pixelization/\">semantic pixelization</a>.",
+      "caseStudies": [
+        "It has been questioned why, when blind-folded, people cannot walk in a straight line. It would actually be highly unusual for a person to maintain a straight line, and there is a wide range of possible degrees of accuracy between straight and highly curved. To ignore this continuum is to forfeit useful semantic resolution.",
+        "Some pessimistically point to the fact that, at any given moment, there is a violent conflict somewhere in the world. They set up a artificial violent/non-violent dichotomy, then extrapolate from the existence of violence that humanity is inherently violent, ignoring the many functional and largely altruistic societies at peace around the world that world paint a more nuanced picture of humanity."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Perverted analogy",
+      "slug": "perverted-analogy",
+      "categories": [
+        "Tactical",
+        "Conceptual"
+      ],
+      "originalNumber": "117",
+      "family": "Informal Fallacy",
+      "subCategory": "Red Herring",
+      "subSubCategory": "Straw man argument",
+      "aliases": [],
+      "definition": "Twisting an opponent's analogy to mean something broader than intended.",
+      "example": "Tom said life is like a river in that those who spend the energy to maneuver their boats to the middle of the river will see more during their lifetime. This is ridiculous since he can not explained where the boats come from.",
+      "notes": "This is a type of straw-man fallacy.",
+      "caseStudies": [
+        "If person <i>A</i> claims their \"loving\" god will eternally torture the humans he created if they disobey him, and person <i>B</i> claims this is analogous to a \"loving\" human father eternally torturing his children if they disobey, for person <i>A</i> would unjustifiably pervert the analogy if they were to claim that the analogy does hold for irrelevant reasons such as \"the human father is not righteous\" or \"human fathers don't live eternally\".",
+        "If person <i>A</i> claims religious faith gives people joy that hides and prevents other possible joys in life in the same way that cocaine gives junkies joy at the expense of other possible joys in life, person <i>B</i> would unjustifiably pervert the analogy if they were to claim that the analogy does hold for irrelevant reasons such as \"cocaine is not legal\" or \"people with faith serve God.\"."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Piggy-back assumption",
+      "slug": "piggy-back-assumption",
+      "categories": [
+        "Evidential"
+      ],
+      "originalNumber": "",
+      "family": "",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when one is connected to a second assumption in a non-contingent way, then the 1st assumption is deemed justified by evidence for the 2nd assumption.",
+      "example": "I've told you that I'm a CIA agent from Boston. Here's my driver's license showing a Boston address. That should make it clear that I work for the CIA.",
+      "notes": "This fallacy is true only where there is a non-contingent relationship. However, if you were to claim you had been married and produced an official document of your divorce, that constitutes evidence for both the divorce and a necessary prior marriage. To a softer degree, claiming that you met the president, then producing a photo of you together with the president's wife would constitute evidence for your claim you met the president.",
+      "caseStudies": [
+        "Some theists suggest that archeological evidence of biblical sites is evidence for the biblical miracles mentioned in the same passage as is the site. Uncovering historical evidence for the existence of St. Nicolas does not lend credibilty to flying reindeer.",
+        "Some people argue that evidence for government impropriety on issue <i>X</i> implies that there is also impropriety on issue <i>Y</i>. While inductive evidence derived from assessing habitual behavior warrants a measured degree of speculation, it does not warrant confidence incommensurate to that evidence."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Poisoning the well",
+      "slug": "poisoning-the-well",
+      "categories": [
+        "Tactical"
+      ],
+      "originalNumber": "114",
+      "family": "Informal Fallacy",
+      "subCategory": "Red Herring",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Where negative claims are preemptively made against a position with the intention of discrediting whatever person is about to say.",
+      "example": "Before my opponent speaks, let me remind you that he is a college dropout and has never held a job longer than a year.",
+      "notes": "This fallacy is often found in public forums where the audience includes those who lack critical thinking skills and who are prone to emotional arguments.",
+      "caseStudies": [
+        "Sarah Palin's crowning as a beauty pageant queen in 1984 is often introduced by those who wish to bring into question her competency. Beauty pageant contestants are often considered less intelligent than what is needed for public office.",
+        "Barack Obama's Muslim father is often brought up in political dialogue in an attempt to poison the well. Many Americans have a fear of a Muslim agenda in Washington. His middle name \"Hussein\" is also emphsized to heightened this fear."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Post hoc ergo propter hoc",
+      "slug": "post-hoc-ergo-propter-hoc",
+      "categories": [
+        "Causal"
+      ],
+      "originalNumber": "63",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [
+        "false cause",
+        "coincidental correlation",
+        "correlation not causation"
+      ],
+      "definition": "Occurs when a cause of a phenomenon is attributed to a prior phenomenon without providing evidence of causation.",
+      "example": "After I started wearing a copper bracelet, my health improved! It worked!",
+      "notes": "Causation must be rigorously demonstrated. Phenomena that occur in sequence do not necessarily have a causal link. This fallacy is related to the <a href=\"http://logfall.wordpress.com/correlation-is-not-causation/\">correlation is not causation</a> fallacy.",
+      "caseStudies": [
+        "Most people feel a period of elation every time they voluntarily change jobs. Many are tempted to cite the conditions of the new job as the reason for their better mood. Is it the new job that is causing the elation, or merely the change?"
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Proof by example",
+      "slug": "proof-by-example",
+      "categories": [
+        "Conceptual",
+        "Evidential"
+      ],
+      "originalNumber": "27",
+      "family": "Formal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when examples are offered as inductive proof for a universal proposition.",
+      "example": "This apple is red, so all apples must be red.",
+      "notes": "A more detailed treatment of this fallacy can be found on the supplementary <a href=\"http://logfall.wordpress.com/inductive-errors/\">Inductive Errors</a> page.",
+      "caseStudies": [],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Proof by verbosity",
+      "slug": "proof-by-verbosity",
+      "categories": [
+        "Tactical",
+        "Linguistic"
+      ],
+      "originalNumber": "64",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [
+        "argumentum verbosium",
+        "proof by intimidation"
+      ],
+      "definition": "Submitting an argument too complex, obtuse or verbose to reasonably deal with.",
+      "example": "Insomuch as it remains within our agency, it behooves us to eschew obfuscation, and espouse elucidation.",
+      "notes": "This is often a tactic used in formal speeches. If not all the many minor points introduced are not addressed by the opponent, the verbose contender will claim victory.",
+      "caseStudies": [
+        "Donald Rumsfeld once said...<blockquote>There are known knowns. These are things we know that we know. There are known unknowns. That is to say, there are things that we know we don't know. But there are also unknown unknowns. There are things we don't know we don't know.</blockquote>."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Prosecutor's fallacy",
+      "slug": "prosecutor-s-fallacy",
+      "categories": [
+        "Mathematical"
+      ],
+      "originalNumber": "65",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Assuming that a low probability of false matches means an improbable false match will not be found.",
+      "example": "The probability of winning the lottery without cheating is a million to one, so the winner must have cheated.",
+      "notes": "",
+      "caseStudies": [],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Psychologist's fallacy",
+      "slug": "psychologist-s-fallacy",
+      "categories": [
+        "Perspectival"
+      ],
+      "originalNumber": "66",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when an observer presupposes the objectivity of his own perspective when analyzing a behavioral event.",
+      "example": "My buddies probably wish they were not married just as I do.",
+      "notes": "This fallacy is usually committed evermore infrequently as people age and explore the opinions and experiences of others outside their own community.",
+      "caseStudies": [
+        "Many theists who feel protected from their own impulses within the stricture of their religion's moral code accuse those who live without a moral code of having nothing that would prevent them from rape or murder. They subjectively assume that others share the same impulses they possess.",
+        "Many life-long atheists presume that theists are less than truthful when those theists claim they have experienced god speaking to them."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Red herring",
+      "slug": "red-herring",
+      "categories": [
+        "Tactical",
+        "Emotional"
+      ],
+      "originalNumber": "88",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when a speaker attempts to distract the audience from an unresolved topic by introducing a new topic the speaker feels more comfortable with.",
+      "example": "I don't have evidence with me that home-schooling best prepares students for university, but, anyway, if we don't home-school our children, they will end up with few morals.",
+      "notes": "Most of the tactical and emotional fallacies fall into this general category.",
+      "caseStudies": [],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Redeeming illogic with evidence",
+      "slug": "redeeming-illogic-with-evidence",
+      "categories": [
+        "Evidential"
+      ],
+      "originalNumber": "",
+      "family": "",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when a proponent of an illogical concept demands evidence before dismissing the illogical concept.",
+      "example": "I have a golden square triangle instead of a heart in my chest, and I have the lab analysis to prove it.",
+      "notes": "If someone claims to have a golden square triangle in their chest, and provides gold flakes or a lab analysis as evidence, you don't have to test the gold flakes or scrutinize the lab analysis for authenticity before you dismiss the notion that they have a golden square triangle in their chest. If a concept has been demonstrated to be illogical, no amount of evidence will salvage that concept.<br />To a lesser degree, what we define as physical impossibilities can be dismissed in the same way we can dismiss logical impossibilities. However, we must be careful since what is physical laws have been abstracted from nature by humans, and may not be absolute. However, this caveat does not mean we are wrong to dismiss with a high degree of confidence any concept that science considers a physical impossibility.",
+      "caseStudies": [
+        "Some theists define their god as both infinitely \"loving\" and infinitely \"hateful\" to humans. We need not scrutinize their holy book or nature for evidence of their incoherent god. If there is evidence for a god in nature, their god has already been eliminated as a candidate due to the absurdity of his definition."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Regression fallacy",
+      "slug": "regression-fallacy",
+      "categories": [
+        "Causal",
+        "Mathematical"
+      ],
+      "originalNumber": "68",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Ascribes the cause of some phenomenon to some non-statistical factor, when natural and expected statistical fluctuations may account for the apparent phenomenon.",
+      "example": "Last year we had 12 car accidents on main street, double the previous year's figures! The frequency of accidents on Main Street fell to only 6 again after a speed camera was installed early this year. Therefore, the speed camera has improved road safety.",
+      "notes": "This is similar to the <a href=\"http://logfall.wordpress.com/post-hoc-ergo-propter-hoc/\">post hoc ergo propter hoc</a> fallacy, but is based on the \"regression to the mean\" principle in which certain phenomena naturally fluctuate in volume or intensity. This statistical \"noise\" in the data is natural and expected.",
+      "caseStudies": [
+        "In 1999 the Department of Education in Massachusetts gave it's school improvement goals, then subsequently tested those districts for any detectable improvement. Unsurprisingly, the bottom 50% of the schools made notable improvement. What was not so heavily emphasized was that the top 50% of their schools fell about the same degree as the bottom 50% gained. The apparent improvement of the bottom half and the apparent drop of the top half of any single phenomena is what is statistically expected and does not necessarily show the efficacy of any policy in effect at the time.",
+        "Two very tall parents will most likely have children who are taller than the average child. However, due to the natural regression to the mean, the children will also likely be shorter than the average height of their parents. To attribute the shortness of the child relative to their parents to anything other than a statistical expectation without accompanying evidence would be a regression fallacy."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Reification",
+      "slug": "reification",
+      "categories": [
+        "Conceptual",
+        "Linguistic",
+        "Perspectival"
+      ],
+      "originalNumber": "69",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [
+        "hypostatization",
+        "concretism"
+      ],
+      "definition": "Occurs when an abstraction is treated as if it were a real event or physical entity.",
+      "example": "The falling tree chose to flatten my new truck. So I hacked it into firewood and punished it in my wood stove.",
+      "notes": "In the example of a falling tree \"choosing\" a route, intention and guilt is wrongly ascribed to the non-conscious and amoral tree. Reification is usually only a problem where linguistic rigor is required. To draw someone's attention to the \"angry\" clouds is no fallacy, but a perfectly good linguistic device that effectively conveys real meaning.",
+      "caseStudies": [
+        "If you were to suggest that religion is immoral since it scares humans into behaving well, you would have committed the fallacy of reification since religion is neither a moral agent that can act immorally, nor can it have the intention to scare someone since it is not a cognitive entity.",
+        "If you were to claim capitalism is \"evil\", you would be reifying capitalism by equating it to a moral agent."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Retrospective determinism",
+      "slug": "retrospective-determinism",
+      "categories": [
+        "Causal",
+        "Perspectival"
+      ],
+      "originalNumber": "70",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [
+        "retrodiction",
+        "post-diction"
+      ],
+      "definition": "Arguing that, because some event has occurred, its occurrence was inevitable and should have been clear from the \"obvious\" causes.",
+      "example": "From the time the young Wayne Gretzky first put on skates, it was obvious from his natural ability and determinism that he was destined for greatness.",
+      "notes": "The Wayne Gretzky example of \"retrodiction\" ignores all the forgotten children of parents who would now also be retrodicting had their children, who may have exhibited the same potential and determination as young Wayne, not failed to live up to the aspirations of their parents for some reason or other.",
+      "caseStudies": [
+        "Subsequent to the stock market crash of 2008-2009, many financial pundits who had failed to offer prospective deterministic predictions prior to the crash began to make retrospective deterministic retrospection, implying that the dynamics that lead to the crash were obvious to them."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Semantic pixelization",
+      "slug": "semantic-pixelization",
+      "categories": [
+        "Linguistic"
+      ],
+      "originalNumber": "",
+      "family": "",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [
+        "reductive semantic resolution"
+      ],
+      "definition": "Occurs when a term or concept with low semantic precision is chosen over an available more precise term or concept in a way that distorts the opponent's stance.",
+      "example": "You say you tend to believe you'll not die before you're 50. If you don't believe you'll die before you're 50, why did you buy a life insurance policy when you were 30?",
+      "notes": "In the example, the person making the argument is attempting to make his opponents belief binary so it can be more easily criticized. The belief most individuals have that they will live past 50 is not some binary and absolute belief, but rather is a degree of belief that emerges from an actuarial assessment of the probabilities. This fallacy is similar to the <a href=\"logfall.wordpress.com/perfect-standard/\">perfect standard</a> fallacy.",
+      "caseStudies": [
+        "The media often make statements such as \"the murder rate increased by 50% last year\" instead of more clearly stating \"there were 3 murders committed this year, one more than last year.\" This unnecessarily diminishes the semantic resolution.",
+        "You'll often hear statement such as \"Just give me a straight answer! Do you or do you not enjoy taking drugs? Stop being evasive!\" To answer \"yes\" or \"no\" would be to unnecessarily remove semantic resolution since enjoyment is a concept of degrees, and \"drugs\" is a term of multiple meanings.",
+        "When reporting crimes, the media often unnecessarily reduces semantic resolution by referring to an 18-year-old perpetrator or victim as a \"man\" or \"woman\" while referring to a 17-year-old as a \"child\".",
+        "Official titles of company officials are often vague and meaningless due to an attempt to heighten the prestige of the official. You may find yourself speaking to a \"vice president\" who is only one of 200 vice presidents in a company of 250 staff. The resolution that would allow you to better assess the real authority of the individual has been intentionally removed."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Sentimental fallacy",
+      "slug": "sentimental-fallacy",
+      "categories": [
+        "Evidential",
+        "Emotional"
+      ],
+      "originalNumber": "115",
+      "family": "Informal Fallacy",
+      "subCategory": "Red Herring",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "An argument that wrongly assumes that what is most pleasant is most true.",
+      "example": "It would be great if we could reduce the national debt without raising taxes or reducing spending. Therefore there must be a way we can accomplish this.",
+      "notes": "This fallacy is similar to <a href=\"http://logfall.wordpress.com/wishful-thinking/\">wishful thinking</a>.",
+      "caseStudies": [
+        "If, in response to painful demographic gaps in health care coverage, it is argued that having a national health care bill would be a wonderful thing, and is therefore necessary, this would be committing the sentimental fallacy. The desire for something does not warrant its realization. Other factors such as long-term consequences must be considered. Emotion does not carry an imperative."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Sharpshooter fallacy",
+      "slug": "sharpshooter-fallacy",
+      "categories": [
+        "Evidential",
+        "Conceptual"
+      ],
+      "originalNumber": "120",
+      "family": "Informal Fallacy",
+      "subCategory": "Red Herring",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Picking your target after you make your prediction or speculation to ensure that you are right.",
+      "example": "Last year, the governor promised to stimulate the economy during his term, and you will note that this year there has been an increase of 2,000 jobs in the service industry.",
+      "notes": "The governor in the example may be ignoring other less-favorable data to paint a picture of success. This fallacy is similar to <a href=\"http://logfall.wordpress.com/cherry-picking/\">cherry-picking</a>. It is subjectively and arbitrarily (though perhaps subconsciously) selecting data that will bolster your position while ignoring data inconsistent with your position. For this reason, scientists attempt to reduce subjectivity by starting with a hypothesis, then attempt to falsify that hypothesis by every imaginable means. This increases the objectivity basic to scientific success and respectability.",
+      "caseStudies": [
+        "Consider someone who claims he can accurately and consistently predict the outcome of coin flips. After 5 flips he has only guessed 2 flips correctly (40%), and wants to continue the experiment. Finally after 20 flips, he has guessed 13 correctly, and wants to stop, making his accuracy appear to be 65%. However, because he was able to choose when to quit, the results are subjectively biased, and do not meet the standards of experimentation set by science.",
+        "Cherry picking data on global warming has been one area of recent abuse. \"If you look at the data and sort of cherry-pick a micro-trend within a bigger trend, that technique is particularly suspect,\" says John Grego, a professor of statistics at the University of South Carolina."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Single cause fallacy",
+      "slug": "single-cause-fallacy",
+      "categories": [
+        "Causal",
+        "Conceptual"
+      ],
+      "originalNumber": "52",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [
+        "joint effect",
+        "causal oversimplification"
+      ],
+      "definition": "Occurs when it is assumed that there is merely one cause of a phenomenon while other possibly contributing causes go undetected, are ignored or are illegitimately minimized.",
+      "example": "The drop in crime in our neighborhood is due to better policing.",
+      "notes": "The actual cause of a local drop in crime may actually be a collection of causes such as the installation of surveillance cameras, a better local economy that has given would-be criminals jobs and money, improved forensics, new home entertainment hardware and software that keep would-be criminals preoccupied, better role models, and tougher laws that have locked up the most frequent offenders. This fallacy is a type of <a href=\"http://logfall.wordpress.com/false-dilemma/\">false dilemma</a>.",
+      "caseStudies": [
+        "Nearly every country that has become prosperous throughout history has had some of its citizens claiming that their greatness was entirely due to the superiority of their nationality or their particular god.",
+        "Whenever there is a school shooting, there emerge dozens of speculative opinions, each fingering a single cause such as poor parenting, violent video games, secular education, or the availability of guns. A responsible opinion would attempt cite evidence for the weight of each possible cause."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Slippery slope",
+      "slug": "slippery-slope",
+      "categories": [
+        "Causal",
+        "Conceptual"
+      ],
+      "originalNumber": "127",
+      "family": "Conditional/Questionable Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [
+        "fallacy of the beard"
+      ],
+      "definition": "The argument that a small first step will inevitably leads to a chain of related events culminating in some significant undesirable impact.",
+      "example": "If we allow alcohol use on campus, we will eventually be forced to allow illicit drug use.",
+      "notes": "This is a fallacy only where there is certainty in the conclusion and an absence of evidence that similar contexts have produced or would produce degenerating standards. There may very well be a snowball effect possible for the given phenomenon, but the evidence for such must accompany the argument. This is related to the <a href=\"http://logfall.wordpress.com/continuum-fallacy/\">continuum fallacy</a>.",
+      "caseStudies": [
+        "Some social conservatives have argued that, if we accept gay marriage, there is nothing stopping us from allowing polygamy, adult/child marriage, or marriage between species. Unless this argument is accompanied by evidence or argumentation that the legalization of gay marriage removes all constraints upon the other forms of marriage cited, this is a slippery slope fallacy.",
+        "On the second day of the Scopes Trial, Clarence Darrow argued... <blockquote>If today you can take a thing like evolution and make it a crime to teach it in the public school, tomorrow you can make it a crime to teach it in the private schools, and the next year you can make it a crime to teach it to the hustings or in the church. At the next session you may ban books and the newspapers. Soon you may set Catholic against Protestant and Protestant against Protestant, and try to foist your own religion upon the minds of men. If you can do one you can do the other. Ignorance and fanaticism is ever busy and needs feeding. Always it is feeding and gloating for more. Today it is the public school teachers, tomorrow the private. The next day the preachers and the lectures, the magazines, the books, the newspapers. After [a]while, your honor, it is the setting of man against man and creed against creed until with flying banners and beating drums we are marching backward to the glorious ages of the sixteenth century when bigots lighted fagots to burn the men who dared to bring any intelligence and enlightenment and culture to the human mind.<br /><sup><a herf=\"http://www.law.umkc.edu/faculty/projects/ftrials/scopes/day2.htm\">source</a></sup></blockquote>."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Special pleading",
+      "slug": "special-pleading",
+      "categories": [
+        "Evidential",
+        "Conceptual"
+      ],
+      "originalNumber": "71",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when a proponent of a position attempts to introduce an exemption to a generally accepted rule or principle without justifying the exemption.",
+      "example": "Prayer works, but it's just that you can't subject it's claims to the tools of science.",
+      "notes": "In the example, why would claims of material effects from spiritual causes be off-limits to scientific scrutiny when the effects of all other causes can be assessed by science?",
+      "caseStudies": [
+        "Some communities have proposed that police officers and their families be exempt from citations for traffic offenses. But it would seem that the reasons given for establishing speed limits would hold also for the families of police officers.",
+        "Many religions hold that forgiveness should be granted without bloodshed or payment of any sort, yet exempt their own god by offering irrelevant excuses such as \"God is holy\" or \"God's ways are not our ways.\"."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Spotlight fallacy",
+      "slug": "spotlight-fallacy",
+      "categories": [
+        "Perspectival"
+      ],
+      "originalNumber": "86",
+      "family": "Informal Fallacy",
+      "subCategory": "Faulty Generalization",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when a person uncritically assumes that every member within a certain porous category is like those that receive the most coverage in the media.",
+      "example": "All the Hispanics I've seen interviewed on television are not the least bit shy, so your neighbor Felipe surely can't be shy!",
+      "notes": "This is a type of faulty generalization. A more detailed treatment of faulty generalizations can be found on the supplementary <a href=\"http://logfall.wordpress.com/inductive-errors/\">Inductive Errors</a> page.",
+      "caseStudies": [
+        "Because of the salient drama surrounding abortion clinic bombings, it became easy to erroneously view all abortion opponents as gun-wielding lunatics.",
+        "Some could argue, based on television interviews, that Americans are not at all shy. This wold be a erroneous assumption since those to shy to be interviewed are never seen. This is the same type of error that leads to a selection bias in statistical studies.",
+        "While most Japanese who watch their pessimistic media assumed the 1,000 murders in 2010 in Japan was much higher than in what seemed to be a more peaceful past, the number was nearly 3 times lower than the murder rate in the 1950s, and remains one of the lowest per captita murder rates in the world."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Square logic",
+      "slug": "square-logic",
+      "categories": [
+        "Formal"
+      ],
+      "originalNumber": "42",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "A complex argument which loses logical cohesion somewhere in the complexity.",
+      "example": "If you only asked me, I would tell you the truth. But you didn't ask, so if I told you a lie you wouldn't believe it was a lie since the truth is not what you asked for.",
+      "notes": "This fallacy is often a composite collection of several fallacies within one argument, and is primarily limited to 1) those intentionally complicating an argument to inoculate it from criticism, and 2) those who sincerely have difficulty formulating coherent arguments with valid causal relations.",
+      "caseStudies": [
+        "Immediately after my birth in 1961, both cancer rates and the nationalization of Cuban tourism increased. Because some of these cancer patients were Cuban tourists, I am obligated to build a hospital in Havana.",
+        "Because no one would be reading this unless they had a remote interest in logical fallacies, those on the remote island of Fiji have no interest in logical fallacies and therefore cannot read."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Straw man argument",
+      "slug": "straw-man-argument",
+      "categories": [
+        "Tactical"
+      ],
+      "originalNumber": "116",
+      "family": "Informal Fallacy",
+      "subCategory": "Red Herring",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Providing a misrepresentation of an opponent's position that can then be more easily attacked.",
+      "example": "Evolutionists believe life came from nothing. Nothing can come from nothing, so their position is absurd!",
+      "notes": "This fallacy is a result of either poor research or deliberate distortion of the opponent's argument.",
+      "caseStudies": [
+        "<blockquote>\"<i>Gradually by the course of evolution, [green slime] developed into animals and plants and at last into MAN. Man, so the theologians assure us, is so splendid a Being that he may well be regarded as the culmination to which the long ages of nebula and slime were a prelude. I think the theologians must have been fortunate in their human contacts. They do not seem to me to have given due weight to Hitler..</i>.\"<sup><br />\nBertrand Russell, \"Is There a God?\" (1952), in The Collected Papers of Bertrand Russell, Volume 11: Last Philosophical Testament, 1943-68, ed. John G. Slater and Peter Köllner (London: Routledge, 1997), pp. 545.</sup> </blockquote>\nRussell completely ignores the Christian doctrine of the <i>fall of man</i>, and is therefore addressing a straw man here.",
+        "Some argue that those committed to science think science is infallible or worthy of worship.",
+        "Some argue that all Christians become Christians only because they fear the consequences of not believing."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Style over substance fallacy",
+      "slug": "style-over-substance-fallacy",
+      "categories": [
+        "Tactical"
+      ],
+      "originalNumber": "119",
+      "family": "Informal Fallacy",
+      "subCategory": "Red Herring",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when the style of the argument's presentation is emphasized, while marginalizing the actual content of the argument.",
+      "example": "The audience's applause for my points during the debate this evening demonstrates the veracity of my arguments.",
+      "notes": "This seems to be the prevailing fallacy in politics. However, a beautiful delivery does not necessarily mean there is no real content.",
+      "caseStudies": [],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Suppressed correlative",
+      "slug": "suppressed-correlative",
+      "categories": [
+        "Conceptual",
+        "Linguistic"
+      ],
+      "originalNumber": "72",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "An argument which tries to redefine one mutually exclusive option so that it encompasses the other option.",
+      "example": "You can't claim to be intelligent since there is someone always more intelligent than you are.",
+      "notes": "The consequence of this fallacy is that the term in question is made impotent by removing any contrasting concept.<br />\nThis fallacy is similar to the <a href=\"http://logfall.wordpress.com/continuum-fallacy/\">continuum fallacy</a>.",
+      "caseStudies": [
+        "The god of some theists becomes so wrathful over a human's very 1st offense that he deems that offender worthy of eternal torment. This very same god is defined as \"loving\" and \"patient\" by these theists, and this definition is justified by suggesting that their wrathful god usually waits a while before sending the offender to eternal torment. The absurdity of this is clear when considering a neighbor who, after claiming to love his children, eternally beats them upon their first offense, but only after they've had dinner.",
+        "Some atheists claim that, to be a god-believer, you have to be \"deluded\". This definition of \"deluded\" would encompass most humans, rendering the word \"deluded\" much less meaningful as it did when it defined a much smaller set of humans."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Suppressed correlative (DUPLICATE)",
+      "slug": "suppressed-correlative-duplicate",
+      "categories": [
+        "Linguistic",
+        "Conceptual"
+      ],
+      "originalNumber": "9",
+      "family": "Formal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "Correlative based fallacy",
+      "aliases": [],
+      "definition": "Occurs when a correlative is redefined so that one alternative is made impossible.",
+      "example": "Everyone expresses some emotion every day, so to say I'm being emotional has no basis!",
+      "notes": "",
+      "caseStudies": [],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Teleological fallacy",
+      "slug": "teleological-fallacy",
+      "categories": [
+        "Conceptual"
+      ],
+      "originalNumber": "19",
+      "family": "Formal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "The claim that some object or idea has a purpose or necessary end point in the absence of evidence for that end point.",
+      "example": "Why would God have given us noses if he hadn't planned that we should wear glasses?",
+      "notes": "Only after the existence of an end point has been evidentially established can it serve as a foundation for other dependent concepts.",
+      "caseStudies": [
+        "According to Bertrand Russell, it was once claimed that rabbits were created with white tails so they would be easy for hunters to shoot.",
+        "Evolution is often misunderstood as teleological as evidenced by suggestions that there is some end-goal of evolution such as homo sapiens. Evolution might be better understood as the genetic movement of a species to better align its genetic composition to the environmental context, rather than striving towards some genetic goal independent of a environmental context.",
+        "One creationist infamously created a video purporting that the hand-shaped banana was evidence of a designer. Modern bananas have been bred by agriculturists to have the shape they do."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Thought-terminating cliché",
+      "slug": "thought-terminating-clich",
+      "categories": [
+        "Tactical"
+      ],
+      "originalNumber": "87",
+      "family": "Informal Fallacy",
+      "subCategory": "Faulty Generalization",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when a commonly heard and accepted phrase is rhetorically introduced as a substitute for an actual argument.",
+      "example": "The more things change, the more they stay the same. Humans will never overcome their violent nature in spite of recent claims of progress.",
+      "notes": "Some aphorisms fall into the category of faulty generalizations. It is usually difficult to find a pithy phrase that captures the nuances of the concept.",
+      "caseStudies": [
+        "The phrase \"Only God knows\" is often interjected at the end of a discussion to imply that no one is justified in taking a position on the issue, or to assume the evidence is balanced on both sides.",
+        "Sometime the phrase \"Freedom is not free\" is used to infer a clear justification for entering a war.",
+        "Christians often quote the verse \"The fool has said in his heart, 'there is no God'\" sometimes as if this is a justification for belief in God, and sometimes simply as a thought-terminator.",
+        "When having their expectations questioned, older people often, due to either having no real answer or having no interest in giving an answer, say \"When you're my age, you'll understand.\"."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Top-down condemnation",
+      "slug": "top-down-condemnation",
+      "categories": [
+        "Conceptual",
+        "Evidential"
+      ],
+      "originalNumber": "",
+      "family": "",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [
+        "a dicto secundum quid ad dictum simpliciter",
+        "proof by example"
+      ],
+      "definition": "An argument of the following form. \"a\" has the negative quality \"x\" and belongs to the group \"A\". Therefore \"A\"s have \"x\".",
+      "example": "My neighbor is a banker, and is a jerk. Therefore, bankers are jerks.",
+      "notes": "A more detailed treatment of this fallacy can be found on the supplementary <a href=\"http://logfall.wordpress.com/inductive-errors/\">Inductive Errors</a> page.",
+      "caseStudies": [
+        "If you break your leg the first time on the ski slopes, this is not evidence that skiing is any more dangerous than other sports. Actual statistical significance derived from a sufficiently large data set is necessary before such a conclusion can be made, in spite of your disinclination to get back on the slopes anytime soon.",
+        "When confronted with statistical evidence that a university degree improves your chances of securing a satisfying job, citing your unemployed Ph.D. neighbor does not invalidate the statistical evidence, and is a top-down condemnation fallacy."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Top-down faulty generalization",
+      "slug": "top-down-faulty-generalization",
+      "categories": [
+        "Conceptual",
+        "Evidential"
+      ],
+      "originalNumber": "80",
+      "family": "Informal Fallacy",
+      "subCategory": "A dicto simpliciter quid ad dictium secundum",
+      "subSubCategory": "Dicto simpliciter",
+      "aliases": [
+        "a dicto simpliciter quid ad dictium secundum"
+      ],
+      "definition": "Occurs when an exception to a generalization is wrongly called for.",
+      "example": "Since cutting someone with a knife is a crime, surgeons are criminals.",
+      "notes": "",
+      "caseStudies": [],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Top-down justification",
+      "slug": "top-down-justification",
+      "categories": [
+        "Conceptual",
+        "Evidential"
+      ],
+      "originalNumber": "",
+      "family": "",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [
+        "a dicto secundum quid ad dictum simpliciter",
+        "proof by example"
+      ],
+      "definition": "An argument of the following form. \"a\" has the positive quality \"x\" and belongs to the group \"A\". Therefore \"A\"s have \"x\".",
+      "example": "My neighbor is a banker, and a really nice guy. Therefore, bankers are nice guys.",
+      "notes": "A more detailed treatment of this fallacy can be found on the supplementary <a href=\"http://logfall.wordpress.com/inductive-errors/\">Inductive Errors</a> page.",
+      "caseStudies": [
+        "If a convenience store clerk successfully disarms a would-be robber, this is not evidence that confronting robbers is the best policy. A much larger sample of cases would be necessary before any inductive conclusion can be made.",
+        "If your friend wins the lottery after entering a number based on his birthday and weight, this is not evidence that combining a participant's birthday and weight will yield a number that is in any way connected to a winning lottery number.",
+        "When confronted with statistical data that smoking is harmful, claiming that your smoking 105-year-old uncle disproves the statistics is a top-down justification fallacy.",
+        "If, when shown statistical evidence that acquiring a university degree increases your chances of acquiring a satisfying carreer, you invoke successful college drop-out Bill Gates in an attempt to invalidate the statistics, you have committed the top-down justification fallacy."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Track-record reset",
+      "slug": "track-record-reset",
+      "categories": [
+        "Evidential"
+      ],
+      "originalNumber": "",
+      "family": "",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "When, for every new question, the inductive evidence from relevant past experience is ignored.",
+      "example": "Wake up, Dear! Something's banging on the trash cans again. I know that for the hundreds of other times you've checked, it's only been cats, but could you please go out and make sure it isn't zombies this time?",
+      "notes": "After thousands of investigations into claims of ghost hauntings, researchers have discovered many material causes, but no ghosts. Therefore, the next time someone claims to have seen a ghost, we are warranted in defaulting to the expectation of a material explanation.",
+      "caseStudies": [
+        "After thousands of investigations into claims of ghost hauntings, researchers have discovered many material causes, but no ghosts. Therefore, the next time someone claims to have seen a ghost, we are warranted in defaulting to the expectation of a material explanation.",
+        "For each new alleged miracle, many theists demand skeptics to demonstrate it was not a miracle, supposing that, until such negative proof is provided, they are warranted in believing it was an actual miracle. This ignores centuries of claims of miracles being shown to either fall well within the parameters of natural phenomena and statistics, or being too inaccessible to the scrutiny of science. This track record not only permits, but demands a default to a methodological naturalism in which we expect a material explanation, and in which the burden of proof rests entirely on those proposing something contrary to the successful track-record of material causes."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Tu quoque",
+      "slug": "tu-quoque",
+      "categories": [
+        "Tactical",
+        "Evidential"
+      ],
+      "originalNumber": "122",
+      "family": "Informal Fallacy",
+      "subCategory": "Red Herring",
+      "subSubCategory": "",
+      "aliases": [
+        "two wrongs make a right"
+      ],
+      "definition": "Occurs when it is assumed that, if one wrong has been committed, another wrong will remove its culpability.",
+      "example": "I admit to stretching the truth a bit, but you and everyone else tells a white lie from time to time. You can't judge me.",
+      "notes": "No degree of hypocrisy will invalidate the hypocrite's argument.",
+      "caseStudies": [
+        "There are very few countries that have not been called \"terrorist states\". Whenever hostilities escalate, there is commonly an exchange of such accusations.",
+        "Whenever skeptics disparage faith as a failed approach to truth, theists often retort \"But you have faith in science!\" This is to ignore the warranted inductively-derived confidence skeptics place in the superior reputation of success that science enjoys over faith. Only where the degree of belief is not commensurate to the degree of evidence is belief unwarranted, and the degree of inductive evidence of science's success is quite high."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Two wrongs make a right",
+      "slug": "two-wrongs-make-a-right",
+      "categories": [
+        "Tactical",
+        "Evidential"
+      ],
+      "originalNumber": "121",
+      "family": "Informal Fallacy",
+      "subCategory": "Red Herring",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when it is assumed that, if one wrong has been committed, another wrong will remove its culpability.",
+      "example": "My opponent maliciously attacked my character, and I am therefore justified in pointing out a few of his improprieties.",
+      "notes": "",
+      "caseStudies": [],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Undistributed middle",
+      "slug": "undistributed-middle",
+      "categories": [
+        "Formal"
+      ],
+      "originalNumber": "33",
+      "family": "Formal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when the middle general term in a categorical syllogism is not distributed to more specific terms of the same category.",
+      "example": "All humans are 2-legged, and all birds are 2-legged. Therefore all humans are birds.",
+      "notes": "In the example, the conclusion does not follow since it is 2-leggedness that is the larger more general category, encompassing both humans and birds, without either one of the smaller more specific categories encompassing the other. If one of the premises instead stated that all 2-legged things are birds, then the argument would be valid (but not sound).",
+      "caseStudies": [
+        "Young people needing social acceptance often argue to themselves in a way that might be stated \"The cool wear sunglasses, and I'm wearing sunglasses. Therefore I'm one of the cool.\"."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Vague insulators",
+      "slug": "vague-insulators",
+      "categories": [
+        "Tactical"
+      ],
+      "originalNumber": "",
+      "family": "",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when terms are intentionally chosen for their vagueness in an attempt to make a position unassailable.",
+      "example": "The energy in these pills creates a force that balances the body's essences.",
+      "notes": "In the example, \"energy\", \"force\", \"balances\" and \"essences\" are all too vague to submit to scientific scrutiny.",
+      "caseStudies": [
+        "<blockquote><i>There are only three sports: bullfighting, motor racing, and mountaineering; all the rest are merely games.</i><br />~Ernest Hemmingway</blockquote>The definitions of \"sports\" and \" games\" are vague, and make a refutation difficult.",
+        "Theists often introduce words such as \"faith\" and \"sin\" that have definitions that are contested even within their own sect.",
+        "Those promoting alternative medicines often invoke vague terms such as \"energy\" and \"essence\" that seem to have no real referent that can be assessed and critiqued."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Wishful thinking",
+      "slug": "wishful-thinking",
+      "categories": [
+        "Emotional",
+        "Epistemic",
+        "Evidential"
+      ],
+      "originalNumber": "103",
+      "family": "Informal Fallacy",
+      "subCategory": "Red Herring",
+      "subSubCategory": "Appeal to consequences",
+      "aliases": [],
+      "definition": "In which a decision is encouraged based on what might be pleasing to imagine, rather than based on evidence or reason.",
+      "example": "If there were no life after death, then this life would be rather meaningless, and so I choose to believe we have an eternal soul.",
+      "notes": "This fallacy is probably the most human of all fallacies. It is almost to suggest, that if you want or believe something strongly enough, that something must be or become true.",
+      "caseStudies": [
+        "If it were argued that the desire of the majority of citizens for universal health care coverage makes it imperative that we pass a universal health care coverage bill, this would be committing the wishful thinking fallacy. There may be no objective way for some countries to pay for the plan given their resources. The fact that something would make us happy does not mean we deserve or can realize that something."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Witness chain",
+      "slug": "witness-chain",
+      "categories": [
+        "Evidential",
+        "Conceptual"
+      ],
+      "originalNumber": "",
+      "family": "",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when a witness attempts to bolster their own testimony by claiming, with no independent substantiation, that there were other witnesses.",
+      "example": "I saw a ghost 5 years ago, and my uncle who died last year told me he also saw it!",
+      "notes": "The claim of an accessible witness to an event that there are inaccessible additional witnesses to that event carries no evidential weight for that event.",
+      "caseStudies": [
+        "<blockquote>\"I have personally witnessed irrefutable miracle healings (i.e. stunted limb growing out to full length spontaneously in a matter of seconds,) in response to prayer in the name of Jesus. I would guess there were close to 40 witnesses to this miracle healing, many of whom, including myself, were standing only 2 or 3 feet away from the man who was healed; some of whom I still know by first and/or last name.\"</blockquote>\n[<a href=\"http://www.physorg.com/news165555744.html\">Source</a>].",
+        "<blockquote><i>After that, he [Jesus, after his alleged resurrection] appeared to more than five hundred of the brothers at the same time, most of whom are still living, though some have fallen asleep.</i><br />1 Corinthians 15:6</blockquote>This verse is often cited by Christians as evidence for the resurrection.<br />[<a href=\"http://www.leaderu.com/everystudent/easter/articles/josh2.html\">Example</a>]."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    },
+    {
+      "name": "Wrong causal direction",
+      "slug": "wrong-causal-direction",
+      "categories": [
+        "Causal"
+      ],
+      "originalNumber": "73",
+      "family": "Informal Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [],
+      "definition": "Occurs when actual cause and effect are mistakenly reversed.",
+      "example": "I've noticed that people with psychological disorders tend to use recreational drugs. They must be taking drugs to relieve the trauma of their disorders.",
+      "notes": "Without evidence to indicate causation and the direction of that causation, the coincidence of two phenomena is at best correlation.",
+      "caseStudies": [
+        "The increase of handguns has often been cited as the cause of increasing crime. Before this claim can be rigorously substantiated, the degree that crime has had on the increase in handguns purchased for increased personal security in the area of increased crime will have to be teased out.",
+        "In the middle ages, Europeans noticed that people who got sick had fewer fleas on their bodies, leading them to conclude that fleas prevent illness. The actual mechanism was that an illness was usually accompanied by a fever, which then forced the heat-sensitive fleas to look for another host."
+      ],
+      "editorialStatus": "cleaned-from-root"
+    }
+  ]
+}
