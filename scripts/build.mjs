@@ -134,7 +134,7 @@ function pageShell({ title, description, prefix, content, currentSection = "" })
               <div>
                 <p class="brand-kicker">Logical Fallacies</p>
                 <h1 class="brand-title">LogFall</h1>
-                <p class="brand-subtitle">A rebuilt logical-fallacies reference organized for fast browsing, category-level study, and page-by-page comparison.</p>
+                <p class="brand-subtitle">A living logical-fallacies reference rebuilt for clearer explanations, faster browsing, and steadily better examples.</p>
               </div>
             </div>
           </div>
@@ -203,7 +203,8 @@ function buildHomePage(records, categories) {
         <h2 class="hero-title">Logical fallacies, reorganized for modern readers.</h2>
         <p class="hero-lead">
           This GitHub Pages edition keeps the spirit of the original LogFall project while making the taxonomy easier to browse,
-          compare, search, and extend. Every entry here comes from the ROOT tab source, cleaned for clarity and filtered against the legacy site.
+          compare, search, and revise. It is built from the ROOT tab source, limited to fallacies that appeared on the legacy site,
+          and structured for ongoing editorial improvement.
         </p>
         <div class="hero-actions">
           <a class="button button-primary" href="fallacies/">Browse All Fallacies</a>
@@ -235,7 +236,7 @@ function buildHomePage(records, categories) {
           </div>
           <div class="note-panel" style="margin-top:12px;">
             <h4>2. Jump to a detail page</h4>
-            <p class="muted">Each fallacy page collects the definition, a concrete example, notes, case studies, and related entries.</p>
+            <p class="muted">Each fallacy page brings together a concise definition, a concrete example, explanatory notes, case studies, and nearby entries.</p>
           </div>
           <div class="note-panel" style="margin-top:12px;">
             <h4>3. Use the workbook</h4>
@@ -301,14 +302,14 @@ function buildAboutPage() {
       <p class="eyebrow">About this edition</p>
       <h2 class="detail-title">A cleaner static edition of LogFall.</h2>
       <p class="detail-deck">
-        This version is designed for GitHub Pages. It keeps the original logo and taxonomy approach,
-        but replaces the WordPress-era browsing friction with lightweight static pages, category navigation,
-        and a synchronized workbook for structured editing.
+        This version is designed for GitHub Pages. It preserves the original logo and taxonomy approach,
+        but replaces WordPress-era browsing friction with lightweight static pages, clearer navigation,
+        and a synchronized workbook for structured revision.
       </p>
       <div class="two-column section-block">
         <div class="note-panel">
           <h4>Source rule</h4>
-          <p class="muted">Definitions, examples, notes, and case studies come from the ROOT tab source workbook, with text normalized for clarity.</p>
+          <p class="muted">The ROOT tab provides the base material, which can then be cleaned or rewritten for clarity, accuracy, and more useful examples.</p>
         </div>
         <div class="note-panel">
           <h4>Inclusion rule</h4>
@@ -322,7 +323,7 @@ function buildAboutPage() {
         </div>
         <div class="note-panel">
           <h4>Editorial direction</h4>
-          <p class="muted">This is a cleaned first-pass edition that establishes a strong structure for deeper rewriting and newer examples over time.</p>
+          <p class="muted">This edition is being actively rewritten, starting with the most-used entries and replacing weaker examples with clearer modern case studies.</p>
         </div>
       </div>
     </section>
@@ -511,7 +512,7 @@ function buildDetailPage(record, records) {
       <div class="section-header">
         <div>
           <h3 class="section-title">Why it misleads</h3>
-          <p class="section-copy">A longer note from the source material, cleaned for readability.</p>
+          <p class="section-copy">A fuller explanation of how the fallacy works and why it can look persuasive.</p>
         </div>
       </div>
       <article class="detail-section">
@@ -550,7 +551,7 @@ function buildDetailPage(record, records) {
       <div class="section-header">
         <div>
           <h3 class="section-title">Case studies</h3>
-          <p class="section-copy">Examples and discussion prompts attached to the original source entry.</p>
+          <p class="section-copy">Recent or representative examples that help stress-test the pattern in practice.</p>
         </div>
       </div>
       <div class="case-list">

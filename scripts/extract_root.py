@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import html
 import json
 import re
 from collections import OrderedDict
@@ -15,7 +16,10 @@ SOURCE_ODS = Path(
     "/Users/philstilwell/Google Drive/Desktop/oddsNends/photoshopWork/BLOGS/LogFall/Fallacies.ods"
 )
 OUTPUT_JSON = Path(
-    "/Users/philstilwell/Documents/Codex/2026-05-09/install-ghostscript/logfall/data/fallacies.json"
+    "/Users/philstilwell/Documents/Codex/2026-05-09/install-ghostscript/logfall-repo/data/fallacies.json"
+)
+EDITORIAL_OVERRIDES_PATH = Path(
+    "/Users/philstilwell/Documents/Codex/2026-05-09/install-ghostscript/logfall-repo/data/editorial_overrides.json"
 )
 
 ODS_NS = {
@@ -98,6 +102,26 @@ def normalize_text(value: str) -> str:
     return value.strip()
 
 
+def htmlish_to_text(value: str) -> str:
+    value = value or ""
+    replacements = {
+        r"(?i)<br\s*/?>": "\n",
+        r"(?i)<hr\s*/?>": "\n\n",
+        r"(?i)</p>": "\n\n",
+        r"(?i)</blockquote>": "\n\n",
+        r"(?i)<li>": "- ",
+        r"(?i)</li>": "\n",
+    }
+    for pattern, replacement in replacements.items():
+        value = re.sub(pattern, replacement, value)
+    value = re.sub(r"<[^>]+>", "", value)
+    value = html.unescape(value)
+    value = normalize_text(value)
+    value = re.sub(r" *\n *", "\n", value)
+    value = re.sub(r"\n{3,}", "\n\n", value)
+    return value.strip()
+
+
 def sentence_case(value: str) -> str:
     value = normalize_text(value)
     if not value:
@@ -110,27 +134,30 @@ def sentence_case(value: str) -> str:
         value = "Occurs when " + value[12:]
     else:
         value = value[0].upper() + value[1:]
-    if value[-1] not in ".!?":
-        value += "."
-    return value
+    return ensure_terminal_punctuation(value)
+
+
+def ensure_terminal_punctuation(value: str) -> str:
+    value = normalize_text(value)
+    if not value:
+        return value
+    if re.search(r"[.!?]['\")\]]*$", value):
+        return value
+    return value + "."
 
 
 def clean_example(value: str) -> str:
-    value = normalize_text(value)
+    value = htmlish_to_text(value)
     if not value or value == "The example will go here.":
         return ""
-    if value[-1] not in ".!?":
-        value += "."
-    return value
+    return ensure_terminal_punctuation(value)
 
 
 def clean_block(value: str) -> str:
-    value = normalize_text(value)
+    value = htmlish_to_text(value)
     if not value:
         return ""
-    if value[-1] not in ".!?":
-        value += "."
-    return value
+    return ensure_terminal_punctuation(value)
 
 
 def slugify(value: str) -> str:
@@ -182,6 +209,13 @@ def load_wordpress_inventory(path: Path) -> set[str]:
     return published
 
 
+def load_editorial_overrides(path: Path) -> dict[str, dict]:
+    if not path.exists():
+        return {}
+    raw = json.loads(path.read_text())
+    return raw.get("records", {})
+
+
 def collect_categories(*values: str) -> list[str]:
     seen = OrderedDict()
     for value in values:
@@ -207,7 +241,29 @@ def longest_text(*values: str) -> str:
     return max(cleaned, key=len)
 
 
-def build_records(rows: list[list[str]], wordpress_inventory: set[str]) -> list[dict]:
+def apply_editorial_override(record: dict, override: dict) -> dict:
+    updated = dict(record)
+    if "categories" in override:
+        updated["categories"] = [category for category in override["categories"] if category in VALID_CATEGORIES]
+    if "aliases" in override:
+        updated["aliases"] = [normalize_text(alias) for alias in override["aliases"] if normalize_text(alias)]
+    for key in ["originalNumber", "family", "subCategory", "subSubCategory", "editorialStatus"]:
+        if key in override:
+            updated[key] = normalize_text(override[key])
+    if "definition" in override:
+        updated["definition"] = sentence_case(override["definition"])
+    if "example" in override:
+        updated["example"] = clean_example(override["example"])
+    if "notes" in override:
+        updated["notes"] = clean_block(override["notes"])
+    if "caseStudies" in override:
+        updated["caseStudies"] = merge_unique(override["caseStudies"])
+    return updated
+
+
+def build_records(
+    rows: list[list[str]], wordpress_inventory: set[str], editorial_overrides: dict[str, dict]
+) -> list[dict]:
     records_by_name: OrderedDict[str, dict] = OrderedDict()
     for row in rows[1:]:
         name = normalize_text(row[9] if len(row) > 9 else "")
@@ -277,7 +333,7 @@ def build_records(rows: list[list[str]], wordpress_inventory: set[str]) -> list[
         existing["notes"] = clean_block(longest_text(existing["notes"], record["notes"]))
         existing["caseStudies"] = merge_unique(existing["caseStudies"] + record["caseStudies"])
 
-    records = list(records_by_name.values())
+    records = [apply_editorial_override(record, editorial_overrides.get(record["name"], {})) for record in records_by_name.values()]
     records.sort(key=lambda item: item["name"].lower())
     return records
 
@@ -302,10 +358,12 @@ def build_category_summary(records: list[dict]) -> list[dict]:
 def main() -> None:
     rows = read_sheet_rows(SOURCE_ODS, "ROOT")
     wordpress_inventory = load_wordpress_inventory(SOURCE_ODS)
-    records = build_records(rows, wordpress_inventory)
+    editorial_overrides = load_editorial_overrides(EDITORIAL_OVERRIDES_PATH)
+    records = build_records(rows, wordpress_inventory, editorial_overrides)
     payload = {
-        "source": str(SOURCE_ODS),
+        "source": SOURCE_ODS.name,
         "sheet": "ROOT",
+        "editorialOverridesSource": "data/editorial_overrides.json",
         "recordCount": len(records),
         "categories": build_category_summary(records),
         "records": records,

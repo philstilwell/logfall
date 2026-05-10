@@ -1,0 +1,84 @@
+{
+  "records": {
+    "Ad hominem": {
+      "definition": "Occurs when someone treats an attack on a person's character, motives, class, or biography as if it were a refutation of that person's argument",
+      "example": "An economist presents data against a tariff proposal, and the reply is: 'Why listen to her? She is an Ivy League elitist who has never worked a real job.'",
+      "notes": "Character can matter when credibility itself is at issue, such as fraud, conflicts of interest, or proven dishonesty. The fallacy appears when those personal facts are used instead of answering the actual reasons or evidence.",
+      "caseStudies": [
+        "In the June 27, 2024 Biden-Trump debate, policy exchanges repeatedly slid into attacks on each candidate's age, criminal exposure, or family rather than sustained engagement with the argument on the table.",
+        "Online discussion of climate, vaccines, and AI policy often substitutes labels such as 'shill,' 'grifter,' or 'elitist' for any serious response to the evidence."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Appeal to authority": {
+      "definition": "Occurs when someone treats an authority's endorsement as if it settled the issue, even when the authority is unqualified, the field is divided, or the claim still requires evidence",
+      "example": "A wellness influencer says a supplement works because a famous surgeon on a podcast called it 'a game changer,' so listeners treat the endorsement as proof.",
+      "notes": "Expert testimony can be good evidence when the authority is relevant, the expertise is genuine, and the claim fits the expert consensus. The fallacy appears when prestige replaces argument.",
+      "caseStudies": [
+        "Debates about nutrition, vaccines, crypto, and AI frequently lean on celebrity experts or founders speaking outside their strongest field, while the underlying studies and uncertainties get little attention.",
+        "In public discussion of AI safety and capability, people often present a famous CEO's confidence level as if it were itself a substitute for technical evidence or broad expert agreement."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Begging the question": {
+      "definition": "Occurs when an argument quietly assumes the very point it is supposed to prove, so the conclusion is built into the premises",
+      "example": "This source is trustworthy because it tells the truth, and we know it tells the truth because it is a trustworthy source.",
+      "notes": "Circularity can be obvious, but it is often hidden behind rewording, loaded descriptions, or a chain of claims that loops back to the start. The argument feels like support has been offered when the conclusion has only been restated.",
+      "caseStudies": [
+        "Conspiracy-style reasoning often treats the absence of confirming evidence as proof that the conspiracy is powerful enough to hide the evidence, which assumes the conclusion inside the explanation.",
+        "Debates about 'real journalism' or 'real science' sometimes define the trustworthy outlet or institution as whichever one already agrees with the speaker's preferred view."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Cherry picking": {
+      "definition": "Occurs when someone selects only the evidence that supports a conclusion and ignores a wider body of evidence that weakens, qualifies, or reverses it",
+      "example": "A commentator cites one favorable month of inflation data as proof that the economy has fully recovered while ignoring the broader trend, wages, and household costs.",
+      "notes": "Cherry picking can involve hand-picked dates, unusual baselines, isolated anecdotes, or a single study taken out of a larger research picture. The defect is not using examples, but using a biased sample as if it were representative.",
+      "caseStudies": [
+        "After the September 10, 2024 Harris-Trump debate, both campaigns highlighted only the slices of jobs and manufacturing statistics that favored their own record while skipping the broader timeline.",
+        "Climate arguments often choose a starting year with an unusually hot or cool baseline so that a short graph looks flat or dramatic even when the longer record points elsewhere."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Correlation is not causation": {
+      "definition": "Occurs when someone treats a correlation, coincidence, or time pattern as if it already established that one factor caused the other",
+      "example": "A school adds an AI tutoring tool and test scores rise the next semester, so the district concludes that the tool caused the improvement without ruling out teacher changes, cohort differences, or extra tutoring time.",
+      "notes": "Correlations matter because they can reveal patterns worth investigating. The fallacy is jumping straight from 'these moved together' to 'this caused that' without checking mechanisms, timing, controls, or alternative explanations.",
+      "caseStudies": [
+        "Claims about teen mental health and social media often move too quickly from parallel trend lines to a settled single-cause story, even though researchers still debate the size, direction, and mechanisms of the effect.",
+        "Political messaging about crime, immigration, inflation, or schooling frequently points to two trends moving together and treats that alone as proof of causation."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "False dilemma": {
+      "definition": "Occurs when someone presents a limited set of options as if they were the only live possibilities, while reasonable alternatives are ignored or suppressed",
+      "example": "Either we pass this surveillance bill exactly as written, or we are choosing chaos and lawlessness.",
+      "notes": "The pressure comes from pretending that a complex decision has only two doors. Sometimes the omitted alternatives are compromises, phased approaches, or the option of rejecting the framing altogether.",
+      "caseStudies": [
+        "In 2024 immigration debates, many campaign messages reduced the issue to a choice between mass deportation and open borders, leaving out enforcement, asylum reform, and legal migration policy.",
+        "School discussions about generative AI are often framed as either banning it completely or surrendering all meaningful learning, even though classrooms can set narrower rules for citation, drafting, and acceptable assistance."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Slippery slope": {
+      "definition": "Occurs when someone claims that a relatively small first step will trigger a chain of worsening outcomes without showing why that chain is likely, stable, or hard to stop",
+      "example": "If we let students use AI for brainstorming, next year nobody will learn to write and universities will stop caring whether humans produced any work at all.",
+      "notes": "Some slopes are real, especially when incentives, precedent, or institutional weakness make escalation predictable. The fallacy appears when the chain is asserted rather than argued for.",
+      "caseStudies": [
+        "In 2024 arguments over classroom AI, both enthusiasts and critics often predicted inevitable futures - either total educational collapse or total educational liberation - without showing why intermediate guardrails would fail.",
+        "Election rhetoric about mail voting, early voting, or routine administrative changes often predicts the total breakdown of legitimacy from one policy shift without evidence for the full cascade."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Straw man argument": {
+      "definition": "Occurs when someone replaces an opponent's actual position with a weaker, more extreme, or simplified version and then refutes that easier target",
+      "example": "A proposal to require disclosure labels on AI-generated campaign ads is attacked as 'wanting the government to ban political speech.'",
+      "notes": "A straw man can be created by exaggeration, selective quotation, or by ignoring the qualifying parts of the original claim. It is not enough that a reply is critical; the key problem is that the reply no longer addresses the real position.",
+      "caseStudies": [
+        "During the September 10, 2024 Harris-Trump debate, claims about abortion rights were repeatedly recast into the far more extreme charge that Democrats support killing babies after birth, which is not the position being defended.",
+        "Debates over campus speech and content moderation often turn a narrower argument about rules, incentives, or disclosure into the cartoon claim that one side 'wants censorship' or 'wants total chaos.'"
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    }
+  }
+}
