@@ -313,15 +313,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Invoking the popular but wrong notion that finding no evidence for something is no evidence for the absence of that thing.",
-      "example": "The fact that you did not see me at your birthday party does not mean I was not there!",
-      "notes": "The absence of evidence it not evidence of absence.\nThis argument, attributed to Carl Sagan, is often invoked when claims of a god comes under scrutiny. While the absence of evidence is not proof of absence, it is, to varying degrees, evidence of absence. The degree of evidence an absence of evidence is for the absence of anything will depend on the context. If there is no evidence of thing X in a location Y, the degree that will constitute evidence for the absence of that thing depends upon how we substantiate the variables. Is X a molecule, mouse or monster? Is Y a cup, couch or continent?",
+      "definition": "Occurs when someone treats a failure to find expected evidence as if it counted for nothing against the claim, even in a context where the claim should leave detectable traces.",
+      "example": "Multiple audits found no trace of the vote-flipping scheme, but that proves nothing; if the conspiracy were real, of course it would leave no evidence.",
+      "notes": "Sometimes absence of evidence really is weak evidence, especially when the search tools are poor or the target is hard to detect. But when repeated investigation under the right conditions turns up nothing, that absence is itself evidence.",
       "caseStudies": [
-        "After a Harvard Medical School study on the effects of prayer on heart surgery patients showed no statistical advantage of prayer, it was argued that \"the absence of evidence is not evidence of absence\".",
-        "Those who claim they have the biblical holy spirit helping them to make predictions or avoid logical fallacies in discussion, when confronted with evidence that they are, at best, only on par with those who do not claim to have a holy spirit, they often invoke this absence of evidence fallacy. They then often claim the burden of proof falls on those denying the existence of their holy spirit.",
-        "Donald Rumsfeld invoked the \"absence of evidence\" fallacy in reference to possible weapons of mass destruction in Iraq."
+        "After officials in Springfield, Ohio said there were no credible reports supporting the September 2024 rumor that Haitian immigrants were abducting and eating pets, some defenders treated the lack of evidence as irrelevant or as proof of a cover-up rather than as evidence against the rumor.",
+        "Claims of widespread noncitizen voting in 2024 often survived repeated audits and official reviews by insisting that the absence of supporting evidence was exactly what one should expect from a hidden scheme."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Abstraction denial",
@@ -542,11 +541,14 @@
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when a position is promoted through the manipulation of emotions, rather than through the presentation of an actual argument.",
-      "example": "It would be awesome to know that we were not alone in the universe. I can't help but believe space aliens exist out there somewhere.",
-      "notes": "This fallacy has itself been categorized as a tactical fallacy, but is a parent category for specific appeals to emotion that are not listed among the primary fallacies. - All appeal to emotion fallacies.",
-      "caseStudies": [],
-      "editorialStatus": "cleaned-from-root"
+      "definition": "Occurs when a conclusion is pushed mainly by triggering fear, pity, outrage, pride, or hope rather than by showing that the conclusion follows from the evidence.",
+      "example": "If you vote against this bill, remember the faces of the children who will suffer, and ask yourself how you will sleep at night.",
+      "notes": "Emotion is not irrational by itself. The fallacy appears when emotion substitutes for the reasoning that still needs to be supplied.",
+      "caseStudies": [
+        "In 2024 campaign advertising, immigration, crime, and abortion messages often relied on fear-laden images and worst-case anecdotes whose emotional force far exceeded the actual argument being made.",
+        "The spread of AI-generated political ads and deepfakes in 2024 showed how cheaply campaigns can trigger outrage or panic before voters have time to inspect the evidence."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Appeal to fear",
@@ -808,14 +810,14 @@
       "aliases": [
         "appeal to ignorance"
       ],
-      "definition": "Assuming that something is true because it has not been proven false, or false because it has not been proven to be true.",
-      "example": "Fairies must exist since we've seen no evidence falsifying their existence.",
-      "notes": "Phrases that often accompany this fallacy include \"What are the odds!\" and \"Explain that!\" The inability of the (or a particular) human brain to grasp the stochastic or conceptual complexities of a particular concept do not warrant the introduction of magic or a god or luck as an explanation.\nNote that there is warrant to dismiss out-of-hand claims that are logically or physically impossible. If I claim I possess a square triangle, or a flying reindeer, you are warranted in stating unequivocally that I am wrong.",
+      "definition": "Occurs when someone concludes that a claim is true because it has not been disproved, or false because it has not been proved.",
+      "example": "No one has proved that the leaked memo is fake, so it is probably genuine.",
+      "notes": "The burden is not met by pointing to a gap in refutation. A claim needs positive support of its own. Lack of an explanation is not the same thing as evidence for a preferred explanation.",
       "caseStudies": [
-        "Some say we are warranted in believing that the Loch Ness Monster exists since there is no evidence to the contrary.",
-        "Some who do not accept a particular scientific theory often point to a single node in the matrix of converging lines of evidence for the theory, point out its short-comings, then claim the theory is wrong. If you've lived next to Betty and Bob for 20 years who are presumably married, and happen to see Betty with an unidentified man one afternoon, you are not warranted in believing that Betty and Bob are not married."
+        "After an anonymous affidavit circulated online in September 2024 alleging that ABC had secretly rigged the Harris-Trump debate, many posts treated the absence of immediate disproof as if it were evidence that the allegation was real.",
+        "UAP discussions often jump from 'we do not yet know what caused this' to 'therefore it was extraterrestrial technology,' which treats unexplained as if it meant explained by the favored hypothesis."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Argument from repetition",
@@ -986,11 +988,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Making a probability judgment without taking into account known empirical statistics about the probability.",
-      "example": "The rare disease detection device is 99% accurate, and it detected that I have a rare disease. Therefore I almost certainly do have a rare disease.",
-      "notes": "If there are 10 terrorists in a city of 1,000,000, and you have a device on the subway that detects terrorists with a seemingly very high accuracy rate of 99.9%, you are going to experience 100 false positives of innocent citizens for every terrorist you correctly identify.",
-      "caseStudies": [],
-      "editorialStatus": "cleaned-from-root"
+      "definition": "Occurs when someone judges how likely a case is by focusing on vivid case-specific evidence while ignoring the underlying frequency of the thing in question.",
+      "example": "This fraud filter is 98% accurate and flagged my transaction, so there is almost no chance the alert is wrong.",
+      "notes": "For rare conditions or rare events, even very accurate tests can generate more false positives than true positives. The missing question is not just 'How accurate is the test?' but 'How common is the condition before the test is applied?'",
+      "caseStudies": [
+        "Discussion of noncitizen voting in the 2024 election often highlighted a handful of cases while skipping the base rate: tens of millions of lawful ballots were cast, so isolated cases do not by themselves show a widespread system-level problem.",
+        "Fraud detection, medical screening, and predictive-policing tools can sound highly reliable in percentage terms while still misclassifying large numbers of people when the targeted event is rare."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Begging the question",
@@ -1505,16 +1510,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "The misleading use of a term that has more than one meaning.",
-      "example": "The strange man told me he wanted to take me out. I had him arrested for making a death threat.",
-      "notes": "This example equivocates between the meaning of \"take out\" as an romantic activity, and \"take out\" as a murder.",
+      "definition": "Occurs when a key word or phrase slides between different meanings inside the same argument, creating the illusion of support.",
+      "example": "The AI model can 'learn,' and students learn, so the model must understand lessons in the same way students do.",
+      "notes": "Equivocation often works because the same word is doing two jobs at once. The surface grammar stays stable while the meaning shifts underneath.",
       "caseStudies": [
-        "You've probably heard the argument that \"scientists can't even predict tomorrow's weather! What makes them thing they can predict the weather a decade from now?\" This equivocates between daily weather predictions and yearly weather predictions. Daily weather predictions for 10 years from now are no better than they are for 10 days from now, but that does not mean climate scientists cannot accurately predict general trends in weather.",
-        "Some people argue that, since humans wrote a holy book, a god did not write that particular holy book. This is an equivocation on the word \"write\" since it sometimes means \"to pen\" and other times \"to author\".",
-        "The word \"faith\" has recently been a word with diverse denotations that enable unproductive equivocation in dialog. Some will say \"where the evidence ends, there faith begins\", while in another context suggest that our belief that the sun will rise tomorrow is also \"faith\" though based on inductive reason and an understanding of the mechanism.",
-        "The term \"theory\" has 2 distinct meanings that are often conflated in equivocation when someone wishes to diminish the standing of a scientific theory. They simply replace the noble connotations associated with a scientific theory with the less-than-noble connotation of the vernacular use of \"theory\"."
+        "Debates over content moderation regularly equivocate between censorship by the state and moderation decisions by private platforms, as if both were the same kind of speech restriction.",
+        "Public discussion of AI often slides between thin technical meanings of words such as 'reasoning,' 'understanding,' or 'hallucination' and thicker human meanings, which makes claims sound stronger than the evidence warrants."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Equivocation fallacy",
@@ -1860,13 +1863,14 @@
         "hasty induction",
         "secundum quid"
       ],
-      "definition": "Leaping to a conclusion with insufficient statistics or a insufficient sample size.",
-      "example": "I drove through the town and counted 20 residents, all of them women. The town has only female residents.",
-      "notes": "A hasty generalization might be a result of an insufficient sample size, imprecise measurements, or subjective reporting.\nThis is a type of faulty generalization. A more detailed treatment of faulty generalizations can be found on the supplementary Inductive Errors page.",
+      "definition": "Occurs when someone draws a broad conclusion from too little evidence, too small a sample, or a badly skewed sample.",
+      "example": "I interviewed four students about AI and two admitted cheating, so generative AI is ruining education.",
+      "notes": "The problem is not moving from sample to population; all induction does that. The problem is pretending a weak or unrepresentative sample carries more weight than it does.",
       "caseStudies": [
-        "A foreign journalist who wanted to report on New York fashion might jump to a hasty generalization if visiting New York on October 31st."
+        "A single viral video of a fight, theft, or protest is often used online as if it reveals what a whole city, campus, or demographic group is like.",
+        "Election commentary frequently treats one poll, one county, or one diner focus group as proof of a national shift, even when the broader polling picture is mixed."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Historian's fallacy",
@@ -2175,15 +2179,14 @@
       "subCategory": "",
       "subSubCategory": "raising the bar",
       "aliases": [],
-      "definition": "Occurs when the evidence presented to meet an initial standard of evidence is dismissed, and some greater standard of evidence is then imposed.",
-      "example": "I bet you can't lift this box! ... All right, I see you can lift that box, but I bet you can't lift this one over here!",
-      "notes": "It is often difficult for both sides of an issue to agree upon what would constitute sufficient evidence. However, such an agreement is foundational to any real progress in an honest discussion.",
+      "definition": "Occurs when evidence that was supposed to satisfy a stated standard is dismissed and a new, harder standard is introduced so the conclusion never has to be reconsidered.",
+      "example": "If the model can pass the bar exam, I'll admit it is useful. It passes, and the reply becomes: useful doesn't count unless it can run an entire law firm without errors.",
+      "notes": "Standards can be refined in good faith, especially when both sides notice a weak test. The fallacy appears when the revision functions mainly to avoid conceding that the earlier standard was met.",
       "caseStudies": [
-        "There have been many claims throughout recent years made by dualists about the limits of brain science to explain mental processes with the implication that belief in dualism is therefore warranted. When new studies falsify these claims, new claims are introduced.",
-        "With many of the moon landing conspiracy theorists, as each of their claims is rebutted, they will move on to the next claim saying \"But what about...\" There appears to be no set degree of evidence that will convince them.",
-        "Consider the following popular internet post.Boy writes God a letter, \"Dear God, why do you let bad things happen in our schools?\" God replies,\"Dear son, I'm not allowed in your schools.\"\nIf this particular god is giving his banishment from schools as the sole reason why bad things happen in those schools, then schools in which this particular god is allowed should not experience bad things. When presented with this corollary, those defending the quote often move the goalpost back to a more sensible and defensible position that makes the presence of bad people in schools the reason for bad things happening in those schools."
+        "Public AI debates in 2024 often moved from benchmark scores to some new test the moment a model cleared the previous bar, making 'proof' of competence permanently out of reach.",
+        "Election-conspiracy arguments often work this way: once courts, audits, and recounts address one claim, the standard shifts to a different alleged irregularity without any willingness to concede what the earlier evidence settled."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Naturalistic fallacy",
@@ -2256,14 +2259,14 @@
       "subCategory": "Faulty Generalization",
       "subSubCategory": "Accident (fallacy)",
       "aliases": [],
-      "definition": "Occurs when a conventional categorization is denied based on unconventional or arbitrary criteria.",
-      "example": "How can you call yourself a patriot when you are against this war!",
-      "notes": "Those who employ this fallacy will often interject ad hoc or arbitrary criteria to maintain an artificial delineation.",
+      "definition": "Occurs when someone protects a generalization from counterexamples by redefining the group with an ad hoc 'real' or 'true' membership test.",
+      "example": "No real conservative would support that immigration bill.",
+      "notes": "Sometimes categories do have genuine criteria. The fallacy arises when the criteria are improvised only after a counterexample appears, so the definition changes to save the claim.",
       "caseStudies": [
-        "If a theist informs an atheist that his position is indefensible since Stalin was an atheist, it would be a no true Scotsman fallacy for the atheist to suggest that Stalin was not a real atheist. And it would be forfeiting the chance to point out the theist's own fallacy of top-down condemnation.",
-        "If an atheist informs a Christian that his position is indefensible since Hitler was an Christian, it would be a no true Scotsman fallacy for the theist to suggest that Hitler was not a real Christian. And it would be forfeiting the chance to point out the atheist's own fallacy of top-down condemnation."
+        "In 2024 intraparty fights, Republicans who backed Ukraine aid or accepted the 2020 certification were often dismissed as 'not real conservatives' instead of being treated as counterexamples within conservatism.",
+        "Religious and ideological arguments frequently insist that anyone whose behavior embarrasses the group was never a 'true' believer in the first place, which preserves group purity by redefinition."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Overwhelming exception",
@@ -2445,13 +2448,14 @@
         "coincidental correlation",
         "correlation not causation"
       ],
-      "definition": "Occurs when a cause of a phenomenon is attributed to a prior phenomenon without providing evidence of causation.",
-      "example": "After I started wearing a copper bracelet, my health improved! It worked!",
-      "notes": "Causation must be rigorously demonstrated. Phenomena that occur in sequence do not necessarily have a causal link. This fallacy is related to the correlation is not causation fallacy.",
+      "definition": "Occurs when someone infers that because one event happened before another, the earlier event caused the later one.",
+      "example": "I started a new supplement on Monday and my headaches eased by Friday, so the supplement must have fixed the problem.",
+      "notes": "Temporal order matters for causation, but it is only one ingredient. The improvement might be coincidence, regression to the mean, other background changes, or a different cause entirely.",
       "caseStudies": [
-        "Most people feel a period of elation every time they voluntarily change jobs. Many are tempted to cite the conditions of the new job as the reason for their better mood. Is it the new job that is causing the elation, or merely the change?"
+        "Wellness and self-optimization discourse in 2024 routinely credited cold plunges, supplements, or glucose hacks for improvements that followed several simultaneous lifestyle changes.",
+        "Politicians often claim that a policy worked because a good trend appeared soon after the policy was announced, even when the trend began earlier or other explanations remain stronger."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Proof by example",
@@ -3034,14 +3038,14 @@
       "aliases": [
         "two wrongs make a right"
       ],
-      "definition": "Occurs when it is assumed that, if one wrong has been committed, another wrong will remove its culpability.",
-      "example": "I admit to stretching the truth a bit, but you and everyone else tells a white lie from time to time. You can't judge me.",
-      "notes": "No degree of hypocrisy will invalidate the hypocrite's argument.",
+      "definition": "Occurs when criticism is answered not by engaging the issue, but by pointing to similar hypocrisy or wrongdoing elsewhere.",
+      "example": "You cannot criticize my fabricated quote because your side spreads misinformation too.",
+      "notes": "Hypocrisy can matter for trust, but it does not by itself answer whether the original claim, act, or argument was wrong.",
       "caseStudies": [
-        "There are very few countries that have not been called \"terrorist states\". Whenever hostilities escalate, there is commonly an exchange of such accusations.",
-        "Whenever skeptics disparage faith as a failed approach to truth, theists often retort \"But you have faith in science!\" This is to ignore the warranted inductively-derived confidence skeptics place in the superior reputation of success that science enjoys over faith. Only where the degree of belief is not commensurate to the degree of evidence is belief unwarranted, and the degree of inductive evidence of science's success is quite high."
+        "In the June 27, 2024 Biden-Trump debate and the September 10, 2024 Harris-Trump debate, many charges were met with 'your side did it too' responses that redirected blame without addressing the original allegation.",
+        "Arguments about misinformation, climate, religion, and media bias often slide into scorekeeping about who is worse rather than whether the specific criticized claim is true or justified."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Two wrongs make a right",
