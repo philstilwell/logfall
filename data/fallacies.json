@@ -453,14 +453,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when it is implied that one must believe all or nothing of a particular set of beliefs.",
-      "example": "There are many historical documents that substantiate the notion that Saint Nicolas gave gifts to children. So to say he doesn't descend chimneys on Christmas Eve is against the historical facts.",
-      "notes": "",
+      "definition": "Occurs when support for part of a view, or problems with part of a view, are treated as if they force total acceptance or total rejection of the whole package.",
+      "example": "One error in this report means the entire investigation is worthless.",
+      "notes": "Many systems of belief, institutions, and documents are mixed. Partial support or partial failure rarely justifies an everything-or-nothing verdict.",
       "caseStudies": [
-        "Some theists cite evidence that some of the historical references in the bible are collaborated with extra-biblical sources, then imply that everything found within the bible, including the miracles, are also true.",
-        "Some atheists confront theists with arguments against the notion of eternal torment, though many theists do not believe in an actual burning hell."
+        "In 2024 media battles, a single correction or mistaken detail was often used to dismiss an outlet's entire reporting on elections, immigration, or public health.",
+        "Religious, ideological, and policy debates often act as though rejecting one doctrine, statistic, or mechanism commits you to rejecting the entire worldview."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Appeal to accomplishment",
@@ -580,11 +580,14 @@
       "subCategory": "Red Herring",
       "subSubCategory": "Appeal to consequences",
       "aliases": [],
-      "definition": "An appeal to emotion in which the use of flattery is used to attract support for the argument.",
-      "example": "Your intelligence prevents you from rejecting the truth of my claim.",
-      "notes": "There is a fine line between flattery and honest kindness. Ignoring truth a bit to accommodate kindness is perhaps the most forgivable fallacy.",
-      "caseStudies": [],
-      "editorialStatus": "cleaned-from-root"
+      "definition": "Occurs when someone tries to win agreement by flattering the audience's intelligence, courage, independence, or special insight instead of supplying the missing evidence.",
+      "example": "You are too perceptive to fall for the official story, so you can already see why my theory must be right.",
+      "notes": "Compliments can be sincere and harmless. The fallacy appears when praise does the persuasive work by making agreement feel like a badge of intelligence or independence.",
+      "caseStudies": [
+        "Wellness, crypto, and conspiracy marketing often tells followers they are 'awake,' 'elite,' or 'smart enough to see through the lie,' turning assent into a test of self-image.",
+        "Political fundraising and influencer media frequently flatter supporters as the few people brave or intelligent enough to 'see what is really happening' before asking them to accept weakly supported claims."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Appeal to motive",
@@ -683,13 +686,14 @@
       "aliases": [
         "argumentum ad lazarum"
       ],
-      "definition": "Suggesting the truth of a conclusion necessarily negatively correlates to it's proponent's financial situation.",
-      "example": "He can be trusted due to his humble upbringing in a one-room cabin deep in the mountains.",
-      "notes": "The converse of this fallacy is the appeal to wealth fallacy.",
+      "definition": "Occurs when a claim is treated as more trustworthy, virtuous, or true mainly because its proponent is poor, ordinary, or from humble circumstances.",
+      "example": "He grew up with nothing, so his economic diagnosis must be more reliable than the experts'.",
+      "notes": "Background can illuminate perspective, but hardship is not a truth detector. A difficult life story may earn sympathy or respect without settling the claim being made.",
       "caseStudies": [
-        "The humble beginnings of many political candidates are often emphasized in an attempt to get the common citizen to identify with the candidate."
+        "Campaign biographies in 2024 often leaned heavily on working-class roots and hardship stories, which may matter politically but do not by themselves verify a candidate's policy claims.",
+        "Populist media often imply that 'ordinary people' are automatically more honest than credentialed critics, as if social position alone settled the argument."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Appeal to probability",
@@ -785,13 +789,14 @@
       "aliases": [
         "argumentum ad crumenam"
       ],
-      "definition": "Suggesting the truth of a conclusion necessarily positively correlates to it's proponent's financial situation.",
-      "example": "If your ideas had any real merit, you'd be rich by now.",
-      "notes": "The converse of this fallacy is the appeal to poverty fallacy.",
+      "definition": "Occurs when a claim is treated as more credible or correct mainly because it comes from a rich, famous, or financially successful person.",
+      "example": "He built a billion-dollar company, so his views on health policy must be right.",
+      "notes": "Success can indicate skill in a particular domain, but money is not a universal credential. Wealth may buy attention, not truth.",
       "caseStudies": [
-        "The financial success of an individual is often cited as evidence for their competency to take the helm of additional ventures, some of which may require skills other than what a successful business person can offer."
+        "In 2024 and 2025, fans and investors often treated billionaire founders' views on AI, politics, or medicine as self-validating because of their wealth rather than because the evidence was strong.",
+        "The unverified ABC debate affidavit gained extra credibility online after high-profile wealthy amplifiers helped circulate it, as though status itself made the claim more trustworthy."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Argument from fallacy",
@@ -870,14 +875,14 @@
       "aliases": [
         "argumentum ex silentio"
       ],
-      "definition": "A conclusion deemed true based on the lack of opposition.",
-      "example": "Because my opponent failed to address my point, my point is validated.",
-      "notes": "If a point is not addressed, rarely does it become anything other than an unaddressed point. However, this is context-dependent. If you see a vampire sitting across from you on the subway, and none of the other passengers seem interested, you might first consider what medication you might have taken that morning before wielding your wooden stake since the silence of the other passengers in such a setting would be unusual. The key question to ask is \"How unusual is this silence?\"",
+      "definition": "Occurs when a claim is treated as validated because opponents, authorities, or witnesses did not deny it, respond to it, or mention it.",
+      "example": "The agency never answered my thread, so my accusation must be true.",
+      "notes": "Silence can matter when a response would clearly be expected and feasible. Outside that setting, it often tells us little.",
       "caseStudies": [
-        "The disinterest and subsequent silence of doctors on the claims of dubious medial remedies is often spun to imply their tacit support, or at minimum, their lack of opposition.",
-        "The phrase \"no comment\", which can be uttered for a wide variety of reasons, is often spun by the media to evoke suspicion of a secret or mystery."
+        "The absence of public confirmation for many election-fraud and migrant-voting rumors was often spun as suspicious silence rather than as a sign that the underlying evidence was weak or nonexistent.",
+        "A 'no comment' from campaigns, police, or institutions is regularly treated as if it were a tacit admission, even though legal, strategic, or practical reasons may explain the silence."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Argumentum ad baculum",
@@ -894,14 +899,14 @@
         "appeal to the stick",
         "appeal to force"
       ],
-      "definition": "Occurs when an argument is made through coercion or threats of force towards an opposing party.",
-      "example": "You've been a good employee up to this point, John. And I think you'll agree that shining my shoes is not at all as humiliating as losing your job.",
-      "notes": "This fallacy works superficially. You may gain the cooperation of many through the Machiavellian use of force, but historically, those who lived by the sword often died by the sword. And the sword never changed the truth of the matter.",
+      "definition": "Occurs when agreement is extracted by threat, intimidation, or coercive pressure rather than by showing that the claim is true.",
+      "example": "Support this initiative, or do not expect your contract to be renewed.",
+      "notes": "Threats can force compliance, but they do not transform a bad argument into a good one. Fear may explain why someone goes along; it does not show that the view is correct.",
       "caseStudies": [
-        "There are millions of people who believe that, if you do not also believe in their particular version of god, that you will be eternally tortured.",
-        "In some countries, apostasy from a particular religion is deemed worthy of death. To what degree does belief subconsciously conform to threats such as these?"
+        "In countries where blasphemy, apostasy, or political dissent can trigger severe punishment, outward conformity is often mistaken for genuine persuasion when it may simply reflect fear.",
+        "Online campaigns that threaten doxxing, blacklisting, or mass harassment often aim to secure silence or agreement by making disagreement personally costly."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Argumentum ad populum",
@@ -1136,13 +1141,14 @@
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when a conclusion is deemed incorrect because it was commonly held when something else that was clearly false was also commonly held.",
-      "example": "Why must we accept medieval art as having any value when it emerged from the same period in which people burned witches and believed in fairies?",
-      "notes": "This is a type of faulty generalization since the error is over-generalizing from a period of several wrong concepts to concluding that all concepts within that period were wrong. A more detailed treatment of faulty generalizations can be found on the supplementary Inductive Errors page.",
+      "definition": "Occurs when an idea is dismissed mainly because it is old, premodern, or associated with a period that also held many false beliefs.",
+      "example": "That argument comes from ancient philosophy, so modern people can ignore it.",
+      "notes": "Older views can be wrong, but age alone neither refutes nor confirms them. The real question is whether the reasoning survives scrutiny.",
       "caseStudies": [
-        "Many early doctors held superstitions that would make us wary of visiting their office were they alive and holding the same beliefs today. This does not mean their practice of medicine was worthless for those alive in their day.."
+        "Social-media arguments often dismiss older religious, philosophical, or literary texts as worthless simply because they come from a less enlightened era, skipping the actual argument.",
+        "People also dismiss pre-digital scholarship wholesale as outdated while still relying on concepts, institutions, and moral categories that earlier thinkers helped shape."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Circular cause and consequence",
@@ -1203,13 +1209,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when the certainty one feels in respect to a claim is submitted as evidence for the veracity of that claim.",
-      "example": "I've never swayed from my confidence that Santa is real, and there is no degree of evidence that can counter the way I feel.",
-      "notes": "This fallacy results from esteeming certainty as an objective validation of a proposition rather than as an emotion that could be misguided. Sometimes it is an emotional certainty that prevents the emotional pain that might result from following the evidence into disbelief, and other times it is triggered by a legitimate intuition that results in an emotional snowball of certainty that does not assess the possible evidential clues hidden in the intuition for validity.",
+      "definition": "Occurs when a speaker's certainty, intensity, or felt conviction is treated as if it were evidence that the claim is true.",
+      "example": "I know it in my gut with total certainty, and that certainty is all the proof I need.",
+      "notes": "Confidence can track expertise, but it can also track charisma, identity, adrenaline, fear, or repeated exposure to a claim. Certainty is a psychological state, not a built-in proof.",
       "caseStudies": [
-        "Theists often conflate the emotional confidence derived from other emotions such as peace and love with evidence for the existence of their god. This essentially makes belief circular; \"I know what I know\".\n[Example]."
+        "The anonymous ABC debate affidavit spread partly because influential accounts amplified it with extraordinary certainty before any reliable verification had appeared.",
+        "In arguments about AI consciousness, election fraud, religion, and wellness, people often present their felt certainty as if it were itself a kind of evidence rather than something that also needs checking."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Conjunction fallacy",
@@ -1243,15 +1250,14 @@
       "aliases": [
         "quoting out of context"
       ],
-      "definition": "The selective excerpting of words from their original linguistic context in a way that distorts the intended meaning.",
-      "example": "My wife told me she needed me to take out the garbage. When she was moving out a week later, I told her she was a liar for having said she \"needed me\".",
-      "notes": "Those with faith in some form of holy scriptures often accuse each other of contextomy. This is probably more a function of the vagueness of the context which allows for multiple interpretations.",
+      "definition": "Occurs when words are selectively excerpted from their original context in a way that changes or distorts what the speaker meant.",
+      "example": "The scientist said the result was 'uncertain,' so he admitted the theory was collapsing.",
+      "notes": "Shortening a quote is not automatically deceptive. The fallacy appears when the omitted context would materially change how a fair reader understands the statement.",
       "caseStudies": [
-        "The commander of British forces in Afghanistan, Mark Carleton-Smith said the following.\"We're not going to win this war. It's about reducing it to a manageable level of insurgency that's not a strategic threat and can be managed by the Afghan army.\"\nOnly the first line was quoted by some media outlets, distorting the true intention of the commander.",
-        "The following is a quote by Charles Darwin.\"Why then is not every geological formation and every stratum full of such intermediate links? Geology assuredly does not reveal any such finely-graduated organic chain; and this, perhaps, is the most obvious and serious objection which can be urged against the theory. \"\nTaken out of context, this quote is easily perceived to be Darwin doubting his own theory. However, Darwin continued...\"The explanation lies, as I believe, in the extreme imperfection of the geological record. In the first place, it should always be borne in mind what sort of intermediate forms must, on the theory, have formerly existed... \".",
-        "Consider this bible verse. Hosea 11:1 \"When Israel was a child, I loved him, and out of Egypt I called my son.\"\nNow note how Matthew later unequivocally denotes this verse in Hosea as a messianic prophecy. He is refering to Jesus' time in Egypt when he writes... Matthew 2:15 \"And was there until the death of Herod: that it might be fulfilled which was spoken of the Lord by the prophet, saying, Out of Egypt have I called my son.'\"\nBut now let's return to the very next verse in Hosea. Hosea 11:2 \"But the more I called Israel, the further they went from me. They sacrificed to the Baals and they burned incense to images.\"\nUnless you want to say Jesus sacrificed to the Baals, you've got to say Matthew took this verse out of context."
+        "Edited debate clips, viral subtitled videos, and quote-card politics in 2024 regularly removed the surrounding setup, qualifier, or punchline that made the original meaning very different.",
+        "Public figures and partisans often quote one alarming sentence from a report, study, or speech while cutting the lines that immediately limit, explain, or even reverse the apparent claim."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Continuum fallacy",
@@ -2185,11 +2191,14 @@
       "subCategory": "Faulty Generalization",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Involves describing an occurrence, often exceptional, in vivid detail, to distort the actual severity of the problem.",
-      "example": "You should never date a Texas girl. My friend dated one, and she slashed the tires on his car and killed his dog.",
-      "notes": "",
-      "caseStudies": [],
-      "editorialStatus": "cleaned-from-root"
+      "definition": "Occurs when a striking anecdote or emotionally intense case is used to make a problem seem more common, clear, or representative than the broader evidence allows.",
+      "example": "One terrifying subway assault proves the whole city is descending into chaos.",
+      "notes": "Vivid cases matter, especially when they reveal harms abstract statistics can hide. The fallacy arises when memorable exceptions are used as if they were the normal pattern.",
+      "caseStudies": [
+        "The Springfield rumor gained traction partly because lurid, memorable imagery traveled faster than the dull but crucial fact that authorities found no supporting evidence.",
+        "Viral clips of shoplifting, airplane incidents, or isolated crimes are often used to imply a general trend without the comparative data needed to show that the example is typical."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Moving the goalpost",
@@ -2956,16 +2965,14 @@
       "subCategory": "Faulty Generalization",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when a commonly heard and accepted phrase is rhetorically introduced as a substitute for an actual argument.",
-      "example": "The more things change, the more they stay the same. Humans will never overcome their violent nature in spite of recent claims of progress.",
-      "notes": "Some aphorisms fall into the category of faulty generalizations. It is usually difficult to find a pithy phrase that captures the nuances of the concept.",
+      "definition": "Occurs when a familiar slogan or stock phrase is used to stop inquiry, deflect scrutiny, or create the feeling that an issue has already been settled.",
+      "example": "It is what it is, so there is nothing more to discuss.",
+      "notes": "Aphorisms can be wise shortcuts, but they become fallacious when they replace the reasoning that the situation still requires.",
       "caseStudies": [
-        "The phrase \"Only God knows\" is often interjected at the end of a discussion to imply that no one is justified in taking a position on the issue, or to assume the evidence is balanced on both sides.",
-        "Sometime the phrase \"Freedom is not free\" is used to infer a clear justification for entering a war.",
-        "Christians often quote the verse \"The fool has said in his heart, 'there is no God'\" sometimes as if this is a justification for belief in God, and sometimes simply as a thought-terminator.",
-        "When having their expectations questioned, older people often, due to either having no real answer or having no interest in giving an answer, say \"When you're my age, you'll understand.\""
+        "Phrases such as 'Do your own research,' 'common sense,' or 'if you know, you know' are often used online not to open inquiry but to make further questions look unnecessary or naive.",
+        "Political and religious arguments frequently end with slogans like 'Freedom is not free' or 'Only God knows,' which can be meaningful in some contexts but often function as conversation-stoppers."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Top-down condemnation",
@@ -3092,11 +3099,14 @@
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when it is assumed that, if one wrong has been committed, another wrong will remove its culpability.",
-      "example": "My opponent maliciously attacked my character, and I am therefore justified in pointing out a few of his improprieties.",
-      "notes": "",
-      "caseStudies": [],
-      "editorialStatus": "cleaned-from-root"
+      "definition": "Occurs when someone treats one wrong act as justified because it responds to, retaliates against, or balances out another wrong.",
+      "example": "Their side spread fake clips about us, so we are justified in spreading a few about them.",
+      "notes": "Exposing hypocrisy can matter, but retaliation does not erase the original wrong or magically sanitize a copy of it.",
+      "caseStudies": [
+        "In 2024 election discourse, misinformation was often excused with the claim that the other side lies too, as if symmetry or revenge transformed falsehood into fairness.",
+        "Debates about censorship, doxxing, and dirty campaign tactics often slide from condemnation into imitation, with each side treating the other's bad behavior as a license to do the same."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Undistributed middle",

@@ -479,6 +479,126 @@
         "Short-form video and podcast culture reward confidence, pace, and rhetorical dominance, making it easy for a slick performance to outperform a careful but less theatrical argument."
       ],
       "editorialStatus": "modernized-2026-pass"
+    },
+    "All or nothing fallacy": {
+      "definition": "Occurs when support for part of a view, or problems with part of a view, are treated as if they force total acceptance or total rejection of the whole package",
+      "example": "One error in this report means the entire investigation is worthless.",
+      "notes": "Many systems of belief, institutions, and documents are mixed. Partial support or partial failure rarely justifies an everything-or-nothing verdict.",
+      "caseStudies": [
+        "In 2024 media battles, a single correction or mistaken detail was often used to dismiss an outlet's entire reporting on elections, immigration, or public health.",
+        "Religious, ideological, and policy debates often act as though rejecting one doctrine, statistic, or mechanism commits you to rejecting the entire worldview."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Appeal to flattery": {
+      "definition": "Occurs when someone tries to win agreement by flattering the audience's intelligence, courage, independence, or special insight instead of supplying the missing evidence",
+      "example": "You are too perceptive to fall for the official story, so you can already see why my theory must be right.",
+      "notes": "Compliments can be sincere and harmless. The fallacy appears when praise does the persuasive work by making agreement feel like a badge of intelligence or independence.",
+      "caseStudies": [
+        "Wellness, crypto, and conspiracy marketing often tells followers they are 'awake,' 'elite,' or 'smart enough to see through the lie,' turning assent into a test of self-image.",
+        "Political fundraising and influencer media frequently flatter supporters as the few people brave or intelligent enough to 'see what is really happening' before asking them to accept weakly supported claims."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Appeal to poverty": {
+      "definition": "Occurs when a claim is treated as more trustworthy, virtuous, or true mainly because its proponent is poor, ordinary, or from humble circumstances",
+      "example": "He grew up with nothing, so his economic diagnosis must be more reliable than the experts'.",
+      "notes": "Background can illuminate perspective, but hardship is not a truth detector. A difficult life story may earn sympathy or respect without settling the claim being made.",
+      "caseStudies": [
+        "Campaign biographies in 2024 often leaned heavily on working-class roots and hardship stories, which may matter politically but do not by themselves verify a candidate's policy claims.",
+        "Populist media often imply that 'ordinary people' are automatically more honest than credentialed critics, as if social position alone settled the argument."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Appeal to wealth": {
+      "definition": "Occurs when a claim is treated as more credible or correct mainly because it comes from a rich, famous, or financially successful person",
+      "example": "He built a billion-dollar company, so his views on health policy must be right.",
+      "notes": "Success can indicate skill in a particular domain, but money is not a universal credential. Wealth may buy attention, not truth.",
+      "caseStudies": [
+        "In 2024 and 2025, fans and investors often treated billionaire founders' views on AI, politics, or medicine as self-validating because of their wealth rather than because the evidence was strong.",
+        "The unverified ABC debate affidavit gained extra credibility online after high-profile wealthy amplifiers helped circulate it, as though status itself made the claim more trustworthy."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Argument from silence": {
+      "definition": "Occurs when a claim is treated as validated because opponents, authorities, or witnesses did not deny it, respond to it, or mention it",
+      "example": "The agency never answered my thread, so my accusation must be true.",
+      "notes": "Silence can matter when a response would clearly be expected and feasible. Outside that setting, it often tells us little.",
+      "caseStudies": [
+        "The absence of public confirmation for many election-fraud and migrant-voting rumors was often spun as suspicious silence rather than as a sign that the underlying evidence was weak or nonexistent.",
+        "A 'no comment' from campaigns, police, or institutions is regularly treated as if it were a tacit admission, even though legal, strategic, or practical reasons may explain the silence."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Argumentum ad baculum": {
+      "definition": "Occurs when agreement is extracted by threat, intimidation, or coercive pressure rather than by showing that the claim is true",
+      "example": "Support this initiative, or do not expect your contract to be renewed.",
+      "notes": "Threats can force compliance, but they do not transform a bad argument into a good one. Fear may explain why someone goes along; it does not show that the view is correct.",
+      "caseStudies": [
+        "In countries where blasphemy, apostasy, or political dissent can trigger severe punishment, outward conformity is often mistaken for genuine persuasion when it may simply reflect fear.",
+        "Online campaigns that threaten doxxing, blacklisting, or mass harassment often aim to secure silence or agreement by making disagreement personally costly."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Chronological snobbery": {
+      "definition": "Occurs when an idea is dismissed mainly because it is old, premodern, or associated with a period that also held many false beliefs",
+      "example": "That argument comes from ancient philosophy, so modern people can ignore it.",
+      "notes": "Older views can be wrong, but age alone neither refutes nor confirms them. The real question is whether the reasoning survives scrutiny.",
+      "caseStudies": [
+        "Social-media arguments often dismiss older religious, philosophical, or literary texts as worthless simply because they come from a less enlightened era, skipping the actual argument.",
+        "People also dismiss pre-digital scholarship wholesale as outdated while still relying on concepts, institutions, and moral categories that earlier thinkers helped shape."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Confidence as a validator": {
+      "definition": "Occurs when a speaker's certainty, intensity, or felt conviction is treated as if it were evidence that the claim is true",
+      "example": "I know it in my gut with total certainty, and that certainty is all the proof I need.",
+      "notes": "Confidence can track expertise, but it can also track charisma, identity, adrenaline, fear, or repeated exposure to a claim. Certainty is a psychological state, not a built-in proof.",
+      "caseStudies": [
+        "The anonymous ABC debate affidavit spread partly because influential accounts amplified it with extraordinary certainty before any reliable verification had appeared.",
+        "In arguments about AI consciousness, election fraud, religion, and wellness, people often present their felt certainty as if it were itself a kind of evidence rather than something that also needs checking."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Contextomy": {
+      "definition": "Occurs when words are selectively excerpted from their original context in a way that changes or distorts what the speaker meant",
+      "example": "The scientist said the result was 'uncertain,' so he admitted the theory was collapsing.",
+      "notes": "Shortening a quote is not automatically deceptive. The fallacy appears when the omitted context would materially change how a fair reader understands the statement.",
+      "caseStudies": [
+        "Edited debate clips, viral subtitled videos, and quote-card politics in 2024 regularly removed the surrounding setup, qualifier, or punchline that made the original meaning very different.",
+        "Public figures and partisans often quote one alarming sentence from a report, study, or speech while cutting the lines that immediately limit, explain, or even reverse the apparent claim."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Misleading vividness": {
+      "definition": "Occurs when a striking anecdote or emotionally intense case is used to make a problem seem more common, clear, or representative than the broader evidence allows",
+      "example": "One terrifying subway assault proves the whole city is descending into chaos.",
+      "notes": "Vivid cases matter, especially when they reveal harms abstract statistics can hide. The fallacy arises when memorable exceptions are used as if they were the normal pattern.",
+      "caseStudies": [
+        "The Springfield rumor gained traction partly because lurid, memorable imagery traveled faster than the dull but crucial fact that authorities found no supporting evidence.",
+        "Viral clips of shoplifting, airplane incidents, or isolated crimes are often used to imply a general trend without the comparative data needed to show that the example is typical."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Thought-terminating clich\u00e9": {
+      "definition": "Occurs when a familiar slogan or stock phrase is used to stop inquiry, deflect scrutiny, or create the feeling that an issue has already been settled",
+      "example": "It is what it is, so there is nothing more to discuss.",
+      "notes": "Aphorisms can be wise shortcuts, but they become fallacious when they replace the reasoning that the situation still requires.",
+      "caseStudies": [
+        "Phrases such as 'Do your own research,' 'common sense,' or 'if you know, you know' are often used online not to open inquiry but to make further questions look unnecessary or naive.",
+        "Political and religious arguments frequently end with slogans like 'Freedom is not free' or 'Only God knows,' which can be meaningful in some contexts but often function as conversation-stoppers."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Two wrongs make a right": {
+      "definition": "Occurs when someone treats one wrong act as justified because it responds to, retaliates against, or balances out another wrong",
+      "example": "Their side spread fake clips about us, so we are justified in spreading a few about them.",
+      "notes": "Exposing hypocrisy can matter, but retaliation does not erase the original wrong or magically sanitize a copy of it.",
+      "caseStudies": [
+        "In 2024 election discourse, misinformation was often excused with the claim that the other side lies too, as if symmetry or revenge transformed falsehood into fairness.",
+        "Debates about censorship, doxxing, and dirty campaign tactics often slide from condemnation into imitation, with each side treating the other's bad behavior as a license to do the same."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     }
   }
 }
