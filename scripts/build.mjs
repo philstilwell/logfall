@@ -1509,6 +1509,19 @@ function buildHomePage(records, categories) {
     <section class="section-block">
       <div class="section-header">
         <div>
+          <h2 class="section-title">Teaching paths</h2>
+          <p class="section-copy">Curated routes through the site for first-time readers, public-debate analysis, and high-confusion review sessions.</p>
+        </div>
+        <a class="inline-link" href="paths/">See all paths</a>
+      </div>
+      <div class="category-grid">
+        ${teachingPathDefinitions.map((pathDefinition) => renderTeachingPathCard(pathDefinition, records, "")).join("")}
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-header">
+        <div>
           <h2 class="section-title">Browse the taxonomy</h2>
           <p class="section-copy">The taxonomy groups fallacies by the main kind of reasoning failure involved, which makes nearby mistakes easier to compare.</p>
         </div>
@@ -1538,19 +1551,6 @@ function buildHomePage(records, categories) {
       </div>
       <div class="fallacy-grid">
         ${featured.map((record) => renderFallacyCard(record, "")).join("")}
-      </div>
-    </section>
-
-    <section class="section-block">
-      <div class="section-header">
-        <div>
-          <h2 class="section-title">Teaching paths</h2>
-          <p class="section-copy">Curated routes through the site for first-time readers, public-debate analysis, and high-confusion review sessions.</p>
-        </div>
-        <a class="inline-link" href="paths/">See all paths</a>
-      </div>
-      <div class="category-grid">
-        ${teachingPathDefinitions.map((pathDefinition) => renderTeachingPathCard(pathDefinition, records, "")).join("")}
       </div>
     </section>
   `;
