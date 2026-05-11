@@ -321,6 +321,60 @@ function renderFallacyCard(record, prefix) {
   </article>`;
 }
 
+function posterAssetNameForRecord(record) {
+  return `fallacy-${record.slug}-poster`;
+}
+
+function resolvePosterAssetForRecord(record, posterAssets) {
+  const base = posterAssetNameForRecord(record);
+  for (const extension of ["webp", "png", "jpeg", "jpg"]) {
+    const candidate = `${base}.${extension}`;
+    if (posterAssets.has(candidate)) {
+      return candidate;
+    }
+  }
+  return null;
+}
+
+function posterAltTextForRecord(record) {
+  return `${record.name} companion poster in a retro mid-century editorial cartoon style, illustrating ${record.definition.toLowerCase()}`;
+}
+
+function renderReferenceMeta(record, prompts) {
+  return `<div class="meta-grid">
+    <div class="note-panel">
+      <h4>Family</h4>
+      <p class="muted">${escapeHtml(record.family || "Unspecified")}</p>
+    </div>
+    ${
+      record.aliases.length
+        ? `<div class="note-panel">
+      <h4>Aliases</h4>
+      <p class="muted">${escapeHtml(record.aliases.join(", "))}</p>
+    </div>`
+        : ""
+    }
+    <div class="note-panel">
+      <h4>Quick check</h4>
+      <p class="muted">${escapeHtml(prompts[0] || "Ask what evidence or reasoning step is doing too much work.")}</p>
+    </div>
+  </div>`;
+}
+
+function renderPosterIllustration(record, prefix, posterAssets) {
+  const asset = resolvePosterAssetForRecord(record, posterAssets);
+  if (!asset) return "";
+
+  return `<aside class="detail-section detail-illustration-shell">
+    <img
+      class="detail-illustration-image"
+      src="${prefix}assets/${escapeHtml(asset)}"
+      alt="${escapeHtml(posterAltTextForRecord(record))}"
+      loading="lazy"
+    />
+  </aside>`;
+}
+
 function relatedFallacies(record, records) {
   return records
     .filter((candidate) => candidate.name !== record.name)
@@ -757,16 +811,24 @@ function buildCategoryPage(category, records) {
   });
 }
 
-function buildDetailPage(record, records, categoryProfiles) {
+function buildDetailPage(record, records, categoryProfiles, posterAssets) {
   const related = relatedFallacies(record, records);
   const prompts = record.categories.map((category) => diagnosticPrompts[category]).filter(Boolean);
+  const hasPosterIllustration = Boolean(resolvePosterAssetForRecord(record, posterAssets));
+  const referenceMeta = renderReferenceMeta(record, prompts);
+  const profileReferenceMarkup = hasPosterIllustration
+    ? `<div class="profile-reference">
+          <p class="eyebrow">Reference</p>
+          ${referenceMeta}
+        </div>`
+    : "";
 
   const content = `
     <div class="breadcrumbs">
       <a href="../../">Home</a><span>/</span><a href="../">All Fallacies</a><span>/</span><strong>${escapeHtml(record.name)}</strong>
     </div>
 
-    <section class="detail-hero">
+    <section class="detail-hero${hasPosterIllustration ? " detail-hero-with-illustration" : ""}">
       <article class="detail-section">
         <p class="eyebrow">Fallacy profile</p>
         <h2 class="detail-title">${escapeHtml(record.name)}</h2>
@@ -781,10 +843,13 @@ function buildDetailPage(record, records, categoryProfiles) {
             <p class="detail-card-label">Illustrative example</p>
             <p class="detail-card-value">${escapeHtml(record.example)}</p>
           </div>
-        </div>
+        </div>${profileReferenceMarkup}
       </article>
 
-      <aside class="detail-section">
+      ${
+        hasPosterIllustration
+          ? renderPosterIllustration(record, "../../", posterAssets)
+          : `<aside class="detail-section">
         <p class="eyebrow">Reference</p>
         <div class="meta-grid">
           <div class="note-panel">
@@ -804,7 +869,8 @@ function buildDetailPage(record, records, categoryProfiles) {
             <p class="muted">${escapeHtml(prompts[0] || "Ask what evidence or reasoning step is doing too much work.")}</p>
           </div>
         </div>
-      </aside>
+      </aside>`
+      }
     </section>
 
     ${
@@ -1088,6 +1154,10 @@ async function main() {
     ...category,
     description: categoryDescriptions[category.name] || "A reasoning category in the LogFall taxonomy.",
   }));
+  const posterAssets = new Set(
+    (await fs.readdir(path.join(distRoot, "assets")).catch(() => []))
+      .filter((name) => /^fallacy-.*-poster\.(webp|png|jpe?g)$/i.test(name)),
+  );
 
   await pruneGeneratedDirectories(path.join(distRoot, "fallacies"), new Set(records.map((record) => record.slug)));
   await pruneGeneratedDirectories(path.join(distRoot, "categories"), new Set(categories.map((category) => category.slug)));
@@ -1116,7 +1186,10 @@ async function main() {
   }
 
   for (const record of records) {
-    await writeText(`fallacies/${record.slug}/index.html`, buildDetailPage(record, records, categoryProfiles));
+    await writeText(
+      `fallacies/${record.slug}/index.html`,
+      buildDetailPage(record, records, categoryProfiles, posterAssets),
+    );
   }
 
   await buildWorkbook(records, categories, categoryProfiles);

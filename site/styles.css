@@ -363,6 +363,10 @@ img {
   align-items: start;
 }
 
+.detail-hero-with-illustration {
+  grid-template-columns: minmax(0, 1.39fr) minmax(320px, 0.8fr);
+}
+
 .detail-section {
   padding: 24px;
   align-self: start;
@@ -413,6 +417,10 @@ img {
   font-size: 1.03rem;
 }
 
+.profile-reference {
+  margin-top: 22px;
+}
+
 .meta-grid {
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
 }
@@ -426,6 +434,21 @@ img {
   font-size: 0.95rem;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+}
+
+.detail-illustration-shell {
+  display: block;
+  padding: 20px;
+  background: #111111;
+}
+
+.detail-illustration-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0;
+  border: 1px solid var(--line);
+  background: #111111;
 }
 
 .case-list {
@@ -692,6 +715,10 @@ img {
   .category-card,
   .fallacy-card {
     padding: 18px;
+  }
+
+  .detail-illustration-shell {
+    padding: 15px;
   }
 
   .search-row {
