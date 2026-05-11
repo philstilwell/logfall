@@ -62,6 +62,149 @@ const diagnosticPrompts = {
   Emotional: "Would the argument still persuade if the emotional force were removed?",
 };
 
+const classroomLevels = ["Middle school+", "High school", "Intro college", "Advanced undergraduate"];
+const teachingPathDefinitions = [
+  {
+    slug: "start-here",
+    title: "Start here",
+    description: "A foundational sequence for first-time readers and classrooms starting with the fallacies they are most likely to meet in ordinary discussion.",
+    audience: "Best for middle school through intro college.",
+    names: [
+      "Ad hominem",
+      "Appeal to authority",
+      "Appeal to emotion",
+      "Begging the question",
+      "Cherry picking",
+      "Correlation is not causation",
+      "False dilemma",
+      "Hasty generalization",
+      "No True Scotsman",
+      "Slippery slope",
+      "Straw man argument",
+      "Tu quoque",
+    ],
+  },
+  {
+    slug: "public-debate",
+    title: "Most common in public debate",
+    description: "A classroom-ready path centered on the moves that appear constantly in campaigns, punditry, and online argument.",
+    audience: "Best for civics, debate, media literacy, and rhetoric courses.",
+    names: [
+      "Ad hominem",
+      "Appeal to fear",
+      "Appeal to authority",
+      "Bare assertion fallacy",
+      "Cherry picking",
+      "False dilemma",
+      "False equivalence",
+      "Moving the goalpost",
+      "Red herring",
+      "Slippery slope",
+      "Straw man argument",
+      "Tu quoque",
+    ],
+  },
+  {
+    slug: "often-confused",
+    title: "Most often confused",
+    description: "A comparison path for near neighbors that students and readers regularly collapse into one another.",
+    audience: "Best for high school and college review sessions.",
+    names: [
+      "Anecdotal fallacy",
+      "Appeal to authority",
+      "Correlation is not causation",
+      "False analogy",
+      "False dilemma",
+      "False equivalence",
+      "Faulty generalization",
+      "Hasty generalization",
+      "Poisoning the well",
+      "Post hoc ergo propter hoc",
+      "Ad hominem",
+      "False attribution",
+    ],
+  },
+];
+const foundationalNames = new Set([
+  ...featuredNames,
+  "Appeal to emotion",
+  "Appeal to fear",
+  "Hasty generalization",
+  "Red herring",
+  "Tu quoque",
+  "Wishful thinking",
+]);
+const keywordStopwords = new Set([
+  "about",
+  "after",
+  "again",
+  "against",
+  "already",
+  "also",
+  "among",
+  "argument",
+  "because",
+  "before",
+  "being",
+  "between",
+  "claim",
+  "conclusion",
+  "context",
+  "could",
+  "does",
+  "doing",
+  "even",
+  "from",
+  "have",
+  "into",
+  "just",
+  "many",
+  "more",
+  "must",
+  "need",
+  "only",
+  "other",
+  "over",
+  "really",
+  "reasoning",
+  "same",
+  "should",
+  "some",
+  "still",
+  "such",
+  "than",
+  "that",
+  "their",
+  "there",
+  "these",
+  "they",
+  "this",
+  "those",
+  "through",
+  "treats",
+  "under",
+  "using",
+  "when",
+  "where",
+  "which",
+  "while",
+  "with",
+  "without",
+]);
+const categoryQuizKeywords = {
+  Formal: ["premises", "conclusion", "follow", "valid"],
+  Mathematical: ["rates", "sample", "numbers", "probability"],
+  Causal: ["cause", "correlation", "confounder", "mechanism"],
+  Linguistic: ["meaning", "term", "ambiguity", "definition"],
+  Conceptual: ["category", "alternatives", "boundary", "classification"],
+  Evidential: ["evidence", "missing", "support", "overstated"],
+  Perceptual: ["appearance", "seems", "vivid", "shown"],
+  Perspectival: ["frame", "viewpoint", "context", "timeline"],
+  Epistemic: ["confidence", "know", "evidence", "belief"],
+  Tactical: ["issue", "diversion", "claim", "response"],
+  Emotional: ["emotion", "pressure", "evidence", "persuasion"],
+};
+
 function escapeHtml(value = "") {
   return String(value)
     .replaceAll("&", "&amp;")
@@ -185,6 +328,248 @@ function ensureSentence(value = "") {
 function lowerFirst(value = "") {
   if (!value) return "";
   return value.charAt(0).toLowerCase() + value.slice(1);
+}
+
+function definitionCore(definition = "") {
+  return stripTrailingPunctuation(
+    String(definition || "")
+      .replace(/^Occurs when\s+/i, "")
+      .replace(/^This fallacy occurs when\s+/i, ""),
+  );
+}
+
+function extractKeywords(text = "", limit = 4) {
+  const matches = String(text || "").toLowerCase().match(/[a-z]{5,}/g) || [];
+  const unique = [];
+  for (const word of matches) {
+    if (keywordStopwords.has(word) || unique.includes(word)) continue;
+    unique.push(word);
+    if (unique.length >= limit) break;
+  }
+  return unique;
+}
+
+function domainTagForRecord(record) {
+  const categories = new Set(record.categories);
+  if (categories.has("Formal") || categories.has("Mathematical")) return "Formal logic";
+  if (categories.has("Causal") || categories.has("Evidential")) return "Scientific reasoning";
+  if (categories.has("Tactical") || categories.has("Emotional") || categories.has("Linguistic")) {
+    return "Rhetoric / debate";
+  }
+  return "Critical thinking / philosophy";
+}
+
+function difficultyForRecord(record) {
+  if (foundationalNames.has(record.name)) return "Foundational";
+
+  let score = 0;
+  const categories = new Set(record.categories);
+  if (categories.has("Formal") || categories.has("Mathematical")) score += 3;
+  if (categories.has("Epistemic") || categories.has("Linguistic") || categories.has("Perspectival")) score += 2;
+  if (categories.has("Causal") || categories.has("Conceptual")) score += 1;
+  if (record.subCategory || record.subSubCategory) score += 1;
+  if ((record.notes || "").length > 260) score += 1;
+
+  if (score <= 1) return "Foundational";
+  if (score <= 3) return "Intermediate";
+  return "Advanced";
+}
+
+function classroomLevelForRecord(record, difficulty = "") {
+  if (difficulty === "Foundational") return "Middle school+";
+  if (difficulty === "Intermediate") return "High school";
+  if (record.categories.includes("Formal") || record.categories.includes("Mathematical") || record.categories.includes("Epistemic")) {
+    return "Advanced undergraduate";
+  }
+  return "Intro college";
+}
+
+const pedagogyCache = new Map();
+
+function pedagogyForRecord(record) {
+  if (pedagogyCache.has(record.slug)) return pedagogyCache.get(record.slug);
+
+  const difficulty = difficultyForRecord(record);
+  const classroomLevel = classroomLevelForRecord(record, difficulty);
+  const domainTag = domainTagForRecord(record);
+  const teachingPaths = teachingPathDefinitions
+    .filter((path) => path.names.includes(record.name))
+    .map((path) => ({ slug: path.slug, title: path.title }));
+
+  const meta = {
+    difficulty,
+    classroomLevel,
+    domainTag,
+    classroomTags: [classroomLevel, domainTag],
+    teachingPaths,
+  };
+  pedagogyCache.set(record.slug, meta);
+  return meta;
+}
+
+const confusionCache = new Map();
+
+function confusionCandidates(record, records, limit = 2) {
+  if (confusionCache.has(record.slug)) {
+    return confusionCache.get(record.slug).slice(0, limit);
+  }
+
+  const ranked = records
+    .filter((candidate) => candidate.slug !== record.slug)
+    .map((candidate) => {
+      const sharedCategories = candidate.categories.filter((category) => record.categories.includes(category));
+      const score =
+        sharedCategories.length * 14 +
+        (candidate.categories[0] === record.categories[0] ? 6 : 0) +
+        (candidate.family && candidate.family === record.family ? 3 : 0) +
+        (candidate.subCategory && candidate.subCategory === record.subCategory ? 2 : 0) +
+        (candidate.subSubCategory && candidate.subSubCategory === record.subSubCategory ? 1 : 0);
+      return { candidate, sharedCategories, score };
+    })
+    .filter((item) => item.score > 0)
+    .sort((a, b) => b.score - a.score || a.candidate.name.localeCompare(b.candidate.name));
+
+  confusionCache.set(record.slug, ranked);
+  return ranked.slice(0, limit);
+}
+
+function overlapTextForConfusion(item) {
+  if (!item.sharedCategories.length) {
+    return "These can feel similar because they lead readers toward the wrong conclusion through a similar surface move.";
+  }
+  if (item.sharedCategories.length === 1) {
+    return `Both often look like ${item.sharedCategories[0].toLowerCase()} mistakes at first glance.`;
+  }
+  return `Both often look like ${item.sharedCategories.map((value) => value.toLowerCase()).join(" and ")} mistakes at first glance.`;
+}
+
+function modelExplanationForRecord(record, confusionItem) {
+  const base = `This is ${record.name} because ${lowerFirst(definitionCore(record.definition))}.`;
+  if (!confusionItem) return ensureSentence(base);
+  const candidate = confusionItem.candidate;
+  return ensureSentence(
+    `${base} The key difference from ${candidate.name} is that ${lowerFirst(definitionCore(candidate.definition))}.`,
+  );
+}
+
+function quizKeywordsForRecord(record) {
+  const category = record.categories[0] || "";
+  return [...new Set([...(categoryQuizKeywords[category] || []), ...extractKeywords(definitionCore(record.definition)), ...extractKeywords(record.notes || "")])].slice(0, 6);
+}
+
+function quizConfigForRecord(record, records) {
+  const confusionItems = confusionCandidates(record, records, 3);
+  const used = new Set([record.name]);
+  const options = [record.name];
+
+  for (const item of confusionItems) {
+    if (used.has(item.candidate.name)) continue;
+    used.add(item.candidate.name);
+    options.push(item.candidate.name);
+  }
+
+  if (options.length < 4) {
+    for (const candidate of records) {
+      if (candidate.slug === record.slug || used.has(candidate.name)) continue;
+      if (candidate.categories[0] !== record.categories[0]) continue;
+      used.add(candidate.name);
+      options.push(candidate.name);
+      if (options.length >= 4) break;
+    }
+  }
+
+  if (options.length < 4) {
+    for (const name of featuredNames) {
+      if (used.has(name) || name === record.name) continue;
+      used.add(name);
+      options.push(name);
+      if (options.length >= 4) break;
+    }
+  }
+
+  return {
+    options: options.sort((a, b) => a.localeCompare(b)),
+    answer: record.name,
+    keywords: quizKeywordsForRecord(record),
+    model: modelExplanationForRecord(record, confusionItems[0]),
+  };
+}
+
+function repairModelForRecord(record) {
+  const category = record.categories[0] || "";
+  const prompt = diagnosticPrompts[category] || "What extra support would the conclusion need before it is justified?";
+  const templates = {
+    Formal: `These premises do not yet prove the conclusion. A stronger version would either add the missing premise or weaken the conclusion to what really follows.`,
+    Mathematical: `A stronger version would state the relevant rate, sample, or comparison explicitly before drawing the conclusion.`,
+    Causal: `This pattern may justify further investigation, but it does not by itself show causation; timing, mechanism, controls, and rival explanations still matter.`,
+    Linguistic: `A stronger version would keep the key term in one stable sense and restate the claim only after the wording is clear.`,
+    Conceptual: `A stronger version would define the category more carefully and say what happens once the omitted alternatives are put back on the table.`,
+    Evidential: `A stronger version would say only what the evidence currently supports and name what evidence is still missing.`,
+    Perceptual: `A stronger version would separate what looks vivid or striking from what has actually been shown.`,
+    Perspectival: `A stronger version would widen the frame and restate the conclusion so it still holds once the missing context is included.`,
+    Epistemic: `A stronger version would lower the confidence of the claim to match what can responsibly be known from the evidence.`,
+    Tactical: `A stronger version would answer the original claim directly instead of shifting the conversation away from it.`,
+    Emotional: `A stronger version would remove the emotional pressure and defend the conclusion with reasons or evidence.`,
+  };
+  return ensureSentence(templates[category] || `A stronger version would say only what the reasoning has actually earned. ${prompt}`);
+}
+
+function repairChecklistForRecord(record) {
+  const category = record.categories[0] || "";
+  const shared = [
+    "State only what the argument or evidence really supports.",
+    "Remove the exact move that made the original version fallacious.",
+  ];
+  const byCategory = {
+    Formal: ["Check whether the conclusion really follows from the stated premises."],
+    Mathematical: ["Make the relevant comparison, rate, or sample size explicit."],
+    Causal: ["Name at least one rival explanation, missing mechanism, or control."],
+    Linguistic: ["Keep the key term in one stable sense throughout the rewrite."],
+    Conceptual: ["Define the category carefully and restore the omitted alternatives."],
+    Evidential: ["Say what evidence would need to be added before the stronger claim could be justified."],
+    Perceptual: ["Separate how the case feels or looks from what has been demonstrated."],
+    Perspectival: ["Add the missing frame, timeline, or viewpoint before concluding."],
+    Epistemic: ["Calibrate the confidence of the rewrite to the actual evidence."],
+    Tactical: ["Answer the original issue rather than the distraction or attack."],
+    Emotional: ["Make sure the rewrite would still persuade without the emotional push."],
+  };
+  return [...shared, ...(byCategory[category] || [])];
+}
+
+function argumentMapForRecord(record) {
+  const category = record.categories[0] || "";
+  const problem = ensureSentence(record.mainReasoningProblem || definitionCore(record.definition));
+  const prompt = diagnosticPrompts[category] || "What is missing before the conclusion is earned?";
+
+  if (category === "Formal") {
+    return {
+      variant: "formal",
+      title: "Argument map",
+      intro: "This map highlights the gap between the stated structure and the conclusion the argument tries to force.",
+      nodes: [
+        { label: "Premise pattern", text: ensureSentence(record.example || record.definition) },
+        { label: "Invalid step", text: `The structure fails when ${lowerFirst(problem)}` },
+        { label: "What the premises still allow", text: ensureSentence(record.notes || "The observed consequence could still have other explanations or supporting structures.") },
+        { label: "What a valid repair needs", text: ensureSentence(prompt) },
+      ],
+    };
+  }
+
+  if (category === "Causal") {
+    return {
+      variant: "causal",
+      title: "Argument map",
+      intro: "This map shows where an observed pattern gets promoted into a stronger causal story than the evidence can support.",
+      nodes: [
+        { label: "Observed pattern", text: ensureSentence(record.example || record.definition) },
+        { label: "Claimed cause", text: `The leap happens when ${lowerFirst(problem)}` },
+        { label: "Missing checks", text: ensureSentence(record.notes || "Alternative causes, timing, mechanisms, and controls still need to be checked.") },
+        { label: "Safer conclusion", text: ensureSentence(prompt) },
+      ],
+    };
+  }
+
+  return null;
 }
 
 function toolModeForCategory(category = "") {
@@ -590,21 +975,33 @@ function renderPills(categories) {
     .join("")}</div>`;
 }
 
+function renderTeacherPills(record) {
+  const pedagogy = pedagogyForRecord(record);
+  return `<div class="teaching-pill-row">
+    <span class="teaching-pill">${escapeHtml(pedagogy.difficulty)}</span>
+    <span class="teaching-pill">${escapeHtml(pedagogy.classroomLevel)}</span>
+  </div>`;
+}
+
 function renderFallacyCard(record, prefix) {
+  const pedagogy = pedagogyForRecord(record);
   const aliases = record.aliases.join(" ");
   const caseStudyText = record.caseStudies.map((item) => normalizeCaseStudy(item).summary).join(" ");
-  const body = `${record.definition} ${record.example} ${record.notes} ${caseStudyText}`;
+  const body = `${record.definition} ${record.example} ${record.notes} ${caseStudyText} ${pedagogy.classroomTags.join(" ")} ${pedagogy.teachingPaths.map((item) => item.title).join(" ")}`;
   return `<article
     class="fallacy-card"
     data-fallacy-card
     data-name="${escapeHtml(record.name)}"
     data-aliases="${escapeHtml(aliases)}"
     data-categories="${escapeHtml(record.categories.join("|"))}"
+    data-difficulty="${escapeHtml(pedagogy.difficulty)}"
+    data-classroom="${escapeHtml(pedagogy.classroomLevel)}"
     data-body="${escapeHtml(body)}"
   >
     <h3><a href="${prefix}fallacies/${record.slug}/">${escapeHtml(record.name)}</a></h3>
     <p class="card-copy">${escapeHtml(truncate(record.definition, 170))}</p>
     ${renderPills(record.categories)}
+    ${renderTeacherPills(record)}
   </article>`;
 }
 
@@ -661,6 +1058,16 @@ function posterExplanationForRecord(record) {
 }
 
 function renderReferenceMeta(record, prompts) {
+  const pedagogy = pedagogyForRecord(record);
+  const pathMarkup = pedagogy.teachingPaths.length
+    ? `<div class="path-link-row">
+        ${pedagogy.teachingPaths
+          .map(
+            (pathMeta) => `<a class="path-link-chip" href="../../paths/${escapeHtml(pathMeta.slug)}/">${escapeHtml(pathMeta.title)}</a>`,
+          )
+          .join("")}
+      </div>`
+    : `<p class="muted">This entry is not currently in one of the curated teaching paths.</p>`;
   return `<div class="meta-grid">
     <div class="note-panel">
       <h4>Family</h4>
@@ -677,6 +1084,17 @@ function renderReferenceMeta(record, prompts) {
     <div class="note-panel">
       <h4>Quick check</h4>
       <p class="muted">${escapeHtml(prompts[0] || "Ask what evidence or reasoning step is doing too much work.")}</p>
+    </div>
+    <div class="note-panel">
+      <h4>Difficulty</h4>
+      <p class="muted">${escapeHtml(pedagogy.difficulty)}</p>
+      <div class="teaching-pill-row">
+        ${pedagogy.classroomTags.map((tag) => `<span class="teaching-pill">${escapeHtml(tag)}</span>`).join("")}
+      </div>
+    </div>
+    <div class="note-panel">
+      <h4>Teaching paths</h4>
+      ${pathMarkup}
     </div>
   </div>`;
 }
@@ -823,6 +1241,216 @@ function renderRationalityLab(record, categoryProfiles) {
   </section>`;
 }
 
+function renderConfusionSection(record, records, prefix) {
+  const confusions = confusionCandidates(record, records, 2);
+  if (!confusions.length) return "";
+
+  return `<section class="section-block">
+    <div class="section-header">
+      <div>
+        <h3 class="section-title">Often confused with</h3>
+        <p class="section-copy">These near neighbors are easy to mix up, so use the comparison to see the exact difference.</p>
+      </div>
+    </div>
+    <div class="two-column comparison-grid">
+      ${confusions
+        .map((item) => {
+          const candidate = item.candidate;
+          const candidatePrompt =
+            diagnosticPrompts[candidate.categories[0]] ||
+            "What specific reasoning step is being asked to do too much work?";
+          return `<article class="note-panel comparison-card">
+            <p class="eyebrow">Comparison</p>
+            <h4><a href="${prefix}fallacies/${candidate.slug}/">${escapeHtml(candidate.name)}</a></h4>
+            <p class="muted"><strong>Why people mix them up:</strong> ${escapeHtml(overlapTextForConfusion(item))}</p>
+            <p class="muted"><strong>Exact difference:</strong> ${escapeHtml(record.name)} happens when ${escapeHtml(lowerFirst(definitionCore(record.definition)))}. ${escapeHtml(candidate.name)} happens when ${escapeHtml(lowerFirst(definitionCore(candidate.definition)))}.</p>
+            <p class="muted"><strong>Quick split:</strong> ${escapeHtml(diagnosticPrompts[record.categories[0]] || "Ask what the real reasoning problem is.")} Then compare it with ${escapeHtml(candidatePrompt)}</p>
+          </article>`;
+        })
+        .join("")}
+    </div>
+  </section>`;
+}
+
+function renderArgumentMapSection(record) {
+  const map = argumentMapForRecord(record);
+  if (!map) return "";
+
+  return `<section class="section-block">
+    <div class="section-header">
+      <div>
+        <h3 class="section-title">Visual argument map</h3>
+        <p class="section-copy">${escapeHtml(map.intro)}</p>
+      </div>
+    </div>
+    <article class="detail-section">
+      <div class="argument-map argument-map-${escapeHtml(map.variant)}">
+        ${map.nodes
+          .map(
+            (node) => `<div class="argument-node">
+              <p class="argument-node-label">${escapeHtml(node.label)}</p>
+              <p class="argument-node-text">${escapeHtml(node.text)}</p>
+            </div>`,
+          )
+          .join("")}
+      </div>
+    </article>
+  </section>`;
+}
+
+function renderQuizAndRepairSection(record, records) {
+  const quiz = quizConfigForRecord(record, records);
+  const repairChecklist = repairChecklistForRecord(record);
+  const repairModel = repairModelForRecord(record);
+
+  return `<section class="section-block">
+    <div class="section-header">
+      <div>
+        <h3 class="section-title">Check yourself</h3>
+        <p class="section-copy">Use this short quiz to identify the fallacy, explain it, and then practice repairing the claim.</p>
+      </div>
+    </div>
+    <div class="two-column quiz-grid">
+      <article
+        class="detail-section quiz-card"
+        data-quiz-widget
+        data-quiz-answer="${escapeHtml(quiz.answer)}"
+        data-quiz-keywords="${escapeHtml(JSON.stringify(quiz.keywords))}"
+        data-quiz-model="${escapeHtml(quiz.model)}"
+      >
+        <h4>1. Identify the fallacy</h4>
+        <p class="muted">Choose the best label for the example on this page.</p>
+        <p class="quiz-example"><strong>Example:</strong> ${escapeHtml(record.example)}</p>
+        <div class="quiz-options">
+          ${quiz.options
+            .map(
+              (option, index) => `<label class="quiz-option">
+                <input type="radio" name="quiz-${escapeHtml(record.slug)}" value="${escapeHtml(option)}" ${index === 0 ? "" : ""} />
+                <span>${escapeHtml(option)}</span>
+              </label>`,
+            )
+            .join("")}
+        </div>
+        <h4>2. Explain why</h4>
+        <p class="muted">In one or two sentences, name the exact reasoning slip.</p>
+        <textarea class="quiz-textarea" data-quiz-response placeholder="Explain what makes the reasoning fallacious..."></textarea>
+        <button class="button button-primary button-compact" type="button" data-quiz-grade>Grade this check</button>
+        <div class="quiz-feedback hidden" data-quiz-feedback role="status" aria-live="polite"></div>
+      </article>
+
+      <article class="detail-section repair-card">
+        <h4>Repair the argument</h4>
+        <p class="muted">Rewrite the example so it says only what the evidence or reasoning has actually earned.</p>
+        <textarea class="quiz-textarea" placeholder="Write a stronger, fairer version of the claim..."></textarea>
+        <div class="repair-checklist">
+          <p class="repair-checklist-title">What a good repair should do</p>
+          <ul>
+            ${repairChecklist.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}
+          </ul>
+        </div>
+        <details class="repair-model">
+          <summary>Show one reasonable repair</summary>
+          <p class="muted">${escapeHtml(repairModel)}</p>
+        </details>
+      </article>
+    </div>
+  </section>`;
+}
+
+function recordsForTeachingPath(pathDefinition, records) {
+  return pathDefinition.names
+    .map((name) => records.find((record) => record.name === name))
+    .filter(Boolean);
+}
+
+function renderTeachingPathCard(pathDefinition, records, prefix) {
+  const members = recordsForTeachingPath(pathDefinition, records);
+  return `<article class="category-card path-card">
+    <p class="eyebrow">Teaching path</p>
+    <h3><a href="${prefix}paths/${pathDefinition.slug}/">${escapeHtml(pathDefinition.title)}</a></h3>
+    <p class="card-copy">${escapeHtml(pathDefinition.description)}</p>
+    <div class="teaching-pill-row">
+      <span class="teaching-pill">${members.length} fallacies</span>
+      <span class="teaching-pill">${escapeHtml(pathDefinition.audience)}</span>
+    </div>
+  </article>`;
+}
+
+function buildTeachingPathsIndexPage(records) {
+  const content = `
+    <div class="breadcrumbs">
+      <a href="../">Home</a><span>/</span><strong>Teaching Paths</strong>
+    </div>
+
+    <section class="section-block">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Teaching paths</h2>
+          <p class="section-copy">Curated routes through the taxonomy for teachers, discussion leaders, and first-time readers.</p>
+        </div>
+      </div>
+      <div class="category-grid">
+        ${teachingPathDefinitions.map((pathDefinition) => renderTeachingPathCard(pathDefinition, records, "../")).join("")}
+      </div>
+    </section>
+  `;
+
+  return pageShell({
+    title: "Teaching Paths | LogFall",
+    description: "Curated routes through LogFall for classrooms, review sessions, and first-time readers.",
+    prefix: "../",
+    currentSection: "",
+    canonicalPath: "paths/",
+    content,
+  });
+}
+
+function buildTeachingPathPage(pathDefinition, records) {
+  const members = recordsForTeachingPath(pathDefinition, records);
+  const content = `
+    <div class="breadcrumbs">
+      <a href="../../">Home</a><span>/</span><a href="../">Teaching Paths</a><span>/</span><strong>${escapeHtml(pathDefinition.title)}</strong>
+    </div>
+
+    <section class="detail-section">
+      <p class="eyebrow">Teaching path</p>
+      <h2 class="detail-title">${escapeHtml(pathDefinition.title)}</h2>
+      <p class="detail-deck">${escapeHtml(pathDefinition.description)}</p>
+      <div class="meta-grid section-block">
+        <div class="note-panel">
+          <h4>Best for</h4>
+          <p class="muted">${escapeHtml(pathDefinition.audience)}</p>
+        </div>
+        <div class="note-panel">
+          <h4>Sequence size</h4>
+          <p class="muted">${members.length} fallacies in recommended teaching order.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">Recommended sequence</h3>
+          <p class="section-copy">Use the order below as a lesson sequence, review set, or comparison track.</p>
+        </div>
+      </div>
+      <div class="fallacy-grid">
+        ${members.map((record) => renderFallacyCard(record, "../../")).join("")}
+      </div>
+    </section>
+  `;
+
+  return pageShell({
+    title: `${pathDefinition.title} | LogFall`,
+    description: pathDefinition.description,
+    prefix: "../../",
+    currentSection: "",
+    canonicalPath: `paths/${pathDefinition.slug}/`,
+    content,
+  });
+}
+
 function buildHomePage(records, categories) {
   const caseStudyCount = records.reduce((sum, record) => sum + record.caseStudies.length, 0);
   const featured = featuredNames
@@ -912,6 +1540,19 @@ function buildHomePage(records, categories) {
         ${featured.map((record) => renderFallacyCard(record, "")).join("")}
       </div>
     </section>
+
+    <section class="section-block">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Teaching paths</h2>
+          <p class="section-copy">Curated routes through the site for first-time readers, public-debate analysis, and high-confusion review sessions.</p>
+        </div>
+        <a class="inline-link" href="paths/">See all paths</a>
+      </div>
+      <div class="category-grid">
+        ${teachingPathDefinitions.map((pathDefinition) => renderTeachingPathCard(pathDefinition, records, "")).join("")}
+      </div>
+    </section>
   `;
 
   return pageShell({
@@ -972,6 +1613,12 @@ function buildAboutPage() {
 }
 
 function buildAllFallaciesPage(records, categories) {
+  const difficultyOptions = ["Foundational", "Intermediate", "Advanced"]
+    .map((value) => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`)
+    .join("");
+  const classroomOptions = classroomLevels
+    .map((value) => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`)
+    .join("");
   const options = categories
     .map((category) => `<option value="${escapeHtml(category.name)}">${escapeHtml(category.name)}</option>`)
     .join("");
@@ -993,6 +1640,14 @@ function buildAllFallaciesPage(records, categories) {
         <select class="search-select" data-category-filter>
           <option value="">All categories</option>
           ${options}
+        </select>
+        <select class="search-select" data-difficulty-filter>
+          <option value="">All difficulty levels</option>
+          ${difficultyOptions}
+        </select>
+        <select class="search-select" data-classroom-filter>
+          <option value="">All classroom levels</option>
+          ${classroomOptions}
         </select>
         <button class="search-reset" type="button" data-search-reset>Clear</button>
       </div>
@@ -1175,7 +1830,13 @@ function buildDetailPage(record, records, categoryProfiles, posterAssets) {
         : ""
     }
 
+    ${renderConfusionSection(record, records, "../../")}
+
+    ${renderArgumentMapSection(record)}
+
     ${renderRationalityLab(record, categoryProfiles)}
+
+    ${renderQuizAndRepairSection(record, records)}
 
     ${
       prompts.length
@@ -1309,6 +1970,11 @@ async function buildWorkbook(records, categories, categoryProfiles) {
     "Sub-Category",
     "Sub-Sub-Category",
     "Aliases",
+    "Difficulty",
+    "Classroom Level",
+    "Teaching Domain",
+    "Teaching Paths",
+    "Often Confused With",
     "Definition",
     "Example",
     "Notes",
@@ -1327,51 +1993,62 @@ async function buildWorkbook(records, categories, categoryProfiles) {
     "Case Study 5",
     "Editorial Status",
   ];
-  const rows = records.map((record) => [
-    record.name,
-    record.slug,
-    record.categories[0] || "",
-    record.categories[1] || "",
-    record.categories[2] || "",
-    record.originalNumber,
-    record.family,
-    record.subCategory,
-    record.subSubCategory,
-    record.aliases.join(", "),
-    record.definition,
-    record.example,
-    record.notes,
-    record.rationalityDanger || "",
-    record.mainReasoningProblem || "",
-    record.dynamicsToNotice || "",
-    record.warningSigns || "",
-    record.interactiveMechanic || "",
-    record.userAction || "",
-    record.feedbackLogic || "",
-    record.repairPrompts || "",
-    formatCaseStudyCell(record.caseStudies[0]),
-    formatCaseStudyCell(record.caseStudies[1]),
-    formatCaseStudyCell(record.caseStudies[2]),
-    formatCaseStudyCell(record.caseStudies[3]),
-    formatCaseStudyCell(record.caseStudies[4]),
-    record.editorialStatus,
-  ]);
+  const rows = records.map((record) => {
+    const pedagogy = pedagogyForRecord(record);
+    const confusions = confusionCandidates(record, records, 2)
+      .map((item) => item.candidate.name)
+      .join(", ");
+    return [
+      record.name,
+      record.slug,
+      record.categories[0] || "",
+      record.categories[1] || "",
+      record.categories[2] || "",
+      record.originalNumber,
+      record.family,
+      record.subCategory,
+      record.subSubCategory,
+      record.aliases.join(", "),
+      pedagogy.difficulty,
+      pedagogy.classroomLevel,
+      pedagogy.domainTag,
+      pedagogy.teachingPaths.map((item) => item.title).join(", "),
+      confusions,
+      record.definition,
+      record.example,
+      record.notes,
+      record.rationalityDanger || "",
+      record.mainReasoningProblem || "",
+      record.dynamicsToNotice || "",
+      record.warningSigns || "",
+      record.interactiveMechanic || "",
+      record.userAction || "",
+      record.feedbackLogic || "",
+      record.repairPrompts || "",
+      formatCaseStudyCell(record.caseStudies[0]),
+      formatCaseStudyCell(record.caseStudies[1]),
+      formatCaseStudyCell(record.caseStudies[2]),
+      formatCaseStudyCell(record.caseStudies[3]),
+      formatCaseStudyCell(record.caseStudies[4]),
+      record.editorialStatus,
+    ];
+  });
   const fallaciesMatrix = [headers, ...rows];
   fallaciesSheet.getRange(`A1:${columnLetter(headers.length)}${fallaciesMatrix.length}`).values =
     fallaciesMatrix;
   fallaciesSheet.freezePanes.freezeRows(1);
-  fallaciesSheet.freezePanes.freezeColumns(3);
+  fallaciesSheet.freezePanes.freezeColumns(4);
   fallaciesSheet.getRange("A:A").format.columnWidthPx = 260;
   fallaciesSheet.getRange("B:B").format.columnWidthPx = 220;
   fallaciesSheet.getRange("C:E").format.columnWidthPx = 180;
   fallaciesSheet.getRange("F:F").format.columnWidthPx = 120;
   fallaciesSheet.getRange("G:I").format.columnWidthPx = 180;
-  fallaciesSheet.getRange("J:J").format.columnWidthPx = 240;
-  fallaciesSheet.getRange("K:U").format.columnWidthPx = 420;
-  fallaciesSheet.getRange("V:Z").format.columnWidthPx = 360;
-  fallaciesSheet.getRange("AA:AA").format.columnWidthPx = 180;
+  fallaciesSheet.getRange("J:O").format.columnWidthPx = 220;
+  fallaciesSheet.getRange("P:Z").format.columnWidthPx = 420;
+  fallaciesSheet.getRange("AA:AE").format.columnWidthPx = 360;
+  fallaciesSheet.getRange("AF:AF").format.columnWidthPx = 180;
   fallaciesSheet.getRange(`A1:${columnLetter(headers.length)}1`).format.wrapText = true;
-  fallaciesSheet.getRange("J:AA").format.wrapText = true;
+  fallaciesSheet.getRange("J:AF").format.wrapText = true;
 
   const categorySheet = workbook.worksheets.add("Categories");
   const categoryRows = [
@@ -1447,6 +2124,7 @@ async function main() {
 
   await pruneGeneratedDirectories(path.join(distRoot, "fallacies"), new Set(records.map((record) => record.slug)));
   await pruneGeneratedDirectories(path.join(distRoot, "categories"), new Set(categories.map((category) => category.slug)));
+  await pruneGeneratedDirectories(path.join(distRoot, "paths"), new Set(teachingPathDefinitions.map((pathDefinition) => pathDefinition.slug)));
 
   await fs.copyFile(path.join(siteRoot, "styles.css"), path.join(distRoot, "styles.css"));
   await fs.copyFile(path.join(siteRoot, "app.js"), path.join(distRoot, "app.js"));
@@ -1455,13 +2133,16 @@ async function main() {
   await writeText("about/index.html", buildAboutPage());
   await writeText("fallacies/index.html", buildAllFallaciesPage(records, categories));
   await writeText("categories/index.html", buildCategoriesIndexPage(categories));
+  await writeText("paths/index.html", buildTeachingPathsIndexPage(records));
   await writeText("404.html", build404Page());
   const sitemapEntries = [
     { path: "" },
     { path: "about/" },
     { path: "fallacies/" },
     { path: "categories/" },
+    { path: "paths/" },
     ...categories.map((category) => ({ path: `categories/${category.slug}/` })),
+    ...teachingPathDefinitions.map((pathDefinition) => ({ path: `paths/${pathDefinition.slug}/` })),
     ...records.map((record) => ({ path: `fallacies/${record.slug}/` })),
   ];
   await writeText("sitemap.xml", buildSitemap(sitemapEntries));
@@ -1469,6 +2150,10 @@ async function main() {
 
   for (const category of categories) {
     await writeText(`categories/${category.slug}/index.html`, buildCategoryPage(category, records));
+  }
+
+  for (const pathDefinition of teachingPathDefinitions) {
+    await writeText(`paths/${pathDefinition.slug}/index.html`, buildTeachingPathPage(pathDefinition, records));
   }
 
   for (const record of records) {
@@ -1484,7 +2169,7 @@ async function main() {
     JSON.stringify(
       {
         distRoot,
-        pageCount: 5 + categories.length + records.length,
+        pageCount: 6 + categories.length + teachingPathDefinitions.length + records.length,
         recordCount: records.length,
         workbookOutPath,
       },

@@ -78,6 +78,17 @@
       <h4>Quick check</h4>
       <p class="muted">What numbers, rates, or probabilities are being ignored or mishandled?</p>
     </div>
+    <div class="note-panel">
+      <h4>Difficulty</h4>
+      <p class="muted">Foundational</p>
+      <div class="teaching-pill-row">
+        <span class="teaching-pill">Middle school+</span><span class="teaching-pill">Formal logic</span>
+      </div>
+    </div>
+    <div class="note-panel">
+      <h4>Teaching paths</h4>
+      <p class="muted">This entry is not currently in one of the curated teaching paths.</p>
+    </div>
   </div>
         </div>
       </article>
@@ -107,6 +118,32 @@
         <p>For rare conditions or rare events, even very accurate tests can generate more false positives than true positives. The missing question is not just &#39;How accurate is the test?&#39; but &#39;How common is the condition before the test is applied?&#39;</p>
       </article>
     </section>
+
+    <section class="section-block">
+    <div class="section-header">
+      <div>
+        <h3 class="section-title">Often confused with</h3>
+        <p class="section-copy">These near neighbors are easy to mix up, so use the comparison to see the exact difference.</p>
+      </div>
+    </div>
+    <div class="two-column comparison-grid">
+      <article class="note-panel comparison-card">
+            <p class="eyebrow">Comparison</p>
+            <h4><a href="../../fallacies/appeal-to-probability/">Appeal to probability</a></h4>
+            <p class="muted"><strong>Why people mix them up:</strong> Both often look like mathematical mistakes at first glance.</p>
+            <p class="muted"><strong>Exact difference:</strong> Base rate fallacy happens when someone judges how likely a case is by focusing on vivid case-specific evidence while ignoring the underlying frequency of the thing in question. Appeal to probability happens when someone assumes that because something could happen, it is therefore likely or inevitable that it will happen.</p>
+            <p class="muted"><strong>Quick split:</strong> What numbers, rates, or probabilities are being ignored or mishandled? Then compare it with What numbers, rates, or probabilities are being ignored or mishandled?</p>
+          </article><article class="note-panel comparison-card">
+            <p class="eyebrow">Comparison</p>
+            <h4><a href="../../fallacies/ecological-fallacy/">Ecological fallacy</a></h4>
+            <p class="muted"><strong>Why people mix them up:</strong> Both often look like mathematical mistakes at first glance.</p>
+            <p class="muted"><strong>Exact difference:</strong> Base rate fallacy happens when someone judges how likely a case is by focusing on vivid case-specific evidence while ignoring the underlying frequency of the thing in question. Ecological fallacy happens when statistics about a group are used to draw conclusions about particular individuals in that group.</p>
+            <p class="muted"><strong>Quick split:</strong> What numbers, rates, or probabilities are being ignored or mishandled? Then compare it with What numbers, rates, or probabilities are being ignored or mishandled?</p>
+          </article>
+    </div>
+  </section>
+
+    
 
     <section class="section-block">
     <div class="section-header">
@@ -328,6 +365,64 @@
   </section>
 
     <section class="section-block">
+    <div class="section-header">
+      <div>
+        <h3 class="section-title">Check yourself</h3>
+        <p class="section-copy">Use this short quiz to identify the fallacy, explain it, and then practice repairing the claim.</p>
+      </div>
+    </div>
+    <div class="two-column quiz-grid">
+      <article
+        class="detail-section quiz-card"
+        data-quiz-widget
+        data-quiz-answer="Base rate fallacy"
+        data-quiz-keywords="[&quot;rates&quot;,&quot;sample&quot;,&quot;numbers&quot;,&quot;probability&quot;,&quot;someone&quot;,&quot;judges&quot;]"
+        data-quiz-model="This is Base rate fallacy because someone judges how likely a case is by focusing on vivid case-specific evidence while ignoring the underlying frequency of the thing in question. The key difference from Appeal to probability is that someone assumes that because something could happen, it is therefore likely or inevitable that it will happen."
+      >
+        <h4>1. Identify the fallacy</h4>
+        <p class="muted">Choose the best label for the example on this page.</p>
+        <p class="quiz-example"><strong>Example:</strong> This fraud filter is 98% accurate and flagged my transaction, so there is almost no chance the alert is wrong.</p>
+        <div class="quiz-options">
+          <label class="quiz-option">
+                <input type="radio" name="quiz-base-rate-fallacy" value="Appeal to probability"  />
+                <span>Appeal to probability</span>
+              </label><label class="quiz-option">
+                <input type="radio" name="quiz-base-rate-fallacy" value="Base rate fallacy"  />
+                <span>Base rate fallacy</span>
+              </label><label class="quiz-option">
+                <input type="radio" name="quiz-base-rate-fallacy" value="Ecological fallacy"  />
+                <span>Ecological fallacy</span>
+              </label><label class="quiz-option">
+                <input type="radio" name="quiz-base-rate-fallacy" value="Gambler&#39;s fallacy"  />
+                <span>Gambler&#39;s fallacy</span>
+              </label>
+        </div>
+        <h4>2. Explain why</h4>
+        <p class="muted">In one or two sentences, name the exact reasoning slip.</p>
+        <textarea class="quiz-textarea" data-quiz-response placeholder="Explain what makes the reasoning fallacious..."></textarea>
+        <button class="button button-primary button-compact" type="button" data-quiz-grade>Grade this check</button>
+        <div class="quiz-feedback hidden" data-quiz-feedback role="status" aria-live="polite"></div>
+      </article>
+
+      <article class="detail-section repair-card">
+        <h4>Repair the argument</h4>
+        <p class="muted">Rewrite the example so it says only what the evidence or reasoning has actually earned.</p>
+        <textarea class="quiz-textarea" placeholder="Write a stronger, fairer version of the claim..."></textarea>
+        <div class="repair-checklist">
+          <p class="repair-checklist-title">What a good repair should do</p>
+          <ul>
+            <li>State only what the argument or evidence really supports.</li><li>Remove the exact move that made the original version fallacious.</li><li>Make the relevant comparison, rate, or sample size explicit.</li>
+          </ul>
+        </div>
+        <details class="repair-model">
+          <summary>Show one reasonable repair</summary>
+          <p class="muted">A stronger version would state the relevant rate, sample, or comparison explicitly before drawing the conclusion.</p>
+        </details>
+      </article>
+    </div>
+  </section>
+
+    <section class="section-block">
       <div class="section-header">
         <div>
           <h3 class="section-title">Questions to ask</h3>
@@ -388,66 +483,102 @@
     data-name="Appeal to probability"
     data-aliases=""
     data-categories="Mathematical"
-    data-body="Occurs when someone assumes that because something could happen, it is therefore likely or inevitable that it will happen. If I keep backing enough meme stocks, one of them is bound to make me rich. Possibility is a very weak starting point. Many things are possible without being probable, and many probable things still fail to happen in any given case. AP&#39;s March 8, 2024 report on the Pentagon&#39;s UFO review is a textbook reminder that &#39;not fully explained&#39; does not mean &#39;therefore alien&#39; or &#39;therefore conspiracy.&#39; The remaining uncertainty in the file is exactly what makes the episode useful for thinking about overconfident belief formation. The fallacy here is Appeal to probability: someone assumes that because something could happen, it is therefore likely or inevitable that it will happen. That matters here because possibility is a very weak starting point. A better analysis would remember that many things are possible without being probable, and many probable things still fail to happen in any given case. AP&#39;s November 14, 2024 story on hundreds of new UAP reports is a useful case because it mixes explained incidents, unexplained incidents, and limited data without pretending they all support the same conclusion. It is exactly the kind of evidence landscape that invites cherry-picking and premature certainty. The fallacy here is Appeal to probability: someone assumes that because something could happen, it is therefore likely or inevitable that it will happen. That matters here because possibility is a very weak starting point. A better analysis would remember that many things are possible without being probable, and many probable things still fail to happen in any given case. Reuters&#39; April 5, 2024 report on the Adecco survey is a good reminder that expectations about job loss are not the same as demonstrated causal outcomes. It is useful wherever people slide from speculative trend talk to a confident story about what one technology will inevitably do to the labor market. The fallacy here is Appeal to probability: someone assumes that because something could happen, it is therefore likely or inevitable that it will happen. That matters here because possibility is a very weak starting point. A better analysis would remember that many things are possible without being probable, and many probable things still fail to happen in any given case. AP&#39;s 2024 reporting on AI political content repeatedly showed how easy it is for people to move from &#39;this image has a common AI tell&#39; to &#39;therefore this image must be AI-generated.&#39; That conclusion can be tempting in practice, but the fact pattern only supports a possibility, not a guaranteed diagnosis. The fallacy here is Appeal to probability: someone assumes that because something could happen, it is therefore likely or inevitable that it will happen. That matters here because possibility is a very weak starting point. A better analysis would remember that many things are possible without being probable, and many probable things still fail to happen in any given case. Crypto, lottery, and sports-betting talk often slides from &#39;this could happen&#39; to &#39;this is bound to happen,&#39; especially after a short streak of wins. The fallacy here is Appeal to probability: someone assumes that because something could happen, it is therefore likely or inevitable that it will happen. That matters here because possibility is a very weak starting point. A better analysis would remember that many things are possible without being probable, and many probable things still fail to happen in any given case."
+    data-difficulty="Intermediate"
+    data-classroom="High school"
+    data-body="Occurs when someone assumes that because something could happen, it is therefore likely or inevitable that it will happen. If I keep backing enough meme stocks, one of them is bound to make me rich. Possibility is a very weak starting point. Many things are possible without being probable, and many probable things still fail to happen in any given case. AP&#39;s March 8, 2024 report on the Pentagon&#39;s UFO review is a textbook reminder that &#39;not fully explained&#39; does not mean &#39;therefore alien&#39; or &#39;therefore conspiracy.&#39; The remaining uncertainty in the file is exactly what makes the episode useful for thinking about overconfident belief formation. The fallacy here is Appeal to probability: someone assumes that because something could happen, it is therefore likely or inevitable that it will happen. That matters here because possibility is a very weak starting point. A better analysis would remember that many things are possible without being probable, and many probable things still fail to happen in any given case. AP&#39;s November 14, 2024 story on hundreds of new UAP reports is a useful case because it mixes explained incidents, unexplained incidents, and limited data without pretending they all support the same conclusion. It is exactly the kind of evidence landscape that invites cherry-picking and premature certainty. The fallacy here is Appeal to probability: someone assumes that because something could happen, it is therefore likely or inevitable that it will happen. That matters here because possibility is a very weak starting point. A better analysis would remember that many things are possible without being probable, and many probable things still fail to happen in any given case. Reuters&#39; April 5, 2024 report on the Adecco survey is a good reminder that expectations about job loss are not the same as demonstrated causal outcomes. It is useful wherever people slide from speculative trend talk to a confident story about what one technology will inevitably do to the labor market. The fallacy here is Appeal to probability: someone assumes that because something could happen, it is therefore likely or inevitable that it will happen. That matters here because possibility is a very weak starting point. A better analysis would remember that many things are possible without being probable, and many probable things still fail to happen in any given case. AP&#39;s 2024 reporting on AI political content repeatedly showed how easy it is for people to move from &#39;this image has a common AI tell&#39; to &#39;therefore this image must be AI-generated.&#39; That conclusion can be tempting in practice, but the fact pattern only supports a possibility, not a guaranteed diagnosis. The fallacy here is Appeal to probability: someone assumes that because something could happen, it is therefore likely or inevitable that it will happen. That matters here because possibility is a very weak starting point. A better analysis would remember that many things are possible without being probable, and many probable things still fail to happen in any given case. Crypto, lottery, and sports-betting talk often slides from &#39;this could happen&#39; to &#39;this is bound to happen,&#39; especially after a short streak of wins. The fallacy here is Appeal to probability: someone assumes that because something could happen, it is therefore likely or inevitable that it will happen. That matters here because possibility is a very weak starting point. A better analysis would remember that many things are possible without being probable, and many probable things still fail to happen in any given case. High school Formal logic "
   >
     <h3><a href="../../fallacies/appeal-to-probability/">Appeal to probability</a></h3>
     <p class="card-copy">Occurs when someone assumes that because something could happen, it is therefore likely or inevitable that it will happen.</p>
     <div class="pill-row"><span class="pill pill-Mathematical">Mathematical</span></div>
+    <div class="teaching-pill-row">
+    <span class="teaching-pill">Intermediate</span>
+    <span class="teaching-pill">High school</span>
+  </div>
   </article><article
     class="fallacy-card"
     data-fallacy-card
     data-name="Conjunction fallacy"
     data-aliases=""
     data-categories="Conceptual|Mathematical"
-    data-body="Occurs when a more detailed scenario is treated as more probable than a less detailed scenario that already contains it. Because the candidate is young and progressive, it is more likely that she is both a climate activist and a vegan than that she is simply a climate activist. Adding conditions never makes a claim more probable than a broader version of that same claim. Extra detail can make a story feel more representative while making it statistically less likely. Political profiling often mistakes a vivid stereotype for probability, assuming that a person matching one trait is more likely to match an even narrower bundle of traits as well. The fallacy here is Conjunction fallacy: a more detailed scenario is treated as more probable than a less detailed scenario that already contains it. That matters here because adding conditions never makes a claim more probable than a broader version of that same claim. A better analysis would remember that extra detail can make a story feel more representative while making it statistically less likely. AI narratives sometimes suggest that because a model appears articulate, it is more likely to be both highly capable and aligned than merely capable, even though the conjunction is narrower. The fallacy here is Conjunction fallacy: a more detailed scenario is treated as more probable than a less detailed scenario that already contains it. That matters here because adding conditions never makes a claim more probable than a broader version of that same claim. A better analysis would remember that extra detail can make a story feel more representative while making it statistically less likely."
+    data-difficulty="Advanced"
+    data-classroom="Advanced undergraduate"
+    data-body="Occurs when a more detailed scenario is treated as more probable than a less detailed scenario that already contains it. Because the candidate is young and progressive, it is more likely that she is both a climate activist and a vegan than that she is simply a climate activist. Adding conditions never makes a claim more probable than a broader version of that same claim. Extra detail can make a story feel more representative while making it statistically less likely. Political profiling often mistakes a vivid stereotype for probability, assuming that a person matching one trait is more likely to match an even narrower bundle of traits as well. The fallacy here is Conjunction fallacy: a more detailed scenario is treated as more probable than a less detailed scenario that already contains it. That matters here because adding conditions never makes a claim more probable than a broader version of that same claim. A better analysis would remember that extra detail can make a story feel more representative while making it statistically less likely. AI narratives sometimes suggest that because a model appears articulate, it is more likely to be both highly capable and aligned than merely capable, even though the conjunction is narrower. The fallacy here is Conjunction fallacy: a more detailed scenario is treated as more probable than a less detailed scenario that already contains it. That matters here because adding conditions never makes a claim more probable than a broader version of that same claim. A better analysis would remember that extra detail can make a story feel more representative while making it statistically less likely. Advanced undergraduate Formal logic "
   >
     <h3><a href="../../fallacies/conjunction-fallacy/">Conjunction fallacy</a></h3>
     <p class="card-copy">Occurs when a more detailed scenario is treated as more probable than a less detailed scenario that already contains it.</p>
     <div class="pill-row"><span class="pill pill-Conceptual">Conceptual</span><span class="pill pill-Mathematical">Mathematical</span></div>
+    <div class="teaching-pill-row">
+    <span class="teaching-pill">Advanced</span>
+    <span class="teaching-pill">Advanced undergraduate</span>
+  </div>
   </article><article
     class="fallacy-card"
     data-fallacy-card
     data-name="Broken window fallacy"
     data-aliases=""
     data-categories="Evidential|Mathematical"
-    data-body="Occurs when destruction or forced replacement is treated as an economic gain because the visible spending is counted while the unseen losses and forgone alternatives are ignored. The storm wrecked half the boardwalk, but at least all the rebuilding will be great for the local economy. Repair work creates visible activity, but it mainly restores value that was lost. The missing comparison is what households, firms, insurers, and governments could have done with those same resources if the damage had not occurred. After Hurricanes Helene and Milton in October 2024, some commentary emphasized reconstruction jobs and spending while downplaying the destroyed homes, shuttered businesses, and other uses those resources would have supported. The fallacy here is Broken window fallacy: destruction or forced replacement is treated as an economic gain because the visible spending is counted while the unseen losses and forgone alternatives are ignored. That matters here because repair work creates visible activity, but it mainly restores value that was lost. A better analysis would remember that the missing comparison is what households, firms, insurers, and governments could have done with those same resources if the damage had not occurred. Cyberattacks, vandalism, and infrastructure failures are sometimes framed as hidden economic stimulus because repairs employ people, even though the spending mainly compensates for an avoidable loss. The fallacy here is Broken window fallacy: destruction or forced replacement is treated as an economic gain because the visible spending is counted while the unseen losses and forgone alternatives are ignored. That matters here because repair work creates visible activity, but it mainly restores value that was lost. A better analysis would remember that the missing comparison is what households, firms, insurers, and governments could have done with those same resources if the damage had not occurred."
+    data-difficulty="Intermediate"
+    data-classroom="High school"
+    data-body="Occurs when destruction or forced replacement is treated as an economic gain because the visible spending is counted while the unseen losses and forgone alternatives are ignored. The storm wrecked half the boardwalk, but at least all the rebuilding will be great for the local economy. Repair work creates visible activity, but it mainly restores value that was lost. The missing comparison is what households, firms, insurers, and governments could have done with those same resources if the damage had not occurred. After Hurricanes Helene and Milton in October 2024, some commentary emphasized reconstruction jobs and spending while downplaying the destroyed homes, shuttered businesses, and other uses those resources would have supported. The fallacy here is Broken window fallacy: destruction or forced replacement is treated as an economic gain because the visible spending is counted while the unseen losses and forgone alternatives are ignored. That matters here because repair work creates visible activity, but it mainly restores value that was lost. A better analysis would remember that the missing comparison is what households, firms, insurers, and governments could have done with those same resources if the damage had not occurred. Cyberattacks, vandalism, and infrastructure failures are sometimes framed as hidden economic stimulus because repairs employ people, even though the spending mainly compensates for an avoidable loss. The fallacy here is Broken window fallacy: destruction or forced replacement is treated as an economic gain because the visible spending is counted while the unseen losses and forgone alternatives are ignored. That matters here because repair work creates visible activity, but it mainly restores value that was lost. A better analysis would remember that the missing comparison is what households, firms, insurers, and governments could have done with those same resources if the damage had not occurred. High school Formal logic "
   >
     <h3><a href="../../fallacies/broken-window-fallacy/">Broken window fallacy</a></h3>
     <p class="card-copy">Occurs when destruction or forced replacement is treated as an economic gain because the visible spending is counted while the unseen losses and forgone alternatives are...</p>
     <div class="pill-row"><span class="pill pill-Evidential">Evidential</span><span class="pill pill-Mathematical">Mathematical</span></div>
+    <div class="teaching-pill-row">
+    <span class="teaching-pill">Intermediate</span>
+    <span class="teaching-pill">High school</span>
+  </div>
   </article><article
     class="fallacy-card"
     data-fallacy-card
     data-name="Ecological fallacy"
     data-aliases="distribution fallacy"
     data-categories="Mathematical|Conceptual"
-    data-body="Occurs when statistics about a group are used to draw conclusions about particular individuals in that group. This district has high average test scores, so the student from that district must be academically strong. Aggregate data can be useful, but it does not tell you where any one individual falls within the distribution. Group averages do not erase overlap, variation, or outliers. Zip-code analytics, polling blocs, and demographic summaries are often treated as if they gave a direct reading of the motives or traits of each person inside the category. The fallacy here is Ecological fallacy: statistics about a group are used to draw conclusions about particular individuals in that group. That matters here because aggregate data can be useful, but it does not tell you where any one individual falls within the distribution. A better analysis would remember that group averages do not erase overlap, variation, or outliers. Political commentary frequently talks as if &#39;suburban women,&#39; &#39;young men,&#39; or &#39;college voters&#39; were internally uniform rather than broad, heterogeneous groups. The fallacy here is Ecological fallacy: statistics about a group are used to draw conclusions about particular individuals in that group. That matters here because aggregate data can be useful, but it does not tell you where any one individual falls within the distribution. A better analysis would remember that group averages do not erase overlap, variation, or outliers."
+    data-difficulty="Advanced"
+    data-classroom="Advanced undergraduate"
+    data-body="Occurs when statistics about a group are used to draw conclusions about particular individuals in that group. This district has high average test scores, so the student from that district must be academically strong. Aggregate data can be useful, but it does not tell you where any one individual falls within the distribution. Group averages do not erase overlap, variation, or outliers. Zip-code analytics, polling blocs, and demographic summaries are often treated as if they gave a direct reading of the motives or traits of each person inside the category. The fallacy here is Ecological fallacy: statistics about a group are used to draw conclusions about particular individuals in that group. That matters here because aggregate data can be useful, but it does not tell you where any one individual falls within the distribution. A better analysis would remember that group averages do not erase overlap, variation, or outliers. Political commentary frequently talks as if &#39;suburban women,&#39; &#39;young men,&#39; or &#39;college voters&#39; were internally uniform rather than broad, heterogeneous groups. The fallacy here is Ecological fallacy: statistics about a group are used to draw conclusions about particular individuals in that group. That matters here because aggregate data can be useful, but it does not tell you where any one individual falls within the distribution. A better analysis would remember that group averages do not erase overlap, variation, or outliers. Advanced undergraduate Formal logic "
   >
     <h3><a href="../../fallacies/ecological-fallacy/">Ecological fallacy</a></h3>
     <p class="card-copy">Occurs when statistics about a group are used to draw conclusions about particular individuals in that group.</p>
     <div class="pill-row"><span class="pill pill-Mathematical">Mathematical</span><span class="pill pill-Conceptual">Conceptual</span></div>
+    <div class="teaching-pill-row">
+    <span class="teaching-pill">Advanced</span>
+    <span class="teaching-pill">Advanced undergraduate</span>
+  </div>
   </article><article
     class="fallacy-card"
     data-fallacy-card
     data-name="Gambler&#39;s fallacy"
     data-aliases="monte carlo fallacy hot hand fallacy"
     data-categories="Mathematical|Causal"
-    data-body="Occurs when someone thinks past outcomes of independent events make a future independent outcome more or less likely than it really is. The coin has landed heads five times in a row, so tails is due next. Random sequences naturally contain streaks. When the events are truly independent, the next event does not remember the last one. People sometimes feel that after many routine flights or medical screenings in a row, a disaster or diagnosis is somehow &#39;due,&#39; even though independent risks do not balance themselves that way. The fallacy here is Gambler&#39;s fallacy: someone thinks past outcomes of independent events make a future independent outcome more or less likely than it really is. That matters here because random sequences naturally contain streaks. A better analysis would remember that when the events are truly independent, the next event does not remember the last one. In gambling and investing language, talk of a roulette table or slot machine being &#39;ready to pay out&#39; often confuses a streaky pattern with a real shift in odds. The fallacy here is Gambler&#39;s fallacy: someone thinks past outcomes of independent events make a future independent outcome more or less likely than it really is. That matters here because random sequences naturally contain streaks. A better analysis would remember that when the events are truly independent, the next event does not remember the last one."
+    data-difficulty="Advanced"
+    data-classroom="Advanced undergraduate"
+    data-body="Occurs when someone thinks past outcomes of independent events make a future independent outcome more or less likely than it really is. The coin has landed heads five times in a row, so tails is due next. Random sequences naturally contain streaks. When the events are truly independent, the next event does not remember the last one. People sometimes feel that after many routine flights or medical screenings in a row, a disaster or diagnosis is somehow &#39;due,&#39; even though independent risks do not balance themselves that way. The fallacy here is Gambler&#39;s fallacy: someone thinks past outcomes of independent events make a future independent outcome more or less likely than it really is. That matters here because random sequences naturally contain streaks. A better analysis would remember that when the events are truly independent, the next event does not remember the last one. In gambling and investing language, talk of a roulette table or slot machine being &#39;ready to pay out&#39; often confuses a streaky pattern with a real shift in odds. The fallacy here is Gambler&#39;s fallacy: someone thinks past outcomes of independent events make a future independent outcome more or less likely than it really is. That matters here because random sequences naturally contain streaks. A better analysis would remember that when the events are truly independent, the next event does not remember the last one. Advanced undergraduate Formal logic "
   >
     <h3><a href="../../fallacies/gambler-s-fallacy/">Gambler&#39;s fallacy</a></h3>
     <p class="card-copy">Occurs when someone thinks past outcomes of independent events make a future independent outcome more or less likely than it really is.</p>
     <div class="pill-row"><span class="pill pill-Mathematical">Mathematical</span><span class="pill pill-Causal">Causal</span></div>
+    <div class="teaching-pill-row">
+    <span class="teaching-pill">Advanced</span>
+    <span class="teaching-pill">Advanced undergraduate</span>
+  </div>
   </article><article
     class="fallacy-card"
     data-fallacy-card
     data-name="Hasty generalization"
     data-aliases="fallacy of insufficient statistics fallacy of insufficient sample fallacy of the lonely fact leaping to a conclusion hasty induction secundum quid"
     data-categories="Evidential|Mathematical"
-    data-body="Occurs when someone draws a broad conclusion from too little evidence, too small a sample, or a badly skewed sample. I interviewed four students about AI and two admitted cheating, so generative AI is ruining education. The problem is not moving from sample to population; all induction does that. The problem is pretending a weak or unrepresentative sample carries more weight than it does. AP&#39;s May 18, 2024 overview of noncitizen-voting rhetoric documented how a politically useful intuition about election fraud kept being treated as if it were established by the evidence. The report is especially useful for seeing how tiny counts, suggestive language, and moral urgency can be stretched into system-wide claims. The fallacy here is Hasty generalization: someone draws a broad conclusion from too little evidence, too small a sample, or a badly skewed sample. That matters here because the problem is not moving from sample to population; all induction does that. A better analysis would remember that the problem is pretending a weak or unrepresentative sample carries more weight than it does. AP&#39;s June 27, 2024 fact check of the first Biden-Trump debate is a dense collection of real argumentative shortcuts: statistics pulled loose from context, emotionally loaded immigration claims, and repeated assertions that did more rhetorical than evidential work. It is one of the best single-source stress tests in the library. The fallacy here is Hasty generalization: someone draws a broad conclusion from too little evidence, too small a sample, or a badly skewed sample. That matters here because the problem is not moving from sample to population; all induction does that. A better analysis would remember that the problem is pretending a weak or unrepresentative sample carries more weight than it does. AP&#39;s migration explainer from September 20, 2024 is useful because it deliberately widens the frame beyond debate slogans and viral rumors. That makes it a strong case for fallacies that depend on flattening a complicated policy landscape into one cause, one image, or one moral punchline. The fallacy here is Hasty generalization: someone draws a broad conclusion from too little evidence, too small a sample, or a badly skewed sample. That matters here because the problem is not moving from sample to population; all induction does that. A better analysis would remember that the problem is pretending a weak or unrepresentative sample carries more weight than it does. A single viral video of a fight, theft, or protest is often used online as if it reveals what a whole city, campus, or demographic group is like. The fallacy here is Hasty generalization: someone draws a broad conclusion from too little evidence, too small a sample, or a badly skewed sample. That matters here because the problem is not moving from sample to population; all induction does that. A better analysis would remember that the problem is pretending a weak or unrepresentative sample carries more weight than it does. Election commentary frequently treats one poll, one county, or one diner focus group as proof of a national shift, even when the broader polling picture is mixed. The fallacy here is Hasty generalization: someone draws a broad conclusion from too little evidence, too small a sample, or a badly skewed sample. That matters here because the problem is not moving from sample to population; all induction does that. A better analysis would remember that the problem is pretending a weak or unrepresentative sample carries more weight than it does."
+    data-difficulty="Foundational"
+    data-classroom="Middle school+"
+    data-body="Occurs when someone draws a broad conclusion from too little evidence, too small a sample, or a badly skewed sample. I interviewed four students about AI and two admitted cheating, so generative AI is ruining education. The problem is not moving from sample to population; all induction does that. The problem is pretending a weak or unrepresentative sample carries more weight than it does. AP&#39;s May 18, 2024 overview of noncitizen-voting rhetoric documented how a politically useful intuition about election fraud kept being treated as if it were established by the evidence. The report is especially useful for seeing how tiny counts, suggestive language, and moral urgency can be stretched into system-wide claims. The fallacy here is Hasty generalization: someone draws a broad conclusion from too little evidence, too small a sample, or a badly skewed sample. That matters here because the problem is not moving from sample to population; all induction does that. A better analysis would remember that the problem is pretending a weak or unrepresentative sample carries more weight than it does. AP&#39;s June 27, 2024 fact check of the first Biden-Trump debate is a dense collection of real argumentative shortcuts: statistics pulled loose from context, emotionally loaded immigration claims, and repeated assertions that did more rhetorical than evidential work. It is one of the best single-source stress tests in the library. The fallacy here is Hasty generalization: someone draws a broad conclusion from too little evidence, too small a sample, or a badly skewed sample. That matters here because the problem is not moving from sample to population; all induction does that. A better analysis would remember that the problem is pretending a weak or unrepresentative sample carries more weight than it does. AP&#39;s migration explainer from September 20, 2024 is useful because it deliberately widens the frame beyond debate slogans and viral rumors. That makes it a strong case for fallacies that depend on flattening a complicated policy landscape into one cause, one image, or one moral punchline. The fallacy here is Hasty generalization: someone draws a broad conclusion from too little evidence, too small a sample, or a badly skewed sample. That matters here because the problem is not moving from sample to population; all induction does that. A better analysis would remember that the problem is pretending a weak or unrepresentative sample carries more weight than it does. A single viral video of a fight, theft, or protest is often used online as if it reveals what a whole city, campus, or demographic group is like. The fallacy here is Hasty generalization: someone draws a broad conclusion from too little evidence, too small a sample, or a badly skewed sample. That matters here because the problem is not moving from sample to population; all induction does that. A better analysis would remember that the problem is pretending a weak or unrepresentative sample carries more weight than it does. Election commentary frequently treats one poll, one county, or one diner focus group as proof of a national shift, even when the broader polling picture is mixed. The fallacy here is Hasty generalization: someone draws a broad conclusion from too little evidence, too small a sample, or a badly skewed sample. That matters here because the problem is not moving from sample to population; all induction does that. A better analysis would remember that the problem is pretending a weak or unrepresentative sample carries more weight than it does. Middle school+ Formal logic Start here Most often confused"
   >
     <h3><a href="../../fallacies/hasty-generalization/">Hasty generalization</a></h3>
     <p class="card-copy">Occurs when someone draws a broad conclusion from too little evidence, too small a sample, or a badly skewed sample.</p>
     <div class="pill-row"><span class="pill pill-Evidential">Evidential</span><span class="pill pill-Mathematical">Mathematical</span></div>
+    <div class="teaching-pill-row">
+    <span class="teaching-pill">Foundational</span>
+    <span class="teaching-pill">Middle school+</span>
+  </div>
   </article>
       </div>
     </section>

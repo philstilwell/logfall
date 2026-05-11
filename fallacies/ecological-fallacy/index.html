@@ -81,6 +81,17 @@
       <h4>Quick check</h4>
       <p class="muted">What numbers, rates, or probabilities are being ignored or mishandled?</p>
     </div>
+    <div class="note-panel">
+      <h4>Difficulty</h4>
+      <p class="muted">Advanced</p>
+      <div class="teaching-pill-row">
+        <span class="teaching-pill">Advanced undergraduate</span><span class="teaching-pill">Formal logic</span>
+      </div>
+    </div>
+    <div class="note-panel">
+      <h4>Teaching paths</h4>
+      <p class="muted">This entry is not currently in one of the curated teaching paths.</p>
+    </div>
   </div>
         </div>
       </article>
@@ -110,6 +121,32 @@
         <p>Aggregate data can be useful, but it does not tell you where any one individual falls within the distribution. Group averages do not erase overlap, variation, or outliers.</p>
       </article>
     </section>
+
+    <section class="section-block">
+    <div class="section-header">
+      <div>
+        <h3 class="section-title">Often confused with</h3>
+        <p class="section-copy">These near neighbors are easy to mix up, so use the comparison to see the exact difference.</p>
+      </div>
+    </div>
+    <div class="two-column comparison-grid">
+      <article class="note-panel comparison-card">
+            <p class="eyebrow">Comparison</p>
+            <h4><a href="../../fallacies/conjunction-fallacy/">Conjunction fallacy</a></h4>
+            <p class="muted"><strong>Why people mix them up:</strong> Both often look like conceptual and mathematical mistakes at first glance.</p>
+            <p class="muted"><strong>Exact difference:</strong> Ecological fallacy happens when statistics about a group are used to draw conclusions about particular individuals in that group. Conjunction fallacy happens when a more detailed scenario is treated as more probable than a less detailed scenario that already contains it.</p>
+            <p class="muted"><strong>Quick split:</strong> What numbers, rates, or probabilities are being ignored or mishandled? Then compare it with Are the categories being used carefully, or are unlike things being treated as alike?</p>
+          </article><article class="note-panel comparison-card">
+            <p class="eyebrow">Comparison</p>
+            <h4><a href="../../fallacies/linearity-fallacy/">Linearity fallacy</a></h4>
+            <p class="muted"><strong>Why people mix them up:</strong> Both often look like conceptual and mathematical mistakes at first glance.</p>
+            <p class="muted"><strong>Exact difference:</strong> Ecological fallacy happens when statistics about a group are used to draw conclusions about particular individuals in that group. Linearity fallacy happens when someone assumes that doubling the input will double the output even though the system has thresholds, saturation, feedback loops, or diminishing returns.</p>
+            <p class="muted"><strong>Quick split:</strong> What numbers, rates, or probabilities are being ignored or mishandled? Then compare it with Are the categories being used carefully, or are unlike things being treated as alike?</p>
+          </article>
+    </div>
+  </section>
+
+    
 
     <section class="section-block">
     <div class="section-header">
@@ -331,6 +368,64 @@
   </section>
 
     <section class="section-block">
+    <div class="section-header">
+      <div>
+        <h3 class="section-title">Check yourself</h3>
+        <p class="section-copy">Use this short quiz to identify the fallacy, explain it, and then practice repairing the claim.</p>
+      </div>
+    </div>
+    <div class="two-column quiz-grid">
+      <article
+        class="detail-section quiz-card"
+        data-quiz-widget
+        data-quiz-answer="Ecological fallacy"
+        data-quiz-keywords="[&quot;rates&quot;,&quot;sample&quot;,&quot;numbers&quot;,&quot;probability&quot;,&quot;statistics&quot;,&quot;group&quot;]"
+        data-quiz-model="This is Ecological fallacy because statistics about a group are used to draw conclusions about particular individuals in that group. The key difference from Conjunction fallacy is that a more detailed scenario is treated as more probable than a less detailed scenario that already contains it."
+      >
+        <h4>1. Identify the fallacy</h4>
+        <p class="muted">Choose the best label for the example on this page.</p>
+        <p class="quiz-example"><strong>Example:</strong> This district has high average test scores, so the student from that district must be academically strong.</p>
+        <div class="quiz-options">
+          <label class="quiz-option">
+                <input type="radio" name="quiz-ecological-fallacy" value="Conjunction fallacy"  />
+                <span>Conjunction fallacy</span>
+              </label><label class="quiz-option">
+                <input type="radio" name="quiz-ecological-fallacy" value="Ecological fallacy"  />
+                <span>Ecological fallacy</span>
+              </label><label class="quiz-option">
+                <input type="radio" name="quiz-ecological-fallacy" value="Gambler&#39;s fallacy"  />
+                <span>Gambler&#39;s fallacy</span>
+              </label><label class="quiz-option">
+                <input type="radio" name="quiz-ecological-fallacy" value="Linearity fallacy"  />
+                <span>Linearity fallacy</span>
+              </label>
+        </div>
+        <h4>2. Explain why</h4>
+        <p class="muted">In one or two sentences, name the exact reasoning slip.</p>
+        <textarea class="quiz-textarea" data-quiz-response placeholder="Explain what makes the reasoning fallacious..."></textarea>
+        <button class="button button-primary button-compact" type="button" data-quiz-grade>Grade this check</button>
+        <div class="quiz-feedback hidden" data-quiz-feedback role="status" aria-live="polite"></div>
+      </article>
+
+      <article class="detail-section repair-card">
+        <h4>Repair the argument</h4>
+        <p class="muted">Rewrite the example so it says only what the evidence or reasoning has actually earned.</p>
+        <textarea class="quiz-textarea" placeholder="Write a stronger, fairer version of the claim..."></textarea>
+        <div class="repair-checklist">
+          <p class="repair-checklist-title">What a good repair should do</p>
+          <ul>
+            <li>State only what the argument or evidence really supports.</li><li>Remove the exact move that made the original version fallacious.</li><li>Make the relevant comparison, rate, or sample size explicit.</li>
+          </ul>
+        </div>
+        <details class="repair-model">
+          <summary>Show one reasonable repair</summary>
+          <p class="muted">A stronger version would state the relevant rate, sample, or comparison explicitly before drawing the conclusion.</p>
+        </details>
+      </article>
+    </div>
+  </section>
+
+    <section class="section-block">
       <div class="section-header">
         <div>
           <h3 class="section-title">Questions to ask</h3>
@@ -382,66 +477,102 @@
     data-name="Conjunction fallacy"
     data-aliases=""
     data-categories="Conceptual|Mathematical"
-    data-body="Occurs when a more detailed scenario is treated as more probable than a less detailed scenario that already contains it. Because the candidate is young and progressive, it is more likely that she is both a climate activist and a vegan than that she is simply a climate activist. Adding conditions never makes a claim more probable than a broader version of that same claim. Extra detail can make a story feel more representative while making it statistically less likely. Political profiling often mistakes a vivid stereotype for probability, assuming that a person matching one trait is more likely to match an even narrower bundle of traits as well. The fallacy here is Conjunction fallacy: a more detailed scenario is treated as more probable than a less detailed scenario that already contains it. That matters here because adding conditions never makes a claim more probable than a broader version of that same claim. A better analysis would remember that extra detail can make a story feel more representative while making it statistically less likely. AI narratives sometimes suggest that because a model appears articulate, it is more likely to be both highly capable and aligned than merely capable, even though the conjunction is narrower. The fallacy here is Conjunction fallacy: a more detailed scenario is treated as more probable than a less detailed scenario that already contains it. That matters here because adding conditions never makes a claim more probable than a broader version of that same claim. A better analysis would remember that extra detail can make a story feel more representative while making it statistically less likely."
+    data-difficulty="Advanced"
+    data-classroom="Advanced undergraduate"
+    data-body="Occurs when a more detailed scenario is treated as more probable than a less detailed scenario that already contains it. Because the candidate is young and progressive, it is more likely that she is both a climate activist and a vegan than that she is simply a climate activist. Adding conditions never makes a claim more probable than a broader version of that same claim. Extra detail can make a story feel more representative while making it statistically less likely. Political profiling often mistakes a vivid stereotype for probability, assuming that a person matching one trait is more likely to match an even narrower bundle of traits as well. The fallacy here is Conjunction fallacy: a more detailed scenario is treated as more probable than a less detailed scenario that already contains it. That matters here because adding conditions never makes a claim more probable than a broader version of that same claim. A better analysis would remember that extra detail can make a story feel more representative while making it statistically less likely. AI narratives sometimes suggest that because a model appears articulate, it is more likely to be both highly capable and aligned than merely capable, even though the conjunction is narrower. The fallacy here is Conjunction fallacy: a more detailed scenario is treated as more probable than a less detailed scenario that already contains it. That matters here because adding conditions never makes a claim more probable than a broader version of that same claim. A better analysis would remember that extra detail can make a story feel more representative while making it statistically less likely. Advanced undergraduate Formal logic "
   >
     <h3><a href="../../fallacies/conjunction-fallacy/">Conjunction fallacy</a></h3>
     <p class="card-copy">Occurs when a more detailed scenario is treated as more probable than a less detailed scenario that already contains it.</p>
     <div class="pill-row"><span class="pill pill-Conceptual">Conceptual</span><span class="pill pill-Mathematical">Mathematical</span></div>
+    <div class="teaching-pill-row">
+    <span class="teaching-pill">Advanced</span>
+    <span class="teaching-pill">Advanced undergraduate</span>
+  </div>
   </article><article
     class="fallacy-card"
     data-fallacy-card
     data-name="Linearity fallacy"
     data-aliases=""
     data-categories="Conceptual|Mathematical"
-    data-body="Occurs when someone assumes that doubling the input will double the output even though the system has thresholds, saturation, feedback loops, or diminishing returns. One dose gave a modest result, so taking twice as much should produce twice the benefit. Many real systems change slowly at first, then rapidly, then plateau, or even reverse after a threshold. Growth forecasts for social platforms often assume audience reach will keep scaling smoothly even after attention markets saturate. The fallacy here is Linearity fallacy: someone assumes that doubling the input will double the output even though the system has thresholds, saturation, feedback loops, or diminishing returns. That matters here because many real systems change slowly at first, then rapidly, then plateau, or even reverse after a threshold. The better question is whether the category or definition still fits once the context or scale changes. Policy debates about climate, housing, and healthcare frequently ignore the non-linear effects of bottlenecks, incentives, and behavioral feedback. The fallacy here is Linearity fallacy: someone assumes that doubling the input will double the output even though the system has thresholds, saturation, feedback loops, or diminishing returns. That matters here because many real systems change slowly at first, then rapidly, then plateau, or even reverse after a threshold. The better question is whether the category or definition still fits once the context or scale changes."
+    data-difficulty="Advanced"
+    data-classroom="Advanced undergraduate"
+    data-body="Occurs when someone assumes that doubling the input will double the output even though the system has thresholds, saturation, feedback loops, or diminishing returns. One dose gave a modest result, so taking twice as much should produce twice the benefit. Many real systems change slowly at first, then rapidly, then plateau, or even reverse after a threshold. Growth forecasts for social platforms often assume audience reach will keep scaling smoothly even after attention markets saturate. The fallacy here is Linearity fallacy: someone assumes that doubling the input will double the output even though the system has thresholds, saturation, feedback loops, or diminishing returns. That matters here because many real systems change slowly at first, then rapidly, then plateau, or even reverse after a threshold. The better question is whether the category or definition still fits once the context or scale changes. Policy debates about climate, housing, and healthcare frequently ignore the non-linear effects of bottlenecks, incentives, and behavioral feedback. The fallacy here is Linearity fallacy: someone assumes that doubling the input will double the output even though the system has thresholds, saturation, feedback loops, or diminishing returns. That matters here because many real systems change slowly at first, then rapidly, then plateau, or even reverse after a threshold. The better question is whether the category or definition still fits once the context or scale changes. Advanced undergraduate Formal logic "
   >
     <h3><a href="../../fallacies/linearity-fallacy/">Linearity fallacy</a></h3>
     <p class="card-copy">Occurs when someone assumes that doubling the input will double the output even though the system has thresholds, saturation, feedback loops, or diminishing returns.</p>
     <div class="pill-row"><span class="pill pill-Conceptual">Conceptual</span><span class="pill pill-Mathematical">Mathematical</span></div>
+    <div class="teaching-pill-row">
+    <span class="teaching-pill">Advanced</span>
+    <span class="teaching-pill">Advanced undergraduate</span>
+  </div>
   </article><article
     class="fallacy-card"
     data-fallacy-card
     data-name="Appeal to nature"
     data-aliases=""
     data-categories="Conceptual|Evidential"
-    data-body="Occurs when something is praised as good, safe, or right merely because it is called natural, or condemned as bad merely because it is called unnatural. This remedy must be safer than prescription medicine because it is completely natural. Natural things can heal, but they can also poison, infect, and kill. The fallacy treats a vague origin label as if it already settled the medical, moral, or practical question. AP&#39;s November 25, 2024 report on raw milk recalled after bird-flu detection is a good case for arguments that romanticize the &#39;natural&#39; while minimizing risk. It makes the tradeoff concrete: appeals to purity and tradition can feel reassuring even when the biological evidence points the other way. The fallacy here is Appeal to nature: something is praised as good, safe, or right merely because it is called natural, or condemned as bad merely because it is called unnatural. That matters here because natural things can heal, but they can also poison, infect, and kill. A better analysis would remember that the fallacy treats a vague origin label as if it already settled the medical, moral, or practical question. Wellness marketing for raw milk, supplements, and &#39;clean&#39; products often treats natural as if it automatically meant safer, healthier, or morally superior. The fallacy here is Appeal to nature: something is praised as good, safe, or right merely because it is called natural, or condemned as bad merely because it is called unnatural. That matters here because natural things can heal, but they can also poison, infect, and kill. A better analysis would remember that the fallacy treats a vague origin label as if it already settled the medical, moral, or practical question. Arguments about sex, family, and medicine often smuggle a moral conclusion into the descriptive claim that one pattern is simply &#39;what nature intended.&#39; The fallacy here is Appeal to nature: something is praised as good, safe, or right merely because it is called natural, or condemned as bad merely because it is called unnatural. That matters here because natural things can heal, but they can also poison, infect, and kill. A better analysis would remember that the fallacy treats a vague origin label as if it already settled the medical, moral, or practical question."
+    data-difficulty="Intermediate"
+    data-classroom="High school"
+    data-body="Occurs when something is praised as good, safe, or right merely because it is called natural, or condemned as bad merely because it is called unnatural. This remedy must be safer than prescription medicine because it is completely natural. Natural things can heal, but they can also poison, infect, and kill. The fallacy treats a vague origin label as if it already settled the medical, moral, or practical question. AP&#39;s November 25, 2024 report on raw milk recalled after bird-flu detection is a good case for arguments that romanticize the &#39;natural&#39; while minimizing risk. It makes the tradeoff concrete: appeals to purity and tradition can feel reassuring even when the biological evidence points the other way. The fallacy here is Appeal to nature: something is praised as good, safe, or right merely because it is called natural, or condemned as bad merely because it is called unnatural. That matters here because natural things can heal, but they can also poison, infect, and kill. A better analysis would remember that the fallacy treats a vague origin label as if it already settled the medical, moral, or practical question. Wellness marketing for raw milk, supplements, and &#39;clean&#39; products often treats natural as if it automatically meant safer, healthier, or morally superior. The fallacy here is Appeal to nature: something is praised as good, safe, or right merely because it is called natural, or condemned as bad merely because it is called unnatural. That matters here because natural things can heal, but they can also poison, infect, and kill. A better analysis would remember that the fallacy treats a vague origin label as if it already settled the medical, moral, or practical question. Arguments about sex, family, and medicine often smuggle a moral conclusion into the descriptive claim that one pattern is simply &#39;what nature intended.&#39; The fallacy here is Appeal to nature: something is praised as good, safe, or right merely because it is called natural, or condemned as bad merely because it is called unnatural. That matters here because natural things can heal, but they can also poison, infect, and kill. A better analysis would remember that the fallacy treats a vague origin label as if it already settled the medical, moral, or practical question. High school Scientific reasoning "
   >
     <h3><a href="../../fallacies/appeal-to-nature/">Appeal to nature</a></h3>
     <p class="card-copy">Occurs when something is praised as good, safe, or right merely because it is called natural, or condemned as bad merely because it is called unnatural.</p>
     <div class="pill-row"><span class="pill pill-Conceptual">Conceptual</span><span class="pill pill-Evidential">Evidential</span></div>
+    <div class="teaching-pill-row">
+    <span class="teaching-pill">Intermediate</span>
+    <span class="teaching-pill">High school</span>
+  </div>
   </article><article
     class="fallacy-card"
     data-fallacy-card
     data-name="Argumentum ad populum"
     data-aliases="appeal to belief appeal to the majority appeal to the people appeal to popularity bandwagon appeal bandwagon fallacy"
     data-categories="Evidential|Conceptual|Epistemic"
-    data-body="Occurs when a claim is treated as true, reasonable, or justified mainly because many people believe it, share it, or act on it. Millions of people are using this detox protocol online, so it cannot be pseudoscience. Popularity can reveal what people want, fear, or have been persuaded by, but it does not settle what is true. Crowds can be informed, confused, manipulated, or all three at once. Advocates of raw milk and other &#39;natural&#39; wellness products often point to growing enthusiasm, celebrity uptake, or huge followings as if social momentum itself established safety or effectiveness. The fallacy here is Argumentum ad populum: a claim is treated as true, reasonable, or justified mainly because many people believe it, share it, or act on it. That matters here because popularity can reveal what people want, fear, or have been persuaded by, but it does not settle what is true. A better analysis would remember that crowds can be informed, confused, manipulated, or all three at once. Viral political claims are often defended with phrases like &#39;everyone is talking about it&#39; or &#39;it has millions of views,&#39; which confuses reach with reliability. The fallacy here is Argumentum ad populum: a claim is treated as true, reasonable, or justified mainly because many people believe it, share it, or act on it. That matters here because popularity can reveal what people want, fear, or have been persuaded by, but it does not settle what is true. A better analysis would remember that crowds can be informed, confused, manipulated, or all three at once."
+    data-difficulty="Advanced"
+    data-classroom="Advanced undergraduate"
+    data-body="Occurs when a claim is treated as true, reasonable, or justified mainly because many people believe it, share it, or act on it. Millions of people are using this detox protocol online, so it cannot be pseudoscience. Popularity can reveal what people want, fear, or have been persuaded by, but it does not settle what is true. Crowds can be informed, confused, manipulated, or all three at once. Advocates of raw milk and other &#39;natural&#39; wellness products often point to growing enthusiasm, celebrity uptake, or huge followings as if social momentum itself established safety or effectiveness. The fallacy here is Argumentum ad populum: a claim is treated as true, reasonable, or justified mainly because many people believe it, share it, or act on it. That matters here because popularity can reveal what people want, fear, or have been persuaded by, but it does not settle what is true. A better analysis would remember that crowds can be informed, confused, manipulated, or all three at once. Viral political claims are often defended with phrases like &#39;everyone is talking about it&#39; or &#39;it has millions of views,&#39; which confuses reach with reliability. The fallacy here is Argumentum ad populum: a claim is treated as true, reasonable, or justified mainly because many people believe it, share it, or act on it. That matters here because popularity can reveal what people want, fear, or have been persuaded by, but it does not settle what is true. A better analysis would remember that crowds can be informed, confused, manipulated, or all three at once. Advanced undergraduate Scientific reasoning "
   >
     <h3><a href="../../fallacies/argumentum-ad-populum/">Argumentum ad populum</a></h3>
     <p class="card-copy">Occurs when a claim is treated as true, reasonable, or justified mainly because many people believe it, share it, or act on it.</p>
     <div class="pill-row"><span class="pill pill-Evidential">Evidential</span><span class="pill pill-Conceptual">Conceptual</span><span class="pill pill-Epistemic">Epistemic</span></div>
+    <div class="teaching-pill-row">
+    <span class="teaching-pill">Advanced</span>
+    <span class="teaching-pill">Advanced undergraduate</span>
+  </div>
   </article><article
     class="fallacy-card"
     data-fallacy-card
     data-name="Composition fallacy"
     data-aliases="distribution fallacy"
     data-categories="Conceptual"
-    data-body="Occurs when something true of the parts is assumed to be true of the whole they compose. Each feature we added tested well in isolation, so the full product must be excellent. Parts can interact in ways that change the result at the larger scale. What is beneficial, efficient, or true locally may not stay that way globally. A company may assume that because every team is cutting costs responsibly, the organization as a whole will thrive, even though simultaneous cuts can gut the shared systems the teams depend on. The fallacy here is Composition fallacy: something true of the parts is assumed to be true of the whole they compose. That matters here because parts can interact in ways that change the result at the larger scale. A better analysis would remember that what is beneficial, efficient, or true locally may not stay that way globally. In policy debates, people often assume that what is prudent for one household, firm, or voter must be prudent for the entire economy or democracy at once. The fallacy here is Composition fallacy: something true of the parts is assumed to be true of the whole they compose. That matters here because parts can interact in ways that change the result at the larger scale. A better analysis would remember that what is beneficial, efficient, or true locally may not stay that way globally."
+    data-difficulty="Intermediate"
+    data-classroom="High school"
+    data-body="Occurs when something true of the parts is assumed to be true of the whole they compose. Each feature we added tested well in isolation, so the full product must be excellent. Parts can interact in ways that change the result at the larger scale. What is beneficial, efficient, or true locally may not stay that way globally. A company may assume that because every team is cutting costs responsibly, the organization as a whole will thrive, even though simultaneous cuts can gut the shared systems the teams depend on. The fallacy here is Composition fallacy: something true of the parts is assumed to be true of the whole they compose. That matters here because parts can interact in ways that change the result at the larger scale. A better analysis would remember that what is beneficial, efficient, or true locally may not stay that way globally. In policy debates, people often assume that what is prudent for one household, firm, or voter must be prudent for the entire economy or democracy at once. The fallacy here is Composition fallacy: something true of the parts is assumed to be true of the whole they compose. That matters here because parts can interact in ways that change the result at the larger scale. A better analysis would remember that what is beneficial, efficient, or true locally may not stay that way globally. High school Critical thinking / philosophy "
   >
     <h3><a href="../../fallacies/composition-fallacy/">Composition fallacy</a></h3>
     <p class="card-copy">Occurs when something true of the parts is assumed to be true of the whole they compose.</p>
     <div class="pill-row"><span class="pill pill-Conceptual">Conceptual</span></div>
+    <div class="teaching-pill-row">
+    <span class="teaching-pill">Intermediate</span>
+    <span class="teaching-pill">High school</span>
+  </div>
   </article><article
     class="fallacy-card"
     data-fallacy-card
     data-name="Continuum fallacy"
     data-aliases="fallacy of the beard"
     data-categories="Conceptual|Linguistic"
-    data-body="Occurs when a claim is rejected simply because the concept involved has blurry boundaries rather than a perfectly sharp cutoff. You cannot call this ad misleading unless you can identify the exact word where persuasion becomes deception. Many real concepts come in degrees. Vagueness at the boundary does not make the broader concept meaningless or unusable. Arguments about misinformation, bias, wealth, addiction, and consciousness often demand an impossible razor-sharp line and then pretend the lack of that line defeats the concept altogether. The fallacy here is Continuum fallacy: a claim is rejected simply because the concept involved has blurry boundaries rather than a perfectly sharp cutoff. That matters here because many real concepts come in degrees. A better analysis would remember that vagueness at the boundary does not make the broader concept meaningless or unusable. In everyday disputes, someone may deny that a delay was &#39;too long&#39; or a fee was &#39;too high&#39; simply because no exact threshold was announced in advance. The fallacy here is Continuum fallacy: a claim is rejected simply because the concept involved has blurry boundaries rather than a perfectly sharp cutoff. That matters here because many real concepts come in degrees. A better analysis would remember that vagueness at the boundary does not make the broader concept meaningless or unusable."
+    data-difficulty="Intermediate"
+    data-classroom="High school"
+    data-body="Occurs when a claim is rejected simply because the concept involved has blurry boundaries rather than a perfectly sharp cutoff. You cannot call this ad misleading unless you can identify the exact word where persuasion becomes deception. Many real concepts come in degrees. Vagueness at the boundary does not make the broader concept meaningless or unusable. Arguments about misinformation, bias, wealth, addiction, and consciousness often demand an impossible razor-sharp line and then pretend the lack of that line defeats the concept altogether. The fallacy here is Continuum fallacy: a claim is rejected simply because the concept involved has blurry boundaries rather than a perfectly sharp cutoff. That matters here because many real concepts come in degrees. A better analysis would remember that vagueness at the boundary does not make the broader concept meaningless or unusable. In everyday disputes, someone may deny that a delay was &#39;too long&#39; or a fee was &#39;too high&#39; simply because no exact threshold was announced in advance. The fallacy here is Continuum fallacy: a claim is rejected simply because the concept involved has blurry boundaries rather than a perfectly sharp cutoff. That matters here because many real concepts come in degrees. A better analysis would remember that vagueness at the boundary does not make the broader concept meaningless or unusable. High school Rhetoric / debate "
   >
     <h3><a href="../../fallacies/continuum-fallacy/">Continuum fallacy</a></h3>
     <p class="card-copy">Occurs when a claim is rejected simply because the concept involved has blurry boundaries rather than a perfectly sharp cutoff.</p>
     <div class="pill-row"><span class="pill pill-Conceptual">Conceptual</span><span class="pill pill-Linguistic">Linguistic</span></div>
+    <div class="teaching-pill-row">
+    <span class="teaching-pill">Intermediate</span>
+    <span class="teaching-pill">High school</span>
+  </div>
   </article>
       </div>
     </section>
