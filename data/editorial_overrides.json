@@ -40,6 +40,66 @@
       ],
       "editorialStatus": "modernized-2026-pass"
     },
+    "Appeal to fear": {
+      "definition": "Occurs when someone tries to secure agreement mainly by amplifying danger, threat, or panic rather than by showing that the conclusion is supported",
+      "example": "If we do not pass this surveillance bill tonight, the next attack will be on our hands.",
+      "notes": "Fear can be rational when the threat is real and well evidenced. The fallacy appears when fear does the persuasive work that evidence and reasoning have not done.",
+      "caseStudies": [
+        "Campaign messaging about immigrants, crime, and cultural decline often relies on catastrophic imagery that outruns the actual evidence offered for the policy being sold.",
+        "Scams involving miracle cures, emergency investments, or account security often push people to act before they can think by making delay feel dangerous."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Appeal to motive": {
+      "definition": "Occurs when a claim is dismissed by speculating about the speaker's motives instead of addressing the claim itself",
+      "example": "Of course the researcher says rent control backfires; landlords fund her institute.",
+      "notes": "Motives can be relevant to bias and credibility, but they do not automatically settle whether the argument or evidence is sound.",
+      "caseStudies": [
+        "After the September 2024 ABC debate, accusations about moderator bias were often used not just to question fairness, but to pre-dismiss later fact-checks without engaging their substance.",
+        "In debates about climate, vaccines, and AI policy, critics are often waved away as 'funded,' 'bought,' or 'performing for clicks' instead of being answered."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Appeal to novelty": {
+      "definition": "Occurs when something is treated as better mainly because it is new, cutting-edge, or marketed as the future",
+      "example": "This AI-first classroom platform is obviously better than the old method because it is the future of learning.",
+      "notes": "New tools and ideas can be improvements, but novelty itself is not proof. The relevant questions are performance, tradeoffs, and evidence, not freshness.",
+      "caseStudies": [
+        "In the 2024 rush to adopt generative AI, many products were pitched as inherently superior because they were new, even when reliability, labor impact, and safety were still unsettled.",
+        "Political and management rhetoric often treats 'innovation' as a reason to trust a strategy before any serious test of whether it solves the underlying problem."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Appeal to pity": {
+      "definition": "Occurs when sympathy for a person or group is used as if it were evidence that a claim is true or a conclusion follows",
+      "example": "You have to pass me, professor. If I fail, I lose my scholarship and disappoint my family.",
+      "notes": "Compassion can matter for what response is humane, but it does not determine whether the underlying claim has been proved.",
+      "caseStudies": [
+        "Fundraising and advocacy campaigns sometimes imply that questioning a factual claim is itself heartless, shifting the pressure from evidence to emotional identification.",
+        "Public figures under scrutiny sometimes ask to be believed or excused because they are suffering, overwhelmed, or facing intense pressure, even when those facts do not establish the truth of what they are saying."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Appeal to ridicule": {
+      "definition": "Occurs when mockery, embarrassment, or derision is used in place of showing why a view is false",
+      "example": "You care about online privacy? What are you, hiding in a tinfoil bunker?",
+      "notes": "Ridicule can make a position look silly without ever testing whether it is wrong. Laughter is not an argument.",
+      "caseStudies": [
+        "Debates about religion, feminism, climate, and AI are often reduced to memes whose purpose is to make one side look ridiculous rather than to assess the actual claim.",
+        "Online discourse frequently treats a sarcastic dunk or quote-tweet pile-on as if public humiliation itself were refutation."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Appeal to spite": {
+      "definition": "Occurs when resentment, bitterness, or hostility toward another group is used to drive support for a conclusion",
+      "example": "Do not support student debt relief; think of the smug graduates who will celebrate while you keep paying.",
+      "notes": "Anger at the people who might benefit from a policy does not settle whether the policy is wise, fair, or effective.",
+      "caseStudies": [
+        "Campaign messages often invite voters to reject a proposal because hated elites, immigrants, bankers, or academics might benefit, even when that says nothing about the proposal's merits.",
+        "Social-media outrage often works by making the audience feel that supporting a view would somehow reward people they already dislike."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
     "Appeal to nature": {
       "definition": "Occurs when something is praised as good, safe, or right merely because it is called natural, or condemned as bad merely because it is called unnatural",
       "example": "This remedy must be safer than prescription medicine because it is completely natural.",
@@ -160,6 +220,16 @@
       ],
       "editorialStatus": "modernized-2026-pass"
     },
+    "False compromise": {
+      "definition": "Occurs when the midpoint between two positions is treated as correct simply because it lies between them",
+      "example": "One side says the election was secure and another says it was stolen, so the honest answer is probably that it was a little stolen.",
+      "notes": "Disagreement does not imply that the truth is halfway between the parties. One side may simply be much more right than the other.",
+      "caseStudies": [
+        "Coverage of climate, public health, and election integrity can slide into 'both sides' framing that treats consensus and fringe denial as if splitting the difference were balanced or fair.",
+        "In personal and workplace disputes, people often assume each side must be equally at fault, even when the evidence is lopsided."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
     "False dilemma": {
       "definition": "Occurs when someone presents a limited set of options as if they were the only live possibilities, while reasonable alternatives are ignored or suppressed",
       "example": "Either we pass this surveillance bill exactly as written, or we are choosing chaos and lawlessness.",
@@ -220,6 +290,26 @@
       ],
       "editorialStatus": "modernized-2026-pass"
     },
+    "Perfect solution fallacy": {
+      "definition": "Occurs when a useful solution is dismissed because it does not fully solve the problem or because some flaws would remain afterward",
+      "example": "There is no point building more housing if rents will still be too high afterward.",
+      "notes": "A partial improvement can still be worthwhile. The mistake is demanding perfection from one proposal when no realistic policy can eliminate the problem entirely.",
+      "caseStudies": [
+        "Climate and transit proposals are often rejected because they will not solve emissions or congestion completely, as if incomplete progress counted as no progress.",
+        "Arguments about AI safety, gun policy, and public health often dismiss guardrails for failing to eliminate every bad case, rather than asking whether they would reduce harm."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Special pleading": {
+      "definition": "Occurs when someone asks for an exception to a rule or standard but does not provide a relevant reason for why the favored case should be exempt",
+      "example": "Data privacy matters for everyone else's app, but our app is different because our mission is important.",
+      "notes": "Exceptions can be justified, but they need a principled reason. Mere attachment to the favored case is not enough.",
+      "caseStudies": [
+        "Political actors often demand strict accountability, civility, or transparency for opponents while inventing excuses for why their own side should be judged differently.",
+        "Religious and ideological arguments often exempt cherished claims from the evidence standards applied to ordinary claims."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
     "No True Scotsman": {
       "definition": "Occurs when someone protects a generalization from counterexamples by redefining the group with an ad hoc 'real' or 'true' membership test",
       "example": "No real conservative would support that immigration bill.",
@@ -267,6 +357,16 @@
       "caseStudies": [
         "In the June 27, 2024 Biden-Trump debate and the September 10, 2024 Harris-Trump debate, many charges were met with 'your side did it too' responses that redirected blame without addressing the original allegation.",
         "Arguments about misinformation, climate, religion, and media bias often slide into scorekeeping about who is worse rather than whether the specific criticized claim is true or justified."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Wishful thinking": {
+      "definition": "Occurs when a belief or decision is driven mainly by what would be pleasing, hopeful, or comforting if true rather than by what the evidence supports",
+      "example": "This stock is too exciting to fail, so I am sure it will recover.",
+      "notes": "Hope can sustain action, but it does not convert possibility into evidence. The stronger the desire, the easier it is to mistake wanting for warrant.",
+      "caseStudies": [
+        "Speculative markets, miracle-cure promises, and election-night narratives often run on the thought that a hoped-for outcome is somehow more likely because people badly want it.",
+        "Beliefs about the afterlife, destiny, or technological salvation are often defended by saying life would feel bleak without them, which speaks to desire rather than truth."
       ],
       "editorialStatus": "modernized-2026-pass"
     }

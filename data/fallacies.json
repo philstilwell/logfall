@@ -560,14 +560,14 @@
       "subCategory": "Red Herring",
       "subSubCategory": "Appeal to consequences",
       "aliases": [],
-      "definition": "An appeal to emotion where an argument is made by increasing fear and prejudice towards the opposing side.",
-      "example": "If you don't vote her into office, terrorism will accelerate, and our great nation will fall.",
-      "notes": "Appealing to fear works. You won't find many atheists in countries where atheism warrants the death penalty. Fear has long been co-opted to initiate wars and oppressive laws.",
+      "definition": "Occurs when someone tries to secure agreement mainly by amplifying danger, threat, or panic rather than by showing that the conclusion is supported.",
+      "example": "If we do not pass this surveillance bill tonight, the next attack will be on our hands.",
+      "notes": "Fear can be rational when the threat is real and well evidenced. The fallacy appears when fear does the persuasive work that evidence and reasoning have not done.",
       "caseStudies": [
-        "Many religions claim that if you don't believe their \"loving\" god is the true god, you will be tortured forever.",
-        "Fear of death is what compels many cancer patients to accept the mendacious claims of snake-oil salesmen."
+        "Campaign messaging about immigrants, crime, and cultural decline often relies on catastrophic imagery that outruns the actual evidence offered for the policy being sold.",
+        "Scams involving miracle cures, emergency investments, or account security often push people to act before they can think by making delay feel dangerous."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Appeal to flattery",
@@ -598,11 +598,14 @@
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when a premise is dismissed, by calling into question the motives of its sponsor.",
-      "example": "The director gave her the leading role only because he wanted to date her.",
-      "notes": "While a questionable motive might allow us to expect a particular bias within the argument, it is the argument itself that must be assessed.",
-      "caseStudies": [],
-      "editorialStatus": "cleaned-from-root"
+      "definition": "Occurs when a claim is dismissed by speculating about the speaker's motives instead of addressing the claim itself.",
+      "example": "Of course the researcher says rent control backfires; landlords fund her institute.",
+      "notes": "Motives can be relevant to bias and credibility, but they do not automatically settle whether the argument or evidence is sound.",
+      "caseStudies": [
+        "After the September 2024 ABC debate, accusations about moderator bias were often used not just to question fairness, but to pre-dismiss later fact-checks without engaging their substance.",
+        "In debates about climate, vaccines, and AI policy, critics are often waved away as 'funded,' 'bought,' or 'performing for clicks' instead of being answered."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Appeal to nature",
@@ -638,11 +641,14 @@
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when a proposal is claimed to be superior or better solely based on it being new or modern.",
-      "example": "This brilliant strategy that the management has introduced is revolutionary and will change the way we do business!",
-      "notes": "This fallacy often results from the human tendency for change and new stimuli.",
-      "caseStudies": [],
-      "editorialStatus": "cleaned-from-root"
+      "definition": "Occurs when something is treated as better mainly because it is new, cutting-edge, or marketed as the future.",
+      "example": "This AI-first classroom platform is obviously better than the old method because it is the future of learning.",
+      "notes": "New tools and ideas can be improvements, but novelty itself is not proof. The relevant questions are performance, tradeoffs, and evidence, not freshness.",
+      "caseStudies": [
+        "In the 2024 rush to adopt generative AI, many products were pitched as inherently superior because they were new, even when reliability, labor impact, and safety were still unsettled.",
+        "Political and management rhetoric often treats 'innovation' as a reason to trust a strategy before any serious test of whether it solves the underlying problem."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Appeal to pity",
@@ -655,11 +661,14 @@
       "subCategory": "Red Herring",
       "subSubCategory": "Appeal to consequences",
       "aliases": [],
-      "definition": "An argument in which the evoking of sympathy is used in an attempt to validate the argument.",
-      "example": "If there is no after-life, then the lives of tens of millions suffering in poverty have no meaning.",
-      "notes": "This is only a fallacy when it serves as a foundation for a belief in a particular claim.",
-      "caseStudies": [],
-      "editorialStatus": "cleaned-from-root"
+      "definition": "Occurs when sympathy for a person or group is used as if it were evidence that a claim is true or a conclusion follows.",
+      "example": "You have to pass me, professor. If I fail, I lose my scholarship and disappoint my family.",
+      "notes": "Compassion can matter for what response is humane, but it does not determine whether the underlying claim has been proved.",
+      "caseStudies": [
+        "Fundraising and advocacy campaigns sometimes imply that questioning a factual claim is itself heartless, shifting the pressure from evidence to emotional identification.",
+        "Public figures under scrutiny sometimes ask to be believed or excused because they are suffering, overwhelmed, or facing intense pressure, even when those facts do not establish the truth of what they are saying."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Appeal to poverty",
@@ -713,11 +722,14 @@
       "subCategory": "Red Herring",
       "subSubCategory": "Appeal to consequences",
       "aliases": [],
-      "definition": "An argument in which the use of ridicule or shame is introduced in an attempt to invalidate the opposing position.",
-      "example": "So, since you believe in evolution, you have to believe your grandfather was an ape! Hilarious!",
-      "notes": "Ridicule is a fallacy only when it is used to persuade others to hold a certain belief.",
-      "caseStudies": [],
-      "editorialStatus": "cleaned-from-root"
+      "definition": "Occurs when mockery, embarrassment, or derision is used in place of showing why a view is false.",
+      "example": "You care about online privacy? What are you, hiding in a tinfoil bunker?",
+      "notes": "Ridicule can make a position look silly without ever testing whether it is wrong. Laughter is not an argument.",
+      "caseStudies": [
+        "Debates about religion, feminism, climate, and AI are often reduced to memes whose purpose is to make one side look ridiculous rather than to assess the actual claim.",
+        "Online discourse frequently treats a sarcastic dunk or quote-tweet pile-on as if public humiliation itself were refutation."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Appeal to spite",
@@ -730,11 +742,14 @@
       "subCategory": "Red Herring",
       "subSubCategory": "Appeal to consequences",
       "aliases": [],
-      "definition": "An appeal to emotion in which an argument is made through exploiting bitterness towards the proponents of an opposing position.",
-      "example": "If you think we should bailout that bank, consider that the incompetent traders who created this financial fiasco will be celebrating with champagne while we, the common folk, will be paying even higher taxes.",
-      "notes": "What some might call an appeal to spite others might call an appeal to justice, so this fallacy can be quite fuzzy.",
-      "caseStudies": [],
-      "editorialStatus": "cleaned-from-root"
+      "definition": "Occurs when resentment, bitterness, or hostility toward another group is used to drive support for a conclusion.",
+      "example": "Do not support student debt relief; think of the smug graduates who will celebrate while you keep paying.",
+      "notes": "Anger at the people who might benefit from a policy does not settle whether the policy is wise, fair, or effective.",
+      "caseStudies": [
+        "Campaign messages often invite voters to reject a proposal because hated elites, immigrants, bankers, or academics might benefit, even when that says nothing about the proposal's merits.",
+        "Social-media outrage often works by making the audience feel that supporting a view would somehow reward people they already dislike."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Appeal to tradition",
@@ -1688,13 +1703,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Is the assertion that a compromise near the middle of two positions is correct.",
-      "example": "If the cyclist had been wearing a helmet as he ought to have, my drunk driving would not have killed him. The court should reduce my prison sentence from 10 to 5 years.",
-      "notes": "Note that not all compromises to a middle position are faulty as in price negotiations for a new car.",
+      "definition": "Occurs when the midpoint between two positions is treated as correct simply because it lies between them.",
+      "example": "One side says the election was secure and another says it was stolen, so the honest answer is probably that it was a little stolen.",
+      "notes": "Disagreement does not imply that the truth is halfway between the parties. One side may simply be much more right than the other.",
       "caseStudies": [
-        "If your spouse wants to spend the weekend in Las Vegas, and you would like to stay home in Los Angeles, offering the compromise of spending the weekend in the desert between the 2 cities would probably be a bad idea."
+        "Coverage of climate, public health, and election integrity can slide into 'both sides' framing that treats consensus and fringe denial as if splitting the difference were balanced or fair.",
+        "In personal and workplace disputes, people often assume each side must be equally at fault, even when the evidence is lopsided."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "False dilemma",
@@ -2343,14 +2359,14 @@
       "aliases": [
         "nirvana fallacy"
       ],
-      "definition": "Occurs when an argument assumes that a perfect solution must exist and/or that a solution should be rejected because some part of the problem would still exist after it has been implemented.",
-      "example": "But, Dad! Your $20 is not going to replace the car I crashed! Keep your money!",
-      "notes": "\"The perfect is the enemy of the good.\" ~Voltaire.",
+      "definition": "Occurs when a useful solution is dismissed because it does not fully solve the problem or because some flaws would remain afterward.",
+      "example": "There is no point building more housing if rents will still be too high afterward.",
+      "notes": "A partial improvement can still be worthwhile. The mistake is demanding perfection from one proposal when no realistic policy can eliminate the problem entirely.",
       "caseStudies": [
-        "Some in the US claim that tighter border controls are \"not the solution\" to the problem of illegal immigration, and ignore the fact that tighter borders might make a significant difference.",
-        "Some argue \"You can't stop illicit drug use, so there is no sense in having laws against illicit drugs.\" Changing the referent from illicit drugs to murder highlights the fallacy."
+        "Climate and transit proposals are often rejected because they will not solve emissions or congestion completely, as if incomplete progress counted as no progress.",
+        "Arguments about AI safety, gun policy, and public health often dismiss guardrails for failing to eliminate every bad case, rather than asking whether they would reduce harm."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Perfect standard",
@@ -2768,14 +2784,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when a proponent of a position attempts to introduce an exemption to a generally accepted rule or principle without justifying the exemption.",
-      "example": "Prayer works, but it's just that you can't subject it's claims to the tools of science.",
-      "notes": "In the example, why would claims of material effects from spiritual causes be off-limits to scientific scrutiny when the effects of all other causes can be assessed by science?",
+      "definition": "Occurs when someone asks for an exception to a rule or standard but does not provide a relevant reason for why the favored case should be exempt.",
+      "example": "Data privacy matters for everyone else's app, but our app is different because our mission is important.",
+      "notes": "Exceptions can be justified, but they need a principled reason. Mere attachment to the favored case is not enough.",
       "caseStudies": [
-        "Some communities have proposed that police officers and their families be exempt from citations for traffic offenses. But it would seem that the reasons given for establishing speed limits would hold also for the families of police officers.",
-        "Many religions hold that forgiveness should be granted without bloodshed or payment of any sort, yet exempt their own god by offering irrelevant excuses such as \"God is holy\" or \"God's ways are not our ways.\""
+        "Political actors often demand strict accountability, civility, or transparency for opponents while inventing excuses for why their own side should be judged differently.",
+        "Religious and ideological arguments often exempt cherished claims from the evidence standards applied to ordinary claims."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Spotlight fallacy",
@@ -3121,13 +3137,14 @@
       "subCategory": "Red Herring",
       "subSubCategory": "Appeal to consequences",
       "aliases": [],
-      "definition": "In which a decision is encouraged based on what might be pleasing to imagine, rather than based on evidence or reason.",
-      "example": "If there were no life after death, then this life would be rather meaningless, and so I choose to believe we have an eternal soul.",
-      "notes": "This fallacy is probably the most human of all fallacies. It is almost to suggest, that if you want or believe something strongly enough, that something must be or become true.",
+      "definition": "Occurs when a belief or decision is driven mainly by what would be pleasing, hopeful, or comforting if true rather than by what the evidence supports.",
+      "example": "This stock is too exciting to fail, so I am sure it will recover.",
+      "notes": "Hope can sustain action, but it does not convert possibility into evidence. The stronger the desire, the easier it is to mistake wanting for warrant.",
       "caseStudies": [
-        "If it were argued that the desire of the majority of citizens for universal health care coverage makes it imperative that we pass a universal health care coverage bill, this would be committing the wishful thinking fallacy. There may be no objective way for some countries to pay for the plan given their resources. The fact that something would make us happy does not mean we deserve or can realize that something."
+        "Speculative markets, miracle-cure promises, and election-night narratives often run on the thought that a hoped-for outcome is somehow more likely because people badly want it.",
+        "Beliefs about the afterlife, destiny, or technological salvation are often defended by saying life would feel bleak without them, which speaks to desire rather than truth."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Witness chain",
