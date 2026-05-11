@@ -21,6 +21,10 @@
       "editorialStatus": "modernized-2026-pass"
     },
     "Appeal to authority": {
+      "categories": [
+        "Evidential",
+        "Emotional"
+      ],
       "definition": "Occurs when someone treats an authority's endorsement as if it settled the issue, even when the authority is unqualified, the field is divided, or the claim still requires evidence",
       "example": "A wellness influencer says a supplement works because a famous surgeon on a podcast called it 'a game changer,' so listeners treat the endorsement as proof.",
       "notes": "Expert testimony can be good evidence when the authority is relevant, the expertise is genuine, and the claim fits the expert consensus. The fallacy appears when prestige replaces argument.",
@@ -31,6 +35,10 @@
       "editorialStatus": "modernized-2026-pass"
     },
     "Appeal to consequences": {
+      "categories": [
+        "Evidential",
+        "Emotional"
+      ],
       "definition": "Occurs when someone treats the desirability or undesirability of a conclusion as if it were evidence that the conclusion is true or false",
       "example": "If climate change were really this serious, it would mean expensive changes to how we live and work, so the science must be exaggerated.",
       "notes": "Consequences matter for what we should do, but they do not by themselves determine what is true. A painful implication does not refute a claim, and a comforting implication does not confirm one.",
@@ -61,6 +69,11 @@
       "editorialStatus": "modernized-2026-pass"
     },
     "Appeal to novelty": {
+      "categories": [
+        "Perspectival",
+        "Evidential",
+        "Emotional"
+      ],
       "definition": "Occurs when something is treated as better mainly because it is new, cutting-edge, or marketed as the future",
       "example": "This AI-first classroom platform is obviously better than the old method because it is the future of learning.",
       "notes": "New tools and ideas can be improvements, but novelty itself is not proof. The relevant questions are performance, tradeoffs, and evidence, not freshness.",
@@ -101,6 +114,10 @@
       "editorialStatus": "modernized-2026-pass"
     },
     "Appeal to nature": {
+      "categories": [
+        "Conceptual",
+        "Evidential"
+      ],
       "definition": "Occurs when something is praised as good, safe, or right merely because it is called natural, or condemned as bad merely because it is called unnatural",
       "example": "This remedy must be safer than prescription medicine because it is completely natural.",
       "notes": "Natural things can heal, but they can also poison, infect, and kill. The fallacy treats a vague origin label as if it already settled the medical, moral, or practical question.",
@@ -121,6 +138,11 @@
       "editorialStatus": "modernized-2026-pass"
     },
     "Appeal to tradition": {
+      "categories": [
+        "Perspectival",
+        "Evidential",
+        "Emotional"
+      ],
       "definition": "Occurs when a claim or practice is defended mainly because it has a long history, customary status, or familiar place in a community",
       "example": "We have always opened school ceremonies this way, so that must be the right way to do it.",
       "notes": "Traditions can embody wisdom, but age alone does not prove justice, truth, or usefulness. A tradition still has to survive present scrutiny.",
@@ -431,6 +453,10 @@
       "editorialStatus": "modernized-2026-pass"
     },
     "Naturalistic fallacy": {
+      "categories": [
+        "Conceptual",
+        "Evidential"
+      ],
       "definition": "Occurs when something is treated as good, safe, or morally preferable mainly because it is called natural, traditional, or closer to nature",
       "example": "Raw milk must be healthier because it is the way milk comes from the cow.",
       "notes": "Natural things can be wonderful, harmful, neutral, or context-dependent. Arsenic, viruses, and earthquakes are natural too. The relevant questions are evidence, outcomes, and tradeoffs, not whether something sounds untouched.",
@@ -471,6 +497,10 @@
       "editorialStatus": "modernized-2026-pass"
     },
     "Style over substance fallacy": {
+      "categories": [
+        "Tactical",
+        "Perceptual"
+      ],
       "definition": "Occurs when the polish, confidence, charisma, or dramatic force of a presentation is treated as if it established the quality of the argument itself",
       "example": "She demolished the debate because the crowd cheered and her one-liners landed.",
       "notes": "Strong delivery can make good arguments easier to hear, but it can also camouflage weak ones. Audiences often remember certainty, rhythm, and applause longer than the actual reasoning.",
@@ -531,6 +561,10 @@
       "editorialStatus": "modernized-2026-pass"
     },
     "Argumentum ad baculum": {
+      "categories": [
+        "Tactical",
+        "Emotional"
+      ],
       "definition": "Occurs when agreement is extracted by threat, intimidation, or coercive pressure rather than by showing that the claim is true",
       "example": "Support this initiative, or do not expect your contract to be renewed.",
       "notes": "Threats can force compliance, but they do not transform a bad argument into a good one. Fear may explain why someone goes along; it does not show that the view is correct.",
@@ -551,6 +585,11 @@
       "editorialStatus": "modernized-2026-pass"
     },
     "Confidence as a validator": {
+      "categories": [
+        "Epistemic",
+        "Evidential",
+        "Emotional"
+      ],
       "definition": "Occurs when a speaker's certainty, intensity, or felt conviction is treated as if it were evidence that the claim is true",
       "example": "I know it in my gut with total certainty, and that certainty is all the proof I need.",
       "notes": "Confidence can track expertise, but it can also track charisma, identity, adrenaline, fear, or repeated exposure to a claim. Certainty is a psychological state, not a built-in proof.",
@@ -571,6 +610,11 @@
       "editorialStatus": "modernized-2026-pass"
     },
     "Misleading vividness": {
+      "categories": [
+        "Tactical",
+        "Perceptual",
+        "Evidential"
+      ],
       "definition": "Occurs when a striking anecdote or emotionally intense case is used to make a problem seem more common, clear, or representative than the broader evidence allows",
       "example": "One terrifying subway assault proves the whole city is descending into chaos.",
       "notes": "Vivid cases matter, especially when they reveal harms abstract statistics can hide. The fallacy arises when memorable exceptions are used as if they were the normal pattern.",
@@ -611,6 +655,10 @@
       "editorialStatus": "modernized-2026-pass"
     },
     "Association fallacy": {
+      "categories": [
+        "Tactical",
+        "Evidential"
+      ],
       "definition": "Occurs when a claim is accepted or dismissed because of some irrelevant association rather than because of the merits of the claim itself",
       "example": "That housing proposal is backed by Silicon Valley donors, so it must be corrupt.",
       "notes": "Associations can sometimes matter when they reveal bias, incentives, or causal links. The fallacy appears when the link is treated as decisive even though it does not address the argument.",
@@ -771,6 +819,11 @@
       "editorialStatus": "modernized-2026-pass"
     },
     "Epistemic/ontological conflation": {
+      "categories": [
+        "Conceptual",
+        "Evidential",
+        "Epistemic"
+      ],
       "definition": "Occurs when the psychological or social effects of believing something are treated as evidence that the thing believed in actually exists or is true",
       "example": "People who trust this ritual feel calmer and more purposeful, so that shows the invisible force behind it is real.",
       "notes": "Beliefs can change mood, confidence, behavior, pain perception, and group cohesion regardless of whether their object exists. The benefits of belief do not by themselves settle the ontology.",
@@ -1261,6 +1314,10 @@
       "editorialStatus": "modernized-2026-pass"
     },
     "Inconsistent comparison": {
+      "categories": [
+        "Conceptual",
+        "Evidential"
+      ],
       "definition": "Occurs when different comparison targets are used across different dimensions to create the illusion of one all-around winner",
       "example": "This laptop is cheaper than Brand A, lighter than Brand B, and faster than Brand C, so it is plainly the best laptop on the market.",
       "notes": "A complete comparison needs a consistent baseline or a transparent weighting of tradeoffs, not a collage of unrelated best cases.",

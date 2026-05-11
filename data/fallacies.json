@@ -7,19 +7,17 @@
     {
       "name": "Formal",
       "slug": "formal",
-      "count": 15,
+      "count": 13,
       "members": [
         "Affirmative conclusion from a negative premise",
         "Affirming a disjunct",
         "Affirming the consequent",
-        "Association fallacy",
         "Begging the question",
         "Denying the antecedent",
         "Exclusive premises",
         "Existential fallacy",
         "Four terms fallacy",
         "Illicit major",
-        "Inconsistent comparison",
         "Masked man fallacy",
         "Negative proof fallacy",
         "Square logic",
@@ -85,7 +83,7 @@
     {
       "name": "Conceptual",
       "slug": "conceptual",
-      "count": 49,
+      "count": 50,
       "members": [
         "Abstraction denial",
         "Abstraction fallacy",
@@ -101,6 +99,7 @@
         "Denying the correlative",
         "Division fallacy",
         "Ecological fallacy",
+        "Epistemic/ontological conflation",
         "Fallacy of necessity",
         "False analogy",
         "False compromise",
@@ -141,13 +140,15 @@
     {
       "name": "Evidential",
       "slug": "evidential",
-      "count": 46,
+      "count": 51,
       "members": [
         "Absence of evidence fallacy",
         "All or nothing fallacy",
         "Appeal to accomplishment",
         "Appeal to authority",
         "Appeal to consequences",
+        "Appeal to nature",
+        "Appeal to novelty",
         "Appeal to tradition",
         "Argument from fallacy",
         "Argument from ignorance",
@@ -162,6 +163,7 @@
         "Cherry picking",
         "Chronological snobbery",
         "Circular cause and consequence",
+        "Confidence as a validator",
         "Demanding a mechanism",
         "Demanding negative proof",
         "Denial of the epistemic gradient",
@@ -171,7 +173,9 @@
         "Faulty generalization",
         "Hasty generalization",
         "Impotent logical space",
+        "Inconsistent comparison",
         "Luddite fallacy",
+        "Misleading vividness",
         "Moving the goalpost",
         "Naturalistic fallacy",
         "Perfect solution fallacy",
@@ -194,11 +198,10 @@
     {
       "name": "Perceptual",
       "slug": "perceptual",
-      "count": 3,
+      "count": 2,
       "members": [
-        "Confidence as a validator",
-        "Epistemic/ontological conflation",
-        "Naturalistic fallacy"
+        "Misleading vividness",
+        "Style over substance fallacy"
       ]
     },
     {
@@ -206,8 +209,8 @@
       "slug": "perspectival",
       "count": 12,
       "members": [
-        "Appeal to nature",
         "Appeal to novelty",
+        "Appeal to tradition",
         "Chronological snobbery",
         "Historian's fallacy",
         "Homunculus fallacy",
@@ -239,12 +242,11 @@
     {
       "name": "Tactical",
       "slug": "tactical",
-      "count": 31,
+      "count": 30,
       "members": [
         "Ad hominem",
         "Appeal to accomplishment",
         "Appeal to emotion",
-        "Appeal to novelty",
         "Appeal to poverty",
         "Appeal to wealth",
         "Argument from repetition",
@@ -487,8 +489,8 @@
       "name": "Appeal to authority",
       "slug": "appeal-to-authority",
       "categories": [
-        "Emotional",
-        "Evidential"
+        "Evidential",
+        "Emotional"
       ],
       "originalNumber": "93",
       "family": "Informal Fallacy",
@@ -510,8 +512,8 @@
       "name": "Appeal to consequences",
       "slug": "appeal-to-consequences",
       "categories": [
-        "Emotional",
-        "Evidential"
+        "Evidential",
+        "Emotional"
       ],
       "originalNumber": "97",
       "family": "Informal Fallacy",
@@ -615,7 +617,7 @@
       "slug": "appeal-to-nature",
       "categories": [
         "Conceptual",
-        "Perspectival"
+        "Evidential"
       ],
       "originalNumber": "105",
       "family": "Informal Fallacy",
@@ -635,9 +637,9 @@
       "name": "Appeal to novelty",
       "slug": "appeal-to-novelty",
       "categories": [
-        "Emotional",
         "Perspectival",
-        "Tactical"
+        "Evidential",
+        "Emotional"
       ],
       "originalNumber": "106",
       "family": "Informal Fallacy",
@@ -759,8 +761,9 @@
       "name": "Appeal to tradition",
       "slug": "appeal-to-tradition",
       "categories": [
-        "Emotional",
-        "Evidential"
+        "Perspectival",
+        "Evidential",
+        "Emotional"
       ],
       "originalNumber": "110",
       "family": "Informal Fallacy",
@@ -888,8 +891,8 @@
       "name": "Argumentum ad baculum",
       "slug": "argumentum-ad-baculum",
       "categories": [
-        "Emotional",
-        "Tactical"
+        "Tactical",
+        "Emotional"
       ],
       "originalNumber": "90",
       "family": "Informal Fallacy",
@@ -960,8 +963,7 @@
       "slug": "association-fallacy",
       "categories": [
         "Tactical",
-        "Evidential",
-        "Formal"
+        "Evidential"
       ],
       "originalNumber": "92",
       "family": "Informal Fallacy",
@@ -1206,8 +1208,8 @@
       "slug": "confidence-as-a-validator",
       "categories": [
         "Epistemic",
-        "Emotional",
-        "Perceptual"
+        "Evidential",
+        "Emotional"
       ],
       "originalNumber": "",
       "family": "",
@@ -1525,9 +1527,9 @@
       "name": "Epistemic/ontological conflation",
       "slug": "epistemic-ontological-conflation",
       "categories": [
+        "Conceptual",
         "Evidential",
-        "Epistemic",
-        "Perceptual"
+        "Epistemic"
       ],
       "originalNumber": "",
       "family": "",
@@ -2080,7 +2082,7 @@
       "slug": "inconsistent-comparison",
       "categories": [
         "Conceptual",
-        "Formal"
+        "Evidential"
       ],
       "originalNumber": "59",
       "family": "Informal Fallacy",
@@ -2224,7 +2226,9 @@
       "name": "Misleading vividness",
       "slug": "misleading-vividness",
       "categories": [
-        "Tactical"
+        "Tactical",
+        "Perceptual",
+        "Evidential"
       ],
       "originalNumber": "83",
       "family": "Informal Fallacy",
@@ -2265,7 +2269,6 @@
       "name": "Naturalistic fallacy",
       "slug": "naturalistic-fallacy",
       "categories": [
-        "Perceptual",
         "Conceptual",
         "Evidential"
       ],
@@ -2928,7 +2931,8 @@
       "name": "Style over substance fallacy",
       "slug": "style-over-substance-fallacy",
       "categories": [
-        "Tactical"
+        "Tactical",
+        "Perceptual"
       ],
       "originalNumber": "119",
       "family": "Informal Fallacy",

@@ -224,7 +224,19 @@ def collect_categories(*values: str) -> list[str]:
         value = normalize_text(value)
         if value in VALID_CATEGORIES:
             seen[value] = None
-    return list(seen.keys())
+    return normalize_categories(seen.keys())
+
+
+def normalize_categories(values: Iterable[str], context: str = "record") -> list[str]:
+    seen = OrderedDict()
+    for value in values:
+        value = normalize_text(value)
+        if value in VALID_CATEGORIES:
+            seen[value] = None
+    categories = list(seen.keys())
+    if len(categories) > 3:
+        raise ValueError(f"{context} has {len(categories)} categories; expected at most 3.")
+    return categories
 
 
 def merge_unique(values: Iterable[str]) -> list[str]:
@@ -246,7 +258,11 @@ def longest_text(*values: str) -> str:
 def apply_editorial_override(record: dict, override: dict) -> dict:
     updated = dict(record)
     if "categories" in override:
-        updated["categories"] = [category for category in override["categories"] if category in VALID_CATEGORIES]
+        override_categories = normalize_categories(
+            override["categories"], context=f'editorial override for "{updated["name"]}"'
+        )
+        if override_categories:
+            updated["categories"] = override_categories
     if "aliases" in override:
         updated["aliases"] = [normalize_text(alias) for alias in override["aliases"] if normalize_text(alias)]
     for key in ["originalNumber", "family", "subCategory", "subSubCategory", "editorialStatus"]:
@@ -294,7 +310,9 @@ def build_records(
             row[4] if len(row) > 4 else "",
         )
         if not categories and name in CATEGORY_OVERRIDES:
-            categories = CATEGORY_OVERRIDES[name]
+            categories = normalize_categories(
+                CATEGORY_OVERRIDES[name], context=f'category override for "{name}"'
+            )
 
         if not categories:
             continue
@@ -330,9 +348,9 @@ def build_records(
         for category in record["categories"]:
             merged_categories[category] = None
 
-        existing["categories"] = sorted(
+        existing["categories"] = normalize_categories(
             merged_categories.keys(),
-            key=lambda item: CATEGORY_ORDER.index(item) if item in CATEGORY_ORDER else 999,
+            context=f'merged categories for "{existing["name"]}"',
         )
         existing["aliases"] = sorted(set(existing["aliases"]) | set(record["aliases"]))
         existing["definition"] = sentence_case(longest_text(existing["definition"], record["definition"]))

@@ -85,21 +85,28 @@ function truncate(value, max = 180) {
   return `${value.slice(0, max).trimEnd()}...`;
 }
 
-function sortCategories(categories) {
-  const order = [
-    "Formal",
-    "Mathematical",
-    "Causal",
-    "Linguistic",
-    "Conceptual",
-    "Evidential",
-    "Perceptual",
-    "Perspectival",
-    "Epistemic",
-    "Tactical",
-    "Emotional",
-  ];
-  return [...categories].sort((a, b) => order.indexOf(a) - order.indexOf(b));
+function normalizeRecordCategories(record) {
+  const categories = [];
+  const seen = new Set();
+
+  for (const category of record.categories || []) {
+    if (!category || seen.has(category)) continue;
+    if (!categoryDescriptions[category]) {
+      throw new Error(`Record "${record.name}" has unknown category "${category}".`);
+    }
+    seen.add(category);
+    categories.push(category);
+  }
+
+  if (categories.length === 0) {
+    throw new Error(`Record "${record.name}" is missing categories.`);
+  }
+
+  if (categories.length > 3) {
+    throw new Error(`Record "${record.name}" has ${categories.length} categories; expected at most 3.`);
+  }
+
+  return categories;
 }
 
 function absoluteUrl(relativePath = "") {
@@ -705,13 +712,17 @@ async function buildWorkbook(records, categories) {
     ["Workbook use", "Use the Fallacies sheet for entry-by-entry editing and the Categories sheet for counts."],
   ];
   overview.getRange(`A1:B${overviewRows.length}`).values = overviewRows;
+  overview.getRange("A:A").format.columnWidthPx = 220;
+  overview.getRange("B:B").format.columnWidthPx = 620;
+  overview.getRange("B:B").format.wrapText = true;
 
   const fallaciesSheet = workbook.worksheets.add("Fallacies");
   const headers = [
     "Name",
     "Slug",
     "Primary Category",
-    "Additional Categories",
+    "Additional Category 1",
+    "Additional Category 2",
     "Original Number",
     "Family",
     "Sub-Category",
@@ -731,7 +742,8 @@ async function buildWorkbook(records, categories) {
     record.name,
     record.slug,
     record.categories[0] || "",
-    record.categories.slice(1).join(", "),
+    record.categories[1] || "",
+    record.categories[2] || "",
     record.originalNumber,
     record.family,
     record.subCategory,
@@ -750,10 +762,28 @@ async function buildWorkbook(records, categories) {
   const fallaciesMatrix = [headers, ...rows];
   fallaciesSheet.getRange(`A1:${columnLetter(headers.length)}${fallaciesMatrix.length}`).values =
     fallaciesMatrix;
+  fallaciesSheet.freezePanes.freezeRows(1);
+  fallaciesSheet.freezePanes.freezeColumns(3);
+  fallaciesSheet.getRange("A:A").format.columnWidthPx = 260;
+  fallaciesSheet.getRange("B:B").format.columnWidthPx = 220;
+  fallaciesSheet.getRange("C:E").format.columnWidthPx = 180;
+  fallaciesSheet.getRange("F:F").format.columnWidthPx = 120;
+  fallaciesSheet.getRange("G:I").format.columnWidthPx = 180;
+  fallaciesSheet.getRange("J:J").format.columnWidthPx = 240;
+  fallaciesSheet.getRange("K:M").format.columnWidthPx = 420;
+  fallaciesSheet.getRange("N:R").format.columnWidthPx = 360;
+  fallaciesSheet.getRange("S:S").format.columnWidthPx = 180;
+  fallaciesSheet.getRange(`A1:${columnLetter(headers.length)}1`).format.wrapText = true;
+  fallaciesSheet.getRange("J:S").format.wrapText = true;
 
   const categorySheet = workbook.worksheets.add("Categories");
   const categoryRows = [["Category", "Count", "Description"], ...categories.map((category) => [category.name, category.count, category.description])];
   categorySheet.getRange(`A1:C${categoryRows.length}`).values = categoryRows;
+  categorySheet.freezePanes.freezeRows(1);
+  categorySheet.getRange("A:A").format.columnWidthPx = 180;
+  categorySheet.getRange("B:B").format.columnWidthPx = 100;
+  categorySheet.getRange("C:C").format.columnWidthPx = 620;
+  categorySheet.getRange("C:C").format.wrapText = true;
 
   const output = await SpreadsheetFile.exportXlsx(workbook);
   await output.save(workbookOutPath);
@@ -791,7 +821,7 @@ async function main() {
   const payload = JSON.parse(await fs.readFile(dataPath, "utf8"));
   const records = payload.records.map((record) => ({
     ...record,
-    categories: sortCategories(record.categories),
+    categories: normalizeRecordCategories(record),
   }));
   const categories = payload.categories.map((category) => ({
     ...category,
