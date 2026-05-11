@@ -494,12 +494,20 @@ img {
   margin: 0;
 }
 
+.case-title {
+  margin: 0 0 10px;
+  font-size: 0.98rem;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
 .case-source {
   margin: 12px 0 0;
   color: var(--ink-soft);
   font-size: 0.92rem;
 }
 
+.case-title a,
 .case-source a {
   color: #155b8f;
   text-decoration: underline;
@@ -508,6 +516,8 @@ img {
   transition: color 160ms ease, text-decoration-color 160ms ease;
 }
 
+.case-title a:hover,
+.case-title a:focus-visible,
 .case-source a:hover,
 .case-source a:focus-visible {
   color: var(--red);

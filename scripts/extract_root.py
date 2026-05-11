@@ -91,6 +91,24 @@ CATEGORY_OVERRIDES = {
     "Luddite fallacy": ["Evidential"],
 }
 
+CASE_STUDY_REPAIR_QUESTIONS = {
+    "Formal": "whether the conclusion really follows once the structure of the argument is stated plainly",
+    "Mathematical": "whether the sample, scale, or arithmetic actually supports the conclusion being drawn",
+    "Causal": "what alternative causes, missing mechanisms, or reversed directions still need to be ruled out",
+    "Linguistic": "whether the key term keeps the same meaning from one step of the argument to the next",
+    "Conceptual": "whether the category or definition still fits once the context or scale changes",
+    "Evidential": "whether the evidence has been weighed fairly before the conclusion is accepted",
+    "Perceptual": "whether what feels vivid or striking is doing more work than the reasons can support",
+    "Perspectival": "what changes once rival frames, missing context, or base conditions are brought back in",
+    "Epistemic": "whether the confidence of the claim outruns what anyone is actually in a position to know",
+    "Tactical": "whether the original claim has been answered rather than sidestepped or reframed",
+    "Emotional": "whether the emotional pull of the case is being mistaken for support",
+}
+
+NOTE_TAIL_PATTERN = re.compile(
+    r"(?i)the\s+(?:fallacy|mistake|pattern)\s+(?:appears|shows up|happens)\s+when\s+(?P<tail>.+)"
+)
+
 
 def normalize_text(value: str) -> str:
     value = value or ""
@@ -178,6 +196,29 @@ def lowercase_initial(value: str) -> str:
     return value[0].lower() + value[1:]
 
 
+def strip_leading_conjunction(value: str) -> str:
+    value = normalize_text(value)
+    if not value:
+        return value
+    return re.sub(r"^(?:but|and|so|yet)\s+", "", value, flags=re.IGNORECASE)
+
+
+def split_sentences(value: str) -> list[str]:
+    value = normalize_text(value)
+    if not value:
+        return []
+    parts = re.split(r"(?<=[.!?])\s+(?=[A-Z\"'])", value)
+    return [ensure_terminal_punctuation(part.strip()) for part in parts if part.strip()]
+
+
+def extract_note_tail(value: str) -> str:
+    value = strip_leading_conjunction(value).rstrip(".")
+    match = NOTE_TAIL_PATTERN.match(value)
+    if not match:
+        return ""
+    return lowercase_initial(match.group("tail").rstrip("."))
+
+
 def extract_occurs_when_clause(value: str) -> str:
     value = clean_block(value)
     if not value:
@@ -205,6 +246,70 @@ def make_reader_friendly_rationality_danger(name: str, value: str) -> str:
 
     core = lowercase_initial(core.rstrip("."))
     return ensure_terminal_punctuation(f"{normalize_text(name)} threatens rationality because {core}")
+
+
+def case_study_problem_clause(record: dict) -> str:
+    source = clean_block(record.get("mainReasoningProblem") or record.get("definition") or "")
+    if not source:
+        return "the reasoning moves farther than the case actually supports"
+    if source.lower().startswith("occurs when "):
+        source = source[12:]
+    return lowercase_initial(source.rstrip("."))
+
+
+def case_study_followup_sentence(record: dict, note_sentences: list[str]) -> str:
+    if len(note_sentences) > 1:
+        tail = extract_note_tail(note_sentences[1])
+        if tail:
+            return ensure_terminal_punctuation(f"That is the exact slip in this case: {tail}")
+        note = strip_leading_conjunction(note_sentences[1]).rstrip(".")
+        return ensure_terminal_punctuation(
+            f"A better analysis would remember that {lowercase_initial(note)}"
+        )
+
+    categories = record.get("categories") or []
+    primary_category = categories[0] if categories else "Evidential"
+    question = CASE_STUDY_REPAIR_QUESTIONS.get(
+        primary_category, "what additional support the conclusion would need before it is justified"
+    )
+    return ensure_terminal_punctuation(f"The better question is {question}")
+
+
+def expand_case_study(item: dict, record: dict) -> dict:
+    expanded = dict(item)
+    base_sentences = split_sentences(item.get("summary", ""))
+    note_sentences = split_sentences(record.get("notes", ""))
+    sentences = []
+    seen = set()
+
+    def append_sentence(value: str) -> None:
+        value = ensure_terminal_punctuation(value)
+        key = normalize_text(value).lower()
+        if not value or key in seen or len(sentences) >= 5:
+            return
+        seen.add(key)
+        sentences.append(value)
+
+    for sentence in base_sentences:
+        append_sentence(sentence)
+
+    append_sentence(
+        f"The fallacy here is {normalize_text(record.get('name', 'this fallacy'))}: {case_study_problem_clause(record)}"
+    )
+
+    if len(sentences) < 4 and note_sentences:
+        note_tail = extract_note_tail(note_sentences[0])
+        if note_tail:
+            append_sentence(f"That matters here because {note_tail}")
+        else:
+            note = strip_leading_conjunction(note_sentences[0]).rstrip(".")
+            append_sentence(f"That matters here because {lowercase_initial(note)}")
+
+    if len(sentences) < 5:
+        append_sentence(case_study_followup_sentence(record, note_sentences))
+
+    expanded["summary"] = " ".join(sentences)
+    return expanded
 
 
 def slugify(value: str) -> str:
@@ -523,7 +628,7 @@ def select_case_studies(record: dict, case_study_library: list[dict], limit: int
     for case in manual_cases:
         append_case(case)
 
-    return selected[:limit]
+    return [expand_case_study(item, record) for item in selected[:limit]]
 
 
 def enrich_case_studies(records: list[dict], case_study_library: list[dict]) -> list[dict]:

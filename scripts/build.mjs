@@ -106,21 +106,36 @@ function normalizeCaseStudy(item) {
 
 function formatCaseStudyCell(item) {
   const study = normalizeCaseStudy(item);
-  const details = [study.source, study.title, study.date, study.url].filter(Boolean).join(" | ");
-  return details ? `${study.summary} — ${details}` : study.summary;
+  const parts = [];
+  if (study.title) parts.push(study.title);
+  if (study.summary) parts.push(study.summary);
+  const details = [study.source, study.date].filter(Boolean).join(" | ");
+  if (details) parts.push(`Source: ${details}`);
+  if (study.url) parts.push(study.url);
+  return parts.join("\n");
 }
 
 function renderCaseStudy(item) {
   const study = normalizeCaseStudy(item);
-  const sourceLabel = [study.source, study.date].filter(Boolean).join(", ");
-  const citation = sourceLabel || study.title || study.url;
-  const sourceLine = study.url
-    ? `<a href="${escapeHtml(study.url)}" title="${escapeHtml(study.title || citation)}">${escapeHtml(citation)}</a>`
-    : escapeHtml(citation);
+  const titleLine = study.title
+    ? study.url
+      ? `<p class="case-title"><a href="${escapeHtml(study.url)}" title="${escapeHtml(study.title)}">${escapeHtml(study.title)}</a></p>`
+      : `<p class="case-title">${escapeHtml(study.title)}</p>`
+    : "";
+  const sourceLabel = [study.source, study.date].filter(Boolean).join(" · ");
+  const sourceBits = [];
+  if (sourceLabel) sourceBits.push(escapeHtml(sourceLabel));
+  if (study.url && !study.title) {
+    sourceBits.push(
+      `<a href="${escapeHtml(study.url)}" title="${escapeHtml(study.source || study.url)}">Open source</a>`,
+    );
+  }
+  const sourceLine = sourceBits.join(" · ");
 
   return `<blockquote class="case-item">
+    ${titleLine}
     <p class="case-summary">${escapeHtml(study.summary)}</p>
-    ${citation ? `<p class="case-source">Source: ${sourceLine}</p>` : ""}
+    ${sourceLine ? `<p class="case-source">${sourceLine}</p>` : ""}
   </blockquote>`;
 }
 
@@ -1190,7 +1205,7 @@ function buildDetailPage(record, records, categoryProfiles, posterAssets) {
       <div class="section-header">
         <div>
           <h3 class="section-title">Case studies</h3>
-          <p class="section-copy">Documented cases chosen to stress-test the pattern with named sources rather than loose hypotheticals.</p>
+          <p class="section-copy">Each case study explains why the example fits the fallacy and links back to its source whenever source information is available.</p>
         </div>
       </div>
       <div class="case-list">
