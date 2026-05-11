@@ -21,6 +21,10 @@
       "editorialStatus": "modernized-2026-pass"
     },
     "Appeal to authority": {
+      "aliases": [
+        "ad verecundiam",
+        "argument from authority"
+      ],
       "categories": [
         "Evidential",
         "Emotional"
@@ -243,6 +247,11 @@
       "editorialStatus": "modernized-2026-pass"
     },
     "False compromise": {
+      "aliases": [
+        "middle ground",
+        "appeal to moderation",
+        "argument to moderation"
+      ],
       "definition": "Occurs when the midpoint between two positions is treated as correct simply because it lies between them",
       "example": "One side says the election was secure and another says it was stolen, so the honest answer is probably that it was a little stolen.",
       "notes": "Disagreement does not imply that the truth is halfway between the parties. One side may simply be much more right than the other.",
@@ -253,6 +262,10 @@
       "editorialStatus": "modernized-2026-pass"
     },
     "False dilemma": {
+      "aliases": [
+        "false dichotomy",
+        "either-or fallacy"
+      ],
       "definition": "Occurs when someone presents a limited set of options as if they were the only live possibilities, while reasonable alternatives are ignored or suppressed",
       "example": "Either we pass this surveillance bill exactly as written, or we are choosing chaos and lawlessness.",
       "notes": "The pressure comes from pretending that a complex decision has only two doors. Sometimes the omitted alternatives are compromises, phased approaches, or the option of rejecting the framing altogether.",
@@ -313,6 +326,7 @@
       "editorialStatus": "modernized-2026-pass"
     },
     "Perfect solution fallacy": {
+      "aliases": [],
       "definition": "Occurs when a useful solution is dismissed because it does not fully solve the problem or because some flaws would remain afterward",
       "example": "There is no point building more housing if rents will still be too high afterward.",
       "notes": "A partial improvement can still be worthwhile. The mistake is demanding perfection from one proposal when no realistic policy can eliminate the problem entirely.",
@@ -333,6 +347,9 @@
       "editorialStatus": "modernized-2026-pass"
     },
     "No True Scotsman": {
+      "aliases": [
+        "appeal to purity"
+      ],
       "definition": "Occurs when someone protects a generalization from counterexamples by redefining the group with an ad hoc 'real' or 'true' membership test",
       "example": "No real conservative would support that immigration bill.",
       "notes": "Sometimes categories do have genuine criteria. The fallacy arises when the criteria are improvised only after a counterexample appears, so the definition changes to save the claim.",
@@ -373,6 +390,10 @@
       "editorialStatus": "modernized-2026-pass"
     },
     "Tu quoque": {
+      "aliases": [
+        "appeal to hypocrisy",
+        "look who's talking"
+      ],
       "definition": "Occurs when criticism is answered not by engaging the issue, but by pointing to similar hypocrisy or wrongdoing elsewhere",
       "example": "You cannot criticize my fabricated quote because your side spreads misinformation too.",
       "notes": "Hypocrisy can matter for trust, but it does not by itself answer whether the original claim, act, or argument was wrong.",
@@ -403,6 +424,14 @@
       "editorialStatus": "modernized-2026-pass"
     },
     "Argumentum ad populum": {
+      "aliases": [
+        "appeal to belief",
+        "appeal to the majority",
+        "appeal to the people",
+        "appeal to popularity",
+        "bandwagon appeal",
+        "bandwagon fallacy"
+      ],
       "definition": "Occurs when a claim is treated as true, reasonable, or justified mainly because many people believe it, share it, or act on it",
       "example": "Millions of people are using this detox protocol online, so it cannot be pseudoscience.",
       "notes": "Popularity can reveal what people want, fear, or have been persuaded by, but it does not settle what is true. Crowds can be informed, confused, manipulated, or all three at once.",
@@ -413,6 +442,10 @@
       "editorialStatus": "modernized-2026-pass"
     },
     "Bare assertion fallacy": {
+      "aliases": [
+        "ipse-dixitism",
+        "proof by assertion"
+      ],
       "definition": "Occurs when a contested claim is simply asserted, often confidently, without the evidence needed to justify it",
       "example": "The jobs report was obviously manipulated. Everyone knows that.",
       "notes": "Confidence, volume, and repetition can make a bare assertion sound weighty, but they do not do the evidential work. When the core support is missing, the proper question is still: What is the evidence?",
@@ -789,6 +822,10 @@
       "editorialStatus": "modernized-2026-pass"
     },
     "Demanding negative proof": {
+      "aliases": [
+        "burden of proof fallacy",
+        "shifting the burden of proof"
+      ],
       "definition": "Occurs when someone tries to protect a claim by insisting that critics must prove the claim false instead of the claimant first supplying adequate support",
       "example": "You cannot say the vote-rigging plot is false unless you can prove every suspicious clip has an innocent explanation.",
       "notes": "Sometimes counterevidence matters, but the default burden still sits with the person making the substantive claim. Lack of disproof is not the same as proof.",
@@ -1244,6 +1281,9 @@
       "editorialStatus": "modernized-2026-pass"
     },
     "Bottom-up condemnation": {
+      "aliases": [
+        "a dicto simpliciter ad dictum secundum quid"
+      ],
       "definition": "Occurs when a negative generalization about a group is used as if it settled the character or behavior of a specific member of that group",
       "example": "People in private equity only care about money, so the new board member from that industry is obviously going to gut the program.",
       "notes": "Even if a group tendency were real, it would not eliminate the need for evidence about the particular person under discussion.",
@@ -1254,6 +1294,9 @@
       "editorialStatus": "modernized-2026-pass"
     },
     "Bottom-up justification": {
+      "aliases": [
+        "a dicto simpliciter ad dictum secundum quid"
+      ],
       "definition": "Occurs when a positive generalization about a group is used as if it established the virtue or competence of a specific member of that group",
       "example": "She works for a medical charity, so she must be careful with the facts and impossible to corrupt.",
       "notes": "A flattering stereotype is still a stereotype. Group membership can create a first impression, but it does not establish the individual's actual record.",
@@ -1348,6 +1391,7 @@
       "editorialStatus": "modernized-2026-pass"
     },
     "Overwhelming exception": {
+      "aliases": [],
       "definition": "Occurs when a general principle is padded with so many exceptions that it no longer guides action or says much of substance",
       "example": "I believe in free expression, except when the speech is offensive, politically costly, factually shaky, socially awkward, or risky to my side.",
       "notes": "A principle can have limits, but if the exceptions swallow the rule, the apparent commitment becomes mostly decorative.",
@@ -1418,6 +1462,9 @@
       "editorialStatus": "modernized-2026-pass"
     },
     "Top-down condemnation": {
+      "aliases": [
+        "a dicto secundum quid ad dictum simpliciter"
+      ],
       "definition": "Occurs when a negative trait found in one member of a group is used to condemn the group as a whole",
       "example": "One rideshare driver ran a scam on me, so rideshare drivers are crooks.",
       "notes": "A vivid case can motivate investigation, but it does not by itself justify a population-level conclusion.",
@@ -1438,6 +1485,9 @@
       "editorialStatus": "modernized-2026-pass"
     },
     "Top-down justification": {
+      "aliases": [
+        "a dicto secundum quid ad dictum simpliciter"
+      ],
       "definition": "Occurs when a positive trait found in one member of a group is used to justify a positive conclusion about the group as a whole",
       "example": "My landlord fixed things promptly, so landlords get an unfairly bad reputation.",
       "notes": "A favorable anecdote can remind us not to overgeneralize negatively, but it cannot prove that the larger class is generally positive.",

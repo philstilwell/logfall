@@ -21,6 +21,9 @@ OUTPUT_JSON = Path(
 EDITORIAL_OVERRIDES_PATH = Path(
     "/Users/philstilwell/Documents/Codex/2026-05-09/install-ghostscript/logfall-repo/data/editorial_overrides.json"
 )
+SUPPLEMENTAL_FALLACIES_PATH = Path(
+    "/Users/philstilwell/Documents/Codex/2026-05-09/install-ghostscript/logfall-repo/data/supplemental_fallacies.json"
+)
 
 ODS_NS = {
     "office": "urn:oasis:names:tc:opendocument:xmlns:office:1.0",
@@ -218,6 +221,59 @@ def load_editorial_overrides(path: Path) -> dict[str, dict]:
     return raw.get("records", {})
 
 
+def build_supplemental_records(path: Path, editorial_overrides: dict[str, dict]) -> list[dict]:
+    if not path.exists():
+        return []
+
+    raw = json.loads(path.read_text())
+    records = []
+    for entry in raw.get("records", []):
+        name = normalize_text(entry.get("name", "")).rstrip(".")
+        if not name:
+            raise ValueError("Supplemental fallacy record is missing a name.")
+
+        record = {
+            "name": name,
+            "slug": slugify(name),
+            "categories": normalize_categories(
+                entry.get("categories", []), context=f'supplemental record "{name}"'
+            ),
+            "originalNumber": normalize_text(entry.get("originalNumber", "")),
+            "family": normalize_text(entry.get("family", "Informal Fallacy")),
+            "subCategory": normalize_text(entry.get("subCategory", "")),
+            "subSubCategory": normalize_text(entry.get("subSubCategory", "")),
+            "aliases": parse_aliases(", ".join(entry.get("aliases", []))),
+            "definition": sentence_case(entry.get("definition", "")),
+            "example": clean_example(entry.get("example", "")),
+            "notes": clean_block(entry.get("notes", "")),
+            "caseStudies": merge_unique(entry.get("caseStudies", [])),
+            "editorialStatus": normalize_text(
+                entry.get("editorialStatus", "added-2026-completeness-pass")
+            ),
+        }
+
+        if not record["definition"] or not record["example"] or not record["categories"]:
+            raise ValueError(f'Supplemental fallacy "{name}" is missing a definition, example, or categories.')
+
+        records.append(apply_editorial_override(record, editorial_overrides.get(name, {})))
+
+    records.sort(key=lambda item: item["name"].lower())
+    return records
+
+
+def merge_record_sets(primary_records: list[dict], supplemental_records: list[dict]) -> list[dict]:
+    records_by_name: OrderedDict[str, dict] = OrderedDict(
+        (record["name"], record) for record in primary_records
+    )
+    for record in supplemental_records:
+        if record["name"] in records_by_name:
+            raise ValueError(f'Duplicate fallacy name across sources: "{record["name"]}".')
+        records_by_name[record["name"]] = record
+    records = list(records_by_name.values())
+    records.sort(key=lambda item: item["name"].lower())
+    return records
+
+
 def collect_categories(*values: str) -> list[str]:
     seen = OrderedDict()
     for value in values:
@@ -393,10 +449,15 @@ def main() -> None:
     wordpress_inventory = load_wordpress_inventory(SOURCE_ODS)
     editorial_overrides = load_editorial_overrides(EDITORIAL_OVERRIDES_PATH)
     records = build_records(rows, wordpress_inventory, editorial_overrides)
+    supplemental_records = build_supplemental_records(
+        SUPPLEMENTAL_FALLACIES_PATH, editorial_overrides
+    )
+    records = merge_record_sets(records, supplemental_records)
     payload = {
         "source": SOURCE_ODS.name,
         "sheet": "ROOT",
         "editorialOverridesSource": "data/editorial_overrides.json",
+        "supplementalSource": "data/supplemental_fallacies.json",
         "recordCount": len(records),
         "categories": build_category_summary(records),
         "records": records,
