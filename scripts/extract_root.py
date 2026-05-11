@@ -248,6 +248,15 @@ def merge_unique(values: Iterable[str]) -> list[str]:
     return list(seen.keys())
 
 
+def parse_aliases(value: str) -> list[str]:
+    seen = OrderedDict()
+    for alias in re.split(r"\s*/\s*|\s*;\s*|\s*,\s*", normalize_text(value)):
+        alias = alias.strip()
+        if alias:
+            seen[alias] = None
+    return list(seen.keys())
+
+
 def longest_text(*values: str) -> str:
     cleaned = [normalize_text(value) for value in values if normalize_text(value)]
     if not cleaned:
@@ -317,11 +326,7 @@ def build_records(
         if not categories:
             continue
 
-        aliases = [
-            alias.strip()
-            for alias in re.split(r"[,/;]|\s+or\s+", normalize_text(row[10] if len(row) > 10 else ""))
-            if alias.strip()
-        ]
+        aliases = parse_aliases(row[10] if len(row) > 10 else "")
 
         record = {
             "name": name.rstrip("."),
@@ -352,7 +357,10 @@ def build_records(
             merged_categories.keys(),
             context=f'merged categories for "{existing["name"]}"',
         )
-        existing["aliases"] = sorted(set(existing["aliases"]) | set(record["aliases"]))
+        merged_aliases = OrderedDict((alias, None) for alias in existing["aliases"])
+        for alias in record["aliases"]:
+            merged_aliases[alias] = None
+        existing["aliases"] = list(merged_aliases.keys())
         existing["definition"] = sentence_case(longest_text(existing["definition"], record["definition"]))
         existing["example"] = clean_example(longest_text(existing["example"], record["example"]))
         existing["notes"] = clean_block(longest_text(existing["notes"], record["notes"]))

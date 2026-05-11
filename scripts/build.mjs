@@ -565,10 +565,14 @@ function buildDetailPage(record, records) {
             <h4>Family</h4>
             <p class="muted">${escapeHtml(record.family || "Unspecified")}</p>
           </div>
-          <div class="note-panel">
+          ${
+            record.aliases.length
+              ? `<div class="note-panel">
             <h4>Aliases</h4>
-            <p class="muted">${escapeHtml(record.aliases.length ? record.aliases.join(", ") : "None listed")}</p>
-          </div>
+            <p class="muted">${escapeHtml(record.aliases.join(", "))}</p>
+          </div>`
+              : ""
+          }
           <div class="note-panel">
             <h4>Quick check</h4>
             <p class="muted">${escapeHtml(prompts[0] || "Ask what evidence or reasoning step is doing too much work.")}</p>
