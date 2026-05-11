@@ -204,6 +204,52 @@ const categoryQuizKeywords = {
   Tactical: ["issue", "diversion", "claim", "response"],
   Emotional: ["emotion", "pressure", "evidence", "persuasion"],
 };
+const gaugeCategoryProfiles = {
+  Formal: { common: 24, spot: 26, innocent: 50 },
+  Mathematical: { common: 46, spot: 34, innocent: 76 },
+  Causal: { common: 68, spot: 52, innocent: 82 },
+  Linguistic: { common: 64, spot: 40, innocent: 72 },
+  Conceptual: { common: 52, spot: 36, innocent: 70 },
+  Evidential: { common: 78, spot: 50, innocent: 84 },
+  Perceptual: { common: 60, spot: 56, innocent: 78 },
+  Perspectival: { common: 42, spot: 32, innocent: 62 },
+  Epistemic: { common: 58, spot: 34, innocent: 68 },
+  Tactical: { common: 82, spot: 70, innocent: 48 },
+  Emotional: { common: 80, spot: 66, innocent: 66 },
+};
+const rhetoricGaugeOverrides = {
+  "Absence of evidence fallacy": { common: 68, spot: 42, innocent: 76 },
+  "Ad hominem": { common: 90, spot: 88, innocent: 72 },
+  "Anecdotal fallacy": { common: 84, spot: 74, innocent: 86 },
+  "Appeal to authority": { common: 80, spot: 72, innocent: 78 },
+  "Appeal to emotion": { common: 86, spot: 72, innocent: 78 },
+  "Appeal to fear": { common: 84, spot: 78, innocent: 68 },
+  "Appeal to nature": { common: 70, spot: 60, innocent: 72 },
+  "Argument from ignorance": { common: 72, spot: 56, innocent: 74 },
+  "Argument from incredulity": { common: 72, spot: 58, innocent: 76 },
+  "Base rate fallacy": { common: 62, spot: 40, innocent: 88 },
+  "Begging the question": { common: 78, spot: 28, innocent: 78 },
+  "Cherry picking": { common: 86, spot: 66, innocent: 82 },
+  "Composition fallacy": { common: 42, spot: 30, innocent: 66 },
+  "Correlation is not causation": { common: 88, spot: 58, innocent: 88 },
+  "Equivocation": { common: 72, spot: 34, innocent: 72 },
+  "False analogy": { common: 70, spot: 56, innocent: 78 },
+  "False balance": { common: 76, spot: 52, innocent: 66 },
+  "False dilemma": { common: 86, spot: 72, innocent: 84 },
+  "False equivalence": { common: 82, spot: 60, innocent: 72 },
+  "Faulty generalization": { common: 70, spot: 48, innocent: 82 },
+  "Hasty generalization": { common: 84, spot: 64, innocent: 86 },
+  "Moving the goalpost": { common: 80, spot: 74, innocent: 56 },
+  "No True Scotsman": { common: 74, spot: 54, innocent: 68 },
+  "Poisoning the well": { common: 72, spot: 60, innocent: 50 },
+  "Post hoc ergo propter hoc": { common: 68, spot: 48, innocent: 84 },
+  "Red herring": { common: 82, spot: 56, innocent: 58 },
+  "Slippery slope": { common: 82, spot: 70, innocent: 74 },
+  "Straw man argument": { common: 90, spot: 76, innocent: 74 },
+  "Survivorship bias": { common: 60, spot: 42, innocent: 80 },
+  "Tu quoque": { common: 80, spot: 76, innocent: 64 },
+  "Wishful thinking": { common: 74, spot: 54, innocent: 82 },
+};
 
 function escapeHtml(value = "") {
   return String(value)
@@ -385,6 +431,7 @@ function classroomLevelForRecord(record, difficulty = "") {
 }
 
 const pedagogyCache = new Map();
+const rhetoricGaugeCache = new Map();
 
 function pedagogyForRecord(record) {
   if (pedagogyCache.has(record.slug)) return pedagogyCache.get(record.slug);
@@ -405,6 +452,142 @@ function pedagogyForRecord(record) {
   };
   pedagogyCache.set(record.slug, meta);
   return meta;
+}
+
+function clampNumber(value, min, max) {
+  return Math.min(max, Math.max(min, value));
+}
+
+function weightedGaugeBase(record, metric) {
+  const weights = [0.56, 0.29, 0.15];
+  let total = 0;
+  let weightTotal = 0;
+
+  record.categories.forEach((category, index) => {
+    const categoryProfile = gaugeCategoryProfiles[category];
+    if (!categoryProfile) return;
+    const weight = weights[index] || 0.1;
+    total += categoryProfile[metric] * weight;
+    weightTotal += weight;
+  });
+
+  return weightTotal ? total / weightTotal : 50;
+}
+
+function commonGaugeNarrative(score) {
+  if (score >= 85) return "Shows up constantly in current politics, media, and online argument.";
+  if (score >= 70) return "Appears regularly in everyday public rhetoric.";
+  if (score >= 55) return "Common enough that most readers will meet it often.";
+  if (score >= 40) return "Present, but more situation-dependent than the headline fallacies.";
+  return "Relatively uncommon in ordinary rhetoric compared with the better-known fallacies.";
+}
+
+function spotGaugeNarrative(score) {
+  if (score >= 85) return "Usually visible almost immediately once readers know the pattern.";
+  if (score >= 70) return "Often easy to catch with a little attention.";
+  if (score >= 55) return "Recognizable, but easy to miss in a fast or heated exchange.";
+  if (score >= 40) return "Often hides inside wording, framing, or technical detail.";
+  return "Hard to see without slowing down and reconstructing the reasoning.";
+}
+
+function innocentGaugeNarrative(score) {
+  if (score >= 85) return "Very easy for well-meaning people to commit without noticing.";
+  if (score >= 70) return "A frequent unintentional slip in ordinary reasoning.";
+  if (score >= 55) return "Sometimes accidental and sometimes more strategic.";
+  if (score >= 40) return "Less often innocent; the move usually takes more pressure or steering.";
+  return "Usually feels more deliberate than accidental.";
+}
+
+function gaugeBandLabel(metric, score) {
+  if (metric === "common") {
+    if (score >= 85) return "Near-constant";
+    if (score >= 70) return "Very common";
+    if (score >= 55) return "Recurring";
+    if (score >= 40) return "Occasional";
+    return "Uncommon";
+  }
+  if (metric === "spot") {
+    if (score >= 85) return "Obvious";
+    if (score >= 70) return "Easy to catch";
+    if (score >= 55) return "Moderate";
+    if (score >= 40) return "Tricky";
+    return "Hard to spot";
+  }
+  if (score >= 85) return "Almost automatic";
+  if (score >= 70) return "Very easy to slip into";
+  if (score >= 55) return "Common slip";
+  if (score >= 40) return "Moderate risk";
+  return "Low accidental risk";
+}
+
+function rhetoricGaugesForRecord(record) {
+  if (rhetoricGaugeCache.has(record.slug)) return rhetoricGaugeCache.get(record.slug);
+
+  const pedagogy = pedagogyForRecord(record);
+  const teachingPathSlugs = new Set(pedagogy.teachingPaths.map((item) => item.slug));
+  const difficulty = pedagogy.difficulty;
+  const foundational = foundationalNames.has(record.name);
+  const aliasesBoost = record.aliases.length ? Math.min(4, record.aliases.length * 2) : 0;
+
+  let common =
+    weightedGaugeBase(record, "common") +
+    (featuredNames.includes(record.name) ? 10 : 0) +
+    (teachingPathSlugs.has("public-debate") ? 12 : 0) +
+    (teachingPathSlugs.has("start-here") ? 6 : 0) +
+    (teachingPathSlugs.has("often-confused") ? 3 : 0) +
+    aliasesBoost;
+
+  let spot =
+    weightedGaugeBase(record, "spot") +
+    (difficulty === "Foundational" ? 8 : difficulty === "Intermediate" ? 2 : -8) +
+    (record.categories.includes("Linguistic") || record.categories.includes("Epistemic") ? -4 : 0) +
+    (record.categories.includes("Tactical") || record.categories.includes("Emotional") ? 4 : 0) +
+    (foundational ? 4 : 0);
+
+  let innocent =
+    weightedGaugeBase(record, "innocent") +
+    (record.categories.includes("Tactical") ? -8 : 0) +
+    (record.categories.includes("Formal") || record.categories.includes("Mathematical") ? 4 : 0) +
+    (record.categories.includes("Emotional") || record.categories.includes("Evidential") ? 4 : 0) +
+    (foundational ? 3 : 0);
+
+  const override = rhetoricGaugeOverrides[record.name];
+  if (override) {
+    common = override.common;
+    spot = override.spot;
+    innocent = override.innocent;
+  }
+
+  const gauges = {
+    common: {
+      title: "Common in today's rhetoric",
+      value: clampNumber(Math.round(common / 5) * 5, 15, 95),
+      lowLabel: "Rare",
+      highLabel: "Constant",
+    },
+    spot: {
+      title: "Easy to spot",
+      value: clampNumber(Math.round(spot / 5) * 5, 15, 95),
+      lowLabel: "Hidden",
+      highLabel: "Obvious",
+    },
+    innocent: {
+      title: "Easy to innocently commit",
+      value: clampNumber(Math.round(innocent / 5) * 5, 15, 95),
+      lowLabel: "Low risk",
+      highLabel: "Easy slip",
+    },
+  };
+
+  gauges.common.band = gaugeBandLabel("common", gauges.common.value);
+  gauges.common.summary = commonGaugeNarrative(gauges.common.value);
+  gauges.spot.band = gaugeBandLabel("spot", gauges.spot.value);
+  gauges.spot.summary = spotGaugeNarrative(gauges.spot.value);
+  gauges.innocent.band = gaugeBandLabel("innocent", gauges.innocent.value);
+  gauges.innocent.summary = innocentGaugeNarrative(gauges.innocent.value);
+
+  rhetoricGaugeCache.set(record.slug, gauges);
+  return gauges;
 }
 
 const confusionCache = new Map();
@@ -980,6 +1163,38 @@ function renderTeacherPills(record) {
   return `<div class="teaching-pill-row">
     <span class="teaching-pill">${escapeHtml(pedagogy.difficulty)}</span>
     <span class="teaching-pill">${escapeHtml(pedagogy.classroomLevel)}</span>
+  </div>`;
+}
+
+function renderRhetoricGaugeCard(gauge) {
+  return `<article class="gauge-card">
+    <div class="gauge-card-top">
+      <p class="gauge-kicker">${escapeHtml(gauge.band)}</p>
+      <p class="gauge-score">${gauge.value}</p>
+    </div>
+    <h4>${escapeHtml(gauge.title)}</h4>
+    <p class="muted gauge-summary">${escapeHtml(gauge.summary)}</p>
+    <div class="gauge-meter" style="--value:${gauge.value}">
+      <div class="gauge-meter-fill"></div>
+      <div class="gauge-meter-marker" aria-hidden="true"></div>
+    </div>
+    <div class="gauge-scale" aria-hidden="true">
+      <span>${escapeHtml(gauge.lowLabel)}</span>
+      <span>${escapeHtml(gauge.highLabel)}</span>
+    </div>
+  </article>`;
+}
+
+function renderRhetoricGaugeSection(record) {
+  const gauges = rhetoricGaugesForRecord(record);
+  return `<div class="section-block gauge-section">
+    <p class="detail-card-label">Teaching gauges</p>
+    <p class="muted gauge-note">0-100 editorial estimates for classroom use rather than measured statistics.</p>
+    <div class="gauge-grid">
+      ${renderRhetoricGaugeCard(gauges.common)}
+      ${renderRhetoricGaugeCard(gauges.spot)}
+      ${renderRhetoricGaugeCard(gauges.innocent)}
+    </div>
   </div>`;
 }
 
@@ -1869,7 +2084,8 @@ function buildDetailPage(record, records, categoryProfiles, posterAssets) {
             <p class="detail-card-label">Illustrative example</p>
             <p class="detail-card-value">${escapeHtml(record.example)}</p>
           </div>
-        </div>${profileReferenceMarkup}
+        </div>
+        ${renderRhetoricGaugeSection(record)}${profileReferenceMarkup}
       </article>
 
       ${
@@ -2035,6 +2251,7 @@ async function buildWorkbook(records, categories, categoryProfiles) {
     ["Record count", records.length],
     ["Category count", categories.length],
     ["Case studies", records.reduce((sum, record) => sum + record.caseStudies.length, 0)],
+    ["Gauge scale", "The three gauge columns use 0-100 editorial teaching estimates rather than measured statistics."],
     ["Workbook use", "Use the Fallacies sheet for entry-by-entry editing and the Categories sheet for counts and category notes."],
     ["Copyright", copyrightNotice],
   ];
@@ -2059,6 +2276,9 @@ async function buildWorkbook(records, categories, categoryProfiles) {
     "Classroom Level",
     "Teaching Domain",
     "Teaching Paths",
+    "Common in Rhetoric (0-100)",
+    "Easy to Spot (0-100)",
+    "Easy to Innocently Commit (0-100)",
     "Often Confused With",
     "Definition",
     "Example",
@@ -2080,6 +2300,7 @@ async function buildWorkbook(records, categories, categoryProfiles) {
   ];
   const rows = records.map((record) => {
     const pedagogy = pedagogyForRecord(record);
+    const gauges = rhetoricGaugesForRecord(record);
     const confusions = confusionCandidates(record, records, 2)
       .map((item) => item.candidate.name)
       .join(", ");
@@ -2098,6 +2319,9 @@ async function buildWorkbook(records, categories, categoryProfiles) {
       pedagogy.classroomLevel,
       pedagogy.domainTag,
       pedagogy.teachingPaths.map((item) => item.title).join(", "),
+      gauges.common.value,
+      gauges.spot.value,
+      gauges.innocent.value,
       confusions,
       record.definition,
       record.example,
@@ -2128,12 +2352,14 @@ async function buildWorkbook(records, categories, categoryProfiles) {
   fallaciesSheet.getRange("C:E").format.columnWidthPx = 180;
   fallaciesSheet.getRange("F:F").format.columnWidthPx = 120;
   fallaciesSheet.getRange("G:I").format.columnWidthPx = 180;
-  fallaciesSheet.getRange("J:O").format.columnWidthPx = 220;
-  fallaciesSheet.getRange("P:Z").format.columnWidthPx = 420;
-  fallaciesSheet.getRange("AA:AE").format.columnWidthPx = 360;
-  fallaciesSheet.getRange("AF:AF").format.columnWidthPx = 180;
+  fallaciesSheet.getRange("J:N").format.columnWidthPx = 220;
+  fallaciesSheet.getRange("O:Q").format.columnWidthPx = 150;
+  fallaciesSheet.getRange("R:R").format.columnWidthPx = 220;
+  fallaciesSheet.getRange("S:AC").format.columnWidthPx = 420;
+  fallaciesSheet.getRange("AD:AH").format.columnWidthPx = 360;
+  fallaciesSheet.getRange("AI:AI").format.columnWidthPx = 180;
   fallaciesSheet.getRange(`A1:${columnLetter(headers.length)}1`).format.wrapText = true;
-  fallaciesSheet.getRange("J:AF").format.wrapText = true;
+  fallaciesSheet.getRange("J:AI").format.wrapText = true;
 
   const categorySheet = workbook.worksheets.add("Categories");
   const categoryRows = [
