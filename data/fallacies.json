@@ -474,14 +474,14 @@
       "subCategory": "Red Herring",
       "subSubCategory": "Appeal to authority",
       "aliases": [],
-      "definition": "Occurs when an claim is deemed true based on the accomplishments of its sponsor.",
-      "example": "Isaac Newton had such an impact on science, so there must have been some value in his later work in alchemy.",
-      "notes": "Arguments are independent of the source. Intelligent people can have poor arguments, and unintelligent can produce strong arguments. Though it is human nature to over-emphasize the virtues or vices of the voice behind the argument, neither shoot nor celebrate the messenger. Worthy arguments stand on their own.",
+      "definition": "Occurs when a claim is treated as true or weighty mainly because the person promoting it has impressive accomplishments in some other domain.",
+      "example": "She built a famous tech company, so her views on nutrition and aging must be scientifically trustworthy.",
+      "notes": "Real accomplishment can justify attention, but it does not automatically transfer expertise across domains. The relevant question is still whether the claim is supported.",
       "caseStudies": [
-        "The use of celebrities to sell products is based on this fallacy. The public grants a spokesperson with highly-visible accomplishments high credibility, even when endorsing products and ideas unrelated to their accomplishments.",
-        "Sir Arthur Conan Doyle, the brilliant creator of the very logical Sherlock Holmes series promoted belief in fairies."
+        "Celebrity founders, athletes, and actors often lend credibility to products and causes far outside their expertise, from supplements to financial schemes to political narratives.",
+        "Public arguments about AI frequently treat the prestige of well-known founders as if it settled disputes that still require technical evidence, replication, and broader expert scrutiny."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Appeal to authority",
@@ -969,13 +969,14 @@
       "aliases": [
         "guilt by association"
       ],
-      "definition": "Occurs when a claim is deemed true or untrue based on an association with some irrelevant element.",
-      "example": "Jane is an exceptional pianist, and also pretty. Therefore, all pianists are pretty.",
-      "notes": "There may, however, be a relevant association between two qualities. If, for example, you note that pianists have long fingers, there may be a causal relationship between long fingers and pianists, though this needs to be substantiated with evidence and argumentation.\nThis is a type of proof by example fallacy. A more detailed treatment of proof by example fallacies can be found on the supplementary Inductive Errors page.",
+      "definition": "Occurs when a claim is accepted or dismissed because of some irrelevant association rather than because of the merits of the claim itself.",
+      "example": "That housing proposal is backed by Silicon Valley donors, so it must be corrupt.",
+      "notes": "Associations can sometimes matter when they reveal bias, incentives, or causal links. The fallacy appears when the link is treated as decisive even though it does not address the argument.",
       "caseStudies": [
-        "If you argue that, because Japanese are polite, they would never push each other, you have not seen a rush hour subway train in Tokyo. Pushing does not necessarily entail impoliteness.."
+        "People often dismiss an idea because it came from Silicon Valley, academia, Fox, MSNBC, Reddit, or X without asking whether the specific claim is supported.",
+        "Political arguments routinely assume that if a bad person, rival group, or disliked movement touched an idea, the idea itself must be false or tainted."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Bare assertion fallacy",
@@ -1498,11 +1499,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when an argument is said to be wrong, yet no information or explanation about what in the argument was wrong.",
-      "example": "You misrepresented my position in your argument, so your argument is clearly wrong.",
-      "notes": "If you claim someone has misrepresented your argument, you'll need to rigorously substantiate that. If you identify a flaw in someone's argument, take the time to detail that flaw rather than simply telling them they are wrong.",
-      "caseStudies": [],
-      "editorialStatus": "cleaned-from-root"
+      "definition": "Occurs when someone declares an argument false, debunked, or dishonest without identifying the specific flaw that would actually show it is false.",
+      "example": "That has been thoroughly debunked, obviously, so I do not need to explain anything further.",
+      "notes": "Not every conversation requires a full essay, but a real refutation still has to point to some error in reasoning, evidence, or interpretation. Mere dismissal is not argument.",
+      "caseStudies": [
+        "Online fights about elections, Israel and Gaza, climate, and AI often rely on 'debunked' as a performance word rather than as a pointer to the actual evidence.",
+        "In fast-moving social media disputes, people often treat tone, certainty, and pile-on consensus as if they were enough to count as refutation."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Epistemic/ontological conflation",
@@ -1637,15 +1641,14 @@
         "loaded question",
         "plurium interrogationum"
       ],
-      "definition": "Occurs when someone asks a question that presupposes something that has not been proven or accepted by all the people involved.",
-      "example": "So Henry, have you stopped beating your wife?",
-      "notes": "This fallacy combines several assumptions into a interrogative statement that erroneously demands a single binary answer.",
+      "definition": "Occurs when a question smuggles in one or more assumptions that have not been established, then pressures the listener to answer as if those assumptions were already settled.",
+      "example": "When did your newsroom decide to coordinate its coverage with the campaign?",
+      "notes": "A loaded question can force a false choice because any direct answer seems to concede what the question improperly assumed. The first task is often to challenge the hidden premise, not to answer on its terms.",
       "caseStudies": [
-        "Atheists are often asked a question similar to \"So, if you don't believe in the afterlife, why don't you commit suicide since you have nothing to live for?\" Not believing in the afterlife does not mean this life is not worth living.",
-        "Theists are sometimes asked by atheists \"Would you be as delusional if you did not believe in God?\" The word \"delusional\" inplies a mental illness that does not necessarily follow from belief in a god.",
-        "Theists sometimes ask atheists the more rhetorical question \"You hate God since you want to continue in your sin, right?\" This wrongly assumes it is possible to hate something you don't believe in, that you believe in the concept of sin, that you believe you are sinning, and that you hate god due to your choice of a sinful life."
+        "Debates about religion, politics, and gender often turn on questions that quietly presuppose bad faith, delusion, or malicious intent before any of that has been shown.",
+        "Interviewers and posters sometimes frame questions so that merely engaging already concedes the accusation, especially in culture-war exchanges built for clipping and outrage."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Fallacy of necessity",
@@ -1697,11 +1700,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when an advocate appeals to an irrelevant, unqualified, unidentified, biased or fabricated source in support of an argument.",
-      "example": "A viral post claims a Nobel Prize winner proved a miracle cure works, but the quote is misattributed and the researcher never made the claim.",
-      "notes": "",
-      "caseStudies": [],
-      "editorialStatus": "cleaned-from-root"
+      "definition": "Occurs when support for a claim is borrowed from a source that is fabricated, misquoted, unqualified, anonymous in the wrong way, or otherwise not what it is presented to be.",
+      "example": "A viral image says a Nobel Prize winner proved the treatment works, but the quote is fake and the expert never said it.",
+      "notes": "Source quality matters, but only if the source is real, relevant, and represented fairly. A false attribution can make weak claims feel borrowed from a stronger authority than they actually have.",
+      "caseStudies": [
+        "The anonymous affidavit circulated after the September 2024 ABC debate was amplified as if it were a verified insider source even though the core allegations were not authenticated.",
+        "Viral quote cards and screenshot posts often attach dramatic claims to scientists, judges, or agencies who never said them, counting on readers to trust the label instead of checking the source."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "False compromise",
@@ -1759,14 +1765,14 @@
       "aliases": [
         "agree to disagree"
       ],
-      "definition": "Offering an unwarranted or premature truce on a point of contention in order to misrepresent opponent's position as unprovable or inconclusive.",
-      "example": "My belief that all swans are white isn't necessarily falsified by your photo of a black swan. We'll just have to agree to disagree.",
-      "notes": "This tactic is often employed by the side with the weakest argument.",
+      "definition": "Occurs when someone calls for a truce, balance, or 'agree to disagree' posture not because the evidence is genuinely inconclusive, but because their position is under pressure and they want to freeze the score.",
+      "example": "Your black-swan photo does not settle anything. Let's just agree that both of us may be right.",
+      "notes": "Real uncertainty exists, and sometimes compromise is appropriate. The fallacy appears when manufactured neutrality is used to protect a losing claim from the consequences of the evidence.",
       "caseStudies": [
-        "Culture X may concede that culture Y has the prerogative to continue with practices that culture X considers immoral, as long as culture Y makes the same concession for culture X. The ethical arguments for each practice are ignored.",
-        "Evolution opponents will often concede that both evolution and intelligent design are valid viewpoints, implying that neither can be falsified or demonstrated, and that they have equal evidential support."
+        "Public arguments about evolution, election claims, and medical misinformation sometimes ask audiences to treat both sides as equally plausible even after the evidential balance is lopsided.",
+        "In online debate culture, a retreat into 'everyone has their own truth' often appears right after a concrete factual claim has gone badly for one side."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Faulty generalization",
@@ -1975,11 +1981,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "An argument that appears to support both sides of an issue by employing terms that diminish the actual incompatability between the positions.",
-      "example": "If by \"affair\" you mean the hurtful action of cheating on your spouse, then I'm much against it. But if by \"affair\" you mean the inevitable outcome of an adventurous spirit, then I'm all for it.",
-      "notes": "",
-      "caseStudies": [],
-      "editorialStatus": "cleaned-from-root"
+      "definition": "Occurs when someone uses strategically shifting language that seems to support both sides by quietly changing the meaning of the key term to suit the audience.",
+      "example": "If by 'AI regulation' you mean stopping abuse, I support it. But if by 'AI regulation' you mean slowing innovation, I oppose it.",
+      "notes": "This is not mere nuance. The problem is rhetorical double-speaking that blurs real disagreement by sliding between incompatible senses of the same label.",
+      "caseStudies": [
+        "Politicians often define contested terms like 'freedom,' 'censorship,' 'riot,' 'peaceful,' or 'family values' one way for sympathetic listeners and another way when challenged by critics.",
+        "Debates about AI, speech, and policing frequently proceed as if both camps agree until someone notices that the central term has been doing two very different jobs."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Illicit major",
@@ -2114,11 +2123,14 @@
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Insulting or pejorative language to influence the recipient's judgment.",
-      "example": "Your position on free community health checks is accepted only by prostitutes! Only whores would accept such a concept!",
-      "notes": "",
-      "caseStudies": [],
-      "editorialStatus": "cleaned-from-root"
+      "definition": "Occurs when pejorative, loaded, or insulting language is used to steer judgment in place of actual support for the conclusion.",
+      "example": "Only a coward would oppose this bill.",
+      "notes": "Some labels are fair descriptions, but the fallacy appears when the emotional sting of the label is doing the work that evidence and argument have not done.",
+      "caseStudies": [
+        "Words like 'groomer,' 'traitor,' 'fascist,' 'woke,' 'cultist,' and 'denier' are often deployed less to clarify than to trigger a moral reaction before the argument can be examined.",
+        "Political and religious arguments frequently pre-load the conclusion by choosing terms that make disagreement sound shameful or corrupt from the start."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Linearity fallacy",
@@ -2440,14 +2452,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when one is connected to a second assumption in a non-contingent way, then the 1st assumption is deemed justified by evidence for the 2nd assumption.",
-      "example": "I've told you that I'm a CIA agent from Boston. Here's my driver's license showing a Boston address. That should make it clear that I work for the CIA.",
-      "notes": "This fallacy is true only where there is a non-contingent relationship. However, if you were to claim you had been married and produced an official document of your divorce, that constitutes evidence for both the divorce and a necessary prior marriage. To a softer degree, claiming that you met the president, then producing a photo of you together with the president's wife would constitute evidence for your claim you met the president.",
+      "definition": "Occurs when evidence for one claim is illegitimately used as if it also confirmed a second claim that merely travels alongside it.",
+      "example": "The affidavit got one stage detail right, so its larger conspiracy claims must be credible too.",
+      "notes": "A true or well-supported detail can increase trust only where the claims are genuinely linked. Often the extra conclusion is just hitching a ride on evidence that belongs to something narrower.",
       "caseStudies": [
-        "Some theists suggest that archeological evidence of biblical sites is evidence for the biblical miracles mentioned in the same passage as is the site. Uncovering historical evidence for the existence of St. Nicolas does not lend credibilty to flying reindeer.",
-        "Some people argue that evidence for government impropriety on issue X implies that there is also impropriety on issue Y. While inductive evidence derived from assessing habitual behavior warrants a measured degree of speculation, it does not warrant confidence incommensurate to that evidence."
+        "After the September 2024 ABC debate, the fact that the lecterns differed in height was treated by some users as if it supported much broader unverified claims about secret coordination and leaked questions.",
+        "Conspiracy arguments often point to one authentic photo, real location, or correct minor fact and then use that narrow success to smuggle in much larger unsupported conclusions."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Poisoning the well",
@@ -2526,13 +2538,14 @@
         "argumentum verbosium",
         "proof by intimidation"
       ],
-      "definition": "Submitting an argument too complex, obtuse or verbose to reasonably deal with.",
-      "example": "Insomuch as it remains within our agency, it behooves us to eschew obfuscation, and espouse elucidation.",
-      "notes": "This is often a tactic used in formal speeches. If not all the many minor points introduced are not addressed by the opponent, the verbose contender will claim victory.",
+      "definition": "Occurs when a claim is protected by an avalanche of words, side points, jargon, or branching assertions that overwhelm reasonable scrutiny and create the illusion of depth.",
+      "example": "The theory must be right because nobody has time to answer all 87 points in my thread.",
+      "notes": "Complexity is not itself a fallacy. The problem is using sprawl as a shield, making it costly to respond point by point and then treating any unanswered fragment as proof of victory.",
       "caseStudies": [
-        "Donald Rumsfeld once said...There are known knowns. These are things we know that we know. There are known unknowns. That is to say, there are things that we know we don't know. But there are also unknown unknowns. There are things we don't know we don't know."
+        "Podcast debates, marathon livestreams, and mega-threads often bury the central claim beneath so many tangents that audiences mistake exhaustion for concession.",
+        "AI-generated text makes this tactic cheaper by allowing people to produce long, confident, fast-moving argument dumps that sound comprehensive while remaining poorly grounded."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Prosecutor's fallacy",
@@ -3055,14 +3068,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "When, for every new question, the inductive evidence from relevant past experience is ignored.",
-      "example": "Wake up, Dear! Something's banging on the trash cans again. I know that for the hundreds of other times you've checked, it's only been cats, but could you please go out and make sure it isn't zombies this time?",
-      "notes": "After thousands of investigations into claims of ghost hauntings, researchers have discovered many material causes, but no ghosts. Therefore, the next time someone claims to have seen a ghost, we are warranted in defaulting to the expectation of a material explanation.",
+      "definition": "Occurs when each new claim is treated as if the relevant history of prior failures, hoaxes, or false alarms did not exist and should confer no default expectation at all.",
+      "example": "Yes, the last hundred miracle predictions failed, but this new one starts with a perfectly clean slate.",
+      "notes": "A track record does not make contrary outcomes impossible, but it does affect rational priors. Ignoring repeated past failure forces every new case to borrow more credibility than it has earned.",
       "caseStudies": [
-        "After thousands of investigations into claims of ghost hauntings, researchers have discovered many material causes, but no ghosts. Therefore, the next time someone claims to have seen a ghost, we are warranted in defaulting to the expectation of a material explanation.",
-        "For each new alleged miracle, many theists demand skeptics to demonstrate it was not a miracle, supposing that, until such negative proof is provided, they are warranted in believing it was an actual miracle. This ignores centuries of claims of miracles being shown to either fall well within the parameters of natural phenomena and statistics, or being too inaccessible to the scrutiny of science. This track record not only permits, but demands a default to a methodological naturalism in which we expect a material explanation, and in which the burden of proof rests entirely on those proposing something contrary to the successful track-record of material causes."
+        "Baseless claims about widespread noncitizen voting keep getting relaunched as if decades of rarity, audits, and failed alarms provide no reason for initial skepticism.",
+        "Every new blurry UFO clip, miracle cure, or ghost story is often pitched as if the long record of ordinary explanations should have zero effect on our starting expectations."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Tu quoque",
@@ -3138,15 +3151,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when terms are intentionally chosen for their vagueness in an attempt to make a position unassailable.",
-      "example": "The energy in these pills creates a force that balances the body's essences.",
-      "notes": "In the example, \"energy\", \"force\", \"balances\" and \"essences\" are all too vague to submit to scientific scrutiny.",
+      "definition": "Occurs when vague, elastic, or undefined terms are chosen so that a position sounds meaningful while resisting clear testing or criticism.",
+      "example": "These capsules restore your body's subtle energies and harmonize your inner system.",
+      "notes": "Vagueness can be useful early in exploration, but it becomes fallacious when the fog is preserved to prevent serious evaluation. If key terms cannot be pinned down, the claim can keep slipping away from critique.",
       "caseStudies": [
-        "There are only three sports: bullfighting, motor racing, and mountaineering; all the rest are merely games.\n~Ernest Hemmingway\nThe definitions of \"sports\" and \" games\" are vague, and make a refutation difficult.",
-        "Theists often introduce words such as \"faith\" and \"sin\" that have definitions that are contested even within their own sect.",
-        "Those promoting alternative medicines often invoke vague terms such as \"energy\" and \"essence\" that seem to have no real referent that can be assessed and critiqued."
+        "Alternative-health and wellness marketing often leans on words like 'toxins,' 'energy,' 'balance,' and 'boost' precisely because they sound scientific while remaining hard to falsify.",
+        "In arguments about spirituality, self-help, and even AI, flexible phrases can be stretched to fit almost any outcome, which makes the view feel resilient without making it well supported."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Wishful thinking",

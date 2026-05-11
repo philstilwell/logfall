@@ -599,6 +599,126 @@
         "Debates about censorship, doxxing, and dirty campaign tactics often slide from condemnation into imitation, with each side treating the other's bad behavior as a license to do the same."
       ],
       "editorialStatus": "modernized-2026-pass"
+    },
+    "Appeal to accomplishment": {
+      "definition": "Occurs when a claim is treated as true or weighty mainly because the person promoting it has impressive accomplishments in some other domain",
+      "example": "She built a famous tech company, so her views on nutrition and aging must be scientifically trustworthy.",
+      "notes": "Real accomplishment can justify attention, but it does not automatically transfer expertise across domains. The relevant question is still whether the claim is supported.",
+      "caseStudies": [
+        "Celebrity founders, athletes, and actors often lend credibility to products and causes far outside their expertise, from supplements to financial schemes to political narratives.",
+        "Public arguments about AI frequently treat the prestige of well-known founders as if it settled disputes that still require technical evidence, replication, and broader expert scrutiny."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Association fallacy": {
+      "definition": "Occurs when a claim is accepted or dismissed because of some irrelevant association rather than because of the merits of the claim itself",
+      "example": "That housing proposal is backed by Silicon Valley donors, so it must be corrupt.",
+      "notes": "Associations can sometimes matter when they reveal bias, incentives, or causal links. The fallacy appears when the link is treated as decisive even though it does not address the argument.",
+      "caseStudies": [
+        "People often dismiss an idea because it came from Silicon Valley, academia, Fox, MSNBC, Reddit, or X without asking whether the specific claim is supported.",
+        "Political arguments routinely assume that if a bad person, rival group, or disliked movement touched an idea, the idea itself must be false or tainted."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "False attribution": {
+      "definition": "Occurs when support for a claim is borrowed from a source that is fabricated, misquoted, unqualified, anonymous in the wrong way, or otherwise not what it is presented to be",
+      "example": "A viral image says a Nobel Prize winner proved the treatment works, but the quote is fake and the expert never said it.",
+      "notes": "Source quality matters, but only if the source is real, relevant, and represented fairly. A false attribution can make weak claims feel borrowed from a stronger authority than they actually have.",
+      "caseStudies": [
+        "The anonymous affidavit circulated after the September 2024 ABC debate was amplified as if it were a verified insider source even though the core allegations were not authenticated.",
+        "Viral quote cards and screenshot posts often attach dramatic claims to scientists, judges, or agencies who never said them, counting on readers to trust the label instead of checking the source."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Empty refutation": {
+      "definition": "Occurs when someone declares an argument false, debunked, or dishonest without identifying the specific flaw that would actually show it is false",
+      "example": "That has been thoroughly debunked, obviously, so I do not need to explain anything further.",
+      "notes": "Not every conversation requires a full essay, but a real refutation still has to point to some error in reasoning, evidence, or interpretation. Mere dismissal is not argument.",
+      "caseStudies": [
+        "Online fights about elections, Israel and Gaza, climate, and AI often rely on 'debunked' as a performance word rather than as a pointer to the actual evidence.",
+        "In fast-moving social media disputes, people often treat tone, certainty, and pile-on consensus as if they were enough to count as refutation."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Fallacy of many questions": {
+      "definition": "Occurs when a question smuggles in one or more assumptions that have not been established, then pressures the listener to answer as if those assumptions were already settled",
+      "example": "When did your newsroom decide to coordinate its coverage with the campaign?",
+      "notes": "A loaded question can force a false choice because any direct answer seems to concede what the question improperly assumed. The first task is often to challenge the hidden premise, not to answer on its terms.",
+      "caseStudies": [
+        "Debates about religion, politics, and gender often turn on questions that quietly presuppose bad faith, delusion, or malicious intent before any of that has been shown.",
+        "Interviewers and posters sometimes frame questions so that merely engaging already concedes the accusation, especially in culture-war exchanges built for clipping and outrage."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "False surrender": {
+      "definition": "Occurs when someone calls for a truce, balance, or 'agree to disagree' posture not because the evidence is genuinely inconclusive, but because their position is under pressure and they want to freeze the score",
+      "example": "Your black-swan photo does not settle anything. Let's just agree that both of us may be right.",
+      "notes": "Real uncertainty exists, and sometimes compromise is appropriate. The fallacy appears when manufactured neutrality is used to protect a losing claim from the consequences of the evidence.",
+      "caseStudies": [
+        "Public arguments about evolution, election claims, and medical misinformation sometimes ask audiences to treat both sides as equally plausible even after the evidential balance is lopsided.",
+        "In online debate culture, a retreat into 'everyone has their own truth' often appears right after a concrete factual claim has gone badly for one side."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Judgmental language": {
+      "definition": "Occurs when pejorative, loaded, or insulting language is used to steer judgment in place of actual support for the conclusion",
+      "example": "Only a coward would oppose this bill.",
+      "notes": "Some labels are fair descriptions, but the fallacy appears when the emotional sting of the label is doing the work that evidence and argument have not done.",
+      "caseStudies": [
+        "Words like 'groomer,' 'traitor,' 'fascist,' 'woke,' 'cultist,' and 'denier' are often deployed less to clarify than to trigger a moral reaction before the argument can be examined.",
+        "Political and religious arguments frequently pre-load the conclusion by choosing terms that make disagreement sound shameful or corrupt from the start."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Piggy-back assumption": {
+      "definition": "Occurs when evidence for one claim is illegitimately used as if it also confirmed a second claim that merely travels alongside it",
+      "example": "The affidavit got one stage detail right, so its larger conspiracy claims must be credible too.",
+      "notes": "A true or well-supported detail can increase trust only where the claims are genuinely linked. Often the extra conclusion is just hitching a ride on evidence that belongs to something narrower.",
+      "caseStudies": [
+        "After the September 2024 ABC debate, the fact that the lecterns differed in height was treated by some users as if it supported much broader unverified claims about secret coordination and leaked questions.",
+        "Conspiracy arguments often point to one authentic photo, real location, or correct minor fact and then use that narrow success to smuggle in much larger unsupported conclusions."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Proof by verbosity": {
+      "definition": "Occurs when a claim is protected by an avalanche of words, side points, jargon, or branching assertions that overwhelm reasonable scrutiny and create the illusion of depth",
+      "example": "The theory must be right because nobody has time to answer all 87 points in my thread.",
+      "notes": "Complexity is not itself a fallacy. The problem is using sprawl as a shield, making it costly to respond point by point and then treating any unanswered fragment as proof of victory.",
+      "caseStudies": [
+        "Podcast debates, marathon livestreams, and mega-threads often bury the central claim beneath so many tangents that audiences mistake exhaustion for concession.",
+        "AI-generated text makes this tactic cheaper by allowing people to produce long, confident, fast-moving argument dumps that sound comprehensive while remaining poorly grounded."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Track-record reset": {
+      "definition": "Occurs when each new claim is treated as if the relevant history of prior failures, hoaxes, or false alarms did not exist and should confer no default expectation at all",
+      "example": "Yes, the last hundred miracle predictions failed, but this new one starts with a perfectly clean slate.",
+      "notes": "A track record does not make contrary outcomes impossible, but it does affect rational priors. Ignoring repeated past failure forces every new case to borrow more credibility than it has earned.",
+      "caseStudies": [
+        "Baseless claims about widespread noncitizen voting keep getting relaunched as if decades of rarity, audits, and failed alarms provide no reason for initial skepticism.",
+        "Every new blurry UFO clip, miracle cure, or ghost story is often pitched as if the long record of ordinary explanations should have zero effect on our starting expectations."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Vague insulators": {
+      "definition": "Occurs when vague, elastic, or undefined terms are chosen so that a position sounds meaningful while resisting clear testing or criticism",
+      "example": "These capsules restore your body's subtle energies and harmonize your inner system.",
+      "notes": "Vagueness can be useful early in exploration, but it becomes fallacious when the fog is preserved to prevent serious evaluation. If key terms cannot be pinned down, the claim can keep slipping away from critique.",
+      "caseStudies": [
+        "Alternative-health and wellness marketing often leans on words like 'toxins,' 'energy,' 'balance,' and 'boost' precisely because they sound scientific while remaining hard to falsify.",
+        "In arguments about spirituality, self-help, and even AI, flexible phrases can be stretched to fit almost any outcome, which makes the view feel resilient without making it well supported."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "If-by-whiskey": {
+      "definition": "Occurs when someone uses strategically shifting language that seems to support both sides by quietly changing the meaning of the key term to suit the audience",
+      "example": "If by 'AI regulation' you mean stopping abuse, I support it. But if by 'AI regulation' you mean slowing innovation, I oppose it.",
+      "notes": "This is not mere nuance. The problem is rhetorical double-speaking that blurs real disagreement by sliding between incompatible senses of the same label.",
+      "caseStudies": [
+        "Politicians often define contested terms like 'freedom,' 'censorship,' 'riot,' 'peaceful,' or 'family values' one way for sympathetic listeners and another way when challenged by critics.",
+        "Debates about AI, speech, and policing frequently proceed as if both camps agree until someone notices that the central term has been doing two very different jobs."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     }
   }
 }
