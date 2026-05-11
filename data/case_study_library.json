@@ -1,0 +1,312 @@
+{
+  "entries": [
+    {
+      "id": "ap-ai-campaign-deepfake-shreveport",
+      "summary": "AP reported that a PAC opposing Shreveport mayor Adrian Perkins used an AI-generated attack ad that put his face on a chastened student in a principal's office. The case is a clean example of vivid, emotionally loaded presentation doing persuasive work that policy argument still had to do for itself.",
+      "source": "Associated Press",
+      "title": "AI experimentation is high risk, high reward for low-profile political campaigns",
+      "date": "2024-06-17",
+      "url": "https://apnews.com/article/33b527ba2785c850b6f473c401bf988b",
+      "categories": ["Emotional", "Perceptual", "Tactical", "Evidential"],
+      "fallacies": ["Appeal to emotion", "Misleading vividness", "Style over substance fallacy", "Appeal to fear", "Appeal to ridicule", "Ad hominem"]
+    },
+    {
+      "id": "ap-brad-parscale-ai-evangelist",
+      "summary": "In AP's profile of Brad Parscale's AI evangelism, campaign technology is repeatedly framed as inherently superior because it is new, disruptive, and supposedly closer to what voters really want. That is exactly the kind of setting where novelty, confidence, and prestige can outrun evidence.",
+      "source": "Associated Press",
+      "title": "Brad Parscale helped Trump win in 2016 using Facebook ads. Now he's back, and an AI evangelist",
+      "date": "2024-05-06",
+      "url": "https://apnews.com/article/3ff2c8eba34b87754cc25e96aa257c9d",
+      "categories": ["Evidential", "Perspectival", "Emotional"],
+      "fallacies": ["Appeal to novelty", "Appeal to authority", "Wishful thinking", "Confidence as a validator"]
+    },
+    {
+      "id": "ap-meta-ai-labels-political-ads",
+      "summary": "AP's report on Meta's decision to label AI-generated political ads shows how much public trust can hang on surface cues such as labels, watermarks, and disclosure language. Those cues matter, but they are not substitutes for checking who made a claim or whether the substance is true.",
+      "source": "Associated Press",
+      "title": "To help 2024 voters, Meta says it will begin labeling political ads that use AI-generated imagery",
+      "date": "2023-11-08",
+      "url": "https://apnews.com/article/c4aec653d5043a09b1c78b4fb5dcd79b",
+      "categories": ["Evidential", "Perceptual", "Linguistic"],
+      "fallacies": ["False attribution", "Association fallacy", "Style over substance fallacy", "Appeal to authority"]
+    },
+    {
+      "id": "ap-google-ai-overviews-errors",
+      "summary": "When AP covered Google's erroneous AI overviews, the central lesson was that a system can sound authoritative while still misreading queries, flattening context, or repeating bad source material. The episode is a strong real-world case of surface fluency masking evidential and conceptual weakness.",
+      "source": "Associated Press",
+      "title": "Google makes fixes to AI-generated search summaries after outlandish answers went viral",
+      "date": "2024-05-31",
+      "url": "https://apnews.com/article/33060569d6cc01abe6c63d21665330d8",
+      "categories": ["Evidential", "Linguistic", "Conceptual", "Perceptual", "Causal"],
+      "fallacies": ["False attribution", "Equivocation", "Proof by example", "Misleading vividness", "Wrong causal direction"]
+    },
+    {
+      "id": "ap-whisper-hospital-hallucinations",
+      "summary": "AP's reporting on Whisper hallucinating in hospital transcripts is a sharp case of a polished output being treated as if accuracy followed from confidence and fluency. It also shows why one plausible-seeming example is not enough to certify a tool as reliable in high-stakes settings.",
+      "source": "Associated Press",
+      "title": "Researchers say an AI-powered transcription tool used in hospitals invents things no one ever said",
+      "date": "2024-10-26",
+      "url": "https://apnews.com/article/90020cdf5fa16c79ca2e5b6c4c9bbb14",
+      "categories": ["Evidential", "Conceptual", "Perceptual", "Epistemic"],
+      "fallacies": ["Confidence as a validator", "Bare assertion fallacy", "Proof by example", "False attribution"]
+    },
+    {
+      "id": "ap-noncitizen-voting-gop-messaging",
+      "summary": "AP's May 18, 2024 overview of noncitizen-voting rhetoric documented how a politically useful intuition about election fraud kept being treated as if it were established by the evidence. The report is especially useful for seeing how tiny counts, suggestive language, and moral urgency can be stretched into system-wide claims.",
+      "source": "Associated Press",
+      "title": "Noncitizen voting, already illegal in federal elections, becomes a centerpiece of 2024 GOP messaging",
+      "date": "2024-05-18",
+      "url": "https://apnews.com/article/1c65429c152c2a10514b5156eacf9ca7",
+      "categories": ["Evidential", "Mathematical", "Emotional", "Tactical", "Epistemic"],
+      "fallacies": ["Base rate fallacy", "Cherry picking", "Hasty generalization", "Argument from repetition", "Appeal to fear", "False equivalence", "False dilemma", "Slippery slope", "Correlation is not causation"]
+    },
+    {
+      "id": "npr-noncitizen-voting-fact-check",
+      "summary": "NPR's October 12, 2024 fact check on noncitizen-voting claims is a good case study in the gap between isolated anecdotes and population-level conclusions. It shows how a few suspicious stories can feel decisive even when the base rates and verified counts point the other way.",
+      "source": "NPR",
+      "title": "Fact-check: Trump keeps claiming noncitizen voting is a big problem. It's not",
+      "date": "2024-10-12",
+      "url": "https://www.npr.org/2024/10/12/nx-s1-5147789/voting-election-2024-noncitizen-fact-check",
+      "categories": ["Evidential", "Mathematical", "Epistemic"],
+      "fallacies": ["Base rate fallacy", "Anecdotal fallacy", "Faulty generalization", "Sharpshooter fallacy", "False equivalence", "Correlation is not causation"]
+    },
+    {
+      "id": "ap-iowa-noncitizen-votes",
+      "summary": "AP's coverage of Iowa finding dozens of noncitizen votes is useful precisely because it reports real violations without letting the count float free of scale. The story helps show the difference between acknowledging a genuine problem and inflating it into a sweeping narrative.",
+      "source": "Associated Press",
+      "title": "Iowa finds several dozen instances of noncitizens voting in a past election",
+      "date": "2024-10-23",
+      "url": "https://apnews.com/article/622235f2771a372801a5e3c4d1a86343",
+      "categories": ["Mathematical", "Evidential", "Perspectival"],
+      "fallacies": ["Base rate fallacy", "False balance", "False equivalence", "Faulty generalization"]
+    },
+    {
+      "id": "ap-christian-nation-history",
+      "summary": "AP's February 17, 2024 article on Christian nationalism shows how selective quotations and compressed historical frames can turn a messy founding-era record into a neat ideological slogan. It is a rich case for misclassification, quotation out of context, and present-minded reinterpretation.",
+      "source": "Associated Press",
+      "title": "Christian-nation idea fuels US conservative causes, but historians say it misreads founders' intent",
+      "date": "2024-02-17",
+      "url": "https://apnews.com/article/4ea388e8d80c54016a6a4460cbef9b82",
+      "categories": ["Conceptual", "Linguistic", "Perspectival", "Evidential"],
+      "fallacies": ["Contextomy", "Chronological snobbery", "Appeal to tradition", "Definist fallacy", "Package-deal fallacy", "Appeal to authority", "Equivocation", "False equivalence"]
+    },
+    {
+      "id": "ap-pentagon-ufo-study",
+      "summary": "AP's March 8, 2024 report on the Pentagon's UFO review is a textbook reminder that 'not fully explained' does not mean 'therefore alien' or 'therefore conspiracy.' The remaining uncertainty in the file is exactly what makes the episode useful for thinking about overconfident belief formation.",
+      "source": "Associated Press",
+      "title": "Pentagon study finds no sign of alien life in reported UFO sightings going back decades",
+      "date": "2024-03-08",
+      "url": "https://apnews.com/article/9a32aba88eb610cf16b2e9f0908704b3",
+      "categories": ["Epistemic", "Evidential", "Conceptual"],
+      "fallacies": ["Argument from incredulity", "Argument from ignorance", "Appeal to probability", "Demanding a mechanism"]
+    },
+    {
+      "id": "ap-pentagon-ufo-report-2024",
+      "summary": "AP's November 14, 2024 story on hundreds of new UAP reports is a useful case because it mixes explained incidents, unexplained incidents, and limited data without pretending they all support the same conclusion. It is exactly the kind of evidence landscape that invites cherry-picking and premature certainty.",
+      "source": "Associated Press",
+      "title": "New Pentagon report on UFOs includes hundreds of new incidents but no evidence of aliens",
+      "date": "2024-11-14",
+      "url": "https://apnews.com/article/5638be273b753253713a478546849e46",
+      "categories": ["Epistemic", "Evidential", "Mathematical", "Conceptual"],
+      "fallacies": ["Cherry picking", "Argument from ignorance", "Appeal to probability", "Anecdotal fallacy"]
+    },
+    {
+      "id": "ap-raw-milk-recall-bird-flu",
+      "summary": "AP's November 25, 2024 report on raw milk recalled after bird-flu detection is a good case for arguments that romanticize the 'natural' while minimizing risk. It makes the tradeoff concrete: appeals to purity and tradition can feel reassuring even when the biological evidence points the other way.",
+      "source": "Associated Press",
+      "title": "Raw milk from a California dairy is recalled after routine testing detected the bird flu virus",
+      "date": "2024-11-25",
+      "url": "https://apnews.com/article/b7ac9c95db99d367b2932f0de16e5821",
+      "categories": ["Evidential", "Causal", "Emotional", "Conceptual"],
+      "fallacies": ["Appeal to nature", "Appeal to tradition", "Wishful thinking", "Special pleading", "Naturalistic fallacy", "False equivalence", "Appeal to consequences"]
+    },
+    {
+      "id": "factcheck-h5n1-bird-flu-qa",
+      "summary": "FactCheck.org's May 2024 H5N1 explainer is a strong illustration of why people need mechanisms, prevalence, and scope before drawing practical conclusions from a scary headline. It helps distinguish real uncertainty from reasoning that jumps too fast from fragments of evidence to a preferred story.",
+      "source": "FactCheck.org",
+      "title": "Q&A on H5N1 Bird Flu",
+      "date": "2024-05-04",
+      "url": "https://www.factcheck.org/2024/05/qa-on-h5n1-bird-flu/",
+      "categories": ["Evidential", "Mathematical", "Causal", "Epistemic"],
+      "fallacies": ["Demanding a mechanism", "Wrong causal direction", "Base rate fallacy", "Appeal to fear"]
+    },
+    {
+      "id": "ap-haiti-pets-claim-un",
+      "summary": "AP's September 26, 2024 report on Haiti's transitional council president condemning the Springfield pet-eating rumor shows how quickly a sensational falsehood can travel from fringe posts to a presidential debate to the United Nations. The case is vivid enough to illustrate both emotional manipulation and the costs of repeating an unverified claim because it 'sounds like what the other side would do.'",
+      "source": "Associated Press",
+      "title": "Top Haitian official denounces false claim, repeated by Trump, that immigrants are eating pets",
+      "date": "2024-09-26",
+      "url": "https://apnews.com/article/7004bd6820a4d2f8bf07adf4f6dcf18b",
+      "categories": ["Emotional", "Tactical", "Evidential", "Linguistic", "Perceptual"],
+      "fallacies": ["Appeal to fear", "Misleading vividness", "Argument from repetition", "Bare assertion fallacy", "Red herring"]
+    },
+    {
+      "id": "politifact-springfield-rumor",
+      "summary": "PolitiFact's September 9, 2024 Springfield fact check is a neat example of a rumor built out of anonymous posts, recycled images, and suggestive repetition rather than verifiable support. It shows how easily a story can feel established before it has actually been checked.",
+      "source": "PolitiFact",
+      "title": "Authorities rebut claims that Haitian immigrants are eating cats, waterfowl in Ohio town",
+      "date": "2024-09-09",
+      "url": "https://www.politifact.com/factchecks/2024/sep/09/social-media/authorities-rebut-claims-that-haitian-immigrants-a/",
+      "categories": ["Evidential", "Emotional", "Mathematical", "Perceptual"],
+      "fallacies": ["Bare assertion fallacy", "Anecdotal fallacy", "Argument from repetition", "Cherry picking"]
+    },
+    {
+      "id": "politifact-abc-affidavit",
+      "summary": "PolitiFact's September 20, 2024 reconstruction of the fake ABC whistleblower affidavit is especially valuable because it shows how public figures shared the claim while conceding they did not know whether it was true. That is a live, well-documented case of conjecture and amplification outrunning authentication.",
+      "source": "PolitiFact",
+      "title": "How an unsubstantiated, anonymous affidavit about the ABC presidential debate was amplified online",
+      "date": "2024-09-20",
+      "url": "https://www.politifact.com/article/2024/sep/20/Fact-checking-ABC-debate-whistleblower-affidavit/",
+      "categories": ["Evidential", "Linguistic", "Tactical", "Epistemic"],
+      "fallacies": ["Argument from ignorance", "Bare assertion fallacy", "Wishful thinking", "Proof by verbosity", "Moving the goalpost", "Begging the question", "Demanding negative proof", "Special pleading"]
+    },
+    {
+      "id": "ap-harris-trump-debate-takeaways",
+      "summary": "AP's September 10, 2024 debate takeaway piece captures how often nationally watched debates pivot on baiting, reframing, crowd-pleasing jabs, and memorable lines rather than patient argument. It is a compact real-world lab for straw manning, redirection, and emotionally charged reframing.",
+      "source": "Associated Press",
+      "title": "Key takeaways from a debate that featured tense clashes and closed with a Taylor Swift endorsement",
+      "date": "2024-09-10",
+      "url": "https://www.ap.org/news-highlights/elections/2024/key-takeaways-from-a-debate-that-featured-tense-clashes-and-closed-with-a-taylor-swift-endorsement/",
+      "categories": ["Tactical", "Emotional", "Linguistic", "Perspectival"],
+      "fallacies": ["Straw man argument", "Red herring", "Appeal to ridicule", "Tu quoque", "Contextomy", "Ad hominem", "False dilemma"]
+    },
+    {
+      "id": "ap-biden-trump-first-debate-fact-focus",
+      "summary": "AP's June 27, 2024 fact check of the first Biden-Trump debate is a dense collection of real argumentative shortcuts: statistics pulled loose from context, emotionally loaded immigration claims, and repeated assertions that did more rhetorical than evidential work. It is one of the best single-source stress tests in the library.",
+      "source": "Associated Press",
+      "title": "FACT FOCUS: Here's a look at some of the false claims made during Biden and Trump's first debate",
+      "date": "2024-06-27",
+      "url": "https://www.ap.org/news-highlights/spotlights/2024/fact-focus-heres-a-look-at-some-of-the-false-claims-made-during-biden-and-trumps-first-debate/",
+      "categories": ["Tactical", "Evidential", "Emotional", "Linguistic"],
+      "fallacies": ["Cherry picking", "Appeal to fear", "Hasty generalization", "Red herring", "Appeal to emotion", "Ad hominem", "Correlation is not causation", "False dilemma", "Appeal to consequences"]
+    },
+    {
+      "id": "ap-migration-complexity-explains",
+      "summary": "AP's migration explainer from September 20, 2024 is useful because it deliberately widens the frame beyond debate slogans and viral rumors. That makes it a strong case for fallacies that depend on flattening a complicated policy landscape into one cause, one image, or one moral punchline.",
+      "source": "Associated Press",
+      "title": "AP Explains: Migration is more complex than politics show",
+      "date": "2024-09-20",
+      "url": "https://apnews.com/article/e6cc90ee306bd6442c6c47a058bf43d5",
+      "categories": ["Perspectival", "Conceptual", "Evidential", "Emotional"],
+      "fallacies": ["Single cause fallacy", "False dilemma", "Hasty generalization", "Misleading vividness", "False balance", "False equivalence", "Appeal to fear", "Red herring"]
+    },
+    {
+      "id": "ap-ruben-gallego-working-class-roots",
+      "summary": "AP's November 15, 2024 piece on Ruben Gallego is helpful because it distinguishes authentic narrative connection from cheap identity signaling. It lets a reader ask when biography is relevant evidence about trust and when it becomes a substitute for argument or policy detail.",
+      "source": "Associated Press",
+      "title": "Ruben Gallego did better than most Democrats. He says his party needs to stoke working class roots",
+      "date": "2024-11-15",
+      "url": "https://apnews.com/article/9f7a1d37047a1f12aad463b53918d735",
+      "categories": ["Emotional", "Tactical", "Perspectival"],
+      "fallacies": ["Appeal to poverty", "Appeal to flattery", "Association fallacy", "Style over substance fallacy"]
+    },
+    {
+      "id": "reuters-adecco-ai-worker-numbers",
+      "summary": "Reuters' April 5, 2024 report on the Adecco survey is a good reminder that expectations about job loss are not the same as demonstrated causal outcomes. It is useful wherever people slide from speculative trend talk to a confident story about what one technology will inevitably do to the labor market.",
+      "source": "Reuters",
+      "title": "AI seen cutting worker numbers, survey by staffing company Adecco shows",
+      "date": "2024-04-05",
+      "url": "https://uk.investing.com/news/stock-market-news/ai-seen-cutting-worker-numbers-survey-by-staffing-company-adecco-shows-3419149",
+      "categories": ["Causal", "Evidential", "Emotional", "Perspectival"],
+      "fallacies": ["Single cause fallacy", "Appeal to fear", "Luddite fallacy", "Appeal to probability", "Slippery slope", "Correlation is not causation"]
+    },
+    {
+      "id": "reuters-port-automation-strike",
+      "summary": "Reuters' October 4, 2024 analysis of the dockworker strike is valuable because it resists the easy story that automation is either an obvious job-killer or an obvious productivity savior. It exposes how often both sides of a public dispute compress tradeoffs into one emotionally convenient causal narrative.",
+      "source": "Reuters",
+      "title": "Analysis-US port strike throws spotlight on big union foe: automation",
+      "date": "2024-10-04",
+      "url": "https://www.investing.com/news/stock-market-news/analysisus-port-strike-throws-spotlight-on-big-union-foe-automation-3648625",
+      "categories": ["Causal", "Evidential", "Perspectival", "Emotional"],
+      "fallacies": ["Single cause fallacy", "False dilemma", "False compromise", "Luddite fallacy", "Slippery slope"]
+    },
+    {
+      "id": "britannica-survivorship-bias",
+      "summary": "Britannica's overview of survivorship bias, especially its retelling of Abraham Wald's aircraft analysis, is a strong historical case of the visible sample misleading people about the full set. It earns its keep anywhere a page needs a real example of selection effects masquerading as a complete picture.",
+      "source": "Britannica",
+      "title": "Survivorship bias",
+      "date": "2026-01-01",
+      "url": "https://www.britannica.com/science/survivorship-bias",
+      "categories": ["Mathematical", "Evidential", "Perceptual", "Epistemic"],
+      "fallacies": ["Survivorship bias", "Cherry picking", "Sharpshooter fallacy", "Faulty generalization"]
+    },
+    {
+      "id": "ap-storm-misinformation-biden",
+      "summary": "AP's October 10, 2024 report on hurricane-response misinformation is a clean example of how disaster politics invites fear-based claims that spread faster than verification. The article is especially useful for showing how emotionally convenient numbers and slogans can be detached from what agencies actually said.",
+      "source": "Associated Press",
+      "title": "Biden tells Trump to 'get a life, man' and stop storm misinformation",
+      "date": "2024-10-10",
+      "url": "https://apnews.com/article/cb814f209e71481f078f20e569bc63d0",
+      "categories": ["Emotional", "Evidential", "Tactical"],
+      "fallacies": ["Appeal to fear", "Bare assertion fallacy", "Cherry picking", "Argument from repetition"]
+    },
+    {
+      "id": "ap-why-ap-called-gallego-race",
+      "summary": "AP's explanation of why it called the Arizona Senate race for Ruben Gallego is a useful numbers-first counterexample to intuition-driven political certainty. It shows what it looks like to reason from remaining vote shares, path constraints, and actual denominators instead of headline impressions.",
+      "source": "Associated Press",
+      "title": "Why AP called the Arizona Senate race for Ruben Gallego",
+      "date": "2024-11-12",
+      "url": "https://apnews.com/article/169d3ba60250c786b22668f415b6c505",
+      "categories": ["Mathematical", "Evidential", "Epistemic"],
+      "fallacies": ["Base rate fallacy", "Incomplete comparison", "False balance", "Perfect standard"]
+    },
+    {
+      "id": "formal-ai-artifact-proof",
+      "summary": "AP's 2024 reporting on AI political content repeatedly showed how easy it is for people to move from 'this image has a common AI tell' to 'therefore this image must be AI-generated.' That conclusion can be tempting in practice, but the fact pattern only supports a possibility, not a guaranteed diagnosis.",
+      "source": "Associated Press",
+      "title": "AI experimentation is high risk, high reward for low-profile political campaigns",
+      "date": "2024-06-17",
+      "url": "https://apnews.com/article/33b527ba2785c850b6f473c401bf988b",
+      "categories": ["Formal", "Evidential", "Perceptual"],
+      "families": ["Formal Fallacy"],
+      "subCategories": ["Propositional Fallacy"],
+      "fallacies": ["Affirming the consequent", "Argument from fallacy", "Appeal to probability"]
+    },
+    {
+      "id": "formal-abc-affidavit-inference",
+      "summary": "PolitiFact's ABC-affidavit reconstruction is also a nice formal-inference case: because Trump was fact-checked more often, some commentators inferred that Harris must have received the questions in advance. Even if the premise were granted, the conclusion still did not logically follow.",
+      "source": "PolitiFact",
+      "title": "How an unsubstantiated, anonymous affidavit about the ABC presidential debate was amplified online",
+      "date": "2024-09-20",
+      "url": "https://www.politifact.com/article/2024/sep/20/Fact-checking-ABC-debate-whistleblower-affidavit/",
+      "categories": ["Formal", "Evidential", "Linguistic"],
+      "families": ["Formal Fallacy"],
+      "subCategories": ["Propositional Fallacy"],
+      "fallacies": ["Affirming the consequent", "Denying the antecedent", "Argument from ignorance"]
+    },
+    {
+      "id": "formal-ufo-unexplained-therefore-aliens",
+      "summary": "Across AP's UFO coverage in 2024, a recurring public inference was that whatever remains unexplained after initial review must therefore point to aliens or a cover-up. That is a vivid real-world case of treating open explanatory space as if it settled the conclusion.",
+      "source": "Associated Press",
+      "title": "Pentagon study finds no sign of alien life in reported UFO sightings going back decades",
+      "date": "2024-03-08",
+      "url": "https://apnews.com/article/9a32aba88eb610cf16b2e9f0908704b3",
+      "categories": ["Formal", "Epistemic", "Evidential"],
+      "families": ["Formal Fallacy"],
+      "subCategories": ["Propositional Fallacy"],
+      "fallacies": ["Argument from ignorance", "Affirming the consequent", "Appeal to probability"]
+    },
+    {
+      "id": "formal-small-count-systemwide-fraud",
+      "summary": "AP and NPR both showed how a few real or suspected ineligible votes were repeatedly used to argue that federal elections are broadly compromised. The jump from a narrow premise to a sweeping conclusion is exactly why formal discipline matters in public reasoning.",
+      "source": "NPR",
+      "title": "Fact-check: Trump keeps claiming noncitizen voting is a big problem. It's not",
+      "date": "2024-10-12",
+      "url": "https://www.npr.org/2024/10/12/nx-s1-5147789/voting-election-2024-noncitizen-fact-check",
+      "categories": ["Formal", "Mathematical", "Evidential"],
+      "families": ["Formal Fallacy"],
+      "fallacies": ["Existential fallacy", "Undistributed middle", "Affirming a disjunct"]
+    },
+    {
+      "id": "formal-raw-milk-natural-safe",
+      "summary": "The raw-milk and bird-flu stories from AP and FactCheck make another formal lesson plain: even if some processed products are risky or some official guidance has changed over time, it does not follow that unpasteurized milk is therefore safer. The inference trades on contrast, not valid implication.",
+      "source": "Associated Press",
+      "title": "Raw milk from a California dairy is recalled after routine testing detected the bird flu virus",
+      "date": "2024-11-25",
+      "url": "https://apnews.com/article/b7ac9c95db99d367b2932f0de16e5821",
+      "categories": ["Formal", "Causal", "Evidential"],
+      "families": ["Formal Fallacy"],
+      "fallacies": ["Denying the antecedent", "Affirming a disjunct", "Exclusive premises"]
+    }
+  ]
+}

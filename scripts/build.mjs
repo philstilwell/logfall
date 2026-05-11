@@ -85,6 +85,44 @@ function truncate(value, max = 180) {
   return `${value.slice(0, max).trimEnd()}...`;
 }
 
+function normalizeCaseStudy(item) {
+  if (!item) {
+    return { summary: "", source: "", title: "", date: "", url: "" };
+  }
+
+  if (typeof item === "string") {
+    return { summary: item, source: "", title: "", date: "", url: "" };
+  }
+
+  return {
+    summary: item.summary || "",
+    source: item.source || "",
+    title: item.title || "",
+    date: item.date || "",
+    url: item.url || "",
+  };
+}
+
+function formatCaseStudyCell(item) {
+  const study = normalizeCaseStudy(item);
+  const details = [study.source, study.title, study.date, study.url].filter(Boolean).join(" | ");
+  return details ? `${study.summary} — ${details}` : study.summary;
+}
+
+function renderCaseStudy(item) {
+  const study = normalizeCaseStudy(item);
+  const sourceLabel = [study.source, study.date].filter(Boolean).join(", ");
+  const citation = sourceLabel || study.title || study.url;
+  const sourceLine = study.url
+    ? `<a href="${escapeHtml(study.url)}" title="${escapeHtml(study.title || citation)}">${escapeHtml(citation)}</a>`
+    : escapeHtml(citation);
+
+  return `<blockquote class="case-item">
+    <p class="case-summary">${escapeHtml(study.summary)}</p>
+    ${citation ? `<p class="case-source">Source: ${sourceLine}</p>` : ""}
+  </blockquote>`;
+}
+
 function normalizeRecordCategories(record) {
   const categories = [];
   const seen = new Set();
@@ -626,11 +664,11 @@ function buildDetailPage(record, records) {
       <div class="section-header">
         <div>
           <h3 class="section-title">Case studies</h3>
-          <p class="section-copy">Recent or representative examples that help stress-test the pattern in practice.</p>
+          <p class="section-copy">Documented cases chosen to stress-test the pattern with named sources rather than loose hypotheticals.</p>
         </div>
       </div>
       <div class="case-list">
-        ${record.caseStudies.map((item) => `<blockquote class="case-item">${escapeHtml(item)}</blockquote>`).join("")}
+        ${record.caseStudies.map((item) => renderCaseStudy(item)).join("")}
       </div>
     </section>`
         : ""
@@ -645,7 +683,7 @@ function buildDetailPage(record, records) {
           <p class="section-copy">Nearby entries chosen by shared categories and family resemblance.</p>
         </div>
       </div>
-      <div class="fallacy-grid">
+      <div class="fallacy-grid related-grid">
         ${related.map((candidate) => renderFallacyCard(candidate, "../../")).join("")}
       </div>
     </section>`
@@ -752,11 +790,11 @@ async function buildWorkbook(records, categories) {
     record.definition,
     record.example,
     record.notes,
-    record.caseStudies[0] || "",
-    record.caseStudies[1] || "",
-    record.caseStudies[2] || "",
-    record.caseStudies[3] || "",
-    record.caseStudies[4] || "",
+    formatCaseStudyCell(record.caseStudies[0]),
+    formatCaseStudyCell(record.caseStudies[1]),
+    formatCaseStudyCell(record.caseStudies[2]),
+    formatCaseStudyCell(record.caseStudies[3]),
+    formatCaseStudyCell(record.caseStudies[4]),
     record.editorialStatus,
   ]);
   const fallaciesMatrix = [headers, ...rows];

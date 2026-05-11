@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import html
+import hashlib
 import json
 import re
 from collections import OrderedDict
@@ -23,6 +24,9 @@ EDITORIAL_OVERRIDES_PATH = Path(
 )
 SUPPLEMENTAL_FALLACIES_PATH = Path(
     "/Users/philstilwell/Documents/Codex/2026-05-09/install-ghostscript/logfall-repo/data/supplemental_fallacies.json"
+)
+CASE_STUDY_LIBRARY_PATH = Path(
+    "/Users/philstilwell/Documents/Codex/2026-05-09/install-ghostscript/logfall-repo/data/case_study_library.json"
 )
 
 ODS_NS = {
@@ -295,6 +299,15 @@ def normalize_categories(values: Iterable[str], context: str = "record") -> list
     return categories
 
 
+def normalize_category_tags(values: Iterable[str]) -> list[str]:
+    seen = OrderedDict()
+    for value in values:
+        value = normalize_text(value)
+        if value in VALID_CATEGORIES:
+            seen[value] = None
+    return list(seen.keys())
+
+
 def merge_unique(values: Iterable[str]) -> list[str]:
     seen = OrderedDict()
     for value in values:
@@ -304,6 +317,46 @@ def merge_unique(values: Iterable[str]) -> list[str]:
     return list(seen.keys())
 
 
+def normalize_manual_case_study(value) -> dict | None:
+    if isinstance(value, str):
+        summary = clean_block(value)
+        if not summary:
+            return None
+        return {
+            "summary": summary,
+            "source": "",
+            "title": "",
+            "date": "",
+            "url": "",
+        }
+
+    if not isinstance(value, dict):
+        return None
+
+    summary = clean_block(value.get("summary", ""))
+    if not summary:
+        return None
+
+    return {
+        "summary": summary,
+        "source": normalize_text(value.get("source", "")),
+        "title": normalize_text(value.get("title", "")),
+        "date": normalize_text(value.get("date", "")),
+        "url": normalize_text(value.get("url", "")),
+    }
+
+
+def normalize_manual_case_studies(values: Iterable) -> list[dict]:
+    seen = OrderedDict()
+    for value in values:
+        item = normalize_manual_case_study(value)
+        if not item:
+            continue
+        key = item["url"] or item["summary"]
+        seen[key] = item
+    return list(seen.values())
+
+
 def parse_aliases(value: str) -> list[str]:
     seen = OrderedDict()
     for alias in re.split(r"\s*/\s*|\s*;\s*|\s*,\s*", normalize_text(value)):
@@ -311,6 +364,111 @@ def parse_aliases(value: str) -> list[str]:
         if alias:
             seen[alias] = None
     return list(seen.keys())
+
+
+def load_case_study_library(path: Path) -> list[dict]:
+    if not path.exists():
+        return []
+
+    raw = json.loads(path.read_text())
+    entries = []
+    for entry in raw.get("entries", []):
+        normalized = {
+            "id": normalize_text(entry.get("id", "")),
+            "summary": clean_block(entry.get("summary", "")),
+            "source": normalize_text(entry.get("source", "")),
+            "title": normalize_text(entry.get("title", "")),
+            "date": normalize_text(entry.get("date", "")),
+            "url": normalize_text(entry.get("url", "")),
+            "categories": normalize_category_tags(entry.get("categories", [])),
+            "families": [normalize_text(value) for value in entry.get("families", []) if normalize_text(value)],
+            "subCategories": [normalize_text(value) for value in entry.get("subCategories", []) if normalize_text(value)],
+            "subSubCategories": [normalize_text(value) for value in entry.get("subSubCategories", []) if normalize_text(value)],
+            "fallacies": [normalize_text(value) for value in entry.get("fallacies", []) if normalize_text(value)],
+        }
+
+        if not all([normalized["id"], normalized["summary"], normalized["source"], normalized["title"], normalized["url"]]):
+            raise ValueError(f"Case study library entry is missing required fields: {entry}")
+
+        entries.append(normalized)
+
+    return entries
+
+
+def stable_rank(value: str) -> int:
+    return int(hashlib.sha1(value.encode("utf-8")).hexdigest()[:12], 16)
+
+
+def case_study_match_score(record: dict, entry: dict) -> int:
+    score = 0
+
+    if record["name"] in entry.get("fallacies", []):
+        score += 140
+
+    if record.get("family") and record["family"] in entry.get("families", []):
+        score += 45
+
+    if record.get("subCategory") and record["subCategory"] in entry.get("subCategories", []):
+        score += 35
+
+    if record.get("subSubCategory") and record["subSubCategory"] in entry.get("subSubCategories", []):
+        score += 25
+
+    shared_categories = set(record.get("categories", [])) & set(entry.get("categories", []))
+    score += len(shared_categories) * 12
+
+    return score
+
+
+def select_case_studies(record: dict, case_study_library: list[dict], limit: int = 5) -> list[dict]:
+    manual_cases = normalize_manual_case_studies(record.get("caseStudies", []))
+    selected = []
+    seen_keys = set()
+
+    def append_case(item: dict) -> None:
+        key = item.get("url") or item.get("summary")
+        if not key or key in seen_keys or len(selected) >= limit:
+            return
+        seen_keys.add(key)
+        selected.append(item)
+
+    for case in manual_cases:
+        if case.get("source") or case.get("url"):
+            append_case(case)
+
+    ranked = []
+    for entry in case_study_library:
+        score = case_study_match_score(record, entry)
+        if score <= 0:
+            continue
+        ranked.append((score, stable_rank(f'{record["slug"]}:{entry["id"]}'), entry))
+
+    ranked.sort(key=lambda item: (-item[0], item[1]))
+
+    for _, _, entry in ranked:
+        append_case(
+            {
+                "summary": entry["summary"],
+                "source": entry["source"],
+                "title": entry["title"],
+                "date": entry["date"],
+                "url": entry["url"],
+            }
+        )
+
+    for case in manual_cases:
+        append_case(case)
+
+    return selected[:limit]
+
+
+def enrich_case_studies(records: list[dict], case_study_library: list[dict]) -> list[dict]:
+    enriched = []
+    for record in records:
+        updated = dict(record)
+        updated["caseStudies"] = select_case_studies(updated, case_study_library)
+        enriched.append(updated)
+    return enriched
 
 
 def longest_text(*values: str) -> str:
@@ -340,7 +498,7 @@ def apply_editorial_override(record: dict, override: dict) -> dict:
     if "notes" in override:
         updated["notes"] = clean_block(override["notes"])
     if "caseStudies" in override:
-        updated["caseStudies"] = merge_unique(override["caseStudies"])
+        updated["caseStudies"] = list(override["caseStudies"])
     return updated
 
 
@@ -448,16 +606,19 @@ def main() -> None:
     rows = read_sheet_rows(SOURCE_ODS, "ROOT")
     wordpress_inventory = load_wordpress_inventory(SOURCE_ODS)
     editorial_overrides = load_editorial_overrides(EDITORIAL_OVERRIDES_PATH)
+    case_study_library = load_case_study_library(CASE_STUDY_LIBRARY_PATH)
     records = build_records(rows, wordpress_inventory, editorial_overrides)
     supplemental_records = build_supplemental_records(
         SUPPLEMENTAL_FALLACIES_PATH, editorial_overrides
     )
     records = merge_record_sets(records, supplemental_records)
+    records = enrich_case_studies(records, case_study_library)
     payload = {
         "source": SOURCE_ODS.name,
         "sheet": "ROOT",
         "editorialOverridesSource": "data/editorial_overrides.json",
         "supplementalSource": "data/supplemental_fallacies.json",
+        "caseStudyLibrarySource": "data/case_study_library.json",
         "recordCount": len(records),
         "categories": build_category_summary(records),
         "records": records,

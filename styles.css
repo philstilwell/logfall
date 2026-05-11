@@ -309,6 +309,18 @@ img {
   font-size: 1.45rem;
 }
 
+.category-card h3 a,
+.fallacy-card h3 a {
+  transition: color 160ms ease;
+}
+
+.category-card h3 a:hover,
+.category-card h3 a:focus-visible,
+.fallacy-card h3 a:hover,
+.fallacy-card h3 a:focus-visible {
+  color: var(--cyan);
+}
+
 .card-copy {
   color: var(--ink-soft);
   font-size: 0.98rem;
@@ -434,6 +446,30 @@ img {
   background: #fff;
 }
 
+.case-summary {
+  margin: 0;
+}
+
+.case-source {
+  margin: 12px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+}
+
+.case-source a {
+  color: #155b8f;
+  text-decoration: underline;
+  text-decoration-color: rgba(21, 91, 143, 0.35);
+  text-underline-offset: 2px;
+  transition: color 160ms ease, text-decoration-color 160ms ease;
+}
+
+.case-source a:hover,
+.case-source a:focus-visible {
+  color: var(--red);
+  text-decoration-color: rgba(230, 59, 52, 0.4);
+}
+
 .breadcrumbs {
   display: flex;
   flex-wrap: wrap;
@@ -493,6 +529,10 @@ img {
   gap: 18px;
 }
 
+.related-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 .muted {
   color: var(--ink-soft);
 }
@@ -504,7 +544,8 @@ img {
 @media (max-width: 980px) {
   .hero,
   .detail-hero,
-  .two-column {
+  .two-column,
+  .related-grid {
     grid-template-columns: 1fr;
   }
 
