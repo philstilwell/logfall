@@ -3,7 +3,6 @@
 from __future__ import annotations
 
 import html
-import hashlib
 import json
 import re
 from collections import OrderedDict
@@ -395,31 +394,6 @@ def load_case_study_library(path: Path) -> list[dict]:
     return entries
 
 
-def stable_rank(value: str) -> int:
-    return int(hashlib.sha1(value.encode("utf-8")).hexdigest()[:12], 16)
-
-
-def case_study_match_score(record: dict, entry: dict) -> int:
-    score = 0
-
-    if record["name"] in entry.get("fallacies", []):
-        score += 140
-
-    if record.get("family") and record["family"] in entry.get("families", []):
-        score += 45
-
-    if record.get("subCategory") and record["subCategory"] in entry.get("subCategories", []):
-        score += 35
-
-    if record.get("subSubCategory") and record["subSubCategory"] in entry.get("subSubCategories", []):
-        score += 25
-
-    shared_categories = set(record.get("categories", [])) & set(entry.get("categories", []))
-    score += len(shared_categories) * 12
-
-    return score
-
-
 def select_case_studies(record: dict, case_study_library: list[dict], limit: int = 5) -> list[dict]:
     manual_cases = normalize_manual_case_studies(record.get("caseStudies", []))
     selected = []
@@ -436,16 +410,9 @@ def select_case_studies(record: dict, case_study_library: list[dict], limit: int
         if case.get("source") or case.get("url"):
             append_case(case)
 
-    ranked = []
     for entry in case_study_library:
-        score = case_study_match_score(record, entry)
-        if score <= 0:
+        if record["name"] not in entry.get("fallacies", []):
             continue
-        ranked.append((score, stable_rank(f'{record["slug"]}:{entry["id"]}'), entry))
-
-    ranked.sort(key=lambda item: (-item[0], item[1]))
-
-    for _, _, entry in ranked:
         append_case(
             {
                 "summary": entry["summary"],
