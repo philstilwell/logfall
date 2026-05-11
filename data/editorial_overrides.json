@@ -839,6 +839,126 @@
         "Crime, policing, and economic debates frequently treat a response variable as if it were the cause, such as assuming security purchases create fear rather than fear driving security purchases."
       ],
       "editorialStatus": "modernized-2026-pass"
+    },
+    "Abstraction denial": {
+      "definition": "Occurs when someone denies the reality or causal relevance of a higher-level pattern just because the pattern is realized through lower-level parts",
+      "example": "There is no such thing as inflation hurting families; there are only individual transactions between buyers and sellers.",
+      "notes": "Abstract patterns can still be real and explanatory even when they depend on smaller physical or social components. Economies, institutions, languages, and ecosystems do not stop being real because they are made of people, words, or organisms.",
+      "caseStudies": [
+        "People sometimes say 'science does not discover anything, only scientists do,' as if that erased the reality of science as a method and institution with stable norms and effects.",
+        "Debates about algorithms, markets, and social platforms often pretend there is no system-level behavior because only users or lines of code act at the micro level."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Abstraction fallacy": {
+      "definition": "Occurs when a model, law, or abstraction drawn from experience is treated as if it were a logically necessary rule that reality cannot ever depart from",
+      "example": "Moore's Law says computing power keeps doubling, so any slowdown would be impossible.",
+      "notes": "Useful abstractions describe patterns with varying scope and durability. They are not automatically eternal, exceptionless constraints on what can happen.",
+      "caseStudies": [
+        "People often treat economic or technological 'laws' as if they guaranteed the future rather than summarizing a contingent historical pattern that may bend, pause, or fail.",
+        "In AI discourse, scaling trends are sometimes talked about as destiny, as though past curves logically force a particular future rather than merely suggesting one."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Composition fallacy": {
+      "definition": "Occurs when something true of the parts is assumed to be true of the whole they compose",
+      "example": "Each feature we added tested well in isolation, so the full product must be excellent.",
+      "notes": "Parts can interact in ways that change the result at the larger scale. What is beneficial, efficient, or true locally may not stay that way globally.",
+      "caseStudies": [
+        "A company may assume that because every team is cutting costs responsibly, the organization as a whole will thrive, even though simultaneous cuts can gut the shared systems the teams depend on.",
+        "In policy debates, people often assume that what is prudent for one household, firm, or voter must be prudent for the entire economy or democracy at once."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Division fallacy": {
+      "definition": "Occurs when something true of a whole is assumed to be true of each part or member of that whole",
+      "example": "The university is wealthy, so every department there must be flush with cash.",
+      "notes": "A whole can have properties its parts do not share equally. Group-level success, size, reputation, or wealth does not automatically distribute itself down to each component.",
+      "caseStudies": [
+        "People often infer that because a country is rich, any given citizen must be comfortable, skipping inequality, regional gaps, and individual circumstance.",
+        "A popular movement, successful company, or prestigious institution can still contain weak teams, poor ideas, or underfunded units."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Ecological fallacy": {
+      "definition": "Occurs when statistics about a group are used to draw conclusions about particular individuals in that group",
+      "example": "This district has high average test scores, so the student from that district must be academically strong.",
+      "notes": "Aggregate data can be useful, but it does not tell you where any one individual falls within the distribution. Group averages do not erase overlap, variation, or outliers.",
+      "caseStudies": [
+        "Zip-code analytics, polling blocs, and demographic summaries are often treated as if they gave a direct reading of the motives or traits of each person inside the category.",
+        "Political commentary frequently talks as if 'suburban women,' 'young men,' or 'college voters' were internally uniform rather than broad, heterogeneous groups."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Continuum fallacy": {
+      "definition": "Occurs when a claim is rejected simply because the concept involved has blurry boundaries rather than a perfectly sharp cutoff",
+      "example": "You cannot call this ad misleading unless you can identify the exact word where persuasion becomes deception.",
+      "notes": "Many real concepts come in degrees. Vagueness at the boundary does not make the broader concept meaningless or unusable.",
+      "caseStudies": [
+        "Arguments about misinformation, bias, wealth, addiction, and consciousness often demand an impossible razor-sharp line and then pretend the lack of that line defeats the concept altogether.",
+        "In everyday disputes, someone may deny that a delay was 'too long' or a fee was 'too high' simply because no exact threshold was announced in advance."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Definist fallacy": {
+      "definition": "Occurs when a substantive question is illegitimately 'solved' by defining one contested concept into another",
+      "example": "Justice just means whatever the law permits, so once a policy is legal it is automatically just.",
+      "notes": "Definitions can clarify usage, but they do not settle the underlying issue by fiat. Rewording a problem is not the same as answering it.",
+      "caseStudies": [
+        "Culture-war debates often define words like 'freedom,' 'woman,' 'democracy,' or 'terrorism' in ways that quietly smuggle the desired conclusion into the starting point.",
+        "Moral and political disputes frequently collapse into dictionary wars where one side pretends that owning the label settles the argument."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Fallacy of necessity": {
+      "definition": "Occurs when a condition that is necessary given someone's current description is treated as if it were permanently or universally necessary in the real world",
+      "example": "He is unemployed now, and being unemployed means not having a job, so he cannot possibly be employed next month.",
+      "notes": "Some predicates are necessary only relative to a present state or definition. That necessity does not magically extend across time, possibility, or changed conditions.",
+      "caseStudies": [
+        "People sometimes move from 'this rule currently defines the category' to 'therefore the category could never be revised or altered,' confusing present convention with fixed necessity.",
+        "In institutional debates, a temporary legal or procedural status is often spoken of as if it were an immutable fact about what can never happen."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Package-deal fallacy": {
+      "definition": "Occurs when traits that are often bundled together by stereotype, tradition, or habit are treated as if they must always come as a package",
+      "example": "He is a gamer, so he must be antisocial and male.",
+      "notes": "Some traits do cluster more often than chance would predict, but the cluster is not a logical necessity. A familiar package can make us overread what belongs together.",
+      "caseStudies": [
+        "Campaign and media narratives often assume that working-class, rural, religious, or college-educated identities come with one full political bundle attached.",
+        "People frequently expect hobbies, musical taste, fashion, or ethnicity to drag a whole associated worldview behind them even when the individual breaks the pattern."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Perfect standard": {
+      "definition": "Occurs when a messy range of better and worse cases is collapsed into a rigid perfect-or-failed binary",
+      "example": "One factual slip means this journalist is a liar rather than merely mistaken on that point.",
+      "notes": "Many human traits and performances come in degrees. Treating any deviation from an ideal as proof of total failure destroys the resolution needed for fair judgment.",
+      "caseStudies": [
+        "Debates about media bias, moral character, and institutional trust often assume that if a person or outlet is not perfectly objective, then it is simply propaganda.",
+        "Public discussion of peace, tolerance, and fairness often ignores large improvements because some imperfection remains somewhere."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Reification": {
+      "definition": "Occurs when an abstraction is spoken of as if it were a concrete agent or thing in a way that misleads rather than merely using harmless metaphor",
+      "example": "The market decided to punish us because it was angry.",
+      "notes": "Metaphor can be useful shorthand, but the fallacy appears when agency, intention, or moral responsibility is attributed to an abstraction as though it literally possessed a mind of its own.",
+      "caseStudies": [
+        "People talk as if capitalism, democracy, the algorithm, or history itself wants, fears, rewards, or punishes, which can hide the actual network of human choices and incentives underneath.",
+        "AI discussions sometimes slide from 'the model produced this output' to 'the AI wants this outcome,' smuggling in a stronger picture of agency than the evidence supports."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Teleological fallacy": {
+      "definition": "Occurs when a purpose, goal, or final destination is attributed to something without adequate evidence that such an end point was built into it",
+      "example": "Evolution created human intelligence because nature was trying to produce minds like ours.",
+      "notes": "Some things really are designed for purposes, but purpose should not be assumed where it has not been shown. Processes can produce outcomes without aiming at them.",
+      "caseStudies": [
+        "People often speak as if history is automatically bending toward justice, collapse, nationalism, or liberation, as though social change carried its own guaranteed destination.",
+        "In technology debates, AI progress is sometimes framed as if it were inherently marching toward a single destined endpoint such as AGI rather than following contingent technical and social paths."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     }
   }
 }

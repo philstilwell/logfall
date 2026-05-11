@@ -333,14 +333,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when an abstraction is denied existence or agency by claiming the substrate is the actual theater of agency.",
-      "example": "You can't claim that computers \"work\" since it is, in fact, merely transistors that are doing the actual processing.",
-      "notes": "In most cases, any individual who denies the emergent properties of any abstracted concept can be shown to be inconsistent by asking whether they believe in other emergent properties such as economic recessions, bird migrations, fashion trends, and insect swarming.",
+      "definition": "Occurs when someone denies the reality or causal relevance of a higher-level pattern just because the pattern is realized through lower-level parts.",
+      "example": "There is no such thing as inflation hurting families; there are only individual transactions between buyers and sellers.",
+      "notes": "Abstract patterns can still be real and explanatory even when they depend on smaller physical or social components. Economies, institutions, languages, and ecosystems do not stop being real because they are made of people, words, or organisms.",
       "caseStudies": [
-        "Some have argued that it is wrong to say \"science works\" since it takes an actual scientist to do science. This is to deny the ability (and goal) of science as an institution to minimize subjective error in the quest for truth by taking the process out of the hands of its constituents (subjective scientists) and to place it in the hands of a method that includes peer review that maximizes objectivity.",
-        "One related issue is linguistic meaning. Some erroneously suggest that words themselves possess meaning rather the linguistic community in which those words are employed. Linguistic meaning is a product of convention, and is not immutably contained in the word itself. This causes individuals to irrationally demand others to adopt their own understanding of a term rather than simply seeking a common term that facilitates the communication of the concept."
+        "People sometimes say 'science does not discover anything, only scientists do,' as if that erased the reality of science as a method and institution with stable norms and effects.",
+        "Debates about algorithms, markets, and social platforms often pretend there is no system-level behavior because only users or lines of code act at the micro level."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Abstraction fallacy",
@@ -353,15 +353,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when a law abstracted from observation is considered to be logically necessary.",
-      "example": "The law of gravity says that two objects of mass attract each other, so when physicists say gravity can repel, they don't know what they're talking about.",
-      "notes": "In the gravity example, the very physicist who christened the \"law of gravity\" also believe it repels in some cases. Each law is only reliable to the extent of its predictive success, and may come with stipulations. This is a type of faulty generalization that arises when induction justifiably categorizes an event or state extremely improbable. The fallacy arises when we say something that is physically improbable is logically impossible. A more detailed treatment of faulty generalizations can be found on the supplementary Inductive Errors page.",
+      "definition": "Occurs when a model, law, or abstraction drawn from experience is treated as if it were a logically necessary rule that reality cannot ever depart from.",
+      "example": "Moore's Law says computing power keeps doubling, so any slowdown would be impossible.",
+      "notes": "Useful abstractions describe patterns with varying scope and durability. They are not automatically eternal, exceptionless constraints on what can happen.",
       "caseStudies": [
-        "Consider the Law of Reciprocity. This law describes how healthy societies find cohesion when a critical level of altruism is reached among its constituents. However, its descriptive power does not in any way imply that societies will actualize cohesion based on altruism.",
-        "The Law of Diminishing Returns is another good example. This law is an inductive generalization from our economic interactions. This law does not constrain economics, nor is prior to it, but rather economic phenomena restrict our formulation of economic laws.",
-        "Moore's Law which states that the number of transistors that can be inexpensively placed on a circuit board doubles about every 2 years is another example. Due to physical constraints, this law is expected to fail at some point. This is also a type of human standard fallacy in which an artifact of human abstraction is given more authority than is warranted."
+        "People often treat economic or technological 'laws' as if they guaranteed the future rather than summarizing a contingent historical pattern that may bend, pause, or fail.",
+        "In AI discourse, scaling trends are sometimes talked about as destiny, as though past curves logically force a particular future rather than merely suggesting one."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Ad hominem",
@@ -1189,14 +1188,14 @@
       "aliases": [
         "distribution fallacy"
       ],
-      "definition": "The misconception that something true of the constituents of a whole must also necessarily be true of the whole.",
-      "example": "Paper money can be exchanged. An economy is composed of paper money, so an economy can be exchanged.",
-      "notes": "This is the converse of the division fallacy.",
+      "definition": "Occurs when something true of the parts is assumed to be true of the whole they compose.",
+      "example": "Each feature we added tested well in isolation, so the full product must be excellent.",
+      "notes": "Parts can interact in ways that change the result at the larger scale. What is beneficial, efficient, or true locally may not stay that way globally.",
       "caseStudies": [
-        "Were someone to argue \"The average Canadian makes only 90% of what the average American makes, so Canada's GDP is 90% of the GDP of the U.S.\", they would be committing the composition fallacy.",
-        "If you were to suggest that, because the average Japanese is 90% certain that ghosts exist, 90% of Japanese believe in ghosts, you would be committing the composition fallacy."
+        "A company may assume that because every team is cutting costs responsibly, the organization as a whole will thrive, even though simultaneous cuts can gut the shared systems the teams depend on.",
+        "In policy debates, people often assume that what is prudent for one household, firm, or voter must be prudent for the entire economy or democracy at once."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Confidence as a validator",
@@ -1275,14 +1274,14 @@
       "aliases": [
         "fallacy of the beard"
       ],
-      "definition": "Rejecting an argument on the grounds that one of it's concepts cannot be defined discretely into a precise category.",
-      "example": "You can't claim that your backpack is heavy until you give me a precise definition of \"heavy.\"",
-      "notes": "This fallacy highlights the need to employ terms that are as precise and quantified as possible. The fallacy is not always on the side of the person suggesting a proposition has no meaning until imprecise terms are defined. Sometime the burden of clarification is on the party who is making a claim. Claims can be so imprecise as to be impotent.",
+      "definition": "Occurs when a claim is rejected simply because the concept involved has blurry boundaries rather than a perfectly sharp cutoff.",
+      "example": "You cannot call this ad misleading unless you can identify the exact word where persuasion becomes deception.",
+      "notes": "Many real concepts come in degrees. Vagueness at the boundary does not make the broader concept meaningless or unusable.",
       "caseStudies": [
-        "One common example of the continuum fallacy is in a scenario in which one must determine what constitutes \"evidence\" and \"proof\"for a given proposition. If someone claims to be able to accurately predict coin flips, for example, just how many consecutive correctly predicted flips would constitute evidence (beyond statistical noise) for the claim? And how many flips would constitute proof of this ability? The take-away caveat is that we need to define our terms as rigorously as possible, and not try to constrain concepts that inherently fall on a continuum to discrete categories.",
-        "Imagine a client claims you took \"too long\" to deliver a product, and refuses to pay for the product. Claiming that \"too long\" is an incorrect term since other companies take longer to deliver is an instantiation of the continuum fallacy. It is best to clearly stipulate your terms of delivery to your clients prior to their ordering."
+        "Arguments about misinformation, bias, wealth, addiction, and consciousness often demand an impossible razor-sharp line and then pretend the lack of that line defeats the concept altogether.",
+        "In everyday disputes, someone may deny that a delay was 'too long' or a fee was 'too high' simply because no exact threshold was announced in advance."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Correlation is not causation",
@@ -1318,11 +1317,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Involves the confusion between two notions by defining one in terms of the other.",
-      "example": "Justice is simply whatever the law permits, so once a policy is legal it is automatically just.",
-      "notes": "",
-      "caseStudies": [],
-      "editorialStatus": "cleaned-from-root"
+      "definition": "Occurs when a substantive question is illegitimately 'solved' by defining one contested concept into another.",
+      "example": "Justice just means whatever the law permits, so once a policy is legal it is automatically just.",
+      "notes": "Definitions can clarify usage, but they do not settle the underlying issue by fiat. Rewording a problem is not the same as answering it.",
+      "caseStudies": [
+        "Culture-war debates often define words like 'freedom,' 'woman,' 'democracy,' or 'terrorism' in ways that quietly smuggle the desired conclusion into the starting point.",
+        "Moral and political disputes frequently collapse into dictionary wars where one side pretends that owning the label settles the argument."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Demanding a mechanism",
@@ -1459,14 +1461,14 @@
       "aliases": [
         "distribution fallacy"
       ],
-      "definition": "Occurs when one reasons logically that something true of an entire thing must also be true of all or some of its parts.",
-      "example": "Because a brain possesses thoughts, and a brain is composed of neurons, therefore these neurons pass thoughts back and forth.",
-      "notes": "This is the converse of the composition fallacy.",
+      "definition": "Occurs when something true of a whole is assumed to be true of each part or member of that whole.",
+      "example": "The university is wealthy, so every department there must be flush with cash.",
+      "notes": "A whole can have properties its parts do not share equally. Group-level success, size, reputation, or wealth does not automatically distribute itself down to each component.",
       "caseStudies": [
-        "Were someone to argue \"Canada's GDP is 10% of the GDP of the U.S., so the average Canadian makes only 10% of what the average American makes\", they would be committing the division fallacy.",
-        "If you were to suggest that, because 50% of Japanese believe in ghosts, the average Japanese is only half-certain that ghosts exist, you would be committing the division fallacy."
+        "People often infer that because a country is rich, any given citizen must be comfortable, skipping inequality, regional gaps, and individual circumstance.",
+        "A popular movement, successful company, or prestigious institution can still contain weak teams, poor ideas, or underfunded units."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Ecological fallacy",
@@ -1482,14 +1484,14 @@
       "aliases": [
         "distribution fallacy"
       ],
-      "definition": "Inferences about the nature of specific individuals are based solely upon aggregate statistics collected for the group to which those individuals belong.",
-      "example": "Because the average German is taller than me, you won't find a German who is shorter than me.",
-      "notes": "Averages are useful when a higher resolution of the context would be cumbersome. However, there may be some contexts where an understanding of the actual distribution is required.",
+      "definition": "Occurs when statistics about a group are used to draw conclusions about particular individuals in that group.",
+      "example": "This district has high average test scores, so the student from that district must be academically strong.",
+      "notes": "Aggregate data can be useful, but it does not tell you where any one individual falls within the distribution. Group averages do not erase overlap, variation, or outliers.",
       "caseStudies": [
-        "In a part of town with many nursing homes and nursery schools, the average age may be 35. It would be a mistake, however, to then expect to see many middle-age individuals in that part of town.",
-        "The average income of many countries is largely uninformative since there exists a large gulf between the rich and poor."
+        "Zip-code analytics, polling blocs, and demographic summaries are often treated as if they gave a direct reading of the motives or traits of each person inside the category.",
+        "Political commentary frequently talks as if 'suburban women,' 'young men,' or 'college voters' were internally uniform rather than broad, heterogeneous groups."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Empty refutation",
@@ -1665,11 +1667,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "A degree of unwarranted necessity is placed in the conclusion based on the necessity of one or more of its premises.",
-      "example": "I'm a bachelor, and being a bachelor is necessarily being unmarried, therefore I can never marry since I need to be single.",
-      "notes": "Something may be logically necessary due to a definition, but this necessity does not carry over into the actual world in which one can choose to change their marital status.",
-      "caseStudies": [],
-      "editorialStatus": "cleaned-from-root"
+      "definition": "Occurs when a condition that is necessary given someone's current description is treated as if it were permanently or universally necessary in the real world.",
+      "example": "He is unemployed now, and being unemployed means not having a job, so he cannot possibly be employed next month.",
+      "notes": "Some predicates are necessary only relative to a present state or definition. That necessity does not magically extend across time, possibility, or changed conditions.",
+      "caseStudies": [
+        "People sometimes move from 'this rule currently defines the category' to 'therefore the category could never be revised or altered,' confusing present convention with fixed necessity.",
+        "In institutional debates, a temporary legal or procedural status is often spoken of as if it were an immutable fact about what can never happen."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "False analogy",
@@ -2356,14 +2361,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Consists of assuming that things often grouped together by tradition or culture must always be grouped that way.",
-      "example": "She's likes bowling, so she certainly drinks beer as do most other bowlers.",
-      "notes": "This fallacy is measured in degrees. For example, you might be warranted in saying \"John will probably like this book since the last book he enjoyed was also science fiction.\"",
+      "definition": "Occurs when traits that are often bundled together by stereotype, tradition, or habit are treated as if they must always come as a package.",
+      "example": "He is a gamer, so he must be antisocial and male.",
+      "notes": "Some traits do cluster more often than chance would predict, but the cluster is not a logical necessity. A familiar package can make us overread what belongs together.",
       "caseStudies": [
-        "Because Judge John E. Jones III was appointed by George W. Bush, it was assumed by many that he would favor the right-leaning anti-evolutionists in the Dover trial over intelligent design. This turned out to not be the case.",
-        "Tiger Woods was a surprised to many who assumed that black golfers could never attain the skill-level of white golfers."
+        "Campaign and media narratives often assume that working-class, rural, religious, or college-educated identities come with one full political bundle attached.",
+        "People frequently expect hobbies, musical taste, fashion, or ethnicity to drag a whole associated worldview behind them even when the individual breaks the pattern."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Pathetic fallacy",
@@ -2417,14 +2422,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when an ideal of perfection is placed in contrast to a gradient of many imperfect states, implying that there are only 2 discrete categories.",
-      "example": "I remember you once shouted in anger at your brother. You are essentially an angry person.",
-      "notes": "Those employing this fallacy are removing semantic resolution from the issue, and are demanding others to categorize quite disparate degrees of phenomena into only 2 categories. This is similar to semantic pixelization.",
+      "definition": "Occurs when a messy range of better and worse cases is collapsed into a rigid perfect-or-failed binary.",
+      "example": "One factual slip means this journalist is a liar rather than merely mistaken on that point.",
+      "notes": "Many human traits and performances come in degrees. Treating any deviation from an ideal as proof of total failure destroys the resolution needed for fair judgment.",
       "caseStudies": [
-        "It has been questioned why, when blind-folded, people cannot walk in a straight line. It would actually be highly unusual for a person to maintain a straight line, and there is a wide range of possible degrees of accuracy between straight and highly curved. To ignore this continuum is to forfeit useful semantic resolution.",
-        "Some pessimistically point to the fact that, at any given moment, there is a violent conflict somewhere in the world. They set up a artificial violent/non-violent dichotomy, then extrapolate from the existence of violence that humanity is inherently violent, ignoring the many functional and largely altruistic societies at peace around the world that world paint a more nuanced picture of humanity."
+        "Debates about media bias, moral character, and institutional trust often assume that if a person or outlet is not perfectly objective, then it is simply propaganda.",
+        "Public discussion of peace, tolerance, and fairness often ignores large improvements because some imperfection remains somewhere."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Perverted analogy",
@@ -2671,14 +2676,14 @@
         "hypostatization",
         "concretism"
       ],
-      "definition": "Occurs when an abstraction is treated as if it were a real event or physical entity.",
-      "example": "The falling tree chose to flatten my new truck. So I hacked it into firewood and punished it in my wood stove.",
-      "notes": "In the example of a falling tree \"choosing\" a route, intention and guilt is wrongly ascribed to the non-conscious and amoral tree. Reification is usually only a problem where linguistic rigor is required. To draw someone's attention to the \"angry\" clouds is no fallacy, but a perfectly good linguistic device that effectively conveys real meaning.",
+      "definition": "Occurs when an abstraction is spoken of as if it were a concrete agent or thing in a way that misleads rather than merely using harmless metaphor.",
+      "example": "The market decided to punish us because it was angry.",
+      "notes": "Metaphor can be useful shorthand, but the fallacy appears when agency, intention, or moral responsibility is attributed to an abstraction as though it literally possessed a mind of its own.",
       "caseStudies": [
-        "If you were to suggest that religion is immoral since it scares humans into behaving well, you would have committed the fallacy of reification since religion is neither a moral agent that can act immorally, nor can it have the intention to scare someone since it is not a cognitive entity.",
-        "If you were to claim capitalism is \"evil\", you would be reifying capitalism by equating it to a moral agent."
+        "People talk as if capitalism, democracy, the algorithm, or history itself wants, fears, rewards, or punishes, which can hide the actual network of human choices and incentives underneath.",
+        "AI discussions sometimes slide from 'the model produced this output' to 'the AI wants this outcome,' smuggling in a stronger picture of agency than the evidence supports."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Retrospective determinism",
@@ -2968,15 +2973,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "The claim that some object or idea has a purpose or necessary end point in the absence of evidence for that end point.",
-      "example": "Why would God have given us noses if he hadn't planned that we should wear glasses?",
-      "notes": "Only after the existence of an end point has been evidentially established can it serve as a foundation for other dependent concepts.",
+      "definition": "Occurs when a purpose, goal, or final destination is attributed to something without adequate evidence that such an end point was built into it.",
+      "example": "Evolution created human intelligence because nature was trying to produce minds like ours.",
+      "notes": "Some things really are designed for purposes, but purpose should not be assumed where it has not been shown. Processes can produce outcomes without aiming at them.",
       "caseStudies": [
-        "According to Bertrand Russell, it was once claimed that rabbits were created with white tails so they would be easy for hunters to shoot.",
-        "Evolution is often misunderstood as teleological as evidenced by suggestions that there is some end-goal of evolution such as homo sapiens. Evolution might be better understood as the genetic movement of a species to better align its genetic composition to the environmental context, rather than striving towards some genetic goal independent of a environmental context.",
-        "One creationist infamously created a video purporting that the hand-shaped banana was evidence of a designer. Modern bananas have been bred by agriculturists to have the shape they do."
+        "People often speak as if history is automatically bending toward justice, collapse, nationalism, or liberation, as though social change carried its own guaranteed destination.",
+        "In technology debates, AI progress is sometimes framed as if it were inherently marching toward a single destined endpoint such as AGI rather than following contingent technical and social paths."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Thought-terminating cliché",
