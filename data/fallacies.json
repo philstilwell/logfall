@@ -518,15 +518,14 @@
       "subCategory": "Red Herring",
       "subSubCategory": "Appeal to consequences",
       "aliases": [],
-      "definition": "An argument that assumes the consequences of an idea, to some degree, reflect the veracity of the idea.",
-      "example": "If a virus erased my hard-drive, I'd loose all my work documents. It can't possibly happen.",
-      "notes": "This is usually an argument that plays on vested interests.",
+      "definition": "Occurs when someone treats the desirability or undesirability of a conclusion as if it were evidence that the conclusion is true or false.",
+      "example": "If climate change were really this serious, it would mean expensive changes to how we live and work, so the science must be exaggerated.",
+      "notes": "Consequences matter for what we should do, but they do not by themselves determine what is true. A painful implication does not refute a claim, and a comforting implication does not confirm one.",
       "caseStudies": [
-        "It has been frequently argued that there can't possibly be a god since it would mean he has allowed evil and suffering in the world. The mere negative consequences do not deny the possibility of a god. You must also explain why a god would necessarily not permit evil and suffering in the world.",
-        "A common argument heard is that, because Hitler based his genocide on evolution, this is an indication that evolution is wrong.",
-        "A very common argument for an eternal soul is \"If we do not have a soul, then we would be without an objective purpose!\" The argument usually ends here with the implication that such a conclusion is unthinkable and unacceptable. An honest thinker dismisses no conclusion due to the emotional discomfort that accompanies it."
+        "Some climate arguments treat the economic and political inconvenience of decarbonization as if it counted against the underlying science itself.",
+        "In debates about AI consciousness, animal cognition, or moral status, people sometimes argue that the conclusion cannot be right because accepting it would create uncomfortable obligations."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Appeal to emotion",
@@ -617,15 +616,14 @@
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "An argument in which something is deemed correct or good if it is natural, and is deemed incorrect or bad if it is unnatural.",
-      "example": "Birds are monogamous. Therefore, humans should also be monogamous.",
-      "notes": "It does not take much exploration of nature to realize that it is not a very coherent or desirable standard for human conduct. Nor is nature, as is, very amenable to human survival. This is why medicine perennially combats the influenza virus, and would eradicate it if possible. Interestingly, the most \"natural\" of all actions inherent to life is the striving for survival. This puts humans at odds with the rest of nature and what is \"natural\". This is why we ingest neither natural hemlock nor synthetic poisons.\nIn many cases, once the act that is deemed \"unnatural\" is scrutinized, it is discovered that the act is merely emotionally unpalatable to the person making the categorization.",
+      "definition": "Occurs when something is praised as good, safe, or right merely because it is called natural, or condemned as bad merely because it is called unnatural.",
+      "example": "This remedy must be safer than prescription medicine because it is completely natural.",
+      "notes": "Natural things can heal, but they can also poison, infect, and kill. The fallacy treats a vague origin label as if it already settled the medical, moral, or practical question.",
       "caseStudies": [
-        "Some claim that genetically modified crops are \"wrong\" for the sole reason that they are not what nature has naturally produced. There may be good reason for caution in growing genetically-modified crops, but the fact that they are merely \"unnatural\" is not good reason.",
-        "While there are sects that eschew medical intervention, most humans seek medical attention when they are injured rather than allowing nature to run its course.",
-        "Cocaine was once touted as a \"natural\" remedy for many ailments. Today, not many consider the use of cocaine to be a very wise treatment due to its addictive effects."
+        "Wellness marketing for raw milk, supplements, and 'clean' products often treats natural as if it automatically meant safer, healthier, or morally superior.",
+        "Arguments about sex, family, and medicine often smuggle a moral conclusion into the descriptive claim that one pattern is simply 'what nature intended.'"
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Appeal to novelty",
@@ -695,13 +693,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Assuming that, because something could happen, it is inevitable that it will happen.",
-      "example": "I'm bound to win the lottery if I just keep buying tickets.",
-      "notes": "A remote possibility does not equate to an inevitability for a finite life.",
+      "definition": "Occurs when someone assumes that because something could happen, it is therefore likely or inevitable that it will happen.",
+      "example": "If I keep backing enough meme stocks, one of them is bound to make me rich.",
+      "notes": "Possibility is a very weak starting point. Many things are possible without being probable, and many probable things still fail to happen in any given case.",
       "caseStudies": [
-        "The real possibility that a meteor will strike your house while you sleep does not warrant your concern."
+        "Crypto, lottery, and sports-betting talk often slides from 'this could happen' to 'this is bound to happen,' especially after a short streak of wins.",
+        "Election and catastrophe commentary often treats a legally or physically possible scenario as if it were destined simply because people can imagine it vividly."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Appeal to ridicule",
@@ -749,13 +748,14 @@
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when a claim is deemed correct on the basis that it has a long-standing tradition behind it.",
-      "example": "Polygamy is wrong because marriage here in our country has long been only between one man and one women.",
-      "notes": "All traditional practices were at one time new. The age of a practice neither validates or invalidates the practice. Patricide, child sacrifice and self-immolation were all well-established traditions at one time, yet are now generally abhorred.",
+      "definition": "Occurs when a claim or practice is defended mainly because it has a long history, customary status, or familiar place in a community.",
+      "example": "We have always opened school ceremonies this way, so that must be the right way to do it.",
+      "notes": "Traditions can embody wisdom, but age alone does not prove justice, truth, or usefulness. A tradition still has to survive present scrutiny.",
       "caseStudies": [
-        "Both extremes on the issue of public nudity have invoked this fallacy to justify their position."
+        "In 2024 arguments that the United States is a 'Christian nation,' long practice and selective founding-era precedent were often treated as if they settled the constitutional question.",
+        "Arguments about schooling, marriage, and gender roles often rely on 'we have always done it this way' instead of showing why the tradition remains just or effective."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Appeal to wealth",
@@ -789,13 +789,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Assuming that, if an argument for some conclusion is fallacious, then the conclusion is false.",
-      "example": "Tom told me that, because all Cubans are human, and I am a human, therefore I am a Cuban. His argument is invalid, and therefore I am not a Cuban.",
-      "notes": "The fact that someone commits a fallacy when defending a claim does not make their claim false.",
+      "definition": "Occurs when someone infers that because a particular argument for a conclusion is weak or fallacious, the conclusion itself must therefore be false.",
+      "example": "That activist exaggerated one statistic about housing, so the housing shortage itself must be a myth.",
+      "notes": "A bad argument can defend a true claim, and a strong claim can be defended poorly. Refuting the reasoning offered is not the same thing as refuting the conclusion.",
       "caseStudies": [
-        "This fallacy is common in heated discussions in which ad hominem attacks are frequent. Often the person attacked will point to the ad hominem, then declare their own position validated."
+        "When a candidate exaggerates one statistic, opponents often jump from 'that argument was flawed' to 'the broader policy position must therefore be false.'",
+        "Online 'gotcha' culture frequently treats catching a fallacious defense as if it automatically disproved whatever the speaker was trying to defend."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Argument from ignorance",
@@ -1649,14 +1650,14 @@
       "subCategory": "Faulty Generalization",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "A case in which the analogy fails to coherently maintain a parallel to the original concept on the point in question.",
-      "example": "Because physicists say mass equals energy, therefore mass can travel the speed of light.",
-      "notes": "If some system A has both function X and function Y, and some system B has a function X′ corresponding to A's function X, then the system B should also have a function Y′ that is analogous to A's function Y for the analogy to succeed.",
+      "definition": "Occurs when one thing is treated as sufficiently like another even though the comparison breaks down at the point the argument depends on.",
+      "example": "A chatbot writes essays a bit like a student, so teaching with chatbots must be basically the same as hiring a tutor.",
+      "notes": "Analogies can clarify unfamiliar ideas, but they prove very little unless the shared features are actually relevant to the conclusion being drawn.",
       "caseStudies": [
-        "Consider the following argument. Teaching teenagers how to succeed in marriage prior to being married is like trying to teach someone how to ride a bicycle prior to placing them on a bicycle.\nThis is a false analogy in that it assumes the same type of learning mechanism used for the muscular memory of cycling is also used for grasping the dynamics of marriage.",
-        "Consider the following argument. Dating is like gambling. You'll win a few, and lose a few.\nThis is a false analogy in that it ignores the non-randon aspects of selecting a date."
+        "Debates about AI frequently compare models to children, interns, parrots, or brains, then carry over conclusions from the analogy that the underlying system may not support.",
+        "Fiscal debates often compare a national budget to a household budget; the analogy can illuminate some constraints but breaks down when it is treated as a full map of macroeconomics."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "False attribution",
@@ -1834,15 +1835,14 @@
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when a conclusion is suggested based solely on something or someone's origin rather than its current meaning or context.",
-      "example": "Australia will never become a great nation considering it arose from penal colonies of mere criminals.",
-      "notes": "The value of ideas and strength of arguments can be assessed wholly independently of the conditions of their engendering.",
+      "definition": "Occurs when a claim, practice, or idea is judged mainly by its origin rather than by its present content, evidence, or merits.",
+      "example": "That proposal started on TikTok, so it must be nonsense.",
+      "notes": "Origins can matter when they reveal bias, incentives, or reliability concerns. The fallacy appears when origin is treated as enough to settle the issue without examining the claim itself.",
       "caseStudies": [
-        "Some suggest that the cruel human experiments Nazi conducted cannot be scientifically reliable. The conditions surrounding the the data collection does not invalidate the reliability of that data.",
-        "Claiming that Christmas trees are somehow evil since they originated in pagan tradition would be a genetic fallacy.",
-        "Refusing to celebrate Halloween since it had its origin in superstition and myth would be a genetic fallacy."
+        "People often dismiss an idea because it came from Silicon Valley, academia, Fox, MSNBC, Reddit, or X without asking whether the specific claim is supported.",
+        "In cultural and religious arguments, a practice or symbol is often condemned solely because of its historical roots, even when the live question is what it means or does now."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Hasty generalization",
@@ -2424,14 +2424,14 @@
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Where negative claims are preemptively made against a position with the intention of discrediting whatever person is about to say.",
-      "example": "Before my opponent speaks, let me remind you that he is a college dropout and has never held a job longer than a year.",
-      "notes": "This fallacy is often found in public forums where the audience includes those who lack critical thinking skills and who are prone to emotional arguments.",
+      "definition": "Occurs when negative framing is introduced in advance so that whatever a person says next will be dismissed before it is fairly heard.",
+      "example": "Before this researcher speaks, remember that she once worked in Washington, so you already know what kind of agenda she has.",
+      "notes": "Source criticism can be relevant, but poisoning the well tries to make the audience stop listening before the argument or evidence is even on the table.",
       "caseStudies": [
-        "Sarah Palin's crowning as a beauty pageant queen in 1984 is often introduced by those who wish to bring into question her competency. Beauty pageant contestants are often considered less intelligent than what is needed for public office.",
-        "Barack Obama's Muslim father is often brought up in political dialogue in an attempt to poison the well. Many Americans have a fear of a Muslim agenda in Washington. His middle name \"Hussein\" is also emphsized to heightened this fear."
+        "In political and media fights, audiences are often primed to treat a judge, journalist, scientist, or witness as corrupt before that person's specific evidence is even heard.",
+        "After the September 2024 Harris-Trump debate, repeated claims that moderators and outlets were inherently rigged encouraged supporters to dismiss later fact-checks in advance rather than assess them on the merits."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Post hoc ergo propter hoc",
@@ -2547,11 +2547,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when a speaker attempts to distract the audience from an unresolved topic by introducing a new topic the speaker feels more comfortable with.",
-      "example": "I don't have evidence with me that home-schooling best prepares students for university, but, anyway, if we don't home-school our children, they will end up with few morals.",
-      "notes": "Most of the tactical and emotional fallacies fall into this general category.",
-      "caseStudies": [],
-      "editorialStatus": "cleaned-from-root"
+      "definition": "Occurs when someone diverts attention from the unresolved issue by switching to a different issue that is easier, safer, or more emotionally useful.",
+      "example": "Asked whether the housing plan would lower rents, the candidate pivots to the failures of the other party's immigration policy.",
+      "notes": "Not every detour is fallacious; context can matter. The fallacy appears when the diversion substitutes for addressing the question that was actually on the table.",
+      "caseStudies": [
+        "In the June 27, 2024 Biden-Trump debate, answers about the economy, abortion, and January 6 often veered into immigration, personal fitness, or unrelated grievances instead of the question asked.",
+        "Online arguments about institutional abuse, policing, or bias often slide away from the specific allegation and into some other controversy the speaker would rather discuss."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Redeeming illogic with evidence",
