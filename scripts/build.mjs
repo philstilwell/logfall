@@ -15,6 +15,8 @@ const workbookOutPath = path.join(distRoot, "logfall-root-edition.xlsx");
 const siteUrl = "https://philstilwell.github.io/logfall/";
 const socialImagePath = "assets/logo.jpg";
 const buildDate = new Date().toISOString().split("T")[0];
+const cloudflareWebAnalyticsTag =
+  `<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "798a30777a6d424f9c4055a02e7bde91"}'></script><!-- End Cloudflare Web Analytics -->`;
 
 const featuredNames = [
   "Ad hominem",
@@ -131,6 +133,7 @@ function pageShell({
   canonicalPath = "",
   ogType = "website",
   robots = "index,follow",
+  extraHeadHtml = "",
 }) {
   const homeHref = prefix || "./";
   const navItems = [
@@ -179,6 +182,7 @@ function pageShell({
     <meta name="twitter:title" content="${escapeHtml(title)}" />
     <meta name="twitter:description" content="${escapeHtml(description)}" />
     <meta name="twitter:image" content="${escapeHtml(socialImageUrl)}" />
+    ${extraHeadHtml}
     <link rel="stylesheet" href="${prefix}styles.css" />
     <script defer src="${prefix}app.js"></script>
   </head>
@@ -649,6 +653,7 @@ function buildDetailPage(record, records) {
     currentSection: "fallacies",
     canonicalPath: `fallacies/${record.slug}/`,
     ogType: "article",
+    extraHeadHtml: cloudflareWebAnalyticsTag,
     content,
   });
 }
