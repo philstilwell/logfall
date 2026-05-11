@@ -97,15 +97,17 @@ function sortCategories(categories) {
   return [...categories].sort((a, b) => order.indexOf(a) - order.indexOf(b));
 }
 
-function pageShell({ title, description, prefix, content, currentSection = "" }) {
+function pageShell({ title, description, prefix, content, currentSection = "", showSpreadsheetNav = true }) {
   const homeHref = prefix || "./";
   const navItems = [
     { href: homeHref, label: "Home", key: "home" },
     { href: `${prefix}fallacies/`, label: "All Fallacies", key: "fallacies" },
     { href: `${prefix}categories/`, label: "Categories", key: "categories" },
     { href: `${prefix}about/`, label: "About", key: "about" },
-    { href: `${prefix}logfall-root-edition.xlsx`, label: "Spreadsheet", key: "spreadsheet" },
   ];
+  if (showSpreadsheetNav) {
+    navItems.push({ href: `${prefix}logfall-root-edition.xlsx`, label: "Spreadsheet", key: "spreadsheet" });
+  }
 
   const nav = navItems
     .map(
@@ -294,6 +296,7 @@ function buildHomePage(records, categories) {
       "A rebuilt logical fallacies reference with category browsing, searchable pages, and a synced ROOT-tab workbook.",
     prefix: "",
     currentSection: "home",
+    showSpreadsheetNav: false,
     content,
   });
 }
