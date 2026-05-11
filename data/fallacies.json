@@ -1061,14 +1061,14 @@
         "a dicto simpliciter ad dictum secundum quid",
         "faulty generalization"
       ],
-      "definition": "An argument of the following form. Group \"A\" has the negative quality \"x\" and \"a\" belongs to group \"A\". Therefore \"a\" has \"x\".",
-      "example": "Bankers are jerks, and because my neighbor is a banker, he must be a jerk.",
-      "notes": "A more detailed treatment of this fallacy can be found on the supplementary Inductive Errors page.",
+      "definition": "Occurs when a negative generalization about a group is used as if it settled the character or behavior of a specific member of that group.",
+      "example": "People in private equity only care about money, so the new board member from that industry is obviously going to gut the program.",
+      "notes": "Even if a group tendency were real, it would not eliminate the need for evidence about the particular person under discussion.",
       "caseStudies": [
-        "If you learn that you have a tumor, the fact that many tumors are malignant, inoperable and fatal does not mean that you should despair since many tumors can be successfully treated. More information about the type and stage of the tumor is needed before any conclusions can be drawn about your particular tumor.",
-        "If you have been bitten by the last 3 dogs you've approached, you are warranted in being cautious about the next dog you approach in a similar context. However, 3 data points is a rather small sample size to draw any general conclusions. The fact that you have been bitten 3 times in a row many not much reflect on the general disposition of dogs, but more on the context in which you encounter them such as while you are climbing through a window to rob someone."
+        "After scandals in policing, finance, or clergy, critics sometimes assume any individual in the profession personally shares the worst traits of the institution.",
+        "Online discourse often treats party label, employer, or religious affiliation as if it were enough to prove what a specific person believes or will do."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Bottom-up justification",
@@ -1085,11 +1085,14 @@
         "a dicto simpliciter ad dictum secundum quid",
         "faulty generalization"
       ],
-      "definition": "An argument of the following form. Group \"A\" has the positive quality \"x\" and \"a\" belongs to group \"A\". Therefore \"a\" has \"x\".",
-      "example": "Bankers are nice people, and since my neighbor is a banker, he must be a nice guy.",
-      "notes": "A more detailed treatment of this fallacy can be found on the supplementary Inductive Errors page.",
-      "caseStudies": [],
-      "editorialStatus": "cleaned-from-root"
+      "definition": "Occurs when a positive generalization about a group is used as if it established the virtue or competence of a specific member of that group.",
+      "example": "She works for a medical charity, so she must be careful with the facts and impossible to corrupt.",
+      "notes": "A flattering stereotype is still a stereotype. Group membership can create a first impression, but it does not establish the individual's actual record.",
+      "caseStudies": [
+        "Prestige effects often lead audiences to assume that anyone from a famous university or respected nonprofit is trustworthy even outside their area of expertise.",
+        "Voters sometimes infer that a candidate from a reform organization must be personally honest before examining the candidate's own conduct."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Broken window fallacy",
@@ -1169,14 +1172,14 @@
         "chicken",
         "the egg problem"
       ],
-      "definition": "Occurs when the consequence of the phenomenon is said to be an inescapable cause of the phenomenon when the truth may be otherwise.",
-      "example": "My music CD is not popular because people are not listening to it. And people are not listening to it because it is not popular. If they would only listen to it, it would become popular.",
-      "notes": "Note that the fallacy is not in identifying actual causal circularity, but in claiming that the circularity is unavoidable when it is not, or in claiming that the circularity validates the truthfulness of one of the premises. It may not be the case that your music CD would become popular even were there some way possible to get people to listen to it. Actual evidence will have to be introduced to show that the circularity is indeed vicious, and that the removal of the circularity would actually result in what the assumption claims.",
+      "definition": "Occurs when a feedback loop is treated as if it fully explains, proves, or justifies a result, even though the loop may be contingent, breakable, or not sufficient for the claimed conclusion.",
+      "example": "The app is not popular because nobody uses it, and nobody uses it because it is not popular, so if people would just use it once it would obviously become a hit.",
+      "notes": "Circular dynamics can be real, but identifying a loop does not show that the loop is unstoppable or that breaking one link would guarantee the hoped-for outcome. Further evidence is still needed.",
       "caseStudies": [
-        "The nuclear arms race of the 20th century was based in part on the assumption that the other side would actually use their weapons should they ever gain a significant advantage in the race, an assumption that may not have been accurate.",
-        "An argument against evolution has been the proverbial chicken-or-the-egg problem in which it is suggested that the chicken is dependent on a prior egg, and an egg is dependent on a prior chicken. Evolutionary biologists believed both evolved jointly just as an embryo jointly develops its interdependent heart and brain."
+        "Job markets sometimes create genuine experience loops, but it is still a mistake to assume that every applicant locked out by the loop would necessarily succeed if only one employer made an exception.",
+        "Commentators often say a platform is influential because everyone talks about it and everyone talks about it because it is influential, using the loop itself as if it settled the argument."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Composition fallacy",
@@ -1234,11 +1237,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "The assumption that an outcome simultaneously satisfying multiple conditions is more probable than an outcome satisfying fewer of those same conditions.",
-      "example": "Because Susan is young, it is more probable that she is both a student and unmarried than that she is merely a student.",
-      "notes": "",
-      "caseStudies": [],
-      "editorialStatus": "cleaned-from-root"
+      "definition": "Occurs when a more detailed scenario is treated as more probable than a less detailed scenario that already contains it.",
+      "example": "Because the candidate is young and progressive, it is more likely that she is both a climate activist and a vegan than that she is simply a climate activist.",
+      "notes": "Adding conditions never makes a claim more probable than a broader version of that same claim. Extra detail can make a story feel more representative while making it statistically less likely.",
+      "caseStudies": [
+        "Political profiling often mistakes a vivid stereotype for probability, assuming that a person matching one trait is more likely to match an even narrower bundle of traits as well.",
+        "AI narratives sometimes suggest that because a model appears articulate, it is more likely to be both highly capable and aligned than merely capable, even though the conjunction is narrower."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Contextomy",
@@ -1443,14 +1449,14 @@
       "subCategory": "",
       "subSubCategory": "Correlative based fallacy",
       "aliases": [],
-      "definition": "Occurs when attempts are made at introducing alternatives where none exist.",
-      "example": "My girlfriend wanted to know whether I had cheated on her. I told her that perhaps it was impossible to have cheated on her since if I had cheated, it would mean we never really had a relationship to cheat on.",
-      "notes": "This fallacy is the converse of the false dilemma.",
+      "definition": "Occurs when one side of a genuine contrast is denied or redefined so the opposing term has no place to apply.",
+      "example": "If the relationship was strong enough to survive it, then it was not really cheating, because real cheating would have ended the relationship.",
+      "notes": "Some concepts only make sense against their correlative opposite. Erasing the contrast does not answer the accusation; it changes the meaning of the term.",
       "caseStudies": [
-        "Theists commonly claim their particular god becomes so angry over the very first offense a human commits, that he immediately condemns that human to eternal torment. They then also claim that same god is \"patient\" and \"loving\" towards humans. If you have a god invariably and continuously committing impatient acts, you don't have a patient god.",
-        "Telling your date \"I'm in a complicated relationship\" is not an answer to their question \"Are you married?\" and is denying the correlative."
+        "Public arguments sometimes say a decision cannot count as censorship unless it was total state control, effectively denying any middle range where the term usefully applies.",
+        "Debates about betrayal, fraud, or coercion often narrow the term so drastically that almost no real case can qualify."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Division fallacy",
@@ -1570,11 +1576,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "In which a speaker will use a general definition of a term to denote a specific insinuation.",
-      "example": "My mother said that ice cream was good, but it maliciously fell on my shoe.",
-      "notes": "This example equivocates between \"good\" meaning \"of positive value\" and \"good\" meaning \"morally upright\".",
-      "caseStudies": [],
-      "editorialStatus": "cleaned-from-root"
+      "definition": "Occurs when a broad or harmless sense of a word is used to insinuate a narrower, stronger, or more loaded sense of the same word.",
+      "example": "The chatbot says it 'understands' the question, so it must understand it in the full human sense.",
+      "notes": "The argument trades on the prestige or emotional force of the stronger meaning while relying on the thinner meaning when challenged.",
+      "caseStudies": [
+        "Public arguments about censorship often slide from the general fact that content was moderated to the much stronger charge that it was censored in the same sense as state suppression.",
+        "AI marketing repeatedly benefits from equivocation between technical terms such as 'learn,' 'reason,' or 'understand' and their thicker human meanings."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Etymological fallacy",
@@ -1587,14 +1596,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when it is argued that the original or historical meaning of a word or phrase is necessarily similar to its actual present-day meaning.",
-      "example": "Because \"gay\" meant \"happy\" in the past, you can't call homosexuals \"gay\" unless they are happy.",
-      "notes": "Language inevitably changes. To be understood, a participant in the game of communication in any language will need to employ the language in the way it is currently conventionally used. Words are merely tools to convey concepts. When certain terms fail due to the speaker deviating from their conventional usage, the speaker, instead of demanding the denotation associated with the origin of the term, ought to either choose other terms that more clearly convey their ideas to the language community, or stipulate a provisional definition of the term. Words themselves contain no meaning other than what the language community has granted them.",
+      "definition": "Occurs when a word's original or historical meaning is treated as if it controlled the word's present meaning.",
+      "example": "Because 'literally' once had a narrower sense, any modern emphatic use must be simply wrong.",
+      "notes": "Words change through use. Present meaning is set by current linguistic convention, not by the oldest recoverable ancestor of the term.",
       "caseStudies": [
-        "In recent years, there has been much wrangling over what the meaning of \"theist\", \"deist\", \"atheist\" and \"agnostic\" actually mean. The answer is, when terms become as hotly debated as these are, they have lost their meaning. It is difficult for concepts as nuanced as these are, to find a single term that accurately captures its full meaning. Instead of demanding others accept your own understanding or the historical meaning of a particular term, give a longer more nuanced explanation of your position. The convenience of a shorter term does not count for much if meaning is sacrificed.",
-        "Some have argued that the \"n\" word originally came from the Latin \"niger\", meaning \"black\", and therefore is not an offensive term. This completely ignores the conventional meaning it has today, and it is within convention that meaning is created. On the other side of this issue you have people attempting to remove the \"n\" word from Mark Twain books, perhaps not understanding that the term was not used disparagingly by all in that era. Negatively connoted terms can be salvaged by a linguistic community as was the term \"queer\" through the efforts of the gay community."
+        "Culture-war and identity debates often turn into fights over what labels 'really mean' based on older usage rather than on how the community currently uses them.",
+        "People sometimes defend or condemn a term by appealing to its root language while ignoring the fact that social meaning has moved far beyond the origin."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Exclusive premises",
@@ -1821,14 +1830,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "An attempt to disallow an assumption introduced for the sake of argument because it is not actually believed.",
-      "example": "Your argument that Santa is not real because he would need to fly his sleigh at impossible speeds on Christmas Eve is not valid since you don't even believe in Santa.",
-      "notes": "This fallacy is often used in response to an \"argumentum ad absurdum\" in which assumptions are granted for the sake of argument to demonstrate that they lead to an incoherency. To plug an assumption into a argument to show the illogicality of that argument does not require an epistemic commitment to the assumption.",
+      "definition": "Occurs when a hypothetical premise is rejected simply because the speaker does not actually believe it.",
+      "example": "You say that even if the policy achieved its stated goal it would still be too costly, but that objection fails because you do not really believe the policy would work.",
+      "notes": "Reasoning from an assumption to test its implications is not the same as endorsing the assumption.",
       "caseStudies": [
-        "Some atheists argue that \"any god that is both omnipotent and omniscient would not allow evil into the world.\" When theists dismiss this or a similar argument by saying \"you don't believe in god, so you can't use the notion of god in your assumptions\", they commit the fallacy of denying a hypothetical.",
-        "To argue \"If Bigfoot were real, physical evidence would have turned up by now\" carries no epistemic commitment to the existence of Bigfoot."
+        "Reductio arguments in theology, AI, and politics are often misread as confessions rather than as tests of what would follow if the other side's claim were granted.",
+        "Debates stall when a conditional claim such as 'even if you are right, the consequence would still be unacceptable' is treated as if it were a statement of belief."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Four terms fallacy",
@@ -1865,14 +1874,14 @@
         "monte carlo fallacy",
         "hot hand fallacy"
       ],
-      "definition": "The incorrect belief that the likelihood of a random event can be affected by or predicted from other, independent events.",
-      "example": "The coin flip has resulted in 5 \"heads\" in a row. I'm overdue for a \"tails\".",
-      "notes": "True randomness will contain patches of what looks like uniformity to minds highly prone to extract patterns. The converse of the gambler's fallacy is the hot hand fallacy in which a winning steak is irrationally expected to continue.",
+      "definition": "Occurs when someone thinks past outcomes of independent events make a future independent outcome more or less likely than it really is.",
+      "example": "The coin has landed heads five times in a row, so tails is due next.",
+      "notes": "Random sequences naturally contain streaks. When the events are truly independent, the next event does not remember the last one.",
       "caseStudies": [
-        "People often irrationally suppose that their 50th international flight is much more likely to end in tragedy than their 1st international flight. All things being equal, the risk is the same for every international flight.",
-        "For most gambling games, the chances of winning or losing the same amount remains constant with each game played. However, if coins are accumulating in a machine that must eventually pay out, there is an increased chance of winning with each play."
+        "People sometimes feel that after many routine flights or medical screenings in a row, a disaster or diagnosis is somehow 'due,' even though independent risks do not balance themselves that way.",
+        "In gambling and investing language, talk of a roulette table or slot machine being 'ready to pay out' often confuses a streaky pattern with a real shift in odds."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Genetic fallacy",
@@ -1934,13 +1943,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Assuming that decision makers of the past viewed events from the same perspective and had the same information as those subsequently analyzing the decision.",
-      "example": "If I had lived in medieval times, I would certainly not have thought the sun circled the earth as did all the other fools!",
-      "notes": "We often do not appreciate the strength of societal influence on our belief systems.",
+      "definition": "Occurs when people in the past are judged as if they had the same information, background assumptions, and hindsight available to later observers.",
+      "example": "Anyone living in 2007 should have seen the financial crash coming exactly as we see it now.",
+      "notes": "Hindsight compresses uncertainty and highlights the clues that mattered. Real historical agents were working inside a noisier, more limited information environment.",
       "caseStudies": [
-        "Most people would like to think they would have not accepted slavery and other common practices we now consider barbaric had they lived a thousand years ago."
+        "People often imagine they would easily have rejected past medical myths, empires, or moral blind spots, underestimating how strongly institutions and available evidence shape belief.",
+        "Post-crisis commentary regularly rewrites messy contingencies into obvious warning signs that were supposedly plain to everyone at the time."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Homunculus fallacy",
@@ -1954,13 +1964,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when a lower level of perception is introduced to explain perception at a higher level, then explains the lower level by invoking the very terms of perception in question.",
-      "example": "Our brains see a face when light from that face enters our eyes, is passed to our neurons, and the face is finally recognized by our neurons.",
-      "notes": "To explain sight by saying our neurons \"see\" is to only add another seeing entity which must itself have a deeper brain that \"sees\", thus leading to an infinite regress.",
+      "definition": "Occurs when a mind-like inner observer is smuggled in to explain mind-like abilities, thereby postponing rather than solving the explanation.",
+      "example": "Vision works because the brain forms an internal picture and then an inner observer looks at that picture.",
+      "notes": "If the inner observer can already do the job, the original explanatory problem just reappears one level down.",
       "caseStudies": [
-        "If someone were to argue that our brains make moral decisions by passing the relevant data to our soul which, in turn, makes the decision for the brain, then this simply defers the explanation of the concept of moral decision-making from the brain to the soul, demanding yet another explanation; how the soul makes moral decisions."
+        "Popular neuroscience writing sometimes says that the brain 'decides' or a memory center 'knows' in ways that merely rename the puzzle rather than explain it.",
+        "Criticism of AI can do something similar when it assumes a hidden module inside the system literally understands the output in the same way a person would."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Human standard fallacy",
@@ -1976,17 +1987,14 @@
       "aliases": [
         "appeal to law"
       ],
-      "definition": "Occurs when a human law, categorization, definition or judgment is assumed to supersede objective fact.",
-      "example": "Because there is a law against chewing gum on Wednesdays, it is immoral to chew gum on Wednesdays.",
-      "notes": "A law against chewing gum on Wednesdays does not suddenly make the act immoral. If it was not immoral prior to a law forbidding it, why would a human law make it so?",
+      "definition": "Occurs when a human classification, rule, or label is treated as if it automatically determined the underlying fact or moral status.",
+      "example": "The platform's policy now defines this claim as misinformation, so it became false the moment the label was applied.",
+      "notes": "Institutional labels can matter legally or practically, but they do not by themselves create truth, value, or natural kinds.",
       "caseStudies": [
-        "Some argue that the use of recreational drugs is immoral by virtue of there existing a human-authored law forbidding their usage.",
-        "Quite regularly, a coroner mistakenly declares someone dead, only to have them revive. In these cases, you'll often have family members claiming that it was a miracle that the patient did the impossible and rose from the \"dead\". As medicine advances, we can expect the current human definition of \"death\" pushed back to reflect the ever-increasing period within which resuscitation is possible.",
-        "Frequently, the dictionary definition of a term is invoked as the final authority on the way that term should be used. Clearly the writers of dictionaries assessed the conventional usage of words to formulate their entries. It is convention, not a human-made dictionary, that is the final authority on the denotation of a particular term. The only other option is to agree upon a stipulated definition of a term before engaging in dialog.",
-        "Prior to the word \"deconversion\" becoming mainstream, there were arguments by some theists that, because the word was not found in a dictionary, the concept it denoted was illegitimate.",
-        "When identifying a flaw in your opponent's thinking, there is often the tendency to invoke the \"official\" name of that fallacy, and hurl the name at your opponent and/or the audience hoping the poison you deem that fallacy to possess will invalidate your opponent's position. At times this is valid; if the fallacy is a formal fallacy, and your opponent's position is fully contingent upon the argument with the fallacy, then you have indeed defeated their position. However, fallacies are collected and named by humans, and many fallacies are not discretely fallacious; they fall on a continuum between rationality and error. It is, therefore, usually much more productive to spend the necessary time explaining why their argument is fallacious rather than calling it by name and looking with mock surprise at your \"irrational\" opponent (though there may be times where this may accomplish your agenda). This site is not the ultimate authority on logical fallacies, but is merely a tool."
+        "Markets and media often confuse approved, certified, or official with true, safe, or just.",
+        "Political rhetoric often treats whatever a legislature recognizes or forbids as automatically morally right or wrong."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "If-by-whiskey",
@@ -2040,14 +2048,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when every possible outcome is predicted by a theory, thereby rendering it either redundant to what is materially expected or non-existent.",
-      "example": "We have only blurry photo evidence for the existence of alien space ships, but that's only because the aliens have technology that prevent our cameras from functioning properly.",
-      "notes": "This fallacy is similar to the suppressed correlative.",
+      "definition": "Occurs when a view is framed so every possible outcome fits it equally well, leaving no meaningful room for the claim to fail.",
+      "example": "If the forecast comes true, the psychic was right; if it fails, the warning changed the future, which also proves the psychic was right.",
+      "notes": "A claim that survives every observation unchanged may be emotionally resilient, but it has surrendered explanatory power.",
       "caseStudies": [
-        "Some theists claim that their particular god answers prayer, but there is no possible outcome that does not fall within their definition of answered prayer. This makes their god equivalent to material cause and effect at best, but more probably non-existent.",
-        "Some atheists claim that,\" either you're an atheist or you're not. Make up your mind.\" This implies that absolute evidence is available for an absolute decision one way or the other. There is a smooth gradient of evidence on the question of a god, and therefore a justified belief will often necessarily fall somewhere on that gradient rather than on a discrete pole of belief or disbelief. This does not, of course, hold true for disbelief in gods that are logically impossible."
+        "Conspiracy systems often explain both the presence and the absence of evidence as confirmation.",
+        "Some technology hype frames both success and failure as proof that general intelligence is just around the corner."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Incomplete comparison",
@@ -2081,13 +2089,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when complex nodes of comparison are used that make it falsely appear as if a complete comparison has been made.",
-      "example": "My son Arthur runs faster than Thomas, gets higher grades than George, and plays piano better than William. He's definitely the most talented boy.",
-      "notes": "This is a common fallacy employed by advertizers who compare their product against the least attractive competing product for each particular feature.",
+      "definition": "Occurs when different comparison targets are used across different dimensions to create the illusion of one all-around winner.",
+      "example": "This laptop is cheaper than Brand A, lighter than Brand B, and faster than Brand C, so it is plainly the best laptop on the market.",
+      "notes": "A complete comparison needs a consistent baseline or a transparent weighting of tradeoffs, not a collage of unrelated best cases.",
       "caseStudies": [
-        "If you claim your English skills are better than those of Tom and Andrew since Tom can't spell and and Andrew has a low vocabulary, you are committing the inconsistent comparison fallacy since you are simply cherry-picking those skills that favor you in a complex matrix of skills, and there may be other possible relevant measures of English for which you may be weaker than both Tom and Andrew."
+        "Consumer ads often compare each feature against whichever rival looks weakest on that feature, then announce overall superiority.",
+        "Campaign brag sheets sometimes do the same by mixing job growth, crime, housing, and graduation metrics against different jurisdictions and different years."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Intentional fallacy",
@@ -2101,14 +2110,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "The assumption that the meaning intended by an author of a concept is not relevant to the understanding of that concept.",
-      "example": "We ought to interpret \"right to bear arms\" within the context of our own time, and ignore the intent of the authors of the phrase.",
-      "notes": "Sometimes the evidence for the author's intentions is not in the actual literature, but must be extracted from other sources such as personal letters and notes.",
+      "definition": "Occurs when the creator's intended meaning is treated as irrelevant in contexts where that intention is actually important to understanding the work or statement.",
+      "example": "The author says the essay was satirical, but we should ignore that completely and read it only through our own current assumptions.",
+      "notes": "Authorial intent is not always the only thing that matters, but it is often part of the evidence. Declaring it irrelevant by default can flatten interpretation into projection.",
       "caseStudies": [
-        "Some claim that Einstein was a theist based on some of his statements referring to \"God\". A more careful examination of his personal correspondence seems to suggest that he was, at most, a deist.",
-        "Some might suggest that Mark Twain's use of the \"n\" word belies the author's racism, not taking into consideration the more benign use of the term in that era, nor any literary device Twain might have been employing."
+        "Debates over constitutional language, literature, and political slogans often swing too far toward present-day interpretation while discarding what the author or framers were trying to do.",
+        "Online arguments about memes, jokes, and clips frequently ignore context and stated intent altogether, then treat the most inflammatory possible reading as the only serious one."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Is-ought problem",
@@ -2123,13 +2132,14 @@
       "aliases": [
         "isolated ought"
       ],
-      "definition": "The inappropriate inference that, because something is a particular way, it ought to be that way.",
-      "example": "Nearly all humans wear clothing in public, so it is immoral not to.",
-      "notes": "Any \"ought\" ought to be accompanied by an \"if\" if it is to have any meaning. For example, you can tell your friend he ought to hurry if he wants to catch the bus, but an \"ought\" isolated from an \"if\" carries no meaning. Even a statement such as \"You ought to listen to your parents\" carries an implicit \"if\". If you do as they say, you'll avoid undesirable consequences. Another example is in the context of a game of chess. You ought not cheat in chess because it is socially unacceptable; i.e., if you want to maintain social respect. Even religious-based moral \"oughts\" contain implicit \"if\"s as in \"You ought not lie if you want to please God and avoid eternal torment.\" \"Ought\"s cannot be divorced from \"if\"s.\n\"In every system of morality, which I have hitherto met with, I have always remark'd, that the author proceeds for some time in the ordinary ways of reasoning, and establishes the being of a God, or makes observations concerning human affairs; when all of a sudden I am surpriz'd to find, that instead of the usual copulations of propositions, is, and is not, I meet with no proposition that is not connected with an ought, or an ought not. This change is imperceptible; but is however, of the last consequence. For as this ought, or ought not, expresses some new relation or affirmation, 'tis necessary that it shou'd be observ'd and explain'd; and at the same time that a reason should be given; for what seems altogether inconceivable, how this new relation can be a deduction from others, which are entirely different from it.\"\nDavid Hume in Treatise of Human Nature.",
+      "definition": "Occurs when a descriptive claim about what is common, natural, or actual is treated as if it directly established what ought to be done.",
+      "example": "Most companies monitor workers in some form now, so employees ought to accept constant tracking as normal.",
+      "notes": "An ought needs a normative premise about goals, duties, or values. Facts alone do not generate that extra step.",
       "caseStudies": [
-        "Ayn Rand argued that one ought to act in a way consistent with one's own rational self-interests. The implicit \"if\" is presumably \"if you want to live a long and happy life.\" Yet it is never explained why a life of altruism cannot also lead to a long and happy life, and why it ought to be replaced by a more egoistic existence."
+        "Arguments about gender, family, and competition often slide from claims about what is common in nature to claims about what is therefore morally required.",
+        "Workplace norms are regularly defended by saying they are simply how the market works, even when the moral question is precisely whether the market should work that way."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Judgmental language",
@@ -2163,16 +2173,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "The assumption that a phenomenon functions linearly, overlooking important factors that produce non-linearity.",
-      "example": "The mortality rate of cats falling 20 stories will be double that of cats falling 10 stories.",
-      "notes": "The mortality rate for cats falling from 10 stories may be lower than for those falling from 20 due to several non-linear factors including non-linear acceleration and terminal velocity, and the non-linear time for a cat to turn itself upright and relax.",
+      "definition": "Occurs when someone assumes that doubling the input will double the output even though the system has thresholds, saturation, feedback loops, or diminishing returns.",
+      "example": "One dose gave a modest result, so taking twice as much should produce twice the benefit.",
+      "notes": "Many real systems change slowly at first, then rapidly, then plateau, or even reverse after a threshold.",
       "caseStudies": [
-        "To suggest that a person drinking 10 alcoholic drinks will be half as impaired as a person who has had 5 alcoholic drinks is to fail to understand many possible non-linear factors.",
-        "Spending twice the current budget on education will probably not double the test scores of students.",
-        "Having twice the income of your neighbor will probably not make you twice as happy.",
-        "It's very seldom that drinking a $200 bottle of wine results in 10 times the pleasure of drinking a $20 bottle of wine due to the law of diminishing returns."
+        "Growth forecasts for social platforms often assume audience reach will keep scaling smoothly even after attention markets saturate.",
+        "Policy debates about climate, housing, and healthcare frequently ignore the non-linear effects of bottlenecks, incentives, and behavioral feedback."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Luddite fallacy",
@@ -2352,14 +2360,14 @@
       "aliases": [
         "hasty generalization"
       ],
-      "definition": "A generalization that is coupled with qualifications so restrictive that the generalization is essentially impotent.",
-      "example": "I'm the type of man who always pays for my date's dinner...except in the case where she want to go somewhere other than KFC.",
-      "notes": "An overwhelming exception is based on an accurate generalization, but is coupled with so many qualifications or such extreme qualifications that the generalization is rendered anemic and meaningless.",
+      "definition": "Occurs when a general principle is padded with so many exceptions that it no longer guides action or says much of substance.",
+      "example": "I believe in free expression, except when the speech is offensive, politically costly, factually shaky, socially awkward, or risky to my side.",
+      "notes": "A principle can have limits, but if the exceptions swallow the rule, the apparent commitment becomes mostly decorative.",
       "caseStudies": [
-        "Some theists argue that their god is patient...except for whenever someone sins...at which point the offender is deemed worthy of eternal torture by a now wrathful god...and everyone regularly sins.",
-        "Many citizens argue that their country is a peaceful country...except whenever it is provoked. The definition of \"provoke\" is then liberally defined to encompass any trivial offense of another country."
+        "Public commitments to transparency, merit, or local control often vanish once they threaten a favored outcome.",
+        "Organizations sometimes advertise simple values statements that become practically meaningless once the long list of carve-outs is revealed."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Package-deal fallacy",
@@ -2393,11 +2401,14 @@
       "subCategory": "Faulty Generalization",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when an inanimate object is wrongly treated as if it has the characteristics of animate objects.",
-      "example": "Look at the flowers lean towards the sun. You're cruel to sit in their sunlight!",
-      "notes": "",
-      "caseStudies": [],
-      "editorialStatus": "cleaned-from-root"
+      "definition": "Occurs when human feelings, intentions, or judgments are projected onto impersonal things and then treated as if the projection explained reality.",
+      "example": "The market is punishing voters today because it is afraid of reform.",
+      "notes": "Personifying weather, markets, or algorithms can be a vivid metaphor, but it becomes fallacious when the metaphor is used as literal evidence.",
+      "caseStudies": [
+        "People often say the algorithm hates them, loves outrage, or wants to silence them when the actual explanation is a mix of optimization rules and incentives.",
+        "News coverage sometimes treats storms, markets, or viruses as if they were moral agents taking revenge, sending messages, or rewarding virtue."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Perfect solution fallacy",
@@ -2454,14 +2465,14 @@
       "subCategory": "Red Herring",
       "subSubCategory": "Straw man argument",
       "aliases": [],
-      "definition": "Twisting an opponent's analogy to mean something broader than intended.",
-      "example": "Tom said life is like a river in that those who spend the energy to maneuver their boats to the middle of the river will see more during their lifetime. This is ridiculous since he can not explained where the boats come from.",
-      "notes": "This is a type of straw-man fallacy.",
+      "definition": "Occurs when an analogy is deliberately stretched past its intended point so it can be mocked or refuted.",
+      "example": "Calling public-health reserves an insurance policy is silly, because insurance companies do not hire epidemiologists.",
+      "notes": "An analogy usually highlights one structural similarity, not a one-to-one mapping of every detail.",
       "caseStudies": [
-        "If person A claims their \"loving\" god will eternally torture the humans he created if they disobey him, and person B claims this is analogous to a \"loving\" human father eternally torturing his children if they disobey, for person A would unjustifiably pervert the analogy if they were to claim that the analogy does hold for irrelevant reasons such as \"the human father is not righteous\" or \"human fathers don't live eternally\".",
-        "If person A claims religious faith gives people joy that hides and prevents other possible joys in life in the same way that cocaine gives junkies joy at the expense of other possible joys in life, person B would unjustifiably pervert the analogy if they were to claim that the analogy does hold for irrelevant reasons such as \"cocaine is not legal\" or \"people with faith serve God.\""
+        "Infrastructure analogies about bridges, firewalls, or guardrails are often attacked by demanding that every literal feature transfer over exactly.",
+        "Debaters sometimes turn an opponent's limited comparison into a cartoon version so they can say the analogy obviously fails."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Piggy-back assumption",
@@ -2583,11 +2594,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Assuming that a low probability of false matches means an improbable false match will not be found.",
-      "example": "The probability of winning the lottery without cheating is a million to one, so the winner must have cheated.",
-      "notes": "",
-      "caseStudies": [],
-      "editorialStatus": "cleaned-from-root"
+      "definition": "Occurs when a low probability of a false match is confused with a low probability that a matched person is innocent.",
+      "example": "The facial-recognition system is 99.9% accurate, so the person it flagged must almost certainly be the suspect.",
+      "notes": "The missing piece is the base rate. Even a very accurate test can generate many false matches when the target condition is rare.",
+      "caseStudies": [
+        "Crime and security debates often overstate the force of DNA, face-recognition, or screening matches by ignoring how many non-matching people were also in the pool.",
+        "A similar mistake appears whenever a diagnostic tool's false-positive rate is treated as if it directly gave the chance that any one flagged person is guilty, sick, or dangerous."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Psychologist's fallacy",
@@ -2600,14 +2614,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when an observer presupposes the objectivity of his own perspective when analyzing a behavioral event.",
-      "example": "My buddies probably wish they were not married just as I do.",
-      "notes": "This fallacy is usually committed evermore infrequently as people age and explore the opinions and experiences of others outside their own community.",
+      "definition": "Occurs when someone projects their own motives, fears, or mental structure onto others and treats that projection as insight into those other people.",
+      "example": "I need religion to keep my impulses in check, so atheists must secretly want religion for the same reason.",
+      "notes": "Self-knowledge can be useful, but it is not a universal template. Other people may share some motives while differing sharply on others.",
       "caseStudies": [
-        "Many theists who feel protected from their own impulses within the stricture of their religion's moral code accuse those who live without a moral code of having nothing that would prevent them from rape or murder. They subjectively assume that others share the same impulses they possess.",
-        "Many life-long atheists presume that theists are less than truthful when those theists claim they have experienced god speaking to them."
+        "People often assume that because they would lie, panic, or seek status in a situation, anyone else in that situation must be driven by the same motive.",
+        "Political and religious debate is full of claims about what opponents 'really know' or 'really fear' that reflect the speaker's own psychology more than the target's."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Red herring",
@@ -2662,14 +2676,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Ascribes the cause of some phenomenon to some non-statistical factor, when natural and expected statistical fluctuations may account for the apparent phenomenon.",
-      "example": "Last year we had 12 car accidents on main street, double the previous year's figures! The frequency of accidents on Main Street fell to only 6 again after a speed camera was installed early this year. Therefore, the speed camera has improved road safety.",
-      "notes": "This is similar to the post hoc ergo propter hoc fallacy, but is based on the \"regression to the mean\" principle in which certain phenomena naturally fluctuate in volume or intensity. This statistical \"noise\" in the data is natural and expected.",
+      "definition": "Occurs when movement back toward a normal range after an extreme result is credited to some intervention that may have had little or nothing to do with it.",
+      "example": "The student had an unusually bad test, got lectured by the teacher, and then scored closer to normal on the next test, so the lecture must have caused the improvement.",
+      "notes": "After unusually high or low outcomes, partial reversion toward the average is often expected even without special causal forces.",
       "caseStudies": [
-        "In 1999 the Department of Education in Massachusetts gave it's school improvement goals, then subsequently tested those districts for any detectable improvement. Unsurprisingly, the bottom 50% of the schools made notable improvement. What was not so heavily emphasized was that the top 50% of their schools fell about the same degree as the bottom 50% gained. The apparent improvement of the bottom half and the apparent drop of the top half of any single phenomena is what is statistically expected and does not necessarily show the efficacy of any policy in effect at the time.",
-        "Two very tall parents will most likely have children who are taller than the average child. However, due to the natural regression to the mean, the children will also likely be shorter than the average height of their parents. To attribute the shortness of the child relative to their parents to anything other than a statistical expectation without accompanying evidence would be a regression fallacy."
+        "Sports commentators routinely over-credit halftime speeches or rituals for rebounds that would be unsurprising after an extreme first-half performance.",
+        "Investors and managers often mistake a natural bounce after a terrible quarter for proof that a new slogan, consultant, or memo fixed the underlying problem."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Reification",
@@ -2711,13 +2725,14 @@
         "retrodiction",
         "post-diction"
       ],
-      "definition": "Arguing that, because some event has occurred, its occurrence was inevitable and should have been clear from the \"obvious\" causes.",
-      "example": "From the time the young Wayne Gretzky first put on skates, it was obvious from his natural ability and determinism that he was destined for greatness.",
-      "notes": "The Wayne Gretzky example of \"retrodiction\" ignores all the forgotten children of parents who would now also be retrodicting had their children, who may have exhibited the same potential and determination as young Wayne, not failed to live up to the aspirations of their parents for some reason or other.",
+      "definition": "Occurs when, after an outcome happens, people claim it was inevitable or obvious all along even though the uncertainty beforehand was real.",
+      "example": "Once the startup collapsed, everyone said its failure had been obvious from day one.",
+      "notes": "An outcome can make a story feel inevitable in retrospect without ever having been inevitable in advance. Hindsight strips away the branching paths that were live at the time.",
       "caseStudies": [
-        "Subsequent to the stock market crash of 2008-2009, many financial pundits who had failed to offer prospective deterministic predictions prior to the crash began to make retrospective deterministic retrospection, implying that the dynamics that lead to the crash were obvious to them."
+        "After elections, market crashes, and celebrity scandals, commentators often speak as if the final result had been written into the evidence from the start rather than emerging from many uncertain factors.",
+        "This fallacy regularly follows close races and volatile technologies, where later narratives overstate how clear the winning path supposedly was."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Semantic pixelization",
@@ -2732,16 +2747,14 @@
       "aliases": [
         "reductive semantic resolution"
       ],
-      "definition": "Occurs when a term or concept with low semantic precision is chosen over an available more precise term or concept in a way that distorts the opponent's stance.",
-      "example": "You say you tend to believe you'll not die before you're 50. If you don't believe you'll die before you're 50, why did you buy a life insurance policy when you were 30?",
-      "notes": "In the example, the person making the argument is attempting to make his opponents belief binary so it can be more easily criticized. The belief most individuals have that they will live past 50 is not some binary and absolute belief, but rather is a degree of belief that emerges from an actuarial assessment of the probabilities. This fallacy is similar to the perfect standard fallacy.",
+      "definition": "Occurs when a fuzzy, graded, or probabilistic position is forced into unnaturally sharp categories so it becomes easier to attack.",
+      "example": "If you say the rollout is probably safe, are you claiming it is perfectly safe with zero chance of failure?",
+      "notes": "Many concepts such as belief, risk, identity, and influence work by degree. Treating them as all-or-nothing can falsify the speaker's actual position.",
       "caseStudies": [
-        "The media often make statements such as \"the murder rate increased by 50% last year\" instead of more clearly stating \"there were 3 murders committed this year, one more than last year.\" This unnecessarily diminishes the semantic resolution.",
-        "You'll often hear statement such as \"Just give me a straight answer! Do you or do you not enjoy taking drugs? Stop being evasive!\" To answer \"yes\" or \"no\" would be to unnecessarily remove semantic resolution since enjoyment is a concept of degrees, and \"drugs\" is a term of multiple meanings.",
-        "When reporting crimes, the media often unnecessarily reduces semantic resolution by referring to an 18-year-old perpetrator or victim as a \"man\" or \"woman\" while referring to a 17-year-old as a \"child\".",
-        "Official titles of company officials are often vague and meaningless due to an attempt to heighten the prestige of the official. You may find yourself speaking to a \"vice president\" who is only one of 200 vice presidents in a company of 250 staff. The resolution that would allow you to better assess the real authority of the individual has been intentionally removed."
+        "Election, public-health, and AI debates often force nuanced confidence claims into binary boxes such as certain or uncertain, safe or unsafe, real or fake.",
+        "Arguments about what someone believes frequently replace a spectrum of confidence with a yes-or-no label that the original speaker never endorsed."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Sentimental fallacy",
@@ -2864,15 +2877,14 @@
       "subCategory": "Faulty Generalization",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when a person uncritically assumes that every member within a certain porous category is like those that receive the most coverage in the media.",
-      "example": "All the Hispanics I've seen interviewed on television are not the least bit shy, so your neighbor Felipe surely can't be shy!",
-      "notes": "This is a type of faulty generalization. A more detailed treatment of faulty generalizations can be found on the supplementary Inductive Errors page.",
+      "definition": "Occurs when the most visible or most covered cases in a category are treated as if they represent the category as a whole.",
+      "example": "Every protester must be violent because the clips that reached my feed were violent.",
+      "notes": "Attention is selective. Media, algorithms, and memory amplify the dramatic cases, not the ordinary distribution.",
       "caseStudies": [
-        "Because of the salient drama surrounding abortion clinic bombings, it became easy to erroneously view all abortion opponents as gun-wielding lunatics.",
-        "Some could argue, based on television interviews, that Americans are not at all shy. This wold be a erroneous assumption since those to shy to be interviewed are never seen. This is the same type of error that leads to a selection bias in statistical studies.",
-        "While most Japanese who watch their pessimistic media assumed the 1,000 murders in 2010 in Japan was much higher than in what seemed to be a more peaceful past, the number was nearly 3 times lower than the murder rate in the 1950s, and remains one of the lowest per captita murder rates in the world."
+        "Crime clips, campus incidents, and viral protest footage often dominate public perception far beyond their representativeness, making whole groups look more extreme than they are.",
+        "People watching political interviews can easily conclude that a population is loud, combative, or theatrical without noticing that quieter members of the same population rarely become visible."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Square logic",
@@ -2946,14 +2958,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "An argument which tries to redefine one mutually exclusive option so that it encompasses the other option.",
-      "example": "You can't claim to be intelligent since there is someone always more intelligent than you are.",
-      "notes": "The consequence of this fallacy is that the term in question is made impotent by removing any contrasting concept.\nThis fallacy is similar to the continuum fallacy.",
+      "definition": "Occurs when one term in a meaningful contrast is redefined so broadly or so narrowly that its opposing term can no longer do any work.",
+      "example": "No one is really healthy, because there is always someone healthier.",
+      "notes": "Correlative terms such as healthy and unhealthy, free and restricted, informed and uninformed, or biased and impartial depend on contrasts that can be weakened without disappearing.",
       "caseStudies": [
-        "The god of some theists becomes so wrathful over a human's very 1st offense that he deems that offender worthy of eternal torment. This very same god is defined as \"loving\" and \"patient\" by these theists, and this definition is justified by suggesting that their wrathful god usually waits a while before sending the offender to eternal torment. The absurdity of this is clear when considering a neighbor who, after claiming to love his children, eternally beats them upon their first offense, but only after they've had dinner.",
-        "Some atheists claim that, to be a god-believer, you have to be \"deluded\". This definition of \"deluded\" would encompass most humans, rendering the word \"deluded\" much less meaningful as it did when it defined a much smaller set of humans."
+        "Critics sometimes argue that because everyone has some bias, calling a report biased says nothing, as if degrees of distortion and unfairness were impossible.",
+        "Debates about freedom and censorship often set the positive term to an impossible ideal so that ordinary, useful distinctions collapse."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Suppressed correlative (DUPLICATE)",
@@ -2967,11 +2979,14 @@
       "subCategory": "",
       "subSubCategory": "Correlative based fallacy",
       "aliases": [],
-      "definition": "Occurs when a correlative is redefined so that one alternative is made impossible.",
-      "example": "Everyone expresses some emotion every day, so to say I'm being emotional has no basis!",
-      "notes": "",
-      "caseStudies": [],
-      "editorialStatus": "cleaned-from-root"
+      "definition": "Occurs when a contrast term is emptied by redefining its counterpart so the distinction collapses.",
+      "example": "Everyone has some bias, so calling this report biased tells us nothing.",
+      "notes": "The fact that a property comes in degrees does not erase the usefulness of the distinction. This duplicate record is kept in sync so both site entries carry a modernized explanation.",
+      "caseStudies": [
+        "Public arguments often pretend that if no one is perfectly objective, then objectivity and bias can never be discussed in meaningful comparative terms.",
+        "A similar move appears when people say every restriction limits freedom somehow, therefore no restriction can be singled out as unusually coercive."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Teleological fallacy",
@@ -3028,14 +3043,14 @@
         "a dicto secundum quid ad dictum simpliciter",
         "proof by example"
       ],
-      "definition": "An argument of the following form. \"a\" has the negative quality \"x\" and belongs to the group \"A\". Therefore \"A\"s have \"x\".",
-      "example": "My neighbor is a banker, and is a jerk. Therefore, bankers are jerks.",
-      "notes": "A more detailed treatment of this fallacy can be found on the supplementary Inductive Errors page.",
+      "definition": "Occurs when a negative trait found in one member of a group is used to condemn the group as a whole.",
+      "example": "One rideshare driver ran a scam on me, so rideshare drivers are crooks.",
+      "notes": "A vivid case can motivate investigation, but it does not by itself justify a population-level conclusion.",
       "caseStudies": [
-        "If you break your leg the first time on the ski slopes, this is not evidence that skiing is any more dangerous than other sports. Actual statistical significance derived from a sufficiently large data set is necessary before such a conclusion can be made, in spite of your disinclination to get back on the slopes anytime soon.",
-        "When confronted with statistical evidence that a university degree improves your chances of securing a satisfying job, citing your unemployed Ph.D. neighbor does not invalidate the statistical evidence, and is a top-down condemnation fallacy."
+        "Isolated crime stories are often turned into sweeping claims about immigrants, professions, age groups, or political movements.",
+        "A single corporate scandal can quickly become a claim that the entire industry is rotten in exactly the same way."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Top-down faulty generalization",
@@ -3051,11 +3066,14 @@
       "aliases": [
         "a dicto simpliciter quid ad dictium secundum"
       ],
-      "definition": "Occurs when an exception to a generalization is wrongly called for.",
-      "example": "Since cutting someone with a knife is a crime, surgeons are criminals.",
-      "notes": "",
-      "caseStudies": [],
-      "editorialStatus": "cleaned-from-root"
+      "definition": "Occurs when a reasonable generalization is attacked by demanding that it hold without relevant scope conditions or exceptions.",
+      "example": "You say processed sugar is unhealthy, but endurance athletes use sugar during races, so your generalization collapses.",
+      "notes": "Generalizations are often default-pattern claims, not exceptionless universal laws.",
+      "caseStudies": [
+        "Public-health advice is often dismissed by pointing to unusual edge cases even when the advice was clearly aimed at ordinary conditions.",
+        "Safety rules and economic patterns are frequently challenged by exceptions that do not actually undermine the broader tendency being described."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Top-down justification",
@@ -3072,16 +3090,14 @@
         "a dicto secundum quid ad dictum simpliciter",
         "proof by example"
       ],
-      "definition": "An argument of the following form. \"a\" has the positive quality \"x\" and belongs to the group \"A\". Therefore \"A\"s have \"x\".",
-      "example": "My neighbor is a banker, and a really nice guy. Therefore, bankers are nice guys.",
-      "notes": "A more detailed treatment of this fallacy can be found on the supplementary Inductive Errors page.",
+      "definition": "Occurs when a positive trait found in one member of a group is used to justify a positive conclusion about the group as a whole.",
+      "example": "My landlord fixed things promptly, so landlords get an unfairly bad reputation.",
+      "notes": "A favorable anecdote can remind us not to overgeneralize negatively, but it cannot prove that the larger class is generally positive.",
       "caseStudies": [
-        "If a convenience store clerk successfully disarms a would-be robber, this is not evidence that confronting robbers is the best policy. A much larger sample of cases would be necessary before any inductive conclusion can be made.",
-        "If your friend wins the lottery after entering a number based on his birthday and weight, this is not evidence that combining a participant's birthday and weight will yield a number that is in any way connected to a winning lottery number.",
-        "When confronted with statistical data that smoking is harmful, claiming that your smoking 105-year-old uncle disproves the statistics is a top-down justification fallacy.",
-        "If, when shown statistical evidence that acquiring a university degree increases your chances of acquiring a satisfying carreer, you invoke successful college drop-out Bill Gates in an attempt to invalidate the statistics, you have committed the top-down justification fallacy."
+        "One transparent politician or one ethical corporation is often used to imply that the surrounding system is healthier than the broader evidence suggests.",
+        "People frequently infer that an institution is trustworthy because they personally encountered one helpful employee inside it."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Track-record reset",
