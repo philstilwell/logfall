@@ -15,6 +15,7 @@ const workbookOutPath = path.join(distRoot, "logfall-root-edition.xlsx");
 const siteUrl = "https://logfall.com/";
 const socialImagePath = "assets/logo.jpg";
 const buildDate = new Date().toISOString().split("T")[0];
+const copyrightNotice = "Copyright © Phil Stilwell";
 const cloudflareWebAnalyticsTag =
   `<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "798a30777a6d424f9c4055a02e7bde91"}'></script><!-- End Cloudflare Web Analytics -->`;
 
@@ -251,7 +252,8 @@ function pageShell({
       <main class="page-wrap">${content}</main>
       <footer class="footer">
         <div class="footer-inner">
-          Built from the ROOT tab source workbook, filtered to entries that existed on the legacy WordPress LogFall site.
+          <p class="footer-note">Built from the ROOT tab source workbook, filtered to entries that existed on the legacy WordPress LogFall site.</p>
+          <p class="footer-note">${escapeHtml(copyrightNotice)}</p>
         </div>
       </footer>
     </div>
@@ -748,6 +750,7 @@ async function buildWorkbook(records, categories) {
     ["Category count", categories.length],
     ["Inclusion rule", "Only fallacies that also existed on the legacy WordPress site are included."],
     ["Workbook use", "Use the Fallacies sheet for entry-by-entry editing and the Categories sheet for counts."],
+    ["Copyright", copyrightNotice],
   ];
   overview.getRange(`A1:B${overviewRows.length}`).values = overviewRows;
   overview.getRange("A:A").format.columnWidthPx = 220;

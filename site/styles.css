@@ -523,6 +523,14 @@ img {
   font-size: 0.95rem;
 }
 
+.footer-note {
+  margin: 0;
+}
+
+.footer-note + .footer-note {
+  margin-top: 6px;
+}
+
 .two-column {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
