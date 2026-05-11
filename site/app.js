@@ -71,40 +71,36 @@ for (const group of document.querySelectorAll("[data-tab-group]")) {
   activateTab(0);
 }
 
-for (const lab of document.querySelectorAll("[data-confidence-lab]")) {
-  const surface = lab.querySelector("[data-lab-surface]");
-  const evidence = lab.querySelector("[data-lab-evidence]");
-  const surfaceValue = lab.querySelector("[data-lab-surface-value]");
-  const evidenceValue = lab.querySelector("[data-lab-evidence-value]");
-  const gapFill = lab.querySelector("[data-lab-gap-fill]");
-  const gapOutput = lab.querySelector("[data-lab-gap-output]");
+for (const widget of document.querySelectorAll("[data-audit-widget]")) {
+  const buttons = Array.from(widget.querySelectorAll("[data-audit-button]"));
+  const panels = Array.from(widget.querySelectorAll("[data-audit-panel]"));
+  const progress = widget.querySelector("[data-audit-progress]");
 
-  if (!surface || !evidence || !surfaceValue || !evidenceValue || !gapFill || !gapOutput) {
+  if (!buttons.length || !panels.length || !progress) {
     continue;
   }
 
-  function updateLab() {
-    const surfaceScore = Number(surface.value || 0);
-    const evidenceScore = Number(evidence.value || 0);
-    const gap = surfaceScore - evidenceScore;
+  function activateAudit(index) {
+    buttons.forEach((button, buttonIndex) => {
+      const active = buttonIndex === index;
+      button.classList.toggle("active", active);
+      button.setAttribute("aria-selected", active ? "true" : "false");
+    });
 
-    surfaceValue.textContent = String(surfaceScore);
-    evidenceValue.textContent = String(evidenceScore);
-    gapFill.style.width = `${Math.abs(gap)}%`;
+    panels.forEach((panel, panelIndex) => {
+      const active = panelIndex === index;
+      panel.classList.toggle("active", active);
+      panel.hidden = !active;
+    });
 
-    if (gap > 0) {
-      gapOutput.textContent = `It feels ${gap} points stronger than the evidence supports. Slow down and ask what is making it feel persuasive.`;
-      gapFill.style.background = "linear-gradient(90deg, #e63b34, #14a8d7)";
-    } else if (gap < 0) {
-      gapOutput.textContent = `The evidence is ${Math.abs(gap)} points stronger than the feeling it creates. The case may be better than it first seems.`;
-      gapFill.style.background = "linear-gradient(90deg, #14a8d7, #e63b34)";
-    } else {
-      gapOutput.textContent = "How it feels and what the evidence supports are aligned. Now check whether that still holds up under closer inspection.";
-      gapFill.style.background = "linear-gradient(90deg, #14a8d7, #e63b34)";
-    }
+    const denominator = Math.max(buttons.length - 1, 1);
+    const percent = (index / denominator) * 100;
+    progress.style.width = `${percent}%`;
   }
 
-  surface.addEventListener("input", updateLab);
-  evidence.addEventListener("input", updateLab);
-  updateLab();
+  buttons.forEach((button, index) => {
+    button.addEventListener("click", () => activateAudit(index));
+  });
+
+  activateAudit(0);
 }

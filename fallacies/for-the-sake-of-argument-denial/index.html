@@ -216,42 +216,112 @@
         data-tab-panel
       >
         <p class="lab-panel-kicker">Try it</p>
-        
         <div class="two-column compact-columns">
-          <div class="note-panel">
-            <h4>How the tool works</h4>
-            <p class="muted">Category-boundary sorter: use the row&#39;s example as the initial scenario, then force the user to separate evidence, inference, emotion, wording, and missing alternatives.</p>
-          </div>
-          <div class="note-panel">
-            <h4>What you do</h4>
-            <p class="muted">Sort cases into categories, test edge cases, and see whether the proposed boundary remains stable.</p>
-          </div>
-          <div class="note-panel">
-            <h4>What the tool shows</h4>
-            <p class="muted">The app exposes hidden category choices and shows how different but defensible classifications alter the conclusion.</p>
-          </div>
-          <div class="note-panel lab-simulator" data-confidence-lab>
-            <h4>Feeling vs evidence check</h4>
-            <p class="muted">Compare how convincing the example feels with how much the evidence really supports it.</p>
-            <div class="lab-slider-grid">
-              <label class="slider-field">
-                <span>How convincing it feels</span>
-                <input type="range" min="0" max="100" value="70" data-lab-surface />
-                <output data-lab-surface-value>70</output>
-              </label>
-              <label class="slider-field">
-                <span>How much evidence supports it</span>
-                <input type="range" min="0" max="100" value="40" data-lab-evidence />
-                <output data-lab-evidence-value>40</output>
-              </label>
-            </div>
-            <div class="lab-gap-track" aria-hidden="true">
-              <div class="lab-gap-fill" data-lab-gap-fill></div>
-            </div>
-            <p class="lab-gap-output" data-lab-gap-output></p>
-            <p class="muted lab-example"><strong>Current example:</strong> You say that even if the policy achieved its stated goal it would still be too costly, but that objection fails because you do not really believe the policy would work.</p>
-          </div>
-        </div>
+    <div class="note-panel">
+      <h4>What you are tracing</h4>
+      <p class="muted">Category-boundary sorter: use the row&#39;s example as the initial scenario, then force the user to separate evidence, inference, emotion, wording, and missing alternatives.</p>
+    </div>
+    <div class="note-panel">
+      <h4>Where the slip happens</h4>
+      <p class="muted">A hypothetical premise is rejected simply because the speaker does not actually believe it.</p>
+    </div>
+    <div class="note-panel">
+      <h4>How to use it</h4>
+      <p class="muted">Sort cases into categories, test edge cases, and see whether the proposed boundary remains stable.</p>
+    </div>
+    <div class="note-panel">
+      <h4>What to ask next</h4>
+      <p class="muted">Are the categories being used carefully, or are unlike things being treated as alike?</p>
+    </div>
+  </div><div class="audit-widget" data-audit-widget>
+    <div class="audit-header">
+      <h4>Category and wording walkthrough</h4>
+      <p class="muted">Step through the example to see which distinction, definition, or frame is being blurred and why that matters to the conclusion.</p>
+    </div>
+    <div class="audit-step-list" role="tablist" aria-label="For the sake of argument denial reasoning walkthrough">
+      <button
+        class="audit-step-button active"
+        type="button"
+        role="tab"
+        id="audit-for-the-sake-of-argument-denial-button-0"
+        aria-controls="audit-for-the-sake-of-argument-denial-panel-0"
+        aria-selected="true"
+        data-audit-button
+      ><span class="audit-step-index">1</span><span class="audit-step-label">Frame</span></button><button
+        class="audit-step-button"
+        type="button"
+        role="tab"
+        id="audit-for-the-sake-of-argument-denial-button-1"
+        aria-controls="audit-for-the-sake-of-argument-denial-panel-1"
+        aria-selected="false"
+        data-audit-button
+      ><span class="audit-step-index">2</span><span class="audit-step-label">Blur</span></button><button
+        class="audit-step-button"
+        type="button"
+        role="tab"
+        id="audit-for-the-sake-of-argument-denial-button-2"
+        aria-controls="audit-for-the-sake-of-argument-denial-panel-2"
+        aria-selected="false"
+        data-audit-button
+      ><span class="audit-step-index">3</span><span class="audit-step-label">Confusion</span></button><button
+        class="audit-step-button"
+        type="button"
+        role="tab"
+        id="audit-for-the-sake-of-argument-denial-button-3"
+        aria-controls="audit-for-the-sake-of-argument-denial-panel-3"
+        aria-selected="false"
+        data-audit-button
+      ><span class="audit-step-index">4</span><span class="audit-step-label">Repair</span></button>
+    </div>
+    <div class="audit-progress-track" aria-hidden="true">
+      <div class="audit-progress-fill" data-audit-progress></div>
+    </div>
+    <div class="audit-panel-wrap">
+      <section
+        class="audit-panel active"
+        id="audit-for-the-sake-of-argument-denial-panel-0"
+        role="tabpanel"
+        aria-labelledby="audit-for-the-sake-of-argument-denial-button-0"
+        
+        data-audit-panel
+      >
+        <p class="audit-panel-title">How the claim is initially framed</p>
+        <p class="audit-panel-body">The reasoning is first presented like this: You say that even if the policy achieved its stated goal it would still be too costly, but that objection fails because you do not really believe the policy would work.</p>
+      </section><section
+        class="audit-panel"
+        id="audit-for-the-sake-of-argument-denial-panel-1"
+        role="tabpanel"
+        aria-labelledby="audit-for-the-sake-of-argument-denial-button-1"
+        hidden
+        data-audit-panel
+      >
+        <p class="audit-panel-title">Where the categories or wording slip</p>
+        <p class="audit-panel-body">The trouble begins when a hypothetical premise is rejected simply because the speaker does not actually believe it.</p>
+      </section><section
+        class="audit-panel"
+        id="audit-for-the-sake-of-argument-denial-panel-2"
+        role="tabpanel"
+        aria-labelledby="audit-for-the-sake-of-argument-denial-button-2"
+        hidden
+        data-audit-panel
+      >
+        <p class="audit-panel-title">What becomes unclear or unstable</p>
+        <p class="audit-panel-body">Reasoning from an assumption to test its implications is not the same as endorsing the assumption.</p>
+      </section><section
+        class="audit-panel"
+        id="audit-for-the-sake-of-argument-denial-panel-3"
+        role="tabpanel"
+        aria-labelledby="audit-for-the-sake-of-argument-denial-button-3"
+        hidden
+        data-audit-panel
+      >
+        <p class="audit-panel-title">How to sharpen the distinction</p>
+        <p class="audit-panel-body">Are the categories being used carefully, or are unlike things being treated as alike?</p>
+      </section>
+    </div>
+    <p class="muted audit-feedback"><strong>What this tool highlights:</strong> The app exposes hidden category choices and shows how different but defensible classifications alter the conclusion.</p>
+    <p class="muted lab-example"><strong>Current example:</strong> You say that even if the policy achieved its stated goal it would still be too costly, but that objection fails because you do not really believe the policy would work.</p>
+  </div>
       </section>
   </div>
     </article>

@@ -161,6 +161,286 @@ function renderTabGroup(tabKey, items) {
   </div>`;
 }
 
+function ensureSentence(value = "") {
+  const trimmed = String(value).trim();
+  if (!trimmed) return "";
+  return /[.?!]["'”’]?$/u.test(trimmed) ? trimmed : `${trimmed}.`;
+}
+
+function lowerFirst(value = "") {
+  if (!value) return "";
+  return value.charAt(0).toLowerCase() + value.slice(1);
+}
+
+function toolModeForCategory(category = "") {
+  if (["Causal"].includes(category)) return "causal";
+  if (["Evidential", "Epistemic"].includes(category)) return "evidential";
+  if (["Tactical", "Emotional"].includes(category)) return "tactical";
+  if (["Conceptual", "Linguistic", "Perceptual", "Perspectival"].includes(category)) return "conceptual";
+  if (["Formal", "Mathematical"].includes(category)) return "structural";
+  return "default";
+}
+
+function buildReasoningAudit(record, prompt, primaryProfile) {
+  const category = record.categories[0] || "";
+  const mode = toolModeForCategory(category);
+  const baseExample = ensureSentence(record.example || record.definition);
+  const problem = ensureSentence(record.mainReasoningProblem || record.definition);
+  const notes = ensureSentence(record.notes || record.feedbackLogic || record.rationalityDanger || "");
+  const repairPrompt = ensureSentence(prompt || record.repairPrompts || "Ask what extra step the conclusion needs before it is earned.");
+  const tabKey = `audit-${record.slug}`;
+
+  const presets = {
+    causal: {
+      title: "Causal jump walkthrough",
+      intro: "Step through where the example moves from a pattern or event to a stronger causal claim than the evidence can bear.",
+      steps: [
+        {
+          label: "Pattern",
+          title: "What is actually observed",
+          body: `The example starts with this observed pattern or event: ${baseExample}`,
+        },
+        {
+          label: "Jump",
+          title: "Where the causal leap enters",
+          body: `The reasoning goes wrong when ${lowerFirst(problem)}`,
+        },
+        {
+          label: "Missing test",
+          title: "What still has to be checked",
+          body: notes || "A stronger causal claim still has to rule out coincidence, reverse causation, or a third factor.",
+        },
+        {
+          label: "Repair",
+          title: "How to challenge the move",
+          body: repairPrompt,
+        },
+      ],
+    },
+    evidential: {
+      title: "Evidence gap walkthrough",
+      intro: "Use the example to see exactly where the conclusion outruns what the evidence, sampling, or confidence level can support.",
+      steps: [
+        {
+          label: "Shown",
+          title: "What the example actually gives you",
+          body: `The page begins with this evidence claim or data point: ${baseExample}`,
+        },
+        {
+          label: "Overreach",
+          title: "Where the conclusion goes too far",
+          body: `The overreach happens when ${lowerFirst(problem)}`,
+        },
+        {
+          label: "Gap",
+          title: "What support is still missing",
+          body: notes || "The argument still owes you stronger support, a fairer sample, or a better calibration of confidence.",
+        },
+        {
+          label: "Repair",
+          title: "What to ask next",
+          body: repairPrompt,
+        },
+      ],
+    },
+    tactical: {
+      title: "Debate-move walkthrough",
+      intro: "Follow the example to see how attention gets redirected away from the real issue and toward pressure, distraction, or emotional force.",
+      steps: [
+        {
+          label: "Surface",
+          title: "What the exchange looks like on the surface",
+          body: `At first glance, the move sounds like this: ${baseExample}`,
+        },
+        {
+          label: "Pressure",
+          title: "Where the persuasive shove happens",
+          body: `The maneuver enters when ${lowerFirst(problem)}`,
+        },
+        {
+          label: "Displaced issue",
+          title: "What gets pushed out of focus",
+          body: notes || "The real issue is displaced by pressure, identity cues, or a strategically chosen detour.",
+        },
+        {
+          label: "Reset",
+          title: "How to bring the discussion back",
+          body: repairPrompt,
+        },
+      ],
+    },
+    conceptual: {
+      title: "Category and wording walkthrough",
+      intro: "Step through the example to see which distinction, definition, or frame is being blurred and why that matters to the conclusion.",
+      steps: [
+        {
+          label: "Frame",
+          title: "How the claim is initially framed",
+          body: `The reasoning is first presented like this: ${baseExample}`,
+        },
+        {
+          label: "Blur",
+          title: "Where the categories or wording slip",
+          body: `The trouble begins when ${lowerFirst(problem)}`,
+        },
+        {
+          label: "Confusion",
+          title: "What becomes unclear or unstable",
+          body: notes || "An important boundary, meaning, or point of view is getting blurred before the conclusion is drawn.",
+        },
+        {
+          label: "Repair",
+          title: "How to sharpen the distinction",
+          body: repairPrompt,
+        },
+      ],
+    },
+    structural: {
+      title: "Structure check walkthrough",
+      intro: "Use the example to track the setup, the rule being assumed, and the exact place where the structure or numbers stop supporting the conclusion.",
+      steps: [
+        {
+          label: "Setup",
+          title: "How the argument is set up",
+          body: `The setup looks like this: ${baseExample}`,
+        },
+        {
+          label: "Rule",
+          title: "What rule the reasoning is relying on",
+          body: `The argument depends on the idea that ${lowerFirst(problem)}`,
+        },
+        {
+          label: "Break",
+          title: "Where the structure fails",
+          body: notes || "The structure, probability move, or quantitative assumption is not enough to justify the conclusion.",
+        },
+        {
+          label: "Repair",
+          title: "How to test the structure",
+          body: repairPrompt,
+        },
+      ],
+    },
+    default: {
+      title: "Reasoning path walkthrough",
+      intro: "Walk through the example step by step and identify the exact point where the conclusion starts asking for more than the reasoning has earned.",
+      steps: [
+        {
+          label: "Start",
+          title: "What the example begins with",
+          body: `The page starts with this move: ${baseExample}`,
+        },
+        {
+          label: "Leap",
+          title: "Where the reasoning slips",
+          body: `The problem appears when ${lowerFirst(problem)}`,
+        },
+        {
+          label: "Cost",
+          title: "What that slip hides or distorts",
+          body: notes || "The conclusion is being made easier to accept before the missing reasoning work has been done.",
+        },
+        {
+          label: "Repair",
+          title: "What to ask instead",
+          body: repairPrompt,
+        },
+      ],
+    },
+  };
+
+  const preset = presets[mode];
+  const buttons = preset.steps
+    .map(
+      (step, index) => `<button
+        class="audit-step-button${index === 0 ? " active" : ""}"
+        type="button"
+        role="tab"
+        id="${tabKey}-button-${index}"
+        aria-controls="${tabKey}-panel-${index}"
+        aria-selected="${index === 0 ? "true" : "false"}"
+        data-audit-button
+      ><span class="audit-step-index">${index + 1}</span><span class="audit-step-label">${escapeHtml(step.label)}</span></button>`,
+    )
+    .join("");
+
+  const panels = preset.steps
+    .map(
+      (step, index) => `<section
+        class="audit-panel${index === 0 ? " active" : ""}"
+        id="${tabKey}-panel-${index}"
+        role="tabpanel"
+        aria-labelledby="${tabKey}-button-${index}"
+        ${index === 0 ? "" : "hidden"}
+        data-audit-panel
+      >
+        <p class="audit-panel-title">${escapeHtml(step.title)}</p>
+        <p class="audit-panel-body">${escapeHtml(step.body)}</p>
+      </section>`,
+    )
+    .join("");
+
+  return `<div class="audit-widget" data-audit-widget>
+    <div class="audit-header">
+      <h4>${escapeHtml(preset.title)}</h4>
+      <p class="muted">${escapeHtml(preset.intro)}</p>
+    </div>
+    <div class="audit-step-list" role="tablist" aria-label="${escapeHtml(record.name)} reasoning walkthrough">
+      ${buttons}
+    </div>
+    <div class="audit-progress-track" aria-hidden="true">
+      <div class="audit-progress-fill" data-audit-progress></div>
+    </div>
+    <div class="audit-panel-wrap">
+      ${panels}
+    </div>
+    ${
+      record.feedbackLogic || primaryProfile.feedback
+        ? `<p class="muted audit-feedback"><strong>What this tool highlights:</strong> ${escapeHtml(record.feedbackLogic || primaryProfile.feedback || "")}</p>`
+        : ""
+    }
+    <p class="muted lab-example"><strong>Current example:</strong> ${escapeHtml(record.example)}</p>
+  </div>`;
+}
+
+function buildAuditSupportPanels(record, prompt, primaryProfile) {
+  const primaryCategory = record.categories[0] || "";
+  const mode = toolModeForCategory(primaryCategory);
+  const promptText = ensureSentence(prompt || record.repairPrompts || "Ask what extra step the conclusion still needs before it is earned.");
+  const problem = ensureSentence(record.mainReasoningProblem || record.definition);
+  const mechanic = ensureSentence(record.interactiveMechanic || primaryProfile.mechanic || "");
+  const feedback = ensureSentence(record.feedbackLogic || primaryProfile.feedback || record.notes || "");
+  const userAction = ensureSentence(record.userAction || primaryProfile.user_action || "");
+
+  const focusCopy = {
+    causal: "This walkthrough traces how the example moves from an observed pattern to a stronger causal claim than the evidence has actually established.",
+    evidential: "This walkthrough traces how the example moves from limited support to a broader conclusion or a higher level of confidence than the evidence earns.",
+    tactical: "This walkthrough traces how the example redirects attention away from the real issue and toward pressure, emotion, or a strategic detour.",
+    conceptual: "This walkthrough traces where the example blurs a distinction, frame, or category boundary before drawing its conclusion.",
+    structural: "This walkthrough traces where the example relies on a structure, rule, or numerical move that does not actually carry the conclusion.",
+    default: "This walkthrough traces the point where the example starts asking for more than the reasoning has earned.",
+  }[mode];
+
+  return `<div class="two-column compact-columns">
+    <div class="note-panel">
+      <h4>What you are tracing</h4>
+      <p class="muted">${escapeHtml(mechanic || focusCopy)}</p>
+    </div>
+    <div class="note-panel">
+      <h4>Where the slip happens</h4>
+      <p class="muted">${escapeHtml(problem || feedback || "The tool isolates the exact place where the conclusion outruns the reasoning.")}</p>
+    </div>
+    <div class="note-panel">
+      <h4>How to use it</h4>
+      <p class="muted">${escapeHtml(userAction || "Move through the stages in order, compare each step with the example, and stop when you see the conclusion add more than the earlier step justifies.")}</p>
+    </div>
+    <div class="note-panel">
+      <h4>What to ask next</h4>
+      <p class="muted">${escapeHtml(promptText)}</p>
+    </div>
+  </div>`;
+}
+
 function normalizeRecordCategories(record) {
   const categories = [];
   const seen = new Set();
@@ -510,55 +790,13 @@ function renderRationalityLab(record, categoryProfiles) {
     tabs.push({
       id: `${tabKey}-tool`,
       label: "Try it",
-      content: `
-        <div class="two-column compact-columns">
-          ${
-            record.interactiveMechanic || primaryProfile.mechanic
-              ? `<div class="note-panel">
-            <h4>How the tool works</h4>
-            <p class="muted">${escapeHtml(record.interactiveMechanic || primaryProfile.mechanic || "")}</p>
-          </div>`
-              : ""
-          }
-          ${
-            record.userAction || primaryProfile.user_action
-              ? `<div class="note-panel">
-            <h4>What you do</h4>
-            <p class="muted">${escapeHtml(record.userAction || primaryProfile.user_action || "")}</p>
-          </div>`
-              : ""
-          }
-          ${
-            record.feedbackLogic || primaryProfile.feedback
-              ? `<div class="note-panel">
-            <h4>What the tool shows</h4>
-            <p class="muted">${escapeHtml(record.feedbackLogic || primaryProfile.feedback || "")}</p>
-          </div>`
-              : ""
-          }
-          <div class="note-panel lab-simulator" data-confidence-lab>
-            <h4>Feeling vs evidence check</h4>
-            <p class="muted">Compare how convincing the example feels with how much the evidence really supports it.</p>
-            <div class="lab-slider-grid">
-              <label class="slider-field">
-                <span>How convincing it feels</span>
-                <input type="range" min="0" max="100" value="70" data-lab-surface />
-                <output data-lab-surface-value>70</output>
-              </label>
-              <label class="slider-field">
-                <span>How much evidence supports it</span>
-                <input type="range" min="0" max="100" value="40" data-lab-evidence />
-                <output data-lab-evidence-value>40</output>
-              </label>
-            </div>
-            <div class="lab-gap-track" aria-hidden="true">
-              <div class="lab-gap-fill" data-lab-gap-fill></div>
-            </div>
-            <p class="lab-gap-output" data-lab-gap-output></p>
-            <p class="muted lab-example"><strong>Current example:</strong> ${escapeHtml(record.example)}</p>
-          </div>
-        </div>`,
+      content: buildAuditSupportPanels(
+        record,
+        diagnosticPrompts[primaryCategory] || diagnosticPrompts[record.categories[1]] || "",
+        primaryProfile,
+      ),
     });
+    tabs[tabs.length - 1].content += buildReasoningAudit(record, diagnosticPrompts[primaryCategory] || diagnosticPrompts[record.categories[1]] || "", primaryProfile);
   }
 
   if (!tabs.length) {

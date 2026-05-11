@@ -216,42 +216,112 @@
         data-tab-panel
       >
         <p class="lab-panel-kicker">Try it</p>
-        
         <div class="two-column compact-columns">
-          <div class="note-panel">
-            <h4>How the tool works</h4>
-            <p class="muted">Premise toggler / counterexample machine: use the row&#39;s example as the initial scenario, then force the user to separate evidence, inference, emotion, wording, and missing alternatives.</p>
-          </div>
-          <div class="note-panel">
-            <h4>What you do</h4>
-            <p class="muted">Toggle premises as true or false, then try to make the conclusion false while the premises stay true.</p>
-          </div>
-          <div class="note-panel">
-            <h4>What the tool shows</h4>
-            <p class="muted">If a possible world keeps the premises true while the conclusion fails, the app highlights the invalid step.</p>
-          </div>
-          <div class="note-panel lab-simulator" data-confidence-lab>
-            <h4>Feeling vs evidence check</h4>
-            <p class="muted">Compare how convincing the example feels with how much the evidence really supports it.</p>
-            <div class="lab-slider-grid">
-              <label class="slider-field">
-                <span>How convincing it feels</span>
-                <input type="range" min="0" max="100" value="70" data-lab-surface />
-                <output data-lab-surface-value>70</output>
-              </label>
-              <label class="slider-field">
-                <span>How much evidence supports it</span>
-                <input type="range" min="0" max="100" value="40" data-lab-evidence />
-                <output data-lab-evidence-value>40</output>
-              </label>
-            </div>
-            <div class="lab-gap-track" aria-hidden="true">
-              <div class="lab-gap-fill" data-lab-gap-fill></div>
-            </div>
-            <p class="lab-gap-output" data-lab-gap-output></p>
-            <p class="muted lab-example"><strong>Current example:</strong> All conspiracy theorists distrust institutions. I distrust institutions. Therefore I am a conspiracy theorist.</p>
-          </div>
-        </div>
+    <div class="note-panel">
+      <h4>What you are tracing</h4>
+      <p class="muted">Premise toggler / counterexample machine: use the row&#39;s example as the initial scenario, then force the user to separate evidence, inference, emotion, wording, and missing alternatives.</p>
+    </div>
+    <div class="note-panel">
+      <h4>Where the slip happens</h4>
+      <p class="muted">Two things are linked to the same broader category and the argument wrongly infers that one of them must therefore be the other.</p>
+    </div>
+    <div class="note-panel">
+      <h4>How to use it</h4>
+      <p class="muted">Toggle premises as true or false, then try to make the conclusion false while the premises stay true.</p>
+    </div>
+    <div class="note-panel">
+      <h4>What to ask next</h4>
+      <p class="muted">If the premises were true, would the conclusion still fail to follow?</p>
+    </div>
+  </div><div class="audit-widget" data-audit-widget>
+    <div class="audit-header">
+      <h4>Structure check walkthrough</h4>
+      <p class="muted">Use the example to track the setup, the rule being assumed, and the exact place where the structure or numbers stop supporting the conclusion.</p>
+    </div>
+    <div class="audit-step-list" role="tablist" aria-label="Undistributed middle reasoning walkthrough">
+      <button
+        class="audit-step-button active"
+        type="button"
+        role="tab"
+        id="audit-undistributed-middle-button-0"
+        aria-controls="audit-undistributed-middle-panel-0"
+        aria-selected="true"
+        data-audit-button
+      ><span class="audit-step-index">1</span><span class="audit-step-label">Setup</span></button><button
+        class="audit-step-button"
+        type="button"
+        role="tab"
+        id="audit-undistributed-middle-button-1"
+        aria-controls="audit-undistributed-middle-panel-1"
+        aria-selected="false"
+        data-audit-button
+      ><span class="audit-step-index">2</span><span class="audit-step-label">Rule</span></button><button
+        class="audit-step-button"
+        type="button"
+        role="tab"
+        id="audit-undistributed-middle-button-2"
+        aria-controls="audit-undistributed-middle-panel-2"
+        aria-selected="false"
+        data-audit-button
+      ><span class="audit-step-index">3</span><span class="audit-step-label">Break</span></button><button
+        class="audit-step-button"
+        type="button"
+        role="tab"
+        id="audit-undistributed-middle-button-3"
+        aria-controls="audit-undistributed-middle-panel-3"
+        aria-selected="false"
+        data-audit-button
+      ><span class="audit-step-index">4</span><span class="audit-step-label">Repair</span></button>
+    </div>
+    <div class="audit-progress-track" aria-hidden="true">
+      <div class="audit-progress-fill" data-audit-progress></div>
+    </div>
+    <div class="audit-panel-wrap">
+      <section
+        class="audit-panel active"
+        id="audit-undistributed-middle-panel-0"
+        role="tabpanel"
+        aria-labelledby="audit-undistributed-middle-button-0"
+        
+        data-audit-panel
+      >
+        <p class="audit-panel-title">How the argument is set up</p>
+        <p class="audit-panel-body">The setup looks like this: All conspiracy theorists distrust institutions. I distrust institutions. Therefore I am a conspiracy theorist.</p>
+      </section><section
+        class="audit-panel"
+        id="audit-undistributed-middle-panel-1"
+        role="tabpanel"
+        aria-labelledby="audit-undistributed-middle-button-1"
+        hidden
+        data-audit-panel
+      >
+        <p class="audit-panel-title">What rule the reasoning is relying on</p>
+        <p class="audit-panel-body">The argument depends on the idea that two things are linked to the same broader category and the argument wrongly infers that one of them must therefore be the other.</p>
+      </section><section
+        class="audit-panel"
+        id="audit-undistributed-middle-panel-2"
+        role="tabpanel"
+        aria-labelledby="audit-undistributed-middle-button-2"
+        hidden
+        data-audit-panel
+      >
+        <p class="audit-panel-title">Where the structure fails</p>
+        <p class="audit-panel-body">Sharing a feature does not establish identity or class inclusion unless the shared feature actually covers the whole relevant group. A middle term can connect without unifying.</p>
+      </section><section
+        class="audit-panel"
+        id="audit-undistributed-middle-panel-3"
+        role="tabpanel"
+        aria-labelledby="audit-undistributed-middle-button-3"
+        hidden
+        data-audit-panel
+      >
+        <p class="audit-panel-title">How to test the structure</p>
+        <p class="audit-panel-body">If the premises were true, would the conclusion still fail to follow?</p>
+      </section>
+    </div>
+    <p class="muted audit-feedback"><strong>What this tool highlights:</strong> If a possible world keeps the premises true while the conclusion fails, the app highlights the invalid step.</p>
+    <p class="muted lab-example"><strong>Current example:</strong> All conspiracy theorists distrust institutions. I distrust institutions. Therefore I am a conspiracy theorist.</p>
+  </div>
       </section>
   </div>
     </article>

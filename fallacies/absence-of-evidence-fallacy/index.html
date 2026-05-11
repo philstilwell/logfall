@@ -216,42 +216,112 @@
         data-tab-panel
       >
         <p class="lab-panel-kicker">Try it</p>
-        
         <div class="two-column compact-columns">
-          <div class="note-panel">
-            <h4>How the tool works</h4>
-            <p class="muted">Evidence-weight meter: use the row&#39;s example as the initial scenario, then force the user to separate evidence, inference, emotion, wording, and missing alternatives.</p>
-          </div>
-          <div class="note-panel">
-            <h4>What you do</h4>
-            <p class="muted">Assign weight to each item of evidence, then compare the resulting confidence to what the evidence actually supports.</p>
-          </div>
-          <div class="note-panel">
-            <h4>What the tool shows</h4>
-            <p class="muted">The app displays the gap between warranted confidence and the confidence created by the fallacious move.</p>
-          </div>
-          <div class="note-panel lab-simulator" data-confidence-lab>
-            <h4>Feeling vs evidence check</h4>
-            <p class="muted">Compare how convincing the example feels with how much the evidence really supports it.</p>
-            <div class="lab-slider-grid">
-              <label class="slider-field">
-                <span>How convincing it feels</span>
-                <input type="range" min="0" max="100" value="70" data-lab-surface />
-                <output data-lab-surface-value>70</output>
-              </label>
-              <label class="slider-field">
-                <span>How much evidence supports it</span>
-                <input type="range" min="0" max="100" value="40" data-lab-evidence />
-                <output data-lab-evidence-value>40</output>
-              </label>
-            </div>
-            <div class="lab-gap-track" aria-hidden="true">
-              <div class="lab-gap-fill" data-lab-gap-fill></div>
-            </div>
-            <p class="lab-gap-output" data-lab-gap-output></p>
-            <p class="muted lab-example"><strong>Current example:</strong> Multiple audits found no trace of the vote-flipping scheme, but that proves nothing; if the conspiracy were real, of course it would leave no evidence.</p>
-          </div>
-        </div>
+    <div class="note-panel">
+      <h4>What you are tracing</h4>
+      <p class="muted">Evidence-weight meter: use the row&#39;s example as the initial scenario, then force the user to separate evidence, inference, emotion, wording, and missing alternatives.</p>
+    </div>
+    <div class="note-panel">
+      <h4>Where the slip happens</h4>
+      <p class="muted">Someone treats a failure to find expected evidence as if it counted for nothing against the claim, even in a context where the claim should leave detectable traces.</p>
+    </div>
+    <div class="note-panel">
+      <h4>How to use it</h4>
+      <p class="muted">Assign weight to each item of evidence, then compare the resulting confidence to what the evidence actually supports.</p>
+    </div>
+    <div class="note-panel">
+      <h4>What to ask next</h4>
+      <p class="muted">What evidence is missing, selected, or overstretched here?</p>
+    </div>
+  </div><div class="audit-widget" data-audit-widget>
+    <div class="audit-header">
+      <h4>Evidence gap walkthrough</h4>
+      <p class="muted">Use the example to see exactly where the conclusion outruns what the evidence, sampling, or confidence level can support.</p>
+    </div>
+    <div class="audit-step-list" role="tablist" aria-label="Absence of evidence fallacy reasoning walkthrough">
+      <button
+        class="audit-step-button active"
+        type="button"
+        role="tab"
+        id="audit-absence-of-evidence-fallacy-button-0"
+        aria-controls="audit-absence-of-evidence-fallacy-panel-0"
+        aria-selected="true"
+        data-audit-button
+      ><span class="audit-step-index">1</span><span class="audit-step-label">Shown</span></button><button
+        class="audit-step-button"
+        type="button"
+        role="tab"
+        id="audit-absence-of-evidence-fallacy-button-1"
+        aria-controls="audit-absence-of-evidence-fallacy-panel-1"
+        aria-selected="false"
+        data-audit-button
+      ><span class="audit-step-index">2</span><span class="audit-step-label">Overreach</span></button><button
+        class="audit-step-button"
+        type="button"
+        role="tab"
+        id="audit-absence-of-evidence-fallacy-button-2"
+        aria-controls="audit-absence-of-evidence-fallacy-panel-2"
+        aria-selected="false"
+        data-audit-button
+      ><span class="audit-step-index">3</span><span class="audit-step-label">Gap</span></button><button
+        class="audit-step-button"
+        type="button"
+        role="tab"
+        id="audit-absence-of-evidence-fallacy-button-3"
+        aria-controls="audit-absence-of-evidence-fallacy-panel-3"
+        aria-selected="false"
+        data-audit-button
+      ><span class="audit-step-index">4</span><span class="audit-step-label">Repair</span></button>
+    </div>
+    <div class="audit-progress-track" aria-hidden="true">
+      <div class="audit-progress-fill" data-audit-progress></div>
+    </div>
+    <div class="audit-panel-wrap">
+      <section
+        class="audit-panel active"
+        id="audit-absence-of-evidence-fallacy-panel-0"
+        role="tabpanel"
+        aria-labelledby="audit-absence-of-evidence-fallacy-button-0"
+        
+        data-audit-panel
+      >
+        <p class="audit-panel-title">What the example actually gives you</p>
+        <p class="audit-panel-body">The page begins with this evidence claim or data point: Multiple audits found no trace of the vote-flipping scheme, but that proves nothing; if the conspiracy were real, of course it would leave no evidence.</p>
+      </section><section
+        class="audit-panel"
+        id="audit-absence-of-evidence-fallacy-panel-1"
+        role="tabpanel"
+        aria-labelledby="audit-absence-of-evidence-fallacy-button-1"
+        hidden
+        data-audit-panel
+      >
+        <p class="audit-panel-title">Where the conclusion goes too far</p>
+        <p class="audit-panel-body">The overreach happens when someone treats a failure to find expected evidence as if it counted for nothing against the claim, even in a context where the claim should leave detectable traces.</p>
+      </section><section
+        class="audit-panel"
+        id="audit-absence-of-evidence-fallacy-panel-2"
+        role="tabpanel"
+        aria-labelledby="audit-absence-of-evidence-fallacy-button-2"
+        hidden
+        data-audit-panel
+      >
+        <p class="audit-panel-title">What support is still missing</p>
+        <p class="audit-panel-body">Sometimes absence of evidence really is weak evidence, especially when the search tools are poor or the target is hard to detect. But when repeated investigation under the right conditions turns up nothing, that absence is itself evidence.</p>
+      </section><section
+        class="audit-panel"
+        id="audit-absence-of-evidence-fallacy-panel-3"
+        role="tabpanel"
+        aria-labelledby="audit-absence-of-evidence-fallacy-button-3"
+        hidden
+        data-audit-panel
+      >
+        <p class="audit-panel-title">What to ask next</p>
+        <p class="audit-panel-body">What evidence is missing, selected, or overstretched here?</p>
+      </section>
+    </div>
+    <p class="muted audit-feedback"><strong>What this tool highlights:</strong> The app displays the gap between warranted confidence and the confidence created by the fallacious move.</p>
+    <p class="muted lab-example"><strong>Current example:</strong> Multiple audits found no trace of the vote-flipping scheme, but that proves nothing; if the conspiracy were real, of course it would leave no evidence.</p>
+  </div>
       </section>
   </div>
     </article>

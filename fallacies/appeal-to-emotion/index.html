@@ -216,42 +216,112 @@
         data-tab-panel
       >
         <p class="lab-panel-kicker">Try it</p>
-        
         <div class="two-column compact-columns">
-          <div class="note-panel">
-            <h4>How the tool works</h4>
-            <p class="muted">Debate-path derailment map: use the row&#39;s example as the initial scenario, then force the user to separate evidence, inference, emotion, wording, and missing alternatives.</p>
-          </div>
-          <div class="note-panel">
-            <h4>What you do</h4>
-            <p class="muted">Trace the original claim, identify the move that changed the topic, and restore the burdened question.</p>
-          </div>
-          <div class="note-panel">
-            <h4>What the tool shows</h4>
-            <p class="muted">The app marks the point where the discussion stopped tracking the truth of the original claim.</p>
-          </div>
-          <div class="note-panel lab-simulator" data-confidence-lab>
-            <h4>Feeling vs evidence check</h4>
-            <p class="muted">Compare how convincing the example feels with how much the evidence really supports it.</p>
-            <div class="lab-slider-grid">
-              <label class="slider-field">
-                <span>How convincing it feels</span>
-                <input type="range" min="0" max="100" value="70" data-lab-surface />
-                <output data-lab-surface-value>70</output>
-              </label>
-              <label class="slider-field">
-                <span>How much evidence supports it</span>
-                <input type="range" min="0" max="100" value="40" data-lab-evidence />
-                <output data-lab-evidence-value>40</output>
-              </label>
-            </div>
-            <div class="lab-gap-track" aria-hidden="true">
-              <div class="lab-gap-fill" data-lab-gap-fill></div>
-            </div>
-            <p class="lab-gap-output" data-lab-gap-output></p>
-            <p class="muted lab-example"><strong>Current example:</strong> If you vote against this bill, remember the faces of the children who will suffer, and ask yourself how you will sleep at night.</p>
-          </div>
-        </div>
+    <div class="note-panel">
+      <h4>What you are tracing</h4>
+      <p class="muted">Debate-path derailment map: use the row&#39;s example as the initial scenario, then force the user to separate evidence, inference, emotion, wording, and missing alternatives.</p>
+    </div>
+    <div class="note-panel">
+      <h4>Where the slip happens</h4>
+      <p class="muted">A conclusion is pushed mainly by triggering fear, pity, outrage, pride, or hope rather than by showing that the conclusion follows from the evidence.</p>
+    </div>
+    <div class="note-panel">
+      <h4>How to use it</h4>
+      <p class="muted">Trace the original claim, identify the move that changed the topic, and restore the burdened question.</p>
+    </div>
+    <div class="note-panel">
+      <h4>What to ask next</h4>
+      <p class="muted">Is the argument still addressing the original issue, or has the conversation been steered away?</p>
+    </div>
+  </div><div class="audit-widget" data-audit-widget>
+    <div class="audit-header">
+      <h4>Debate-move walkthrough</h4>
+      <p class="muted">Follow the example to see how attention gets redirected away from the real issue and toward pressure, distraction, or emotional force.</p>
+    </div>
+    <div class="audit-step-list" role="tablist" aria-label="Appeal to emotion reasoning walkthrough">
+      <button
+        class="audit-step-button active"
+        type="button"
+        role="tab"
+        id="audit-appeal-to-emotion-button-0"
+        aria-controls="audit-appeal-to-emotion-panel-0"
+        aria-selected="true"
+        data-audit-button
+      ><span class="audit-step-index">1</span><span class="audit-step-label">Surface</span></button><button
+        class="audit-step-button"
+        type="button"
+        role="tab"
+        id="audit-appeal-to-emotion-button-1"
+        aria-controls="audit-appeal-to-emotion-panel-1"
+        aria-selected="false"
+        data-audit-button
+      ><span class="audit-step-index">2</span><span class="audit-step-label">Pressure</span></button><button
+        class="audit-step-button"
+        type="button"
+        role="tab"
+        id="audit-appeal-to-emotion-button-2"
+        aria-controls="audit-appeal-to-emotion-panel-2"
+        aria-selected="false"
+        data-audit-button
+      ><span class="audit-step-index">3</span><span class="audit-step-label">Displaced issue</span></button><button
+        class="audit-step-button"
+        type="button"
+        role="tab"
+        id="audit-appeal-to-emotion-button-3"
+        aria-controls="audit-appeal-to-emotion-panel-3"
+        aria-selected="false"
+        data-audit-button
+      ><span class="audit-step-index">4</span><span class="audit-step-label">Reset</span></button>
+    </div>
+    <div class="audit-progress-track" aria-hidden="true">
+      <div class="audit-progress-fill" data-audit-progress></div>
+    </div>
+    <div class="audit-panel-wrap">
+      <section
+        class="audit-panel active"
+        id="audit-appeal-to-emotion-panel-0"
+        role="tabpanel"
+        aria-labelledby="audit-appeal-to-emotion-button-0"
+        
+        data-audit-panel
+      >
+        <p class="audit-panel-title">What the exchange looks like on the surface</p>
+        <p class="audit-panel-body">At first glance, the move sounds like this: If you vote against this bill, remember the faces of the children who will suffer, and ask yourself how you will sleep at night.</p>
+      </section><section
+        class="audit-panel"
+        id="audit-appeal-to-emotion-panel-1"
+        role="tabpanel"
+        aria-labelledby="audit-appeal-to-emotion-button-1"
+        hidden
+        data-audit-panel
+      >
+        <p class="audit-panel-title">Where the persuasive shove happens</p>
+        <p class="audit-panel-body">The maneuver enters when a conclusion is pushed mainly by triggering fear, pity, outrage, pride, or hope rather than by showing that the conclusion follows from the evidence.</p>
+      </section><section
+        class="audit-panel"
+        id="audit-appeal-to-emotion-panel-2"
+        role="tabpanel"
+        aria-labelledby="audit-appeal-to-emotion-button-2"
+        hidden
+        data-audit-panel
+      >
+        <p class="audit-panel-title">What gets pushed out of focus</p>
+        <p class="audit-panel-body">Emotion is not irrational by itself. The fallacy appears when emotion substitutes for the reasoning that still needs to be supplied.</p>
+      </section><section
+        class="audit-panel"
+        id="audit-appeal-to-emotion-panel-3"
+        role="tabpanel"
+        aria-labelledby="audit-appeal-to-emotion-button-3"
+        hidden
+        data-audit-panel
+      >
+        <p class="audit-panel-title">How to bring the discussion back</p>
+        <p class="audit-panel-body">Is the argument still addressing the original issue, or has the conversation been steered away?</p>
+      </section>
+    </div>
+    <p class="muted audit-feedback"><strong>What this tool highlights:</strong> The app marks the point where the discussion stopped tracking the truth of the original claim.</p>
+    <p class="muted lab-example"><strong>Current example:</strong> If you vote against this bill, remember the faces of the children who will suffer, and ask yourself how you will sleep at night.</p>
+  </div>
       </section>
   </div>
     </article>
