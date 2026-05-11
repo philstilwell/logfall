@@ -1,13 +1,13 @@
 :root {
-  --paper: #f5efe4;
-  --paper-strong: #fffaf1;
-  --ink: #131313;
-  --ink-soft: #4d4a45;
-  --line: #d9d0c1;
+  --paper: #f3f4f6;
+  --paper-strong: #ffffff;
+  --ink: #111111;
+  --ink-soft: #4b5563;
+  --line: #d1d5db;
   --cyan: #14a8d7;
   --red: #e63b34;
   --gold: #cda24e;
-  --shadow: 0 18px 48px rgba(18, 18, 18, 0.08);
+  --shadow: 0 18px 48px rgba(17, 17, 17, 0.07);
   --radius: 20px;
 }
 
@@ -23,12 +23,12 @@ body {
   margin: 0;
   color: var(--ink);
   background:
-    linear-gradient(135deg, rgba(20, 168, 215, 0.05), transparent 28%),
-    linear-gradient(225deg, rgba(230, 59, 52, 0.05), transparent 24%),
+    linear-gradient(135deg, rgba(20, 168, 215, 0.035), transparent 28%),
+    linear-gradient(225deg, rgba(230, 59, 52, 0.035), transparent 24%),
     repeating-linear-gradient(
       0deg,
-      rgba(17, 17, 17, 0.02),
-      rgba(17, 17, 17, 0.02) 1px,
+      rgba(17, 17, 17, 0.025),
+      rgba(17, 17, 17, 0.025) 1px,
       transparent 1px,
       transparent 34px
     ),
@@ -237,7 +237,7 @@ img {
   border: 1px solid var(--line);
   border-radius: 18px;
   padding: 18px;
-  background: rgba(255, 255, 255, 0.6);
+  background: #fff;
 }
 
 .stat-value {
@@ -357,11 +357,16 @@ img {
 }
 
 .eyebrow {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
   margin: 0 0 10px;
   text-transform: uppercase;
   letter-spacing: 0.14em;
   font-size: 0.76rem;
-  color: var(--ink-soft);
+  color: #fff;
+  background: #1f2937;
 }
 
 .detail-title {
@@ -420,13 +425,13 @@ img {
   margin: 0;
   padding: 18px 18px 18px 20px;
   border-left: 4px solid var(--cyan);
-  background: rgba(20, 168, 215, 0.05);
+  background: #fff;
   border-radius: 0 18px 18px 0;
 }
 
 .case-item:nth-child(even) {
   border-left-color: var(--red);
-  background: rgba(230, 59, 52, 0.05);
+  background: #fff;
 }
 
 .breadcrumbs {
@@ -473,7 +478,7 @@ img {
 .footer {
   border-top: 1px solid var(--line);
   margin-top: 48px;
-  background: rgba(255, 255, 255, 0.55);
+  background: #fff;
 }
 
 .footer-inner {

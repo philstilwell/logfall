@@ -562,10 +562,6 @@ function buildDetailPage(record, records) {
         <p class="eyebrow">Reference</p>
         <div class="meta-grid">
           <div class="note-panel">
-            <h4>Legacy number</h4>
-            <p class="muted">${escapeHtml(record.originalNumber || "Not listed")}</p>
-          </div>
-          <div class="note-panel">
             <h4>Family</h4>
             <p class="muted">${escapeHtml(record.family || "Unspecified")}</p>
           </div>
