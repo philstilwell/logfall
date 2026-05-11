@@ -502,7 +502,6 @@ function pageShell({
   prefix,
   content,
   currentSection = "",
-  showSpreadsheetNav = true,
   canonicalPath = "",
   ogType = "website",
   robots = "index,follow",
@@ -515,9 +514,6 @@ function pageShell({
     { href: `${prefix}categories/`, label: "Categories", key: "categories" },
     { href: `${prefix}about/`, label: "About", key: "about" },
   ];
-  if (showSpreadsheetNav) {
-    navItems.push({ href: `${prefix}logfall-root-edition.xlsx`, label: "Spreadsheet", key: "spreadsheet" });
-  }
 
   const nav = navItems
     .map(
@@ -569,7 +565,7 @@ function pageShell({
               <div>
                 <p class="brand-kicker">Logical Fallacies</p>
                 <h1 class="brand-title">LogFall</h1>
-                <p class="brand-subtitle">A living logical-fallacies reference rebuilt for clearer explanations, faster browsing, and steadily better examples.</p>
+                <p class="brand-subtitle">A practical logical-fallacies reference with clear explanations, usable examples, and teaching tools.</p>
               </div>
             </div>
           </div>
@@ -579,7 +575,7 @@ function pageShell({
       <main class="page-wrap">${content}</main>
       <footer class="footer">
         <div class="footer-inner">
-          <p class="footer-note">Built from the ROOT tab source workbook, filtered to entries that existed on the legacy WordPress LogFall site.</p>
+          <p class="footer-note">A reference for spotting, naming, comparing, and repairing reasoning errors.</p>
           <p class="footer-note">${escapeHtml(copyrightNotice)}</p>
         </div>
       </footer>
@@ -596,7 +592,8 @@ function renderPills(categories) {
 
 function renderFallacyCard(record, prefix) {
   const aliases = record.aliases.join(" ");
-  const body = `${record.definition} ${record.notes}`;
+  const caseStudyText = record.caseStudies.map((item) => normalizeCaseStudy(item).summary).join(" ");
+  const body = `${record.definition} ${record.example} ${record.notes} ${caseStudyText}`;
   return `<article
     class="fallacy-card"
     data-fallacy-card
@@ -827,6 +824,7 @@ function renderRationalityLab(record, categoryProfiles) {
 }
 
 function buildHomePage(records, categories) {
+  const caseStudyCount = records.reduce((sum, record) => sum + record.caseStudies.length, 0);
   const featured = featuredNames
     .map((name) => records.find((record) => record.name === name))
     .filter(Boolean);
@@ -834,16 +832,16 @@ function buildHomePage(records, categories) {
   const content = `
     <section class="hero">
       <div class="hero-panel">
-        <h2 class="hero-title">Logical fallacies, reorganized for modern readers.</h2>
+        <h2 class="hero-title">Logical fallacies made clearer, more teachable, and easier to compare.</h2>
         <p class="hero-lead">
-          This GitHub Pages edition keeps the spirit of the original LogFall project while making the taxonomy easier to browse,
-          compare, search, and revise. It is built from the ROOT tab source, limited to fallacies that appeared on the legacy site,
-          and structured for ongoing editorial improvement.
+          LogFall is a practical reference for spotting, naming, comparing, and correcting reasoning mistakes.
+          Each entry combines a definition, a concrete example, case studies, a companion illustration,
+          related fallacies, and a guided practice tool.
         </p>
         <div class="hero-actions">
           <a class="button button-primary" href="fallacies/">Browse All Fallacies</a>
           <a class="button button-secondary" href="categories/">Explore Categories</a>
-          <a class="button button-secondary" href="logfall-root-edition.xlsx">Download Workbook</a>
+          <a class="button button-secondary" href="about/">How To Use LogFall</a>
         </div>
       </div>
       <aside class="hero-side hero-panel">
@@ -858,8 +856,8 @@ function buildHomePage(records, categories) {
             <span class="stat-label">Taxonomy categories</span>
           </div>
           <div class="stat-card">
-            <span class="stat-value">1</span>
-            <span class="stat-label">Unified source workbook</span>
+            <span class="stat-value">${caseStudyCount}</span>
+            <span class="stat-label">Case studies</span>
           </div>
         </div>
         <div class="section-block">
@@ -873,8 +871,8 @@ function buildHomePage(records, categories) {
             <p class="muted">Each fallacy page brings together a concise definition, a concrete example, explanatory notes, a rationality lab, case studies, and nearby entries.</p>
           </div>
           <div class="note-panel" style="margin-top:12px;">
-            <h4>3. Use the workbook</h4>
-            <p class="muted">The downloadable spreadsheet mirrors the site data so the project can be revised in a structured way.</p>
+            <h4>3. Compare similar mistakes</h4>
+            <p class="muted">Use the related fallacies, case studies, and practice tool to separate look-alike mistakes that often get confused in real arguments.</p>
           </div>
         </div>
       </aside>
@@ -884,7 +882,7 @@ function buildHomePage(records, categories) {
       <div class="section-header">
         <div>
           <h2 class="section-title">Browse the taxonomy</h2>
-          <p class="section-copy">The original project grouped fallacies by the kind of reasoning failure involved. This edition keeps that structure and makes the overlap clearer.</p>
+          <p class="section-copy">The taxonomy groups fallacies by the main kind of reasoning failure involved, which makes nearby mistakes easier to compare.</p>
         </div>
       </div>
       <div class="category-grid">
@@ -919,10 +917,9 @@ function buildHomePage(records, categories) {
   return pageShell({
     title: "LogFall | Logical Fallacies",
     description:
-      "A rebuilt logical fallacies reference with category browsing, clearer explanations, and modernized examples.",
+      "A practical logical fallacies reference with category browsing, clear explanations, case studies, and teaching tools.",
     prefix: "",
     currentSection: "home",
-    showSpreadsheetNav: false,
     canonicalPath: "",
     content,
   });
@@ -935,31 +932,30 @@ function buildAboutPage() {
     </div>
 
     <section class="detail-section">
-      <p class="eyebrow">About this edition</p>
-      <h2 class="detail-title">A cleaner static edition of LogFall.</h2>
+      <p class="eyebrow">About LogFall</p>
+      <h2 class="detail-title">A teaching-focused reference for reasoning mistakes.</h2>
       <p class="detail-deck">
-        This version is designed for GitHub Pages. It preserves the original logo and taxonomy approach,
-        but replaces WordPress-era browsing friction with lightweight static pages, clearer navigation,
-        and a synchronized workbook for structured revision.
+        LogFall is designed to help readers recognize common reasoning errors, distinguish near neighbors,
+        and practice better habits of interpretation, comparison, and repair.
       </p>
       <div class="two-column section-block">
         <div class="note-panel">
-          <h4>Source rule</h4>
-          <p class="muted">The ROOT tab provides the base material, which can then be cleaned or rewritten for clarity, accuracy, and more useful examples.</p>
+          <h4>What each page does</h4>
+          <p class="muted">Each fallacy page combines a definition, a concrete example, explanatory notes, case studies, related fallacies, and a guided practice tool.</p>
         </div>
         <div class="note-panel">
-          <h4>Inclusion rule</h4>
-          <p class="muted">The new site includes only fallacies that also appeared on the legacy WordPress LogFall site.</p>
+          <h4>How the categories work</h4>
+          <p class="muted">Categories sort fallacies by the main kind of reasoning failure involved, so readers can compare similar mistakes instead of memorizing isolated names.</p>
         </div>
       </div>
       <div class="two-column section-block">
         <div class="note-panel">
           <h4>Design goal</h4>
-          <p class="muted">Make the taxonomy easier to scan, search, and compare while preserving the recognizable red-and-cyan LogFall identity.</p>
+          <p class="muted">Make the taxonomy easy to scan, search, compare, and teach while preserving the recognizable red-and-cyan LogFall identity.</p>
         </div>
         <div class="note-panel">
-          <h4>Editorial direction</h4>
-          <p class="muted">This edition is being actively rewritten, starting with the most-used entries and replacing weaker examples with clearer modern case studies.</p>
+          <h4>Editorial standard</h4>
+          <p class="muted">Entries are strongest when they are plainspoken, logically precise, tied to concrete examples, and explicit about how a better line of reasoning would proceed.</p>
         </div>
       </div>
     </section>
@@ -967,7 +963,7 @@ function buildAboutPage() {
 
   return pageShell({
     title: "About | LogFall",
-    description: "About the rebuilt LogFall GitHub Pages edition and its source rules.",
+    description: "About LogFall and how to use the site to study logical fallacies.",
     prefix: "../",
     currentSection: "about",
     canonicalPath: "about/",
@@ -989,7 +985,7 @@ function buildAllFallaciesPage(records, categories) {
       <div class="section-header">
         <div>
           <h2 class="section-title">All fallacies</h2>
-          <p class="section-copy">Search by name, alias, definition text, or filter the list by category.</p>
+          <p class="section-copy">Search by name, alias, definition, example, or case-study wording, then narrow the list by category.</p>
         </div>
       </div>
       <div class="search-row">
@@ -998,12 +994,17 @@ function buildAllFallaciesPage(records, categories) {
           <option value="">All categories</option>
           ${options}
         </select>
+        <button class="search-reset" type="button" data-search-reset>Clear</button>
       </div>
-      <div class="search-meta" data-search-count>${records.length} fallacies shown</div>
+      <div class="search-meta" data-search-count role="status" aria-live="polite">${records.length} of ${records.length} fallacies shown</div>
+      <div class="note-panel search-empty hidden" data-search-empty>
+        <h4>No matches yet</h4>
+        <p class="muted">Try a broader keyword, clear the current filters, or browse by category to compare nearby mistakes.</p>
+      </div>
     </section>
 
     <section class="section-block">
-      <div class="fallacy-grid">
+      <div class="fallacy-grid" data-fallacy-grid>
         ${records.map((record) => renderFallacyCard(record, "../")).join("")}
       </div>
     </section>
@@ -1284,11 +1285,11 @@ async function buildWorkbook(records, categories, categoryProfiles) {
 
   const overview = workbook.worksheets.add("Overview");
   const overviewRows = [
-    ["LogFall Workbook", "Rebuilt from the ROOT tab source workbook."],
+    ["LogFall Workbook", "Reference data used to generate the LogFall site."],
     ["Record count", records.length],
     ["Category count", categories.length],
-    ["Inclusion rule", "Only fallacies that also existed on the legacy WordPress site are included."],
-    ["Workbook use", "Use the Fallacies sheet for entry-by-entry editing and the Categories sheet for counts."],
+    ["Case studies", records.reduce((sum, record) => sum + record.caseStudies.length, 0)],
+    ["Workbook use", "Use the Fallacies sheet for entry-by-entry editing and the Categories sheet for counts and category notes."],
     ["Copyright", copyrightNotice],
   ];
   overview.getRange(`A1:B${overviewRows.length}`).values = overviewRows;

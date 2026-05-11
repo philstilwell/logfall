@@ -1,7 +1,34 @@
 const searchInput = document.querySelector("[data-search-input]");
 const categoryFilter = document.querySelector("[data-category-filter]");
+const resetButton = document.querySelector("[data-search-reset]");
 const cards = Array.from(document.querySelectorAll("[data-fallacy-card]"));
 const countNode = document.querySelector("[data-search-count]");
+const emptyState = document.querySelector("[data-search-empty]");
+const totalCount = cards.length;
+
+function syncFilterUrl(query, category) {
+  if (!searchInput && !categoryFilter) return;
+  const url = new URL(window.location.href);
+  if (query) {
+    url.searchParams.set("q", query);
+  } else {
+    url.searchParams.delete("q");
+  }
+  if (category) {
+    url.searchParams.set("category", category);
+  } else {
+    url.searchParams.delete("category");
+  }
+  window.history.replaceState({}, "", url);
+}
+
+function hydrateFiltersFromUrl() {
+  const url = new URL(window.location.href);
+  const query = url.searchParams.get("q") || "";
+  const category = url.searchParams.get("category") || "";
+  if (searchInput) searchInput.value = query;
+  if (categoryFilter) categoryFilter.value = category;
+}
 
 function applyFilters() {
   if (!cards.length) return;
@@ -28,8 +55,14 @@ function applyFilters() {
   }
 
   if (countNode) {
-    countNode.textContent = `${visible} fallac${visible === 1 ? "y" : "ies"} shown`;
+    countNode.textContent = `${visible} of ${totalCount} fallac${totalCount === 1 ? "y" : "ies"} shown`;
   }
+
+  if (emptyState) {
+    emptyState.classList.toggle("hidden", visible !== 0);
+  }
+
+  syncFilterUrl(query, category);
 }
 
 if (searchInput) {
@@ -40,6 +73,16 @@ if (categoryFilter) {
   categoryFilter.addEventListener("change", applyFilters);
 }
 
+if (resetButton) {
+  resetButton.addEventListener("click", () => {
+    if (searchInput) searchInput.value = "";
+    if (categoryFilter) categoryFilter.value = "";
+    applyFilters();
+    searchInput?.focus();
+  });
+}
+
+hydrateFiltersFromUrl();
 applyFilters();
 
 for (const group of document.querySelectorAll("[data-tab-group]")) {
