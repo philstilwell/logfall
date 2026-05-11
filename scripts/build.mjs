@@ -344,7 +344,7 @@ function renderRationalityLab(record, categoryProfiles) {
   const tabKey = `lab-${record.slug}`;
   const tabs = [];
 
-  if (record.rationalityDanger || primaryProfile.distortion || primaryProfile.danger) {
+  if (record.rationalityDanger || record.mainReasoningProblem || primaryProfile.danger) {
     tabs.push({
       id: `${tabKey}-danger`,
       label: "Why it matters",
@@ -359,10 +359,10 @@ function renderRationalityLab(record, categoryProfiles) {
               : ""
           }
           ${
-            primaryProfile.distortion
+            record.mainReasoningProblem
               ? `<div class="note-panel">
             <h4>Main reasoning problem</h4>
-            <p class="muted">${escapeHtml(primaryProfile.distortion)}</p>
+            <p class="muted">${escapeHtml(record.mainReasoningProblem)}</p>
           </div>`
               : ""
           }
@@ -961,6 +961,7 @@ async function buildWorkbook(records, categories, categoryProfiles) {
     "Example",
     "Notes",
     "Why This Mistake Matters",
+    "Main Reasoning Problem",
     "What to Watch For",
     "Warning Signs",
     "Suggested Tool",
@@ -989,6 +990,7 @@ async function buildWorkbook(records, categories, categoryProfiles) {
     record.example,
     record.notes,
     record.rationalityDanger || "",
+    record.mainReasoningProblem || "",
     record.dynamicsToNotice || "",
     record.warningSigns || "",
     record.interactiveMechanic || "",
@@ -1013,11 +1015,11 @@ async function buildWorkbook(records, categories, categoryProfiles) {
   fallaciesSheet.getRange("F:F").format.columnWidthPx = 120;
   fallaciesSheet.getRange("G:I").format.columnWidthPx = 180;
   fallaciesSheet.getRange("J:J").format.columnWidthPx = 240;
-  fallaciesSheet.getRange("K:T").format.columnWidthPx = 420;
-  fallaciesSheet.getRange("U:Y").format.columnWidthPx = 360;
-  fallaciesSheet.getRange("Z:Z").format.columnWidthPx = 180;
+  fallaciesSheet.getRange("K:U").format.columnWidthPx = 420;
+  fallaciesSheet.getRange("V:Z").format.columnWidthPx = 360;
+  fallaciesSheet.getRange("AA:AA").format.columnWidthPx = 180;
   fallaciesSheet.getRange(`A1:${columnLetter(headers.length)}1`).format.wrapText = true;
-  fallaciesSheet.getRange("J:Z").format.wrapText = true;
+  fallaciesSheet.getRange("J:AA").format.wrapText = true;
 
   const categorySheet = workbook.worksheets.add("Categories");
   const categoryRows = [

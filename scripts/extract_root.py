@@ -171,6 +171,42 @@ def clean_block(value: str) -> str:
     return ensure_terminal_punctuation(value)
 
 
+def lowercase_initial(value: str) -> str:
+    value = normalize_text(value)
+    if not value:
+        return value
+    return value[0].lower() + value[1:]
+
+
+def extract_occurs_when_clause(value: str) -> str:
+    value = clean_block(value)
+    if not value:
+        return ""
+
+    pattern = re.compile(
+        r"(?:^|:\s+)occurs when\s+(?P<core>.+?)\s+The module should make the user see how\b",
+        re.IGNORECASE,
+    )
+    match = pattern.search(value)
+    if not match:
+        return ""
+
+    return sentence_case(match.group("core"))
+
+
+def make_reader_friendly_rationality_danger(name: str, value: str) -> str:
+    value = clean_block(value)
+    if not value:
+        return ""
+
+    core = extract_occurs_when_clause(value)
+    if not core:
+        return value
+
+    core = lowercase_initial(core.rstrip("."))
+    return ensure_terminal_punctuation(f"{normalize_text(name)} threatens rationality because {core}")
+
+
 def slugify(value: str) -> str:
     value = normalize_text(value).lower()
     value = value.replace("&", " and ")
@@ -408,7 +444,13 @@ def load_rationality_enrichment(path: Path) -> dict:
         if not clean_name:
             continue
         records[clean_name] = {
-            "rationalityDanger": clean_block(values.get("rationalityDanger", "")),
+            "rationalityDanger": make_reader_friendly_rationality_danger(
+                clean_name, values.get("rationalityDanger", "")
+            ),
+            "mainReasoningProblem": clean_block(
+                values.get("mainReasoningProblem", "")
+            )
+            or extract_occurs_when_clause(values.get("rationalityDanger", "")),
             "dynamicsToNotice": clean_block(values.get("dynamicsToNotice", "")),
             "interactiveMechanic": clean_block(values.get("interactiveMechanic", "")),
             "userAction": clean_block(values.get("userAction", "")),
@@ -437,6 +479,7 @@ def apply_rationality_enrichment(record: dict, enrichment: dict) -> dict:
     updated = dict(record)
     for key in [
         "rationalityDanger",
+        "mainReasoningProblem",
         "dynamicsToNotice",
         "interactiveMechanic",
         "userAction",
