@@ -24,6 +24,9 @@ EDITORIAL_OVERRIDES_PATH = Path(
 SUPPLEMENTAL_FALLACIES_PATH = Path(
     "/Users/philstilwell/Documents/Codex/2026-05-09/install-ghostscript/logfall-repo/data/supplemental_fallacies.json"
 )
+RATIONALITY_ENRICHMENT_PATH = Path(
+    "/Users/philstilwell/Documents/Codex/2026-05-09/install-ghostscript/logfall-repo/data/rationality_enrichment.json"
+)
 CASE_STUDY_LIBRARY_PATH = Path(
     "/Users/philstilwell/Documents/Codex/2026-05-09/install-ghostscript/logfall-repo/data/case_study_library.json"
 )
@@ -394,6 +397,57 @@ def load_case_study_library(path: Path) -> list[dict]:
     return entries
 
 
+def load_rationality_enrichment(path: Path) -> dict:
+    if not path.exists():
+        return {"records": {}, "categoryProfiles": {}}
+
+    raw = json.loads(path.read_text())
+    records = {}
+    for name, values in raw.get("records", {}).items():
+        clean_name = normalize_text(name)
+        if not clean_name:
+            continue
+        records[clean_name] = {
+            "rationalityDanger": clean_block(values.get("rationalityDanger", "")),
+            "dynamicsToNotice": clean_block(values.get("dynamicsToNotice", "")),
+            "interactiveMechanic": clean_block(values.get("interactiveMechanic", "")),
+            "userAction": clean_block(values.get("userAction", "")),
+            "feedbackLogic": clean_block(values.get("feedbackLogic", "")),
+            "repairPrompts": clean_block(values.get("repairPrompts", "")),
+            "warningSigns": clean_block(values.get("warningSigns", "")),
+        }
+
+    category_profiles = {}
+    for category, values in raw.get("categoryProfiles", {}).items():
+        clean_category = normalize_text(category)
+        if clean_category not in VALID_CATEGORIES:
+            continue
+        category_profiles[clean_category] = {
+            "distortion": clean_block(values.get("distortion", "")),
+            "danger": clean_block(values.get("danger", "")),
+            "mechanic": clean_block(values.get("mechanic", "")),
+            "user_action": clean_block(values.get("user_action", "")),
+            "feedback": clean_block(values.get("feedback", "")),
+        }
+
+    return {"records": records, "categoryProfiles": category_profiles}
+
+
+def apply_rationality_enrichment(record: dict, enrichment: dict) -> dict:
+    updated = dict(record)
+    for key in [
+        "rationalityDanger",
+        "dynamicsToNotice",
+        "interactiveMechanic",
+        "userAction",
+        "feedbackLogic",
+        "repairPrompts",
+        "warningSigns",
+    ]:
+        updated[key] = clean_block(enrichment.get(key, "")) if enrichment else ""
+    return updated
+
+
 def select_case_studies(record: dict, case_study_library: list[dict], limit: int = 5) -> list[dict]:
     manual_cases = normalize_manual_case_studies(record.get("caseStudies", []))
     selected = []
@@ -574,20 +628,29 @@ def main() -> None:
     wordpress_inventory = load_wordpress_inventory(SOURCE_ODS)
     editorial_overrides = load_editorial_overrides(EDITORIAL_OVERRIDES_PATH)
     case_study_library = load_case_study_library(CASE_STUDY_LIBRARY_PATH)
+    rationality_enrichment = load_rationality_enrichment(RATIONALITY_ENRICHMENT_PATH)
     records = build_records(rows, wordpress_inventory, editorial_overrides)
     supplemental_records = build_supplemental_records(
         SUPPLEMENTAL_FALLACIES_PATH, editorial_overrides
     )
     records = merge_record_sets(records, supplemental_records)
+    records = [
+        apply_rationality_enrichment(
+            record, rationality_enrichment["records"].get(record["name"], {})
+        )
+        for record in records
+    ]
     records = enrich_case_studies(records, case_study_library)
     payload = {
         "source": SOURCE_ODS.name,
         "sheet": "ROOT",
         "editorialOverridesSource": "data/editorial_overrides.json",
         "supplementalSource": "data/supplemental_fallacies.json",
+        "rationalityEnrichmentSource": "data/rationality_enrichment.json",
         "caseStudyLibrarySource": "data/case_study_library.json",
         "recordCount": len(records),
         "categories": build_category_summary(records),
+        "categoryProfiles": rationality_enrichment["categoryProfiles"],
         "records": records,
     }
     OUTPUT_JSON.write_text(json.dumps(payload, indent=2, ensure_ascii=False) + "\n")

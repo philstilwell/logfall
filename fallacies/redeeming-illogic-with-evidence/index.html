@@ -98,6 +98,143 @@
     </section>
 
     <section class="section-block">
+    <div class="section-header">
+      <div>
+        <h3 class="section-title">Rationality Lab</h3>
+        <p class="section-copy">Pedagogical additions imported from the rationality tool and adapted to the current LogFall style.</p>
+      </div>
+    </div>
+    <article class="detail-section">
+      <div class="lab-tab-shell" data-tab-group="lab-redeeming-illogic-with-evidence">
+    <div class="lab-tablist" role="tablist" aria-label="Rationality lab"><button
+        class="lab-tab active"
+        type="button"
+        role="tab"
+        id="lab-redeeming-illogic-with-evidence-danger-tab"
+        aria-controls="lab-redeeming-illogic-with-evidence-danger"
+        aria-selected="true"
+        data-tab-button
+      >Danger</button><button
+        class="lab-tab"
+        type="button"
+        role="tab"
+        id="lab-redeeming-illogic-with-evidence-dynamics-tab"
+        aria-controls="lab-redeeming-illogic-with-evidence-dynamics"
+        aria-selected="false"
+        data-tab-button
+      >Dynamics</button><button
+        class="lab-tab"
+        type="button"
+        role="tab"
+        id="lab-redeeming-illogic-with-evidence-repair-tab"
+        aria-controls="lab-redeeming-illogic-with-evidence-repair"
+        aria-selected="false"
+        data-tab-button
+      >Repair</button><button
+        class="lab-tab"
+        type="button"
+        role="tab"
+        id="lab-redeeming-illogic-with-evidence-tool-tab"
+        aria-controls="lab-redeeming-illogic-with-evidence-tool"
+        aria-selected="false"
+        data-tab-button
+      >Interactive Tool</button></div>
+    <section
+        class="lab-panel active"
+        role="tabpanel"
+        id="lab-redeeming-illogic-with-evidence-danger"
+        aria-labelledby="lab-redeeming-illogic-with-evidence-danger-tab"
+        
+        data-tab-panel
+      >
+        <div class="two-column compact-columns">
+          <div class="note-panel">
+            <h4>Rationality danger</h4>
+            <p class="muted">Redeeming illogic with evidence threatens rationality by creating confidence moving faster than the evidence: occurs when someone demands empirical evidence before rejecting a concept that is already incoherent, self-contradictory, or logically impossible on its own terms. The module should make the user see how confidence, attention, or burden shifts without a matching increase in evidential support.</p>
+          </div>
+          <div class="note-panel">
+            <h4>Primary distortion</h4>
+            <p class="muted">confidence moving faster than the evidence.</p>
+          </div>
+          <div class="note-panel">
+            <h4>Category profile</h4>
+            <p class="muted">It overstates, understates, cherry-picks, or misallocates the force of evidence.</p>
+          </div>
+        </div></section><section
+        class="lab-panel"
+        role="tabpanel"
+        id="lab-redeeming-illogic-with-evidence-dynamics"
+        aria-labelledby="lab-redeeming-illogic-with-evidence-dynamics-tab"
+        hidden
+        data-tab-panel
+      >
+        <div class="two-column compact-columns">
+          <div class="note-panel">
+            <h4>Dynamics to notice</h4>
+            <p class="muted">Watch the trigger, the shortcut, and the payoff. Trigger: the claim enters under the Evidential frame. Shortcut: It overstates, understates, cherry-picks, or misallocates the force of evidence. Payoff: the conclusion becomes easier to accept, reject, or ignore before the relevant comparison has been paid for.</p>
+          </div>
+          <div class="note-panel">
+            <h4>Warning signs</h4>
+            <p class="muted">Warning signs: redeeming illogic with evidence often appears when a discussion uses evidential pressure to accelerate belief. Look for a move from a weaker observation to a stronger conclusion.</p>
+          </div>
+        </div></section><section
+        class="lab-panel"
+        role="tabpanel"
+        id="lab-redeeming-illogic-with-evidence-repair"
+        aria-labelledby="lab-redeeming-illogic-with-evidence-repair-tab"
+        hidden
+        data-tab-panel
+      ><div class="note-panel">
+        <h4>Repair prompts</h4>
+        <p class="muted">Evidence matters for empirical claims, but it cannot rescue a contradiction. If the concept itself does not make sense, more observations do not repair it.</p>
+      </div></section><section
+        class="lab-panel"
+        role="tabpanel"
+        id="lab-redeeming-illogic-with-evidence-tool"
+        aria-labelledby="lab-redeeming-illogic-with-evidence-tool-tab"
+        hidden
+        data-tab-panel
+      >
+        <div class="two-column compact-columns">
+          <div class="note-panel">
+            <h4>Mechanic</h4>
+            <p class="muted">Evidence-weight meter: use the row&#39;s example as the initial scenario, then force the user to separate evidence, inference, emotion, wording, and missing alternatives.</p>
+          </div>
+          <div class="note-panel">
+            <h4>User action</h4>
+            <p class="muted">Assign weight to each item of evidence, then compare the resulting confidence to what the evidence actually supports.</p>
+          </div>
+          <div class="note-panel">
+            <h4>Feedback logic</h4>
+            <p class="muted">The app displays the gap between warranted confidence and the confidence created by the fallacious move.</p>
+          </div>
+          <div class="note-panel lab-simulator" data-confidence-lab>
+            <h4>Confidence gap check</h4>
+            <p class="muted">Compare how persuasive the current example feels with how much support it actually earns.</p>
+            <div class="lab-slider-grid">
+              <label class="slider-field">
+                <span>Surface pull</span>
+                <input type="range" min="0" max="100" value="70" data-lab-surface />
+                <output data-lab-surface-value>70</output>
+              </label>
+              <label class="slider-field">
+                <span>Evidential support</span>
+                <input type="range" min="0" max="100" value="40" data-lab-evidence />
+                <output data-lab-evidence-value>40</output>
+              </label>
+            </div>
+            <div class="lab-gap-track" aria-hidden="true">
+              <div class="lab-gap-fill" data-lab-gap-fill></div>
+            </div>
+            <p class="lab-gap-output" data-lab-gap-output></p>
+            <p class="muted lab-example"><strong>Example in play:</strong> You cannot dismiss my square triangle theory until you check all the data.</p>
+          </div>
+        </div></section>
+  </div>
+    </article>
+  </section>
+
+    <section class="section-block">
       <div class="section-header">
         <div>
           <h3 class="section-title">Questions to ask</h3>

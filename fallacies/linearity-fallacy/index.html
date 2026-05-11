@@ -98,6 +98,143 @@
     </section>
 
     <section class="section-block">
+    <div class="section-header">
+      <div>
+        <h3 class="section-title">Rationality Lab</h3>
+        <p class="section-copy">Pedagogical additions imported from the rationality tool and adapted to the current LogFall style.</p>
+      </div>
+    </div>
+    <article class="detail-section">
+      <div class="lab-tab-shell" data-tab-group="lab-linearity-fallacy">
+    <div class="lab-tablist" role="tablist" aria-label="Rationality lab"><button
+        class="lab-tab active"
+        type="button"
+        role="tab"
+        id="lab-linearity-fallacy-danger-tab"
+        aria-controls="lab-linearity-fallacy-danger"
+        aria-selected="true"
+        data-tab-button
+      >Danger</button><button
+        class="lab-tab"
+        type="button"
+        role="tab"
+        id="lab-linearity-fallacy-dynamics-tab"
+        aria-controls="lab-linearity-fallacy-dynamics"
+        aria-selected="false"
+        data-tab-button
+      >Dynamics</button><button
+        class="lab-tab"
+        type="button"
+        role="tab"
+        id="lab-linearity-fallacy-repair-tab"
+        aria-controls="lab-linearity-fallacy-repair"
+        aria-selected="false"
+        data-tab-button
+      >Repair</button><button
+        class="lab-tab"
+        type="button"
+        role="tab"
+        id="lab-linearity-fallacy-tool-tab"
+        aria-controls="lab-linearity-fallacy-tool"
+        aria-selected="false"
+        data-tab-button
+      >Interactive Tool</button></div>
+    <section
+        class="lab-panel active"
+        role="tabpanel"
+        id="lab-linearity-fallacy-danger"
+        aria-labelledby="lab-linearity-fallacy-danger-tab"
+        
+        data-tab-panel
+      >
+        <div class="two-column compact-columns">
+          <div class="note-panel">
+            <h4>Rationality danger</h4>
+            <p class="muted">Linearity fallacy threatens rationality by creating bad category architecture: occurs when someone assumes that doubling the input will double the output even though the system has thresholds, saturation, feedback loops, or diminishing returns. The module should make the user see how confidence, attention, or burden shifts without a matching increase in evidential support.</p>
+          </div>
+          <div class="note-panel">
+            <h4>Primary distortion</h4>
+            <p class="muted">bad category architecture.</p>
+          </div>
+          <div class="note-panel">
+            <h4>Category profile</h4>
+            <p class="muted">It warps the conceptual map so that distinctions, boundaries, or levels of analysis mislead the inference.</p>
+          </div>
+        </div></section><section
+        class="lab-panel"
+        role="tabpanel"
+        id="lab-linearity-fallacy-dynamics"
+        aria-labelledby="lab-linearity-fallacy-dynamics-tab"
+        hidden
+        data-tab-panel
+      >
+        <div class="two-column compact-columns">
+          <div class="note-panel">
+            <h4>Dynamics to notice</h4>
+            <p class="muted">Watch the trigger, the shortcut, and the payoff. Trigger: the claim enters under the Conceptual frame with secondary pressure from Mathematical. Shortcut: It warps the conceptual map so that distinctions, boundaries, or levels of analysis mislead the inference. Payoff: the conclusion becomes easier to accept, reject, or ignore before the relevant comparison has been paid for.</p>
+          </div>
+          <div class="note-panel">
+            <h4>Warning signs</h4>
+            <p class="muted">Warning signs: linearity fallacy often appears when a discussion uses conceptual pressure to accelerate belief. Look for a move from a weaker observation to a stronger conclusion.</p>
+          </div>
+        </div></section><section
+        class="lab-panel"
+        role="tabpanel"
+        id="lab-linearity-fallacy-repair"
+        aria-labelledby="lab-linearity-fallacy-repair-tab"
+        hidden
+        data-tab-panel
+      ><div class="note-panel">
+        <h4>Repair prompts</h4>
+        <p class="muted">Many real systems change slowly at first, then rapidly, then plateau, or even reverse after a threshold.</p>
+      </div></section><section
+        class="lab-panel"
+        role="tabpanel"
+        id="lab-linearity-fallacy-tool"
+        aria-labelledby="lab-linearity-fallacy-tool-tab"
+        hidden
+        data-tab-panel
+      >
+        <div class="two-column compact-columns">
+          <div class="note-panel">
+            <h4>Mechanic</h4>
+            <p class="muted">Category-boundary sorter: use the row&#39;s example as the initial scenario, then force the user to separate evidence, inference, emotion, wording, and missing alternatives.</p>
+          </div>
+          <div class="note-panel">
+            <h4>User action</h4>
+            <p class="muted">Sort cases into categories, test edge cases, and see whether the proposed boundary remains stable.</p>
+          </div>
+          <div class="note-panel">
+            <h4>Feedback logic</h4>
+            <p class="muted">The app exposes hidden category choices and shows how different but defensible classifications alter the conclusion.</p>
+          </div>
+          <div class="note-panel lab-simulator" data-confidence-lab>
+            <h4>Confidence gap check</h4>
+            <p class="muted">Compare how persuasive the current example feels with how much support it actually earns.</p>
+            <div class="lab-slider-grid">
+              <label class="slider-field">
+                <span>Surface pull</span>
+                <input type="range" min="0" max="100" value="70" data-lab-surface />
+                <output data-lab-surface-value>70</output>
+              </label>
+              <label class="slider-field">
+                <span>Evidential support</span>
+                <input type="range" min="0" max="100" value="40" data-lab-evidence />
+                <output data-lab-evidence-value>40</output>
+              </label>
+            </div>
+            <div class="lab-gap-track" aria-hidden="true">
+              <div class="lab-gap-fill" data-lab-gap-fill></div>
+            </div>
+            <p class="lab-gap-output" data-lab-gap-output></p>
+            <p class="muted lab-example"><strong>Example in play:</strong> One dose gave a modest result, so taking twice as much should produce twice the benefit.</p>
+          </div>
+        </div></section>
+  </div>
+    </article>
+  </section>
+
+    <section class="section-block">
       <div class="section-header">
         <div>
           <h3 class="section-title">Questions to ask</h3>

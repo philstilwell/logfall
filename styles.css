@@ -537,6 +537,103 @@ img {
   gap: 18px;
 }
 
+.compact-columns {
+  align-items: start;
+}
+
+.lab-tab-shell {
+  display: grid;
+  gap: 16px;
+}
+
+.lab-tablist {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.lab-tab {
+  border: 1px solid var(--line);
+  background: #f8fafc;
+  color: var(--ink-soft);
+  padding: 10px 14px;
+  border-radius: 999px;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: color 160ms ease, border-color 160ms ease, background 160ms ease, transform 160ms ease;
+}
+
+.lab-tab:hover,
+.lab-tab:focus-visible {
+  color: var(--ink);
+  border-color: rgba(20, 168, 215, 0.35);
+  transform: translateY(-1px);
+}
+
+.lab-tab.active {
+  color: #fff;
+  background: #1f2937;
+  border-color: #1f2937;
+}
+
+.lab-panel {
+  display: block;
+}
+
+.lab-slider-grid {
+  display: grid;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.slider-field {
+  display: grid;
+  gap: 8px;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.slider-field span {
+  font-size: 0.95rem;
+}
+
+.slider-field input[type="range"] {
+  width: 100%;
+  accent-color: var(--cyan);
+}
+
+.slider-field output {
+  color: var(--ink-soft);
+  font-weight: 600;
+  font-size: 0.92rem;
+}
+
+.lab-gap-track {
+  margin-top: 16px;
+  height: 12px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(20, 168, 215, 0.18), rgba(230, 59, 52, 0.18));
+  overflow: hidden;
+}
+
+.lab-gap-fill {
+  height: 100%;
+  width: 0;
+  border-radius: inherit;
+  background: linear-gradient(90deg, var(--cyan), var(--red));
+  transition: width 160ms ease;
+}
+
+.lab-gap-output {
+  margin: 12px 0 0;
+  font-weight: 700;
+}
+
+.lab-example {
+  margin: 12px 0 0;
+}
+
 .related-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }

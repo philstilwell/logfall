@@ -98,6 +98,143 @@
     </section>
 
     <section class="section-block">
+    <div class="section-header">
+      <div>
+        <h3 class="section-title">Rationality Lab</h3>
+        <p class="section-copy">Pedagogical additions imported from the rationality tool and adapted to the current LogFall style.</p>
+      </div>
+    </div>
+    <article class="detail-section">
+      <div class="lab-tab-shell" data-tab-group="lab-impotent-logical-space">
+    <div class="lab-tablist" role="tablist" aria-label="Rationality lab"><button
+        class="lab-tab active"
+        type="button"
+        role="tab"
+        id="lab-impotent-logical-space-danger-tab"
+        aria-controls="lab-impotent-logical-space-danger"
+        aria-selected="true"
+        data-tab-button
+      >Danger</button><button
+        class="lab-tab"
+        type="button"
+        role="tab"
+        id="lab-impotent-logical-space-dynamics-tab"
+        aria-controls="lab-impotent-logical-space-dynamics"
+        aria-selected="false"
+        data-tab-button
+      >Dynamics</button><button
+        class="lab-tab"
+        type="button"
+        role="tab"
+        id="lab-impotent-logical-space-repair-tab"
+        aria-controls="lab-impotent-logical-space-repair"
+        aria-selected="false"
+        data-tab-button
+      >Repair</button><button
+        class="lab-tab"
+        type="button"
+        role="tab"
+        id="lab-impotent-logical-space-tool-tab"
+        aria-controls="lab-impotent-logical-space-tool"
+        aria-selected="false"
+        data-tab-button
+      >Interactive Tool</button></div>
+    <section
+        class="lab-panel active"
+        role="tabpanel"
+        id="lab-impotent-logical-space-danger"
+        aria-labelledby="lab-impotent-logical-space-danger-tab"
+        
+        data-tab-panel
+      >
+        <div class="two-column compact-columns">
+          <div class="note-panel">
+            <h4>Rationality danger</h4>
+            <p class="muted">Impotent logical space threatens rationality by creating confidence moving faster than the evidence: occurs when a view is framed so every possible outcome fits it equally well, leaving no meaningful room for the claim to fail. The module should make the user see how confidence, attention, or burden shifts without a matching increase in evidential support.</p>
+          </div>
+          <div class="note-panel">
+            <h4>Primary distortion</h4>
+            <p class="muted">confidence moving faster than the evidence.</p>
+          </div>
+          <div class="note-panel">
+            <h4>Category profile</h4>
+            <p class="muted">It overstates, understates, cherry-picks, or misallocates the force of evidence.</p>
+          </div>
+        </div></section><section
+        class="lab-panel"
+        role="tabpanel"
+        id="lab-impotent-logical-space-dynamics"
+        aria-labelledby="lab-impotent-logical-space-dynamics-tab"
+        hidden
+        data-tab-panel
+      >
+        <div class="two-column compact-columns">
+          <div class="note-panel">
+            <h4>Dynamics to notice</h4>
+            <p class="muted">Watch the trigger, the shortcut, and the payoff. Trigger: the claim enters under the Evidential frame with secondary pressure from Conceptual. Shortcut: It overstates, understates, cherry-picks, or misallocates the force of evidence. Payoff: the conclusion becomes easier to accept, reject, or ignore before the relevant comparison has been paid for.</p>
+          </div>
+          <div class="note-panel">
+            <h4>Warning signs</h4>
+            <p class="muted">Warning signs: impotent logical space often appears when a discussion uses evidential pressure to accelerate belief. Look for a move from a weaker observation to a stronger conclusion.</p>
+          </div>
+        </div></section><section
+        class="lab-panel"
+        role="tabpanel"
+        id="lab-impotent-logical-space-repair"
+        aria-labelledby="lab-impotent-logical-space-repair-tab"
+        hidden
+        data-tab-panel
+      ><div class="note-panel">
+        <h4>Repair prompts</h4>
+        <p class="muted">A claim that survives every observation unchanged may be emotionally resilient, but it has surrendered explanatory power.</p>
+      </div></section><section
+        class="lab-panel"
+        role="tabpanel"
+        id="lab-impotent-logical-space-tool"
+        aria-labelledby="lab-impotent-logical-space-tool-tab"
+        hidden
+        data-tab-panel
+      >
+        <div class="two-column compact-columns">
+          <div class="note-panel">
+            <h4>Mechanic</h4>
+            <p class="muted">Evidence-weight meter: use the row&#39;s example as the initial scenario, then force the user to separate evidence, inference, emotion, wording, and missing alternatives.</p>
+          </div>
+          <div class="note-panel">
+            <h4>User action</h4>
+            <p class="muted">Assign weight to each item of evidence, then compare the resulting confidence to what the evidence actually supports.</p>
+          </div>
+          <div class="note-panel">
+            <h4>Feedback logic</h4>
+            <p class="muted">The app displays the gap between warranted confidence and the confidence created by the fallacious move.</p>
+          </div>
+          <div class="note-panel lab-simulator" data-confidence-lab>
+            <h4>Confidence gap check</h4>
+            <p class="muted">Compare how persuasive the current example feels with how much support it actually earns.</p>
+            <div class="lab-slider-grid">
+              <label class="slider-field">
+                <span>Surface pull</span>
+                <input type="range" min="0" max="100" value="70" data-lab-surface />
+                <output data-lab-surface-value>70</output>
+              </label>
+              <label class="slider-field">
+                <span>Evidential support</span>
+                <input type="range" min="0" max="100" value="40" data-lab-evidence />
+                <output data-lab-evidence-value>40</output>
+              </label>
+            </div>
+            <div class="lab-gap-track" aria-hidden="true">
+              <div class="lab-gap-fill" data-lab-gap-fill></div>
+            </div>
+            <p class="lab-gap-output" data-lab-gap-output></p>
+            <p class="muted lab-example"><strong>Example in play:</strong> If the forecast comes true, the psychic was right; if it fails, the warning changed the future, which also proves the psychic was right.</p>
+          </div>
+        </div></section>
+  </div>
+    </article>
+  </section>
+
+    <section class="section-block">
       <div class="section-header">
         <div>
           <h3 class="section-title">Questions to ask</h3>

@@ -98,6 +98,143 @@
     </section>
 
     <section class="section-block">
+    <div class="section-header">
+      <div>
+        <h3 class="section-title">Rationality Lab</h3>
+        <p class="section-copy">Pedagogical additions imported from the rationality tool and adapted to the current LogFall style.</p>
+      </div>
+    </div>
+    <article class="detail-section">
+      <div class="lab-tab-shell" data-tab-group="lab-appeal-to-consequences">
+    <div class="lab-tablist" role="tablist" aria-label="Rationality lab"><button
+        class="lab-tab active"
+        type="button"
+        role="tab"
+        id="lab-appeal-to-consequences-danger-tab"
+        aria-controls="lab-appeal-to-consequences-danger"
+        aria-selected="true"
+        data-tab-button
+      >Danger</button><button
+        class="lab-tab"
+        type="button"
+        role="tab"
+        id="lab-appeal-to-consequences-dynamics-tab"
+        aria-controls="lab-appeal-to-consequences-dynamics"
+        aria-selected="false"
+        data-tab-button
+      >Dynamics</button><button
+        class="lab-tab"
+        type="button"
+        role="tab"
+        id="lab-appeal-to-consequences-repair-tab"
+        aria-controls="lab-appeal-to-consequences-repair"
+        aria-selected="false"
+        data-tab-button
+      >Repair</button><button
+        class="lab-tab"
+        type="button"
+        role="tab"
+        id="lab-appeal-to-consequences-tool-tab"
+        aria-controls="lab-appeal-to-consequences-tool"
+        aria-selected="false"
+        data-tab-button
+      >Interactive Tool</button></div>
+    <section
+        class="lab-panel active"
+        role="tabpanel"
+        id="lab-appeal-to-consequences-danger"
+        aria-labelledby="lab-appeal-to-consequences-danger-tab"
+        
+        data-tab-panel
+      >
+        <div class="two-column compact-columns">
+          <div class="note-panel">
+            <h4>Rationality danger</h4>
+            <p class="muted">Appeal to consequences threatens rationality by creating confidence moving faster than the evidence: occurs when someone treats the desirability or undesirability of a conclusion as if it were evidence that the conclusion is true or false. The module should make the user see how confidence, attention, or burden shifts without a matching increase in evidential support.</p>
+          </div>
+          <div class="note-panel">
+            <h4>Primary distortion</h4>
+            <p class="muted">confidence moving faster than the evidence.</p>
+          </div>
+          <div class="note-panel">
+            <h4>Category profile</h4>
+            <p class="muted">It overstates, understates, cherry-picks, or misallocates the force of evidence.</p>
+          </div>
+        </div></section><section
+        class="lab-panel"
+        role="tabpanel"
+        id="lab-appeal-to-consequences-dynamics"
+        aria-labelledby="lab-appeal-to-consequences-dynamics-tab"
+        hidden
+        data-tab-panel
+      >
+        <div class="two-column compact-columns">
+          <div class="note-panel">
+            <h4>Dynamics to notice</h4>
+            <p class="muted">Watch the trigger, the shortcut, and the payoff. Trigger: the claim enters under the Evidential frame with secondary pressure from Emotional. Shortcut: It overstates, understates, cherry-picks, or misallocates the force of evidence. Payoff: the conclusion becomes easier to accept, reject, or ignore before the relevant comparison has been paid for.</p>
+          </div>
+          <div class="note-panel">
+            <h4>Warning signs</h4>
+            <p class="muted">Warning signs: appeal to consequences often appears when a discussion uses evidential pressure to accelerate belief. Look for a move from a weaker observation to a stronger conclusion.</p>
+          </div>
+        </div></section><section
+        class="lab-panel"
+        role="tabpanel"
+        id="lab-appeal-to-consequences-repair"
+        aria-labelledby="lab-appeal-to-consequences-repair-tab"
+        hidden
+        data-tab-panel
+      ><div class="note-panel">
+        <h4>Repair prompts</h4>
+        <p class="muted">Consequences matter for what we should do, but they do not by themselves determine what is true. A painful implication does not refute a claim, and a comforting implication does not confirm one.</p>
+      </div></section><section
+        class="lab-panel"
+        role="tabpanel"
+        id="lab-appeal-to-consequences-tool"
+        aria-labelledby="lab-appeal-to-consequences-tool-tab"
+        hidden
+        data-tab-panel
+      >
+        <div class="two-column compact-columns">
+          <div class="note-panel">
+            <h4>Mechanic</h4>
+            <p class="muted">Evidence-weight meter: use the row&#39;s example as the initial scenario, then force the user to separate evidence, inference, emotion, wording, and missing alternatives.</p>
+          </div>
+          <div class="note-panel">
+            <h4>User action</h4>
+            <p class="muted">Assign weight to each item of evidence, then compare the resulting confidence to what the evidence actually supports.</p>
+          </div>
+          <div class="note-panel">
+            <h4>Feedback logic</h4>
+            <p class="muted">The app displays the gap between warranted confidence and the confidence created by the fallacious move.</p>
+          </div>
+          <div class="note-panel lab-simulator" data-confidence-lab>
+            <h4>Confidence gap check</h4>
+            <p class="muted">Compare how persuasive the current example feels with how much support it actually earns.</p>
+            <div class="lab-slider-grid">
+              <label class="slider-field">
+                <span>Surface pull</span>
+                <input type="range" min="0" max="100" value="70" data-lab-surface />
+                <output data-lab-surface-value>70</output>
+              </label>
+              <label class="slider-field">
+                <span>Evidential support</span>
+                <input type="range" min="0" max="100" value="40" data-lab-evidence />
+                <output data-lab-evidence-value>40</output>
+              </label>
+            </div>
+            <div class="lab-gap-track" aria-hidden="true">
+              <div class="lab-gap-fill" data-lab-gap-fill></div>
+            </div>
+            <p class="lab-gap-output" data-lab-gap-output></p>
+            <p class="muted lab-example"><strong>Example in play:</strong> If climate change were really this serious, it would mean expensive changes to how we live and work, so the science must be exaggerated.</p>
+          </div>
+        </div></section>
+  </div>
+    </article>
+  </section>
+
+    <section class="section-block">
       <div class="section-header">
         <div>
           <h3 class="section-title">Questions to ask</h3>

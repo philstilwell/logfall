@@ -124,6 +124,40 @@ function renderCaseStudy(item) {
   </blockquote>`;
 }
 
+function renderTabGroup(tabKey, items) {
+  const buttons = items
+    .map(
+      (item, index) => `<button
+        class="lab-tab${index === 0 ? " active" : ""}"
+        type="button"
+        role="tab"
+        id="${escapeHtml(item.id)}-tab"
+        aria-controls="${escapeHtml(item.id)}"
+        aria-selected="${index === 0 ? "true" : "false"}"
+        data-tab-button
+      >${escapeHtml(item.label)}</button>`,
+    )
+    .join("");
+
+  const panels = items
+    .map(
+      (item, index) => `<section
+        class="lab-panel${index === 0 ? " active" : ""}"
+        role="tabpanel"
+        id="${escapeHtml(item.id)}"
+        aria-labelledby="${escapeHtml(item.id)}-tab"
+        ${index === 0 ? "" : "hidden"}
+        data-tab-panel
+      >${item.content}</section>`,
+    )
+    .join("");
+
+  return `<div class="lab-tab-shell" data-tab-group="${escapeHtml(tabKey)}">
+    <div class="lab-tablist" role="tablist" aria-label="Rationality lab">${buttons}</div>
+    ${panels}
+  </div>`;
+}
+
 function normalizeRecordCategories(record) {
   const categories = [];
   const seen = new Set();
@@ -301,6 +335,155 @@ function relatedFallacies(record, records) {
     .map((item) => item.candidate);
 }
 
+function renderRationalityLab(record, categoryProfiles) {
+  const primaryCategory = record.categories[0] || "";
+  const primaryProfile = categoryProfiles[primaryCategory] || {};
+  const tabKey = `lab-${record.slug}`;
+  const tabs = [];
+
+  if (record.rationalityDanger || primaryProfile.distortion || primaryProfile.danger) {
+    tabs.push({
+      id: `${tabKey}-danger`,
+      label: "Danger",
+      content: `
+        <div class="two-column compact-columns">
+          ${
+            record.rationalityDanger
+              ? `<div class="note-panel">
+            <h4>Rationality danger</h4>
+            <p class="muted">${escapeHtml(record.rationalityDanger)}</p>
+          </div>`
+              : ""
+          }
+          ${
+            primaryProfile.distortion
+              ? `<div class="note-panel">
+            <h4>Primary distortion</h4>
+            <p class="muted">${escapeHtml(primaryProfile.distortion)}</p>
+          </div>`
+              : ""
+          }
+          ${
+            primaryProfile.danger
+              ? `<div class="note-panel">
+            <h4>Category profile</h4>
+            <p class="muted">${escapeHtml(primaryProfile.danger)}</p>
+          </div>`
+              : ""
+          }
+        </div>`,
+    });
+  }
+
+  if (record.dynamicsToNotice || record.warningSigns) {
+    tabs.push({
+      id: `${tabKey}-dynamics`,
+      label: "Dynamics",
+      content: `
+        <div class="two-column compact-columns">
+          ${
+            record.dynamicsToNotice
+              ? `<div class="note-panel">
+            <h4>Dynamics to notice</h4>
+            <p class="muted">${escapeHtml(record.dynamicsToNotice)}</p>
+          </div>`
+              : ""
+          }
+          ${
+            record.warningSigns
+              ? `<div class="note-panel">
+            <h4>Warning signs</h4>
+            <p class="muted">${escapeHtml(record.warningSigns)}</p>
+          </div>`
+              : ""
+          }
+        </div>`,
+    });
+  }
+
+  if (record.repairPrompts) {
+    tabs.push({
+      id: `${tabKey}-repair`,
+      label: "Repair",
+      content: `<div class="note-panel">
+        <h4>Repair prompts</h4>
+        <p class="muted">${escapeHtml(record.repairPrompts)}</p>
+      </div>`,
+    });
+  }
+
+  if (record.interactiveMechanic || record.userAction || record.feedbackLogic || primaryProfile.mechanic) {
+    tabs.push({
+      id: `${tabKey}-tool`,
+      label: "Interactive Tool",
+      content: `
+        <div class="two-column compact-columns">
+          ${
+            record.interactiveMechanic || primaryProfile.mechanic
+              ? `<div class="note-panel">
+            <h4>Mechanic</h4>
+            <p class="muted">${escapeHtml(record.interactiveMechanic || primaryProfile.mechanic || "")}</p>
+          </div>`
+              : ""
+          }
+          ${
+            record.userAction || primaryProfile.user_action
+              ? `<div class="note-panel">
+            <h4>User action</h4>
+            <p class="muted">${escapeHtml(record.userAction || primaryProfile.user_action || "")}</p>
+          </div>`
+              : ""
+          }
+          ${
+            record.feedbackLogic || primaryProfile.feedback
+              ? `<div class="note-panel">
+            <h4>Feedback logic</h4>
+            <p class="muted">${escapeHtml(record.feedbackLogic || primaryProfile.feedback || "")}</p>
+          </div>`
+              : ""
+          }
+          <div class="note-panel lab-simulator" data-confidence-lab>
+            <h4>Confidence gap check</h4>
+            <p class="muted">Compare how persuasive the current example feels with how much support it actually earns.</p>
+            <div class="lab-slider-grid">
+              <label class="slider-field">
+                <span>Surface pull</span>
+                <input type="range" min="0" max="100" value="70" data-lab-surface />
+                <output data-lab-surface-value>70</output>
+              </label>
+              <label class="slider-field">
+                <span>Evidential support</span>
+                <input type="range" min="0" max="100" value="40" data-lab-evidence />
+                <output data-lab-evidence-value>40</output>
+              </label>
+            </div>
+            <div class="lab-gap-track" aria-hidden="true">
+              <div class="lab-gap-fill" data-lab-gap-fill></div>
+            </div>
+            <p class="lab-gap-output" data-lab-gap-output></p>
+            <p class="muted lab-example"><strong>Example in play:</strong> ${escapeHtml(record.example)}</p>
+          </div>
+        </div>`,
+    });
+  }
+
+  if (!tabs.length) {
+    return "";
+  }
+
+  return `<section class="section-block">
+    <div class="section-header">
+      <div>
+        <h3 class="section-title">Rationality Lab</h3>
+        <p class="section-copy">Pedagogical additions imported from the rationality tool and adapted to the current LogFall style.</p>
+      </div>
+    </div>
+    <article class="detail-section">
+      ${renderTabGroup(tabKey, tabs)}
+    </article>
+  </section>`;
+}
+
 function buildHomePage(records, categories) {
   const featured = featuredNames
     .map((name) => records.find((record) => record.name === name))
@@ -345,7 +528,7 @@ function buildHomePage(records, categories) {
           </div>
           <div class="note-panel" style="margin-top:12px;">
             <h4>2. Jump to a detail page</h4>
-            <p class="muted">Each fallacy page brings together a concise definition, a concrete example, explanatory notes, case studies, and nearby entries.</p>
+            <p class="muted">Each fallacy page brings together a concise definition, a concrete example, explanatory notes, a rationality lab, case studies, and nearby entries.</p>
           </div>
           <div class="note-panel" style="margin-top:12px;">
             <h4>3. Use the workbook</h4>
@@ -571,7 +754,7 @@ function buildCategoryPage(category, records) {
   });
 }
 
-function buildDetailPage(record, records) {
+function buildDetailPage(record, records, categoryProfiles) {
   const related = relatedFallacies(record, records);
   const prompts = record.categories.map((category) => diagnosticPrompts[category]).filter(Boolean);
 
@@ -636,6 +819,8 @@ function buildDetailPage(record, records) {
     </section>`
         : ""
     }
+
+    ${renderRationalityLab(record, categoryProfiles)}
 
     ${
       prompts.length
@@ -740,7 +925,7 @@ function columnLetter(index) {
   return value;
 }
 
-async function buildWorkbook(records, categories) {
+async function buildWorkbook(records, categories, categoryProfiles) {
   const workbook = Workbook.create();
 
   const overview = workbook.worksheets.add("Overview");
@@ -772,6 +957,13 @@ async function buildWorkbook(records, categories) {
     "Definition",
     "Example",
     "Notes",
+    "Rationality Danger",
+    "Dynamics to Notice",
+    "Warning Signs",
+    "Interactive Mechanic",
+    "User Action",
+    "Feedback Logic",
+    "Repair Prompts",
     "Case Study 1",
     "Case Study 2",
     "Case Study 3",
@@ -793,6 +985,13 @@ async function buildWorkbook(records, categories) {
     record.definition,
     record.example,
     record.notes,
+    record.rationalityDanger || "",
+    record.dynamicsToNotice || "",
+    record.warningSigns || "",
+    record.interactiveMechanic || "",
+    record.userAction || "",
+    record.feedbackLogic || "",
+    record.repairPrompts || "",
     formatCaseStudyCell(record.caseStudies[0]),
     formatCaseStudyCell(record.caseStudies[1]),
     formatCaseStudyCell(record.caseStudies[2]),
@@ -811,20 +1010,35 @@ async function buildWorkbook(records, categories) {
   fallaciesSheet.getRange("F:F").format.columnWidthPx = 120;
   fallaciesSheet.getRange("G:I").format.columnWidthPx = 180;
   fallaciesSheet.getRange("J:J").format.columnWidthPx = 240;
-  fallaciesSheet.getRange("K:M").format.columnWidthPx = 420;
-  fallaciesSheet.getRange("N:R").format.columnWidthPx = 360;
-  fallaciesSheet.getRange("S:S").format.columnWidthPx = 180;
+  fallaciesSheet.getRange("K:T").format.columnWidthPx = 420;
+  fallaciesSheet.getRange("U:Y").format.columnWidthPx = 360;
+  fallaciesSheet.getRange("Z:Z").format.columnWidthPx = 180;
   fallaciesSheet.getRange(`A1:${columnLetter(headers.length)}1`).format.wrapText = true;
-  fallaciesSheet.getRange("J:S").format.wrapText = true;
+  fallaciesSheet.getRange("J:Z").format.wrapText = true;
 
   const categorySheet = workbook.worksheets.add("Categories");
-  const categoryRows = [["Category", "Count", "Description"], ...categories.map((category) => [category.name, category.count, category.description])];
-  categorySheet.getRange(`A1:C${categoryRows.length}`).values = categoryRows;
+  const categoryRows = [
+    ["Category", "Count", "Description", "Primary Distortion", "Category Danger", "Default Mechanic", "User Action", "Feedback"],
+    ...categories.map((category) => {
+      const profile = categoryProfiles[category.name] || {};
+      return [
+        category.name,
+        category.count,
+        category.description,
+        profile.distortion || "",
+        profile.danger || "",
+        profile.mechanic || "",
+        profile.user_action || "",
+        profile.feedback || "",
+      ];
+    }),
+  ];
+  categorySheet.getRange(`A1:H${categoryRows.length}`).values = categoryRows;
   categorySheet.freezePanes.freezeRows(1);
   categorySheet.getRange("A:A").format.columnWidthPx = 180;
   categorySheet.getRange("B:B").format.columnWidthPx = 100;
-  categorySheet.getRange("C:C").format.columnWidthPx = 620;
-  categorySheet.getRange("C:C").format.wrapText = true;
+  categorySheet.getRange("C:H").format.columnWidthPx = 360;
+  categorySheet.getRange("C:H").format.wrapText = true;
 
   const output = await SpreadsheetFile.exportXlsx(workbook);
   await output.save(workbookOutPath);
@@ -864,6 +1078,7 @@ async function main() {
     ...record,
     categories: normalizeRecordCategories(record),
   }));
+  const categoryProfiles = payload.categoryProfiles || {};
   const categories = payload.categories.map((category) => ({
     ...category,
     description: categoryDescriptions[category.name] || "A reasoning category in the LogFall taxonomy.",
@@ -896,10 +1111,10 @@ async function main() {
   }
 
   for (const record of records) {
-    await writeText(`fallacies/${record.slug}/index.html`, buildDetailPage(record, records));
+    await writeText(`fallacies/${record.slug}/index.html`, buildDetailPage(record, records, categoryProfiles));
   }
 
-  await buildWorkbook(records, categories);
+  await buildWorkbook(records, categories, categoryProfiles);
 
   console.log(
     JSON.stringify(

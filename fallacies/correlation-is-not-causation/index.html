@@ -101,6 +101,143 @@
     </section>
 
     <section class="section-block">
+    <div class="section-header">
+      <div>
+        <h3 class="section-title">Rationality Lab</h3>
+        <p class="section-copy">Pedagogical additions imported from the rationality tool and adapted to the current LogFall style.</p>
+      </div>
+    </div>
+    <article class="detail-section">
+      <div class="lab-tab-shell" data-tab-group="lab-correlation-is-not-causation">
+    <div class="lab-tablist" role="tablist" aria-label="Rationality lab"><button
+        class="lab-tab active"
+        type="button"
+        role="tab"
+        id="lab-correlation-is-not-causation-danger-tab"
+        aria-controls="lab-correlation-is-not-causation-danger"
+        aria-selected="true"
+        data-tab-button
+      >Danger</button><button
+        class="lab-tab"
+        type="button"
+        role="tab"
+        id="lab-correlation-is-not-causation-dynamics-tab"
+        aria-controls="lab-correlation-is-not-causation-dynamics"
+        aria-selected="false"
+        data-tab-button
+      >Dynamics</button><button
+        class="lab-tab"
+        type="button"
+        role="tab"
+        id="lab-correlation-is-not-causation-repair-tab"
+        aria-controls="lab-correlation-is-not-causation-repair"
+        aria-selected="false"
+        data-tab-button
+      >Repair</button><button
+        class="lab-tab"
+        type="button"
+        role="tab"
+        id="lab-correlation-is-not-causation-tool-tab"
+        aria-controls="lab-correlation-is-not-causation-tool"
+        aria-selected="false"
+        data-tab-button
+      >Interactive Tool</button></div>
+    <section
+        class="lab-panel active"
+        role="tabpanel"
+        id="lab-correlation-is-not-causation-danger"
+        aria-labelledby="lab-correlation-is-not-causation-danger-tab"
+        
+        data-tab-panel
+      >
+        <div class="two-column compact-columns">
+          <div class="note-panel">
+            <h4>Rationality danger</h4>
+            <p class="muted">Correlation is not causation threatens rationality by creating causal story replacing causal evidence: occurs when someone treats a correlation, coincidence, or time pattern as if it already established that one factor caused the other. The module should make the user see how confidence, attention, or burden shifts without a matching increase in evidential support.</p>
+          </div>
+          <div class="note-panel">
+            <h4>Primary distortion</h4>
+            <p class="muted">causal story replacing causal evidence.</p>
+          </div>
+          <div class="note-panel">
+            <h4>Category profile</h4>
+            <p class="muted">It makes one causal pathway feel established before alternatives, confounders, and directionality are tested.</p>
+          </div>
+        </div></section><section
+        class="lab-panel"
+        role="tabpanel"
+        id="lab-correlation-is-not-causation-dynamics"
+        aria-labelledby="lab-correlation-is-not-causation-dynamics-tab"
+        hidden
+        data-tab-panel
+      >
+        <div class="two-column compact-columns">
+          <div class="note-panel">
+            <h4>Dynamics to notice</h4>
+            <p class="muted">Watch the trigger, the shortcut, and the payoff. Trigger: the claim enters under the Causal frame. Shortcut: It makes one causal pathway feel established before alternatives, confounders, and directionality are tested. Payoff: the conclusion becomes easier to accept, reject, or ignore before the relevant comparison has been paid for.</p>
+          </div>
+          <div class="note-panel">
+            <h4>Warning signs</h4>
+            <p class="muted">Warning signs: correlation is not causation often appears when a discussion uses causal pressure to accelerate belief. Look for a move from a weaker observation to a stronger conclusion. Also watch for aliases or nearby labels: cum hoc ergo propter hoc.</p>
+          </div>
+        </div></section><section
+        class="lab-panel"
+        role="tabpanel"
+        id="lab-correlation-is-not-causation-repair"
+        aria-labelledby="lab-correlation-is-not-causation-repair-tab"
+        hidden
+        data-tab-panel
+      ><div class="note-panel">
+        <h4>Repair prompts</h4>
+        <p class="muted">Correlations matter because they can reveal patterns worth investigating. The fallacy is jumping straight from &#39;these moved together&#39; to &#39;this caused that&#39; without checking mechanisms, timing, controls, or alternative explanations.</p>
+      </div></section><section
+        class="lab-panel"
+        role="tabpanel"
+        id="lab-correlation-is-not-causation-tool"
+        aria-labelledby="lab-correlation-is-not-causation-tool-tab"
+        hidden
+        data-tab-panel
+      >
+        <div class="two-column compact-columns">
+          <div class="note-panel">
+            <h4>Mechanic</h4>
+            <p class="muted">Causal graph builder: use the row&#39;s example as the initial scenario, then force the user to separate evidence, inference, emotion, wording, and missing alternatives.</p>
+          </div>
+          <div class="note-panel">
+            <h4>User action</h4>
+            <p class="muted">Draw the claimed causal path, then add confounders, reverse arrows, and rival explanations.</p>
+          </div>
+          <div class="note-panel">
+            <h4>Feedback logic</h4>
+            <p class="muted">The app marks any unsupported causal arrow and shows which extra observations would discriminate among paths.</p>
+          </div>
+          <div class="note-panel lab-simulator" data-confidence-lab>
+            <h4>Confidence gap check</h4>
+            <p class="muted">Compare how persuasive the current example feels with how much support it actually earns.</p>
+            <div class="lab-slider-grid">
+              <label class="slider-field">
+                <span>Surface pull</span>
+                <input type="range" min="0" max="100" value="70" data-lab-surface />
+                <output data-lab-surface-value>70</output>
+              </label>
+              <label class="slider-field">
+                <span>Evidential support</span>
+                <input type="range" min="0" max="100" value="40" data-lab-evidence />
+                <output data-lab-evidence-value>40</output>
+              </label>
+            </div>
+            <div class="lab-gap-track" aria-hidden="true">
+              <div class="lab-gap-fill" data-lab-gap-fill></div>
+            </div>
+            <p class="lab-gap-output" data-lab-gap-output></p>
+            <p class="muted lab-example"><strong>Example in play:</strong> A school adds an AI tutoring tool and test scores rise the next semester, so the district concludes that the tool caused the improvement without ruling out teacher changes, cohort differences, or extra tutoring time.</p>
+          </div>
+        </div></section>
+  </div>
+    </article>
+  </section>
+
+    <section class="section-block">
       <div class="section-header">
         <div>
           <h3 class="section-title">Questions to ask</h3>
