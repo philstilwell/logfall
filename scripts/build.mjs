@@ -181,14 +181,13 @@ function toolModeForCategory(category = "") {
   return "default";
 }
 
-function buildReasoningAudit(record, prompt, primaryProfile) {
+function buildAuditPreset(record, prompt, primaryProfile) {
   const category = record.categories[0] || "";
   const mode = toolModeForCategory(category);
   const baseExample = ensureSentence(record.example || record.definition);
   const problem = ensureSentence(record.mainReasoningProblem || record.definition);
   const notes = ensureSentence(record.notes || record.feedbackLogic || record.rationalityDanger || "");
   const repairPrompt = ensureSentence(prompt || record.repairPrompts || "Ask what extra step the conclusion needs before it is earned.");
-  const tabKey = `audit-${record.slug}`;
 
   const presets = {
     causal: {
@@ -349,7 +348,15 @@ function buildReasoningAudit(record, prompt, primaryProfile) {
     },
   };
 
-  const preset = presets[mode];
+  return {
+    ...presets[mode],
+    highlight: ensureSentence(record.feedbackLogic || primaryProfile.feedback || record.notes || ""),
+  };
+}
+
+function buildReasoningAudit(record, prompt, primaryProfile) {
+  const tabKey = `audit-${record.slug}`;
+  const preset = buildAuditPreset(record, prompt, primaryProfile);
   const buttons = preset.steps
     .map(
       (step, index) => `<button
@@ -394,49 +401,37 @@ function buildReasoningAudit(record, prompt, primaryProfile) {
     <div class="audit-panel-wrap">
       ${panels}
     </div>
-    ${
-      record.feedbackLogic || primaryProfile.feedback
-        ? `<p class="muted audit-feedback"><strong>What this tool highlights:</strong> ${escapeHtml(record.feedbackLogic || primaryProfile.feedback || "")}</p>`
-        : ""
-    }
+    ${preset.highlight ? `<p class="muted audit-feedback"><strong>What this walkthrough highlights:</strong> ${escapeHtml(preset.highlight)}</p>` : ""}
     <p class="muted lab-example"><strong>Current example:</strong> ${escapeHtml(record.example)}</p>
   </div>`;
 }
 
 function buildAuditSupportPanels(record, prompt, primaryProfile) {
-  const primaryCategory = record.categories[0] || "";
-  const mode = toolModeForCategory(primaryCategory);
-  const promptText = ensureSentence(prompt || record.repairPrompts || "Ask what extra step the conclusion still needs before it is earned.");
-  const problem = ensureSentence(record.mainReasoningProblem || record.definition);
-  const mechanic = ensureSentence(record.interactiveMechanic || primaryProfile.mechanic || "");
-  const feedback = ensureSentence(record.feedbackLogic || primaryProfile.feedback || record.notes || "");
-  const userAction = ensureSentence(record.userAction || primaryProfile.user_action || "");
-
-  const focusCopy = {
-    causal: "This walkthrough traces how the example moves from an observed pattern to a stronger causal claim than the evidence has actually established.",
-    evidential: "This walkthrough traces how the example moves from limited support to a broader conclusion or a higher level of confidence than the evidence earns.",
-    tactical: "This walkthrough traces how the example redirects attention away from the real issue and toward pressure, emotion, or a strategic detour.",
-    conceptual: "This walkthrough traces where the example blurs a distinction, frame, or category boundary before drawing its conclusion.",
-    structural: "This walkthrough traces where the example relies on a structure, rule, or numerical move that does not actually carry the conclusion.",
-    default: "This walkthrough traces the point where the example starts asking for more than the reasoning has earned.",
-  }[mode];
+  const preset = buildAuditPreset(record, prompt, primaryProfile);
+  const stepLabels = preset.steps.map((step) => step.label).join(" -> ");
+  const flowText = ensureSentence(
+    `It moves through ${preset.steps[0].label}, ${preset.steps[1].label}, ${preset.steps[2].label}, and ${preset.steps[3].label} so the reader can follow the example from setup to diagnosis to repair`,
+  );
+  const usageText = ensureSentence(
+    `Move through ${stepLabels} in order, compare each stage to the current example, and stop as soon as the later step adds more than the earlier one has earned`,
+  );
 
   return `<div class="two-column compact-columns">
     <div class="note-panel">
-      <h4>What you are tracing</h4>
-      <p class="muted">${escapeHtml(mechanic || focusCopy)}</p>
+      <h4>What this walkthrough follows</h4>
+      <p class="muted">${escapeHtml(`${preset.intro} ${flowText}`)}</p>
     </div>
     <div class="note-panel">
       <h4>Where the slip happens</h4>
-      <p class="muted">${escapeHtml(problem || feedback || "The tool isolates the exact place where the conclusion outruns the reasoning.")}</p>
+      <p class="muted">${escapeHtml(preset.steps[1].body)}</p>
     </div>
     <div class="note-panel">
-      <h4>How to use it</h4>
-      <p class="muted">${escapeHtml(userAction || "Move through the stages in order, compare each step with the example, and stop when you see the conclusion add more than the earlier step justifies.")}</p>
+      <h4>How to use the stages</h4>
+      <p class="muted">${escapeHtml(usageText)}</p>
     </div>
     <div class="note-panel">
-      <h4>What to ask next</h4>
-      <p class="muted">${escapeHtml(promptText)}</p>
+      <h4>What the repair step asks</h4>
+      <p class="muted">${escapeHtml(preset.steps[3].body)}</p>
     </div>
   </div>`;
 }
