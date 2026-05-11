@@ -1574,29 +1574,114 @@ function buildAboutPage() {
 
     <section class="detail-section">
       <p class="eyebrow">About LogFall</p>
-      <h2 class="detail-title">A teaching-focused reference for reasoning mistakes.</h2>
+      <h2 class="detail-title">A teaching-focused reference built by Phil Stilwell and his students.</h2>
       <p class="detail-deck">
-        LogFall is designed to help readers recognize common reasoning errors, distinguish near neighbors,
-        and practice better habits of interpretation, comparison, and repair.
+        LogFall grew out of years of teaching critical thinking, logic, and argument analysis in university classrooms.
+        It is designed to help readers recognize reasoning mistakes, distinguish near neighbors, and practice clearer habits of interpretation, comparison, and repair.
       </p>
-      <div class="two-column section-block">
-        <div class="note-panel">
-          <h4>What each page does</h4>
-          <p class="muted">Each fallacy page combines a definition, a concrete example, explanatory notes, case studies, related fallacies, and a guided practice tool.</p>
+      <div class="about-profile-grid section-block">
+        <div class="note-panel about-portrait-panel">
+          <img class="about-portrait" src="../assets/phil-stilwell-profile.png" alt="Phil Stilwell" />
+          <p class="muted about-portrait-caption">
+            Phil Stilwell is an essentially retired academic consultant, researcher, and university instructor whose work has centered on philosophy,
+            epistemology, critical thinking, and macroeconomic theory.
+          </p>
         </div>
-        <div class="note-panel">
-          <h4>How the categories work</h4>
-          <p class="muted">Categories sort fallacies by the main kind of reasoning failure involved, so readers can compare similar mistakes instead of memorizing isolated names.</p>
+        <div class="about-card-stack">
+          <div class="note-panel">
+            <h4>About Phil Stilwell</h4>
+            <p class="muted about-summary">
+              Phil Stilwell&rsquo;s career has spanned more than 26 years, much of it in Japan, across university instruction,
+              academic consulting, and research. His main areas of focus include philosophy of science, epistemology, induction,
+              analytic philosophy, applied logic, and critical thinking, with continuing work connected to
+              <a class="text-link" href="https://credencing.com">Credencing</a>.
+              He also remains engaged with questions in cognitive science, economic modeling, and technological change.
+            </p>
+            <ul class="about-credential-list">
+              <li><strong>BA Philosophy, 1996</strong> &mdash; Summa Cum Laude, The University of Kansas</li>
+              <li><strong>MA Education, 1998</strong> &mdash; The University of Kansas</li>
+              <li><strong>Teaching focus</strong> &mdash; critical thinking, philosophy, epistemology, macroeconomics, and technical writing</li>
+              <li><strong>Professional base</strong> &mdash; university instruction and academic consulting, primarily in Japan</li>
+            </ul>
+          </div>
+          <div class="two-column compact-columns">
+            <div class="note-panel">
+              <h4>Academic background</h4>
+              <p class="muted">
+                Phil has designed and taught university-level philosophy curricula, including a general survey course with emphasis on analytic philosophy and existentialism.
+                His research interests have centered on epistemology, induction, the philosophy of science, and the structure of rational belief.
+              </p>
+            </div>
+            <div class="note-panel">
+              <h4>Applied logic and instruction</h4>
+              <p class="muted">
+                A central aim of his teaching has been the cultivation of applied logic and critical analysis.
+                He taught critical thinking courses for university and professional audiences, including work at the NYU School of Professional Studies in Tokyo,
+                and later served as a Speech &amp; Debate Judge for the Japan Customs Bureau national contest, including a term as Chief Judge from 2016 to 2017.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
       <div class="two-column section-block">
         <div class="note-panel">
-          <h4>Design goal</h4>
-          <p class="muted">Make the taxonomy easy to scan, search, compare, and teach while preserving the recognizable red-and-cyan LogFall identity.</p>
+          <h4>Macroeconomics and systems analysis</h4>
+          <p class="muted">
+            Phil&rsquo;s analytical work also extends to macroeconomic theory and forecasting.
+            From 2011 to 2015, he taught macroeconomics at Gakushuin University and developed &ldquo;The Shape of the Future,&rdquo;
+            a course focused on futurology and systemic forecasting.
+          </p>
         </div>
         <div class="note-panel">
-          <h4>Editorial standard</h4>
-          <p class="muted">Entries are strongest when they are plainspoken, logically precise, tied to concrete examples, and explicit about how a better line of reasoning would proceed.</p>
+          <h4>Academic consulting and technical communication</h4>
+          <p class="muted">
+            Through Stilwell Consulting, which he has operated since 2003, Phil has helped professors and graduate researchers refine technical writing into journal-level English
+            and prepare papers and presentations for elite academic settings. From 2015 to 2017, he also taught technical writing at The University of Tokyo,
+            focusing on style guides, composition, and publication practice for international graduate students.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section section-block">
+      <p class="eyebrow">Why This Site Exists</p>
+      <h2 class="detail-title about-origin-title">A classroom-built resource for teaching better reasoning.</h2>
+      <p class="detail-deck">
+        The inspiration for LogFall came from the many critical thinking classes Phil taught over the years.
+        The project began as a practical teaching tool and gradually became a broader reference for students, instructors, debaters, and careful readers.
+      </p>
+      <div class="two-column section-block">
+        <div class="note-panel">
+          <h4>Classroom origin</h4>
+          <p class="muted">
+            In class, students often needed more than a list of fallacy names. They needed help distinguishing similar mistakes,
+            seeing exactly where an argument slipped, and learning how to repair a weak argument instead of merely labeling it.
+            LogFall was shaped around those repeated classroom needs.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Joint effort with students</h4>
+          <p class="muted">
+            This collection of logical fallacies was a joint effort between Phil and his students.
+            Class discussions, example-hunting, objections, revisions, and moments of confusion all helped sharpen the entries,
+            making the site less like a static glossary and more like a teaching resource tested against real classroom use.
+          </p>
+        </div>
+      </div>
+      <div class="two-column section-block">
+        <div class="note-panel">
+          <h4>What each page is for</h4>
+          <p class="muted">
+            Each fallacy page combines a definition, a concrete example, explanatory notes, case studies, related fallacies, companion imagery,
+            and a guided practice tool. The goal is not just to name a mistake, but to help readers see the structure of the mistake clearly enough to avoid repeating it.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>How the categories help</h4>
+          <p class="muted">
+            Categories group fallacies by the main kind of reasoning failure involved, so readers can compare similar mistakes instead of memorizing isolated labels.
+            That structure makes the site more useful for teaching, self-study, and side-by-side diagnosis.
+          </p>
         </div>
       </div>
     </section>
@@ -1604,7 +1689,7 @@ function buildAboutPage() {
 
   return pageShell({
     title: "About | LogFall",
-    description: "About LogFall and how to use the site to study logical fallacies.",
+    description: "About Phil Stilwell, the teaching background behind LogFall, and the classroom inspiration for the site.",
     prefix: "../",
     currentSection: "about",
     canonicalPath: "about/",
