@@ -848,14 +848,14 @@
       "aliases": [
         "argumentum ad nauseam"
       ],
-      "definition": "Assuming that, because no one cares to discuss your position with you any longer, that your position is correct.",
-      "example": "I've been arguing with my wife for 20 years about my gambling habit. She finally stopped arguing with me, demonstrating that I've been right all these years.",
-      "notes": "The unfortunate thing about this fallacy is that it often works. The mere repetition of a fallacious argument will often lead to its entrenchment in a society.",
+      "definition": "Occurs when repetition is treated as if it adds evidence, wearing down doubt or making a claim seem true through familiarity.",
+      "example": "People have been saying for months that the election was stolen, so there has to be something to it.",
+      "notes": "A claim does not become better supported because it is repeated by the same speaker, echoed by many speakers, or circulated for a long time. Repetition changes familiarity, not the underlying evidence.",
       "caseStudies": [
-        "The tobacco companies persistently spread disinformation for years, and, in so doing, successfully converted many young people to the smoking that eventually killed them.",
-        "The dictators of many countries set up propaganda campaigns that simply repeat the largely mythical achievements of the \"glorious leader\"."
+        "The Springfield, Ohio pet-eating rumor in September 2024 moved from rumor to national talking point largely through repetition across social media, cable segments, and campaign rhetoric even though local officials said there was no credible evidence.",
+        "Claims of widespread noncitizen voting often survive audit after audit because the same allegation is repeated so often that persistence itself gets mistaken for proof."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Argument from silence",
@@ -920,13 +920,14 @@
         "appeal to the majority",
         "appeal to the people"
       ],
-      "definition": "Occurs when a conclusion is claimed to be true solely because many people believe it to be true.",
-      "example": "Nearly everyone believes there are moral rules we must live by, so for you to claim these moral rules do not exist is ridiculous!",
-      "notes": "This fallacy is usually committed by those who start with the assumption that belief in something is evidence for the existence of that something. In other words, an epistemic commitment is indicative of ontological fact. they place much confidence in the reliability of the human mind to arrive at true beliefs. This assumption, however, must be tested. An easy test of this assumption would be to consider how many humans hold beliefs that are incomparable with the beliefs of most of the world. Given the many incompatible religious and political beliefs, it seems quite clear that our basic ability to formulate true beliefs is not very reliable, and therefore convention is not a very good measure of correctness. This unreliability becomes even more salient when we consider the many erroneous beliefs our own ancestors held but a few decades ago.",
+      "definition": "Occurs when a claim is treated as true, reasonable, or justified mainly because many people believe it, share it, or act on it.",
+      "example": "Millions of people are using this detox protocol online, so it cannot be pseudoscience.",
+      "notes": "Popularity can reveal what people want, fear, or have been persuaded by, but it does not settle what is true. Crowds can be informed, confused, manipulated, or all three at once.",
       "caseStudies": [
-        "Nearly everyone speeds while driving, but invoking this fact will probably not convine the police officer standing at your window. Nor should it convice him. Laws are often made based on the fact that too many people believe and do the very same thing."
+        "Advocates of raw milk and other 'natural' wellness products often point to growing enthusiasm, celebrity uptake, or huge followings as if social momentum itself established safety or effectiveness.",
+        "Viral political claims are often defended with phrases like 'everyone is talking about it' or 'it has millions of views,' which confuses reach with reliability."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Artificial negation",
@@ -985,13 +986,14 @@
       "aliases": [
         "ipse-dixitism"
       ],
-      "definition": "Occurs when a controversial premise is introduced without substantiation.",
-      "example": "My father Is 3 meters tall. Your father is only 1 meter tall. Therefore my father is taller than your father.",
-      "notes": "This fallacy is often accompanies by a phrase such as \"Trust me.\" It might be considered a self-referential appeal to authority. A more rigorous and constrained discussion might allow you to ask \"What is you evidence for that claim?\" However, when bare assertions are constantly thrown out as red herrings, it may be best to abandon any hope of real dialog. \"When I use a word\" Humpty Dumpty said, \"...it means just what I choose it to mean-neither more nor less.\"\nLewis Carroll, Through the Looking Glass.",
+      "definition": "Occurs when a contested claim is simply asserted, often confidently, without the evidence needed to justify it.",
+      "example": "The jobs report was obviously manipulated. Everyone knows that.",
+      "notes": "Confidence, volume, and repetition can make a bare assertion sound weighty, but they do not do the evidential work. When the core support is missing, the proper question is still: What is the evidence?",
       "caseStudies": [
-        "Many economic or political arguments begin with bare assertions such as \"The economy can't grow without tax breaks, so we need to...\""
+        "The anonymous affidavit circulated after the September 2024 ABC debate was treated by many users as explosive proof of moderator collusion even though the central accusations were not substantiated.",
+        "Public arguments about crime, immigration, vaccines, and election administration often begin with unsupported declarations that function rhetorically as if they were already established facts."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Base rate fallacy",
@@ -1092,11 +1094,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "An argument which disregards lost opportunity costs (typically non-obvious, difficult to determine or otherwise hidden) associated with destroying property of others, or other ways of externalizing costs onto others.",
-      "example": "After downtown vandalism, a mayor praises the damage for 'creating jobs' for glaziers while ignoring the shops, wages, and purchases that would have existed if the windows had never been broken.",
-      "notes": "",
-      "caseStudies": [],
-      "editorialStatus": "cleaned-from-root"
+      "definition": "Occurs when destruction or forced replacement is treated as an economic gain because the visible spending is counted while the unseen losses and forgone alternatives are ignored.",
+      "example": "The storm wrecked half the boardwalk, but at least all the rebuilding will be great for the local economy.",
+      "notes": "Repair work creates visible activity, but it mainly restores value that was lost. The missing comparison is what households, firms, insurers, and governments could have done with those same resources if the damage had not occurred.",
+      "caseStudies": [
+        "After Hurricanes Helene and Milton in October 2024, some commentary emphasized reconstruction jobs and spending while downplaying the destroyed homes, shuttered businesses, and other uses those resources would have supported.",
+        "Cyberattacks, vandalism, and infrastructure failures are sometimes framed as hidden economic stimulus because repairs employ people, even though the spending mainly compensates for an avoidable loss."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Cherry picking",
@@ -2021,14 +2026,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when not enough information is provided to make a complete comparison.",
-      "example": "This watch is more accurate than that watch, so it's better to buy this one.",
-      "notes": "When buying a new watch, many factor such as price, functionality and style need to be taken into consideration.",
+      "definition": "Occurs when one option is called better, worse, cheaper, safer, or more effective without specifying the relevant comparison class or the other factors that matter.",
+      "example": "This city has lower rent than New York, so it is a more affordable place to live.",
+      "notes": "A comparison can be true in one narrow respect while misleading overall. The missing pieces might include quality, risk, wages, inflation, time horizon, tradeoffs, or alternative baselines.",
       "caseStudies": [
-        "If a national health care package is deemed the only response to demographic gaps in health care coverage without proper consideration of long-term financial and social consequences, this is an incomplete comparison.",
-        "If you claim that young people today are wealthier than their parents had at the same age, you would be committing an incomplete comparison fallacy. You'll have to take into account monetary inflation, plus the changing perceived value placed on items and services such as health care, transportation, and computers."
+        "Campaign arguments about the economy often isolate one metric such as gas prices, job totals, or stock indexes and treat that single comparison as if it captured the whole condition of household life.",
+        "Technology marketing frequently calls a new tool 'more productive' without clarifying productive for whom, under what workflow, at what error rate, and at what human cost."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Inconsistent comparison",
@@ -2143,11 +2148,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Related to the belief that labour-saving technologies increase unemployment by reducing demand for labour.",
-      "example": "A city blocks warehouse automation on the ground that any labor-saving technology must reduce total employment, without considering how demand and new roles can shift elsewhere.",
-      "notes": "",
-      "caseStudies": [],
-      "editorialStatus": "cleaned-from-root"
+      "definition": "Occurs when labor-saving technology is treated as if it must reduce total employment or human usefulness simply because it automates some existing tasks.",
+      "example": "If the company adopts AI support tools, there will be nothing left for people to do.",
+      "notes": "New technology can displace real jobs and create painful transitions. The fallacy is the stronger claim that automation as such can only destroy work, rather than reorganize it, lower costs, create new roles, or shift labor elsewhere.",
+      "caseStudies": [
+        "Debates over generative AI in 2024 often jumped straight from 'this automates part of my job' to 'therefore it will inevitably make people broadly unemployable,' skipping the more complicated evidence about substitution, augmentation, and new roles.",
+        "The U.S. dockworker fight over port automation in October 2024 showed why the issue is serious, but it also illustrated the need to distinguish real bargaining and transition questions from the blanket claim that productivity-enhancing technology is always socially worse."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Masked man fallacy",
@@ -2217,14 +2225,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "The claim that if something is natural, pleasant, or popular, then it is good or right.",
-      "example": "I know I'm in love with a bank robber. But how could could it be wrong if it feels so right?",
-      "notes": "",
+      "definition": "Occurs when something is treated as good, safe, or morally preferable mainly because it is called natural, traditional, or closer to nature.",
+      "example": "Raw milk must be healthier because it is the way milk comes from the cow.",
+      "notes": "Natural things can be wonderful, harmful, neutral, or context-dependent. Arsenic, viruses, and earthquakes are natural too. The relevant questions are evidence, outcomes, and tradeoffs, not whether something sounds untouched.",
       "caseStudies": [
-        "It has been argued that, the poverty of the uneducated is deserved because they choose not to further their education. This ignores the arguably vicious circular causation between a low education level and the inability to earn enough money to get an education. Conversely, there is nothing inherent to the status of the affluent that makes them \"worthy\" or \"deserving\" of their fate.",
-        "Some proponents of Social Darwinism suggested that, because evolution operates on the survival of the fittest, that we ought to extend this notion of survival of the fittest to social policies. There is no coherent reason why humans need to adopt nature's agenda as their own agenda."
+        "The 2026 push to expand raw milk access often leaned on the idea that unprocessed equals healthier, despite repeated warnings from public-health officials that the safety risks are real and the claimed benefits remain unproven.",
+        "Wellness marketing routinely sells herbs, supplements, detoxes, and hormone routines by invoking nature itself as if natural origin settled the medical question."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Negative proof fallacy",
@@ -2257,11 +2265,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when a solution to a problem is said to have no value because it is not perfect.",
-      "example": "They shouldn't get married since they often have arguments.",
-      "notes": "This is very similar to the \"perfect solution fallacy.\" \"The perfect is the enemy of the good.\" ~Voltaire.",
-      "caseStudies": [],
-      "editorialStatus": "cleaned-from-root"
+      "definition": "Occurs when a realistic option is rejected because it does not solve a problem perfectly or because an imagined ideal is used as the standard of comparison.",
+      "example": "If carbon labels will not eliminate greenwashing entirely, there is no point requiring them.",
+      "notes": "Most policies, tools, and institutions are partial fixes. The right question is often whether an option improves matters relative to feasible alternatives, not whether it achieves a flawless end state.",
+      "caseStudies": [
+        "Critics of content moderation, election safeguards, AI guardrails, and climate policy often reject incremental measures on the grounds that bad cases will still exist, as if imperfection erased all value.",
+        "Debates about public-health interventions frequently collapse into 'if it does not stop every case, it failed,' which compares reality to fantasy rather than to the available alternatives."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "No True Scotsman",
@@ -2716,14 +2727,14 @@
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Picking your target after you make your prediction or speculation to ensure that you are right.",
-      "example": "Last year, the governor promised to stimulate the economy during his term, and you will note that this year there has been an increase of 2,000 jobs in the service industry.",
-      "notes": "The governor in the example may be ignoring other less-favorable data to paint a picture of success. This fallacy is similar to cherry-picking. It is subjectively and arbitrarily (though perhaps subconsciously) selecting data that will bolster your position while ignoring data inconsistent with your position. For this reason, scientists attempt to reduce subjectivity by starting with a hypothesis, then attempt to falsify that hypothesis by every imaginable means. This increases the objectivity basic to scientific success and respectability.",
+      "definition": "Occurs when someone highlights the data cluster that supports a favored story only after looking at the results, then treats that hand-picked pattern as if it had been the tested target all along.",
+      "example": "I examined dozens of neighborhoods, found the one where crime fell after my program launched, and declared the program a proven success.",
+      "notes": "This is close to cherry picking, but the emphasis is on drawing the target around the bullet holes after the shots land. Post hoc pattern-hunting can make randomness, noise, or mixed data look like confirmation.",
       "caseStudies": [
-        "Consider someone who claims he can accurately and consistently predict the outcome of coin flips. After 5 flips he has only guessed 2 flips correctly (40%), and wants to continue the experiment. Finally after 20 flips, he has guessed 13 correctly, and wants to stop, making his accuracy appear to be 65%. However, because he was able to choose when to quit, the results are subjectively biased, and do not meet the standards of experimentation set by science.",
-        "Cherry picking data on global warming has been one area of recent abuse. \"If you look at the data and sort of cherry-pick a micro-trend within a bigger trend, that technique is particularly suspect,\" says John Grego, a professor of statistics at the University of South Carolina."
+        "Economic and election commentary often selects the time window, county, or subgroup that flatters the preferred narrative after the fact, then presents that slice as the decisive measure.",
+        "AI benchmarking and startup marketing sometimes advertise the few tasks where a model shines while leaving out the wider distribution of tasks where the results are weaker or unstable."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Single cause fallacy",
@@ -2740,14 +2751,14 @@
         "joint effect",
         "causal oversimplification"
       ],
-      "definition": "Occurs when it is assumed that there is merely one cause of a phenomenon while other possibly contributing causes go undetected, are ignored or are illegitimately minimized.",
-      "example": "The drop in crime in our neighborhood is due to better policing.",
-      "notes": "The actual cause of a local drop in crime may actually be a collection of causes such as the installation of surveillance cameras, a better local economy that has given would-be criminals jobs and money, improved forensics, new home entertainment hardware and software that keep would-be criminals preoccupied, better role models, and tougher laws that have locked up the most frequent offenders. This fallacy is a type of false dilemma.",
+      "definition": "Occurs when a complex outcome is explained as if one cause alone did the work, while other relevant causes are ignored or illegitimately minimized.",
+      "example": "Inflation happened because of one policy decision.",
+      "notes": "Some causes are more important than others, and sometimes one factor really is dominant. The fallacy appears when a multi-causal phenomenon is flattened into a one-variable story without enough evidence.",
       "caseStudies": [
-        "Nearly every country that has become prosperous throughout history has had some of its citizens claiming that their greatness was entirely due to the superiority of their nationality or their particular god.",
-        "Whenever there is a school shooting, there emerge dozens of speculative opinions, each fingering a single cause such as poor parenting, violent video games, secular education, or the availability of guns. A responsible opinion would attempt cite evidence for the weight of each possible cause."
+        "Arguments about inflation, crime, housing costs, and educational decline often blame one villain such as immigrants, regulation, presidents, or social media, even when the outcome reflects multiple interacting causes.",
+        "After school shootings or viral episodes of unrest, public commentary regularly rushes to one master explanation instead of asking how incentives, access, institutions, culture, and personal history combine."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Slippery slope",
@@ -2865,11 +2876,14 @@
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when the style of the argument's presentation is emphasized, while marginalizing the actual content of the argument.",
-      "example": "The audience's applause for my points during the debate this evening demonstrates the veracity of my arguments.",
-      "notes": "This seems to be the prevailing fallacy in politics. However, a beautiful delivery does not necessarily mean there is no real content.",
-      "caseStudies": [],
-      "editorialStatus": "cleaned-from-root"
+      "definition": "Occurs when the polish, confidence, charisma, or dramatic force of a presentation is treated as if it established the quality of the argument itself.",
+      "example": "She demolished the debate because the crowd cheered and her one-liners landed.",
+      "notes": "Strong delivery can make good arguments easier to hear, but it can also camouflage weak ones. Audiences often remember certainty, rhythm, and applause longer than the actual reasoning.",
+      "caseStudies": [
+        "Coverage of the September 10, 2024 Harris-Trump debate often focused on who seemed stronger, calmer, or more in command, which matters politically but does not by itself settle whether the claims on stage were accurate.",
+        "Short-form video and podcast culture reward confidence, pace, and rhetorical dominance, making it easy for a slick performance to outperform a careful but less theatrical argument."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Suppressed correlative",

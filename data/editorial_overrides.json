@@ -369,6 +369,116 @@
         "Beliefs about the afterlife, destiny, or technological salvation are often defended by saying life would feel bleak without them, which speaks to desire rather than truth."
       ],
       "editorialStatus": "modernized-2026-pass"
+    },
+    "Argument from repetition": {
+      "definition": "Occurs when repetition is treated as if it adds evidence, wearing down doubt or making a claim seem true through familiarity",
+      "example": "People have been saying for months that the election was stolen, so there has to be something to it.",
+      "notes": "A claim does not become better supported because it is repeated by the same speaker, echoed by many speakers, or circulated for a long time. Repetition changes familiarity, not the underlying evidence.",
+      "caseStudies": [
+        "The Springfield, Ohio pet-eating rumor in September 2024 moved from rumor to national talking point largely through repetition across social media, cable segments, and campaign rhetoric even though local officials said there was no credible evidence.",
+        "Claims of widespread noncitizen voting often survive audit after audit because the same allegation is repeated so often that persistence itself gets mistaken for proof."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Argumentum ad populum": {
+      "definition": "Occurs when a claim is treated as true, reasonable, or justified mainly because many people believe it, share it, or act on it",
+      "example": "Millions of people are using this detox protocol online, so it cannot be pseudoscience.",
+      "notes": "Popularity can reveal what people want, fear, or have been persuaded by, but it does not settle what is true. Crowds can be informed, confused, manipulated, or all three at once.",
+      "caseStudies": [
+        "Advocates of raw milk and other 'natural' wellness products often point to growing enthusiasm, celebrity uptake, or huge followings as if social momentum itself established safety or effectiveness.",
+        "Viral political claims are often defended with phrases like 'everyone is talking about it' or 'it has millions of views,' which confuses reach with reliability."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Bare assertion fallacy": {
+      "definition": "Occurs when a contested claim is simply asserted, often confidently, without the evidence needed to justify it",
+      "example": "The jobs report was obviously manipulated. Everyone knows that.",
+      "notes": "Confidence, volume, and repetition can make a bare assertion sound weighty, but they do not do the evidential work. When the core support is missing, the proper question is still: What is the evidence?",
+      "caseStudies": [
+        "The anonymous affidavit circulated after the September 2024 ABC debate was treated by many users as explosive proof of moderator collusion even though the central accusations were not substantiated.",
+        "Public arguments about crime, immigration, vaccines, and election administration often begin with unsupported declarations that function rhetorically as if they were already established facts."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Broken window fallacy": {
+      "definition": "Occurs when destruction or forced replacement is treated as an economic gain because the visible spending is counted while the unseen losses and forgone alternatives are ignored",
+      "example": "The storm wrecked half the boardwalk, but at least all the rebuilding will be great for the local economy.",
+      "notes": "Repair work creates visible activity, but it mainly restores value that was lost. The missing comparison is what households, firms, insurers, and governments could have done with those same resources if the damage had not occurred.",
+      "caseStudies": [
+        "After Hurricanes Helene and Milton in October 2024, some commentary emphasized reconstruction jobs and spending while downplaying the destroyed homes, shuttered businesses, and other uses those resources would have supported.",
+        "Cyberattacks, vandalism, and infrastructure failures are sometimes framed as hidden economic stimulus because repairs employ people, even though the spending mainly compensates for an avoidable loss."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Incomplete comparison": {
+      "definition": "Occurs when one option is called better, worse, cheaper, safer, or more effective without specifying the relevant comparison class or the other factors that matter",
+      "example": "This city has lower rent than New York, so it is a more affordable place to live.",
+      "notes": "A comparison can be true in one narrow respect while misleading overall. The missing pieces might include quality, risk, wages, inflation, time horizon, tradeoffs, or alternative baselines.",
+      "caseStudies": [
+        "Campaign arguments about the economy often isolate one metric such as gas prices, job totals, or stock indexes and treat that single comparison as if it captured the whole condition of household life.",
+        "Technology marketing frequently calls a new tool 'more productive' without clarifying productive for whom, under what workflow, at what error rate, and at what human cost."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Luddite fallacy": {
+      "definition": "Occurs when labor-saving technology is treated as if it must reduce total employment or human usefulness simply because it automates some existing tasks",
+      "example": "If the company adopts AI support tools, there will be nothing left for people to do.",
+      "notes": "New technology can displace real jobs and create painful transitions. The fallacy is the stronger claim that automation as such can only destroy work, rather than reorganize it, lower costs, create new roles, or shift labor elsewhere.",
+      "caseStudies": [
+        "Debates over generative AI in 2024 often jumped straight from 'this automates part of my job' to 'therefore it will inevitably make people broadly unemployable,' skipping the more complicated evidence about substitution, augmentation, and new roles.",
+        "The U.S. dockworker fight over port automation in October 2024 showed why the issue is serious, but it also illustrated the need to distinguish real bargaining and transition questions from the blanket claim that productivity-enhancing technology is always socially worse."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Naturalistic fallacy": {
+      "definition": "Occurs when something is treated as good, safe, or morally preferable mainly because it is called natural, traditional, or closer to nature",
+      "example": "Raw milk must be healthier because it is the way milk comes from the cow.",
+      "notes": "Natural things can be wonderful, harmful, neutral, or context-dependent. Arsenic, viruses, and earthquakes are natural too. The relevant questions are evidence, outcomes, and tradeoffs, not whether something sounds untouched.",
+      "caseStudies": [
+        "The 2026 push to expand raw milk access often leaned on the idea that unprocessed equals healthier, despite repeated warnings from public-health officials that the safety risks are real and the claimed benefits remain unproven.",
+        "Wellness marketing routinely sells herbs, supplements, detoxes, and hormone routines by invoking nature itself as if natural origin settled the medical question."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Nirvana fallacy": {
+      "definition": "Occurs when a realistic option is rejected because it does not solve a problem perfectly or because an imagined ideal is used as the standard of comparison",
+      "example": "If carbon labels will not eliminate greenwashing entirely, there is no point requiring them.",
+      "notes": "Most policies, tools, and institutions are partial fixes. The right question is often whether an option improves matters relative to feasible alternatives, not whether it achieves a flawless end state.",
+      "caseStudies": [
+        "Critics of content moderation, election safeguards, AI guardrails, and climate policy often reject incremental measures on the grounds that bad cases will still exist, as if imperfection erased all value.",
+        "Debates about public-health interventions frequently collapse into 'if it does not stop every case, it failed,' which compares reality to fantasy rather than to the available alternatives."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Sharpshooter fallacy": {
+      "definition": "Occurs when someone highlights the data cluster that supports a favored story only after looking at the results, then treats that hand-picked pattern as if it had been the tested target all along",
+      "example": "I examined dozens of neighborhoods, found the one where crime fell after my program launched, and declared the program a proven success.",
+      "notes": "This is close to cherry picking, but the emphasis is on drawing the target around the bullet holes after the shots land. Post hoc pattern-hunting can make randomness, noise, or mixed data look like confirmation.",
+      "caseStudies": [
+        "Economic and election commentary often selects the time window, county, or subgroup that flatters the preferred narrative after the fact, then presents that slice as the decisive measure.",
+        "AI benchmarking and startup marketing sometimes advertise the few tasks where a model shines while leaving out the wider distribution of tasks where the results are weaker or unstable."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Single cause fallacy": {
+      "definition": "Occurs when a complex outcome is explained as if one cause alone did the work, while other relevant causes are ignored or illegitimately minimized",
+      "example": "Inflation happened because of one policy decision.",
+      "notes": "Some causes are more important than others, and sometimes one factor really is dominant. The fallacy appears when a multi-causal phenomenon is flattened into a one-variable story without enough evidence.",
+      "caseStudies": [
+        "Arguments about inflation, crime, housing costs, and educational decline often blame one villain such as immigrants, regulation, presidents, or social media, even when the outcome reflects multiple interacting causes.",
+        "After school shootings or viral episodes of unrest, public commentary regularly rushes to one master explanation instead of asking how incentives, access, institutions, culture, and personal history combine."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Style over substance fallacy": {
+      "definition": "Occurs when the polish, confidence, charisma, or dramatic force of a presentation is treated as if it established the quality of the argument itself",
+      "example": "She demolished the debate because the crowd cheered and her one-liners landed.",
+      "notes": "Strong delivery can make good arguments easier to hear, but it can also camouflage weak ones. Audiences often remember certainty, rhythm, and applause longer than the actual reasoning.",
+      "caseStudies": [
+        "Coverage of the September 10, 2024 Harris-Trump debate often focused on who seemed stronger, calmer, or more in command, which matters politically but does not by itself settle whether the claims on stage were accurate.",
+        "Short-form video and podcast culture reward confidence, pace, and rhetorical dominance, making it easy for a slick performance to outperform a careful but less theatrical argument."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     }
   }
 }
