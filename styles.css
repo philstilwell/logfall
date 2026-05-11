@@ -581,6 +581,20 @@ img {
   display: block;
 }
 
+.lab-panel-kicker {
+  display: inline-flex;
+  align-items: center;
+  margin: 0 0 14px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(20, 168, 215, 0.1);
+  color: #155b8f;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
 .lab-slider-grid {
   display: grid;
   gap: 14px;

@@ -148,7 +148,10 @@ function renderTabGroup(tabKey, items) {
         aria-labelledby="${escapeHtml(item.id)}-tab"
         ${index === 0 ? "" : "hidden"}
         data-tab-panel
-      >${item.content}</section>`,
+      >
+        <p class="lab-panel-kicker">${escapeHtml(item.label)}</p>
+        ${item.content}
+      </section>`,
     )
     .join("");
 
@@ -344,13 +347,13 @@ function renderRationalityLab(record, categoryProfiles) {
   if (record.rationalityDanger || primaryProfile.distortion || primaryProfile.danger) {
     tabs.push({
       id: `${tabKey}-danger`,
-      label: "Danger",
+      label: "Why it matters",
       content: `
         <div class="two-column compact-columns">
           ${
             record.rationalityDanger
               ? `<div class="note-panel">
-            <h4>Rationality danger</h4>
+            <h4>Why this mistake matters</h4>
             <p class="muted">${escapeHtml(record.rationalityDanger)}</p>
           </div>`
               : ""
@@ -358,7 +361,7 @@ function renderRationalityLab(record, categoryProfiles) {
           ${
             primaryProfile.distortion
               ? `<div class="note-panel">
-            <h4>Primary distortion</h4>
+            <h4>Main reasoning problem</h4>
             <p class="muted">${escapeHtml(primaryProfile.distortion)}</p>
           </div>`
               : ""
@@ -366,7 +369,7 @@ function renderRationalityLab(record, categoryProfiles) {
           ${
             primaryProfile.danger
               ? `<div class="note-panel">
-            <h4>Category profile</h4>
+            <h4>Why this kind of mistake matters</h4>
             <p class="muted">${escapeHtml(primaryProfile.danger)}</p>
           </div>`
               : ""
@@ -378,13 +381,13 @@ function renderRationalityLab(record, categoryProfiles) {
   if (record.dynamicsToNotice || record.warningSigns) {
     tabs.push({
       id: `${tabKey}-dynamics`,
-      label: "Dynamics",
+      label: "What to watch for",
       content: `
         <div class="two-column compact-columns">
           ${
             record.dynamicsToNotice
               ? `<div class="note-panel">
-            <h4>Dynamics to notice</h4>
+            <h4>What to watch for</h4>
             <p class="muted">${escapeHtml(record.dynamicsToNotice)}</p>
           </div>`
               : ""
@@ -392,7 +395,7 @@ function renderRationalityLab(record, categoryProfiles) {
           ${
             record.warningSigns
               ? `<div class="note-panel">
-            <h4>Warning signs</h4>
+            <h4>Common warning signs</h4>
             <p class="muted">${escapeHtml(record.warningSigns)}</p>
           </div>`
               : ""
@@ -404,9 +407,9 @@ function renderRationalityLab(record, categoryProfiles) {
   if (record.repairPrompts) {
     tabs.push({
       id: `${tabKey}-repair`,
-      label: "Repair",
+      label: "How to fix it",
       content: `<div class="note-panel">
-        <h4>Repair prompts</h4>
+        <h4>How to fix it</h4>
         <p class="muted">${escapeHtml(record.repairPrompts)}</p>
       </div>`,
     });
@@ -415,13 +418,13 @@ function renderRationalityLab(record, categoryProfiles) {
   if (record.interactiveMechanic || record.userAction || record.feedbackLogic || primaryProfile.mechanic) {
     tabs.push({
       id: `${tabKey}-tool`,
-      label: "Interactive Tool",
+      label: "Try it",
       content: `
         <div class="two-column compact-columns">
           ${
             record.interactiveMechanic || primaryProfile.mechanic
               ? `<div class="note-panel">
-            <h4>Mechanic</h4>
+            <h4>How the tool works</h4>
             <p class="muted">${escapeHtml(record.interactiveMechanic || primaryProfile.mechanic || "")}</p>
           </div>`
               : ""
@@ -429,7 +432,7 @@ function renderRationalityLab(record, categoryProfiles) {
           ${
             record.userAction || primaryProfile.user_action
               ? `<div class="note-panel">
-            <h4>User action</h4>
+            <h4>What you do</h4>
             <p class="muted">${escapeHtml(record.userAction || primaryProfile.user_action || "")}</p>
           </div>`
               : ""
@@ -437,22 +440,22 @@ function renderRationalityLab(record, categoryProfiles) {
           ${
             record.feedbackLogic || primaryProfile.feedback
               ? `<div class="note-panel">
-            <h4>Feedback logic</h4>
+            <h4>What the tool shows</h4>
             <p class="muted">${escapeHtml(record.feedbackLogic || primaryProfile.feedback || "")}</p>
           </div>`
               : ""
           }
           <div class="note-panel lab-simulator" data-confidence-lab>
-            <h4>Confidence gap check</h4>
-            <p class="muted">Compare how persuasive the current example feels with how much support it actually earns.</p>
+            <h4>Feeling vs evidence check</h4>
+            <p class="muted">Compare how convincing the example feels with how much the evidence really supports it.</p>
             <div class="lab-slider-grid">
               <label class="slider-field">
-                <span>Surface pull</span>
+                <span>How convincing it feels</span>
                 <input type="range" min="0" max="100" value="70" data-lab-surface />
                 <output data-lab-surface-value>70</output>
               </label>
               <label class="slider-field">
-                <span>Evidential support</span>
+                <span>How much evidence supports it</span>
                 <input type="range" min="0" max="100" value="40" data-lab-evidence />
                 <output data-lab-evidence-value>40</output>
               </label>
@@ -461,7 +464,7 @@ function renderRationalityLab(record, categoryProfiles) {
               <div class="lab-gap-fill" data-lab-gap-fill></div>
             </div>
             <p class="lab-gap-output" data-lab-gap-output></p>
-            <p class="muted lab-example"><strong>Example in play:</strong> ${escapeHtml(record.example)}</p>
+            <p class="muted lab-example"><strong>Current example:</strong> ${escapeHtml(record.example)}</p>
           </div>
         </div>`,
     });
@@ -474,8 +477,8 @@ function renderRationalityLab(record, categoryProfiles) {
   return `<section class="section-block">
     <div class="section-header">
       <div>
-        <h3 class="section-title">Rationality Lab</h3>
-        <p class="section-copy">Pedagogical additions imported from the rationality tool and adapted to the current LogFall style.</p>
+        <h3 class="section-title">Practice And Repair</h3>
+        <p class="section-copy">Extra teaching tools that show why the fallacy is persuasive, what to look for, and how to correct it.</p>
       </div>
     </div>
     <article class="detail-section">
@@ -957,13 +960,13 @@ async function buildWorkbook(records, categories, categoryProfiles) {
     "Definition",
     "Example",
     "Notes",
-    "Rationality Danger",
-    "Dynamics to Notice",
+    "Why This Mistake Matters",
+    "What to Watch For",
     "Warning Signs",
-    "Interactive Mechanic",
-    "User Action",
-    "Feedback Logic",
-    "Repair Prompts",
+    "Suggested Tool",
+    "What the Reader Does",
+    "What the Tool Shows",
+    "How to Fix It",
     "Case Study 1",
     "Case Study 2",
     "Case Study 3",
@@ -1018,7 +1021,7 @@ async function buildWorkbook(records, categories, categoryProfiles) {
 
   const categorySheet = workbook.worksheets.add("Categories");
   const categoryRows = [
-    ["Category", "Count", "Description", "Primary Distortion", "Category Danger", "Default Mechanic", "User Action", "Feedback"],
+    ["Category", "Count", "Description", "Main Reasoning Problem", "Why This Kind Matters", "Suggested Tool", "What the Reader Does", "What the Tool Shows"],
     ...categories.map((category) => {
       const profile = categoryProfiles[category.name] || {};
       return [

@@ -100,8 +100,8 @@
     <section class="section-block">
     <div class="section-header">
       <div>
-        <h3 class="section-title">Rationality Lab</h3>
-        <p class="section-copy">Pedagogical additions imported from the rationality tool and adapted to the current LogFall style.</p>
+        <h3 class="section-title">Practice And Repair</h3>
+        <p class="section-copy">Extra teaching tools that show why the fallacy is persuasive, what to look for, and how to correct it.</p>
       </div>
     </div>
     <article class="detail-section">
@@ -114,7 +114,7 @@
         aria-controls="lab-chronological-snobbery-danger"
         aria-selected="true"
         data-tab-button
-      >Danger</button><button
+      >Why it matters</button><button
         class="lab-tab"
         type="button"
         role="tab"
@@ -122,7 +122,7 @@
         aria-controls="lab-chronological-snobbery-dynamics"
         aria-selected="false"
         data-tab-button
-      >Dynamics</button><button
+      >What to watch for</button><button
         class="lab-tab"
         type="button"
         role="tab"
@@ -130,7 +130,7 @@
         aria-controls="lab-chronological-snobbery-repair"
         aria-selected="false"
         data-tab-button
-      >Repair</button><button
+      >How to fix it</button><button
         class="lab-tab"
         type="button"
         role="tab"
@@ -138,7 +138,7 @@
         aria-controls="lab-chronological-snobbery-tool"
         aria-selected="false"
         data-tab-button
-      >Interactive Tool</button></div>
+      >Try it</button></div>
     <section
         class="lab-panel active"
         role="tabpanel"
@@ -147,20 +147,23 @@
         
         data-tab-panel
       >
+        <p class="lab-panel-kicker">Why it matters</p>
+        
         <div class="two-column compact-columns">
           <div class="note-panel">
-            <h4>Rationality danger</h4>
+            <h4>Why this mistake matters</h4>
             <p class="muted">Chronological snobbery threatens rationality by creating confidence moving faster than the evidence: occurs when an idea is dismissed mainly because it is old, premodern, or associated with a period that also held many false beliefs. The module should make the user see how confidence, attention, or burden shifts without a matching increase in evidential support.</p>
           </div>
           <div class="note-panel">
-            <h4>Primary distortion</h4>
+            <h4>Main reasoning problem</h4>
             <p class="muted">confidence moving faster than the evidence.</p>
           </div>
           <div class="note-panel">
-            <h4>Category profile</h4>
+            <h4>Why this kind of mistake matters</h4>
             <p class="muted">It overstates, understates, cherry-picks, or misallocates the force of evidence.</p>
           </div>
-        </div></section><section
+        </div>
+      </section><section
         class="lab-panel"
         role="tabpanel"
         id="lab-chronological-snobbery-dynamics"
@@ -168,26 +171,32 @@
         hidden
         data-tab-panel
       >
+        <p class="lab-panel-kicker">What to watch for</p>
+        
         <div class="two-column compact-columns">
           <div class="note-panel">
-            <h4>Dynamics to notice</h4>
+            <h4>What to watch for</h4>
             <p class="muted">Watch the trigger, the shortcut, and the payoff. Trigger: the claim enters under the Evidential frame with secondary pressure from Perspectival. Shortcut: It overstates, understates, cherry-picks, or misallocates the force of evidence. Payoff: the conclusion becomes easier to accept, reject, or ignore before the relevant comparison has been paid for.</p>
           </div>
           <div class="note-panel">
-            <h4>Warning signs</h4>
+            <h4>Common warning signs</h4>
             <p class="muted">Warning signs: chronological snobbery often appears when a discussion uses evidential pressure to accelerate belief. Look for a move from a weaker observation to a stronger conclusion.</p>
           </div>
-        </div></section><section
+        </div>
+      </section><section
         class="lab-panel"
         role="tabpanel"
         id="lab-chronological-snobbery-repair"
         aria-labelledby="lab-chronological-snobbery-repair-tab"
         hidden
         data-tab-panel
-      ><div class="note-panel">
-        <h4>Repair prompts</h4>
+      >
+        <p class="lab-panel-kicker">How to fix it</p>
+        <div class="note-panel">
+        <h4>How to fix it</h4>
         <p class="muted">Older views can be wrong, but age alone neither refutes nor confirms them. The real question is whether the reasoning survives scrutiny.</p>
-      </div></section><section
+      </div>
+      </section><section
         class="lab-panel"
         role="tabpanel"
         id="lab-chronological-snobbery-tool"
@@ -195,30 +204,32 @@
         hidden
         data-tab-panel
       >
+        <p class="lab-panel-kicker">Try it</p>
+        
         <div class="two-column compact-columns">
           <div class="note-panel">
-            <h4>Mechanic</h4>
+            <h4>How the tool works</h4>
             <p class="muted">Evidence-weight meter: use the row&#39;s example as the initial scenario, then force the user to separate evidence, inference, emotion, wording, and missing alternatives.</p>
           </div>
           <div class="note-panel">
-            <h4>User action</h4>
+            <h4>What you do</h4>
             <p class="muted">Assign weight to each item of evidence, then compare the resulting confidence to what the evidence actually supports.</p>
           </div>
           <div class="note-panel">
-            <h4>Feedback logic</h4>
+            <h4>What the tool shows</h4>
             <p class="muted">The app displays the gap between warranted confidence and the confidence created by the fallacious move.</p>
           </div>
           <div class="note-panel lab-simulator" data-confidence-lab>
-            <h4>Confidence gap check</h4>
-            <p class="muted">Compare how persuasive the current example feels with how much support it actually earns.</p>
+            <h4>Feeling vs evidence check</h4>
+            <p class="muted">Compare how convincing the example feels with how much the evidence really supports it.</p>
             <div class="lab-slider-grid">
               <label class="slider-field">
-                <span>Surface pull</span>
+                <span>How convincing it feels</span>
                 <input type="range" min="0" max="100" value="70" data-lab-surface />
                 <output data-lab-surface-value>70</output>
               </label>
               <label class="slider-field">
-                <span>Evidential support</span>
+                <span>How much evidence supports it</span>
                 <input type="range" min="0" max="100" value="40" data-lab-evidence />
                 <output data-lab-evidence-value>40</output>
               </label>
@@ -227,9 +238,10 @@
               <div class="lab-gap-fill" data-lab-gap-fill></div>
             </div>
             <p class="lab-gap-output" data-lab-gap-output></p>
-            <p class="muted lab-example"><strong>Example in play:</strong> That argument comes from ancient philosophy, so modern people can ignore it.</p>
+            <p class="muted lab-example"><strong>Current example:</strong> That argument comes from ancient philosophy, so modern people can ignore it.</p>
           </div>
-        </div></section>
+        </div>
+      </section>
   </div>
     </article>
   </section>

@@ -46,7 +46,7 @@ for (const group of document.querySelectorAll("[data-tab-group]")) {
   const buttons = Array.from(group.querySelectorAll("[data-tab-button]"));
   const panels = Array.from(group.querySelectorAll("[data-tab-panel]"));
 
-  function activateTab(index) {
+  function activateTab(index, options = {}) {
     buttons.forEach((button, buttonIndex) => {
       const active = buttonIndex === index;
       button.classList.toggle("active", active);
@@ -58,10 +58,14 @@ for (const group of document.querySelectorAll("[data-tab-group]")) {
       panel.classList.toggle("active", active);
       panel.hidden = !active;
     });
+
+    if (options.scroll) {
+      panels[index]?.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
   }
 
   buttons.forEach((button, index) => {
-    button.addEventListener("click", () => activateTab(index));
+    button.addEventListener("click", () => activateTab(index, { scroll: true }));
   });
 
   activateTab(0);
@@ -89,13 +93,13 @@ for (const lab of document.querySelectorAll("[data-confidence-lab]")) {
     gapFill.style.width = `${Math.abs(gap)}%`;
 
     if (gap > 0) {
-      gapOutput.textContent = `Confidence outruns support by ${gap} points. Slow down and inspect what is doing the persuasive work.`;
+      gapOutput.textContent = `It feels ${gap} points stronger than the evidence supports. Slow down and ask what is making it feel persuasive.`;
       gapFill.style.background = "linear-gradient(90deg, #e63b34, #14a8d7)";
     } else if (gap < 0) {
-      gapOutput.textContent = `Support exceeds surface pull by ${Math.abs(gap)} points. The argument may feel weaker than the evidence actually warrants.`;
+      gapOutput.textContent = `The evidence is ${Math.abs(gap)} points stronger than the feeling it creates. The case may be better than it first seems.`;
       gapFill.style.background = "linear-gradient(90deg, #14a8d7, #e63b34)";
     } else {
-      gapOutput.textContent = "Confidence and support are aligned. Keep testing whether the match survives closer scrutiny.";
+      gapOutput.textContent = "How it feels and what the evidence supports are aligned. Now check whether that still holds up under closer inspection.";
       gapFill.style.background = "linear-gradient(90deg, #14a8d7, #e63b34)";
     }
   }

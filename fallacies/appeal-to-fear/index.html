@@ -100,8 +100,8 @@
     <section class="section-block">
     <div class="section-header">
       <div>
-        <h3 class="section-title">Rationality Lab</h3>
-        <p class="section-copy">Pedagogical additions imported from the rationality tool and adapted to the current LogFall style.</p>
+        <h3 class="section-title">Practice And Repair</h3>
+        <p class="section-copy">Extra teaching tools that show why the fallacy is persuasive, what to look for, and how to correct it.</p>
       </div>
     </div>
     <article class="detail-section">
@@ -114,7 +114,7 @@
         aria-controls="lab-appeal-to-fear-danger"
         aria-selected="true"
         data-tab-button
-      >Danger</button><button
+      >Why it matters</button><button
         class="lab-tab"
         type="button"
         role="tab"
@@ -122,7 +122,7 @@
         aria-controls="lab-appeal-to-fear-dynamics"
         aria-selected="false"
         data-tab-button
-      >Dynamics</button><button
+      >What to watch for</button><button
         class="lab-tab"
         type="button"
         role="tab"
@@ -130,7 +130,7 @@
         aria-controls="lab-appeal-to-fear-repair"
         aria-selected="false"
         data-tab-button
-      >Repair</button><button
+      >How to fix it</button><button
         class="lab-tab"
         type="button"
         role="tab"
@@ -138,7 +138,7 @@
         aria-controls="lab-appeal-to-fear-tool"
         aria-selected="false"
         data-tab-button
-      >Interactive Tool</button></div>
+      >Try it</button></div>
     <section
         class="lab-panel active"
         role="tabpanel"
@@ -147,20 +147,23 @@
         
         data-tab-panel
       >
+        <p class="lab-panel-kicker">Why it matters</p>
+        
         <div class="two-column compact-columns">
           <div class="note-panel">
-            <h4>Rationality danger</h4>
+            <h4>Why this mistake matters</h4>
             <p class="muted">Appeal to fear threatens rationality by creating feeling doing the work of evidence: occurs when someone tries to secure agreement mainly by amplifying danger, threat, or panic rather than by showing that the conclusion is supported. The module should make the user see how confidence, attention, or burden shifts without a matching increase in evidential support.</p>
           </div>
           <div class="note-panel">
-            <h4>Primary distortion</h4>
+            <h4>Main reasoning problem</h4>
             <p class="muted">feeling doing the work of evidence.</p>
           </div>
           <div class="note-panel">
-            <h4>Category profile</h4>
+            <h4>Why this kind of mistake matters</h4>
             <p class="muted">It lets fear, disgust, outrage, hope, shame, or loyalty produce a confidence shift not earned by evidence.</p>
           </div>
-        </div></section><section
+        </div>
+      </section><section
         class="lab-panel"
         role="tabpanel"
         id="lab-appeal-to-fear-dynamics"
@@ -168,26 +171,32 @@
         hidden
         data-tab-panel
       >
+        <p class="lab-panel-kicker">What to watch for</p>
+        
         <div class="two-column compact-columns">
           <div class="note-panel">
-            <h4>Dynamics to notice</h4>
+            <h4>What to watch for</h4>
             <p class="muted">Watch the trigger, the shortcut, and the payoff. Trigger: the claim enters under the Emotional frame. Shortcut: It lets fear, disgust, outrage, hope, shame, or loyalty produce a confidence shift not earned by evidence. Payoff: the conclusion becomes easier to accept, reject, or ignore before the relevant comparison has been paid for.</p>
           </div>
           <div class="note-panel">
-            <h4>Warning signs</h4>
+            <h4>Common warning signs</h4>
             <p class="muted">Warning signs: appeal to fear often appears when a discussion uses emotional pressure to accelerate belief. Look for a move from a weaker observation to a stronger conclusion.</p>
           </div>
-        </div></section><section
+        </div>
+      </section><section
         class="lab-panel"
         role="tabpanel"
         id="lab-appeal-to-fear-repair"
         aria-labelledby="lab-appeal-to-fear-repair-tab"
         hidden
         data-tab-panel
-      ><div class="note-panel">
-        <h4>Repair prompts</h4>
+      >
+        <p class="lab-panel-kicker">How to fix it</p>
+        <div class="note-panel">
+        <h4>How to fix it</h4>
         <p class="muted">Fear can be rational when the threat is real and well evidenced. The fallacy appears when fear does the persuasive work that evidence and reasoning have not done.</p>
-      </div></section><section
+      </div>
+      </section><section
         class="lab-panel"
         role="tabpanel"
         id="lab-appeal-to-fear-tool"
@@ -195,30 +204,32 @@
         hidden
         data-tab-panel
       >
+        <p class="lab-panel-kicker">Try it</p>
+        
         <div class="two-column compact-columns">
           <div class="note-panel">
-            <h4>Mechanic</h4>
+            <h4>How the tool works</h4>
             <p class="muted">Affect-evidence separator: use the row&#39;s example as the initial scenario, then force the user to separate evidence, inference, emotion, wording, and missing alternatives.</p>
           </div>
           <div class="note-panel">
-            <h4>User action</h4>
+            <h4>What you do</h4>
             <p class="muted">Rate the emotional pull and the evidential force separately, then compare their effects on confidence.</p>
           </div>
           <div class="note-panel">
-            <h4>Feedback logic</h4>
+            <h4>What the tool shows</h4>
             <p class="muted">The app shows when emotional salience is being mistaken for evidential strength.</p>
           </div>
           <div class="note-panel lab-simulator" data-confidence-lab>
-            <h4>Confidence gap check</h4>
-            <p class="muted">Compare how persuasive the current example feels with how much support it actually earns.</p>
+            <h4>Feeling vs evidence check</h4>
+            <p class="muted">Compare how convincing the example feels with how much the evidence really supports it.</p>
             <div class="lab-slider-grid">
               <label class="slider-field">
-                <span>Surface pull</span>
+                <span>How convincing it feels</span>
                 <input type="range" min="0" max="100" value="70" data-lab-surface />
                 <output data-lab-surface-value>70</output>
               </label>
               <label class="slider-field">
-                <span>Evidential support</span>
+                <span>How much evidence supports it</span>
                 <input type="range" min="0" max="100" value="40" data-lab-evidence />
                 <output data-lab-evidence-value>40</output>
               </label>
@@ -227,9 +238,10 @@
               <div class="lab-gap-fill" data-lab-gap-fill></div>
             </div>
             <p class="lab-gap-output" data-lab-gap-output></p>
-            <p class="muted lab-example"><strong>Example in play:</strong> If we do not pass this surveillance bill tonight, the next attack will be on our hands.</p>
+            <p class="muted lab-example"><strong>Current example:</strong> If we do not pass this surveillance bill tonight, the next attack will be on our hands.</p>
           </div>
-        </div></section>
+        </div>
+      </section>
   </div>
     </article>
   </section>
