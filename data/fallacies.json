@@ -394,13 +394,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when a categorical syllogism has a positive conclusion, but at least one negative premise.",
-      "example": "I don't eat meat. People who eat meat have no compassion. Therefore, I have compassion.",
-      "notes": "If A ⊄ B and B ⊄ C then A ⊂ C.\nThis fallacy is made clear when we follow this same form and say \"If I'm not a goose, and geese don't play bingo, therefore I play bingo.\"",
+      "definition": "Occurs when a syllogism tries to draw a positive conclusion even though one of the premises is negative in a way that cannot support that conclusion.",
+      "example": "This source is not anonymous. Anonymous sources are unreliable. Therefore this source is reliable.",
+      "notes": "Ruling something out does not automatically place it into the positive category you want. 'Not bad' does not by itself mean 'good,' and 'not that' does not by itself mean 'this.'",
       "caseStudies": [
-        "This fallacy is often a part of tribalism in which the following type of argument is implicitly made.We don't do that.\nPeople who do that are bad.\nTherefore, we are good."
+        "Tribal arguments often move from 'we are not them' and 'they are bad' to 'therefore we are trustworthy,' even though the conclusion has not been earned.",
+        "Media and politics frequently treat the failure of one rival source as if it directly validated a different source that still needs its own support."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Affirming a disjunct",
@@ -413,13 +414,14 @@
       "subCategory": "Propositional Fallacy",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Concluding that one logical disjunction must be false because the other disjunct is true; A or B; A; therefore not B.",
-      "example": "My new neighbor looked so happy, I knew he had either a girlfriend or a wife. He told me he has a wife, so I know he does not have a girlfriend.",
-      "notes": "P or Q\nP\nTherefore, not Q\nThis fallacy is made clear when when follow this same form and say \"To have a girlfriend like Tom's, you have to be either rich or famous. He's rich, so he can't be famous.\"\nNote that this fallacy does not hold for exclusive disjunctions where P and Q cannot both be true.",
+      "definition": "Occurs when someone treats an ordinary 'or' as if it were exclusive and concludes that one option must be false because the other is true.",
+      "example": "This video is either edited or misleading. It is edited, so it cannot also be misleading.",
+      "notes": "Some disjunctions are genuinely exclusive, but many are not. Two options can coexist unless the statement or context really rules that out.",
       "caseStudies": [
-        "Some politicians might argue that, to lower the deficit, we'll need to either cut programs or raise taxes, then suggest that, since they've already cut taxes, cutting programs wouldn't also contribute to alleviating the problem."
+        "Budget rhetoric often suggests that because one policy tool is on the table, another cannot also matter, as if tradeoffs always come in only one-at-a-time form.",
+        "Public debate regularly acts as though a claim must be either emotional or strategic, either true or persuasive, either mistaken or manipulative, when in reality both descriptions may apply."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Affirming the consequent",
@@ -432,13 +434,14 @@
       "subCategory": "Propositional Fallacy",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "The antecedent in a conditional is claimed to be true because the consequent is true; if A, then B; B, therefore A.",
-      "example": "Whenever it rains, people carry umbrellas. People are carrying umbrellas, so it must be raining.",
-      "notes": "If P, then Q\nQ\nTherefore, P.",
+      "definition": "Occurs when someone reasons from 'if A, then B' and then wrongly infers A merely because B is observed.",
+      "example": "If a clip is AI-generated, it may show warped hands. This clip shows warped hands, so it must be AI-generated.",
+      "notes": "A consequence can have many causes. Observing the result does not tell you which sufficient condition produced it.",
       "caseStudies": [
-        "If Tom says \"All ducks can fly\", and Bob responds \"Not true. Bats can fly and they're not ducks\", Bob has fallaciously affirmed the consequent of Tom's statement as if Tom had said \"This animal can fly and is therefore a duck.\""
+        "Political misinformation often treats one suspicious-looking detail as proof of a favored cause, even though many other explanations remain live.",
+        "Arguments about fraud, manipulation, and AI generation frequently jump from a telltale symptom to a confident diagnosis without ruling out alternatives."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "All or nothing fallacy",
@@ -1420,13 +1423,14 @@
       "subCategory": "Propositional Fallacy",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when the consequent in an indicative conditional is claimed to be false because the antecedent is false; if A, then B; not A, therefore not B.",
-      "example": "If I were a movie star, I'd be popular. But I'm not a movie star, so I'm not popular.",
-      "notes": "If P, then Q\nNot Q\nTherefore, not P.",
+      "definition": "Occurs when someone reasons from 'if A, then B' and then wrongly infers 'not B' merely because A is absent.",
+      "example": "If a study is peer-reviewed, it is worth taking seriously. This report is not peer-reviewed, so it is worthless.",
+      "notes": "One route to a conclusion does not have to be the only route. The absence of one sufficient condition does not automatically remove every other possible basis.",
       "caseStudies": [
-        "Some might deny the antecedent by arguing \"If you work hard, you will get a good job. Therefore, if you do not work hard you will not get a good job.\""
+        "Debates about expertise often assume that if a source lacks one credential or prestige marker, there can be no meaningful evidence at all in what it says.",
+        "In everyday arguments, people often assume that if the ideal cause is absent, the observed effect cannot still arise through another path."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Denying the correlative",
@@ -1603,13 +1607,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when a categorical syllogism that is invalid because both of its premises are negative.",
-      "example": "No humans are birds. Some birds are not lawyers. Therefore some lawyers are not humans.",
-      "notes": "Some/all As are not Bs.\nSome/all Bs are not Cs.\nTherefore, no A is C.",
+      "definition": "Occurs when two negative premises are used in a syllogism even though they fail to establish the positive link the conclusion requires.",
+      "example": "No journalists are judges. Some judges are not activists. Therefore some activists are not journalists.",
+      "notes": "Two exclusions do not by themselves tell you how the remaining categories relate. Keeping groups apart is not the same as establishing a valid connection among them.",
       "caseStudies": [
-        "Another example might be \"Since no republicans are democrats and some democrats are not farmers, it follows that some farmers are not republicans.\""
+        "Identity arguments sometimes pile up statements about what two groups are not and then pretend that the missing positive relation has somehow been proved.",
+        "This form often hides inside rhetorical contrasts where speakers rely on the sound of elimination rather than a genuine logical bridge."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Existential fallacy",
@@ -1622,13 +1627,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Argues to a conclusion that implies that a class has at least one member, but without such an implication in the premises.",
-      "example": "Creatures who hide in the woods are not aggressive. Bigfoot hides in the woods. Therefore Bigfoot is not aggressive.",
-      "notes": "This fallacy can be remedied by converting the assertions to conditionals with \"If ___ were ___, ...\".",
+      "definition": "Occurs when a conclusion assumes that something exists even though the premises never established that any such thing exists.",
+      "example": "Every unicorn in this forest is shy. Therefore at least one unicorn in this forest is shy.",
+      "notes": "Universal statements can be true even when the class is empty. Talking about all members of a category does not guarantee that there are any members to begin with.",
       "caseStudies": [
-        "To post a sign saying shoplifters."
+        "Arguments about 'the average user,' 'the typical elite,' or 'the real moderate voter' sometimes slip from a hypothetical category into the assumption that a concrete instance must exist.",
+        "Formal and theological debates alike often move too quickly from what would be true if something existed to the claim that it therefore does exist."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Fallacy of many questions",
@@ -1835,13 +1841,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "A categorical syllogism that has four terms.",
-      "example": "All children like candy, and all boys are children. So, all girls like candy.",
-      "notes": "While we understand that all girls are also children, this fact needs to be included as an assumption for the argument to be valid.",
+      "definition": "Occurs when a syllogism seems to use three terms but actually uses four because one term shifts meaning halfway through the argument.",
+      "example": "Nothing is better than open debate. A sandwich is better than nothing. Therefore a sandwich is better than open debate.",
+      "notes": "The surface wording can make the argument sound tidy, but the hidden term shift breaks the structure. A reused word is not enough; it has to keep the same meaning.",
       "caseStudies": [
-        "Power corrupts.\nKnowledge is power.\nTherefore knowledge corrupts.\nThis fallacy actually 4 terms since the term \"power\" as 2 different meanings."
+        "Public arguments often slide between technical and ordinary meanings of words like 'theory,' 'freedom,' 'bias,' or 'intelligence,' then pretend the resulting syllogism is valid.",
+        "Because the same label can carry prestige in one context and a thinner meaning in another, term shifts often smuggle in conclusions the premises did not support."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Gambler's fallacy",
@@ -2012,13 +2019,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when a categorical syllogism is invalid because its major term is undistributed in the major premise but distributed in the conclusion.",
-      "example": "Because all pigs like mud, and no birds are pigs, therefore no birds like mud.",
-      "notes": "All As are Cs.\nNo Bs are As.\nTherefore, no Bs are Cs.",
+      "definition": "Occurs when a syllogism distributes the major term in the conclusion even though the major premise never distributed it there.",
+      "example": "All billionaires are famous. No teachers are billionaires. Therefore no teachers are famous.",
+      "notes": "Excluding one group from a subset does not exclude it from the wider property attached to that subset. The conclusion reaches further than the premises license.",
       "caseStudies": [
-        "Conservapedia once had an article devoted to showing a relationship between atheism and obesity. The general idea was that most atheists are obese, and no theists are atheists, and therefore few theists are obese."
+        "Stereotype arguments often move from 'all members of group A have trait B' and 'group C is not group A' to 'therefore group C lacks trait B,' which does not follow.",
+        "This pattern appears when people treat one pathway to fame, corruption, risk, or success as if it were the only pathway."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Impotent logical space",
@@ -2197,11 +2205,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when the substitution of identical designators in a true statement leads to a potentially false one.",
-      "example": "Since I know who my girlfriend is, but don't know who ate all the ice cream, my girlfriend is not the person who ate the ice cream.",
-      "notes": "",
-      "caseStudies": [],
-      "editorialStatus": "cleaned-from-root"
+      "definition": "Occurs when two names or descriptions refer to the same thing, but a belief or knowledge context blocks simple substitution and the argument ignores that.",
+      "example": "I know who my senator is, but I do not know who wrote this anonymous op-ed, so my senator could not have written it.",
+      "notes": "In ordinary factual contexts, identical referents can be substituted safely. In belief, knowledge, or perception contexts, that move can fail because the speaker's information is incomplete.",
+      "caseStudies": [
+        "This fallacy shows up whenever people infer identity or non-identity from what someone knows, recognizes, or can name rather than from the underlying facts.",
+        "Mystery, anonymity, and pseudonym debates often slide into this mistake by assuming that not knowing a description means the object cannot be the same one known under another description."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Misleading vividness",
@@ -2277,14 +2288,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Assuming that, because a premise cannot be proven false, the premise must be true; or that, because a premise cannot be proven true, the premise must be false.",
-      "example": "Can you prove I'm not wearing an invisible hat? If you can't, I'm justified in believing I am.",
-      "notes": "The degree of warrant for a given proposition is the degree of evidence that favors that proposition, not the absence of evidence that would falsify the proposition. The ability to say \"You can't prove I'm not right\" does not mean you are warranted in believing you are right.",
+      "definition": "Occurs when a claim is treated as true because it has not been disproved, or false because it has not been proved.",
+      "example": "No one has disproved the hidden vote-switching software, so it is reasonable to believe it exists.",
+      "notes": "The rational status of a claim depends on the evidence for it, not on whether someone has managed to close every imaginable contrary possibility.",
       "caseStudies": [
-        "If someone claims that global warming is due to human activity, then justifies their position by saying \"You can't prove human activity is not the cause of global warming\", they have committed this fallacy.",
-        "In the U.S., until someone accused of a crime has been found guilty based on sufficient evidence, they are presumed innocent. This does not mean they are innocent of the crime. It is just that we start with the assumption that they are innocent until (if ever) sufficient evidence warrants our deeming them guilty."
+        "Election, paranormal, and conspiracy claims often survive by saying 'you cannot prove it did not happen,' as if that absence of disproof supplied positive warrant.",
+        "Skeptics can also commit the reverse mistake when they treat an unproved claim as definitively false rather than merely unestablished."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Nirvana fallacy",
@@ -2874,14 +2885,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "A complex argument which loses logical cohesion somewhere in the complexity.",
-      "example": "If you only asked me, I would tell you the truth. But you didn't ask, so if I told you a lie you wouldn't believe it was a lie since the truth is not what you asked for.",
-      "notes": "This fallacy is often a composite collection of several fallacies within one argument, and is primarily limited to 1) those intentionally complicating an argument to inoculate it from criticism, and 2) those who sincerely have difficulty formulating coherent arguments with valid causal relations.",
+      "definition": "Occurs when an argument becomes so internally tangled that its pieces no longer form a coherent chain from premise to conclusion even though it sounds intricate.",
+      "example": "If the story were false, fact-checkers would deny it. Because they denied it, they proved it was true, since they only deny dangerous truths.",
+      "notes": "Sometimes the problem is deliberate obscurity; other times it is sincere confusion. Either way, complexity should not be mistaken for structure.",
       "caseStudies": [
-        "Immediately after my birth in 1961, both cancer rates and the nationalization of Cuban tourism increased. Because some of these cancer patients were Cuban tourists, I am obligated to build a hospital in Havana.",
-        "Because no one would be reading this unless they had a remote interest in logical fallacies, those on the remote island of Fiji have no interest in logical fallacies and therefore cannot read."
+        "Conspiracy reasoning often spirals into self-sealing loops where every attempted refutation becomes fresh confirmation through an increasingly baroque chain of premises.",
+        "AI-generated argument dumps can produce this effect by chaining plausible-sounding clauses that never quite add up to a valid line of reasoning."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Straw man argument",
@@ -3147,13 +3158,14 @@
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
-      "definition": "Occurs when the middle general term in a categorical syllogism is not distributed to more specific terms of the same category.",
-      "example": "All humans are 2-legged, and all birds are 2-legged. Therefore all humans are birds.",
-      "notes": "In the example, the conclusion does not follow since it is 2-leggedness that is the larger more general category, encompassing both humans and birds, without either one of the smaller more specific categories encompassing the other. If one of the premises instead stated that all 2-legged things are birds, then the argument would be valid (but not sound).",
+      "definition": "Occurs when two things are linked to the same broader category and the argument wrongly infers that one of them must therefore be the other.",
+      "example": "All conspiracy theorists distrust institutions. I distrust institutions. Therefore I am a conspiracy theorist.",
+      "notes": "Sharing a feature does not establish identity or class inclusion unless the shared feature actually covers the whole relevant group. A middle term can connect without unifying.",
       "caseStudies": [
-        "Young people needing social acceptance often argue to themselves in a way that might be stated \"The cool wear sunglasses, and I'm wearing sunglasses. Therefore I'm one of the cool.\""
+        "Lifestyle and identity marketing often says 'the cool do X' and 'I do X,' then slides to 'therefore I am one of the cool,' even though the shared feature is too broad.",
+        "Political commentary frequently infers that because two camps are skeptical of the same institution or support the same policy, they must belong to the same underlying movement."
       ],
-      "editorialStatus": "cleaned-from-root"
+      "editorialStatus": "modernized-2026-pass"
     },
     {
       "name": "Vague insulators",

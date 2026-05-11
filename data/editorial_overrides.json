@@ -959,6 +959,126 @@
         "In technology debates, AI progress is sometimes framed as if it were inherently marching toward a single destined endpoint such as AGI rather than following contingent technical and social paths."
       ],
       "editorialStatus": "modernized-2026-pass"
+    },
+    "Affirmative conclusion from a negative premise": {
+      "definition": "Occurs when a syllogism tries to draw a positive conclusion even though one of the premises is negative in a way that cannot support that conclusion",
+      "example": "This source is not anonymous. Anonymous sources are unreliable. Therefore this source is reliable.",
+      "notes": "Ruling something out does not automatically place it into the positive category you want. 'Not bad' does not by itself mean 'good,' and 'not that' does not by itself mean 'this.'",
+      "caseStudies": [
+        "Tribal arguments often move from 'we are not them' and 'they are bad' to 'therefore we are trustworthy,' even though the conclusion has not been earned.",
+        "Media and politics frequently treat the failure of one rival source as if it directly validated a different source that still needs its own support."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Affirming a disjunct": {
+      "definition": "Occurs when someone treats an ordinary 'or' as if it were exclusive and concludes that one option must be false because the other is true",
+      "example": "This video is either edited or misleading. It is edited, so it cannot also be misleading.",
+      "notes": "Some disjunctions are genuinely exclusive, but many are not. Two options can coexist unless the statement or context really rules that out.",
+      "caseStudies": [
+        "Budget rhetoric often suggests that because one policy tool is on the table, another cannot also matter, as if tradeoffs always come in only one-at-a-time form.",
+        "Public debate regularly acts as though a claim must be either emotional or strategic, either true or persuasive, either mistaken or manipulative, when in reality both descriptions may apply."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Affirming the consequent": {
+      "definition": "Occurs when someone reasons from 'if A, then B' and then wrongly infers A merely because B is observed",
+      "example": "If a clip is AI-generated, it may show warped hands. This clip shows warped hands, so it must be AI-generated.",
+      "notes": "A consequence can have many causes. Observing the result does not tell you which sufficient condition produced it.",
+      "caseStudies": [
+        "Political misinformation often treats one suspicious-looking detail as proof of a favored cause, even though many other explanations remain live.",
+        "Arguments about fraud, manipulation, and AI generation frequently jump from a telltale symptom to a confident diagnosis without ruling out alternatives."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Denying the antecedent": {
+      "definition": "Occurs when someone reasons from 'if A, then B' and then wrongly infers 'not B' merely because A is absent",
+      "example": "If a study is peer-reviewed, it is worth taking seriously. This report is not peer-reviewed, so it is worthless.",
+      "notes": "One route to a conclusion does not have to be the only route. The absence of one sufficient condition does not automatically remove every other possible basis.",
+      "caseStudies": [
+        "Debates about expertise often assume that if a source lacks one credential or prestige marker, there can be no meaningful evidence at all in what it says.",
+        "In everyday arguments, people often assume that if the ideal cause is absent, the observed effect cannot still arise through another path."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Exclusive premises": {
+      "definition": "Occurs when two negative premises are used in a syllogism even though they fail to establish the positive link the conclusion requires",
+      "example": "No journalists are judges. Some judges are not activists. Therefore some activists are not journalists.",
+      "notes": "Two exclusions do not by themselves tell you how the remaining categories relate. Keeping groups apart is not the same as establishing a valid connection among them.",
+      "caseStudies": [
+        "Identity arguments sometimes pile up statements about what two groups are not and then pretend that the missing positive relation has somehow been proved.",
+        "This form often hides inside rhetorical contrasts where speakers rely on the sound of elimination rather than a genuine logical bridge."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Existential fallacy": {
+      "definition": "Occurs when a conclusion assumes that something exists even though the premises never established that any such thing exists",
+      "example": "Every unicorn in this forest is shy. Therefore at least one unicorn in this forest is shy.",
+      "notes": "Universal statements can be true even when the class is empty. Talking about all members of a category does not guarantee that there are any members to begin with.",
+      "caseStudies": [
+        "Arguments about 'the average user,' 'the typical elite,' or 'the real moderate voter' sometimes slip from a hypothetical category into the assumption that a concrete instance must exist.",
+        "Formal and theological debates alike often move too quickly from what would be true if something existed to the claim that it therefore does exist."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Four terms fallacy": {
+      "definition": "Occurs when a syllogism seems to use three terms but actually uses four because one term shifts meaning halfway through the argument",
+      "example": "Nothing is better than open debate. A sandwich is better than nothing. Therefore a sandwich is better than open debate.",
+      "notes": "The surface wording can make the argument sound tidy, but the hidden term shift breaks the structure. A reused word is not enough; it has to keep the same meaning.",
+      "caseStudies": [
+        "Public arguments often slide between technical and ordinary meanings of words like 'theory,' 'freedom,' 'bias,' or 'intelligence,' then pretend the resulting syllogism is valid.",
+        "Because the same label can carry prestige in one context and a thinner meaning in another, term shifts often smuggle in conclusions the premises did not support."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Illicit major": {
+      "definition": "Occurs when a syllogism distributes the major term in the conclusion even though the major premise never distributed it there",
+      "example": "All billionaires are famous. No teachers are billionaires. Therefore no teachers are famous.",
+      "notes": "Excluding one group from a subset does not exclude it from the wider property attached to that subset. The conclusion reaches further than the premises license.",
+      "caseStudies": [
+        "Stereotype arguments often move from 'all members of group A have trait B' and 'group C is not group A' to 'therefore group C lacks trait B,' which does not follow.",
+        "This pattern appears when people treat one pathway to fame, corruption, risk, or success as if it were the only pathway."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Masked man fallacy": {
+      "definition": "Occurs when two names or descriptions refer to the same thing, but a belief or knowledge context blocks simple substitution and the argument ignores that",
+      "example": "I know who my senator is, but I do not know who wrote this anonymous op-ed, so my senator could not have written it.",
+      "notes": "In ordinary factual contexts, identical referents can be substituted safely. In belief, knowledge, or perception contexts, that move can fail because the speaker's information is incomplete.",
+      "caseStudies": [
+        "This fallacy shows up whenever people infer identity or non-identity from what someone knows, recognizes, or can name rather than from the underlying facts.",
+        "Mystery, anonymity, and pseudonym debates often slide into this mistake by assuming that not knowing a description means the object cannot be the same one known under another description."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Negative proof fallacy": {
+      "definition": "Occurs when a claim is treated as true because it has not been disproved, or false because it has not been proved",
+      "example": "No one has disproved the hidden vote-switching software, so it is reasonable to believe it exists.",
+      "notes": "The rational status of a claim depends on the evidence for it, not on whether someone has managed to close every imaginable contrary possibility.",
+      "caseStudies": [
+        "Election, paranormal, and conspiracy claims often survive by saying 'you cannot prove it did not happen,' as if that absence of disproof supplied positive warrant.",
+        "Skeptics can also commit the reverse mistake when they treat an unproved claim as definitively false rather than merely unestablished."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Square logic": {
+      "definition": "Occurs when an argument becomes so internally tangled that its pieces no longer form a coherent chain from premise to conclusion even though it sounds intricate",
+      "example": "If the story were false, fact-checkers would deny it. Because they denied it, they proved it was true, since they only deny dangerous truths.",
+      "notes": "Sometimes the problem is deliberate obscurity; other times it is sincere confusion. Either way, complexity should not be mistaken for structure.",
+      "caseStudies": [
+        "Conspiracy reasoning often spirals into self-sealing loops where every attempted refutation becomes fresh confirmation through an increasingly baroque chain of premises.",
+        "AI-generated argument dumps can produce this effect by chaining plausible-sounding clauses that never quite add up to a valid line of reasoning."
+      ],
+      "editorialStatus": "modernized-2026-pass"
+    },
+    "Undistributed middle": {
+      "definition": "Occurs when two things are linked to the same broader category and the argument wrongly infers that one of them must therefore be the other",
+      "example": "All conspiracy theorists distrust institutions. I distrust institutions. Therefore I am a conspiracy theorist.",
+      "notes": "Sharing a feature does not establish identity or class inclusion unless the shared feature actually covers the whole relevant group. A middle term can connect without unifying.",
+      "caseStudies": [
+        "Lifestyle and identity marketing often says 'the cool do X' and 'I do X,' then slides to 'therefore I am one of the cool,' even though the shared feature is too broad.",
+        "Political commentary frequently infers that because two camps are skeptical of the same institution or support the same policy, they must belong to the same underlying movement."
+      ],
+      "editorialStatus": "modernized-2026-pass"
     }
   }
 }
