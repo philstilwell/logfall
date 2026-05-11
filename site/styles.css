@@ -451,6 +451,27 @@ img {
   background: #111111;
 }
 
+.detail-illustration-copy {
+  margin-top: 16px;
+  color: #ffffff;
+}
+
+.detail-illustration-label {
+  margin: 0 0 8px;
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.detail-illustration-text {
+  margin: 0;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 0.98rem;
+  line-height: 1.7;
+}
+
 .case-list {
   display: grid;
   gap: 14px;

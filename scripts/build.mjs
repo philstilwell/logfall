@@ -340,6 +340,39 @@ function posterAltTextForRecord(record) {
   return `${record.name} companion poster in a retro mid-century editorial cartoon style, illustrating ${record.definition.toLowerCase()}`;
 }
 
+function stripTrailingPunctuation(value = "") {
+  return String(value)
+    .trim()
+    .replace(/([.?!])(["'”’])$/u, "$2")
+    .replace(/[.?!]+$/u, "");
+}
+
+function lowercaseFirst(value = "") {
+  if (!value) return "";
+  return value.charAt(0).toLowerCase() + value.slice(1);
+}
+
+function posterExplanationForRecord(record) {
+  const example = stripTrailingPunctuation(record.example || "");
+  const definition = stripTrailingPunctuation(
+    String(record.definition || "")
+      .replace(/^Occurs when\s+/i, "")
+      .replace(/^This fallacy occurs when\s+/i, ""),
+  );
+
+  const parts = [];
+
+  if (example) {
+    parts.push(`This image turns the fallacy into a concrete scene: ${example}.`);
+  }
+
+  if (definition) {
+    parts.push(`The key point is that ${lowercaseFirst(definition)}.`);
+  }
+
+  return parts.join(" ");
+}
+
 function renderReferenceMeta(record, prompts) {
   return `<div class="meta-grid">
     <div class="note-panel">
@@ -372,6 +405,10 @@ function renderPosterIllustration(record, prefix, posterAssets) {
       alt="${escapeHtml(posterAltTextForRecord(record))}"
       loading="lazy"
     />
+    <div class="detail-illustration-copy">
+      <p class="detail-illustration-label">What this image shows</p>
+      <p class="detail-illustration-text">${escapeHtml(posterExplanationForRecord(record))}</p>
+    </div>
   </aside>`;
 }
 
