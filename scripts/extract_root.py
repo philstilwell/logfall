@@ -56,6 +56,8 @@ EXCLUDED_NAMES = {
     "Fallacy of the transposed conditional.",
 }
 
+DUPLICATE_NAME_PATTERN = re.compile(r"\s+\(duplicate\)$", re.IGNORECASE)
+
 EXAMPLE_OVERRIDES = {
     "Broken window fallacy": (
         "After downtown vandalism, a mayor praises the damage for 'creating jobs' for glaziers "
@@ -267,7 +269,12 @@ def build_records(
     records_by_name: OrderedDict[str, dict] = OrderedDict()
     for row in rows[1:]:
         name = normalize_text(row[9] if len(row) > 9 else "")
-        if not name or name in EXCLUDED_NAMES or name not in wordpress_inventory:
+        if (
+            not name
+            or name in EXCLUDED_NAMES
+            or DUPLICATE_NAME_PATTERN.search(name)
+            or name not in wordpress_inventory
+        ):
             continue
 
         definition = sentence_case(row[11] if len(row) > 11 else "")

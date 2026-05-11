@@ -144,7 +144,7 @@ img {
   display: grid;
   grid-template-columns: minmax(0, 1.4fr) minmax(290px, 0.8fr);
   gap: 26px;
-  align-items: stretch;
+  align-items: start;
 }
 
 .hero-panel,
@@ -161,6 +161,7 @@ img {
 
 .hero-panel {
   padding: 30px;
+  align-self: start;
 }
 
 .hero-title {
@@ -347,10 +348,12 @@ img {
   display: grid;
   grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.7fr);
   gap: 22px;
+  align-items: start;
 }
 
 .detail-section {
   padding: 24px;
+  align-self: start;
 }
 
 .eyebrow {

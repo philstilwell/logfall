@@ -2,7 +2,7 @@
   "source": "Fallacies.ods",
   "sheet": "ROOT",
   "editorialOverridesSource": "data/editorial_overrides.json",
-  "recordCount": 139,
+  "recordCount": 138,
   "categories": [
     {
       "name": "Formal",
@@ -63,7 +63,7 @@
     {
       "name": "Linguistic",
       "slug": "linguistic",
-      "count": 16,
+      "count": 15,
       "members": [
         "Contextomy",
         "Continuum fallacy",
@@ -79,14 +79,13 @@
         "Proof by verbosity",
         "Reification",
         "Semantic pixelization",
-        "Suppressed correlative",
-        "Suppressed correlative (DUPLICATE)"
+        "Suppressed correlative"
       ]
     },
     {
       "name": "Conceptual",
       "slug": "conceptual",
-      "count": 50,
+      "count": 49,
       "members": [
         "Abstraction denial",
         "Abstraction fallacy",
@@ -132,7 +131,6 @@
         "Slippery slope",
         "Special pleading",
         "Suppressed correlative",
-        "Suppressed correlative (DUPLICATE)",
         "Teleological fallacy",
         "Top-down condemnation",
         "Top-down faulty generalization",
@@ -2964,27 +2962,6 @@
       "caseStudies": [
         "Critics sometimes argue that because everyone has some bias, calling a report biased says nothing, as if degrees of distortion and unfairness were impossible.",
         "Debates about freedom and censorship often set the positive term to an impossible ideal so that ordinary, useful distinctions collapse."
-      ],
-      "editorialStatus": "modernized-2026-pass"
-    },
-    {
-      "name": "Suppressed correlative (DUPLICATE)",
-      "slug": "suppressed-correlative-duplicate",
-      "categories": [
-        "Linguistic",
-        "Conceptual"
-      ],
-      "originalNumber": "9",
-      "family": "Formal Fallacy",
-      "subCategory": "",
-      "subSubCategory": "Correlative based fallacy",
-      "aliases": [],
-      "definition": "Occurs when a contrast term is emptied by redefining its counterpart so the distinction collapses.",
-      "example": "Everyone has some bias, so calling this report biased tells us nothing.",
-      "notes": "The fact that a property comes in degrees does not erase the usefulness of the distinction. This duplicate record is kept in sync so both site entries carry a modernized explanation.",
-      "caseStudies": [
-        "Public arguments often pretend that if no one is perfectly objective, then objectivity and bias can never be discussed in meaningful comparative terms.",
-        "A similar move appears when people say every restriction limits freedom somehow, therefore no restriction can be singled out as unusually coercive."
       ],
       "editorialStatus": "modernized-2026-pass"
     },

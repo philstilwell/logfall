@@ -12,6 +12,9 @@ const siteRoot = path.join(projectRoot, "site");
 const distRoot = projectRoot;
 const dataOutDir = path.join(distRoot, "data");
 const workbookOutPath = path.join(distRoot, "logfall-root-edition.xlsx");
+const siteUrl = "https://philstilwell.github.io/logfall/";
+const socialImagePath = "assets/logo.jpg";
+const buildDate = new Date().toISOString().split("T")[0];
 
 const featuredNames = [
   "Ad hominem",
@@ -97,7 +100,38 @@ function sortCategories(categories) {
   return [...categories].sort((a, b) => order.indexOf(a) - order.indexOf(b));
 }
 
-function pageShell({ title, description, prefix, content, currentSection = "", showSpreadsheetNav = true }) {
+function absoluteUrl(relativePath = "") {
+  return new URL(relativePath, siteUrl).toString();
+}
+
+function buildSitemap(entries) {
+  const body = entries
+    .map(
+      (entry) => `  <url>
+    <loc>${escapeHtml(absoluteUrl(entry.path))}</loc>
+    <lastmod>${buildDate}</lastmod>
+  </url>`,
+    )
+    .join("\n");
+
+  return `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${body}
+</urlset>
+`;
+}
+
+function pageShell({
+  title,
+  description,
+  prefix,
+  content,
+  currentSection = "",
+  showSpreadsheetNav = true,
+  canonicalPath = "",
+  ogType = "website",
+  robots = "index,follow",
+}) {
   const homeHref = prefix || "./";
   const navItems = [
     { href: homeHref, label: "Home", key: "home" },
@@ -115,6 +149,8 @@ function pageShell({ title, description, prefix, content, currentSection = "", s
         `<a href="${item.href}"${item.key === currentSection ? ' aria-current="page"' : ""}>${escapeHtml(item.label)}</a>`,
     )
     .join("");
+  const canonicalUrl = absoluteUrl(canonicalPath);
+  const socialImageUrl = absoluteUrl(socialImagePath);
 
   return `<!doctype html>
 <html lang="en">
@@ -123,12 +159,26 @@ function pageShell({ title, description, prefix, content, currentSection = "", s
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>${escapeHtml(title)}</title>
     <meta name="description" content="${escapeHtml(description)}" />
+    <meta name="robots" content="${escapeHtml(robots)}" />
+    <link rel="canonical" href="${escapeHtml(canonicalUrl)}" />
     <link rel="icon" type="image/x-icon" href="${prefix}assets/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="${prefix}assets/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="${prefix}assets/favicon-16x16.png" />
     <link rel="apple-touch-icon" sizes="180x180" href="${prefix}assets/apple-touch-icon.png" />
     <link rel="manifest" href="${prefix}site.webmanifest" />
     <meta name="theme-color" content="#0f172a" />
+    <meta property="og:site_name" content="LogFall" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="${escapeHtml(ogType)}" />
+    <meta property="og:title" content="${escapeHtml(title)}" />
+    <meta property="og:description" content="${escapeHtml(description)}" />
+    <meta property="og:url" content="${escapeHtml(canonicalUrl)}" />
+    <meta property="og:image" content="${escapeHtml(socialImageUrl)}" />
+    <meta property="og:image:alt" content="LogFall logo" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="${escapeHtml(title)}" />
+    <meta name="twitter:description" content="${escapeHtml(description)}" />
+    <meta name="twitter:image" content="${escapeHtml(socialImageUrl)}" />
     <link rel="stylesheet" href="${prefix}styles.css" />
     <script defer src="${prefix}app.js"></script>
   </head>
@@ -293,10 +343,11 @@ function buildHomePage(records, categories) {
   return pageShell({
     title: "LogFall | Logical Fallacies",
     description:
-      "A rebuilt logical fallacies reference with category browsing, searchable pages, and a synced ROOT-tab workbook.",
+      "A rebuilt logical fallacies reference with category browsing, clearer explanations, and modernized examples.",
     prefix: "",
     currentSection: "home",
     showSpreadsheetNav: false,
+    canonicalPath: "",
     content,
   });
 }
@@ -343,6 +394,7 @@ function buildAboutPage() {
     description: "About the rebuilt LogFall GitHub Pages edition and its source rules.",
     prefix: "../",
     currentSection: "about",
+    canonicalPath: "about/",
     content,
   });
 }
@@ -386,6 +438,7 @@ function buildAllFallaciesPage(records, categories) {
     description: "Search and browse the full LogFall index of logical fallacies.",
     prefix: "../",
     currentSection: "fallacies",
+    canonicalPath: "fallacies/",
     content,
   });
 }
@@ -422,6 +475,7 @@ function buildCategoriesIndexPage(categories) {
     description: "Browse the LogFall taxonomy by category.",
     prefix: "../",
     currentSection: "categories",
+    canonicalPath: "categories/",
     content,
   });
 }
@@ -461,6 +515,7 @@ function buildCategoryPage(category, records) {
     description: category.description,
     prefix: "../../",
     currentSection: "categories",
+    canonicalPath: `categories/${category.slug}/`,
     content,
   });
 }
@@ -592,6 +647,8 @@ function buildDetailPage(record, records) {
     description: truncate(record.definition, 150),
     prefix: "../../",
     currentSection: "fallacies",
+    canonicalPath: `fallacies/${record.slug}/`,
+    ogType: "article",
     content,
   });
 }
@@ -614,6 +671,8 @@ function build404Page() {
     description: "Fallback page for the LogFall static site.",
     prefix: "",
     currentSection: "",
+    canonicalPath: "404.html",
+    robots: "noindex,follow",
     content,
   });
 }
@@ -700,6 +759,21 @@ async function ensureCleanDist() {
   await fs.mkdir(dataOutDir, { recursive: true });
 }
 
+async function pruneGeneratedDirectories(parentDir, keepNames) {
+  let entries = [];
+  try {
+    entries = await fs.readdir(parentDir, { withFileTypes: true });
+  } catch {
+    return;
+  }
+
+  for (const entry of entries) {
+    if (!entry.isDirectory()) continue;
+    if (keepNames.has(entry.name)) continue;
+    await fs.rm(path.join(parentDir, entry.name), { recursive: true, force: true });
+  }
+}
+
 async function writeText(relativePath, contents) {
   const fullPath = path.join(distRoot, relativePath);
   await fs.mkdir(path.dirname(fullPath), { recursive: true });
@@ -719,6 +793,9 @@ async function main() {
     description: categoryDescriptions[category.name] || "A reasoning category in the LogFall taxonomy.",
   }));
 
+  await pruneGeneratedDirectories(path.join(distRoot, "fallacies"), new Set(records.map((record) => record.slug)));
+  await pruneGeneratedDirectories(path.join(distRoot, "categories"), new Set(categories.map((category) => category.slug)));
+
   await fs.copyFile(path.join(siteRoot, "styles.css"), path.join(distRoot, "styles.css"));
   await fs.copyFile(path.join(siteRoot, "app.js"), path.join(distRoot, "app.js"));
 
@@ -727,7 +804,16 @@ async function main() {
   await writeText("fallacies/index.html", buildAllFallaciesPage(records, categories));
   await writeText("categories/index.html", buildCategoriesIndexPage(categories));
   await writeText("404.html", build404Page());
-  await writeText("robots.txt", "User-agent: *\nAllow: /\n");
+  const sitemapEntries = [
+    { path: "" },
+    { path: "about/" },
+    { path: "fallacies/" },
+    { path: "categories/" },
+    ...categories.map((category) => ({ path: `categories/${category.slug}/` })),
+    ...records.map((record) => ({ path: `fallacies/${record.slug}/` })),
+  ];
+  await writeText("sitemap.xml", buildSitemap(sitemapEntries));
+  await writeText("robots.txt", `User-agent: *\nAllow: /\nSitemap: ${absoluteUrl("sitemap.xml")}\n`);
 
   for (const category of categories) {
     await writeText(`categories/${category.slug}/index.html`, buildCategoryPage(category, records));
