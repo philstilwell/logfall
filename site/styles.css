@@ -782,6 +782,83 @@ img {
   line-height: 1.7;
 }
 
+.analogy-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.analogy-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.analogy-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto auto 0;
+  width: 100%;
+  height: 6px;
+}
+
+.analogy-claim-card {
+  background: linear-gradient(180deg, rgba(20, 168, 215, 0.08), #ffffff 42%);
+}
+
+.analogy-claim-card::before {
+  background: linear-gradient(90deg, rgba(20, 168, 215, 0.85), rgba(20, 168, 215, 0.35));
+}
+
+.analogy-response-card {
+  background: linear-gradient(180deg, rgba(230, 59, 52, 0.08), #ffffff 42%);
+}
+
+.analogy-response-card::before {
+  background: linear-gradient(90deg, rgba(230, 59, 52, 0.85), rgba(230, 59, 52, 0.35));
+}
+
+.analogy-label {
+  margin: 0 0 12px;
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-deep);
+}
+
+.analogy-text {
+  margin: 0;
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+.theory-article-grid,
+.theory-family-grid {
+  align-items: start;
+}
+
+.theory-article-card,
+.theory-family-card {
+  align-self: start;
+}
+
+.theory-article-intro {
+  margin: 14px 0 0;
+  color: var(--ink-soft);
+}
+
+.theory-callout {
+  background:
+    linear-gradient(180deg, rgba(20, 168, 215, 0.08), transparent),
+    #ffffff;
+}
+
+.theory-formula {
+  margin: 0;
+  font-size: 1.02rem;
+  line-height: 1.7;
+}
+
 .case-list {
   display: grid;
   gap: 14px;
@@ -1422,6 +1499,7 @@ img {
   .hero,
   .detail-hero,
   .about-profile-grid,
+  .analogy-grid,
   .two-column,
   .related-grid,
   .argument-map,

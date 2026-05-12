@@ -385,6 +385,89 @@ Passage to map:
 [PASTE PASSAGE HERE]`,
   },
 ];
+
+const theoryArticleDefinitions = [
+  {
+    slug: "fallacy-rebuttals-without-fallacy-naming",
+    title: "Fallacy Rebuttals Without Fallacy Naming",
+    description:
+      "A rigorous guide to answering bad reasoning with clarifying analogies before reaching for a technical label.",
+    intro:
+      "This article explains why some of the clearest rebuttals do not start by naming the fallacy. Instead, they expose the shape of the mistake with a parallel analogy that makes the misstep obvious before any label is introduced.",
+  },
+];
+
+const analogyResponseOverrides = {
+  "Absence of evidence fallacy":
+    "That's like checking an empty shelf in one room and announcing the whole archive must still contain the missing file somewhere else. If the search conditions were good enough to leave traces, then repeated failure to find them does count against the claim.",
+  "Ad hominem":
+    "That's like saying the thermometer must be wrong because you dislike the person holding it. The personal jab does not answer whether the reading itself is accurate.",
+  "Appeal to authority":
+    "That's like accepting a bridge design because a famous chef approved it. Reputation only helps when the authority is actually in the right lane of expertise and the claim still fits the evidence.",
+  "Appeal to emotion":
+    "That's like turning up the soundtrack and calling the volume an argument. The feeling may be real, but it still has to be connected to evidence before it can carry the conclusion.",
+  "Appeal to fear":
+    "That's like yanking the fire alarm in order to win a zoning dispute. Panic can move people, but it does not prove the threatened outcome is actually supported.",
+  "Appeal to nature":
+    "That's like praising poison ivy for being natural and condemning eyeglasses for being artificial. The label tells you where something came from, not whether it is good, safe, or wise.",
+  "Argument from ignorance":
+    "That's like saying the locked room must contain treasure because nobody has opened the door yet. Lack of disproof is not the same thing as proof.",
+  "Base rate fallacy":
+    "That's like hearing a smoke detector beep once and forgetting you are standing in a building full of low batteries. The vivid clue feels decisive only because the background rate was ignored.",
+  "Begging the question":
+    "That's like using your own house key as proof that you deserve to be inside. The conclusion is being smuggled back in as if it were independent support.",
+  "Cherry picking":
+    "That's like showing only the sunny frames from a stormy week and calling it the full weather report. The argument looks stronger only because the missing evidence was left offstage.",
+  "Correlation is not causation":
+    "That's like noticing that umbrellas and wet sidewalks appear together and deciding umbrellas cause rain. The pattern might matter, but the cause still has to be established rather than assumed.",
+  "Equivocation":
+    "That's like winning a card game by quietly changing what the wild card means halfway through the hand. The wording stays similar while the meaning shifts underneath it.",
+  "False analogy":
+    "That's like claiming a bicycle should float because a boat also carries people. A shared surface feature does not guarantee the deeper structure is alike where it matters.",
+  "False dilemma":
+    "That's like insisting a city map has only north and south because east and west complicate the story. The argument sounds decisive only because the live alternatives were erased.",
+  "False equivalence":
+    "That's like saying a paper cut and a broken leg are basically the same because both are injuries. The comparison uses a thin similarity to flatten an important difference.",
+  "Hasty generalization":
+    "That's like tasting one spoonful from a burnt corner of the soup and condemning the entire pot. The leap from small sample to broad conclusion outruns what the evidence can support.",
+  "Moving the goalpost":
+    "That's like promising a race ends at the oak tree and then moving the finish line to the next hill when someone gets there first. The standard changes only to keep the result from counting.",
+  "No True Scotsman":
+    "That's like redrawing the target after the arrow lands outside the circle. The standard is being revised after the counterexample appears so the original claim can survive untouched.",
+  "Post hoc ergo propter hoc":
+    "That's like hearing the rooster crow before sunrise and concluding the rooster pulled the sun over the horizon. Mere sequence is being treated as if it already proved causation.",
+  "Red herring":
+    "That's like answering a fire alarm by criticizing the paint color on the extinguisher. The detour may be vivid, but it is still not an answer to the issue that raised the alarm.",
+  "Slippery slope":
+    "That's like claiming one library late fee will inevitably end in martial law. A real chain of consequences needs support for each step, not just dread about the final one.",
+  "Straw man argument":
+    "That's like replacing your opponent's chessboard with a toy checkerboard and then bragging that you defeated their strategy. The rebuttal wins only because it targeted a weaker stand-in instead of the real position.",
+  "Survivorship bias":
+    "That's like studying only the planes that made it back and then deciding the missing planes must not matter. The lesson is distorted because the silent failures were never counted.",
+  "Tu quoque":
+    "That's like dismissing a doctor's warning about smoking because the doctor smokes. The hypocrisy may be real, but it does not by itself make the warning false.",
+};
+
+const analogyFamilyTemplates = {
+  "Formal/Structural Fallacy":
+    "That's like assembling the right pieces of furniture in the wrong slots and then acting surprised when the table will not stand.",
+  "Evidential/Methodological Fallacy":
+    "That's like trying to judge the whole case from one folder left open on the corner of the desk while the rest of the evidence stays unread.",
+  "Causal/Explanatory Fallacy":
+    "That's like seeing two clocks strike together and deciding one must be winding the other.",
+  "Statistical/Sampling Fallacy":
+    "That's like judging an entire orchard from the first bruised apple in the basket.",
+  "Linguistic/Definition Fallacy":
+    "That's like changing the dictionary in the middle of the argument and pretending the old word still means the same thing.",
+  "Conceptual/Framing Fallacy":
+    "That's like forcing every shade on the color wheel into two paint cans and calling the missing shades unreal.",
+  "Comparison/Generalization Fallacy":
+    "That's like meeting one reckless cyclist and rewriting the traffic code for everyone on two wheels.",
+  "Relevance/Distraction Fallacy":
+    "That's like answering a question about the map by complaining about the driver's haircut.",
+  "Persuasive/Appeal Fallacy":
+    "That's like turning up the orchestra because the script cannot carry the scene on its own.",
+};
 const foundationalNames = new Set([
   ...featuredNames,
   "Appeal to emotion",
@@ -1544,6 +1627,7 @@ function pageShell({
     { href: `${prefix}categories/`, label: "Categories", key: "categories" },
     { href: `${prefix}check-yourself/`, label: "Check Yourself", key: "check-yourself" },
     { href: `${prefix}prompts/`, label: "Fun AI Prompts", key: "prompts" },
+    { href: `${prefix}theory/`, label: "Theory", key: "theory" },
     { href: `${prefix}about/`, label: "About", key: "about" },
   ];
 
@@ -1817,6 +1901,65 @@ function posterExplanationForRecord(record) {
   }
 
   return parts.join(" ");
+}
+
+function analogyClaimForRecord(record) {
+  return ensureSentence(record.example || record.definition || record.name);
+}
+
+function analogyResponseForRecord(record) {
+  const override = analogyResponseOverrides[record.name];
+  if (override) return ensureSentence(override);
+
+  const opening =
+    analogyFamilyTemplates[record.family] ||
+    "That's like mistaking the echo in the room for a new piece of evidence.";
+  const definition = lowerFirst(definitionCore(record.definition || ""));
+  const bridge =
+    record.family === "Formal/Structural Fallacy"
+      ? `The problem is structural: it treats ${definition} as if the conclusion automatically followed.`
+      : record.family === "Evidential/Methodological Fallacy"
+        ? `The problem is not just thin support, but treating ${definition} as if the evidence had already done enough work.`
+        : record.family === "Causal/Explanatory Fallacy"
+          ? `The problem is treating ${definition} as if the missing causal link had already been shown.`
+          : record.family === "Statistical/Sampling Fallacy"
+            ? `The problem is treating ${definition} as if one sample, rate, or pattern settled the larger question.`
+            : record.family === "Linguistic/Definition Fallacy"
+              ? `The problem is treating ${definition} as if a shift in wording counted as proof.`
+              : record.family === "Conceptual/Framing Fallacy"
+                ? `The problem is treating ${definition} as if a bad frame or bad category could replace careful distinctions.`
+                : record.family === "Comparison/Generalization Fallacy"
+                  ? `The problem is treating ${definition} as if one comparison or one slice of experience could stand in for the whole pattern.`
+                  : record.family === "Relevance/Distraction Fallacy"
+                    ? `The problem is treating ${definition} as if a nearby distraction had actually answered the original issue.`
+                    : record.family === "Persuasive/Appeal Fallacy"
+                      ? `The problem is treating ${definition} as if pressure, status, or feeling were evidence.`
+                      : `The problem is treating ${definition} as if that alone were enough to carry the conclusion.`;
+  return ensureSentence(`${opening} ${bridge}`);
+}
+
+function renderAnalogyRebuttalSection(record) {
+  const claim = analogyClaimForRecord(record);
+  const response = analogyResponseForRecord(record);
+
+  return `<section class="section-block">
+    <div class="section-header">
+      <div>
+        <h3 class="section-title">That&apos;s like saying...</h3>
+        <p class="section-copy">Instead of leading with the label, this analogy answers the shape of the reasoning move directly so the mistake is easier to see in plain language.</p>
+      </div>
+    </div>
+    <div class="analogy-grid">
+      <article class="detail-section analogy-card analogy-claim-card">
+        <p class="analogy-label">Fallacious claim</p>
+        <p class="analogy-text">${escapeHtml(claim)}</p>
+      </article>
+      <article class="detail-section analogy-card analogy-response-card">
+        <p class="analogy-label">That&apos;s like saying...</p>
+        <p class="analogy-text">${escapeHtml(response)}</p>
+      </article>
+    </div>
+  </section>`;
 }
 
 function renderReferenceMeta(record, prompts) {
@@ -2233,6 +2376,14 @@ function safeJsonForScript(value) {
 
 function aboutSeoDescription() {
   return "Meet Phil Stilwell and learn how LogFall grew from university critical-thinking classes into a teaching-focused logical fallacies reference.";
+}
+
+function theorySeoDescription() {
+  return "Read theory articles on how to teach, rebut, compare, and explain logical fallacies without flattening them into slogans.";
+}
+
+function theoryArticleSeoDescription(article) {
+  return article.description;
 }
 
 function pathSeoDescription(pathDefinition, memberCount) {
@@ -2873,6 +3024,382 @@ function buildPromptsPage() {
   });
 }
 
+function renderTheoryArticleCard(article, prefix) {
+  return `<article class="category-card theory-article-card">
+    <h3><a href="${prefix}theory/${article.slug}/">${escapeHtml(article.title)}</a></h3>
+    <p class="card-copy">${escapeHtml(article.description)}</p>
+    <p class="theory-article-intro">${escapeHtml(article.intro)}</p>
+    <p class="assessment-card-link"><a class="inline-link" href="${prefix}theory/${article.slug}/">Read article</a></p>
+  </article>`;
+}
+
+function buildTheoryIndexPage() {
+  const content = `
+    <div class="breadcrumbs">
+      <a href="../">Home</a><span>/</span><strong>Theory</strong>
+    </div>
+
+    <section class="detail-section">
+      <p class="eyebrow">Theory</p>
+      <h2 class="detail-title">Related articles on how to teach, compare, and rebut fallacies well.</h2>
+      <p class="detail-deck">
+        This section collects longer-form pieces that sit behind the LogFall reference pages. The goal is to explain not just what the fallacies are,
+        but how to use them responsibly, how to rebut them clearly, and how to avoid turning fallacy language into a blunt rhetorical weapon.
+      </p>
+    </section>
+
+    <section class="section-block">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">Current articles</h3>
+          <p class="section-copy">Start here for the theory behind the new analogy-based rebuttal sections.</p>
+        </div>
+      </div>
+      <div class="category-grid theory-article-grid">
+        ${theoryArticleDefinitions.map((article) => renderTheoryArticleCard(article, "../")).join("")}
+      </div>
+    </section>
+  `;
+
+  return pageShell({
+    title: "Theory Articles on Logical Fallacies, Rebuttals, and Pedagogy | LogFall",
+    description: theorySeoDescription(),
+    prefix: "../",
+    currentSection: "theory",
+    canonicalPath: "theory/",
+    keywords: [
+      "logical fallacy theory",
+      "fallacy pedagogy",
+      "rebutting fallacies",
+      "critical thinking articles",
+    ],
+    structuredData: [
+      breadcrumbSchema([
+        { name: "Home", path: "" },
+        { name: "Theory", path: "theory/" },
+      ]),
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: "Theory",
+        url: absoluteUrl("theory/"),
+        description: theorySeoDescription(),
+        publisher: publisherSchema(),
+        hasPart: theoryArticleDefinitions.map((article) => ({
+          "@type": "Article",
+          headline: article.title,
+          url: absoluteUrl(`theory/${article.slug}/`),
+          description: article.description,
+          author: {
+            "@type": "Person",
+            name: "Phil Stilwell",
+          },
+        })),
+      },
+      learningResourceSchema({
+        name: "Theory Articles on Logical Fallacies, Rebuttals, and Pedagogy",
+        path: "theory/",
+        description: theorySeoDescription(),
+        about: ["logical fallacies", "critical thinking pedagogy", "argument rebuttal"],
+        teaches: ["how to rebut fallacies", "how to teach fallacies responsibly"],
+        learningResourceType: ["Article hub", "Teaching resource"],
+        educationalUse: ["teaching", "self-study"],
+        keywords: ["logical fallacy theory", "fallacy pedagogy", "rebutting fallacies"],
+      }),
+    ],
+    content,
+  });
+}
+
+function buildTheoryArticlePage(article) {
+  const content = `
+    <div class="breadcrumbs">
+      <a href="../../">Home</a><span>/</span><a href="../">Theory</a><span>/</span><strong>${escapeHtml(article.title)}</strong>
+    </div>
+
+    <section class="detail-section">
+      <p class="eyebrow">Theory article</p>
+      <h2 class="detail-title">${escapeHtml(article.title)}</h2>
+      <p class="detail-deck">
+        A fallacy rebuttal often becomes clearer when it answers the bad reasoning with a sharp analogy before it reaches for a technical label.
+        This article explains why that approach can be pedagogically stronger, when it works best, and how to do it without becoming glib or unfair.
+      </p>
+      <div class="two-column compact-columns section-block">
+        <div class="note-panel">
+          <h4>What this article is for</h4>
+          <p class="muted">
+            The aim is to help teachers, students, and careful readers rebut a reasoning mistake in plain language. A good analogy can surface the
+            structure of the misstep immediately, especially for readers who do not yet know the vocabulary of formal logic or argument analysis.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>What this article is not saying</h4>
+          <p class="muted">
+            This is not a rejection of fallacy names. Technical labels are still useful for indexing, comparing, and teaching. The claim is narrower:
+            in many live conversations, an analogy-first rebuttal clarifies the mistake more effectively than a label-first reply.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">Why not lead with the label?</h3>
+          <p class="section-copy">Names can help, but they also come with common pedagogical costs.</p>
+        </div>
+      </div>
+      <div class="two-column compact-columns">
+        <div class="note-panel">
+          <h4>Labels can trigger defensiveness</h4>
+          <p class="muted">
+            When someone hears, “That’s a straw man” or “That’s ad hominem,” they often process the reply as a status move rather than as an explanation.
+            The discussion can harden around who is scoring points instead of what reasoning step actually failed.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Analogy makes the structure visible</h4>
+          <p class="muted">
+            A good rebuttal-by-analogy shows the same inferential shape in a cleaner setting. Once the bad move is seen in a simpler parallel case,
+            the original argument often becomes easier to diagnose without further jargon.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>It teaches transfer, not just vocabulary</h4>
+          <p class="muted">
+            Students do not truly understand a fallacy when they can merely recite its name. They understand it when they can recognize the same move
+            across different subject matters, tones, and political loyalties.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>It leaves room for the label later</h4>
+          <p class="muted">
+            Analogy-first does not mean analogy-only. After the reasoning slip is clear, the technical label can still be introduced as a compact way to
+            file, compare, and revisit the pattern.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">What a strong rebuttal-by-analogy should do</h3>
+          <p class="section-copy">The analogy has to illuminate the reasoning, not merely mock it.</p>
+        </div>
+      </div>
+      <div class="two-column compact-columns">
+        <div class="note-panel">
+          <h4>Preserve the logical shape</h4>
+          <p class="muted">
+            The analogy should mirror the inferential structure of the original move. If the mistake is a leap from sequence to causation, the analogy
+            should also expose a sequence-to-causation leap rather than some other weakness.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Strip away irrelevant heat</h4>
+          <p class="muted">
+            A good analogy removes political, moral, tribal, or emotionally loaded framing that might be masking the slip. It turns a contentious case
+            into one where the reasoning move can be inspected more calmly.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Be concrete enough to bite</h4>
+          <p class="muted">
+            The best analogies are vivid and memorable without becoming cartoonish. They make the error feel unmistakable, not merely comparable in some
+            abstract way.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Leave the door open to repair</h4>
+          <p class="muted">
+            The point is not merely to expose absurdity. A useful rebuttal also helps the speaker see what a fairer, narrower, or better-supported version
+            of the claim would have to look like.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">How to build one</h3>
+          <p class="section-copy">A repeatable way to turn a fallacy diagnosis into a clarifying analogy.</p>
+        </div>
+      </div>
+      <div class="detail-section theory-callout">
+        <p class="theory-formula">
+          <strong>Template:</strong> Identify the exact reasoning move, rebuild that same move in a cleaner setting, and then state the point of failure without yet naming the fallacy.
+        </p>
+      </div>
+      <div class="two-column compact-columns">
+        <div class="note-panel">
+          <h4>1. Isolate the exact slip</h4>
+          <p class="muted">
+            Do not start with “This sounds bad.” Start with a precise diagnosis: Is the argument confusing correlation with causation? Smuggling the conclusion
+            into its own premises? Treating a small sample as decisive? The more exact the diagnosis, the better the analogy will be.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>2. Translate the pattern</h4>
+          <p class="muted">
+            Move the same inferential structure into a more neutral setting: kitchens, maps, thermometers, traffic, libraries, scoreboards, and medical tests
+            all work well because they make structure visible without the original ideological baggage.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>3. Keep the pressure on the logic</h4>
+          <p class="muted">
+            The analogy should not rely on humiliation, sneering, or exaggerated stupidity. Its force should come from showing that the very same reasoning
+            would look obviously weak in the parallel case.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>4. Point toward the repair</h4>
+          <p class="muted">
+            Once the analogy has done its work, the next step is often to say what kind of evidence, qualification, or fairer framing would be needed to make
+            the original argument stronger.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">Family-by-family patterns</h3>
+          <p class="section-copy">Different families call for different kinds of analogies.</p>
+        </div>
+      </div>
+      <div class="category-grid theory-family-grid">
+        ${Object.entries(familyDescriptions)
+          .map(
+            ([family, description]) => `<article class="note-panel theory-family-card">
+              <h4>${escapeHtml(family)}</h4>
+              <p class="muted">${escapeHtml(description)}</p>
+              <p class="muted"><strong>Analogy strategy:</strong> ${
+                family === "Formal/Structural Fallacy"
+                  ? "Show a machine, proof, route, or assembly whose parts are in the wrong order or whose structure cannot carry the claimed result."
+                  : family === "Evidential/Methodological Fallacy"
+                    ? "Use archives, tests, scoreboards, or sampling scenes that make missing, selected, or over-read evidence visible."
+                    : family === "Causal/Explanatory Fallacy"
+                      ? "Use timelines, switches, dominoes, clocks, and mechanisms so the missing causal link stands out."
+                      : family === "Statistical/Sampling Fallacy"
+                        ? "Use baskets, polls, classrooms, and probability settings where the sample or rate can be clearly seen as too thin or distorted."
+                        : family === "Linguistic/Definition Fallacy"
+                          ? "Use dictionaries, contracts, rules, and game instructions to show how a verbal shift quietly changes the terms."
+                          : family === "Conceptual/Framing Fallacy"
+                            ? "Use maps, categories, shelves, and color wheels to show how a bad frame erases live distinctions or options."
+                            : family === "Comparison/Generalization Fallacy"
+                              ? "Use orchards, classrooms, traffic, and everyday stereotypes to show how one case is being stretched into too much."
+                              : family === "Relevance/Distraction Fallacy"
+                                ? "Use emergencies, interviews, and direct questions where a diversion is obviously not an answer."
+                                : "Use theater, volume knobs, applause, titles, and emotional atmospheres to show rhetoric taking the place of support."
+              }</p>
+            </article>`,
+          )
+          .join("")}
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">Risks and limits</h3>
+          <p class="section-copy">The method is powerful, but it can also be misused.</p>
+        </div>
+      </div>
+      <div class="two-column compact-columns">
+        <div class="note-panel">
+          <h4>Do not oversimplify the case</h4>
+          <p class="muted">
+            A rebuttal analogy can become unfair if it quietly removes contextual features that really matter. The cleaner case should preserve the logical
+            structure while discarding only what is irrelevant.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Do not confuse ridicule with clarity</h4>
+          <p class="muted">
+            Some analogies get a laugh but do not actually map the reasoning well. If the analogy humiliates the speaker without accurately tracking the
+            inferential mistake, it teaches aggression more than analysis.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Do not skip the repair</h4>
+          <p class="muted">
+            If the analogy only says “this is silly,” it leaves the audience without a better model. The strongest teaching move is to expose the mistake and
+            then show what the argument would need in order to become stronger.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Do not retire the technical vocabulary</h4>
+          <p class="muted">
+            Names still matter for indexing, searching, and cumulative learning. The point is sequence: very often the understanding should come first and the
+            label should come second.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section section-block">
+      <p class="eyebrow">Takeaway</p>
+      <h3 class="section-title">Use the analogy to open the door, then use the label to organize the lesson.</h3>
+      <p class="section-copy">
+        A fallacy name is useful when it compresses prior understanding. It is less useful when it substitutes for explanation. The practical rule is simple:
+        if the audience cannot yet see the mistake, start with the analogy. If they can already see it, the label can help them file it, compare it, and
+        remember it.
+      </p>
+    </section>
+  `;
+
+  return pageShell({
+    title: `${article.title} | LogFall Theory`,
+    description: theoryArticleSeoDescription(article),
+    prefix: "../../",
+    currentSection: "theory",
+    canonicalPath: `theory/${article.slug}/`,
+    ogType: "article",
+    keywords: [
+      article.title,
+      "fallacy rebuttal",
+      "logical fallacy analogy",
+      "critical thinking pedagogy",
+      "argument rebuttal without jargon",
+    ],
+    structuredData: [
+      breadcrumbSchema([
+        { name: "Home", path: "" },
+        { name: "Theory", path: "theory/" },
+        { name: article.title, path: `theory/${article.slug}/` },
+      ]),
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: article.title,
+        description: theoryArticleSeoDescription(article),
+        url: absoluteUrl(`theory/${article.slug}/`),
+        author: {
+          "@type": "Person",
+          name: "Phil Stilwell",
+        },
+        publisher: publisherSchema(),
+        dateModified: buildDate,
+      },
+      learningResourceSchema({
+        name: article.title,
+        path: `theory/${article.slug}/`,
+        description: theoryArticleSeoDescription(article),
+        about: ["logical fallacies", "fallacy rebuttals", "critical thinking pedagogy"],
+        teaches: ["how to rebut fallacies without leading with jargon", "how to build clarifying analogies"],
+        learningResourceType: ["Article", "Teaching resource"],
+        educationalUse: ["teaching", "self-study"],
+        keywords: [article.title, "fallacy rebuttal", "logical fallacy analogy", "critical thinking pedagogy"],
+      }),
+    ],
+    content,
+  });
+}
+
 function buildAssessmentIndexPage(records, categories) {
   const assessmentBank = buildAssessmentBank(records);
   const overviewCategories = categories
@@ -3395,6 +3922,8 @@ function buildDetailPage(record, records, categoryProfiles, posterAssets) {
         : ""
     }
 
+    ${renderAnalogyRebuttalSection(record)}
+
     ${renderCaveatSection(record, records)}
 
     ${renderConfusionSection(record, records, "../../")}
@@ -3567,7 +4096,7 @@ async function buildWorkbook(records, categories, categoryProfiles) {
     ["Record count", records.length],
     ["Category count", categories.length],
     ["Case studies", records.reduce((sum, record) => sum + record.caseStudies.length, 0)],
-    ["Gauge scale", "The three gauge columns use 0-100 editorial teaching estimates rather than measured statistics."],
+    ["Gauge scale", "The four gauge columns use 0-100 editorial teaching estimates rather than measured statistics."],
     ["Workbook use", "Use the Fallacies sheet for entry-by-entry editing and the Categories sheet for counts and category notes."],
     ["Copyright", copyrightNotice],
   ];
@@ -3595,11 +4124,14 @@ async function buildWorkbook(records, categories, categoryProfiles) {
     "Common in Rhetoric (0-100)",
     "Easy to Spot (0-100)",
     "Easy to Innocently Commit (0-100)",
+    "Difficulty Gauge (0-100)",
     "Often Confused With",
     "Definition",
     "Example",
     "Notes",
     "Caveat",
+    "That's Like Saying Claim",
+    "That's Like Saying Response",
     "Why This Mistake Matters",
     "Main Reasoning Problem",
     "What to Watch For",
@@ -3639,11 +4171,14 @@ async function buildWorkbook(records, categories, categoryProfiles) {
       gauges.common.value,
       gauges.spot.value,
       gauges.innocent.value,
+      gauges.difficulty.value,
       confusions,
       record.definition,
       record.example,
       record.notes,
       caveatTextForWorkbook(record, records),
+      analogyClaimForRecord(record),
+      analogyResponseForRecord(record),
       record.rationalityDanger || "",
       record.mainReasoningProblem || "",
       record.dynamicsToNotice || "",
@@ -3671,13 +4206,14 @@ async function buildWorkbook(records, categories, categoryProfiles) {
   fallaciesSheet.getRange("F:F").format.columnWidthPx = 120;
   fallaciesSheet.getRange("G:I").format.columnWidthPx = 180;
   fallaciesSheet.getRange("J:N").format.columnWidthPx = 220;
-  fallaciesSheet.getRange("O:Q").format.columnWidthPx = 150;
-  fallaciesSheet.getRange("R:R").format.columnWidthPx = 220;
-  fallaciesSheet.getRange("S:AD").format.columnWidthPx = 420;
-  fallaciesSheet.getRange("AE:AI").format.columnWidthPx = 360;
-  fallaciesSheet.getRange("AJ:AJ").format.columnWidthPx = 180;
+  fallaciesSheet.getRange("O:R").format.columnWidthPx = 150;
+  fallaciesSheet.getRange("S:S").format.columnWidthPx = 220;
+  fallaciesSheet.getRange("T:Y").format.columnWidthPx = 420;
+  fallaciesSheet.getRange("Z:AG").format.columnWidthPx = 360;
+  fallaciesSheet.getRange("AH:AL").format.columnWidthPx = 360;
+  fallaciesSheet.getRange("AM:AM").format.columnWidthPx = 180;
   fallaciesSheet.getRange(`A1:${columnLetter(headers.length)}1`).format.wrapText = true;
-  fallaciesSheet.getRange("J:AJ").format.wrapText = true;
+  fallaciesSheet.getRange(`J:${columnLetter(headers.length)}`).format.wrapText = true;
 
   const categorySheet = workbook.worksheets.add("Categories");
   const categoryRows = [
@@ -3754,6 +4290,7 @@ async function main() {
   await pruneGeneratedDirectories(path.join(distRoot, "fallacies"), new Set(records.map((record) => record.slug)));
   await pruneGeneratedDirectories(path.join(distRoot, "categories"), new Set(categories.map((category) => category.slug)));
   await pruneGeneratedDirectories(path.join(distRoot, "paths"), new Set(teachingPathDefinitions.map((pathDefinition) => pathDefinition.slug)));
+  await pruneGeneratedDirectories(path.join(distRoot, "theory"), new Set(theoryArticleDefinitions.map((article) => article.slug)));
   await pruneGeneratedDirectories(path.join(distRoot, "check-yourself"), new Set());
 
   await fs.copyFile(path.join(siteRoot, "styles.css"), path.join(distRoot, "styles.css"));
@@ -3763,6 +4300,7 @@ async function main() {
   await writeText("about/index.html", buildAboutPage());
   await writeText("check-yourself/index.html", buildAssessmentIndexPage(records, categories));
   await writeText("prompts/index.html", buildPromptsPage());
+  await writeText("theory/index.html", buildTheoryIndexPage());
   await writeText("fallacies/index.html", buildAllFallaciesPage(records, categories));
   await writeText("categories/index.html", buildCategoriesIndexPage(categories));
   await writeText("paths/index.html", buildTeachingPathsIndexPage(records));
@@ -3772,11 +4310,13 @@ async function main() {
     { path: "about/" },
     { path: "check-yourself/" },
     { path: "prompts/" },
+    { path: "theory/" },
     { path: "fallacies/" },
     { path: "categories/" },
     { path: "paths/" },
     ...categories.map((category) => ({ path: `categories/${category.slug}/` })),
     ...teachingPathDefinitions.map((pathDefinition) => ({ path: `paths/${pathDefinition.slug}/` })),
+    ...theoryArticleDefinitions.map((article) => ({ path: `theory/${article.slug}/` })),
     ...records.map((record) => ({ path: `fallacies/${record.slug}/` })),
   ];
   await writeText("sitemap.xml", buildSitemap(sitemapEntries));
@@ -3788,6 +4328,10 @@ async function main() {
 
   for (const pathDefinition of teachingPathDefinitions) {
     await writeText(`paths/${pathDefinition.slug}/index.html`, buildTeachingPathPage(pathDefinition, records));
+  }
+
+  for (const article of theoryArticleDefinitions) {
+    await writeText(`theory/${article.slug}/index.html`, buildTheoryArticlePage(article));
   }
 
   for (const record of records) {
@@ -3803,7 +4347,8 @@ async function main() {
     JSON.stringify(
       {
         distRoot,
-        pageCount: 8 + categories.length + teachingPathDefinitions.length + records.length,
+        pageCount:
+          9 + categories.length + teachingPathDefinitions.length + theoryArticleDefinitions.length + records.length,
         recordCount: records.length,
         workbookOutPath,
       },
