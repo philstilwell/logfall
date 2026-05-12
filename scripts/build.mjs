@@ -448,6 +448,247 @@ const analogyResponseOverrides = {
     "That's like dismissing a doctor's warning about smoking because the doctor smokes. The hypocrisy may be real, but it does not by itself make the warning false.",
 };
 
+const auditedAnalogyResponseOverrides = {
+  "Abstraction denial":
+    "That's like saying there is no such thing as a traffic jam because there are only individual cars. A higher-level pattern can be real and causally important even though it is made out of lower-level parts.",
+  "Abstraction fallacy":
+    "That's like treating the speed limit sign as proof that no car can ever go faster. A useful model or trend is being treated as if reality were logically forbidden to depart from it.",
+  "Affirmative conclusion from a negative premise":
+    "That's like saying, 'This fruit is not rotten. Rotten fruit is unsafe. Therefore this fruit is safe.' Ruling out one bad category does not automatically prove the positive opposite.",
+  "Affirming a disjunct":
+    "That's like saying a room is either crowded or noisy, and because it is crowded it cannot also be noisy. An ordinary 'or' is being treated as if only one option could be true.",
+  "Affirming the consequent":
+    "That's like saying, 'If it rained, the sidewalk would be wet. The sidewalk is wet, so it rained.' The observed result could have come from other causes.",
+  "All or nothing fallacy":
+    "That's like throwing away the whole meal because one dish was oversalted. A flaw in part of the package is being treated as total failure of the whole.",
+  "Anecdotal fallacy":
+    "That's like judging the climate from one hot afternoon on your porch. A vivid personal case is being treated as stronger than broader and more representative evidence.",
+  "Appeal to accomplishment":
+    "That's like asking a gold-medal swimmer to sign off on your tax return. Success in one field does not automatically transfer authority to another.",
+  "Appeal to consequences":
+    "That's like denying the storm warning because boarding the windows would be expensive. The cost or comfort of the conclusion is being mistaken for evidence about whether it is true.",
+  "Appeal to flattery":
+    "That's like telling jurors they are far too intelligent to acquit, and then counting the compliment as proof. Praise is being used where evidence should be.",
+  "Appeal to motive":
+    "That's like ignoring the math on a grocery bill because you think the cashier hopes for a tip. Suspected motive does not by itself answer the claim.",
+  "Appeal to novelty":
+    "That's like buying the newest stove and assuming dinner must taste better. Newness is being treated as if it were evidence of superiority.",
+  "Appeal to pity":
+    "That's like asking the scale to change your weight because you've had a hard week. Sympathy may be appropriate, but it does not prove the conclusion.",
+  "Appeal to poverty":
+    "That's like treating a weather forecast as truer because it came from a person in worn shoes. Humble origins do not convert a claim into evidence.",
+  "Appeal to probability":
+    "That's like buying one lottery ticket and speaking as if winning were practically on the calendar. Mere possibility is being inflated into likelihood or inevitability.",
+  "Appeal to ridicule":
+    "That's like laughing at the pilot's haircut and calling the joke a refutation of the flight plan. Mockery is being substituted for reasons.",
+  "Appeal to spite":
+    "That's like voting for a bad bridge plan just because it would annoy the mayor you hate. Resentment toward a target is being used as support for the conclusion.",
+  "Appeal to tradition":
+    "That's like insisting the classroom clock must stay wrong because it has always been five minutes slow. Longevity alone does not justify the practice.",
+  "Appeal to wealth":
+    "That's like assuming a billionaire's stethoscope makes a diagnosis better. Money and status are being mistaken for evidence.",
+  "Argument from fallacy":
+    "That's like spotting a typo in the map legend and concluding the city itself must not exist. A bad argument for a claim does not automatically make the claim false.",
+  "Argument from incredulity":
+    "That's like saying airplanes cannot fly because you personally cannot picture the aerodynamics. Difficulty imagining a mechanism is not evidence against the thing.",
+  "Argument from repetition":
+    "That's like hitting refresh on the same rumor and counting each reload as new proof. Familiarity is being mistaken for support.",
+  "Argument from silence":
+    "That's like taking a professor's missed email as confirmation that your answer key must be right. Non-response is being treated as endorsement.",
+  "Argumentum ad baculum":
+    "That's like saying, 'Agree that the bridge is safe, or lose your job.' The threat may secure compliance, but it does not add support.",
+  "Argumentum ad populum":
+    "That's like calling a restaurant healthy because the line is long. Popularity is being used as if it were proof.",
+  "Artificial negation":
+    "That's like saying that because I do not collect stamps, I must be positively committed to anti-stamp activism. Mere non-belief is being inflated into a strong opposite claim.",
+  "Association fallacy":
+    "That's like throwing out a sound medical study because it traveled in the same folder as a bad one. The claim is being judged by a nearby association instead of its merits.",
+  "Bare assertion fallacy":
+    "That's like slamming a stamp on a blank file and calling the case closed. Confidence of assertion is replacing actual support.",
+  "Bottom-up condemnation":
+    "That's like meeting one rude nurse and deciding the next nurse must be rude too because she belongs to the same profession. A negative group judgment is being pasted onto the individual.",
+  "Bottom-up justification":
+    "That's like trusting a mechanic you've never met because another mechanic once saved your road trip. A group-level compliment is being used as proof about this particular member.",
+  "Broken window fallacy":
+    "That's like praising a house fire because it creates work for carpenters. The visible rebuilding is counted while the destroyed value and lost alternatives disappear.",
+  "Chronological snobbery":
+    "That's like dismissing Euclid because he lacked Wi-Fi. An idea is being rejected for being old rather than for being wrong.",
+  "Circular cause and consequence":
+    "That's like saying the club is exclusive because no one joins, and no one joins because it is exclusive. The loop is being treated as if it explained or justified itself.",
+  "Composition fallacy":
+    "That's like saying every brick is light enough to carry, so the whole building must be light enough to carry. What is true of parts need not be true of the whole.",
+  "Confidence as a validator":
+    "That's like treating the volume of a car horn as evidence that the driver has the right of way. Felt certainty is being mistaken for support.",
+  "Conjunction fallacy":
+    "That's like saying it is more likely a die rolled a six-and-landed-on-a-Tuesday than simply rolled a six. Adding details makes the story feel richer, not more probable.",
+  "Contextomy":
+    "That's like quoting 'I approve' from the sentence 'I do not approve' and calling the clip accurate. A sliced excerpt is being treated as if it preserved the original meaning.",
+  "Continuum fallacy":
+    "That's like saying we cannot call a person bald unless we can name the exact hair that made the difference. A blurry boundary is being mistaken for a useless concept.",
+  "Definist fallacy":
+    "That's like defining 'healthy' as 'whatever doctors recommend' and then announcing that every recommendation is healthy by definition. A contested issue is being smuggled into a definition.",
+  "Demanding a mechanism":
+    "That's like refusing to believe the bridge is swaying until you can derive every equation of the wind load. Incomplete mechanism is being used to dismiss strong evidence that the effect is real.",
+  "Demanding negative proof":
+    "That's like insisting the fire department prove there is no spark anywhere before you will stop calling it arson. The claimant is pushing the burden onto critics instead of supporting the claim.",
+  "Denial of the epistemic gradient":
+    "That's like forcing every weather forecast into only 'certain' or 'false' while banning words like 'likely' and 'unlikely.' A graded confidence judgment is being crushed into a crude binary.",
+  "Denying a remote hypothetical":
+    "That's like refusing to test a fire exit because most days the building does not burn. Rare cases can still matter when the principle is supposed to hold universally.",
+  "Denying the antecedent":
+    "That's like saying, 'If the alarm is set, the house is protected. The alarm is not set, so the house is unprotected.' The conclusion ignores other ways the result could still hold.",
+  "Denying the correlative":
+    "That's like saying a foul cannot count as a foul unless the game ended because of it. One side of a meaningful contrast is being redefined until the other side has nowhere to apply.",
+  "Division fallacy":
+    "That's like saying the orchestra is wealthy, so every violinist must be wealthy. What is true of the whole does not automatically distribute to each part.",
+  "Ecological fallacy":
+    "That's like saying the average household on this street is tall, so the person at number 18 must be tall. Group statistics are being pasted onto the individual.",
+  "Empty refutation":
+    "That's like shouting 'case closed' before opening the folder. Declaring something debunked is being used in place of showing the flaw.",
+  "Epistemic/ontological conflation":
+    "That's like saying the comfort of a bedtime lamp proves the monsters under the bed are real. The effects of believing something are being mistaken for evidence that the thing exists.",
+  "Equivocation fallacy":
+    "That's like hearing a toy car described as 'driving itself' and then concluding it must have a human driver's understanding of traffic. A harmless sense of a word is being stretched into a stronger one.",
+  "Etymological fallacy":
+    "That's like insisting a computer mouse must be a rodent because that was the older meaning of the word 'mouse.' Historical origin is being treated as present meaning.",
+  "Exclusive premises":
+    "That's like saying, 'No cats are dogs. Some dogs are not pets. Therefore some pets are not cats.' Two negatives were never enough to build the needed bridge.",
+  "Existential fallacy":
+    "That's like saying every dragon in my garage is asleep, therefore at least one dragon is in there snoring. A statement about all members of a class is being treated as proof that the class has members.",
+  "Fallacy of many questions":
+    "That's like asking, 'When did you stop cheating at cards?' and pretending the question itself counts as evidence. The answer is being forced to carry an unproved assumption.",
+  "Fallacy of necessity":
+    "That's like saying a man in handcuffs cannot possibly ever use his hands again. A condition that is necessary under one description is being turned into a permanent necessity in reality.",
+  "False attribution":
+    "That's like forging a mechanic's signature on a repair report and then treating the fake signature as proof the brakes are fine. Borrowed credibility from the wrong source is being treated as real support.",
+  "False balance":
+    "That's like putting one engineer and one flat-earther on a stage and calling the shape of the Earth a 50-50 debate. Equal airtime is being mistaken for equal evidence.",
+  "False compromise":
+    "That's like saying one person calls noon and another calls midnight, so the truth must be six p.m. The midpoint is being treated as correct just because it sits between extremes.",
+  "False surrender":
+    "That's like stopping the chess clock the moment your queen is hanging and proposing a draw because 'both sides make good points.' A truce is being used to freeze the score when the evidence turns against one side.",
+  "Faulty generalization":
+    "That's like testing two cracked umbrellas and concluding umbrellas are useless in storms. The evidence does not reach as far as the conclusion claims.",
+  "For the sake of argument denial":
+    "That's like refusing to discuss whether the parachute would work because you do not believe anyone will jump. A hypothetical premise is being rejected just because it is not believed to be actual.",
+  "Four terms fallacy":
+    "That's like using one key labeled 'bank' for a riverbank in the first sentence and a money bank in the second, then acting as if the same lock was opened both times. The argument only appears to have three stable terms.",
+  "Gambler's fallacy":
+    "That's like expecting the roulette wheel to apologize for last night's reds by paying out black today. Independent events do not keep a memory ledger.",
+  "Genetic fallacy":
+    "That's like rejecting a sound recipe because you first saw it scribbled on a napkin. Origin is being treated as if it settled present merit.",
+  "Historian's fallacy":
+    "That's like grading a quarterback's split-second throw with the replay paused and the final score already on the screen. Hindsight is being smuggled backward, so people in the past are judged as if they knew what only later observers learned.",
+  "Homunculus fallacy":
+    "That's like explaining how a security camera works by saying there is a tiny security guard inside the lens watching the feed. The inner observer only repeats the mystery instead of solving it.",
+  "Human standard fallacy":
+    "That's like declaring a backyard bird no longer wild because a clipboard now labels it 'domestic.' A human tag or rule is being treated as if it changed the underlying fact.",
+  "If-by-whiskey":
+    "That's like selling the same drink as medicine to one crowd and as rebellion to another, while pretending the label never moved. The key term keeps changing shape to please both sides.",
+  "Illicit major":
+    "That's like saying all jazz musicians are artists, no plumbers are jazz musicians, therefore no plumbers are artists. The conclusion distributes a term more widely than the premise ever allowed.",
+  "Impotent logical space":
+    "That's like drawing a target so large that every dart, including the ones that miss the wall, still counts as a bullseye. The claim is framed so nothing could ever count against it.",
+  "Incomplete comparison":
+    "That's like calling one suitcase lighter than another without saying whether the first suitcase is empty. 'Better' is being claimed without a complete comparison class.",
+  "Inconsistent comparison":
+    "That's like crowning one athlete the overall best because she outruns one rival, outjumps another, and outswims a third. Different comparison targets are being stitched together to fake an all-around victory.",
+  "Intentional fallacy":
+    "That's like ignoring the director's note that the stage gun is a prop when the question is what the scene was meant to communicate. Authorial intention is being thrown away even where it matters to interpretation.",
+  "Is-ought problem":
+    "That's like noticing that many cars speed and concluding therefore the speed limit should be ignored. A fact about what happens is not yet a reason for what ought to happen.",
+  "Judgmental language":
+    "That's like spray-painting 'idiot' across the whiteboard and calling the graffiti an argument. Loaded language is doing the steering instead of reasons.",
+  "Linearity fallacy":
+    "That's like assuming two blankets will make soup boil twice as fast. Complex systems often have thresholds, saturation, and diminishing returns rather than neat straight-line gains.",
+  "Luddite fallacy":
+    "That's like seeing a washing machine in a laundromat and concluding humanity must be doomed to permanent unemployment. Automating one task is being mistaken for wiping out all useful human work.",
+  "Masked man fallacy":
+    "That's like saying, 'I know my neighbor, but I don't know who is wearing the mascot costume, so the mascot cannot be my neighbor.' Identity cannot always be substituted transparently inside belief or knowledge contexts.",
+  "Misleading vividness":
+    "That's like letting one shark-attack headline rewrite your picture of the whole ocean. A dramatic case is being treated as if it were representative frequency.",
+  "Naturalistic fallacy":
+    "That's like saying muddy stream water must be healthier than filtered water because it came straight from nature. 'Natural' is being treated as if it settled what is good or preferable.",
+  "Negative proof fallacy":
+    "That's like treating an unopened drawer as proof that the missing ring is inside because nobody has shown otherwise. Lack of disproof is being mistaken for support.",
+  "Nirvana fallacy":
+    "That's like refusing a seatbelt because it cannot guarantee survival in every crash. A useful improvement is being rejected for not being perfection.",
+  "Overwhelming exception":
+    "That's like writing a speed limit that applies except when you're late, tired, celebrating, worried, or in a hurry. The rule is padded with so many exceptions that it stops guiding anything.",
+  "Package-deal fallacy":
+    "That's like assuming every professor must drink coffee because 'professor' and 'coffee' often travel together in the stereotype. A bundled stereotype is being treated as a necessary package.",
+  "Pathetic fallacy":
+    "That's like saying the photocopier is sulking today because it jammed. Human feelings are being projected onto impersonal things and then treated as explanation.",
+  "Perfect solution fallacy":
+    "That's like refusing a mop because it will not make the floor permanently clean forever. A useful remedy is being discarded because it cannot do everything.",
+  "Perfect standard":
+    "That's like saying a piano recital was a total failure because one note was flat. A messy range of better and worse cases is being collapsed into perfect or worthless.",
+  "Perverted analogy":
+    "That's like replying to 'budgeting is like dieting' by objecting that budgets do not contain calories. The analogy is being stretched past its point so it can be mocked instead of understood.",
+  "Piggy-back assumption":
+    "That's like trusting a stranger's whole suitcase because one sticker on it matches the airport code. Evidence for one small detail is being made to ride shotgun for a larger claim it never proved.",
+  "Poisoning the well":
+    "That's like smearing the witness before the witness even takes the stand and then treating the smear as a rebuttal to whatever the witness will say. The audience is being primed to dismiss the claim before hearing it fairly.",
+  "Proof by example":
+    "That's like saying one swan on the lake proves every swan on earth is white. A few examples are being asked to do the work of a universal claim.",
+  "Proof by verbosity":
+    "That's like piling so much wrapping paper on an empty box that people assume there must be something substantial inside. Sheer volume is being mistaken for substance.",
+  "Prosecutor's fallacy":
+    "That's like hearing that only one key in a thousand fits the lock and concluding the person holding that key must be the burglar. The rarity of a match is being confused with the probability of guilt.",
+  "Psychologist's fallacy":
+    "That's like saying everyone must hate cilantro for the same inner reason you do. Your own psychology is being projected outward and treated as diagnosis.",
+  "Redeeming illogic with evidence":
+    "That's like demanding lab tests before rejecting a square circle. Evidence is being demanded to rescue something that is already incoherent on logical grounds.",
+  "Regression fallacy":
+    "That's like taking credit for calming the ocean because the wave after the huge one was smaller. A move back toward normal is being credited to the intervention without justification.",
+  "Reification":
+    "That's like blaming inflation as if it were a person hiding in the basement turning knobs. An abstraction is being dressed up as a concrete agent.",
+  "Retrospective determinism":
+    "That's like insisting the maze had only one obvious path after you've already seen the exit from above. The actual uncertainty beforehand is being erased by the outcome afterward.",
+  "Semantic pixelization":
+    "That's like forcing every shade between dawn and noon into only 'night' or 'day.' A graded position is being chopped into unrealistically sharp bins.",
+  "Sentimental fallacy":
+    "That's like treating a moving movie ending as proof the story must be true. Emotional beauty is being mistaken for evidence or feasibility.",
+  "Sharpshooter fallacy":
+    "That's like firing bullets at a barn and painting the bullseye afterward around the tightest cluster. A hand-picked pattern is being treated as if it were the tested target all along.",
+  "Single cause fallacy":
+    "That's like explaining a plane crash by naming one loose bolt and ignoring weather, maintenance, training, and fuel. A complex outcome is being squeezed into one cause.",
+  "Special pleading":
+    "That's like insisting every runner must stay behind the starting line except your cousin, because his dream matters more. An exception is being requested without a relevant reason.",
+  "Spotlight fallacy":
+    "That's like judging a whole city by the few blocks the news helicopter keeps circling. The most visible cases are being treated as the whole pattern.",
+  "Square logic":
+    "That's like braiding a knot out of extension cords and calling the tangle a power grid. The argument sounds intricate, but its pieces no longer form a coherent route from premise to conclusion.",
+  "Style over substance fallacy":
+    "That's like awarding the race to the loudest sports car commercial instead of the fastest car on the track. Presentation polish is being mistaken for argumentative strength.",
+  "Suppressed correlative":
+    "That's like defining 'clean' so strictly that nothing can count as clean, which makes 'dirty' useless too. One side of a contrast is stretched until the other side cannot function.",
+  "Teleological fallacy":
+    "That's like saying the river bends because it wants to reach the sea gracefully. A purpose or end-state is being projected where no such built-in goal has been shown.",
+  "Thought-terminating cliché":
+    "That's like slapping a 'do not inspect' sticker on a cracked engine and calling the repair finished. A stock phrase is being used to shut down inquiry.",
+  "Top-down condemnation":
+    "That's like catching one salmonella outbreak at a restaurant and concluding restaurants are crooks. A bad individual case is being used to condemn the whole group.",
+  "Top-down faulty generalization":
+    "That's like rejecting the rule 'rain makes sidewalks wet' because a covered sidewalk stayed dry. A generalization is being attacked by pretending it promised to hold without relevant scope conditions.",
+  "Top-down justification":
+    "That's like meeting one honest used-car dealer and concluding used-car dealers are unfairly stereotyped. A positive individual case is being made to justify the whole group.",
+  "Track-record reset":
+    "That's like handing a serial false alarmist a fresh siren every morning and pretending yesterday's empty evacuations tell you nothing. History of failure is being erased when it should affect default confidence.",
+  "Two wrongs make a right":
+    "That's like keying your neighbor's car because he scratched yours. One wrong is being treated as if it could justify another.",
+  "Undistributed middle":
+    "That's like saying all fire trucks are red, my bicycle is red, therefore my bicycle is a fire truck. Sharing a broad category does not make two things identical.",
+  "Vague insulators":
+    "That's like writing a doctor's note that says the machine failed because the patient's vibes were misaligned. Vague elastic terms are being chosen so the claim cannot be pinned down or tested.",
+  "Wishful thinking":
+    "That's like reading a bank balance through rose-colored glasses and calling the optimism a deposit. What would be comforting if true is being mistaken for what the evidence supports.",
+  "Witness chain":
+    "That's like saying a rumor is verified because your friend heard it from someone whose cousin heard it from many others you cannot question. Alleged unseen witnesses are being stacked to mimic corroboration.",
+  "Wrong causal direction":
+    "That's like seeing firefighters at burning buildings and concluding firefighters cause fires. The association is real, but the arrow of causation is pointing the wrong way.",
+  };
+
 const analogyFamilyTemplates = {
   "Formal/Structural Fallacy":
     "That's like assembling the right pieces of furniture in the wrong slots and then acting surprised when the table will not stand.",
@@ -1915,7 +2156,7 @@ function analogyClaimForRecord(record) {
 }
 
 function analogyResponseForRecord(record) {
-  const override = analogyResponseOverrides[record.name];
+  const override = auditedAnalogyResponseOverrides[record.name] || analogyResponseOverrides[record.name];
   if (override) return ensureSentence(override);
 
   const opening =
