@@ -869,6 +869,12 @@ img {
     #ffffff;
 }
 
+.theory-callout + .category-grid,
+.theory-callout + .two-column,
+.theory-callout + .prompt-grid {
+  margin-top: 18px;
+}
+
 .theory-formula {
   margin: 0;
   font-size: 1.02rem;
