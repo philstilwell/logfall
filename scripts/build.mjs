@@ -58,6 +58,27 @@ const categoryDescriptions = {
   Emotional: "Arguments that make feeling do the evidential work reasoning should have done.",
 };
 
+const familyDescriptions = {
+  "Formal/Structural Fallacy":
+    "The argument fails because its internal structure does not validly carry the premises to the conclusion.",
+  "Evidential/Methodological Fallacy":
+    "The mistake lies in how evidence is gathered, weighed, interpreted, or treated as sufficient.",
+  "Causal/Explanatory Fallacy":
+    "The error concerns what caused what, what explains what, or how a process is supposed to work.",
+  "Statistical/Sampling Fallacy":
+    "The reasoning misuses rates, probabilities, samples, distributions, or other quantitative expectations.",
+  "Linguistic/Definition Fallacy":
+    "The problem is driven by wording, ambiguity, definitions, or verbal framing rather than sound reasoning.",
+  "Conceptual/Framing Fallacy":
+    "The claim is distorted by bad categories, rigid framing, or confused conceptual boundaries.",
+  "Comparison/Generalization Fallacy":
+    "The argument draws the wrong lesson from a comparison, stereotype, exception, or generalization.",
+  "Relevance/Distraction Fallacy":
+    "The move shifts attention away from the real issue and substitutes something rhetorically nearby but logically irrelevant.",
+  "Persuasive/Appeal Fallacy":
+    "The argument leans on emotional, social, or rhetorical force where evidence or reasoning should do the work.",
+};
+
 const diagnosticPrompts = {
   Formal: "If the premises were true, would the conclusion still fail to follow?",
   Mathematical: "What numbers, rates, or probabilities are being ignored or mishandled?",
@@ -1639,6 +1660,49 @@ function renderRhetoricGaugeSection(record) {
   </div>`;
 }
 
+function familyDescriptionForName(family) {
+  return familyDescriptions[family] || "This family groups fallacies by the main kind of reasoning mistake they make.";
+}
+
+function renderFamilyPanel(record) {
+  const family = record.family || "Unspecified";
+  return `<div class="note-panel">
+      <h4>Family</h4>
+      <p class="muted"><strong>${escapeHtml(family)}</strong></p>
+      <p class="family-note">${escapeHtml(familyDescriptionForName(family))}</p>
+    </div>`;
+}
+
+function renderFamilyGuide(records) {
+  const counts = records.reduce((map, record) => {
+    const family = record.family || "Unspecified";
+    map.set(family, (map.get(family) || 0) + 1);
+    return map;
+  }, new Map());
+
+  const cards = Object.entries(familyDescriptions).map(
+    ([family, description]) => `<article class="note-panel family-guide-card">
+        <div class="family-guide-top">
+          <h4>${escapeHtml(family)}</h4>
+          <span class="family-guide-count">${counts.get(family) || 0}</span>
+        </div>
+        <p class="muted">${escapeHtml(description)}</p>
+      </article>`,
+  );
+
+  return `<section class="panel family-guide-panel">
+      <div class="section-header">
+        <div>
+          <h2 class="section-title">Family guide</h2>
+          <p class="section-copy">These family labels group fallacies by the main kind of reasoning mistake they make.</p>
+        </div>
+      </div>
+      <div class="family-guide-grid">
+        ${cards.join("")}
+      </div>
+    </section>`;
+}
+
 function renderFallacyCard(record, prefix) {
   const pedagogy = pedagogyForRecord(record);
   const aliases = record.aliases.join(" ");
@@ -1749,10 +1813,7 @@ function renderReferenceMeta(record, prompts) {
       </div>`
     : `<p class="muted">This entry is not currently in one of the curated teaching paths.</p>`;
   return `<div class="meta-grid">
-    <div class="note-panel">
-      <h4>Family</h4>
-      <p class="muted">${escapeHtml(record.family || "Unspecified")}</p>
-    </div>
+    ${renderFamilyPanel(record)}
     ${
       record.aliases.length
         ? `<div class="note-panel">
@@ -3050,6 +3111,8 @@ function buildAllFallaciesPage(records, categories) {
       </div>
     </section>
 
+    ${renderFamilyGuide(records)}
+
     <section class="section-block">
       <div class="fallacy-grid" data-fallacy-grid>
         ${records.map((record) => renderFallacyCard(record, "../")).join("")}
@@ -3301,10 +3364,7 @@ function buildDetailPage(record, records, categoryProfiles, posterAssets) {
           : `<aside class="detail-section">
         <p class="eyebrow">Reference</p>
         <div class="meta-grid">
-          <div class="note-panel">
-            <h4>Family</h4>
-            <p class="muted">${escapeHtml(record.family || "Unspecified")}</p>
-          </div>
+          ${renderFamilyPanel(record)}
           ${
             record.aliases.length
               ? `<div class="note-panel">

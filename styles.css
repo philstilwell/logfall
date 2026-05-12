@@ -469,6 +469,13 @@ img {
   text-transform: uppercase;
 }
 
+.family-note {
+  margin: 10px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+
 .gauge-section {
   margin-top: 18px;
 }
@@ -875,6 +882,45 @@ img {
 
 .search-empty {
   margin-top: 14px;
+}
+
+.family-guide-panel {
+  padding: 20px;
+}
+
+.family-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.family-guide-card {
+  padding: 20px;
+}
+
+.family-guide-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.family-guide-top h4 {
+  margin: 0;
+}
+
+.family-guide-count {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.2rem;
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  background: #edf6fb;
+  color: #1c5e89;
+  font-size: 0.88rem;
+  font-weight: 700;
 }
 
 .button-compact {
@@ -1364,7 +1410,8 @@ img {
   .about-profile-grid,
   .two-column,
   .related-grid,
-  .argument-map {
+  .argument-map,
+  .family-guide-grid {
     grid-template-columns: 1fr;
   }
 
