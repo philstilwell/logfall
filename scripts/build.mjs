@@ -1812,7 +1812,7 @@ function renderReferenceMeta(record, prompts) {
           .join("")}
       </div>`
     : `<p class="muted">This entry is not currently in one of the curated teaching paths.</p>`;
-  return `<div class="meta-grid">
+  return `<div class="meta-grid reference-meta-grid">
     ${renderFamilyPanel(record)}
     ${
       record.aliases.length
@@ -3363,7 +3363,7 @@ function buildDetailPage(record, records, categoryProfiles, posterAssets) {
           ? renderPosterIllustration(record, "../../", posterAssets)
           : `<aside class="detail-section">
         <p class="eyebrow">Reference</p>
-        <div class="meta-grid">
+        <div class="meta-grid reference-meta-grid">
           ${renderFamilyPanel(record)}
           ${
             record.aliases.length
