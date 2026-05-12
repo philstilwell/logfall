@@ -888,6 +888,10 @@ img {
   align-items: start;
 }
 
+.assessment-card-link {
+  margin: 14px 0 0;
+}
+
 .comparison-card h4,
 .quiz-card h4,
 .repair-card h4 {
@@ -932,8 +936,49 @@ img {
   color: var(--ink-soft);
 }
 
-.quiz-example {
-  margin: 0 0 14px;
+.assessment-example-panel {
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.assessment-example-text {
+  margin: 0;
+  font-size: clamp(1.35rem, 2.2vw, 1.7rem);
+  line-height: 1.55;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.assessment-example-note {
+  margin-top: 14px;
+}
+
+.quiz-example-shell {
+  margin: 0 0 16px;
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 18px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.quiz-example-label {
+  margin: 0 0 10px;
+  color: var(--accent-deep);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.quiz-example-text {
+  margin: 0;
+  font-size: 1.18rem;
+  line-height: 1.65;
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.quiz-example-note {
+  margin: 12px 0 0;
 }
 
 .quiz-options {

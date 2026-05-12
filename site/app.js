@@ -7,6 +7,8 @@ const cards = Array.from(document.querySelectorAll("[data-fallacy-card]"));
 const countNode = document.querySelector("[data-search-count]");
 const emptyState = document.querySelector("[data-search-empty]");
 const totalCount = cards.length;
+const countSingular = countNode?.dataset.searchUnitSingular || "fallacy";
+const countPlural = countNode?.dataset.searchUnitPlural || "fallacies";
 
 function syncFilterUrl(query, category, difficulty, classroom) {
   if (!searchInput && !categoryFilter && !difficultyFilter && !classroomFilter) return;
@@ -75,7 +77,8 @@ function applyFilters() {
   }
 
   if (countNode) {
-    countNode.textContent = `${visible} of ${totalCount} fallac${totalCount === 1 ? "y" : "ies"} shown`;
+    const unitLabel = totalCount === 1 ? countSingular : countPlural;
+    countNode.textContent = `${visible} of ${totalCount} ${unitLabel} shown`;
   }
 
   if (emptyState) {

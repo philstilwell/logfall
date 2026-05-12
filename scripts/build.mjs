@@ -1401,6 +1401,7 @@ function pageShell({
     { href: homeHref, label: "Home", key: "home" },
     { href: `${prefix}fallacies/`, label: "All Fallacies", key: "fallacies" },
     { href: `${prefix}categories/`, label: "Categories", key: "categories" },
+    { href: `${prefix}check-yourself/`, label: "Check Yourself", key: "check-yourself" },
     { href: `${prefix}prompts/`, label: "Fun AI Prompts", key: "prompts" },
     { href: `${prefix}about/`, label: "About", key: "about" },
   ];
@@ -1553,6 +1554,30 @@ function renderFallacyCard(record, prefix) {
     <p class="card-copy">${escapeHtml(truncate(record.definition, 170))}</p>
     ${renderPills(record.categories)}
     ${renderTeacherPills(record)}
+  </article>`;
+}
+
+function renderAssessmentCard(record, prefix) {
+  const pedagogy = pedagogyForRecord(record);
+  const aliases = record.aliases.join(" ");
+  const caseStudyText = record.caseStudies.map((item) => normalizeCaseStudy(item).summary).join(" ");
+  const body = `${record.definition} ${record.example} ${record.notes} ${caseStudyText} ${pedagogy.classroomTags.join(" ")} ${pedagogy.teachingPaths.map((item) => item.title).join(" ")}`;
+  return `<article
+    class="fallacy-card assessment-card"
+    data-fallacy-card
+    data-name="${escapeHtml(record.name)}"
+    data-aliases="${escapeHtml(aliases)}"
+    data-categories="${escapeHtml(record.categories.join("|"))}"
+    data-difficulty="${escapeHtml(pedagogy.difficulty)}"
+    data-classroom="${escapeHtml(pedagogy.classroomLevel)}"
+    data-body="${escapeHtml(body)}"
+  >
+    <p class="eyebrow">Check yourself</p>
+    <h3><a href="${prefix}check-yourself/${record.slug}/">${escapeHtml(record.name)}</a></h3>
+    <p class="card-copy"><strong>Example claim:</strong> ${escapeHtml(truncate(record.example, 165))}</p>
+    ${renderPills(record.categories)}
+    ${renderTeacherPills(record)}
+    <p class="assessment-card-link"><a class="inline-link" href="${prefix}check-yourself/${record.slug}/">Open the quiz</a></p>
   </article>`;
 }
 
@@ -1849,18 +1874,22 @@ function renderArgumentMapSection(record) {
   </section>`;
 }
 
-function renderQuizAndRepairSection(record, records) {
+function renderQuizAndRepairSection(record, records, options = {}) {
+  const { includeHeader = true } = options;
   const quiz = quizConfigForRecord(record, records);
   const repairChecklist = repairChecklistForRecord(record);
   const repairModel = repairModelForRecord(record);
-
-  return `<section class="section-block">
-    <div class="section-header">
+  const headerMarkup = includeHeader
+    ? `<div class="section-header">
       <div>
         <h3 class="section-title">Check yourself</h3>
         <p class="section-copy">Use this short quiz to identify the fallacy, explain it, and then practice repairing the claim.</p>
       </div>
-    </div>
+    </div>`
+    : "";
+
+  return `<section class="section-block">
+    ${headerMarkup}
     <div class="two-column quiz-grid">
       <article
         class="detail-section quiz-card"
@@ -1870,8 +1899,12 @@ function renderQuizAndRepairSection(record, records) {
         data-quiz-model="${escapeHtml(quiz.model)}"
       >
         <h4>1. Identify the fallacy</h4>
-        <p class="muted">Choose the best label for the example on this page.</p>
-        <p class="quiz-example"><strong>Example:</strong> ${escapeHtml(record.example)}</p>
+        <p class="muted">Choose the best label for the example claim below. Base your answer on this exact wording, not on a broader topic guess.</p>
+        <div class="quiz-example-shell">
+          <p class="quiz-example-label">Example claim to diagnose</p>
+          <p class="quiz-example-text">${escapeHtml(record.example)}</p>
+          <p class="quiz-example-note">Read this claim carefully. Every answer in this check should be anchored to this exact example.</p>
+        </div>
         <div class="quiz-options">
           ${quiz.options
             .map(
@@ -1905,6 +1938,29 @@ function renderQuizAndRepairSection(record, records) {
         </details>
       </article>
     </div>
+  </section>`;
+}
+
+function renderAssessmentTeaserSection(record) {
+  return `<section class="section-block">
+    <div class="section-header">
+      <div>
+        <h3 class="section-title">Check yourself</h3>
+        <p class="section-copy">The quiz and repair practice for this fallacy now lives on its own page so you can focus on the assessment without the rest of the reference entry competing for attention.</p>
+      </div>
+    </div>
+    <article class="detail-section">
+      <div class="two-column compact-columns">
+        <div class="note-panel">
+          <h4>What the assessment does</h4>
+          <p class="muted">You will diagnose the example claim, explain the exact reasoning slip, and then write a stronger repair of the argument.</p>
+        </div>
+        <div class="note-panel">
+          <h4>Open the check</h4>
+          <p class="muted"><a class="text-link" href="../../check-yourself/${escapeHtml(record.slug)}/">Take the ${escapeHtml(record.name)} check-yourself quiz</a>.</p>
+        </div>
+      </div>
+    </article>
   </section>`;
 }
 
@@ -1943,6 +1999,29 @@ function promptsSeoDescription() {
   return "Copy AI prompts for identifying logical fallacies in passages, debates, media, and argument maps, with direct links back to LogFall.";
 }
 
+function assessmentIndexSeoDescription(recordCount) {
+  return `Use ${recordCount} logical fallacy quizzes to identify fallacies, explain the reasoning slip, and practice repairing the example claim.`;
+}
+
+function seoFallacyName(record) {
+  return /\bfallacy\b/i.test(record.name) ? record.name : `${record.name} logical fallacy`;
+}
+
+function seoFallacyKeyword(record) {
+  return /\bfallacy\b/i.test(record.name) ? record.name : `${record.name} fallacy`;
+}
+
+function assessmentSeoTitle(record) {
+  return `${seoFallacyName(record)}: check-yourself quiz and repair practice | LogFall`;
+}
+
+function assessmentSeoDescription(record) {
+  return truncate(
+    `Take the ${seoFallacyName(record)} check-yourself quiz with a clear example claim, fallacy identification, explanation grading, and repair practice.`,
+    158,
+  );
+}
+
 function aboutSeoDescription() {
   return "Meet Phil Stilwell and learn how LogFall grew from university critical-thinking classes into a teaching-focused logical fallacies reference.";
 }
@@ -1952,12 +2031,12 @@ function pathSeoDescription(pathDefinition, memberCount) {
 }
 
 function fallacySeoTitle(record) {
-  return `${record.name} logical fallacy: definition, examples, and how to spot it | LogFall`;
+  return `${seoFallacyName(record)}: definition, examples, and how to spot it | LogFall`;
 }
 
 function fallacySeoDescription(record) {
   return truncate(
-    `Learn the ${record.name} logical fallacy with a clear definition, example, case studies, related fallacies, and teaching tools for critical thinking.`,
+    `Learn ${seoFallacyName(record)} with a clear definition, example, case studies, related fallacies, and teaching tools for critical thinking.`,
     158,
   );
 }
@@ -2585,6 +2664,210 @@ function buildPromptsPage() {
   });
 }
 
+function buildAssessmentIndexPage(records, categories) {
+  const difficultyOptions = ["Foundational", "Intermediate", "Advanced"]
+    .map((value) => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`)
+    .join("");
+  const classroomOptions = classroomLevels
+    .map((value) => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`)
+    .join("");
+  const categoryOptions = categories
+    .map((category) => `<option value="${escapeHtml(category.name)}">${escapeHtml(category.name)}</option>`)
+    .join("");
+
+  const content = `
+    <div class="breadcrumbs">
+      <a href="../">Home</a><span>/</span><strong>Check Yourself</strong>
+    </div>
+
+    <section class="detail-section">
+      <p class="eyebrow">Check Yourself</p>
+      <h2 class="detail-title">Dedicated quizzes for spotting, explaining, and repairing fallacies.</h2>
+      <p class="detail-deck">
+        Use this assessment area to work from a single example claim at a time. Each check asks you to identify the fallacy,
+        explain the exact reasoning slip, and then rewrite the claim into a stronger version.
+      </p>
+    </section>
+
+    <section class="panel search-panel">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">Find a quiz</h3>
+          <p class="section-copy">Search by fallacy name, alias, category, or example wording to open the check you want.</p>
+        </div>
+      </div>
+      <div class="search-row">
+        <input class="search-input" type="search" placeholder="Search checks, fallacies, or example keywords..." data-search-input />
+        <select class="search-select" data-category-filter>
+          <option value="">All categories</option>
+          ${categoryOptions}
+        </select>
+        <select class="search-select" data-difficulty-filter>
+          <option value="">All difficulty levels</option>
+          ${difficultyOptions}
+        </select>
+        <select class="search-select" data-classroom-filter>
+          <option value="">All classroom levels</option>
+          ${classroomOptions}
+        </select>
+        <button class="search-reset" type="button" data-search-reset>Clear</button>
+      </div>
+      <div
+        class="search-meta"
+        data-search-count
+        data-search-unit-singular="check"
+        data-search-unit-plural="checks"
+        role="status"
+        aria-live="polite"
+      >${records.length} of ${records.length} checks shown</div>
+      <div class="note-panel search-empty hidden" data-search-empty>
+        <h4>No checks match yet</h4>
+        <p class="muted">Try a broader keyword, clear the filters, or browse by category to find the quiz you want.</p>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="fallacy-grid" data-fallacy-grid>
+        ${records.map((record) => renderAssessmentCard(record, "../")).join("")}
+      </div>
+    </section>
+  `;
+
+  return pageShell({
+    title: "Check Yourself: Logical Fallacy Quizzes and Repair Practice | LogFall",
+    description: assessmentIndexSeoDescription(records.length),
+    prefix: "../",
+    currentSection: "check-yourself",
+    canonicalPath: "check-yourself/",
+    keywords: [
+      "logical fallacy quiz",
+      "check yourself fallacies",
+      "critical thinking quiz",
+      "fallacy assessment",
+      `${records.length} logical fallacy quizzes`,
+    ],
+    structuredData: [
+      breadcrumbSchema([
+        { name: "Home", path: "" },
+        { name: "Check Yourself", path: "check-yourself/" },
+      ]),
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: "Check Yourself",
+        url: absoluteUrl("check-yourself/"),
+        description: assessmentIndexSeoDescription(records.length),
+        publisher: publisherSchema(),
+        mainEntity: {
+          "@type": "ItemList",
+          numberOfItems: records.length,
+          itemListElement: records.map((record, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: record.name,
+            url: absoluteUrl(`check-yourself/${record.slug}/`),
+          })),
+        },
+      },
+      learningResourceSchema({
+        name: "Check Yourself: Logical Fallacy Quizzes and Repair Practice",
+        path: "check-yourself/",
+        description: assessmentIndexSeoDescription(records.length),
+        about: ["logical fallacies", "critical thinking", "argument repair"],
+        teaches: ["logical fallacy identification", "reasoning repair", "explanation of reasoning slips"],
+        learningResourceType: ["Quiz bank", "Assessment"],
+        educationalUse: ["assessment", "teaching", "self-study"],
+        keywords: ["logical fallacy quiz", "check yourself fallacies", "critical thinking quiz", "fallacy assessment"],
+      }),
+    ],
+    content,
+  });
+}
+
+function buildAssessmentPage(record, records) {
+  const pedagogy = pedagogyForRecord(record);
+  const content = `
+    <div class="breadcrumbs">
+      <a href="../../">Home</a><span>/</span><a href="../">Check Yourself</a><span>/</span><strong>${escapeHtml(record.name)}</strong>
+    </div>
+
+    <section class="detail-section">
+      <p class="eyebrow">Check Yourself</p>
+      <h2 class="detail-title">${escapeHtml(record.name)} assessment</h2>
+      <p class="detail-deck">
+        Work from one example claim, identify the fallacy, explain the exact reasoning slip, and then repair the argument without saying more than the evidence or reasoning has earned.
+      </p>
+      <div class="meta-grid section-block">
+        <div class="note-panel">
+          <h4>Fallacy page</h4>
+          <p class="muted"><a class="text-link" href="../../fallacies/${escapeHtml(record.slug)}/">Open the full ${escapeHtml(record.name)} reference entry</a>.</p>
+        </div>
+        <div class="note-panel">
+          <h4>Categories</h4>
+          <p class="muted">${escapeHtml(record.categories.join(", "))}</p>
+        </div>
+        <div class="note-panel">
+          <h4>Classroom fit</h4>
+          <p class="muted">${escapeHtml(pedagogy.classroomLevel)} · ${escapeHtml(pedagogy.difficulty)}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section assessment-example-panel">
+      <p class="eyebrow">Example claim to diagnose</p>
+      <p class="assessment-example-text">${escapeHtml(record.example)}</p>
+      <p class="muted assessment-example-note">Use this exact claim throughout the assessment below. The label, explanation, and repair should all stay tied to this wording.</p>
+    </section>
+
+    ${renderQuizAndRepairSection(record, records, { includeHeader: false })}
+  `;
+
+  return pageShell({
+    title: assessmentSeoTitle(record),
+    description: assessmentSeoDescription(record),
+    prefix: "../../",
+    currentSection: "check-yourself",
+    canonicalPath: `check-yourself/${record.slug}/`,
+    keywords: [
+      `${record.name} quiz`,
+      `${record.name} assessment`,
+      `${seoFallacyKeyword(record)} quiz`,
+      ...record.aliases.slice(0, 3),
+      "logical fallacy quiz",
+    ],
+    structuredData: [
+      breadcrumbSchema([
+        { name: "Home", path: "" },
+        { name: "Check Yourself", path: "check-yourself/" },
+        { name: record.name, path: `check-yourself/${record.slug}/` },
+      ]),
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: assessmentSeoTitle(record),
+        url: absoluteUrl(`check-yourself/${record.slug}/`),
+        description: assessmentSeoDescription(record),
+        isPartOf: {
+          "@type": "WebSite",
+          name: "LogFall",
+          url: absoluteUrl(""),
+        },
+      },
+      learningResourceSchema({
+        name: `${record.name} assessment`,
+        path: `check-yourself/${record.slug}/`,
+        description: assessmentSeoDescription(record),
+        about: [record.name, ...record.categories],
+        teaches: [record.name, "argument repair", "fallacy identification"],
+        learningResourceType: ["Quiz", "Assessment"],
+        educationalUse: ["assessment", "teaching", "self-study"],
+        keywords: [`${record.name} quiz`, `${record.name} assessment`, "logical fallacy quiz"],
+      }),
+    ],
+    content,
+  });
+}
+
 function buildAllFallaciesPage(records, categories) {
   const difficultyOptions = ["Foundational", "Intermediate", "Advanced"]
     .map((value) => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`)
@@ -2925,7 +3208,7 @@ function buildDetailPage(record, records, categoryProfiles, posterAssets) {
 
     ${renderRationalityLab(record, categoryProfiles)}
 
-    ${renderQuizAndRepairSection(record, records)}
+    ${renderAssessmentTeaserSection(record)}
 
     ${
       prompts.length
@@ -2993,7 +3276,7 @@ function buildDetailPage(record, records, categoryProfiles, posterAssets) {
     extraHeadHtml: cloudflareWebAnalyticsTag,
     keywords: [
       record.name,
-      `${record.name} fallacy`,
+      seoFallacyKeyword(record),
       "logical fallacy",
       ...record.aliases.slice(0, 3),
       ...record.categories.map((category) => `${category.toLowerCase()} logical fallacies`),
@@ -3026,16 +3309,16 @@ function buildDetailPage(record, records, categoryProfiles, posterAssets) {
         },
       },
       learningResourceSchema({
-        name: `${record.name} logical fallacy`,
+        name: seoFallacyName(record),
         path: `fallacies/${record.slug}/`,
         description: fallacySeoDescription(record),
         about: [record.name, ...record.categories],
         teaches: [record.name, ...record.aliases],
-        learningResourceType: ["Reference", "Practice tool", "Quiz"],
-        educationalUse: ["teaching", "self-study", "assessment"],
+        learningResourceType: ["Reference", "Practice tool"],
+        educationalUse: ["teaching", "self-study"],
         keywords: [
           record.name,
-          `${record.name} fallacy`,
+          seoFallacyKeyword(record),
           ...record.aliases.slice(0, 3),
           ...record.categories.map((category) => `${category.toLowerCase()} logical fallacies`),
         ],
@@ -3274,12 +3557,14 @@ async function main() {
   await pruneGeneratedDirectories(path.join(distRoot, "fallacies"), new Set(records.map((record) => record.slug)));
   await pruneGeneratedDirectories(path.join(distRoot, "categories"), new Set(categories.map((category) => category.slug)));
   await pruneGeneratedDirectories(path.join(distRoot, "paths"), new Set(teachingPathDefinitions.map((pathDefinition) => pathDefinition.slug)));
+  await pruneGeneratedDirectories(path.join(distRoot, "check-yourself"), new Set(records.map((record) => record.slug)));
 
   await fs.copyFile(path.join(siteRoot, "styles.css"), path.join(distRoot, "styles.css"));
   await fs.copyFile(path.join(siteRoot, "app.js"), path.join(distRoot, "app.js"));
 
   await writeText("index.html", buildHomePage(records, categories));
   await writeText("about/index.html", buildAboutPage());
+  await writeText("check-yourself/index.html", buildAssessmentIndexPage(records, categories));
   await writeText("prompts/index.html", buildPromptsPage());
   await writeText("fallacies/index.html", buildAllFallaciesPage(records, categories));
   await writeText("categories/index.html", buildCategoriesIndexPage(categories));
@@ -3288,12 +3573,14 @@ async function main() {
   const sitemapEntries = [
     { path: "" },
     { path: "about/" },
+    { path: "check-yourself/" },
     { path: "prompts/" },
     { path: "fallacies/" },
     { path: "categories/" },
     { path: "paths/" },
     ...categories.map((category) => ({ path: `categories/${category.slug}/` })),
     ...teachingPathDefinitions.map((pathDefinition) => ({ path: `paths/${pathDefinition.slug}/` })),
+    ...records.map((record) => ({ path: `check-yourself/${record.slug}/` })),
     ...records.map((record) => ({ path: `fallacies/${record.slug}/` })),
   ];
   await writeText("sitemap.xml", buildSitemap(sitemapEntries));
@@ -3305,6 +3592,10 @@ async function main() {
 
   for (const pathDefinition of teachingPathDefinitions) {
     await writeText(`paths/${pathDefinition.slug}/index.html`, buildTeachingPathPage(pathDefinition, records));
+  }
+
+  for (const record of records) {
+    await writeText(`check-yourself/${record.slug}/index.html`, buildAssessmentPage(record, records));
   }
 
   for (const record of records) {
@@ -3320,7 +3611,7 @@ async function main() {
     JSON.stringify(
       {
         distRoot,
-        pageCount: 7 + categories.length + teachingPathDefinitions.length + records.length,
+        pageCount: 8 + categories.length + teachingPathDefinitions.length + records.length * 2,
         recordCount: records.length,
         workbookOutPath,
       },
