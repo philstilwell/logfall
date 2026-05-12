@@ -1766,11 +1766,18 @@ function familyDescriptionForName(family) {
   return familyDescriptions[family] || "This family groups fallacies by the main kind of reasoning mistake they make.";
 }
 
+function familyLabelHtml(family = "") {
+  return String(family || "")
+    .split("/")
+    .map((part) => escapeHtml(part))
+    .join('<span class="family-slash">/</span><wbr>');
+}
+
 function renderFamilyPanel(record) {
   const family = record.family || "Unspecified";
   return `<div class="note-panel">
       <h4>Family</h4>
-      <p class="muted"><strong>${escapeHtml(family)}</strong></p>
+      <p class="muted"><strong class="family-name">${familyLabelHtml(family)}</strong></p>
       <p class="family-note">${escapeHtml(familyDescriptionForName(family))}</p>
     </div>`;
 }
@@ -1785,7 +1792,7 @@ function renderFamilyGuide(records) {
   const cards = Object.entries(familyDescriptions).map(
     ([family, description]) => `<article class="note-panel family-guide-card">
         <div class="family-guide-top">
-          <h4>${escapeHtml(family)}</h4>
+          <h4 class="family-heading">${familyLabelHtml(family)}</h4>
           <span class="family-guide-count">${counts.get(family) || 0}</span>
         </div>
         <p class="muted">${escapeHtml(description)}</p>
@@ -3275,7 +3282,7 @@ function buildTheoryArticlePage(article) {
         ${Object.entries(familyDescriptions)
           .map(
             ([family, description]) => `<article class="note-panel theory-family-card">
-              <h4>${escapeHtml(family)}</h4>
+              <h4 class="family-heading">${familyLabelHtml(family)}</h4>
               <p class="muted">${escapeHtml(description)}</p>
               <p class="muted"><strong>Analogy strategy:</strong> ${
                 family === "Formal/Structural Fallacy"

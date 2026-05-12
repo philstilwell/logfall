@@ -472,6 +472,18 @@ img {
   word-break: break-word;
 }
 
+.family-name,
+.family-heading {
+  line-height: 1.2;
+  overflow-wrap: anywhere;
+  word-break: normal;
+  text-wrap: balance;
+}
+
+.family-slash {
+  opacity: 0.72;
+}
+
 .note-panel {
   padding: 18px;
 }
@@ -842,6 +854,10 @@ img {
   align-self: start;
 }
 
+.theory-family-card h4 {
+  margin: 0 0 10px;
+}
+
 .theory-article-intro {
   margin: 14px 0 0;
   color: var(--ink-soft);
@@ -991,7 +1007,7 @@ img {
 
 .family-guide-top {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 12px;
   margin-bottom: 10px;
@@ -999,6 +1015,7 @@ img {
 
 .family-guide-top h4 {
   margin: 0;
+  flex: 1 1 auto;
 }
 
 .family-guide-count {
