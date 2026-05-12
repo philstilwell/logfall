@@ -610,6 +610,19 @@ function ensureSentence(value = "") {
   return /[.?!]["'”’]?$/u.test(trimmed) ? trimmed : `${trimmed}.`;
 }
 
+function splitSentences(value = "") {
+  return String(value || "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .split(/(?<=[.?!]["'”’]?)\s+/u)
+    .map((item) => item.trim())
+    .filter(Boolean);
+}
+
+function firstSentence(value = "") {
+  return splitSentences(value)[0] || "";
+}
+
 function lowerFirst(value = "") {
   if (!value) return "";
   return value.charAt(0).toLowerCase() + value.slice(1);
@@ -621,6 +634,97 @@ function definitionCore(definition = "") {
       .replace(/^Occurs when\s+/i, "")
       .replace(/^This fallacy occurs when\s+/i, ""),
   );
+}
+
+const caveatMisuseOverrides = {
+  "Absence of evidence fallacy":
+    "Do not use this label whenever no evidence has been found. In many contexts, a long and competent search that turns up nothing is itself evidence against the claim.",
+  "Ad hominem":
+    "Do not cry ad hominem every time motives, bias, credibility, or conflicts of interest are discussed. Those personal facts can be relevant when trustworthiness or expertise is part of the evidence.",
+  "Appeal to authority":
+    "Do not use this label just because someone cites an expert. Relevant expertise, strong track records, and broad expert agreement can be genuine evidence.",
+  "Appeal to emotion":
+    "Do not use this label whenever an argument contains emotion. Emotion becomes fallacious only when feeling is doing work that reasons or evidence should be doing.",
+  "Begging the question":
+    "Do not use this label as a synonym for raising a question or sounding circular. It applies only when the conclusion is already being assumed inside the support for the conclusion.",
+  "Cherry picking":
+    "Do not use this label simply because an argument uses a limited amount of evidence. It becomes cherry picking when the missing evidence is relevant and would materially change the conclusion.",
+  "Correlation is not causation":
+    "Do not use this label just because someone mentions a correlation. Correlations can be valuable clues and can support causal reasoning when mechanism, timing, controls, and alternatives are handled well.",
+  "False dilemma":
+    "Do not use this label merely because an argument presents two main options. It becomes fallacious when live alternatives are hidden, dismissed, or never allowed onto the table.",
+  "False equivalence":
+    "Do not use this label whenever two things are compared. Comparison is legitimate when the similarities really do bear on the point at issue.",
+  "Hasty generalization":
+    "Do not use this label every time someone draws a general conclusion from limited evidence. Sometimes the sample really is enough for a modest claim; the problem is overreaching beyond what the sample can support.",
+  "No True Scotsman":
+    "Do not use this label every time someone insists on real criteria for a category. Categories can have genuine standards; the fallacy appears when the standards are improvised only to block a counterexample.",
+  "Red herring":
+    "Do not use this label every time a discussion broadens or adds background. It is a red herring only when the new point diverts attention from the issue that was supposed to be answered.",
+  "Slippery slope":
+    "Do not dismiss every warning about escalation as a slippery slope. Some chains really are plausible when incentives, precedent, feedback loops, or institutional weaknesses connect the steps.",
+  "Straw man argument":
+    "Do not use this label simply because a reply is sharp, selective, or uncharitable. It becomes a straw man only when the reply no longer targets the actual position being discussed.",
+  "Tu quoque":
+    "Do not use this label whenever hypocrisy is mentioned. Hypocrisy can matter when the issue is sincerity, consistency, or credibility; it becomes tu quoque when hypocrisy is treated as a refutation of the original claim.",
+};
+
+const caveatMisuseByCategory = {
+  Formal:
+    "Do not use this label just because an argument feels abstract, technical, or unpersuasive. The label applies only when the logical form itself is defective.",
+  Mathematical:
+    "Do not use this label every time numbers, odds, or percentages appear in an argument. The problem has to be a specific misuse of rates, samples, frequencies, or statistical comparison.",
+  Causal:
+    "Do not use this label every time someone proposes a causal story. The label applies only when the causal leap outruns the evidence, mechanism, timing, or controls.",
+  Linguistic:
+    "Do not use this label just because wording could have been clearer. It applies when ambiguity, redefinition, or verbal drift is doing real argumentative work.",
+  Conceptual:
+    "Do not use this label every time people disagree about definitions or categories. It applies when the category boundaries themselves are distorting the reasoning.",
+  Evidential:
+    "Do not use this label simply because the evidence is incomplete. It applies when the argument claims more support than the evidence has actually earned.",
+  Perceptual:
+    "Do not use this label just because a case feels vivid, memorable, or striking. It applies when appearances or salience are being treated as if they were stronger evidence than they are.",
+  Perspectival:
+    "Do not use this label every time someone takes a strong point of view. It applies when a missing frame, timescale, comparison class, or standpoint distorts the conclusion.",
+  Epistemic:
+    "Do not use this label every time someone sounds too confident, too skeptical, or too simplified. It applies when belief or doubt is being managed badly relative to what can responsibly be known.",
+  Tactical:
+    "Do not use this label every time an argument feels unfair, heated, or evasive. It applies when the move really does distract from, pressure, or replace the reasoning at issue.",
+  Emotional:
+    "Do not use this label whenever an argument carries emotional force. It applies when emotion is being asked to do evidential or logical work it has not earned.",
+};
+
+function caveatQualifierSentence(record) {
+  const candidates = splitSentences(record.notes || "");
+  const found = candidates.find((sentence) =>
+    /(sometimes|can be|can matter|may be|not enough|really is|are real|good evidence|genuine criteria|genuine standards|not merely|not enough)/i.test(
+      sentence,
+    ),
+  );
+  return found ? ensureSentence(found) : "";
+}
+
+function caveatMisuseText(record) {
+  const category = record.categories[0] || "";
+  const base =
+    caveatMisuseOverrides[record.name] ||
+    caveatMisuseByCategory[category] ||
+    "Do not use this label as a catch-all for any weak or unconvincing argument. Reserve it for the exact reasoning slip it names.";
+  const qualifier = caveatQualifierSentence(record);
+  if (!qualifier) return ensureSentence(base);
+  if (base.includes(qualifier) || qualifier.includes(base)) return ensureSentence(base);
+  return `${ensureSentence(base)} ${qualifier}`;
+}
+
+function caveatApplyText(record, records) {
+  const confusion = confusionCandidates(record, records, 1)[0];
+  const base = `Use this label only when ${lowerFirst(definitionCore(record.definition))}.`;
+  if (!confusion) return ensureSentence(base);
+  return `${ensureSentence(base)} If the real problem is that ${lowerFirst(definitionCore(confusion.candidate.definition))}, the better label is ${confusion.candidate.name}.`;
+}
+
+function caveatTextForWorkbook(record, records) {
+  return `${caveatMisuseText(record)}\n${caveatApplyText(record, records)}`;
 }
 
 function extractKeywords(text = "", limit = 4) {
@@ -1844,6 +1948,27 @@ function renderConfusionSection(record, records, prefix) {
           </article>`;
         })
         .join("")}
+    </div>
+  </section>`;
+}
+
+function renderCaveatSection(record, records) {
+  return `<section class="section-block">
+    <div class="section-header">
+      <div>
+        <h3 class="section-title">Caveat</h3>
+        <p class="section-copy">This label is easy to overuse. The point here is not to call every weak argument by this name, but to reserve it for the exact misstep it describes.</p>
+      </div>
+    </div>
+    <div class="two-column compact-columns">
+      <div class="note-panel">
+        <h4>Common misapplication</h4>
+        <p class="muted">${escapeHtml(caveatMisuseText(record))}</p>
+      </div>
+      <div class="note-panel">
+        <h4>Use the label only when...</h4>
+        <p class="muted">${escapeHtml(caveatApplyText(record, records))}</p>
+      </div>
     </div>
   </section>`;
 }
@@ -3202,6 +3327,8 @@ function buildDetailPage(record, records, categoryProfiles, posterAssets) {
         : ""
     }
 
+    ${renderCaveatSection(record, records)}
+
     ${renderConfusionSection(record, records, "../../")}
 
     ${renderArgumentMapSection(record)}
@@ -3404,6 +3531,7 @@ async function buildWorkbook(records, categories, categoryProfiles) {
     "Definition",
     "Example",
     "Notes",
+    "Caveat",
     "Why This Mistake Matters",
     "Main Reasoning Problem",
     "What to Watch For",
@@ -3447,6 +3575,7 @@ async function buildWorkbook(records, categories, categoryProfiles) {
       record.definition,
       record.example,
       record.notes,
+      caveatTextForWorkbook(record, records),
       record.rationalityDanger || "",
       record.mainReasoningProblem || "",
       record.dynamicsToNotice || "",
@@ -3476,11 +3605,11 @@ async function buildWorkbook(records, categories, categoryProfiles) {
   fallaciesSheet.getRange("J:N").format.columnWidthPx = 220;
   fallaciesSheet.getRange("O:Q").format.columnWidthPx = 150;
   fallaciesSheet.getRange("R:R").format.columnWidthPx = 220;
-  fallaciesSheet.getRange("S:AC").format.columnWidthPx = 420;
-  fallaciesSheet.getRange("AD:AH").format.columnWidthPx = 360;
-  fallaciesSheet.getRange("AI:AI").format.columnWidthPx = 180;
+  fallaciesSheet.getRange("S:AD").format.columnWidthPx = 420;
+  fallaciesSheet.getRange("AE:AI").format.columnWidthPx = 360;
+  fallaciesSheet.getRange("AJ:AJ").format.columnWidthPx = 180;
   fallaciesSheet.getRange(`A1:${columnLetter(headers.length)}1`).format.wrapText = true;
-  fallaciesSheet.getRange("J:AI").format.wrapText = true;
+  fallaciesSheet.getRange("J:AJ").format.wrapText = true;
 
   const categorySheet = workbook.worksheets.add("Categories");
   const categoryRows = [
