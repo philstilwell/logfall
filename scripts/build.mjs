@@ -941,6 +941,12 @@ function rhetoricGaugesForRecord(record) {
       lowLabel: "Low risk",
       highLabel: "Easy slip",
     },
+    difficulty: {
+      title: "Difficulty",
+      value: difficulty === "Foundational" ? 25 : difficulty === "Intermediate" ? 55 : 85,
+      lowLabel: "Foundational",
+      highLabel: "Advanced",
+    },
   };
 
   gauges.common.band = gaugeBandLabel("common", gauges.common.value);
@@ -949,6 +955,16 @@ function rhetoricGaugesForRecord(record) {
   gauges.spot.summary = spotGaugeNarrative(gauges.spot.value);
   gauges.innocent.band = gaugeBandLabel("innocent", gauges.innocent.value);
   gauges.innocent.summary = innocentGaugeNarrative(gauges.innocent.value);
+  gauges.difficulty.band = difficulty;
+  gauges.difficulty.summary =
+    difficulty === "Foundational"
+      ? "Usually approachable without much prior logic background."
+      : difficulty === "Intermediate"
+        ? "Needs some practice with categories, evidence, or debate structure."
+        : "Usually easier to teach once readers already have some logic or analytic background.";
+  gauges.difficulty.extraMarkup = `<div class="teaching-pill-row gauge-pill-row">
+      ${pedagogy.classroomTags.map((tag) => `<span class="teaching-pill">${escapeHtml(tag)}</span>`).join("")}
+    </div>`;
 
   rhetoricGaugeCache.set(record.slug, gauges);
   return gauges;
@@ -1644,6 +1660,7 @@ function renderRhetoricGaugeCard(gauge) {
       <span>${escapeHtml(gauge.lowLabel)}</span>
       <span>${escapeHtml(gauge.highLabel)}</span>
     </div>
+    ${gauge.extraMarkup || ""}
   </article>`;
 }
 
@@ -1651,11 +1668,12 @@ function renderRhetoricGaugeSection(record) {
   const gauges = rhetoricGaugesForRecord(record);
   return `<div class="section-block gauge-section">
     <p class="detail-card-label">Teaching gauges</p>
-    <p class="muted gauge-note">0-100 editorial estimates for classroom use rather than measured statistics.</p>
+    <p class="muted gauge-note">These 0-100 gauges are teaching aids for comparing fallacies. They are editorial classroom estimates, not measured statistics.</p>
     <div class="gauge-grid">
       ${renderRhetoricGaugeCard(gauges.common)}
       ${renderRhetoricGaugeCard(gauges.spot)}
       ${renderRhetoricGaugeCard(gauges.innocent)}
+      ${renderRhetoricGaugeCard(gauges.difficulty)}
     </div>
   </div>`;
 }
@@ -1802,16 +1820,6 @@ function posterExplanationForRecord(record) {
 }
 
 function renderReferenceMeta(record, prompts) {
-  const pedagogy = pedagogyForRecord(record);
-  const pathMarkup = pedagogy.teachingPaths.length
-    ? `<div class="path-link-row">
-        ${pedagogy.teachingPaths
-          .map(
-            (pathMeta) => `<a class="path-link-chip" href="../../paths/${escapeHtml(pathMeta.slug)}/">${escapeHtml(pathMeta.title)}</a>`,
-          )
-          .join("")}
-      </div>`
-    : `<p class="muted">This entry is not currently in one of the curated teaching paths.</p>`;
   return `<div class="meta-grid reference-meta-grid">
     ${renderFamilyPanel(record)}
     ${
@@ -1825,17 +1833,6 @@ function renderReferenceMeta(record, prompts) {
     <div class="note-panel">
       <h4>Quick check</h4>
       <p class="muted">${escapeHtml(prompts[0] || "Ask what evidence or reasoning step is doing too much work.")}</p>
-    </div>
-    <div class="note-panel">
-      <h4>Difficulty</h4>
-      <p class="muted">${escapeHtml(pedagogy.difficulty)}</p>
-      <div class="teaching-pill-row">
-        ${pedagogy.classroomTags.map((tag) => `<span class="teaching-pill">${escapeHtml(tag)}</span>`).join("")}
-      </div>
-    </div>
-    <div class="note-panel">
-      <h4>Teaching paths</h4>
-      ${pathMarkup}
     </div>
   </div>`;
 }

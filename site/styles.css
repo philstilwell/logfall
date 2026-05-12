@@ -334,6 +334,10 @@ img {
   margin-top: 12px;
 }
 
+.gauge-pill-row {
+  margin-top: 14px;
+}
+
 .teaching-pill,
 .path-link-chip {
   display: inline-flex;
