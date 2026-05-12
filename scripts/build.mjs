@@ -148,7 +148,7 @@ Inside each cell, use this exact structure with HTML line breaks for spacing:
 ➘ **Explanation:** [Write one concise paragraph explaining exactly how the quoted passage commits the fallacy, why that label fits better than close alternatives, and what reasoning move goes wrong.]
 <br><br>
 ➘ **LogFall Reference:** [Direct link to the relevant page at https://logfall.com/fallacies/]
-<br><hr><br>
+<br><br>
 ➘ **Discussion Questions:**<br>
 ➘ [Question 1]<br>
 ➘ [Question 2]<br>
