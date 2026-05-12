@@ -403,6 +403,14 @@ const theoryArticleDefinitions = [
     intro:
       "This article gives teachers a repeatable classroom process, a unit sequence, and a wider curriculum frame for teaching logical fallacies as part of a serious critical thinking course.",
   },
+  {
+    slug: "teaching-logical-fallacies-with-ai-gems-and-prompted-agents",
+    title: "Teaching Logical Fallacies with AI Gems and Prompted Agents",
+    description:
+      "A classroom model for teaching logical fallacies by having students collaboratively design a Gemini Gem or other pre-prompted agent that identifies, scores, and responds to weak reasoning.",
+    intro:
+      "This article shows how teachers can use collaborative AI-agent design to teach fallacy recognition, comparison, scoring, rebuttal, and repair without surrendering judgment to the model.",
+  },
 ];
 
 const analogyResponseOverrides = {
@@ -3308,7 +3316,7 @@ function buildTheoryIndexPage() {
       <div class="section-header">
         <div>
           <h3 class="section-title">Current articles</h3>
-          <p class="section-copy">Use these articles for the theory behind analogy-based rebuttals, classroom process, and fallacy-centered critical thinking instruction.</p>
+          <p class="section-copy">Use these articles for the theory behind analogy-based rebuttals, classroom process, AI-assisted classroom analysis, and fallacy-centered critical thinking instruction.</p>
         </div>
       </div>
       <div class="category-grid theory-article-grid">
@@ -3950,13 +3958,391 @@ function buildTeachingCurriculumTheoryArticleContent(article) {
   `;
 }
 
+function buildAiGemsTheoryArticleContent(article) {
+  const roleAndStancePrompt = escapeHtml(
+    [
+      "You are a careful logical-fallacy analyst for a critical thinking class.",
+      "Your job is not to hunt for labels aggressively, but to identify only the most justified fallacies in the passage.",
+      "Prefer specificity over broad accusation.",
+      "If a suspected fallacy is weak, borderline, or plausibly explained another way, say so clearly.",
+      "Do not moralize. Diagnose the reasoning, quote the relevant wording, explain the dynamics, and propose a fairer response or repair.",
+    ].join("\n"),
+  );
+
+  const outputSchemaPrompt = escapeHtml(
+    [
+      "Format every answer with this structure:",
+      "",
+      "◉ Source Summary",
+      "➘ One or two sentences summarizing the article, speech, or debate passage.",
+      "",
+      "◉ Fallacy Findings",
+      "For each fallacy found, use this structure:",
+      "➘ Fallacy Name: [most specific label]",
+      "➘ Confidence Score (0-4): [number]",
+      "➘ Distortion Score (0-4): [number]",
+      "➘ Salient Quote: \"[quote only the key lines needed to see the misstep]\"",
+      "➘ Why It Fits: [3-5 sentences explaining the reasoning failure]",
+      "➘ Caveat: [state what would make this label too strong or misapplied]",
+      "➘ LogFall Link: https://logfall.com/fallacies/[slug]/",
+      "➘ Response: [answer the misstep in plain language]",
+      "➘ Repair: [rewrite the claim in a stronger, fairer form]",
+      "",
+      "◉ Overall Pattern",
+      "➘ Briefly describe what kind of reasoning drift the piece shows overall.",
+    ].join("\n"),
+  );
+
+  const scoringPrompt = escapeHtml(
+    [
+      "Scoring rubric:",
+      "0 = not present or too weak to justify",
+      "1 = faint or merely possible",
+      "2 = present but modest",
+      "3 = strong and clear",
+      "4 = central and unmistakable",
+      "",
+      "Use two separate scores:",
+      "➘ Confidence Score: how sure you are that the label fits",
+      "➘ Distortion Score: how much that fallacy affects the passage's overall reasoning",
+    ].join("\n"),
+  );
+
+  const workflowPrompt = escapeHtml(
+    [
+      "Passage handling rules:",
+      "1. Quote only the lines needed to understand the fallacy.",
+      "2. Identify no more than the 3 strongest fallacies unless the user requests a fuller sweep.",
+      "3. Compare close alternatives before settling on the final label.",
+      "4. Prefer one precise label over several overlapping ones.",
+      "5. When no clear fallacy appears, say that directly instead of forcing a diagnosis.",
+    ].join("\n"),
+  );
+
+  return `
+    <div class="breadcrumbs">
+      <a href="../../">Home</a><span>/</span><a href="../">Theory</a><span>/</span><strong>${escapeHtml(article.title)}</strong>
+    </div>
+
+    <section class="detail-section">
+      <p class="eyebrow">Theory article</p>
+      <h2 class="detail-title">${escapeHtml(article.title)}</h2>
+      <p class="detail-deck">
+        In the age of AI, one of the best ways to teach logical fallacies is not to have students passively ask a chatbot for answers, but to have them
+        collaboratively design a Gemini Gem or other pre-prompted agent that must identify, score, explain, rebut, and repair bad reasoning. When students
+        build the analytical frame together, they make their own standards explicit and become much better at seeing both the power and the limits of AI diagnosis.
+      </p>
+      <div class="two-column compact-columns section-block">
+        <div class="note-panel">
+          <h4>What this article is for</h4>
+          <p class="muted">
+            The goal is to help teachers turn AI from a shortcut into a visible thinking tool. The class uses the model as a provisional analyst whose
+            output must be judged, revised, and improved by students rather than simply accepted.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>What this method avoids</h4>
+          <p class="muted">
+            It avoids the shallow classroom pattern where students paste in a passage, collect labels, and call that critical thinking. The human work here
+            lies in building the prompt, auditing the output, tightening the distinctions, and deciding when the model is overreaching.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">Why collaborative agent-building works</h3>
+          <p class="section-copy">The learning payoff comes from making the criteria public and revisable.</p>
+        </div>
+      </div>
+      <div class="two-column compact-columns">
+        <div class="note-panel">
+          <h4>Students externalize their standards</h4>
+          <p class="muted">
+            The moment students try to write the Gem's instructions, they are forced to decide what counts as good evidence for a fallacy label, what counts
+            as a false positive, and how much quotation is needed to make the diagnosis fair.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Comparison becomes unavoidable</h4>
+          <p class="muted">
+            A strong agent prompt has to say how to choose among near neighbors. That means students must clarify the differences among <code>Straw man</code>,
+            <code>Red herring</code>, <code>Ad hominem</code>, <code>False equivalence</code>, and other often-confused entries rather than relying on vague familiarity.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>The model's mistakes become teachable moments</h4>
+          <p class="muted">
+            When the agent overlabels, misses a caveat, or confuses two fallacies, the class has concrete material to debug. The failure is no longer hidden
+            inside a teacher lecture; it becomes a visible reasoning event the whole room can inspect.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Students practice rebuttal and repair</h4>
+          <p class="muted">
+            A good agent does not stop with naming. It also explains the misstep, answers it in plain language, and suggests a stronger rewrite. That keeps
+            the exercise pointed toward better reasoning rather than mere accusation.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">A strong classroom process</h3>
+          <p class="section-copy">This works as a recurring exercise inside a critical thinking course.</p>
+        </div>
+      </div>
+      <div class="detail-section theory-callout">
+        <p class="theory-formula">
+          <strong>Best general sequence:</strong> choose a text → build the prompt → run the agent → audit the output → revise the prompt → score and respond.
+        </p>
+      </div>
+      <div class="category-grid theory-family-grid">
+        <article class="note-panel theory-family-card">
+          <h4>1. Choose a manageable source</h4>
+          <p class="muted">
+            Use a short editorial, op-ed paragraph, debate exchange, or opening statement. The text should be rich enough to contain real argumentative moves,
+            but short enough that the class can still inspect each quoted line carefully.
+          </p>
+        </article>
+        <article class="note-panel theory-family-card">
+          <h4>2. Build the first prompt as a group</h4>
+          <p class="muted">
+            Draft the Gem's role, output format, and scoring rules on the board. Ask students what the agent must be prevented from doing, especially in cases
+            where weak or ambiguous reasoning might tempt it into overdiagnosis.
+          </p>
+        </article>
+        <article class="note-panel theory-family-card">
+          <h4>3. Run the agent on the same text</h4>
+          <p class="muted">
+            Have the class watch one common output rather than scattering immediately into private runs. That shared output gives everyone the same object to critique.
+          </p>
+        </article>
+        <article class="note-panel theory-family-card">
+          <h4>4. Audit every finding</h4>
+          <p class="muted">
+            For each fallacy the agent flags, ask: is the quote sufficient, is the label the most precise one, what nearby labels should be ruled out, and what caveat
+            should be stated before we accept the diagnosis?
+          </p>
+        </article>
+        <article class="note-panel theory-family-card">
+          <h4>5. Revise the prompt</h4>
+          <p class="muted">
+            Tighten the instructions in response to the model's errors. Over time, the class learns that prompt-writing is really criteria-writing in disguise.
+          </p>
+        </article>
+        <article class="note-panel theory-family-card">
+          <h4>6. End with human judgment</h4>
+          <p class="muted">
+            The final class product should not be "what the model said." It should be a human-vetted set of fallacy diagnoses, scores, rebuttals, and repairs.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">What the agent should be asked to do</h3>
+          <p class="section-copy">A useful Gem has a narrow mission and a disciplined output.</p>
+        </div>
+      </div>
+      <div class="two-column compact-columns">
+        <div class="note-panel">
+          <h4>Identify only the strongest candidates</h4>
+          <p class="muted">
+            The agent should not carpet-bomb a passage with labels. Ask it to identify only the clearest two or three fallacies unless the user specifically requests a full sweep.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Quote enough to make the diagnosis visible</h4>
+          <p class="muted">
+            Require a short, sufficient quotation for each finding. This keeps the agent from floating free of the text and makes the reasoning misstep inspectable.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Explain the dynamics, not just the label</h4>
+          <p class="muted">
+            A good answer says exactly how the passage moves from evidence to conclusion, where the drift happens, and why that move is too fast, too broad, too selective, or too distracted.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Score and respond</h4>
+          <p class="muted">
+            The agent should assign clear scores and then do something constructive: rebut the misstep in plain language, or repair the claim so it says only what the argument has earned.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">Prompt components that produce organized, salient output</h3>
+          <p class="section-copy">The best prompts are modular: role, method, format, scoring, and response rules.</p>
+        </div>
+      </div>
+      <div class="prompt-grid two-column compact-columns">
+        <article class="note-panel prompt-card">
+          <h4>1. Role and stance</h4>
+          <p class="muted">
+            Tell the model to act like a careful classroom analyst rather than a prosecuting attorney. This single component sharply reduces overlabeling and rhetorical heat.
+          </p>
+          <pre class="theory-prompt-box">${roleAndStancePrompt}</pre>
+        </article>
+        <article class="note-panel prompt-card">
+          <h4>2. Output schema</h4>
+          <p class="muted">
+            Strong outputs come from strong formatting constraints. If you want organization, specify headings, quote rules, score labels, and link fields directly.
+          </p>
+          <pre class="theory-prompt-box">${outputSchemaPrompt}</pre>
+        </article>
+        <article class="note-panel prompt-card">
+          <h4>3. Scoring rules</h4>
+          <p class="muted">
+            Separate confidence from importance. A model may be very confident that a minor fallacy is present, or only moderately confident that a major one shapes the passage.
+          </p>
+          <pre class="theory-prompt-box">${scoringPrompt}</pre>
+        </article>
+        <article class="note-panel prompt-card">
+          <h4>4. Passage-handling rules</h4>
+          <p class="muted">
+            The prompt should say how many fallacies to report, how much to quote, and when to withhold a label. Those guardrails often matter more than the fancy wording at the top.
+          </p>
+          <pre class="theory-prompt-box">${workflowPrompt}</pre>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">A useful scoring model</h3>
+          <p class="section-copy">Keep the numbers simple enough for students to compare and debate.</p>
+        </div>
+      </div>
+      <div class="two-column compact-columns">
+        <div class="note-panel">
+          <h4>Confidence score</h4>
+          <p class="muted">
+            This score answers: how well does the passage justify the label? Students can argue over whether the quotation really supports the diagnosis or whether the evidence is too thin.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Distortion score</h4>
+          <p class="muted">
+            This score answers: how much does that fallacy matter to the overall argument? Some fallacies are present but peripheral; others shape the whole reasoning structure.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Optional class extension</h4>
+          <p class="muted">
+            If you want a richer tool, add one more score for <strong>repairability</strong>: how easy is it to salvage the argument without giving up its core point?
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Keep the human override explicit</h4>
+          <p class="muted">
+            The class should always be free to lower a score, reject a label, or replace the model's chosen fallacy with a better one. The point is calibration, not obedience.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">What to grade in the classroom</h3>
+          <p class="section-copy">Grade the students' reasoning about the AI, not merely the AI's output.</p>
+        </div>
+      </div>
+      <div class="two-column compact-columns">
+        <div class="note-panel">
+          <h4>Prompt quality</h4>
+          <p class="muted">
+            Did the group write clear instructions, good output constraints, and fair caveat rules? A vague prompt usually reveals a vague understanding.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Audit quality</h4>
+          <p class="muted">
+            Did students catch false positives, weak quotations, and sloppy category choices? The audit is often more pedagogically valuable than the first run itself.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Rebuttal and repair quality</h4>
+          <p class="muted">
+            Did the group answer the reasoning mistake clearly and then offer a stronger formulation? This is where the exercise becomes constructive rather than merely classificatory.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Reflective accuracy</h4>
+          <p class="muted">
+            Can students say where the agent helped, where it overreached, and what that reveals about both AI and fallacy instruction? That meta-level reflection is part of the lesson.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">Risks and safeguards</h3>
+          <p class="section-copy">AI can sharpen the unit, but only if the classroom remains intellectually in charge.</p>
+        </div>
+      </div>
+      <div class="two-column compact-columns">
+        <div class="note-panel">
+          <h4>Do not let the model become the authority</h4>
+          <p class="muted">
+            A Gem is a scaffold, not an oracle. Students should always be asked to justify the final judgment independently of the model's wording.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Do not reward overdiagnosis</h4>
+          <p class="muted">
+            If students think more labels mean a better answer, the exercise will quickly turn into fallacy inflation. Reward precision, restraint, and clean comparison instead.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Do not separate fallacies from the wider toolkit</h4>
+          <p class="muted">
+            Some problems are really about bad statistics, weak causal design, or cognitive bias rather than classic fallacy forms. The agent should be taught to say that when needed.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Do not hide the prompt from students</h4>
+          <p class="muted">
+            The prompt is the curriculum in compressed form. When students can inspect and revise it, they are learning the criteria themselves rather than merely consuming an answer.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section section-block">
+      <p class="eyebrow">Takeaway</p>
+      <h3 class="section-title">Treat the Gem as a collaboratively built reasoning instrument, not as a replacement for judgment.</h3>
+      <p class="section-copy">
+        The strongest classroom use of AI is not passive extraction but collaborative calibration. Students learn logical fallacies more deeply when they must tell
+        the agent what to look for, how to quote, how to compare close labels, how to score responsibly, and how to answer a fallacy in plain language once it is found.
+      </p>
+    </section>
+  `;
+}
+
 function buildTheoryArticlePage(article) {
   const content =
     article.slug === "fallacy-rebuttals-without-fallacy-naming"
       ? buildRebuttalsTheoryArticleContent(article)
       : article.slug === "teaching-logical-fallacies-a-classroom-process-and-curriculum"
         ? buildTeachingCurriculumTheoryArticleContent(article)
-        : buildRebuttalsTheoryArticleContent(article);
+        : article.slug === "teaching-logical-fallacies-with-ai-gems-and-prompted-agents"
+          ? buildAiGemsTheoryArticleContent(article)
+          : buildRebuttalsTheoryArticleContent(article);
 
   return pageShell({
     title: `${article.title} | LogFall Theory`,

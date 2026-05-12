@@ -875,6 +875,18 @@ img {
   line-height: 1.7;
 }
 
+.theory-prompt-box {
+  margin: 16px 0 0;
+  padding: 18px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #f8fafc;
+  color: var(--ink);
+  font: 0.94rem/1.7 "SFMono-Regular", "Menlo", "Consolas", monospace;
+  white-space: pre-wrap;
+  overflow-x: auto;
+}
+
 .case-list {
   display: grid;
   gap: 14px;
