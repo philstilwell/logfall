@@ -952,6 +952,74 @@ img {
   margin-top: 14px;
 }
 
+.assessment-runner-panel {
+  padding: 24px;
+}
+
+.assessment-banner {
+  margin-top: 18px;
+}
+
+.assessment-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+.assessment-items {
+  display: grid;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+.assessment-question-card {
+  padding: 22px;
+}
+
+.assessment-question-title {
+  margin: 0 0 12px;
+}
+
+.assessment-actions {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 20px;
+}
+
+.assessment-results {
+  margin-top: 20px;
+}
+
+.assessment-score-title {
+  margin: 8px 0 10px;
+  font-size: clamp(1.45rem, 2.3vw, 1.9rem);
+}
+
+.assessment-review-accordion {
+  margin-top: 16px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 14px 16px;
+  background: #fff;
+}
+
+.assessment-review-accordion summary {
+  cursor: pointer;
+  font-weight: 800;
+}
+
+.assessment-review-accordion[open] summary {
+  margin-bottom: 12px;
+}
+
+.assessment-review-links {
+  margin: 0;
+  padding-left: 18px;
+  display: grid;
+  gap: 10px;
+}
+
 .quiz-example-shell {
   margin: 0 0 16px;
   border: 1px solid var(--line);
