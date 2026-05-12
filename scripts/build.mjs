@@ -1251,7 +1251,7 @@ function rhetoricGaugesForRecord(record) {
       title: "Common in today's rhetoric",
       value: clampNumber(Math.round(common / 5) * 5, 15, 95),
       lowLabel: "Rare",
-      highLabel: "Constant",
+      highLabel: "Frequent",
     },
     spot: {
       title: "Easy to spot",
