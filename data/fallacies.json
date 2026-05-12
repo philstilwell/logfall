@@ -522,7 +522,7 @@
         "Emotional"
       ],
       "originalNumber": "89",
-      "family": "Informal Fallacy",
+      "family": "Relevance/Distraction Fallacy",
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [],
@@ -583,7 +583,7 @@
         "Formal"
       ],
       "originalNumber": "29",
-      "family": "Formal Fallacy",
+      "family": "Formal/Structural Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -623,7 +623,7 @@
         "Formal"
       ],
       "originalNumber": "22",
-      "family": "Formal Fallacy",
+      "family": "Formal/Structural Fallacy",
       "subCategory": "Propositional Fallacy",
       "subSubCategory": "",
       "aliases": [],
@@ -677,7 +677,7 @@
         "Formal"
       ],
       "originalNumber": "23",
-      "family": "Formal Fallacy",
+      "family": "Formal/Structural Fallacy",
       "subCategory": "Propositional Fallacy",
       "subSubCategory": "",
       "aliases": [],
@@ -780,7 +780,7 @@
         "Perceptual"
       ],
       "originalNumber": "",
-      "family": "Informal Fallacy",
+      "family": "Statistical/Sampling Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [
@@ -845,7 +845,7 @@
         "Evidential"
       ],
       "originalNumber": "94",
-      "family": "Informal Fallacy",
+      "family": "Persuasive/Appeal Fallacy",
       "subCategory": "Red Herring",
       "subSubCategory": "Appeal to authority",
       "aliases": [],
@@ -886,7 +886,7 @@
         "Emotional"
       ],
       "originalNumber": "93",
-      "family": "Informal Fallacy",
+      "family": "Persuasive/Appeal Fallacy",
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [
@@ -951,7 +951,7 @@
         "Emotional"
       ],
       "originalNumber": "97",
-      "family": "Informal Fallacy",
+      "family": "Persuasive/Appeal Fallacy",
       "subCategory": "Red Herring",
       "subSubCategory": "Appeal to consequences",
       "aliases": [],
@@ -1007,7 +1007,7 @@
         "Epistemic"
       ],
       "originalNumber": "96",
-      "family": "Informal Fallacy",
+      "family": "Persuasive/Appeal Fallacy",
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [],
@@ -1061,7 +1061,7 @@
         "Emotional"
       ],
       "originalNumber": "98",
-      "family": "Informal Fallacy",
+      "family": "Persuasive/Appeal Fallacy",
       "subCategory": "Red Herring",
       "subSubCategory": "Appeal to consequences",
       "aliases": [],
@@ -1122,7 +1122,7 @@
         "Emotional"
       ],
       "originalNumber": "99",
-      "family": "Informal Fallacy",
+      "family": "Persuasive/Appeal Fallacy",
       "subCategory": "Red Herring",
       "subSubCategory": "Appeal to consequences",
       "aliases": [],
@@ -1170,7 +1170,7 @@
         "Causal"
       ],
       "originalNumber": "104",
-      "family": "Informal Fallacy",
+      "family": "Causal/Explanatory Fallacy",
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [],
@@ -1211,7 +1211,7 @@
         "Evidential"
       ],
       "originalNumber": "105",
-      "family": "Informal Fallacy",
+      "family": "Persuasive/Appeal Fallacy",
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [],
@@ -1260,7 +1260,7 @@
         "Emotional"
       ],
       "originalNumber": "106",
-      "family": "Informal Fallacy",
+      "family": "Persuasive/Appeal Fallacy",
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [],
@@ -1307,7 +1307,7 @@
         "Emotional"
       ],
       "originalNumber": "100",
-      "family": "Informal Fallacy",
+      "family": "Persuasive/Appeal Fallacy",
       "subCategory": "Red Herring",
       "subSubCategory": "Appeal to consequences",
       "aliases": [],
@@ -1347,7 +1347,7 @@
         "Tactical"
       ],
       "originalNumber": "107",
-      "family": "Informal Fallacy",
+      "family": "Persuasive/Appeal Fallacy",
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [
@@ -1396,7 +1396,7 @@
         "Mathematical"
       ],
       "originalNumber": "3",
-      "family": "Formal Fallacy",
+      "family": "Statistical/Sampling Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -1457,7 +1457,7 @@
         "Emotional"
       ],
       "originalNumber": "101",
-      "family": "Informal Fallacy",
+      "family": "Persuasive/Appeal Fallacy",
       "subCategory": "Red Herring",
       "subSubCategory": "Appeal to consequences",
       "aliases": [],
@@ -1511,7 +1511,7 @@
         "Emotional"
       ],
       "originalNumber": "102",
-      "family": "Informal Fallacy",
+      "family": "Persuasive/Appeal Fallacy",
       "subCategory": "Red Herring",
       "subSubCategory": "Appeal to consequences",
       "aliases": [],
@@ -1553,7 +1553,7 @@
         "Emotional"
       ],
       "originalNumber": "110",
-      "family": "Informal Fallacy",
+      "family": "Persuasive/Appeal Fallacy",
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [],
@@ -1607,7 +1607,7 @@
         "Tactical"
       ],
       "originalNumber": "108",
-      "family": "Informal Fallacy",
+      "family": "Persuasive/Appeal Fallacy",
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [
@@ -1649,7 +1649,7 @@
         "Evidential"
       ],
       "originalNumber": "4",
-      "family": "Formal Fallacy",
+      "family": "Evidential/Methodological Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -1696,7 +1696,7 @@
         "Evidential"
       ],
       "originalNumber": "37",
-      "family": "Informal Fallacy",
+      "family": "Evidential/Methodological Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [
@@ -1760,7 +1760,7 @@
         "Evidential"
       ],
       "originalNumber": "",
-      "family": "Informal Fallacy",
+      "family": "Evidential/Methodological Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [
@@ -1811,7 +1811,7 @@
         "Tactical"
       ],
       "originalNumber": "35",
-      "family": "Informal Fallacy",
+      "family": "Persuasive/Appeal Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [
@@ -1874,7 +1874,7 @@
         "Evidential"
       ],
       "originalNumber": "109",
-      "family": "Informal Fallacy",
+      "family": "Evidential/Methodological Fallacy",
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [
@@ -1917,7 +1917,7 @@
         "Emotional"
       ],
       "originalNumber": "90",
-      "family": "Informal Fallacy",
+      "family": "Persuasive/Appeal Fallacy",
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [
@@ -1962,7 +1962,7 @@
         "Epistemic"
       ],
       "originalNumber": "91",
-      "family": "Informal Fallacy",
+      "family": "Persuasive/Appeal Fallacy",
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [
@@ -2051,7 +2051,7 @@
         "Evidential"
       ],
       "originalNumber": "92",
-      "family": "Informal Fallacy",
+      "family": "Relevance/Distraction Fallacy",
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [
@@ -2172,7 +2172,7 @@
         "Mathematical"
       ],
       "originalNumber": "5",
-      "family": "Formal Fallacy",
+      "family": "Statistical/Sampling Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -2233,7 +2233,7 @@
         "Formal"
       ],
       "originalNumber": "38",
-      "family": "Informal Fallacy",
+      "family": "Formal/Structural Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [
@@ -2283,7 +2283,7 @@
         "Evidential"
       ],
       "originalNumber": "",
-      "family": "Conceptual/Framing Fallacy",
+      "family": "Comparison/Generalization Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [
@@ -2326,7 +2326,7 @@
         "Evidential"
       ],
       "originalNumber": "",
-      "family": "Conceptual/Framing Fallacy",
+      "family": "Comparison/Generalization Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [
@@ -2369,7 +2369,7 @@
         "Mathematical"
       ],
       "originalNumber": "126",
-      "family": "Conditional/Questionable Fallacy",
+      "family": "Causal/Explanatory Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -2410,7 +2410,7 @@
         "Evidential"
       ],
       "originalNumber": "77",
-      "family": "Informal Fallacy",
+      "family": "Evidential/Methodological Fallacy",
       "subCategory": "Faulty Generalization",
       "subSubCategory": "",
       "aliases": [],
@@ -2472,7 +2472,7 @@
         "Perspectival"
       ],
       "originalNumber": "111",
-      "family": "Informal Fallacy",
+      "family": "Persuasive/Appeal Fallacy",
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [],
@@ -2520,7 +2520,7 @@
         "Evidential"
       ],
       "originalNumber": "39",
-      "family": "Informal Fallacy",
+      "family": "Causal/Explanatory Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [
@@ -2562,7 +2562,7 @@
         "Conceptual"
       ],
       "originalNumber": "48",
-      "family": "Informal Fallacy",
+      "family": "Comparison/Generalization Fallacy",
       "subCategory": "",
       "subSubCategory": "Fallacy of distribution",
       "aliases": [
@@ -2606,7 +2606,7 @@
         "Emotional"
       ],
       "originalNumber": "",
-      "family": "Evidential/Methodological Fallacy",
+      "family": "Persuasive/Appeal Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -2661,7 +2661,7 @@
         "Mathematical"
       ],
       "originalNumber": "6",
-      "family": "Formal Fallacy",
+      "family": "Statistical/Sampling Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -2702,7 +2702,7 @@
         "Linguistic"
       ],
       "originalNumber": "54",
-      "family": "Informal Fallacy",
+      "family": "Linguistic/Definition Fallacy",
       "subCategory": "",
       "subSubCategory": "False attribution",
       "aliases": [
@@ -2759,7 +2759,7 @@
         "Linguistic"
       ],
       "originalNumber": "40",
-      "family": "Informal Fallacy",
+      "family": "Conceptual/Framing Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [
@@ -2801,7 +2801,7 @@
         "Causal"
       ],
       "originalNumber": "41",
-      "family": "Informal Fallacy",
+      "family": "Causal/Explanatory Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [
@@ -2865,7 +2865,7 @@
         "Conceptual"
       ],
       "originalNumber": "124",
-      "family": "Conditional/Questionable Fallacy",
+      "family": "Linguistic/Definition Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -2967,7 +2967,7 @@
         "Evidential"
       ],
       "originalNumber": "43",
-      "family": "Informal Fallacy",
+      "family": "Evidential/Methodological Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [
@@ -3099,7 +3099,7 @@
         "Formal"
       ],
       "originalNumber": "24",
-      "family": "Formal Fallacy",
+      "family": "Formal/Structural Fallacy",
       "subCategory": "Propositional Fallacy",
       "subSubCategory": "",
       "aliases": [],
@@ -3153,7 +3153,7 @@
         "Conceptual"
       ],
       "originalNumber": "8",
-      "family": "Formal Fallacy",
+      "family": "Conceptual/Framing Fallacy",
       "subCategory": "",
       "subSubCategory": "Correlative based fallacy",
       "aliases": [],
@@ -3193,7 +3193,7 @@
         "Conceptual"
       ],
       "originalNumber": "47",
-      "family": "Informal Fallacy",
+      "family": "Comparison/Generalization Fallacy",
       "subCategory": "",
       "subSubCategory": "Fallacy of distribution",
       "aliases": [
@@ -3236,7 +3236,7 @@
         "Conceptual"
       ],
       "originalNumber": "49",
-      "family": "Informal Fallacy",
+      "family": "Statistical/Sampling Fallacy",
       "subCategory": "",
       "subSubCategory": "Fallacy of distribution",
       "aliases": [
@@ -3278,7 +3278,7 @@
         "Tactical"
       ],
       "originalNumber": "",
-      "family": "Evidential/Methodological Fallacy",
+      "family": "Relevance/Distraction Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -3360,7 +3360,7 @@
         "Linguistic"
       ],
       "originalNumber": "44",
-      "family": "Informal Fallacy",
+      "family": "Linguistic/Definition Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -3414,7 +3414,7 @@
         "Linguistic"
       ],
       "originalNumber": "20",
-      "family": "Formal Fallacy",
+      "family": "Linguistic/Definition Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -3454,7 +3454,7 @@
         "Linguistic"
       ],
       "originalNumber": "45",
-      "family": "Informal Fallacy",
+      "family": "Linguistic/Definition Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -3494,7 +3494,7 @@
         "Formal"
       ],
       "originalNumber": "30",
-      "family": "Formal Fallacy",
+      "family": "Formal/Structural Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -3541,7 +3541,7 @@
         "Formal"
       ],
       "originalNumber": "26",
-      "family": "Formal Fallacy",
+      "family": "Formal/Structural Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -3588,7 +3588,7 @@
         "Tactical"
       ],
       "originalNumber": "51",
-      "family": "Informal Fallacy",
+      "family": "Linguistic/Definition Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [
@@ -3634,7 +3634,7 @@
         "Conceptual"
       ],
       "originalNumber": "10",
-      "family": "Formal Fallacy",
+      "family": "Conceptual/Framing Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -3674,7 +3674,7 @@
         "Conceptual"
       ],
       "originalNumber": "81",
-      "family": "Informal Fallacy",
+      "family": "Comparison/Generalization Fallacy",
       "subCategory": "Faulty Generalization",
       "subSubCategory": "",
       "aliases": [],
@@ -3715,7 +3715,7 @@
         "Tactical"
       ],
       "originalNumber": "53",
-      "family": "Informal Fallacy",
+      "family": "Evidential/Methodological Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -3777,7 +3777,7 @@
         "Evidential"
       ],
       "originalNumber": "",
-      "family": "Informal Fallacy",
+      "family": "Comparison/Generalization Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [
@@ -3841,7 +3841,7 @@
         "Conceptual"
       ],
       "originalNumber": "55",
-      "family": "Informal Fallacy",
+      "family": "Comparison/Generalization Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [
@@ -3892,7 +3892,7 @@
         "Conceptual"
       ],
       "originalNumber": "11",
-      "family": "Formal Fallacy",
+      "family": "Conceptual/Framing Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [
@@ -3957,7 +3957,7 @@
         "Evidential"
       ],
       "originalNumber": "",
-      "family": "Informal Fallacy",
+      "family": "Comparison/Generalization Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [
@@ -4020,7 +4020,7 @@
         "Tactical"
       ],
       "originalNumber": "118",
-      "family": "Informal Fallacy",
+      "family": "Relevance/Distraction Fallacy",
       "subCategory": "Red Herring",
       "subSubCategory": "Straw man argument",
       "aliases": [
@@ -4063,7 +4063,7 @@
         "Evidential"
       ],
       "originalNumber": "79",
-      "family": "Informal Fallacy",
+      "family": "Comparison/Generalization Fallacy",
       "subCategory": "A dicto simpliciter ad dictium secundum quid",
       "subSubCategory": "",
       "aliases": [],
@@ -4165,7 +4165,7 @@
         "Formal"
       ],
       "originalNumber": "31",
-      "family": "Formal Fallacy",
+      "family": "Formal/Structural Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -4206,7 +4206,7 @@
         "Causal"
       ],
       "originalNumber": "56",
-      "family": "Informal Fallacy",
+      "family": "Statistical/Sampling Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [
@@ -4250,7 +4250,7 @@
         "Conceptual"
       ],
       "originalNumber": "112",
-      "family": "Informal Fallacy",
+      "family": "Relevance/Distraction Fallacy",
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [],
@@ -4291,7 +4291,7 @@
         "Mathematical"
       ],
       "originalNumber": "82",
-      "family": "Informal Fallacy",
+      "family": "Statistical/Sampling Fallacy",
       "subCategory": "Faulty Generalization",
       "subSubCategory": "",
       "aliases": [
@@ -4359,7 +4359,7 @@
         "Perspectival"
       ],
       "originalNumber": "57",
-      "family": "Informal Fallacy",
+      "family": "Conceptual/Framing Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -4400,7 +4400,7 @@
         "Perspectival"
       ],
       "originalNumber": "13",
-      "family": "Formal Fallacy",
+      "family": "Causal/Explanatory Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -4441,7 +4441,7 @@
         "Perspectival"
       ],
       "originalNumber": "2",
-      "family": "Formal Fallacy",
+      "family": "Conceptual/Framing Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [
@@ -4483,7 +4483,7 @@
         "Tactical"
       ],
       "originalNumber": "50",
-      "family": "Informal Fallacy",
+      "family": "Linguistic/Definition Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -4523,7 +4523,7 @@
         "Formal"
       ],
       "originalNumber": "32",
-      "family": "Formal Fallacy",
+      "family": "Formal/Structural Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -4604,7 +4604,7 @@
         "Conceptual"
       ],
       "originalNumber": "58",
-      "family": "Informal Fallacy",
+      "family": "Comparison/Generalization Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -4652,7 +4652,7 @@
         "Evidential"
       ],
       "originalNumber": "59",
-      "family": "Informal Fallacy",
+      "family": "Comparison/Generalization Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -4693,7 +4693,7 @@
         "Linguistic"
       ],
       "originalNumber": "60",
-      "family": "Informal Fallacy",
+      "family": "Linguistic/Definition Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -4733,7 +4733,7 @@
         "Conceptual"
       ],
       "originalNumber": "12",
-      "family": "Formal Fallacy",
+      "family": "Conceptual/Framing Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [
@@ -4775,7 +4775,7 @@
         "Tactical"
       ],
       "originalNumber": "113",
-      "family": "Informal Fallacy",
+      "family": "Linguistic/Definition Fallacy",
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [],
@@ -4816,7 +4816,7 @@
         "Mathematical"
       ],
       "originalNumber": "",
-      "family": "Conceptual/Framing Fallacy",
+      "family": "Causal/Explanatory Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -4856,7 +4856,7 @@
         "Evidential"
       ],
       "originalNumber": "125",
-      "family": "Conditional/Questionable Fallacy",
+      "family": "Causal/Explanatory Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -4910,7 +4910,7 @@
         "Formal"
       ],
       "originalNumber": "14",
-      "family": "Formal Fallacy",
+      "family": "Formal/Structural Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -4952,7 +4952,7 @@
         "Evidential"
       ],
       "originalNumber": "83",
-      "family": "Informal Fallacy",
+      "family": "Persuasive/Appeal Fallacy",
       "subCategory": "Faulty Generalization",
       "subSubCategory": "",
       "aliases": [],
@@ -5014,7 +5014,7 @@
         "Evidential"
       ],
       "originalNumber": "61",
-      "family": "Informal Fallacy",
+      "family": "Relevance/Distraction Fallacy",
       "subCategory": "",
       "subSubCategory": "raising the bar",
       "aliases": [],
@@ -5062,7 +5062,7 @@
         "Evidential"
       ],
       "originalNumber": "15",
-      "family": "Formal Fallacy",
+      "family": "Conceptual/Framing Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -5109,7 +5109,7 @@
         "Formal"
       ],
       "originalNumber": "17",
-      "family": "Formal Fallacy",
+      "family": "Evidential/Methodological Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -5149,7 +5149,7 @@
         "Conceptual"
       ],
       "originalNumber": "16",
-      "family": "Formal Fallacy",
+      "family": "Comparison/Generalization Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -5190,7 +5190,7 @@
         "Linguistic"
       ],
       "originalNumber": "76",
-      "family": "Informal Fallacy",
+      "family": "Linguistic/Definition Fallacy",
       "subCategory": "Faulty Generalization",
       "subSubCategory": "Accident (fallacy)",
       "aliases": [
@@ -5233,7 +5233,7 @@
         "Conceptual"
       ],
       "originalNumber": "84",
-      "family": "Informal Fallacy",
+      "family": "Conceptual/Framing Fallacy",
       "subCategory": "Faulty Generalization",
       "subSubCategory": "",
       "aliases": [],
@@ -5273,7 +5273,7 @@
         "Conceptual"
       ],
       "originalNumber": "18",
-      "family": "Formal Fallacy",
+      "family": "Conceptual/Framing Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -5321,7 +5321,7 @@
         "Perspectival"
       ],
       "originalNumber": "85",
-      "family": "Informal Fallacy",
+      "family": "Conceptual/Framing Fallacy",
       "subCategory": "Faulty Generalization",
       "subSubCategory": "",
       "aliases": [],
@@ -5362,7 +5362,7 @@
         "Evidential"
       ],
       "originalNumber": "62",
-      "family": "Informal Fallacy",
+      "family": "Comparison/Generalization Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -5402,7 +5402,7 @@
         "Conceptual"
       ],
       "originalNumber": "",
-      "family": "Conceptual/Framing Fallacy",
+      "family": "Comparison/Generalization Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -5450,7 +5450,7 @@
         "Conceptual"
       ],
       "originalNumber": "117",
-      "family": "Informal Fallacy",
+      "family": "Comparison/Generalization Fallacy",
       "subCategory": "Red Herring",
       "subSubCategory": "Straw man argument",
       "aliases": [],
@@ -5530,7 +5530,7 @@
         "Tactical"
       ],
       "originalNumber": "114",
-      "family": "Informal Fallacy",
+      "family": "Relevance/Distraction Fallacy",
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [],
@@ -5570,7 +5570,7 @@
         "Causal"
       ],
       "originalNumber": "63",
-      "family": "Informal Fallacy",
+      "family": "Causal/Explanatory Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [
@@ -5615,7 +5615,7 @@
         "Evidential"
       ],
       "originalNumber": "27",
-      "family": "Formal Fallacy",
+      "family": "Evidential/Methodological Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -5670,7 +5670,7 @@
         "Linguistic"
       ],
       "originalNumber": "64",
-      "family": "Informal Fallacy",
+      "family": "Linguistic/Definition Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [
@@ -5720,7 +5720,7 @@
         "Mathematical"
       ],
       "originalNumber": "65",
-      "family": "Informal Fallacy",
+      "family": "Statistical/Sampling Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -5760,7 +5760,7 @@
         "Perspectival"
       ],
       "originalNumber": "66",
-      "family": "Informal Fallacy",
+      "family": "Conceptual/Framing Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -5801,7 +5801,7 @@
         "Emotional"
       ],
       "originalNumber": "88",
-      "family": "Informal Fallacy",
+      "family": "Relevance/Distraction Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -5903,7 +5903,7 @@
         "Mathematical"
       ],
       "originalNumber": "68",
-      "family": "Informal Fallacy",
+      "family": "Statistical/Sampling Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -5945,7 +5945,7 @@
         "Perspectival"
       ],
       "originalNumber": "69",
-      "family": "Informal Fallacy",
+      "family": "Conceptual/Framing Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [
@@ -5989,7 +5989,7 @@
         "Perspectival"
       ],
       "originalNumber": "70",
-      "family": "Informal Fallacy",
+      "family": "Causal/Explanatory Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [
@@ -6032,7 +6032,7 @@
         "Linguistic"
       ],
       "originalNumber": "",
-      "family": "Conceptual/Framing Fallacy",
+      "family": "Linguistic/Definition Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [
@@ -6075,7 +6075,7 @@
         "Emotional"
       ],
       "originalNumber": "115",
-      "family": "Informal Fallacy",
+      "family": "Persuasive/Appeal Fallacy",
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [],
@@ -6116,7 +6116,7 @@
         "Conceptual"
       ],
       "originalNumber": "120",
-      "family": "Informal Fallacy",
+      "family": "Statistical/Sampling Fallacy",
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [],
@@ -6171,7 +6171,7 @@
         "Conceptual"
       ],
       "originalNumber": "52",
-      "family": "Informal Fallacy",
+      "family": "Causal/Explanatory Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [
@@ -6236,7 +6236,7 @@
         "Conceptual"
       ],
       "originalNumber": "127",
-      "family": "Conditional/Questionable Fallacy",
+      "family": "Causal/Explanatory Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [
@@ -6300,7 +6300,7 @@
         "Conceptual"
       ],
       "originalNumber": "71",
-      "family": "Informal Fallacy",
+      "family": "Evidential/Methodological Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -6354,7 +6354,7 @@
         "Perspectival"
       ],
       "originalNumber": "86",
-      "family": "Informal Fallacy",
+      "family": "Statistical/Sampling Fallacy",
       "subCategory": "Faulty Generalization",
       "subSubCategory": "",
       "aliases": [],
@@ -6394,7 +6394,7 @@
         "Formal"
       ],
       "originalNumber": "42",
-      "family": "Informal Fallacy",
+      "family": "Formal/Structural Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -6434,7 +6434,7 @@
         "Tactical"
       ],
       "originalNumber": "116",
-      "family": "Informal Fallacy",
+      "family": "Relevance/Distraction Fallacy",
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [],
@@ -6482,7 +6482,7 @@
         "Perceptual"
       ],
       "originalNumber": "119",
-      "family": "Informal Fallacy",
+      "family": "Persuasive/Appeal Fallacy",
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [],
@@ -6544,7 +6544,7 @@
         "Linguistic"
       ],
       "originalNumber": "72",
-      "family": "Informal Fallacy",
+      "family": "Linguistic/Definition Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -6585,7 +6585,7 @@
         "Evidential"
       ],
       "originalNumber": "",
-      "family": "Informal Fallacy",
+      "family": "Statistical/Sampling Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [
@@ -6634,7 +6634,7 @@
         "Conceptual"
       ],
       "originalNumber": "19",
-      "family": "Formal Fallacy",
+      "family": "Causal/Explanatory Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -6674,7 +6674,7 @@
         "Tactical"
       ],
       "originalNumber": "87",
-      "family": "Informal Fallacy",
+      "family": "Linguistic/Definition Fallacy",
       "subCategory": "Faulty Generalization",
       "subSubCategory": "",
       "aliases": [],
@@ -6715,7 +6715,7 @@
         "Evidential"
       ],
       "originalNumber": "",
-      "family": "Conceptual/Framing Fallacy",
+      "family": "Comparison/Generalization Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [
@@ -6758,7 +6758,7 @@
         "Evidential"
       ],
       "originalNumber": "80",
-      "family": "Informal Fallacy",
+      "family": "Comparison/Generalization Fallacy",
       "subCategory": "A dicto simpliciter quid ad dictium secundum",
       "subSubCategory": "Dicto simpliciter",
       "aliases": [
@@ -6801,7 +6801,7 @@
         "Evidential"
       ],
       "originalNumber": "",
-      "family": "Conceptual/Framing Fallacy",
+      "family": "Comparison/Generalization Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [
@@ -6884,7 +6884,7 @@
         "Evidential"
       ],
       "originalNumber": "122",
-      "family": "Informal Fallacy",
+      "family": "Relevance/Distraction Fallacy",
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [
@@ -6935,7 +6935,7 @@
         "Evidential"
       ],
       "originalNumber": "121",
-      "family": "Informal Fallacy",
+      "family": "Relevance/Distraction Fallacy",
       "subCategory": "Red Herring",
       "subSubCategory": "",
       "aliases": [],
@@ -6975,7 +6975,7 @@
         "Formal"
       ],
       "originalNumber": "33",
-      "family": "Formal Fallacy",
+      "family": "Formal/Structural Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -7022,7 +7022,7 @@
         "Tactical"
       ],
       "originalNumber": "",
-      "family": "Conceptual/Framing Fallacy",
+      "family": "Linguistic/Definition Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
@@ -7064,7 +7064,7 @@
         "Evidential"
       ],
       "originalNumber": "103",
-      "family": "Informal Fallacy",
+      "family": "Persuasive/Appeal Fallacy",
       "subCategory": "Red Herring",
       "subSubCategory": "Appeal to consequences",
       "aliases": [],
@@ -7166,7 +7166,7 @@
         "Causal"
       ],
       "originalNumber": "73",
-      "family": "Informal Fallacy",
+      "family": "Causal/Explanatory Fallacy",
       "subCategory": "",
       "subSubCategory": "",
       "aliases": [],
