@@ -187,6 +187,150 @@ Additional rules:
 Passage to analyze:
 [PASTE PASSAGE HERE]`,
   },
+  {
+    slug: "fallacy-repair-workshop",
+    title: "Fallacy Repair Workshop",
+    intro:
+      "This prompt takes a weak argument, diagnoses the fallacy, and then rebuilds the argument into the strongest fair version that preserves as much of the original point as possible. It is useful when the goal is not merely critique, but learning how better reasoning actually sounds.",
+    prompt: `Analyze the argument below as a repair workshop rather than as a mere takedown.
+
+Your task has four steps:
+1. Identify the most important logical fallacy or reasoning failure in the passage.
+2. Quote the exact sentence or sentences where the problem appears.
+3. Explain in 3 to 5 sentences exactly how the reasoning goes wrong and why this fallacy label fits better than close alternatives.
+4. Rewrite the argument into the strongest non-fallacious version you can while preserving as much of the original concern, intuition, or conclusion as possible.
+
+Return the answer in this structure:
+
+## Fallacy Diagnosis
+- **Fallacy:** [Name]
+- **Quoted Passage:** "[Quote enough of the original wording to make the problem clear.]"
+- **Dynamics of the Misstep:** [3 to 5 sentences]
+- **LogFall Reference:** [Direct link to the most relevant page at https://logfall.com/fallacies/]
+
+## Stronger Revision
+[Write a revised version of the argument that removes the fallacy while keeping the core point as strong as the evidence allows.]
+
+## What Changed
+- [Point 1]
+- [Point 2]
+- [Point 3]
+
+Rules:
+- Be charitable before criticizing.
+- If the passage contains multiple fallacies, focus on the one that most seriously distorts the reasoning, then briefly note any secondary ones.
+- Do not merely weaken the claim; improve the reasoning.
+
+Argument to repair:
+[PASTE ARGUMENT HERE]`,
+  },
+  {
+    slug: "near-neighbor-comparator",
+    title: "Near-Neighbor Comparator",
+    intro:
+      "This prompt is for cases where readers keep confusing similar fallacies. It forces the model to choose among close competitors and explain why the rejected labels do not fit, which is often the real learning bottleneck.",
+    prompt: `Analyze the argument below and decide which fallacy label fits best from a set of near neighbors.
+
+Use these steps:
+1. Identify the single best-fitting fallacy.
+2. Compare it against at least three close alternatives that might tempt a careless reader.
+3. Quote the original passage enough to make the difference understandable.
+4. Explain exactly why the winning label fits better than the others.
+
+Return the answer as a Markdown table with these columns:
+1. Candidate Fallacy
+2. Fits or Not?
+3. Why
+4. LogFall Reference
+
+Rules:
+- The first row must be the best-fitting fallacy.
+- Include at least three rejected alternatives.
+- In each "Why" cell, explain the decisive difference in reasoning structure, not just the surface wording.
+- Quote enough of the source passage before the table to make the classification intelligible.
+- Use direct LogFall links for every listed fallacy.
+
+After the table, add a short section titled:
+## Final Verdict
+[Write one concise paragraph explaining the single best label and the exact reason it wins.]
+
+Argument to classify:
+[PASTE ARGUMENT HERE]
+
+Suggested comparison set when relevant:
+Ad hominem, Poisoning the well, Straw man argument, Red herring, False dilemma, False equivalence, Hasty generalization, Cherry picking, Correlation is not causation, Post hoc ergo propter hoc.`,
+  },
+  {
+    slug: "steelman-then-diagnose",
+    title: "Steelman Then Diagnose",
+    intro:
+      "This prompt trains the habit of fairness before critique. It first asks the model to reconstruct the strongest reasonable version of an argument, and only then identify any remaining fallacies or weaknesses.",
+    prompt: `Read the argument below and follow this sequence strictly:
+
+1. **Steelman first:** Rewrite the argument in its strongest fair form, preserving the speaker's apparent goal while removing ambiguity, filler, and accidental weakness.
+2. **Diagnose second:** Analyze the steelmanned version and identify any logical fallacies or remaining reasoning failures that still survive.
+3. **Quote the source:** Quote the original passage enough to show where the problematic move first appeared.
+4. **Explain the difference:** Show how the steelmanned version improves the argument and what defects, if any, remain even after charitable reconstruction.
+
+Return the answer in this structure:
+
+## Original Passage
+"[Quoted passage]"
+
+## Steelmanned Version
+[Best fair reconstruction]
+
+## Remaining Fallacies or Weaknesses
+Use a Markdown table with these columns:
+1. Fallacy or Weakness
+2. Present After Steelmanning?
+3. Explanation
+4. LogFall Reference
+
+Rules:
+- If steelmanning removes the apparent fallacy entirely, say so clearly.
+- Do not confuse bad wording with bad reasoning.
+- In the explanation column, use 3 to 5 sentences whenever a genuine fallacy remains.
+- Link to LogFall only when the issue is truly a fallacy rather than a non-fallacious weakness.
+
+Argument to analyze:
+[PASTE ARGUMENT HERE]`,
+  },
+  {
+    slug: "argument-map-builder",
+    title: "Argument Map Builder",
+    intro:
+      "This prompt is meant to slow an argument down into premises, hidden assumptions, and conclusion, then identify the exact step where the reasoning stops earning its result. It works especially well for formal, causal, and evidential mistakes.",
+    prompt: `Turn the passage below into an explicit argument map, then identify where the reasoning fails.
+
+Return the answer in this structure:
+
+## Argument Map
+1. **Conclusion:** [Main conclusion]
+2. **Stated Premises:** [List them clearly]
+3. **Hidden Assumptions:** [List any unstated assumptions needed for the argument to work]
+4. **Inference Path:** [Show how the argument moves from premises to conclusion]
+
+## Failure Point
+Use a Markdown table with these columns:
+1. Step in the Argument
+2. What the Step Claims
+3. What Goes Wrong
+4. Fallacy Name
+5. LogFall Reference
+
+## Short Diagnosis
+[Write one concise paragraph explaining the main reasoning failure in plain language.]
+
+Rules:
+- If the argument contains more than one failure point, include more than one row.
+- Quote short key phrases from the original passage where needed.
+- Be explicit about whether the problem is evidential, causal, formal, conceptual, or rhetorical.
+- Use the most specific fallacy label you can justify.
+
+Passage to map:
+[PASTE PASSAGE HERE]`,
+  },
 ];
 const foundationalNames = new Set([
   ...featuredNames,
@@ -2188,7 +2332,7 @@ function buildAboutPage() {
 
 function renderPromptCard(promptDefinition) {
   const promptId = `prompt-${promptDefinition.slug}`;
-  return `<article class="detail-section prompt-card">
+  return `<article class="detail-section prompt-card" id="${escapeHtml(promptDefinition.slug)}">
     <p class="eyebrow">AI prompt</p>
     <h3 class="section-title">${escapeHtml(promptDefinition.title)}</h3>
     <p class="section-copy">${escapeHtml(promptDefinition.intro)}</p>
@@ -2217,6 +2361,14 @@ function buildPromptsPage() {
         These prompts are meant to make LogFall more usable with AI tools. They work best when the model is asked to quote source material,
         justify every fallacy label carefully, and link the analysis back to the relevant LogFall page instead of relying on loose impressions.
       </p>
+      <div class="prompt-directory">
+        ${funPromptDefinitions
+          .map(
+            (promptDefinition) =>
+              `<a class="path-link-chip" href="#${escapeHtml(promptDefinition.slug)}">${escapeHtml(promptDefinition.title)}</a>`,
+          )
+          .join("")}
+      </div>
     </section>
 
     <section class="section-block">

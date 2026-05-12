@@ -605,10 +605,17 @@ img {
   padding: 24px;
 }
 
+.prompt-directory {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
 .prompt-toolbar {
   display: flex;
   justify-content: flex-end;
-  margin-top: 18px;
+  margin-top: 14px;
 }
 
 .prompt-copy-button {
@@ -622,7 +629,7 @@ img {
 
 .prompt-textarea {
   width: 100%;
-  min-height: 760px;
+  min-height: 620px;
   margin-top: 16px;
   border: 1px solid var(--line);
   border-radius: 18px;
