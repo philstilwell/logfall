@@ -1495,7 +1495,7 @@ function pageShell({
   canonicalPath = "",
   ogType = "website",
   robots = "index,follow",
-  extraHeadHtml = "",
+  extraHeadHtml = cloudflareWebAnalyticsTag,
   structuredData = [],
   socialImageAlt = "LogFall logo",
   keywords = [],
