@@ -14,10 +14,20 @@ const dataOutDir = path.join(distRoot, "data");
 const workbookOutPath = path.join(distRoot, "logfall-root-edition.xlsx");
 const siteUrl = "https://logfall.com/";
 const socialImagePath = "assets/logo.jpg";
+const socialImageType = "image/jpeg";
+const socialImageWidth = 124;
+const socialImageHeight = 124;
 const buildDate = new Date().toISOString().split("T")[0];
 const copyrightNotice = "Copyright © Phil Stilwell";
 const cloudflareWebAnalyticsTag =
   `<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "798a30777a6d424f9c4055a02e7bde91"}'></script><!-- End Cloudflare Web Analytics -->`;
+const baseSiteKeywords = [
+  "logical fallacies",
+  "critical thinking",
+  "argument analysis",
+  "reasoning errors",
+  "logic",
+];
 
 const featuredNames = [
   "Ad hominem",
@@ -1325,6 +1335,53 @@ function breadcrumbSchema(items = []) {
   };
 }
 
+function mergeKeywords(...groups) {
+  return [...new Set(
+    groups
+      .flatMap((group) => (Array.isArray(group) ? group : [group]))
+      .map((item) => String(item || "").trim())
+      .filter(Boolean),
+  )];
+}
+
+function learningResourceSchema({
+  name,
+  path,
+  description,
+  about = [],
+  teaches = [],
+  learningResourceType = ["Reference"],
+  educationalUse = ["teaching", "self-study"],
+  audienceType = "",
+  keywords = [],
+}) {
+  const aboutItems = (Array.isArray(about) ? about : [about]).filter(Boolean);
+  const teachesItems = (Array.isArray(teaches) ? teaches : [teaches]).filter(Boolean);
+  const keywordItems = mergeKeywords(keywords);
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "LearningResource",
+    name,
+    url: absoluteUrl(path),
+    description,
+    inLanguage: "en-US",
+    isAccessibleForFree: true,
+    publisher: publisherSchema(),
+    learningResourceType,
+    educationalUse,
+    audience: audienceType
+      ? {
+          "@type": "Audience",
+          audienceType,
+        }
+      : undefined,
+    about: aboutItems.length === 1 ? aboutItems[0] : aboutItems.length ? aboutItems : undefined,
+    teaches: teachesItems.length === 1 ? teachesItems[0] : teachesItems.length ? teachesItems : undefined,
+    keywords: keywordItems.length ? keywordItems.join(", ") : undefined,
+  };
+}
+
 function pageShell({
   title,
   description,
@@ -1337,6 +1394,7 @@ function pageShell({
   extraHeadHtml = "",
   structuredData = [],
   socialImageAlt = "LogFall logo",
+  keywords = [],
 }) {
   const homeHref = prefix || "./";
   const navItems = [
@@ -1356,6 +1414,7 @@ function pageShell({
   const canonicalUrl = absoluteUrl(canonicalPath);
   const socialImageUrl = absoluteUrl(socialImagePath);
   const structuredDataHead = jsonLdMarkup(structuredData);
+  const keywordContent = mergeKeywords(baseSiteKeywords, keywords).join(", ");
 
   return `<!doctype html>
 <html lang="en">
@@ -1367,7 +1426,11 @@ function pageShell({
     <meta name="robots" content="${escapeHtml(robots)}" />
     <meta name="author" content="Phil Stilwell" />
     <meta name="creator" content="Phil Stilwell" />
+    <meta name="application-name" content="LogFall" />
+    <meta name="keywords" content="${escapeHtml(keywordContent)}" />
     <link rel="canonical" href="${escapeHtml(canonicalUrl)}" />
+    <link rel="alternate" hreflang="en-US" href="${escapeHtml(canonicalUrl)}" />
+    <link rel="alternate" hreflang="x-default" href="${escapeHtml(canonicalUrl)}" />
     <link rel="icon" type="image/x-icon" href="${prefix}assets/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="${prefix}assets/favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="${prefix}assets/favicon-16x16.png" />
@@ -1381,6 +1444,10 @@ function pageShell({
     <meta property="og:description" content="${escapeHtml(description)}" />
     <meta property="og:url" content="${escapeHtml(canonicalUrl)}" />
     <meta property="og:image" content="${escapeHtml(socialImageUrl)}" />
+    <meta property="og:image:secure_url" content="${escapeHtml(socialImageUrl)}" />
+    <meta property="og:image:type" content="${socialImageType}" />
+    <meta property="og:image:width" content="${socialImageWidth}" />
+    <meta property="og:image:height" content="${socialImageHeight}" />
     <meta property="og:image:alt" content="${escapeHtml(socialImageAlt)}" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="${escapeHtml(title)}" />
@@ -1861,36 +1928,36 @@ function renderTeachingPathCard(pathDefinition, records, prefix) {
 }
 
 function homeSeoDescription() {
-  return "Learn logical fallacies with clear definitions, examples, case studies, comparison tools, AI prompts, and classroom-friendly teaching resources.";
+  return "Explore logical fallacies with clear definitions, examples, case studies, teaching paths, AI prompts, and classroom-ready critical thinking tools.";
 }
 
 function fallaciesIndexSeoDescription(recordCount) {
-  return `Browse all ${recordCount} logical fallacies by name, category, difficulty, and classroom level, with definitions, examples, and teaching tools.`;
+  return `Browse all ${recordCount} logical fallacies by name, category, difficulty, and classroom level, with definitions, examples, related entries, and teaching tools.`;
 }
 
 function categorySeoDescription(category) {
-  return `Explore ${category.count} ${category.name.toLowerCase()} logical fallacies with definitions, examples, and related entries in LogFall.`;
+  return `Explore ${category.count} ${category.name.toLowerCase()} logical fallacies with definitions, examples, related entries, and teaching tools for argument analysis.`;
 }
 
 function promptsSeoDescription() {
-  return "Copy AI prompts for finding logical fallacies in news articles, rhetoric, and pasted passages, with links back to LogFall.";
+  return "Copy AI prompts for identifying logical fallacies in passages, debates, media, and argument maps, with direct links back to LogFall.";
 }
 
 function aboutSeoDescription() {
-  return "About Phil Stilwell, the university teaching background behind LogFall, and how the site was built for critical thinking instruction.";
+  return "Meet Phil Stilwell and learn how LogFall grew from university critical-thinking classes into a teaching-focused logical fallacies reference.";
 }
 
 function pathSeoDescription(pathDefinition, memberCount) {
-  return `${pathDefinition.title}: a ${memberCount}-fallacy teaching path for ${pathDefinition.audience.toLowerCase()} in LogFall.`;
+  return `${pathDefinition.title}: a ${memberCount}-fallacy teaching path for ${pathDefinition.audience.toLowerCase()}, built for comparison, discussion, and critical thinking instruction.`;
 }
 
 function fallacySeoTitle(record) {
-  return `${record.name}: definition, examples, and how to spot it | LogFall`;
+  return `${record.name} logical fallacy: definition, examples, and how to spot it | LogFall`;
 }
 
 function fallacySeoDescription(record) {
   return truncate(
-    `Learn what ${record.name} means, how to spot it, and why it misleads. LogFall includes a definition, example, case studies, related fallacies, and teaching tools.`,
+    `Learn the ${record.name} logical fallacy with a clear definition, example, case studies, related fallacies, and teaching tools for critical thinking.`,
     158,
   );
 }
@@ -1920,6 +1987,12 @@ function buildTeachingPathsIndexPage(records) {
     prefix: "../",
     currentSection: "",
     canonicalPath: "paths/",
+    keywords: [
+      "logical fallacy teaching paths",
+      "critical thinking lessons",
+      "fallacy lesson sequence",
+      "classroom logical fallacies",
+    ],
     structuredData: [
       breadcrumbSchema([
         { name: "Home", path: "" },
@@ -1939,6 +2012,16 @@ function buildTeachingPathsIndexPage(records) {
           description: pathDefinition.description,
         })),
       },
+      learningResourceSchema({
+        name: "Teaching Paths for Learning Logical Fallacies",
+        path: "paths/",
+        description: "Curated teaching paths through logical fallacies for classrooms, review sessions, and first-time readers.",
+        about: ["logical fallacies", "critical thinking", "argument analysis"],
+        teaches: ["logical fallacies", "comparison of reasoning mistakes"],
+        learningResourceType: ["Teaching path", "Reference"],
+        educationalUse: ["teaching", "self-study"],
+        keywords: ["logical fallacy teaching paths", "critical thinking lessons", "fallacy lesson sequence"],
+      }),
     ],
     content,
   });
@@ -1986,6 +2069,12 @@ function buildTeachingPathPage(pathDefinition, records) {
     prefix: "../../",
     currentSection: "",
     canonicalPath: `paths/${pathDefinition.slug}/`,
+    keywords: [
+      pathDefinition.title,
+      "logical fallacy teaching path",
+      "critical thinking sequence",
+      pathDefinition.audience,
+    ],
     structuredData: [
       breadcrumbSchema([
         { name: "Home", path: "" },
@@ -2014,6 +2103,17 @@ function buildTeachingPathPage(pathDefinition, records) {
           })),
         },
       },
+      learningResourceSchema({
+        name: `${pathDefinition.title}: Logical Fallacy Teaching Path`,
+        path: `paths/${pathDefinition.slug}/`,
+        description: pathSeoDescription(pathDefinition, members.length),
+        about: ["logical fallacies", "critical thinking", "argument comparison"],
+        teaches: members.map((record) => record.name),
+        learningResourceType: ["Teaching path", "Lesson sequence"],
+        educationalUse: ["teaching", "review", "self-study"],
+        audienceType: pathDefinition.audience,
+        keywords: [pathDefinition.title, "logical fallacy teaching path", pathDefinition.audience],
+      }),
     ],
     content,
   });
@@ -2129,6 +2229,14 @@ function buildHomePage(records, categories) {
     prefix: "",
     currentSection: "home",
     canonicalPath: "",
+    keywords: [
+      "logical fallacies list",
+      "critical thinking",
+      "fallacy examples",
+      "argument analysis",
+      "reasoning errors",
+      "teaching tools",
+    ],
     structuredData: [
       {
         "@context": "https://schema.org",
@@ -2144,6 +2252,16 @@ function buildHomePage(records, categories) {
           "query-input": "required name=search_term_string",
         },
       },
+      learningResourceSchema({
+        name: "LogFall",
+        path: "",
+        description: homeSeoDescription(),
+        about: ["logical fallacies", "critical thinking", "argument analysis"],
+        teaches: ["logical fallacies", "how to spot reasoning errors", "comparison of similar fallacies"],
+        learningResourceType: ["Reference", "Teaching resource"],
+        educationalUse: ["teaching", "self-study"],
+        keywords: ["logical fallacies list", "critical thinking", "fallacy examples", "teaching tools"],
+      }),
     ],
     content,
   });
@@ -2320,6 +2438,13 @@ function buildAboutPage() {
     prefix: "../",
     currentSection: "about",
     canonicalPath: "about/",
+    keywords: [
+      "Phil Stilwell",
+      "about LogFall",
+      "critical thinking teacher",
+      "logical fallacies instructor",
+      "university critical thinking",
+    ],
     structuredData: [
       breadcrumbSchema([
         { name: "Home", path: "" },
@@ -2347,6 +2472,16 @@ function buildAboutPage() {
           ],
         },
       },
+      learningResourceSchema({
+        name: "About LogFall",
+        path: "about/",
+        description: aboutSeoDescription(),
+        about: ["Phil Stilwell", "critical thinking instruction", "logical fallacies"],
+        teaches: ["how to use logical fallacies well", "self-correction in reasoning"],
+        learningResourceType: ["About page", "Teaching resource"],
+        educationalUse: ["teaching", "self-study"],
+        keywords: ["Phil Stilwell", "about LogFall", "critical thinking teacher"],
+      }),
     ],
     content,
   });
@@ -2410,6 +2545,13 @@ function buildPromptsPage() {
     prefix: "../",
     currentSection: "prompts",
     canonicalPath: "prompts/",
+    keywords: [
+      "AI prompts for logical fallacies",
+      "logical fallacy prompts",
+      "argument analysis prompts",
+      "critical thinking prompts",
+      "fallacy detection prompts",
+    ],
     structuredData: [
       breadcrumbSchema([
         { name: "Home", path: "" },
@@ -2428,6 +2570,16 @@ function buildPromptsPage() {
           description: promptDefinition.intro,
         })),
       },
+      learningResourceSchema({
+        name: "AI Prompts for Finding Logical Fallacies in Text and Media",
+        path: "prompts/",
+        description: promptsSeoDescription(),
+        about: ["logical fallacies", "AI prompting", "argument analysis"],
+        teaches: ["logical fallacy identification", "comparison of arguments", "argument mapping"],
+        learningResourceType: ["Prompt library", "Teaching resource"],
+        educationalUse: ["teaching", "self-study"],
+        keywords: ["AI prompts for logical fallacies", "argument analysis prompts", "fallacy detection prompts"],
+      }),
     ],
     content,
   });
@@ -2492,6 +2644,13 @@ function buildAllFallaciesPage(records, categories) {
     prefix: "../",
     currentSection: "fallacies",
     canonicalPath: "fallacies/",
+    keywords: [
+      "logical fallacies list",
+      "fallacy index",
+      "reasoning errors list",
+      "critical thinking glossary",
+      `${records.length} logical fallacies`,
+    ],
     structuredData: [
       breadcrumbSchema([
         { name: "Home", path: "" },
@@ -2511,6 +2670,16 @@ function buildAllFallaciesPage(records, categories) {
           numberOfItems: records.length,
         },
       },
+      learningResourceSchema({
+        name: "All Logical Fallacies",
+        path: "fallacies/",
+        description: fallaciesIndexSeoDescription(records.length),
+        about: ["logical fallacies", "critical thinking", "reasoning errors"],
+        teaches: ["logical fallacies", "comparison of fallacies", "argument analysis"],
+        learningResourceType: ["Glossary", "Reference"],
+        educationalUse: ["teaching", "self-study"],
+        keywords: ["logical fallacies list", "fallacy index", "critical thinking glossary"],
+      }),
     ],
     content,
   });
@@ -2549,6 +2718,12 @@ function buildCategoriesIndexPage(categories) {
     prefix: "../",
     currentSection: "categories",
     canonicalPath: "categories/",
+    keywords: [
+      "logical fallacy categories",
+      "fallacy taxonomy",
+      "types of logical fallacies",
+      "reasoning error categories",
+    ],
     structuredData: [
       breadcrumbSchema([
         { name: "Home", path: "" },
@@ -2569,6 +2744,16 @@ function buildCategoriesIndexPage(categories) {
           description: category.description,
         })),
       },
+      learningResourceSchema({
+        name: "Logical Fallacy Categories and Taxonomy",
+        path: "categories/",
+        description: "Browse the LogFall taxonomy of logical fallacies by category, from causal and evidential errors to formal and emotional ones.",
+        about: ["logical fallacies", "taxonomy", "critical thinking"],
+        teaches: ["types of logical fallacies", "comparison of reasoning errors"],
+        learningResourceType: ["Taxonomy", "Reference"],
+        educationalUse: ["teaching", "self-study"],
+        keywords: ["logical fallacy categories", "fallacy taxonomy", "types of logical fallacies"],
+      }),
     ],
     content,
   });
@@ -2610,6 +2795,12 @@ function buildCategoryPage(category, records) {
     prefix: "../../",
     currentSection: "categories",
     canonicalPath: `categories/${category.slug}/`,
+    keywords: [
+      `${category.name} logical fallacies`,
+      `${category.name.toLowerCase()} fallacies`,
+      `${category.name.toLowerCase()} reasoning errors`,
+      "critical thinking",
+    ],
     structuredData: [
       breadcrumbSchema([
         { name: "Home", path: "" },
@@ -2634,6 +2825,16 @@ function buildCategoryPage(category, records) {
           })),
         },
       },
+      learningResourceSchema({
+        name: `${category.name} Logical Fallacies`,
+        path: `categories/${category.slug}/`,
+        description: categorySeoDescription(category),
+        about: [category.name, "logical fallacies", "critical thinking"],
+        teaches: [`${category.name} logical fallacies`, "argument analysis"],
+        learningResourceType: ["Category page", "Reference"],
+        educationalUse: ["teaching", "self-study"],
+        keywords: [`${category.name} logical fallacies`, `${category.name.toLowerCase()} fallacies`, "critical thinking"],
+      }),
     ],
     content,
   });
@@ -2790,6 +2991,13 @@ function buildDetailPage(record, records, categoryProfiles, posterAssets) {
     canonicalPath: `fallacies/${record.slug}/`,
     ogType: "article",
     extraHeadHtml: cloudflareWebAnalyticsTag,
+    keywords: [
+      record.name,
+      `${record.name} fallacy`,
+      "logical fallacy",
+      ...record.aliases.slice(0, 3),
+      ...record.categories.map((category) => `${category.toLowerCase()} logical fallacies`),
+    ],
     structuredData: [
       breadcrumbSchema([
         { name: "Home", path: "" },
@@ -2817,6 +3025,21 @@ function buildDetailPage(record, records, categoryProfiles, posterAssets) {
           termCode: record.slug,
         },
       },
+      learningResourceSchema({
+        name: `${record.name} logical fallacy`,
+        path: `fallacies/${record.slug}/`,
+        description: fallacySeoDescription(record),
+        about: [record.name, ...record.categories],
+        teaches: [record.name, ...record.aliases],
+        learningResourceType: ["Reference", "Practice tool", "Quiz"],
+        educationalUse: ["teaching", "self-study", "assessment"],
+        keywords: [
+          record.name,
+          `${record.name} fallacy`,
+          ...record.aliases.slice(0, 3),
+          ...record.categories.map((category) => `${category.toLowerCase()} logical fallacies`),
+        ],
+      }),
     ],
     content,
   });
