@@ -228,3 +228,44 @@ for (const quiz of document.querySelectorAll("[data-quiz-widget]")) {
     feedback.classList.remove("hidden");
   });
 }
+
+for (const button of document.querySelectorAll("[data-copy-button]")) {
+  button.addEventListener("click", async () => {
+    const targetId = button.getAttribute("data-copy-button");
+    const source = targetId ? document.getElementById(targetId) : null;
+    if (!source) return;
+
+    const text = source.value || source.textContent || "";
+    let copied = false;
+    let fallbackSelected = false;
+
+    try {
+      await navigator.clipboard.writeText(text);
+      copied = true;
+    } catch {
+      if (source.select) {
+        source.focus();
+        source.select();
+        copied = document.execCommand("copy");
+        fallbackSelected = true;
+      }
+    }
+
+    const original = button.textContent;
+    if (copied) {
+      button.textContent = "Copied";
+    } else if (fallbackSelected) {
+      button.textContent = "Press Cmd/Ctrl+C";
+    } else {
+      button.textContent = "Copy unavailable";
+    }
+    button.classList.add("copied");
+    window.setTimeout(() => {
+      button.textContent = original;
+      button.classList.remove("copied");
+      if (fallbackSelected) {
+        source.setSelectionRange?.(0, 0);
+      }
+    }, 1600);
+  });
+}

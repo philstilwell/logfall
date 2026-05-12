@@ -597,6 +597,47 @@ img {
   text-transform: uppercase;
 }
 
+.prompt-grid {
+  align-items: start;
+}
+
+.prompt-card {
+  padding: 24px;
+}
+
+.prompt-toolbar {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 18px;
+}
+
+.prompt-copy-button {
+  min-width: 134px;
+}
+
+.prompt-copy-button.copied {
+  background: #111111;
+  color: #ffffff;
+}
+
+.prompt-textarea {
+  width: 100%;
+  min-height: 760px;
+  margin-top: 16px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: #f8fafc;
+  color: var(--ink);
+  padding: 18px;
+  font: 0.95rem/1.7 "SFMono-Regular", "Menlo", "Consolas", monospace;
+  resize: vertical;
+}
+
+.prompt-textarea:focus {
+  outline: 2px solid rgba(20, 168, 215, 0.35);
+  outline-offset: 2px;
+}
+
 .about-profile-grid {
   display: grid;
   grid-template-columns: minmax(260px, 320px) minmax(0, 1fr);

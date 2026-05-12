@@ -125,6 +125,69 @@ const teachingPathDefinitions = [
     ],
   },
 ];
+const funPromptDefinitions = [
+  {
+    slug: "balanced-media-fallacy-hunt",
+    title: "Balanced Media Fallacy Hunt",
+    intro:
+      "This prompt asks an AI model with web access to compare recent left-leaning and right-leaning political arguments, identify distinct fallacies, quote the relevant passages, and link each diagnosis back to LogFall. It is designed for classroom comparison, media-literacy practice, and discussion that stays anchored to actual source text rather than vague impressions.",
+    prompt: `Search the web for six recent political news or opinion articles published within the last 7 days. Select three articles that argue from a clearly left-leaning perspective and three that argue from a clearly right-leaning perspective. Each selected article must contain a different logical fallacy, and the fallacy attribution must be defensible from a quoted passage rather than from the article's general tone.
+
+Return your answer as a Markdown table with exactly two columns: "Left-Wing Arguments" and "Right-Wing Arguments", and exactly three data rows.
+
+Inside each cell, use this exact structure with HTML line breaks for spacing:
+
+**[Fallacy Name]**
+<br><br>
+**Source:** [Publication - Article Title (Date)](URL)
+<br><br>
+**Quoted Passage:** "[Quote enough of the original passage to make the reasoning misstep clear.]"
+<br><br>
+**Explanation:** [Write one concise paragraph explaining exactly how the quoted passage commits the fallacy, why that label fits better than close alternatives, and what reasoning move goes wrong.]
+<br><br>
+**LogFall Reference:** [Direct link to the relevant page at https://logfall.com/fallacies/]
+<br><hr><br>
+**Discussion Questions:**<br>
+1. [Question 1]<br>
+2. [Question 2]<br>
+3. [Question 3]
+
+Rules:
+- Use six different fallacies total.
+- Use only sources published within the last 7 days.
+- Replace any article whose partisan orientation or fallacy diagnosis is too unclear.
+- Keep the explanations evidence-based and quote-driven.
+- For the discussion questions, do not use the word "moral" or any of its derivatives. If needed, use terms like "pro-social," "compassionate," or "cooperative" instead.`,
+  },
+  {
+    slug: "passage-fallacy-analyzer",
+    title: "Passage Fallacy Analyzer",
+    intro:
+      "This prompt is for pasting in any argumentative passage and asking an AI model to find every defensible fallacy within it. It pushes the model to quote enough of the original wording to make the mistake visible, explain the dynamics of the misstep in more depth, and link each diagnosis back to the relevant LogFall page.",
+    prompt: `Analyze the passage below and identify every distinct logical fallacy that can be justified from the text. Do not force a fallacy label where the evidence is weak. If no clear fallacy is present, say so explicitly.
+
+Return the result as a Markdown table with these columns:
+1. Fallacy
+2. Quoted Passage
+3. Dynamics of the Misstep
+4. LogFall Reference
+
+For each row:
+- Name the fallacy as specifically as possible.
+- Quote enough of the original passage to make the misstep understandable on its own.
+- In "Dynamics of the Misstep," write 3 to 5 sentences explaining exactly how the reasoning goes wrong, what argumentative move is being made, and why this fallacy label fits better than close alternatives.
+- In "LogFall Reference," provide a direct link to the most relevant page at https://logfall.com/fallacies/.
+
+Additional rules:
+- Include multiple rows if the passage contains multiple fallacies.
+- Do not list the same fallacy twice unless it occurs in a clearly different place.
+- Be charitable: reconstruct the strongest reasonable version of the argument before judging it.
+- No discussion questions are needed.
+
+Passage to analyze:
+[PASTE PASSAGE HERE]`,
+  },
+];
 const foundationalNames = new Set([
   ...featuredNames,
   "Appeal to emotion",
@@ -1080,6 +1143,7 @@ function pageShell({
     { href: homeHref, label: "Home", key: "home" },
     { href: `${prefix}fallacies/`, label: "All Fallacies", key: "fallacies" },
     { href: `${prefix}categories/`, label: "Categories", key: "categories" },
+    { href: `${prefix}prompts/`, label: "Fun AI Prompts", key: "prompts" },
     { href: `${prefix}about/`, label: "About", key: "about" },
   ];
 
@@ -1956,6 +2020,56 @@ function buildAboutPage() {
   });
 }
 
+function renderPromptCard(promptDefinition) {
+  const promptId = `prompt-${promptDefinition.slug}`;
+  return `<article class="detail-section prompt-card">
+    <p class="eyebrow">AI prompt</p>
+    <h3 class="section-title">${escapeHtml(promptDefinition.title)}</h3>
+    <p class="section-copy">${escapeHtml(promptDefinition.intro)}</p>
+    <div class="prompt-toolbar">
+      <button class="button button-secondary prompt-copy-button" type="button" data-copy-button="${escapeHtml(promptId)}">Copy prompt</button>
+    </div>
+    <textarea
+      class="prompt-textarea"
+      id="${escapeHtml(promptId)}"
+      readonly
+      spellcheck="false"
+    >${escapeHtml(promptDefinition.prompt)}</textarea>
+  </article>`;
+}
+
+function buildPromptsPage() {
+  const content = `
+    <div class="breadcrumbs">
+      <a href="../">Home</a><span>/</span><strong>Fun AI Prompts</strong>
+    </div>
+
+    <section class="detail-section">
+      <p class="eyebrow">Fun AI Prompts</p>
+      <h2 class="detail-title">Copy-ready prompts for fallacy hunting, comparison, and analysis.</h2>
+      <p class="detail-deck">
+        These prompts are meant to make LogFall more usable with AI tools. They work best when the model is asked to quote source material,
+        justify every fallacy label carefully, and link the analysis back to the relevant LogFall page instead of relying on loose impressions.
+      </p>
+    </section>
+
+    <section class="section-block">
+      <div class="two-column prompt-grid">
+        ${funPromptDefinitions.map((promptDefinition) => renderPromptCard(promptDefinition)).join("")}
+      </div>
+    </section>
+  `;
+
+  return pageShell({
+    title: "Fun AI Prompts | LogFall",
+    description: "Copy-ready AI prompts for analyzing rhetoric and identifying logical fallacies with LogFall.",
+    prefix: "../",
+    currentSection: "prompts",
+    canonicalPath: "prompts/",
+    content,
+  });
+}
+
 function buildAllFallaciesPage(records, categories) {
   const difficultyOptions = ["Foundational", "Intermediate", "Advanced"]
     .map((value) => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`)
@@ -2486,6 +2600,7 @@ async function main() {
 
   await writeText("index.html", buildHomePage(records, categories));
   await writeText("about/index.html", buildAboutPage());
+  await writeText("prompts/index.html", buildPromptsPage());
   await writeText("fallacies/index.html", buildAllFallaciesPage(records, categories));
   await writeText("categories/index.html", buildCategoriesIndexPage(categories));
   await writeText("paths/index.html", buildTeachingPathsIndexPage(records));
@@ -2493,6 +2608,7 @@ async function main() {
   const sitemapEntries = [
     { path: "" },
     { path: "about/" },
+    { path: "prompts/" },
     { path: "fallacies/" },
     { path: "categories/" },
     { path: "paths/" },
@@ -2524,7 +2640,7 @@ async function main() {
     JSON.stringify(
       {
         distRoot,
-        pageCount: 6 + categories.length + teachingPathDefinitions.length + records.length,
+        pageCount: 7 + categories.length + teachingPathDefinitions.length + records.length,
         recordCount: records.length,
         workbookOutPath,
       },
