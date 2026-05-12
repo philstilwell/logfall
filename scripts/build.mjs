@@ -150,16 +150,16 @@ Inside each cell, use this exact structure with HTML line breaks for spacing:
 ➘ **LogFall Reference:** [Direct link to the relevant page at https://logfall.com/fallacies/]
 <br><br>
 ➘ **Discussion Questions:**<br>
-➘ [Question 1]<br>
-➘ [Question 2]<br>
-➘ [Question 3]
+— [Question 1]<br>
+— [Question 2]<br>
+— [Question 3]
 
 Rules:
 - Use six different fallacies total.
 - Use only sources published within the last 7 days.
 - Replace any article whose partisan orientation or fallacy diagnosis is too unclear.
 - Keep the explanations evidence-based and quote-driven.
-- Use \`◉ \` before each fallacy title and use \`➘ \` before labels, quoted material, and discussion-question items.
+- Use \`◉ \` before each fallacy title, use \`➘ \` before labels and quoted material, and use \`— \` before the discussion-question items.
 - For the discussion questions, do not use the word "moral" or any of its derivatives. If needed, use terms like "pro-social," "compassionate," or "cooperative" instead.`,
   },
   {
