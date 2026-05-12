@@ -139,26 +139,27 @@ Return your answer as a Markdown table with exactly two columns: "Left-Wing Argu
 
 Inside each cell, use this exact structure with HTML line breaks for spacing:
 
-**[Fallacy Name]**
+◉ **[Fallacy Name]**
 <br><br>
-**Source:** [Publication - Article Title (Date)](URL)
+➘ **Source:** [Publication - Article Title (Date)](URL)
 <br><br>
-**Quoted Passage:** "[Quote enough of the original passage to make the reasoning misstep clear.]"
+➘ **Quoted Passage:** "[Quote enough of the original passage to make the reasoning misstep clear.]"
 <br><br>
-**Explanation:** [Write one concise paragraph explaining exactly how the quoted passage commits the fallacy, why that label fits better than close alternatives, and what reasoning move goes wrong.]
+➘ **Explanation:** [Write one concise paragraph explaining exactly how the quoted passage commits the fallacy, why that label fits better than close alternatives, and what reasoning move goes wrong.]
 <br><br>
-**LogFall Reference:** [Direct link to the relevant page at https://logfall.com/fallacies/]
+➘ **LogFall Reference:** [Direct link to the relevant page at https://logfall.com/fallacies/]
 <br><hr><br>
-**Discussion Questions:**<br>
-1. [Question 1]<br>
-2. [Question 2]<br>
-3. [Question 3]
+➘ **Discussion Questions:**<br>
+➘ [Question 1]<br>
+➘ [Question 2]<br>
+➘ [Question 3]
 
 Rules:
 - Use six different fallacies total.
 - Use only sources published within the last 7 days.
 - Replace any article whose partisan orientation or fallacy diagnosis is too unclear.
 - Keep the explanations evidence-based and quote-driven.
+- Use \`◉ \` before each fallacy title and use \`➘ \` before labels, quoted material, and discussion-question items.
 - For the discussion questions, do not use the word "moral" or any of its derivatives. If needed, use terms like "pro-social," "compassionate," or "cooperative" instead.`,
   },
   {
@@ -177,15 +178,16 @@ Return the result as a Markdown table with these columns:
 4. LogFall Reference
 
 For each row:
-- Name the fallacy as specifically as possible.
-- Quote enough of the original passage to make the misstep understandable on its own.
-- In "Dynamics of the Misstep," write 3 to 5 sentences explaining exactly how the reasoning goes wrong, what argumentative move is being made, and why this fallacy label fits better than close alternatives.
-- In "LogFall Reference," provide a direct link to the most relevant page at https://logfall.com/fallacies/.
+- In the "Fallacy" cell, write \`◉ [Most specific fallacy name]\`.
+- In the "Quoted Passage" cell, begin with \`➘ Quoted Passage:\` and then quote enough of the original text to make the misstep understandable on its own.
+- In the "Dynamics of the Misstep" cell, begin with \`➘ Dynamics:\` and then write 3 to 5 sentences explaining exactly how the reasoning goes wrong, what argumentative move is being made, and why this fallacy label fits better than close alternatives.
+- In the "LogFall Reference" cell, begin with \`➘ LogFall Reference:\` and then provide a direct link to the most relevant page at https://logfall.com/fallacies/.
 
 Additional rules:
 - Include multiple rows if the passage contains multiple fallacies.
 - Do not list the same fallacy twice unless it occurs in a clearly different place.
 - Be charitable: reconstruct the strongest reasonable version of the argument before judging it.
+- Use \`◉ \` for the fallacy label and \`➘ \` for the quoted passage, dynamics, and reference labels.
 - No discussion questions are needed.
 
 Passage to analyze:
@@ -208,24 +210,25 @@ Your task has four steps:
 
 Return the answer in this structure:
 
-## Fallacy Diagnosis
-- **Fallacy:** [Name]
-- **Quoted Passage:** "[Quote enough of the original wording to make the problem clear.]"
-- **Dynamics of the Misstep:** [3 to 5 sentences]
-- **LogFall Reference:** [Direct link to the most relevant page at https://logfall.com/fallacies/]
+◉ **Fallacy Diagnosis**
+➘ **Fallacy:** [Name]
+➘ **Quoted Passage:** "[Quote enough of the original wording to make the problem clear.]"
+➘ **Dynamics of the Misstep:** [3 to 5 sentences]
+➘ **LogFall Reference:** [Direct link to the most relevant page at https://logfall.com/fallacies/]
 
-## Stronger Revision
+◉ **Stronger Revision**
 [Write a revised version of the argument that removes the fallacy while keeping the core point as strong as the evidence allows.]
 
-## What Changed
-- [Point 1]
-- [Point 2]
-- [Point 3]
+◉ **What Changed**
+➘ [Point 1]
+➘ [Point 2]
+➘ [Point 3]
 
 Rules:
 - Be charitable before criticizing.
 - If the passage contains multiple fallacies, focus on the one that most seriously distorts the reasoning, then briefly note any secondary ones.
 - Do not merely weaken the claim; improve the reasoning.
+- Use \`◉ \` before major section titles and \`➘ \` before labels and list items.
 
 Argument to repair:
 [PASTE ARGUMENT HERE]`,
@@ -252,14 +255,17 @@ Return the answer as a Markdown table with these columns:
 4. LogFall Reference
 
 Rules:
+- In the "Candidate Fallacy" column, write \`◉ [Fallacy name]\`.
+- In the "Why" and "LogFall Reference" columns, begin the content with \`➘ \` labels where helpful.
 - The first row must be the best-fitting fallacy.
 - Include at least three rejected alternatives.
 - In each "Why" cell, explain the decisive difference in reasoning structure, not just the surface wording.
 - Quote enough of the source passage before the table to make the classification intelligible.
 - Use direct LogFall links for every listed fallacy.
+- Use \`◉ \` for the winning and rival fallacy labels and \`➘ \` for supporting labels or list-like elements.
 
 After the table, add a short section titled:
-## Final Verdict
+◉ **Final Verdict**
 [Write one concise paragraph explaining the single best label and the exact reason it wins.]
 
 Argument to classify:
@@ -284,13 +290,13 @@ Ad hominem, Poisoning the well, Straw man argument, Red herring, False dilemma, 
 
 Return the answer in this structure:
 
-## Original Passage
+◉ **Original Passage**
 "[Quoted passage]"
 
-## Steelmanned Version
+◉ **Steelmanned Version**
 [Best fair reconstruction]
 
-## Remaining Fallacies or Weaknesses
+◉ **Remaining Fallacies or Weaknesses**
 Use a Markdown table with these columns:
 1. Fallacy or Weakness
 2. Present After Steelmanning?
@@ -298,10 +304,13 @@ Use a Markdown table with these columns:
 4. LogFall Reference
 
 Rules:
+- In the "Fallacy or Weakness" column, begin each entry with \`◉ \`.
+- In the "Explanation" and "LogFall Reference" columns, use \`➘ \` labels where helpful to improve readability.
 - If steelmanning removes the apparent fallacy entirely, say so clearly.
 - Do not confuse bad wording with bad reasoning.
 - In the explanation column, use 3 to 5 sentences whenever a genuine fallacy remains.
 - Link to LogFall only when the issue is truly a fallacy rather than a non-fallacious weakness.
+- Use \`◉ \` for major section titles and fallacy/weakness labels, and \`➘ \` for sub-points or supporting labels.
 
 Argument to analyze:
 [PASTE ARGUMENT HERE]`,
@@ -317,13 +326,13 @@ Argument to analyze:
 
 Return the answer in this structure:
 
-## Argument Map
-1. **Conclusion:** [Main conclusion]
-2. **Stated Premises:** [List them clearly]
-3. **Hidden Assumptions:** [List any unstated assumptions needed for the argument to work]
-4. **Inference Path:** [Show how the argument moves from premises to conclusion]
+◉ **Argument Map**
+➘ **Conclusion:** [Main conclusion]
+➘ **Stated Premises:** [List them clearly]
+➘ **Hidden Assumptions:** [List any unstated assumptions needed for the argument to work]
+➘ **Inference Path:** [Show how the argument moves from premises to conclusion]
 
-## Failure Point
+◉ **Failure Point**
 Use a Markdown table with these columns:
 1. Step in the Argument
 2. What the Step Claims
@@ -331,7 +340,7 @@ Use a Markdown table with these columns:
 4. Fallacy Name
 5. LogFall Reference
 
-## Short Diagnosis
+◉ **Short Diagnosis**
 [Write one concise paragraph explaining the main reasoning failure in plain language.]
 
 Rules:
@@ -339,6 +348,7 @@ Rules:
 - Quote short key phrases from the original passage where needed.
 - Be explicit about whether the problem is evidential, causal, formal, conceptual, or rhetorical.
 - Use the most specific fallacy label you can justify.
+- In the "Fallacy Name" column, begin each entry with \`◉ \`, and use \`➘ \` for labels or list-like sub-points elsewhere.
 
 Passage to map:
 [PASTE PASSAGE HERE]`,
