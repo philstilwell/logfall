@@ -1127,6 +1127,38 @@ ${body}
 `;
 }
 
+function jsonLdMarkup(items = []) {
+  const list = Array.isArray(items) ? items.filter(Boolean) : [items].filter(Boolean);
+  return list
+    .map(
+      (item) =>
+        `<script type="application/ld+json">${JSON.stringify(item).replace(/</g, "\\u003c")}</script>`,
+    )
+    .join("\n    ");
+}
+
+function publisherSchema() {
+  return {
+    "@type": "Person",
+    name: "Phil Stilwell",
+    url: absoluteUrl("about/"),
+  };
+}
+
+function breadcrumbSchema(items = []) {
+  if (!items.length) return null;
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: absoluteUrl(item.path),
+    })),
+  };
+}
+
 function pageShell({
   title,
   description,
@@ -1137,6 +1169,8 @@ function pageShell({
   ogType = "website",
   robots = "index,follow",
   extraHeadHtml = "",
+  structuredData = [],
+  socialImageAlt = "LogFall logo",
 }) {
   const homeHref = prefix || "./";
   const navItems = [
@@ -1155,6 +1189,7 @@ function pageShell({
     .join("");
   const canonicalUrl = absoluteUrl(canonicalPath);
   const socialImageUrl = absoluteUrl(socialImagePath);
+  const structuredDataHead = jsonLdMarkup(structuredData);
 
   return `<!doctype html>
 <html lang="en">
@@ -1164,6 +1199,8 @@ function pageShell({
     <title>${escapeHtml(title)}</title>
     <meta name="description" content="${escapeHtml(description)}" />
     <meta name="robots" content="${escapeHtml(robots)}" />
+    <meta name="author" content="Phil Stilwell" />
+    <meta name="creator" content="Phil Stilwell" />
     <link rel="canonical" href="${escapeHtml(canonicalUrl)}" />
     <link rel="icon" type="image/x-icon" href="${prefix}assets/favicon.ico" />
     <link rel="icon" type="image/png" sizes="32x32" href="${prefix}assets/favicon-32x32.png" />
@@ -1178,11 +1215,13 @@ function pageShell({
     <meta property="og:description" content="${escapeHtml(description)}" />
     <meta property="og:url" content="${escapeHtml(canonicalUrl)}" />
     <meta property="og:image" content="${escapeHtml(socialImageUrl)}" />
-    <meta property="og:image:alt" content="LogFall logo" />
+    <meta property="og:image:alt" content="${escapeHtml(socialImageAlt)}" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="${escapeHtml(title)}" />
     <meta name="twitter:description" content="${escapeHtml(description)}" />
     <meta name="twitter:image" content="${escapeHtml(socialImageUrl)}" />
+    <meta name="twitter:image:alt" content="${escapeHtml(socialImageAlt)}" />
+    ${structuredDataHead}
     ${extraHeadHtml}
     <link rel="stylesheet" href="${prefix}styles.css" />
     <script defer src="${prefix}app.js"></script>
@@ -1655,6 +1694,41 @@ function renderTeachingPathCard(pathDefinition, records, prefix) {
   </article>`;
 }
 
+function homeSeoDescription() {
+  return "Learn logical fallacies with clear definitions, examples, case studies, comparison tools, AI prompts, and classroom-friendly teaching resources.";
+}
+
+function fallaciesIndexSeoDescription(recordCount) {
+  return `Browse all ${recordCount} logical fallacies by name, category, difficulty, and classroom level, with definitions, examples, and teaching tools.`;
+}
+
+function categorySeoDescription(category) {
+  return `Explore ${category.count} ${category.name.toLowerCase()} logical fallacies with definitions, examples, and related entries in LogFall.`;
+}
+
+function promptsSeoDescription() {
+  return "Copy AI prompts for finding logical fallacies in news articles, rhetoric, and pasted passages, with links back to LogFall.";
+}
+
+function aboutSeoDescription() {
+  return "About Phil Stilwell, the university teaching background behind LogFall, and how the site was built for critical thinking instruction.";
+}
+
+function pathSeoDescription(pathDefinition, memberCount) {
+  return `${pathDefinition.title}: a ${memberCount}-fallacy teaching path for ${pathDefinition.audience.toLowerCase()} in LogFall.`;
+}
+
+function fallacySeoTitle(record) {
+  return `${record.name}: definition, examples, and how to spot it | LogFall`;
+}
+
+function fallacySeoDescription(record) {
+  return truncate(
+    `Learn what ${record.name} means, how to spot it, and why it misleads. LogFall includes a definition, example, case studies, related fallacies, and teaching tools.`,
+    158,
+  );
+}
+
 function buildTeachingPathsIndexPage(records) {
   const content = `
     <div class="breadcrumbs">
@@ -1675,11 +1749,31 @@ function buildTeachingPathsIndexPage(records) {
   `;
 
   return pageShell({
-    title: "Teaching Paths | LogFall",
-    description: "Curated routes through LogFall for classrooms, review sessions, and first-time readers.",
+    title: "Teaching Paths for Learning Logical Fallacies | LogFall",
+    description: "Curated teaching paths through logical fallacies for classrooms, review sessions, and first-time readers.",
     prefix: "../",
     currentSection: "",
     canonicalPath: "paths/",
+    structuredData: [
+      breadcrumbSchema([
+        { name: "Home", path: "" },
+        { name: "Teaching Paths", path: "paths/" },
+      ]),
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: "Teaching Paths",
+        url: absoluteUrl("paths/"),
+        description: "Curated teaching paths through logical fallacies for classrooms, review sessions, and first-time readers.",
+        publisher: publisherSchema(),
+        hasPart: teachingPathDefinitions.map((pathDefinition) => ({
+          "@type": "CreativeWork",
+          name: pathDefinition.title,
+          url: absoluteUrl(`paths/${pathDefinition.slug}/`),
+          description: pathDefinition.description,
+        })),
+      },
+    ],
     content,
   });
 }
@@ -1721,11 +1815,40 @@ function buildTeachingPathPage(pathDefinition, records) {
   `;
 
   return pageShell({
-    title: `${pathDefinition.title} | LogFall`,
-    description: pathDefinition.description,
+    title: `${pathDefinition.title}: Logical Fallacy Teaching Path | LogFall`,
+    description: pathSeoDescription(pathDefinition, members.length),
     prefix: "../../",
     currentSection: "",
     canonicalPath: `paths/${pathDefinition.slug}/`,
+    structuredData: [
+      breadcrumbSchema([
+        { name: "Home", path: "" },
+        { name: "Teaching Paths", path: "paths/" },
+        { name: pathDefinition.title, path: `paths/${pathDefinition.slug}/` },
+      ]),
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: pathDefinition.title,
+        url: absoluteUrl(`paths/${pathDefinition.slug}/`),
+        description: pathSeoDescription(pathDefinition, members.length),
+        publisher: publisherSchema(),
+        audience: {
+          "@type": "Audience",
+          audienceType: pathDefinition.audience,
+        },
+        mainEntity: {
+          "@type": "ItemList",
+          numberOfItems: members.length,
+          itemListElement: members.map((record, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: record.name,
+            url: absoluteUrl(`fallacies/${record.slug}/`),
+          })),
+        },
+      },
+    ],
     content,
   });
 }
@@ -1835,12 +1958,27 @@ function buildHomePage(records, categories) {
   `;
 
   return pageShell({
-    title: "LogFall | Logical Fallacies",
-    description:
-      "A practical logical fallacies reference with category browsing, clear explanations, case studies, and teaching tools.",
+    title: "Logical Fallacies Explained: Definitions, Examples, and Teaching Tools | LogFall",
+    description: homeSeoDescription(),
     prefix: "",
     currentSection: "home",
     canonicalPath: "",
+    structuredData: [
+      {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        name: "LogFall",
+        url: absoluteUrl(""),
+        description: homeSeoDescription(),
+        publisher: publisherSchema(),
+        inLanguage: "en-US",
+        potentialAction: {
+          "@type": "SearchAction",
+          target: `${absoluteUrl("fallacies/")}?q={search_term_string}`,
+          "query-input": "required name=search_term_string",
+        },
+      },
+    ],
     content,
   });
 }
@@ -2011,11 +2149,39 @@ function buildAboutPage() {
   `;
 
   return pageShell({
-    title: "About | LogFall",
-    description: "About Phil Stilwell, the teaching background behind LogFall, and the classroom inspiration for the site.",
+    title: "About Phil Stilwell and LogFall | Logical Fallacies Teaching Resource",
+    description: aboutSeoDescription(),
     prefix: "../",
     currentSection: "about",
     canonicalPath: "about/",
+    structuredData: [
+      breadcrumbSchema([
+        { name: "Home", path: "" },
+        { name: "About", path: "about/" },
+      ]),
+      {
+        "@context": "https://schema.org",
+        "@type": "AboutPage",
+        name: "About LogFall",
+        url: absoluteUrl("about/"),
+        description: aboutSeoDescription(),
+        mainEntity: {
+          "@type": "Person",
+          name: "Phil Stilwell",
+          url: absoluteUrl("about/"),
+          sameAs: ["https://credencing.com"],
+          alumniOf: "The University of Kansas",
+          knowsAbout: [
+            "philosophy",
+            "epistemology",
+            "critical thinking",
+            "macroeconomics",
+            "technical writing",
+            "logical fallacies",
+          ],
+        },
+      },
+    ],
     content,
   });
 }
@@ -2061,11 +2227,30 @@ function buildPromptsPage() {
   `;
 
   return pageShell({
-    title: "Fun AI Prompts | LogFall",
-    description: "Copy-ready AI prompts for analyzing rhetoric and identifying logical fallacies with LogFall.",
+    title: "AI Prompts for Finding Logical Fallacies in Text and Media | LogFall",
+    description: promptsSeoDescription(),
     prefix: "../",
     currentSection: "prompts",
     canonicalPath: "prompts/",
+    structuredData: [
+      breadcrumbSchema([
+        { name: "Home", path: "" },
+        { name: "Fun AI Prompts", path: "prompts/" },
+      ]),
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: "Fun AI Prompts",
+        url: absoluteUrl("prompts/"),
+        description: promptsSeoDescription(),
+        publisher: publisherSchema(),
+        hasPart: funPromptDefinitions.map((promptDefinition) => ({
+          "@type": "CreativeWork",
+          name: promptDefinition.title,
+          description: promptDefinition.intro,
+        })),
+      },
+    ],
     content,
   });
 }
@@ -2124,11 +2309,31 @@ function buildAllFallaciesPage(records, categories) {
   `;
 
   return pageShell({
-    title: "All Fallacies | LogFall",
-    description: "Search and browse the full LogFall index of logical fallacies.",
+    title: "All Logical Fallacies: Search Definitions, Examples, and Categories | LogFall",
+    description: fallaciesIndexSeoDescription(records.length),
     prefix: "../",
     currentSection: "fallacies",
     canonicalPath: "fallacies/",
+    structuredData: [
+      breadcrumbSchema([
+        { name: "Home", path: "" },
+        { name: "All Fallacies", path: "fallacies/" },
+      ]),
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: "All Logical Fallacies",
+        url: absoluteUrl("fallacies/"),
+        description: fallaciesIndexSeoDescription(records.length),
+        publisher: publisherSchema(),
+        mainEntity: {
+          "@type": "DefinedTermSet",
+          name: "LogFall Fallacies",
+          url: absoluteUrl("fallacies/"),
+          numberOfItems: records.length,
+        },
+      },
+    ],
     content,
   });
 }
@@ -2161,11 +2366,32 @@ function buildCategoriesIndexPage(categories) {
   `;
 
   return pageShell({
-    title: "Categories | LogFall",
-    description: "Browse the LogFall taxonomy by category.",
+    title: "Logical Fallacy Categories and Taxonomy | LogFall",
+    description: "Browse the LogFall taxonomy of logical fallacies by category, from causal and evidential errors to formal and emotional ones.",
     prefix: "../",
     currentSection: "categories",
     canonicalPath: "categories/",
+    structuredData: [
+      breadcrumbSchema([
+        { name: "Home", path: "" },
+        { name: "Categories", path: "categories/" },
+      ]),
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: "Logical Fallacy Categories",
+        url: absoluteUrl("categories/"),
+        description:
+          "Browse the LogFall taxonomy of logical fallacies by category, from causal and evidential errors to formal and emotional ones.",
+        publisher: publisherSchema(),
+        hasPart: categories.map((category) => ({
+          "@type": "CreativeWork",
+          name: category.name,
+          url: absoluteUrl(`categories/${category.slug}/`),
+          description: category.description,
+        })),
+      },
+    ],
     content,
   });
 }
@@ -2201,11 +2427,36 @@ function buildCategoryPage(category, records) {
   `;
 
   return pageShell({
-    title: `${category.name} | LogFall`,
-    description: category.description,
+    title: `${category.name} Logical Fallacies: Definitions and Examples | LogFall`,
+    description: categorySeoDescription(category),
     prefix: "../../",
     currentSection: "categories",
     canonicalPath: `categories/${category.slug}/`,
+    structuredData: [
+      breadcrumbSchema([
+        { name: "Home", path: "" },
+        { name: "Categories", path: "categories/" },
+        { name: category.name, path: `categories/${category.slug}/` },
+      ]),
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: `${category.name} Logical Fallacies`,
+        url: absoluteUrl(`categories/${category.slug}/`),
+        description: categorySeoDescription(category),
+        publisher: publisherSchema(),
+        mainEntity: {
+          "@type": "ItemList",
+          numberOfItems: members.length,
+          itemListElement: members.map((record, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: record.name,
+            url: absoluteUrl(`fallacies/${record.slug}/`),
+          })),
+        },
+      },
+    ],
     content,
   });
 }
@@ -2354,13 +2605,41 @@ function buildDetailPage(record, records, categoryProfiles, posterAssets) {
   `;
 
   return pageShell({
-    title: `${record.name} | LogFall`,
-    description: truncate(record.definition, 150),
+    title: fallacySeoTitle(record),
+    description: fallacySeoDescription(record),
     prefix: "../../",
     currentSection: "fallacies",
     canonicalPath: `fallacies/${record.slug}/`,
     ogType: "article",
     extraHeadHtml: cloudflareWebAnalyticsTag,
+    structuredData: [
+      breadcrumbSchema([
+        { name: "Home", path: "" },
+        { name: "All Fallacies", path: "fallacies/" },
+        { name: record.name, path: `fallacies/${record.slug}/` },
+      ]),
+      {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        name: fallacySeoTitle(record),
+        url: absoluteUrl(`fallacies/${record.slug}/`),
+        description: fallacySeoDescription(record),
+        isPartOf: {
+          "@type": "WebSite",
+          name: "LogFall",
+          url: absoluteUrl(""),
+        },
+        mainEntity: {
+          "@type": "DefinedTerm",
+          name: record.name,
+          description: record.definition,
+          url: absoluteUrl(`fallacies/${record.slug}/`),
+          alternateName: record.aliases.length ? record.aliases : undefined,
+          inDefinedTermSet: absoluteUrl("fallacies/"),
+          termCode: record.slug,
+        },
+      },
+    ],
     content,
   });
 }
