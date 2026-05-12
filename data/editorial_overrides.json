@@ -184,7 +184,8 @@
         "After officials in Springfield, Ohio said there were no credible reports supporting the September 2024 rumor that Haitian immigrants were abducting and eating pets, some defenders treated the lack of evidence as irrelevant or as proof of a cover-up rather than as evidence against the rumor.",
         "Claims of widespread noncitizen voting in 2024 often survived repeated audits and official reviews by insisting that the absence of supporting evidence was exactly what one should expect from a hidden scheme."
       ],
-      "editorialStatus": "modernized-2026-pass"
+      "editorialStatus": "modernized-2026-pass",
+      "family": "Evidential/Methodological Fallacy"
     },
     "Base rate fallacy": {
       "definition": "Occurs when someone judges how likely a case is by focusing on vivid case-specific evidence while ignoring the underlying frequency of the thing in question",
@@ -453,7 +454,8 @@
         "The anonymous affidavit circulated after the September 2024 ABC debate was treated by many users as explosive proof of moderator collusion even though the central accusations were not substantiated.",
         "Public arguments about crime, immigration, vaccines, and election administration often begin with unsupported declarations that function rhetorically as if they were already established facts."
       ],
-      "editorialStatus": "modernized-2026-pass"
+      "editorialStatus": "modernized-2026-pass",
+      "family": "Evidential/Methodological Fallacy"
     },
     "Broken window fallacy": {
       "definition": "Occurs when destruction or forced replacement is treated as an economic gain because the visible spending is counted while the unseen losses and forgone alternatives are ignored",
@@ -551,7 +553,8 @@
         "In 2024 media battles, a single correction or mistaken detail was often used to dismiss an outlet's entire reporting on elections, immigration, or public health.",
         "Religious, ideological, and policy debates often act as though rejecting one doctrine, statistic, or mechanism commits you to rejecting the entire worldview."
       ],
-      "editorialStatus": "modernized-2026-pass"
+      "editorialStatus": "modernized-2026-pass",
+      "family": "Conceptual/Framing Fallacy"
     },
     "Appeal to flattery": {
       "definition": "Occurs when someone tries to win agreement by flattering the audience's intelligence, courage, independence, or special insight instead of supplying the missing evidence",
@@ -630,7 +633,8 @@
         "The anonymous ABC debate affidavit spread partly because influential accounts amplified it with extraordinary certainty before any reliable verification had appeared.",
         "In arguments about AI consciousness, election fraud, religion, and wellness, people often present their felt certainty as if it were itself a kind of evidence rather than something that also needs checking."
       ],
-      "editorialStatus": "modernized-2026-pass"
+      "editorialStatus": "modernized-2026-pass",
+      "family": "Evidential/Methodological Fallacy"
     },
     "Contextomy": {
       "definition": "Occurs when words are selectively excerpted from their original context in a way that changes or distorts what the speaker meant",
@@ -657,7 +661,7 @@
       ],
       "editorialStatus": "modernized-2026-pass"
     },
-    "Thought-terminating clich\u00e9": {
+    "Thought-terminating cliché": {
       "definition": "Occurs when a familiar slogan or stock phrase is used to stop inquiry, deflect scrutiny, or create the feeling that an issue has already been settled",
       "example": "It is what it is, so there is nothing more to discuss.",
       "notes": "Aphorisms can be wise shortcuts, but they become fallacious when they replace the reasoning that the situation still requires.",
@@ -719,7 +723,8 @@
         "Online fights about elections, Israel and Gaza, climate, and AI often rely on 'debunked' as a performance word rather than as a pointer to the actual evidence.",
         "In fast-moving social media disputes, people often treat tone, certainty, and pile-on consensus as if they were enough to count as refutation."
       ],
-      "editorialStatus": "modernized-2026-pass"
+      "editorialStatus": "modernized-2026-pass",
+      "family": "Evidential/Methodological Fallacy"
     },
     "Fallacy of many questions": {
       "definition": "Occurs when a question smuggles in one or more assumptions that have not been established, then pressures the listener to answer as if those assumptions were already settled",
@@ -759,7 +764,8 @@
         "After the September 2024 ABC debate, the fact that the lecterns differed in height was treated by some users as if it supported much broader unverified claims about secret coordination and leaked questions.",
         "Conspiracy arguments often point to one authentic photo, real location, or correct minor fact and then use that narrow success to smuggle in much larger unsupported conclusions."
       ],
-      "editorialStatus": "modernized-2026-pass"
+      "editorialStatus": "modernized-2026-pass",
+      "family": "Evidential/Methodological Fallacy"
     },
     "Proof by verbosity": {
       "definition": "Occurs when a claim is protected by an avalanche of words, side points, jargon, or branching assertions that overwhelm reasonable scrutiny and create the illusion of depth",
@@ -779,7 +785,8 @@
         "Baseless claims about widespread noncitizen voting keep getting relaunched as if decades of rarity, audits, and failed alarms provide no reason for initial skepticism.",
         "Every new blurry UFO clip, miracle cure, or ghost story is often pitched as if the long record of ordinary explanations should have zero effect on our starting expectations."
       ],
-      "editorialStatus": "modernized-2026-pass"
+      "editorialStatus": "modernized-2026-pass",
+      "family": "Evidential/Methodological Fallacy"
     },
     "Vague insulators": {
       "definition": "Occurs when vague, elastic, or undefined terms are chosen so that a position sounds meaningful while resisting clear testing or criticism",
@@ -789,7 +796,8 @@
         "Alternative-health and wellness marketing often leans on words like 'toxins,' 'energy,' 'balance,' and 'boost' precisely because they sound scientific while remaining hard to falsify.",
         "In arguments about spirituality, self-help, and even AI, flexible phrases can be stretched to fit almost any outcome, which makes the view feel resilient without making it well supported."
       ],
-      "editorialStatus": "modernized-2026-pass"
+      "editorialStatus": "modernized-2026-pass",
+      "family": "Conceptual/Framing Fallacy"
     },
     "If-by-whiskey": {
       "definition": "Occurs when someone uses strategically shifting language that seems to support both sides by quietly changing the meaning of the key term to suit the audience",
@@ -809,7 +817,8 @@
         "Religious and paranormal debates often insist that skepticism itself is just another faith commitment, as if withholding belief carried the same evidential burden as proposing the phenomenon.",
         "Arguments about election fraud and miracle claims sometimes recast 'I have not seen enough evidence' into 'you are certain it never happened' so the original claimant can dodge the burden of proof."
       ],
-      "editorialStatus": "modernized-2026-pass"
+      "editorialStatus": "modernized-2026-pass",
+      "family": "Conceptual/Framing Fallacy"
     },
     "Demanding a mechanism": {
       "definition": "Occurs when strong evidence for a phenomenon is rejected solely because the underlying mechanism is still incomplete, disputed, or not yet fully understood",
@@ -819,7 +828,8 @@
         "Public disputes about climate, evolution, and health regularly treat unresolved details in the mechanism as if they erased the larger evidential picture.",
         "Research on AI transcription errors in 2024 showed that systems were inventing statements people never said; even before every technical cause was nailed down, the pattern itself was already evidence of a real reliability problem."
       ],
-      "editorialStatus": "modernized-2026-pass"
+      "editorialStatus": "modernized-2026-pass",
+      "family": "Evidential/Methodological Fallacy"
     },
     "Demanding negative proof": {
       "aliases": [
@@ -843,7 +853,8 @@
         "Debates about God, UFOs, AI consciousness, and election fraud often demand yes-or-no declarations even when the intellectually honest position is conditional, partial, or still under revision.",
         "Culture-war exchanges frequently treat probabilistic language such as 'unlikely,' 'not yet shown,' or 'some evidence but not enough' as weakness rather than as proper calibration."
       ],
-      "editorialStatus": "modernized-2026-pass"
+      "editorialStatus": "modernized-2026-pass",
+      "family": "Evidential/Methodological Fallacy"
     },
     "Denying a remote hypothetical": {
       "definition": "Occurs when a hypothetical test case is dismissed as irrelevant merely because it is rare, extreme, or unlikely, even though the principle under debate is supposed to be universal",
@@ -853,7 +864,8 @@
         "Arguments about free speech, self-defense, abortion, lying, and triage often reject hard edge cases simply because they are uncomfortable, even though those cases are precisely what test universal rules.",
         "Policy debates about AI safety and biosecurity sometimes wave away low-probability scenarios too quickly, even when the whole argument concerns whether a system is robust under stress."
       ],
-      "editorialStatus": "modernized-2026-pass"
+      "editorialStatus": "modernized-2026-pass",
+      "family": "Conceptual/Framing Fallacy"
     },
     "Epistemic/ontological conflation": {
       "categories": [
@@ -868,7 +880,8 @@
         "Raw milk, supplement, and alternative-health advocates often point to the felt benefits reported by believers while skipping the role of expectation, placebo effects, and other background changes.",
         "Arguments that religion must be true because believers report comfort, purpose, or improved well-being often confuse the power of belief with evidence for the reality of the object believed in."
       ],
-      "editorialStatus": "modernized-2026-pass"
+      "editorialStatus": "modernized-2026-pass",
+      "family": "Evidential/Methodological Fallacy"
     },
     "Faulty generalization": {
       "definition": "Occurs when an inductive conclusion reaches further than the available evidence can reasonably support, or ignores information that should limit the generalization",
@@ -898,7 +911,8 @@
         "Some arguments define a being, force, or property in mutually incompatible ways and then insist critics still need field evidence before calling the view incoherent.",
         "Online debate often treats every claim as if it deserved purely empirical testing, even when the real defect appears earlier at the level of definition or logical consistency."
       ],
-      "editorialStatus": "modernized-2026-pass"
+      "editorialStatus": "modernized-2026-pass",
+      "family": "Evidential/Methodological Fallacy"
     },
     "Sentimental fallacy": {
       "definition": "Occurs when the desirability, comfort, or emotional appeal of an outcome is treated as if that were evidence that the outcome is true, feasible, or justified",
@@ -918,7 +932,8 @@
         "Paranormal, religious, and conspiracy stories often swell in authority by invoking unnamed doctors, secret insiders, or hundreds of silent observers who never become independently available.",
         "Historical arguments sometimes treat a late report that 'many people saw it' as if that were the same thing as actually having many separate testimonies."
       ],
-      "editorialStatus": "modernized-2026-pass"
+      "editorialStatus": "modernized-2026-pass",
+      "family": "Evidential/Methodological Fallacy"
     },
     "Wrong causal direction": {
       "definition": "Occurs when a real association is noticed but the direction of causation is reversed",
@@ -938,7 +953,8 @@
         "People sometimes say 'science does not discover anything, only scientists do,' as if that erased the reality of science as a method and institution with stable norms and effects.",
         "Debates about algorithms, markets, and social platforms often pretend there is no system-level behavior because only users or lines of code act at the micro level."
       ],
-      "editorialStatus": "modernized-2026-pass"
+      "editorialStatus": "modernized-2026-pass",
+      "family": "Conceptual/Framing Fallacy"
     },
     "Abstraction fallacy": {
       "definition": "Occurs when a model, law, or abstraction drawn from experience is treated as if it were a logically necessary rule that reality cannot ever depart from",
@@ -948,7 +964,8 @@
         "People often treat economic or technological 'laws' as if they guaranteed the future rather than summarizing a contingent historical pattern that may bend, pause, or fail.",
         "In AI discourse, scaling trends are sometimes talked about as destiny, as though past curves logically force a particular future rather than merely suggesting one."
       ],
-      "editorialStatus": "modernized-2026-pass"
+      "editorialStatus": "modernized-2026-pass",
+      "family": "Conceptual/Framing Fallacy"
     },
     "Composition fallacy": {
       "definition": "Occurs when something true of the parts is assumed to be true of the whole they compose",
@@ -1028,7 +1045,8 @@
         "Debates about media bias, moral character, and institutional trust often assume that if a person or outlet is not perfectly objective, then it is simply propaganda.",
         "Public discussion of peace, tolerance, and fairness often ignores large improvements because some imperfection remains somewhere."
       ],
-      "editorialStatus": "modernized-2026-pass"
+      "editorialStatus": "modernized-2026-pass",
+      "family": "Conceptual/Framing Fallacy"
     },
     "Reification": {
       "definition": "Occurs when an abstraction is spoken of as if it were a concrete agent or thing in a way that misleads rather than merely using harmless metaphor",
@@ -1291,7 +1309,8 @@
         "After scandals in policing, finance, or clergy, critics sometimes assume any individual in the profession personally shares the worst traits of the institution.",
         "Online discourse often treats party label, employer, or religious affiliation as if it were enough to prove what a specific person believes or will do."
       ],
-      "editorialStatus": "modernized-2026-pass"
+      "editorialStatus": "modernized-2026-pass",
+      "family": "Conceptual/Framing Fallacy"
     },
     "Bottom-up justification": {
       "aliases": [
@@ -1304,7 +1323,8 @@
         "Prestige effects often lead audiences to assume that anyone from a famous university or respected nonprofit is trustworthy even outside their area of expertise.",
         "Voters sometimes infer that a candidate from a reform organization must be personally honest before examining the candidate's own conduct."
       ],
-      "editorialStatus": "modernized-2026-pass"
+      "editorialStatus": "modernized-2026-pass",
+      "family": "Conceptual/Framing Fallacy"
     },
     "Denying the correlative": {
       "definition": "Occurs when one side of a genuine contrast is denied or redefined so the opposing term has no place to apply",
@@ -1324,7 +1344,8 @@
         "Reductio arguments in theology, AI, and politics are often misread as confessions rather than as tests of what would follow if the other side's claim were granted.",
         "Debates stall when a conditional claim such as 'even if you are right, the consequence would still be unacceptable' is treated as if it were a statement of belief."
       ],
-      "editorialStatus": "modernized-2026-pass"
+      "editorialStatus": "modernized-2026-pass",
+      "family": "Conceptual/Framing Fallacy"
     },
     "Homunculus fallacy": {
       "definition": "Occurs when a mind-like inner observer is smuggled in to explain mind-like abilities, thereby postponing rather than solving the explanation",
@@ -1354,7 +1375,8 @@
         "Conspiracy systems often explain both the presence and the absence of evidence as confirmation.",
         "Some technology hype frames both success and failure as proof that general intelligence is just around the corner."
       ],
-      "editorialStatus": "modernized-2026-pass"
+      "editorialStatus": "modernized-2026-pass",
+      "family": "Evidential/Methodological Fallacy"
     },
     "Inconsistent comparison": {
       "categories": [
@@ -1388,7 +1410,8 @@
         "Growth forecasts for social platforms often assume audience reach will keep scaling smoothly even after attention markets saturate.",
         "Policy debates about climate, housing, and healthcare frequently ignore the non-linear effects of bottlenecks, incentives, and behavioral feedback."
       ],
-      "editorialStatus": "modernized-2026-pass"
+      "editorialStatus": "modernized-2026-pass",
+      "family": "Conceptual/Framing Fallacy"
     },
     "Overwhelming exception": {
       "aliases": [],
@@ -1439,7 +1462,8 @@
         "Election, public-health, and AI debates often force nuanced confidence claims into binary boxes such as certain or uncertain, safe or unsafe, real or fake.",
         "Arguments about what someone believes frequently replace a spectrum of confidence with a yes-or-no label that the original speaker never endorsed."
       ],
-      "editorialStatus": "modernized-2026-pass"
+      "editorialStatus": "modernized-2026-pass",
+      "family": "Conceptual/Framing Fallacy"
     },
     "Suppressed correlative": {
       "definition": "Occurs when one term in a meaningful contrast is redefined so broadly or so narrowly that its opposing term can no longer do any work",
@@ -1472,7 +1496,8 @@
         "Isolated crime stories are often turned into sweeping claims about immigrants, professions, age groups, or political movements.",
         "A single corporate scandal can quickly become a claim that the entire industry is rotten in exactly the same way."
       ],
-      "editorialStatus": "modernized-2026-pass"
+      "editorialStatus": "modernized-2026-pass",
+      "family": "Conceptual/Framing Fallacy"
     },
     "Top-down faulty generalization": {
       "definition": "Occurs when a reasonable generalization is attacked by demanding that it hold without relevant scope conditions or exceptions",
@@ -1495,7 +1520,8 @@
         "One transparent politician or one ethical corporation is often used to imply that the surrounding system is healthier than the broader evidence suggests.",
         "People frequently infer that an institution is trustworthy because they personally encountered one helpful employee inside it."
       ],
-      "editorialStatus": "modernized-2026-pass"
+      "editorialStatus": "modernized-2026-pass",
+      "family": "Conceptual/Framing Fallacy"
     }
   }
 }
