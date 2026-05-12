@@ -814,19 +814,19 @@ img {
 }
 
 .analogy-claim-card {
-  background: linear-gradient(180deg, rgba(20, 168, 215, 0.08), #ffffff 42%);
-}
-
-.analogy-claim-card::before {
-  background: linear-gradient(90deg, rgba(20, 168, 215, 0.85), rgba(20, 168, 215, 0.35));
-}
-
-.analogy-response-card {
   background: linear-gradient(180deg, rgba(230, 59, 52, 0.08), #ffffff 42%);
 }
 
-.analogy-response-card::before {
+.analogy-claim-card::before {
   background: linear-gradient(90deg, rgba(230, 59, 52, 0.85), rgba(230, 59, 52, 0.35));
+}
+
+.analogy-response-card {
+  background: linear-gradient(180deg, rgba(20, 168, 215, 0.08), #ffffff 42%);
+}
+
+.analogy-response-card::before {
+  background: linear-gradient(90deg, rgba(20, 168, 215, 0.85), rgba(20, 168, 215, 0.35));
 }
 
 .analogy-label {
