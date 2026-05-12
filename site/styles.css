@@ -605,6 +605,24 @@ img {
   padding: 24px;
 }
 
+.prompt-requirement {
+  margin-top: 16px;
+  padding: 16px 18px;
+}
+
+.prompt-requirement-label {
+  margin: 0 0 8px;
+  color: var(--accent-deep);
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.prompt-requirement .muted {
+  margin: 0;
+}
+
 .prompt-directory {
   display: flex;
   flex-wrap: wrap;

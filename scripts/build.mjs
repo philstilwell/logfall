@@ -131,6 +131,8 @@ const funPromptDefinitions = [
     title: "Balanced Media Fallacy Hunt",
     intro:
       "This prompt asks an AI model with web access to compare recent left-leaning and right-leaning political arguments, identify distinct fallacies, quote the relevant passages, and link each diagnosis back to LogFall. It is designed for classroom comparison, media-literacy practice, and discussion that stays anchored to actual source text rather than vague impressions.",
+    requirements:
+      "Nothing else needs to be pasted in if the model can browse the live web. The copied prompt is enough, but it works only with a model that can search for and open recent articles on its own.",
     prompt: `Search the web for six recent political news or opinion articles published within the last 7 days. Select three articles that argue from a clearly left-leaning perspective and three that argue from a clearly right-leaning perspective. Each selected article must contain a different logical fallacy, and the fallacy attribution must be defensible from a quoted passage rather than from the article's general tone.
 
 Return your answer as a Markdown table with exactly two columns: "Left-Wing Arguments" and "Right-Wing Arguments", and exactly three data rows.
@@ -164,6 +166,8 @@ Rules:
     title: "Passage Fallacy Analyzer",
     intro:
       "This prompt is for pasting in any argumentative passage and asking an AI model to find every defensible fallacy within it. It pushes the model to quote enough of the original wording to make the mistake visible, explain the dynamics of the misstep in more depth, and link each diagnosis back to the relevant LogFall page.",
+    requirements:
+      "This one needs more than the copied prompt itself. You should paste or attach the exact passage you want analyzed in the placeholder area at the end so the model can quote the wording precisely.",
     prompt: `Analyze the passage below and identify every distinct logical fallacy that can be justified from the text. Do not force a fallacy label where the evidence is weak. If no clear fallacy is present, say so explicitly.
 
 Return the result as a Markdown table with these columns:
@@ -192,6 +196,8 @@ Passage to analyze:
     title: "Fallacy Repair Workshop",
     intro:
       "This prompt takes a weak argument, diagnoses the fallacy, and then rebuilds the argument into the strongest fair version that preserves as much of the original point as possible. It is useful when the goal is not merely critique, but learning how better reasoning actually sounds.",
+    requirements:
+      "This prompt needs the original argument to be pasted or attached. It works best when you give the exact wording you want repaired rather than a summary of it.",
     prompt: `Analyze the argument below as a repair workshop rather than as a mere takedown.
 
 Your task has four steps:
@@ -229,6 +235,8 @@ Argument to repair:
     title: "Near-Neighbor Comparator",
     intro:
       "This prompt is for cases where readers keep confusing similar fallacies. It forces the model to choose among close competitors and explain why the rejected labels do not fit, which is often the real learning bottleneck.",
+    requirements:
+      "This prompt needs a pasted or attached argument to classify. It works best when the passage is short enough to compare carefully against several close rival fallacies.",
     prompt: `Analyze the argument below and decide which fallacy label fits best from a set of near neighbors.
 
 Use these steps:
@@ -265,6 +273,8 @@ Ad hominem, Poisoning the well, Straw man argument, Red herring, False dilemma, 
     title: "Steelman Then Diagnose",
     intro:
       "This prompt trains the habit of fairness before critique. It first asks the model to reconstruct the strongest reasonable version of an argument, and only then identify any remaining fallacies or weaknesses.",
+    requirements:
+      "This prompt needs a pasted or attached argument or excerpt. Give enough surrounding context for the model to reconstruct the strongest fair version before it starts diagnosing flaws.",
     prompt: `Read the argument below and follow this sequence strictly:
 
 1. **Steelman first:** Rewrite the argument in its strongest fair form, preserving the speaker's apparent goal while removing ambiguity, filler, and accidental weakness.
@@ -301,6 +311,8 @@ Argument to analyze:
     title: "Argument Map Builder",
     intro:
       "This prompt is meant to slow an argument down into premises, hidden assumptions, and conclusion, then identify the exact step where the reasoning stops earning its result. It works especially well for formal, causal, and evidential mistakes.",
+    requirements:
+      "This prompt needs a pasted or attached passage to map. It works best when the passage contains a fairly clear conclusion and at least one inferential step that can be broken into premises and assumptions.",
     prompt: `Turn the passage below into an explicit argument map, then identify where the reasoning fails.
 
 Return the answer in this structure:
@@ -2336,6 +2348,10 @@ function renderPromptCard(promptDefinition) {
     <p class="eyebrow">AI prompt</p>
     <h3 class="section-title">${escapeHtml(promptDefinition.title)}</h3>
     <p class="section-copy">${escapeHtml(promptDefinition.intro)}</p>
+    <div class="note-panel prompt-requirement">
+      <p class="prompt-requirement-label">What else is needed</p>
+      <p class="muted">${escapeHtml(promptDefinition.requirements)}</p>
+    </div>
     <div class="prompt-toolbar">
       <button class="button button-secondary prompt-copy-button" type="button" data-copy-button="${escapeHtml(promptId)}">Copy prompt</button>
     </div>

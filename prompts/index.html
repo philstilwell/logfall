@@ -74,6 +74,10 @@
     <p class="eyebrow">AI prompt</p>
     <h3 class="section-title">Balanced Media Fallacy Hunt</h3>
     <p class="section-copy">This prompt asks an AI model with web access to compare recent left-leaning and right-leaning political arguments, identify distinct fallacies, quote the relevant passages, and link each diagnosis back to LogFall. It is designed for classroom comparison, media-literacy practice, and discussion that stays anchored to actual source text rather than vague impressions.</p>
+    <div class="note-panel prompt-requirement">
+      <p class="prompt-requirement-label">What else is needed</p>
+      <p class="muted">Nothing else needs to be pasted in if the model can browse the live web. The copied prompt is enough, but it works only with a model that can search for and open recent articles on its own.</p>
+    </div>
     <div class="prompt-toolbar">
       <button class="button button-secondary prompt-copy-button" type="button" data-copy-button="prompt-balanced-media-fallacy-hunt">Copy prompt</button>
     </div>
@@ -113,6 +117,10 @@ Rules:
     <p class="eyebrow">AI prompt</p>
     <h3 class="section-title">Passage Fallacy Analyzer</h3>
     <p class="section-copy">This prompt is for pasting in any argumentative passage and asking an AI model to find every defensible fallacy within it. It pushes the model to quote enough of the original wording to make the mistake visible, explain the dynamics of the misstep in more depth, and link each diagnosis back to the relevant LogFall page.</p>
+    <div class="note-panel prompt-requirement">
+      <p class="prompt-requirement-label">What else is needed</p>
+      <p class="muted">This one needs more than the copied prompt itself. You should paste or attach the exact passage you want analyzed in the placeholder area at the end so the model can quote the wording precisely.</p>
+    </div>
     <div class="prompt-toolbar">
       <button class="button button-secondary prompt-copy-button" type="button" data-copy-button="prompt-passage-fallacy-analyzer">Copy prompt</button>
     </div>
@@ -147,6 +155,10 @@ Passage to analyze:
     <p class="eyebrow">AI prompt</p>
     <h3 class="section-title">Fallacy Repair Workshop</h3>
     <p class="section-copy">This prompt takes a weak argument, diagnoses the fallacy, and then rebuilds the argument into the strongest fair version that preserves as much of the original point as possible. It is useful when the goal is not merely critique, but learning how better reasoning actually sounds.</p>
+    <div class="note-panel prompt-requirement">
+      <p class="prompt-requirement-label">What else is needed</p>
+      <p class="muted">This prompt needs the original argument to be pasted or attached. It works best when you give the exact wording you want repaired rather than a summary of it.</p>
+    </div>
     <div class="prompt-toolbar">
       <button class="button button-secondary prompt-copy-button" type="button" data-copy-button="prompt-fallacy-repair-workshop">Copy prompt</button>
     </div>
@@ -190,6 +202,10 @@ Argument to repair:
     <p class="eyebrow">AI prompt</p>
     <h3 class="section-title">Near-Neighbor Comparator</h3>
     <p class="section-copy">This prompt is for cases where readers keep confusing similar fallacies. It forces the model to choose among close competitors and explain why the rejected labels do not fit, which is often the real learning bottleneck.</p>
+    <div class="note-panel prompt-requirement">
+      <p class="prompt-requirement-label">What else is needed</p>
+      <p class="muted">This prompt needs a pasted or attached argument to classify. It works best when the passage is short enough to compare carefully against several close rival fallacies.</p>
+    </div>
     <div class="prompt-toolbar">
       <button class="button button-secondary prompt-copy-button" type="button" data-copy-button="prompt-near-neighbor-comparator">Copy prompt</button>
     </div>
@@ -232,6 +248,10 @@ Ad hominem, Poisoning the well, Straw man argument, Red herring, False dilemma, 
     <p class="eyebrow">AI prompt</p>
     <h3 class="section-title">Steelman Then Diagnose</h3>
     <p class="section-copy">This prompt trains the habit of fairness before critique. It first asks the model to reconstruct the strongest reasonable version of an argument, and only then identify any remaining fallacies or weaknesses.</p>
+    <div class="note-panel prompt-requirement">
+      <p class="prompt-requirement-label">What else is needed</p>
+      <p class="muted">This prompt needs a pasted or attached argument or excerpt. Give enough surrounding context for the model to reconstruct the strongest fair version before it starts diagnosing flaws.</p>
+    </div>
     <div class="prompt-toolbar">
       <button class="button button-secondary prompt-copy-button" type="button" data-copy-button="prompt-steelman-then-diagnose">Copy prompt</button>
     </div>
@@ -274,6 +294,10 @@ Argument to analyze:
     <p class="eyebrow">AI prompt</p>
     <h3 class="section-title">Argument Map Builder</h3>
     <p class="section-copy">This prompt is meant to slow an argument down into premises, hidden assumptions, and conclusion, then identify the exact step where the reasoning stops earning its result. It works especially well for formal, causal, and evidential mistakes.</p>
+    <div class="note-panel prompt-requirement">
+      <p class="prompt-requirement-label">What else is needed</p>
+      <p class="muted">This prompt needs a pasted or attached passage to map. It works best when the passage contains a fairly clear conclusion and at least one inferential step that can be broken into premises and assumptions.</p>
+    </div>
     <div class="prompt-toolbar">
       <button class="button button-secondary prompt-copy-button" type="button" data-copy-button="prompt-argument-map-builder">Copy prompt</button>
     </div>
