@@ -395,6 +395,14 @@ const theoryArticleDefinitions = [
     intro:
       "This article explains why some of the clearest rebuttals do not start by naming the fallacy. Instead, they expose the shape of the mistake with a parallel analogy that makes the misstep obvious before any label is introduced.",
   },
+  {
+    slug: "teaching-logical-fallacies-a-classroom-process-and-curriculum",
+    title: "Teaching Logical Fallacies: A Classroom Process and Curriculum",
+    description:
+      "A practical teaching process and adaptable curriculum for using logical fallacies in a critical thinking class without collapsing the subject into jargon drills or point-scoring.",
+    intro:
+      "This article gives teachers a repeatable classroom process, a unit sequence, and a wider curriculum frame for teaching logical fallacies as part of a serious critical thinking course.",
+  },
 ];
 
 const analogyResponseOverrides = {
@@ -3300,7 +3308,7 @@ function buildTheoryIndexPage() {
       <div class="section-header">
         <div>
           <h3 class="section-title">Current articles</h3>
-          <p class="section-copy">Start here for the theory behind the new analogy-based rebuttal sections.</p>
+          <p class="section-copy">Use these articles for the theory behind analogy-based rebuttals, classroom process, and fallacy-centered critical thinking instruction.</p>
         </div>
       </div>
       <div class="category-grid theory-article-grid">
@@ -3359,8 +3367,8 @@ function buildTheoryIndexPage() {
   });
 }
 
-function buildTheoryArticlePage(article) {
-  const content = `
+function buildRebuttalsTheoryArticleContent(article) {
+  return `
     <div class="breadcrumbs">
       <a href="../../">Home</a><span>/</span><a href="../">Theory</a><span>/</span><strong>${escapeHtml(article.title)}</strong>
     </div>
@@ -3599,6 +3607,356 @@ function buildTheoryArticlePage(article) {
       </p>
     </section>
   `;
+}
+
+function buildTeachingCurriculumTheoryArticleContent(article) {
+  return `
+    <div class="breadcrumbs">
+      <a href="../../">Home</a><span>/</span><a href="../">Theory</a><span>/</span><strong>${escapeHtml(article.title)}</strong>
+    </div>
+
+    <section class="detail-section">
+      <p class="eyebrow">Theory article</p>
+      <h2 class="detail-title">${escapeHtml(article.title)}</h2>
+      <p class="detail-deck">
+        Logical fallacies are best taught as one strand within a broader critical thinking course, not as a bag of labels for humiliating opponents.
+        This article offers a classroom process, a general curriculum, and a set of teaching habits that help students move from naming fallacies
+        to actually reasoning better.
+      </p>
+      <div class="two-column compact-columns section-block">
+        <div class="note-panel">
+          <h4>What this article is for</h4>
+          <p class="muted">
+            The aim is to give instructors a practical way to teach fallacies so that students learn diagnosis, comparison, repair, and self-correction.
+            The recommendations work for high school, introductory college, and discussion-based adult education with only modest adjustment.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>What this article is guarding against</h4>
+          <p class="muted">
+            A fallacy unit goes wrong when it becomes a vocabulary drill, a debate-club scoring system, or a list of gotchas detached from evidence,
+            probability, and argument structure. The curriculum below is built to prevent that narrowing.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">Core teaching goals</h3>
+          <p class="section-copy">A strong unit trains more than recognition.</p>
+        </div>
+      </div>
+      <div class="two-column compact-columns">
+        <div class="note-panel">
+          <h4>1. Recognition</h4>
+          <p class="muted">
+            Students should be able to identify a fallacy in live prose and explain exactly where the reasoning misstep occurs rather than merely naming it.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>2. Comparison</h4>
+          <p class="muted">
+            Students should learn to separate near neighbors such as <code>Straw man</code>, <code>Red herring</code>, and <code>Ad hominem</code>, or <code>False analogy</code>, <code>False equivalence</code>, and <code>Faulty generalization</code>.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>3. Repair</h4>
+          <p class="muted">
+            Students should be able to rewrite a weak argument into a stronger one by narrowing the claim, adding needed evidence, or removing the defective inference.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>4. Self-audit</h4>
+          <p class="muted">
+            The deepest goal is inward-facing: students should begin noticing which fallacies they themselves are most tempted to commit under pressure, speed, identity, or emotion.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">The general process</h3>
+          <p class="section-copy">A repeatable classroom routine matters more than any one list of examples.</p>
+        </div>
+      </div>
+      <div class="detail-section theory-callout">
+        <p class="theory-formula">
+          <strong>Best general sequence:</strong> define → exemplify → compare → repair → self-apply.
+        </p>
+      </div>
+      <div class="two-column compact-columns">
+        <div class="note-panel">
+          <h4>Define</h4>
+          <p class="muted">
+            Begin with a short definition in plain language and one central question the fallacy raises. Students need an entry point that is conceptually clean before they are buried in examples.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Exemplify</h4>
+          <p class="muted">
+            Use one vivid example and one case study from public rhetoric or ordinary life. The example should be short enough to inspect closely and concrete enough to remember.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Compare</h4>
+          <p class="muted">
+            Do not teach fallacies as isolated cards. Put each one beside the two or three entries students are most likely to confuse it with and ask what the exact split is.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Repair</h4>
+          <p class="muted">
+            Ask students to rewrite the claim so it says only what the evidence or reasoning has earned. This prevents the subject from becoming merely punitive.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Self-apply</h4>
+          <p class="muted">
+            End each lesson by asking where students themselves might commit the fallacy in conversation, writing, or news consumption. This is where the subject begins to change habits rather than just terminology.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Revisit</h4>
+          <p class="muted">
+            Fallacies should reappear across the course rather than vanish after one week. The same mistake looks different in ethics, politics, science, personal conflict, and media analysis.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">A general 8-part curriculum</h3>
+          <p class="section-copy">This sequence works well as a unit or as one strand inside a longer critical thinking course.</p>
+        </div>
+      </div>
+      <div class="category-grid theory-family-grid">
+        <article class="note-panel theory-family-card">
+          <h4>1. Orientation</h4>
+          <p class="muted">
+            Teach what fallacies are and are not. Emphasize that a fallacy is a reasoning mistake, not a moral stain, and that a bad argument can still defend a true conclusion.
+          </p>
+        </article>
+        <article class="note-panel theory-family-card">
+          <h4>2. Argument basics</h4>
+          <p class="muted">
+            Cover claims, premises, conclusions, hidden assumptions, deductive versus inductive support, and the difference between evidence and rhetoric. Students need this structure before labels become useful.
+          </p>
+        </article>
+        <article class="note-panel theory-family-card">
+          <h4>3. Foundational public-rhetoric fallacies</h4>
+          <p class="muted">
+            Start with a manageable cluster such as <code>Ad hominem</code>, <code>Straw man</code>, <code>False dilemma</code>, <code>Cherry picking</code>, <code>Red herring</code>, and <code>Tu quoque</code>. These are common, concrete, and easy to revisit.
+          </p>
+        </article>
+        <article class="note-panel theory-family-card">
+          <h4>4. Evidence and sampling</h4>
+          <p class="muted">
+            Move into <code>Anecdotal fallacy</code>, <code>Base rate fallacy</code>, <code>Hasty generalization</code>, <code>Survivorship bias</code>, and <code>Spotlight fallacy</code>. Pair these with basic discussion of probability, representativeness, and missing evidence.
+          </p>
+        </article>
+        <article class="note-panel theory-family-card">
+          <h4>5. Causal reasoning</h4>
+          <p class="muted">
+            Teach <code>Correlation is not causation</code>, <code>Post hoc ergo propter hoc</code>, <code>Wrong causal direction</code>, <code>Single cause fallacy</code>, and <code>Regression fallacy</code>. These become much clearer when students explicitly map possible alternative explanations.
+          </p>
+        </article>
+        <article class="note-panel theory-family-card">
+          <h4>6. Language and framing</h4>
+          <p class="muted">
+            Introduce <code>Equivocation</code>, <code>Contextomy</code>, <code>Thought-terminating cliché</code>, <code>Definist fallacy</code>, and <code>Semantic pixelization</code>. Here students learn how wording itself can carry argumentative distortion.
+          </p>
+        </article>
+        <article class="note-panel theory-family-card">
+          <h4>7. Formal and structural errors</h4>
+          <p class="muted">
+            Once students are comfortable with premises and conclusions, add <code>Affirming the consequent</code>, <code>Denying the antecedent</code>, <code>Undistributed middle</code>, and related structural mistakes. These work best with short argument maps rather than long prose.
+          </p>
+        </article>
+        <article class="note-panel theory-family-card">
+          <h4>8. Integrated application</h4>
+          <p class="muted">
+            End with real articles, speeches, debates, or student essays. Ask for diagnosis, comparison, repair, and caveat awareness rather than only label matching.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">A practical weekly rhythm</h3>
+          <p class="section-copy">A simple class structure often works better than elaborate activities.</p>
+        </div>
+      </div>
+      <div class="two-column compact-columns">
+        <div class="note-panel">
+          <h4>Opening warm-up</h4>
+          <p class="muted">
+            Begin with one short claim on the board. Ask students to identify the pressure point in the reasoning before any fallacy names are mentioned.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Mini-lesson</h4>
+          <p class="muted">
+            Teach one primary fallacy and one or two near neighbors. Keep the explanation tight and return quickly to examples.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Comparison drill</h4>
+          <p class="muted">
+            Give students 4 to 6 short passages and ask not only which label fits, but why nearby labels fail. This is usually the real bottleneck in mastery.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Repair exercise</h4>
+          <p class="muted">
+            Require one rewritten claim or paragraph that removes the fallacy while preserving as much of the original point as possible.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Reflection</h4>
+          <p class="muted">
+            End by asking where the fallacy appears in students' own thinking, media habits, or drafting patterns. This keeps the unit from becoming merely outward-facing.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Cumulative review</h4>
+          <p class="muted">
+            Recycle old fallacies continuously. By mid-course, each activity should mix old and new entries so students learn discrimination rather than memorized sequence.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">Where fallacies fit in the larger course</h3>
+          <p class="section-copy">Fallacies should sit inside a wider rational toolkit.</p>
+        </div>
+      </div>
+      <div class="two-column compact-columns">
+        <div class="note-panel">
+          <h4>Connect to cognitive bias</h4>
+          <p class="muted">
+            Students should see that not every reasoning failure is best described as a fallacy. Some mistakes are better understood as memory bias, salience bias, motivated reasoning, or identity-protective cognition.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Connect to probability and statistics</h4>
+          <p class="muted">
+            Many fallacies only become fully clear when students have some feel for base rates, samples, uncertainty, and causal alternatives. A fallacy curriculum should therefore touch probability and statistics, even at an introductory level.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Connect to deductive and inductive structure</h4>
+          <p class="muted">
+            Students should learn that some fallacies are structural, some evidential, some linguistic, and some rhetorical. That distinction helps them avoid treating every weak argument as the same kind of failure.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Connect to argument repair</h4>
+          <p class="muted">
+            In a mature critical thinking course, diagnosing a fallacy should usually be followed by the question: what would a stronger version of the claim need in order to work?
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">Assessment suggestions</h3>
+          <p class="section-copy">Test more than label recall.</p>
+        </div>
+      </div>
+      <div class="two-column compact-columns">
+        <div class="note-panel">
+          <h4>Identification quizzes</h4>
+          <p class="muted">
+            Use short mixed sets where the fallacy is not revealed by the page title or grouping. Students should have to diagnose from the claim itself.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Near-neighbor explanations</h4>
+          <p class="muted">
+            Ask why the best label fits better than two close alternatives. This catches shallow recognition very quickly.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Repair tasks</h4>
+          <p class="muted">
+            Grade whether students can produce a fairer, narrower, better-supported version of a flawed argument. This is often a better measure of real understanding than multiple choice alone.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Applied analysis</h4>
+          <p class="muted">
+            Use a short op-ed, advertisement, or debate clip and ask students to quote, classify, justify, and repair. This is the closest analogue to real-world use.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">Mistakes teachers should avoid</h3>
+          <p class="section-copy">A strong unit prevents common distortions in how fallacies are taught.</p>
+        </div>
+      </div>
+      <div class="two-column compact-columns">
+        <div class="note-panel">
+          <h4>Do not teach labels without cases</h4>
+          <p class="muted">
+            Students remember names poorly when names are taught without live examples, comparisons, and repair exercises.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Do not reward smugness</h4>
+          <p class="muted">
+            If students learn that the goal is to catch other people sounding foolish, the subject becomes rhetorically aggressive and intellectually shallow.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Do not flatten all weak reasoning into fallacy-talk</h4>
+          <p class="muted">
+            Some weak claims are merely underdeveloped, overstated, vague, or poorly evidenced without fitting a classic fallacy label cleanly.
+          </p>
+        </div>
+        <div class="note-panel">
+          <h4>Do not isolate the unit from the rest of critical thinking</h4>
+          <p class="muted">
+            The best teaching keeps fallacy study connected to evidence, probability, argument structure, bias, and intellectual humility.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="detail-section section-block">
+      <p class="eyebrow">Takeaway</p>
+      <h3 class="section-title">Teach fallacies as habits of diagnosis and repair, not as a museum of labels.</h3>
+      <p class="section-copy">
+        A good curriculum helps students see recurring reasoning patterns, compare near neighbors, repair weak claims, and turn the tool inward on their own thinking.
+        That is how fallacy study becomes part of a genuine critical thinking course rather than a clever side topic.
+      </p>
+    </section>
+  `;
+}
+
+function buildTheoryArticlePage(article) {
+  const content =
+    article.slug === "fallacy-rebuttals-without-fallacy-naming"
+      ? buildRebuttalsTheoryArticleContent(article)
+      : article.slug === "teaching-logical-fallacies-a-classroom-process-and-curriculum"
+        ? buildTeachingCurriculumTheoryArticleContent(article)
+        : buildRebuttalsTheoryArticleContent(article);
 
   return pageShell({
     title: `${article.title} | LogFall Theory`,
