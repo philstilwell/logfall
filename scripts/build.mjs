@@ -6812,6 +6812,7 @@ function buildDialogueAssessmentIndexPage() {
       </div>
       <div class="assessment-toolbar">
         <button class="button button-primary button-compact" type="button" data-dialogue-assessment-new>Load another set</button>
+        <a class="button button-secondary button-compact" href="../output/pdf/logfall-dialogue-assessment.pdf">Download 40-item PDF</a>
         <a class="button button-secondary button-compact" href="../fallacies/">Study the full reference</a>
       </div>
       <div class="assessment-items" data-dialogue-assessment-items></div>
