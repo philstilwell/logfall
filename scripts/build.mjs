@@ -609,6 +609,700 @@ const theorySourceCatalog = {
   },
 };
 
+const dialogueAssessmentChoices = [
+  { key: "left-formal", label: "Left Formal" },
+  { key: "left-informal", label: "Left Informal" },
+  { key: "none", label: "None" },
+  { key: "right-informal", label: "Right Informal" },
+  { key: "right-formal", label: "Right Formal" },
+];
+
+function buildDialogueAssessmentItem({
+  id,
+  answerKey,
+  fallacyName = "",
+  fallacySlug = "",
+  explanation,
+  turns,
+}) {
+  if (!Array.isArray(turns) || turns.length !== 6) {
+    throw new Error(`Dialogue assessment item "${id}" must contain exactly 6 turns.`);
+  }
+  return {
+    id,
+    answerKey,
+    fallacyName,
+    fallacySlug,
+    explanation,
+    turns: turns.map((text, index) => ({
+      side: index % 2 === 0 ? "left" : "right",
+      text,
+    })),
+  };
+}
+
+const dialogueAssessmentBank = [
+  buildDialogueAssessmentItem({
+    id: "lf-01",
+    answerKey: "left-formal",
+    fallacyName: "Affirming the consequent",
+    fallacySlug: "affirming-the-consequent",
+    explanation:
+      "The left speaker moves from 'if the dataset was manipulated, the detector would spike' and 'the detector spiked' to 'therefore the dataset was manipulated.' That treats one possible sign as if it established the only possible cause.",
+    turns: [
+      "If the dataset had been manipulated, the anomaly detector would have spiked.",
+      "Possibly, though a detector spike can come from other disruptions too.",
+      "It did spike last night.",
+      "That certainly means something unusual happened.",
+      "Then the dataset was manipulated.",
+      "That conclusion uses the warning sign as if it settled the cause.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "lf-02",
+    answerKey: "left-formal",
+    fallacyName: "Denying the antecedent",
+    fallacySlug: "denying-the-antecedent",
+    explanation:
+      "The left speaker assumes that because the grant was not renewed, the field season cannot occur. But the original conditional made renewal sufficient, not necessary.",
+    turns: [
+      "If the Arctic grant is renewed, the field season goes ahead.",
+      "Right, that would guarantee the trip.",
+      "The grant was not renewed.",
+      "So that route is closed.",
+      "Then the field season cannot go ahead.",
+      "That treats the grant as if it were the only possible condition for going.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "lf-03",
+    answerKey: "left-formal",
+    fallacyName: "Affirming a disjunct",
+    fallacySlug: "affirming-a-disjunct",
+    explanation:
+      "The left speaker treats an 'either-or' claim as exclusive without showing that it is exclusive. From 'either legal or procurement leaked it' and 'procurement had access,' the speaker jumps to 'so it was not legal.'",
+    turns: [
+      "Either the leak came from legal or from procurement.",
+      "Those are two live possibilities, yes.",
+      "Procurement definitely had access to the draft.",
+      "That keeps procurement in the running.",
+      "Then it wasn't legal.",
+      "Only if the original either-or excluded overlap, which you have not shown.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "lf-04",
+    answerKey: "left-formal",
+    fallacyName: "Undistributed middle",
+    fallacySlug: "undistributed-middle",
+    explanation:
+      "The left speaker notes that all tenure files are reviewed by the dean and that this fellowship file was reviewed by the dean, then concludes it is a tenure file. Sharing one middle feature does not justify identity of type.",
+    turns: [
+      "All tenure files are reviewed by the dean.",
+      "Naturally.",
+      "This fellowship dossier was reviewed by the dean yesterday.",
+      "Yes, it was.",
+      "Then it must be a tenure file.",
+      "Having the same reviewer does not make the two kinds of file identical.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "lf-05",
+    answerKey: "left-formal",
+    fallacyName: "Affirming the consequent",
+    fallacySlug: "affirming-the-consequent",
+    explanation:
+      "The left speaker infers the script reran from the fact that timestamps clustered, even though clustering could have other causes. The conditional sign is treated as if it proved the antecedent.",
+    turns: [
+      "If the archival script reran overnight, the timestamps would bunch together.",
+      "That would be one way to get clustering.",
+      "The timestamps are bunched together.",
+      "So the log definitely changed somehow.",
+      "Then the archival script reran overnight.",
+      "You are reading one possible effect as if it proved the specific cause.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "lf-06",
+    answerKey: "left-formal",
+    fallacyName: "Denying the antecedent",
+    fallacySlug: "denying-the-antecedent",
+    explanation:
+      "The left speaker reasons that because the contaminated-solvent condition is absent, contamination is impossible. But the argument only established one sufficient route to blistering, not the only route to contamination.",
+    turns: [
+      "If the solvent had been contaminated, the varnish would have blistered.",
+      "That would be a strong sign, yes.",
+      "The varnish never blistered.",
+      "So that sign is absent.",
+      "Then the solvent was not contaminated.",
+      "That conclusion assumes contamination could show up in no other way.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "lf-07",
+    answerKey: "left-formal",
+    fallacyName: "Masked man fallacy",
+    fallacySlug: "masked-man-fallacy",
+    explanation:
+      "The left speaker argues from a difference in known descriptions to a difference in identity. Knowing Professor Hale under one description does not settle whether Hale was the anonymous reviewer under another.",
+    turns: [
+      "The anonymous reviewer who attacked your method clearly misunderstood the archive.",
+      "Maybe, though we still do not know who that reviewer was.",
+      "You know Professor Hale, and Hale understands the archive extremely well.",
+      "I agree with that much.",
+      "So Hale could not have been the anonymous reviewer.",
+      "Your knowledge of Hale under one description does not settle identity under another description.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "lf-08",
+    answerKey: "left-formal",
+    fallacyName: "Undistributed middle",
+    fallacySlug: "undistributed-middle",
+    explanation:
+      "The left speaker infers that the conference series is indexed because it shares the property of having DOIs with indexed journals. The middle term is never distributed broadly enough to support that conclusion.",
+    turns: [
+      "All indexed journals assign DOIs to their articles.",
+      "Yes, that is common practice.",
+      "This conference series assigns DOIs to its papers.",
+      "It does.",
+      "Then the conference series is indexed.",
+      "Sharing that feature does not prove it belongs to the indexed class.",
+    ],
+  }),
+
+  buildDialogueAssessmentItem({
+    id: "li-01",
+    answerKey: "left-informal",
+    fallacyName: "Ad hominem",
+    fallacySlug: "ad-hominem",
+    explanation:
+      "The left speaker dismisses the security argument by attacking the critic's background rather than answering the merits of the warning. The target is the person, not the support for the claim.",
+    turns: [
+      "I do not see why we should take Mira's security warning seriously; she has never actually shipped a product.",
+      "Her work history might matter in some contexts, but what about the vulnerability she pointed out?",
+      "People who have never built anything always imagine disaster.",
+      "That still leaves the exploit path itself unanswered.",
+      "If she were a serious engineer, maybe I would listen.",
+      "That is moving the weight onto Mira rather than onto the evidence she gave.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "li-02",
+    answerKey: "left-informal",
+    fallacyName: "False dilemma",
+    fallacySlug: "false-dilemma",
+    explanation:
+      "The left speaker compresses the options into publish-now or admit the project has no value, ignoring other live options such as revision, delay, or narrower publication.",
+    turns: [
+      "Either we publish this semester or we admit the project was never worth doing.",
+      "Could we revise and send it out next term instead?",
+      "Delaying is just a slower way of conceding failure.",
+      "It could also mean the argument needs one more round of evidence.",
+      "No, the choice is really publish now or admit the whole effort collapsed.",
+      "That forces the situation into two boxes when more than two live options remain.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "li-03",
+    answerKey: "left-informal",
+    fallacyName: "Cherry picking",
+    fallacySlug: "cherry-picking",
+    explanation:
+      "The left speaker highlights the two favorable quarters and treats them as decisive while the larger trend is being left offstage. The argument gains strength only by selective inclusion.",
+    turns: [
+      "The initiative is clearly working; look at the jump in enrollment in March and April.",
+      "Why only those two months rather than the whole year?",
+      "Because those are the months after the rollout, and they show the effect cleanly.",
+      "They also sit inside a year that otherwise trends downward.",
+      "The important point is that the rollout produced two excellent quarters of evidence.",
+      "Not if the omitted quarters substantially change what the pattern means overall.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "li-04",
+    answerKey: "left-informal",
+    fallacyName: "Appeal to authority",
+    fallacySlug: "appeal-to-authority",
+    explanation:
+      "The left speaker leans on the prestige of Nobel laureates as if that settled a technical policy question. Relevant expertise may matter, but authority cannot replace the underlying evidence and reasoning.",
+    turns: [
+      "Three Nobel laureates signed the letter, so the proposed industrial policy must be sound.",
+      "Their support is interesting, but what do the actual forecasts and models show?",
+      "People at that level would not put their names on a weak policy.",
+      "Distinguished people can still overreach outside the exact point at issue.",
+      "I think their standing settles enough of the matter for practical purposes.",
+      "Their standing may count for something, but it does not do the policy analysis by itself.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "li-05",
+    answerKey: "left-informal",
+    fallacyName: "Red herring",
+    fallacySlug: "red-herring",
+    explanation:
+      "The left speaker is asked about the budget overrun and replies with staff dedication and mission language. Those points may be favorable, but they do not answer the original issue under dispute.",
+    turns: [
+      "Before we talk about the overrun, remember how dedicated the museum staff have been during the renovation.",
+      "I do appreciate their dedication, but the question was about the missing 1.2 million.",
+      "That kind of commitment is why the public trusts this institution.",
+      "Trust and dedication are still not an accounting explanation.",
+      "My point is that no one here has lacked seriousness or love for the mission.",
+      "That may be true, but it steers us away from the financial question rather than answering it.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "li-06",
+    answerKey: "left-informal",
+    fallacyName: "Hasty generalization",
+    fallacySlug: "hasty-generalization",
+    explanation:
+      "The left speaker generalizes from two observed cheating cases to the broad claim that remote exams are inherently dishonest. The sample is far too thin to support the conclusion's scope.",
+    turns: [
+      "Two students in my section cheated during remote exams, so remote testing is inherently dishonest.",
+      "That seems broader than the sample can support.",
+      "It shows what the format invites once students are out of sight.",
+      "It may show a real risk, but not what every remote exam amounts to.",
+      "After seeing those two cases, I do not see why anyone would trust the whole format.",
+      "Those cases may justify caution, but they do not by themselves license the general conclusion.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "li-07",
+    answerKey: "left-informal",
+    fallacyName: "False equivalence",
+    fallacySlug: "false-equivalence",
+    explanation:
+      "The left speaker collapses a major difference in seriousness by treating paragraph editing and dataset fabrication as basically the same because both alter text. The comparison flattens a crucial difference.",
+    turns: [
+      "Editing a paragraph after peer review and fabricating a dataset are basically the same sort of dishonesty; both involve changing the record.",
+      "Both involve change, but not remotely at the same level.",
+      "A manipulation is still a manipulation.",
+      "That description is too thin to carry the equivalence you are claiming.",
+      "Once you alter the text, the ethical line has already been crossed in the same way.",
+      "No, the similarity is too shallow to erase the much more important difference in kind and consequence.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "li-08",
+    answerKey: "left-informal",
+    fallacyName: "Appeal to motive",
+    fallacySlug: "appeal-to-motive",
+    explanation:
+      "The left speaker treats the union representative's motive as if it settled the safety report itself. Incentives may be worth noting, but they do not substitute for examining the underlying reasons and evidence.",
+    turns: [
+      "The union representative only called the report unsafe because she wanted leverage before bargaining.",
+      "That incentive might be worth keeping in mind, but what about the ventilation data she cited?",
+      "People do not raise these alarms unless there is something to gain from them.",
+      "Sometimes they do, but that still would not answer whether the data are sound.",
+      "I think the bargaining motive tells us enough about how seriously to take the report.",
+      "It tells you something about possible incentives, not whether the report's reasoning succeeds.",
+    ],
+  }),
+
+  buildDialogueAssessmentItem({
+    id: "nf-01",
+    answerKey: "none",
+    explanation:
+      "No fallacy is committed. The speakers treat the consultant's financial tie as a reason for stricter scrutiny, not as an automatic refutation of the claim itself.",
+    turns: [
+      "The consultant's undisclosed financial tie does not automatically refute the report, but it does mean we should verify the claims independently.",
+      "That seems fair; the conflict affects how much trust we extend before checking the evidence.",
+      "Exactly. I am not saying the report is false, only that the burden of independent confirmation is now higher.",
+      "Then the relevant question becomes whether the numbers still hold once we audit them ourselves.",
+      "Yes, and if they do hold, the report can still stand despite the conflict.",
+      "That distinguishes credibility caution from simply dismissing the argument because of the person.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "nf-02",
+    answerKey: "none",
+    explanation:
+      "No fallacy is committed. The speakers explicitly note that the institution faces a genuinely limited short-term choice under the deadline rather than pretending that all imaginable options have vanished forever.",
+    turns: [
+      "Given the legal deadline and the two proposals still on the table, the board probably has to choose between plan A and plan B tonight.",
+      "That sounds like a real short-term constraint, not a claim that those are the only options in principle.",
+      "Right. In theory there were more options months ago, but at this stage those have already dropped out procedurally.",
+      "Then the narrow choice is coming from the situation, not from argumentative compression.",
+      "Exactly. I would be making a stronger claim only if I said no other routes had ever been possible.",
+      "As stated, this sounds constrained rather than fallacious.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "nf-03",
+    answerKey: "none",
+    explanation:
+      "No fallacy is committed. The speakers use expert judgment as provisional support while still appealing to the underlying evidence and domain-specific relevance.",
+    turns: [
+      "The seismologists' recommendation carries weight here because the question is squarely within their expertise, though we should still look at the hazard model itself.",
+      "That seems more careful than treating their status alone as a final verdict.",
+      "Yes. Their expertise gives us a reason to start with their view, not a reason to stop examining the data.",
+      "So authority is functioning as a defeasible guide, not a substitute for evidence.",
+      "Exactly, and if the model turned out to be weak, their prestige would not rescue it.",
+      "That keeps the appeal to expertise within its proper lane.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "nf-04",
+    answerKey: "none",
+    explanation:
+      "No fallacy is committed. The analogy is offered as a limited comparison and the speaker explicitly marks the differences that might matter, which avoids the overreach of a false analogy.",
+    turns: [
+      "The pilot program is analogous to a clinical trial only in one limited respect: both test a narrower version before scaling up.",
+      "So you are not saying the policy process and medical science are identical.",
+      "Not at all. The analogy is just meant to justify staged rollout, not to transfer every feature from one domain to the other.",
+      "Then the conclusion is modest and tied to the relevant similarity.",
+      "Exactly. If someone tried to import efficacy standards or consent rules wholesale, the analogy would be doing too much.",
+      "As used here, it sounds disciplined rather than sloppy.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "nf-05",
+    answerKey: "none",
+    explanation:
+      "No fallacy is committed. The anecdote is presented as a reason to investigate, not as if it were conclusive evidence for a broad claim.",
+    turns: [
+      "My own case is not proof that the new billing policy is harmful, but it is a reason to look more carefully at whether others were affected in the same way.",
+      "That sounds like using the case as a lead rather than as a verdict.",
+      "Exactly. I am saying it raises a question, not that one story settles the issue.",
+      "Then the next step is to look for broader records and rates.",
+      "Yes, because the anecdote can motivate inquiry even when it cannot carry the final conclusion.",
+      "That keeps the example from pretending to be more than it is.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "nf-06",
+    answerKey: "none",
+    explanation:
+      "No fallacy is committed. The speakers note the correlation but explicitly refuse to treat it as causal without stronger design and controls.",
+    turns: [
+      "The two variables move together, but I do not think that by itself justifies a causal claim.",
+      "So you are treating the pattern as a clue rather than as a settled explanation.",
+      "Exactly. We would still need timing, mechanism, and some way of addressing likely confounders.",
+      "Then the correlation is being handled cautiously rather than inflated into cause.",
+      "Right. It is enough to motivate a better study, not enough to close the case.",
+      "That sounds like good methodological restraint.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "nf-07",
+    answerKey: "none",
+    explanation:
+      "No fallacy is committed. The speaker treats the politician's incentive as a reason for closer checking, while explicitly refusing to let motive alone settle the substantive question.",
+    turns: [
+      "Her reelection incentive does not refute the budget claim, but it does mean I want to inspect the numbers more carefully than I otherwise might.",
+      "So motive matters here as a reason for caution, not as a replacement for analysis.",
+      "Exactly. If the figures survive scrutiny, the claim may still be sound regardless of the incentive behind it.",
+      "Then you are separating the reliability question from the truth question.",
+      "Yes. Incentives can justify vigilance without acting as magical disproof.",
+      "That distinction keeps the motive point from turning into a fallacy charge.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "nf-08",
+    answerKey: "none",
+    explanation:
+      "No fallacy is committed. The speakers insist on judging past actors in light of the information available to them at the time, which avoids rather than commits the Historian's Fallacy.",
+    turns: [
+      "People in 2007 did not have the same information we have now, so we should be careful about judging what they 'obviously' should have predicted.",
+      "That is different from excusing them entirely; it just asks us to use the information frame they actually had.",
+      "Right. Some warnings were available, but hindsight still makes the pattern look cleaner than it did at the time.",
+      "So the caution is about not smuggling our later knowledge back into their decision setting.",
+      "Exactly. The goal is historical fairness, not automatic absolution.",
+      "That sounds like a careful guard against distortion rather than a distortion itself.",
+    ],
+  }),
+
+  buildDialogueAssessmentItem({
+    id: "ri-01",
+    answerKey: "right-informal",
+    fallacyName: "Ad hominem",
+    fallacySlug: "ad-hominem",
+    explanation:
+      "The right speaker dismisses the labor-law argument by attacking the professor's career background instead of answering the legal reasoning offered.",
+    turns: [
+      "Professor Lin thinks the new contract language is vulnerable under labor law.",
+      "Lin has spent a career in seminar rooms, so I am not taking his contract reading seriously.",
+      "That says something about his biography, not yet about the interpretation.",
+      "People who have never managed a real payroll should not lecture firms on contract risk.",
+      "But the question was whether the clause survives judicial review.",
+      "And your reply keeps circling Lin rather than the clause.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "ri-02",
+    answerKey: "right-informal",
+    fallacyName: "False dilemma",
+    fallacySlug: "false-dilemma",
+    explanation:
+      "The right speaker compresses the issue into either accepting the surveillance proposal or choosing lawlessness. That excludes live middle positions such as partial adoption, narrower scope, or other safeguards.",
+    turns: [
+      "I am worried the surveillance proposal sweeps too broadly.",
+      "Then you must prefer leaving the city unprotected.",
+      "I might prefer a narrower policy, not no policy.",
+      "In practice it is really one or the other: comprehensive monitoring or chaos.",
+      "That seems to leave out several live intermediate designs.",
+      "Yes, the framing sounds tighter than the actual option space.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "ri-03",
+    answerKey: "right-informal",
+    fallacyName: "Cherry picking",
+    fallacySlug: "cherry-picking",
+    explanation:
+      "The right speaker relies on a small favorable slice of the evidence while ignoring the broader pattern that qualifies or weakens the conclusion.",
+    turns: [
+      "The policy's long-run performance still looks mixed to me.",
+      "Not if you look at the six counties that improved most after implementation.",
+      "Why those six rather than the full state?",
+      "Because they show what the policy can achieve when it is working properly.",
+      "But the statewide record includes many counties moving the other way.",
+      "Then the selected counties are carrying more argumentative weight than they can honestly bear.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "ri-04",
+    answerKey: "right-informal",
+    fallacyName: "Appeal to authority",
+    fallacySlug: "appeal-to-authority",
+    explanation:
+      "The right speaker treats the famous founder's endorsement as if it settled the technology claim. Prestige is doing evidential work the argument itself has not earned.",
+    turns: [
+      "I am still unsure that the architecture really solves the scaling problem.",
+      "The founder of the largest platform in the sector endorsed it, so that doubt is basically settled.",
+      "Her view may matter, but what about the benchmarks?",
+      "Someone at that level has already done the thinking for us.",
+      "That sounds stronger than the public evidence justifies.",
+      "Yes, the endorsement is being asked to substitute for the argument rather than support it modestly.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "ri-05",
+    answerKey: "right-informal",
+    fallacyName: "Red herring",
+    fallacySlug: "red-herring",
+    explanation:
+      "The right speaker responds to a question about procurement irregularities by shifting to the institution's public service record. That may be flattering, but it does not answer the issue raised.",
+    turns: [
+      "Did the procurement office waive the normal bid requirements on this contract?",
+      "Before we get lost in paperwork, remember how much this hospital has done for the region.",
+      "Its public service record is admirable, but the question was about the bidding procedure.",
+      "People here have saved thousands of lives over the past decade.",
+      "That does not tell us whether the bid was handled properly.",
+      "Right, the reply changes the subject rather than resolving it.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "ri-06",
+    answerKey: "right-informal",
+    fallacyName: "Hasty generalization",
+    fallacySlug: "hasty-generalization",
+    explanation:
+      "The right speaker extrapolates from one disastrous rollout to a broad claim about all municipal software vendors. The conclusion outruns the evidence base.",
+    turns: [
+      "One vendor botched the payroll rollout badly, but I am not sure that tells us about the whole industry.",
+      "After a disaster like that, it is obvious municipal software vendors are all unreliable.",
+      "That sounds broader than the case can support.",
+      "You only need one clear example to see the type.",
+      "Not if the claim is about the whole field rather than about one contractor.",
+      "Exactly; the sample is being stretched farther than it can hold.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "ri-07",
+    answerKey: "right-informal",
+    fallacyName: "False equivalence",
+    fallacySlug: "false-equivalence",
+    explanation:
+      "The right speaker equates two acts that share a superficial property but differ sharply in seriousness and evidential meaning. The comparison erases a relevant difference rather than confronting it.",
+    turns: [
+      "The dean altered the citation format after the final proof, which was sloppy but not the same as inventing sources.",
+      "Changing citations and inventing sources are basically equivalent because both modify the scholarly record.",
+      "Both modify the record, but that does not make them equivalent in kind.",
+      "Once the record is touched, the ethical distinction collapses.",
+      "That seems to flatten a major difference for the sake of a clean slogan.",
+      "Yes, the similarity is too shallow to support the equivalence.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "ri-08",
+    answerKey: "right-informal",
+    fallacyName: "Slippery slope",
+    fallacySlug: "slippery-slope",
+    explanation:
+      "The right speaker projects from a modest first move to an extreme later outcome without supplying the intervening steps or constraints. The slide is asserted rather than argued for.",
+    turns: [
+      "I am open to a limited pilot for AI-assisted grading so long as we keep humans in the loop.",
+      "The moment you allow that pilot, the next stop is fully automated grading and eventually automated admissions.",
+      "That is a long chain; what makes those later steps inevitable?",
+      "That is simply how these things always go once the first exception is made.",
+      "I still do not hear the mechanism that connects this pilot to the final outcome.",
+      "Then the warning is doing more predictive work than its support currently earns.",
+    ],
+  }),
+
+  buildDialogueAssessmentItem({
+    id: "rf-01",
+    answerKey: "right-formal",
+    fallacyName: "Affirming the consequent",
+    fallacySlug: "affirming-the-consequent",
+    explanation:
+      "The right speaker reasons from the presence of a sign back to one particular cause, even though the conditional only made that cause sufficient, not necessary.",
+    turns: [
+      "If the archive were forged, the ink test would fail.",
+      "The ink test failed, so the archive was forged.",
+      "Could the ink test fail for any reason other than forgery?",
+      "Perhaps, but the conditional already gives us the answer.",
+      "No, it gives one route to failure, not the only route.",
+      "Exactly; the sign is being treated as if it singled out a unique cause.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "rf-02",
+    answerKey: "right-formal",
+    fallacyName: "Denying the antecedent",
+    fallacySlug: "denying-the-antecedent",
+    explanation:
+      "The right speaker infers that layoffs cannot happen because the merger did not go through. But the original claim only said the merger would be enough to produce layoffs, not that layoffs required it.",
+    turns: [
+      "If the merger goes through, layoffs follow.",
+      "The merger did not go through, so layoffs are off the table.",
+      "That only rules out one route to layoffs.",
+      "It rules out the route we identified in advance.",
+      "Yes, but not every possible route.",
+      "So the conclusion is stronger than the conditional support allows.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "rf-03",
+    answerKey: "right-formal",
+    fallacyName: "Affirming a disjunct",
+    fallacySlug: "affirming-a-disjunct",
+    explanation:
+      "The right speaker treats a disjunction as exclusive without showing that exclusivity. From 'either server fault or user error' and 'user error occurred,' the speaker infers 'therefore not server fault.'",
+    turns: [
+      "Either the outage came from a server fault or from user error.",
+      "User error definitely occurred, so it was not a server fault.",
+      "That would follow only if the two possibilities could not both be present.",
+      "I took the either-or to settle that.",
+      "But you have not shown that it was exclusive rather than merely listing live candidates.",
+      "So the negative conclusion is arriving too quickly.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "rf-04",
+    answerKey: "right-formal",
+    fallacyName: "Undistributed middle",
+    fallacySlug: "undistributed-middle",
+    explanation:
+      "The right speaker infers that the charter is a constitutional amendment because both it and amendments require ratification. Sharing a middle property is not enough.",
+    turns: [
+      "All constitutional amendments require ratification.",
+      "This municipal charter requires ratification, so it is a constitutional amendment.",
+      "That only shows the charter shares one feature with amendments.",
+      "A defining feature, though.",
+      "Not necessarily a unique one.",
+      "Right, the common middle term was never broad enough to force the conclusion.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "rf-05",
+    answerKey: "right-formal",
+    fallacyName: "Masked man fallacy",
+    fallacySlug: "masked-man-fallacy",
+    explanation:
+      "The right speaker infers a difference in identity from a difference in how the person is known. Knowledge under one description does not settle identity under another.",
+    turns: [
+      "You know Dr. Singh, and Singh hates jargon in referee reports.",
+      "The anonymous reviewer used quite a lot of jargon, so the reviewer was not Singh.",
+      "That conclusion assumes that how you know Singh settles who the anonymous reviewer was.",
+      "If Singh hates jargon, surely that is enough.",
+      "It may bear on likelihood, but it does not settle identity.",
+      "So the inference from description to non-identity is too strong.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "rf-06",
+    answerKey: "right-formal",
+    fallacyName: "Affirming the consequent",
+    fallacySlug: "affirming-the-consequent",
+    explanation:
+      "The right speaker infers disease X from a biomarker that can appear in several conditions. The argument treats one indicative consequence as a unique identifier.",
+    turns: [
+      "If the patient had syndrome X, this biomarker profile would appear.",
+      "The biomarker profile appeared, so the patient had syndrome X.",
+      "Could the same profile appear under a different condition?",
+      "Possibly, but the profile still matches syndrome X.",
+      "Matching one condition does not prove no other condition could fit.",
+      "Exactly; the argument reads possibility as exclusivity.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "rf-07",
+    answerKey: "right-formal",
+    fallacyName: "Denying the antecedent",
+    fallacySlug: "denying-the-antecedent",
+    explanation:
+      "The right speaker treats the failure of one enabling condition as if it made the outcome impossible. The conditional did not support that stronger conclusion.",
+    turns: [
+      "If the donor signs today, the restoration fund will clear by June.",
+      "The donor did not sign today, so the fund cannot clear by June.",
+      "That shows one path is blocked, not every path.",
+      "It was the path we expected.",
+      "Expected is not the same as necessary.",
+      "So the impossibility claim goes beyond what the original premise licensed.",
+    ],
+  }),
+  buildDialogueAssessmentItem({
+    id: "rf-08",
+    answerKey: "right-formal",
+    fallacyName: "Exclusive premises",
+    fallacySlug: "exclusive-premises",
+    explanation:
+      "The right speaker tries to derive a positive conclusion from two negative premises. The structure does not support that affirmative result.",
+    turns: [
+      "No confidential documents are posted publicly.",
+      "And no public documents require a security clearance, so all confidential documents require a security clearance.",
+      "That conclusion feels imported rather than derived.",
+      "Why? The two premises draw the boundary pretty sharply.",
+      "They draw two negative boundaries, but they do not by themselves generate that affirmative conclusion.",
+      "So the structure is doing less work than the conclusion demands.",
+    ],
+  }),
+];
+
+function validateDialogueAssessmentBank(bank) {
+  if (!Array.isArray(bank) || bank.length !== 40) {
+    throw new Error(`Dialogue assessment bank must contain exactly 40 items; found ${bank?.length || 0}.`);
+  }
+  const choiceKeys = new Set(dialogueAssessmentChoices.map((choice) => choice.key));
+  const counts = new Map(dialogueAssessmentChoices.map((choice) => [choice.key, 0]));
+  const ids = new Set();
+
+  for (const item of bank) {
+    if (ids.has(item.id)) {
+      throw new Error(`Duplicate dialogue assessment item id "${item.id}".`);
+    }
+    ids.add(item.id);
+    if (!choiceKeys.has(item.answerKey)) {
+      throw new Error(`Dialogue assessment item "${item.id}" has invalid answer key "${item.answerKey}".`);
+    }
+    if (!Array.isArray(item.turns) || item.turns.length !== 6) {
+      throw new Error(`Dialogue assessment item "${item.id}" must contain exactly 6 turns.`);
+    }
+    counts.set(item.answerKey, (counts.get(item.answerKey) || 0) + 1);
+  }
+
+  for (const choice of dialogueAssessmentChoices) {
+    if ((counts.get(choice.key) || 0) !== 8) {
+      throw new Error(`Dialogue assessment bank must contain exactly 8 items for "${choice.key}"; found ${counts.get(choice.key) || 0}.`);
+    }
+  }
+}
+
+validateDialogueAssessmentBank(dialogueAssessmentBank);
+
 const analogyResponseOverrides = {
   "Absence of evidence fallacy":
     "That's like checking an empty shelf in one room and announcing the whole archive must still contain the missing file somewhere else. If the search conditions were good enough to leave traces, then repeated failure to find them does count against the claim.",
@@ -2079,6 +2773,7 @@ function pageShell({
     { href: `${prefix}fallacies/`, label: "All Fallacies", key: "fallacies" },
     { href: `${prefix}categories/`, label: "Categories", key: "categories" },
     { href: `${prefix}check-yourself/`, label: "Check Yourself", key: "check-yourself" },
+    { href: `${prefix}assessment/`, label: "Assessment", key: "assessment" },
     { href: `${prefix}prompts/`, label: "Fun AI Prompts", key: "prompts" },
     { href: `${prefix}theory/`, label: "Theory", key: "theory" },
     { href: `${prefix}about/`, label: "About", key: "about" },
@@ -2787,6 +3482,10 @@ function promptsSeoDescription() {
 
 function assessmentIndexSeoDescription(recordCount) {
   return `Take mixed 10-question logical fallacy assessments built from ${recordCount} fallacies, with clear example claims, answer feedback, and links back to the relevant LogFall entries.`;
+}
+
+function dialogueAssessmentIndexSeoDescription() {
+  return "Take a difficult 10-item dialogue assessment that distinguishes left vs right and formal vs informal fallacies, with balanced answer types and no-fallacy control cases.";
 }
 
 function seoFallacyName(record) {
@@ -6049,6 +6748,129 @@ function buildAssessmentIndexPage(records, categories) {
   });
 }
 
+function buildDialogueAssessmentIndexPage() {
+  const bankPayload = dialogueAssessmentBank.map((item) => ({
+    ...item,
+    fallacyUrl: item.fallacySlug ? `../fallacies/${item.fallacySlug}/` : "",
+  }));
+
+  const answerGuide = dialogueAssessmentChoices
+    .map((choice) => {
+      const [side, kind = ""] = choice.label.split(" ");
+      if (choice.key === "none") {
+        return `
+          <div class="dialogue-answer-chip">
+            <span class="dialogue-answer-chip-side">No speaker</span>
+            <span class="dialogue-answer-chip-kind">None</span>
+          </div>`;
+      }
+      return `
+        <div class="dialogue-answer-chip">
+          <span class="dialogue-answer-chip-side">${escapeHtml(side)}</span>
+          <span class="dialogue-answer-chip-kind">${escapeHtml(kind)}</span>
+        </div>`;
+    })
+    .join("");
+
+  const content = `
+    <div class="breadcrumbs">
+      <a href="../">Home</a><span>/</span><strong>Assessment</strong>
+    </div>
+
+    <section class="detail-section">
+      <p class="eyebrow">Assessment</p>
+      <h2 class="detail-title">A difficult 10-dialogue test of where the fallacy is, if it is there at all.</h2>
+      <p class="detail-deck">
+        Each set draws from a bank of 40 difficult six-turn dialogues. In every item, there is at most one fallacy or no fallacy at all.
+        Your task is to decide whether the mistake is on the left, on the right, or nowhere, and whether it is formal or informal.
+      </p>
+      <div class="two-column compact-columns">
+        <div class="note-panel">
+          <h4>Answer structure</h4>
+          <p class="muted">Every 10-item set is balanced by design: 2 Left Formal, 2 Left Informal, 2 None, 2 Right Informal, and 2 Right Formal.</p>
+          <div class="dialogue-answer-guide">
+            ${answerGuide}
+          </div>
+        </div>
+        <div class="note-panel">
+          <h4>How to read the dialogue</h4>
+          <p class="muted">Each speaker gets three turns. Read the whole exchange before deciding. Some items are traps for overdiagnosis, so <strong>None</strong> is a real answer and should be used when the reasoning holds up.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel search-panel assessment-runner-panel dialogue-assessment-panel" data-dialogue-assessment-shell data-assessment-size="10">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">Dialogue assessment runner</h3>
+          <p class="section-copy">These items are deliberately subtle. They test whether you can locate a fallacy precisely, classify its type, and resist inventing one when the exchange is actually sound.</p>
+        </div>
+      </div>
+      <div class="note-panel assessment-banner" data-dialogue-assessment-banner>
+        <h4>Loading your set</h4>
+        <p class="muted">The assessment is assembling a balanced group of 10 dialogue items now.</p>
+      </div>
+      <div class="assessment-toolbar">
+        <button class="button button-primary button-compact" type="button" data-dialogue-assessment-new>Load another set</button>
+        <a class="button button-secondary button-compact" href="../fallacies/">Study the full reference</a>
+      </div>
+      <div class="assessment-items" data-dialogue-assessment-items></div>
+      <div class="assessment-actions">
+        <button class="button button-primary" type="button" data-dialogue-assessment-grade>Grade this assessment</button>
+      </div>
+      <div class="detail-section assessment-results hidden" data-dialogue-assessment-results role="status" aria-live="polite"></div>
+      <script id="dialogue-assessment-bank" type="application/json">${safeJsonForScript(bankPayload)}</script>
+      <noscript>
+        <div class="note-panel search-empty">
+          <h4>JavaScript is required for this assessment</h4>
+          <p class="muted">This page builds a balanced dialogue set in the browser. If scripting is disabled, you can still study the full reference in <a class="text-link" href="../fallacies/">All Fallacies</a>.</p>
+        </div>
+      </noscript>
+    </section>
+  `;
+
+  return pageShell({
+    title: "Assessment: difficult dialogue-based logical fallacy test | LogFall",
+    description: dialogueAssessmentIndexSeoDescription(),
+    prefix: "../",
+    currentSection: "assessment",
+    canonicalPath: "assessment/",
+    keywords: [
+      "logical fallacy assessment",
+      "dialogue fallacy assessment",
+      "formal vs informal fallacy test",
+      "critical thinking assessment",
+      "difficult fallacy quiz",
+    ],
+    structuredData: [
+      breadcrumbSchema([
+        { name: "Home", path: "" },
+        { name: "Assessment", path: "assessment/" },
+      ]),
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: "Assessment",
+        url: absoluteUrl("assessment/"),
+        description: dialogueAssessmentIndexSeoDescription(),
+        publisher: publisherSchema(),
+        about: ["logical fallacies", "formal fallacies", "informal fallacies", "dialogue analysis"],
+      },
+      learningResourceSchema({
+        name: "Assessment",
+        path: "assessment/",
+        description: dialogueAssessmentIndexSeoDescription(),
+        about: ["logical fallacies", "formal fallacies", "informal fallacies", "dialogue analysis"],
+        teaches: ["fallacy identification", "speaker-side diagnosis", "formal vs informal classification"],
+        learningResourceType: ["Assessment", "Quiz", "Dialogue exercise"],
+        educationalUse: ["assessment", "teaching", "self-study"],
+        keywords: ["dialogue fallacy assessment", "formal and informal fallacy quiz", "critical thinking assessment"],
+      }),
+    ],
+    content,
+  });
+}
+
 function buildAssessmentPage(record, records) {
   const pedagogy = pedagogyForRecord(record);
   const content = `
@@ -6843,6 +7665,7 @@ async function main() {
   await writeText("index.html", buildHomePage(records, categories));
   await writeText("about/index.html", buildAboutPage());
   await writeText("check-yourself/index.html", buildAssessmentIndexPage(records, categories));
+  await writeText("assessment/index.html", buildDialogueAssessmentIndexPage());
   await writeText("prompts/index.html", buildPromptsPage());
   await writeText("theory/index.html", buildTheoryIndexPage());
   await writeText("fallacies/index.html", buildAllFallaciesPage(records, categories));
@@ -6853,6 +7676,7 @@ async function main() {
     { path: "" },
     { path: "about/" },
     { path: "check-yourself/" },
+    { path: "assessment/" },
     { path: "prompts/" },
     { path: "theory/" },
     { path: "fallacies/" },

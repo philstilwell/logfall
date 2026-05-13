@@ -481,6 +481,238 @@ for (const shell of document.querySelectorAll("[data-assessment-shell]")) {
   loadAssessmentSet();
 }
 
+const dialogueAssessmentChoices = [
+  { key: "left-formal", label: "Left Formal", side: "Left", kind: "Formal" },
+  { key: "left-informal", label: "Left Informal", side: "Left", kind: "Informal" },
+  { key: "none", label: "None", side: "No speaker", kind: "None" },
+  { key: "right-informal", label: "Right Informal", side: "Right", kind: "Informal" },
+  { key: "right-formal", label: "Right Formal", side: "Right", kind: "Formal" },
+];
+
+const dialogueAssessmentChoiceByKey = new Map(dialogueAssessmentChoices.map((choice) => [choice.key, choice]));
+
+function formatDialogueDiagnosis(item) {
+  const choice = dialogueAssessmentChoiceByKey.get(item.answerKey);
+  if (!choice) return "Unknown diagnosis";
+  if (item.answerKey === "none") {
+    return "None — no fallacy is committed";
+  }
+  return `${choice.label} — ${item.fallacyName}`;
+}
+
+for (const shell of document.querySelectorAll("[data-dialogue-assessment-shell]")) {
+  const bankNode = shell.querySelector("#dialogue-assessment-bank");
+  const itemsNode = shell.querySelector("[data-dialogue-assessment-items]");
+  const bannerNode = shell.querySelector("[data-dialogue-assessment-banner]");
+  const gradeButton = shell.querySelector("[data-dialogue-assessment-grade]");
+  const newButton = shell.querySelector("[data-dialogue-assessment-new]");
+  const resultsNode = shell.querySelector("[data-dialogue-assessment-results]");
+  const size = Number(shell.dataset.assessmentSize || 10);
+
+  if (!bankNode || !itemsNode || !bannerNode || !gradeButton || !newButton || !resultsNode) {
+    continue;
+  }
+
+  let bank = [];
+  try {
+    bank = JSON.parse(bankNode.textContent || "[]");
+  } catch {
+    bank = [];
+  }
+
+  if (!Array.isArray(bank) || !bank.length) {
+    bannerNode.innerHTML = `
+      <h4>Assessment unavailable</h4>
+      <p class="muted">The dialogue bank could not be loaded for this page.</p>
+    `;
+    continue;
+  }
+
+  const answersPerType = Math.floor(size / dialogueAssessmentChoices.length);
+  const buckets = new Map(
+    dialogueAssessmentChoices.map((choice) => [
+      choice.key,
+      bank.filter((item) => item.answerKey === choice.key),
+    ]),
+  );
+
+  if ([...buckets.values()].some((bucket) => bucket.length < answersPerType)) {
+    bannerNode.innerHTML = `
+      <h4>Assessment unavailable</h4>
+      <p class="muted">The dialogue bank does not contain enough items in each answer class for a balanced set.</p>
+    `;
+    continue;
+  }
+
+  const url = new URL(window.location.href);
+  let currentSeed = url.searchParams.get("set") || makeAssessmentSeed();
+  let currentSet = [];
+
+  function syncAssessmentUrl() {
+    const nextUrl = new URL(window.location.href);
+    nextUrl.searchParams.set("set", currentSeed);
+    window.history.replaceState({}, "", nextUrl);
+  }
+
+  function buildDialogueAssessmentSet() {
+    const random = seededRandomFactory(currentSeed);
+    const selected = [];
+
+    for (const choice of dialogueAssessmentChoices) {
+      const bucket = shuffleWithSeed(buckets.get(choice.key) || [], random).slice(0, answersPerType);
+      selected.push(...bucket);
+    }
+
+    return shuffleWithSeed(selected, random).map((item, index) => ({
+      ...item,
+      questionNumber: index + 1,
+    }));
+  }
+
+  function renderBanner() {
+    bannerNode.innerHTML = `
+      <h4>Balanced set</h4>
+      <p class="muted">This assessment always includes 2 Left Formal, 2 Left Informal, 2 None, 2 Right Informal, and 2 Right Formal items. The order is shuffled so you cannot game the pattern.</p>
+    `;
+  }
+
+  function renderQuestions() {
+    itemsNode.innerHTML = currentSet
+      .map(
+        (item, index) => `
+          <article class="detail-section quiz-card assessment-question-card dialogue-question-card" data-dialogue-assessment-question="${index}">
+            <p class="eyebrow">Question ${item.questionNumber}</p>
+            <h3 class="assessment-question-title">Where is the fallacy, if anywhere?</h3>
+            <div class="quiz-example-shell dialogue-example-shell">
+              <p class="quiz-example-label">Six-turn dialogue</p>
+              <p class="quiz-example-text">Read the full exchange before answering.</p>
+              <p class="quiz-example-note">At most one speaker commits one fallacy. Some dialogues contain no fallacy at all.</p>
+            </div>
+            <div class="dialogue-transcript" role="group" aria-label="Dialogue for question ${item.questionNumber}">
+              ${item.turns
+                .map(
+                  (turn, turnIndex) => `
+                    <div class="dialogue-turn dialogue-turn-${turn.side}">
+                      <div class="dialogue-turn-label">${turn.side === "left" ? "Left" : "Right"} ${Math.floor(turnIndex / 2) + 1}</div>
+                      <div class="dialogue-turn-bubble">${escapeHtmlText(turn.text)}</div>
+                    </div>`,
+                )
+                .join("")}
+            </div>
+            <p class="dialogue-prompt">Choose the best diagnosis for this exchange.</p>
+            <div class="dialogue-options-row" role="radiogroup" aria-label="Answer choices for question ${item.questionNumber}">
+              ${dialogueAssessmentChoices
+                .map(
+                  (choice) => `
+                    <label class="dialogue-option">
+                      <input type="radio" name="dialogue-question-${index}" value="${escapeHtmlText(choice.key)}" />
+                      <span class="dialogue-option-side">${escapeHtmlText(choice.side)}</span>
+                      <span class="dialogue-option-kind">${escapeHtmlText(choice.kind)}</span>
+                    </label>`,
+                )
+                .join("")}
+            </div>
+            <div class="quiz-feedback hidden" data-dialogue-assessment-feedback role="status" aria-live="polite"></div>
+          </article>`,
+      )
+      .join("");
+  }
+
+  function renderResults(score, answeredCount) {
+    const total = currentSet.length;
+    const reviewLinks = currentSet
+      .map((item, index) => {
+        const diagnosis = formatDialogueDiagnosis(item);
+        if (item.fallacyUrl) {
+          return `
+            <li>
+              <a class="text-link" href="${item.fallacyUrl}">Question ${index + 1}: ${escapeHtmlText(diagnosis)}</a>
+            </li>`;
+        }
+        return `<li>Question ${index + 1}: ${escapeHtmlText(diagnosis)}</li>`;
+      })
+      .join("");
+
+    resultsNode.innerHTML = `
+      <p class="eyebrow">Assessment results</p>
+      <h3 class="assessment-score-title">Score: ${score}/${total}</h3>
+      <p class="muted">You answered ${answeredCount} of ${total} questions and identified ${score} correctly. Review the per-question feedback above, then open the accordion below to study the correct diagnoses from this exact set, including the no-fallacy controls.</p>
+      <details class="assessment-review-accordion">
+        <summary>Review the 10 correct diagnoses from this set</summary>
+        <ul class="assessment-review-links">
+          ${reviewLinks}
+        </ul>
+      </details>
+    `;
+    resultsNode.classList.remove("hidden");
+  }
+
+  function gradeAssessment() {
+    let score = 0;
+    let answeredCount = 0;
+    const cards = Array.from(itemsNode.querySelectorAll("[data-dialogue-assessment-question]"));
+
+    cards.forEach((card, index) => {
+      const item = currentSet[index];
+      const feedback = card.querySelector("[data-dialogue-assessment-feedback]");
+      const selected = card.querySelector('input[type="radio"]:checked');
+      const selectedValue = selected?.value || "";
+      const selectedChoice = dialogueAssessmentChoiceByKey.get(selectedValue);
+      const answerChoice = dialogueAssessmentChoiceByKey.get(item.answerKey);
+      const isCorrect = selectedValue === item.answerKey;
+
+      if (selectedValue) answeredCount += 1;
+      if (isCorrect) score += 1;
+      if (!feedback) return;
+
+      const answerLine =
+        item.answerKey === "none"
+          ? "The best answer is None: neither speaker commits a fallacy in this exchange."
+          : `The best answer is ${escapeHtmlText(answerChoice?.label || item.answerKey)}: ${escapeHtmlText(item.fallacyName)}.`;
+
+      feedback.innerHTML = `
+        <p><strong>${isCorrect ? "Correct." : "Not quite."}</strong> ${
+          isCorrect
+            ? item.answerKey === "none"
+              ? "You correctly left the fallacy alarm off."
+              : `You correctly located the fallacy on the ${escapeHtmlText(answerChoice?.side?.toLowerCase() || "")} and classified it as ${escapeHtmlText(answerChoice?.kind?.toLowerCase() || "")}.`
+            : selectedChoice
+              ? `You chose ${escapeHtmlText(selectedChoice.label)}. ${answerLine}`
+              : `No answer was selected. ${answerLine}`
+        }</p>
+        <p><strong>Why this is the best diagnosis:</strong> ${escapeHtmlText(item.explanation)}</p>
+        ${
+          item.fallacyUrl
+            ? `<p><a class="text-link" href="${item.fallacyUrl}">Review ${escapeHtmlText(item.fallacyName)}</a></p>`
+            : "<p><strong>No fallacy page is linked here because this dialogue is a control item with no fallacy.</strong></p>"
+        }
+      `;
+      feedback.classList.remove("hidden");
+    });
+
+    renderResults(score, answeredCount);
+    resultsNode.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function loadAssessmentSet() {
+    syncAssessmentUrl();
+    currentSet = buildDialogueAssessmentSet();
+    renderBanner();
+    renderQuestions();
+    resultsNode.classList.add("hidden");
+    resultsNode.innerHTML = "";
+  }
+
+  gradeButton.addEventListener("click", gradeAssessment);
+  newButton.addEventListener("click", () => {
+    currentSeed = makeAssessmentSeed();
+    loadAssessmentSet();
+    shell.scrollIntoView({ behavior: "smooth", block: "start" });
+  });
+
+  loadAssessmentSet();
+}
+
 for (const button of document.querySelectorAll("[data-copy-button]")) {
   button.addEventListener("click", async () => {
     const targetId = button.getAttribute("data-copy-button");
