@@ -516,7 +516,7 @@ for (const shell of document.querySelectorAll("[data-dialogue-assessment-shell]"
   const resultsNode = shell.querySelector("[data-dialogue-assessment-results]");
   const size = Number(shell.dataset.assessmentSize || 10);
 
-  if (!bankNode || !itemsNode || !bannerNode || !gradeButton || !newButton || !resultsNode) {
+  if (!bankNode || !itemsNode || !gradeButton || !newButton || !resultsNode) {
     continue;
   }
 
@@ -528,10 +528,12 @@ for (const shell of document.querySelectorAll("[data-dialogue-assessment-shell]"
   }
 
   if (!Array.isArray(bank) || !bank.length) {
-    bannerNode.innerHTML = `
-      <h4>Assessment unavailable</h4>
-      <p class="muted">The dialogue bank could not be loaded for this page.</p>
-    `;
+    if (bannerNode) {
+      bannerNode.innerHTML = `
+        <h4>Assessment unavailable</h4>
+        <p class="muted">The dialogue bank could not be loaded for this page.</p>
+      `;
+    }
     continue;
   }
 
@@ -544,10 +546,12 @@ for (const shell of document.querySelectorAll("[data-dialogue-assessment-shell]"
   );
 
   if ([...buckets.values()].some((bucket) => bucket.length < answersPerType)) {
-    bannerNode.innerHTML = `
-      <h4>Assessment unavailable</h4>
-      <p class="muted">The dialogue bank does not contain enough items in each answer class for a balanced set.</p>
-    `;
+    if (bannerNode) {
+      bannerNode.innerHTML = `
+        <h4>Assessment unavailable</h4>
+        <p class="muted">The dialogue bank does not contain enough items in each answer class for a balanced set.</p>
+      `;
+    }
     continue;
   }
 
@@ -577,6 +581,7 @@ for (const shell of document.querySelectorAll("[data-dialogue-assessment-shell]"
   }
 
   function renderBanner() {
+    if (!bannerNode) return;
     bannerNode.innerHTML = `
       <h4>Balanced set</h4>
       <p class="muted">This assessment always includes 2 Left Formal, 2 Left Informal, 2 None, 2 Right Informal, and 2 Right Formal items. The order is shuffled so you cannot game the pattern.</p>
