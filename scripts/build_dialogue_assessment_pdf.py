@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from __future__ import annotations
 
+from html import escape
 import json
 import math
 import re
@@ -207,18 +208,19 @@ def item_image_path(item: dict) -> Path:
     return ASSET_DIR / f"{item['id']}.png"
 
 
+def decisive_line(item: dict) -> str:
+    if item["answerKey"] == "none":
+        return ""
+    side = "left" if item["answerKey"].startswith("left") else "right"
+    matching = [turn["text"] for turn in item["turns"] if turn["side"] == side]
+    return matching[-1] if matching else ""
+
+
 def draw_test_item(pdf: canvas.Canvas, item: dict, item_number: int, x: float, y_top: float, styleset: dict[str, ParagraphStyle]) -> None:
     y = y_top
     y = draw_paragraph(pdf, f"Assessment Item {item_number} of 40", styleset["item_label"], x, y, COLUMN_WIDTH)
     y -= 2
-    y = draw_paragraph(
-        pdf,
-        "Choose one: Left Formal, Left Informal, No Fallacy, Right Informal, or Right Formal.",
-        styleset["item_title"],
-        x,
-        y,
-        COLUMN_WIDTH,
-    )
+    y = draw_paragraph(pdf, "Where is the fallacy, if anywhere?", styleset["item_title"], x, y, COLUMN_WIDTH)
     y -= 8
 
     img_path = item_image_path(item)
@@ -261,7 +263,27 @@ def draw_answer_item(pdf: canvas.Canvas, item: dict, item_number: int, x: float,
     draw_paragraph(pdf, answer_label, styleset["answer"], x + 10, y - 4, COLUMN_WIDTH - 20)
     y -= bar_h + 10
 
-    y = draw_paragraph(pdf, item["explanation"], styleset["body"], x, y, COLUMN_WIDTH)
+    line = decisive_line(item)
+    if line:
+        y = draw_paragraph(
+            pdf,
+            f"<b>Decisive line:</b> &ldquo;{escape(line)}&rdquo;",
+            styleset["small"],
+            x,
+            y,
+            COLUMN_WIDTH,
+        )
+        y -= 6
+
+    explanation_label = "Why no fallacy is present:" if item["answerKey"] == "none" else "Why this answer is correct:"
+    y = draw_paragraph(
+        pdf,
+        f"<b>{escape(explanation_label)}</b> {escape(item['explanation'])}",
+        styleset["body"],
+        x,
+        y,
+        COLUMN_WIDTH,
+    )
     y -= 8
     if item.get("fallacyUrl"):
         draw_paragraph(pdf, f"LogFall reference: {item['fallacyUrl']}", styleset["link"], x, y, COLUMN_WIDTH)

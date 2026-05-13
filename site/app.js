@@ -500,6 +500,13 @@ function formatDialogueDiagnosis(item) {
   return `${choice.label} — ${item.fallacyName}`;
 }
 
+function getDialogueDecisiveLine(item) {
+  if (item.answerKey === "none") return "";
+  const side = item.answerKey.startsWith("left") ? "left" : "right";
+  const matchingTurns = item.turns.filter((turn) => turn.side === side);
+  return matchingTurns[matchingTurns.length - 1]?.text || matchingTurns[0]?.text || "";
+}
+
 for (const shell of document.querySelectorAll("[data-dialogue-assessment-shell]")) {
   const bankNode = shell.querySelector("#dialogue-assessment-bank");
   const itemsNode = shell.querySelector("[data-dialogue-assessment-items]");
@@ -626,7 +633,6 @@ for (const shell of document.querySelectorAll("[data-dialogue-assessment-shell]"
                       .join("")}
                   </div>`
             }
-            <p class="dialogue-prompt">Choose one: Left Formal, Left Informal, No Fallacy, Right Informal, or Right Formal.</p>
             <div class="dialogue-options-row" role="radiogroup" aria-label="Answer choices for question ${item.questionNumber}">
               ${dialogueAssessmentChoices
                 .map(
@@ -718,6 +724,7 @@ for (const shell of document.querySelectorAll("[data-dialogue-assessment-shell]"
       const selectedValue = selected?.value || "";
       const selectedChoice = dialogueAssessmentChoiceByKey.get(selectedValue);
       const answerChoice = dialogueAssessmentChoiceByKey.get(item.answerKey);
+      const decisiveLine = getDialogueDecisiveLine(item);
       const isCorrect = selectedValue === item.answerKey;
       item._isCorrect = isCorrect;
 
@@ -732,6 +739,12 @@ for (const shell of document.querySelectorAll("[data-dialogue-assessment-shell]"
         item.answerKey === "none"
           ? "The best answer is None: neither speaker commits a fallacy in this exchange."
           : `The best answer is ${escapeHtmlText(answerChoice?.label || item.answerKey)}: ${escapeHtmlText(item.fallacyName)}.`;
+      const explanationLabel =
+        item.answerKey === "none" ? "Why no fallacy is present:" : "Why this answer is correct:";
+      const decisiveLineHtml =
+        decisiveLine && item.answerKey !== "none"
+          ? `<p><strong>Decisive line:</strong> "${escapeHtmlText(decisiveLine)}"</p>`
+          : "";
 
       feedback.innerHTML = `
         <p><strong>${isCorrect ? "Correct." : "Not quite."}</strong> ${
@@ -743,7 +756,8 @@ for (const shell of document.querySelectorAll("[data-dialogue-assessment-shell]"
               ? `You chose ${escapeHtmlText(selectedChoice.label)}. ${answerLine}`
               : `No answer was selected. ${answerLine}`
         }</p>
-        <p><strong>Why this is the best diagnosis:</strong> ${escapeHtmlText(item.explanation)}</p>
+        ${decisiveLineHtml}
+        <p><strong>${explanationLabel}</strong> ${escapeHtmlText(item.explanation)}</p>
         ${
           item.fallacyUrl
             ? `<p><a class="text-link" href="${item.fallacyUrl}">Review ${escapeHtmlText(item.fallacyName)}</a></p>`
