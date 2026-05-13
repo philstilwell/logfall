@@ -49,6 +49,9 @@ TEXT_FILL = (27, 27, 27, 255)
 BOX_FILL = (252, 252, 252, 255)
 BOX_OUTLINE = (84, 84, 84, 255)
 SHADOW_FILL = (0, 0, 0, 18)
+EDGE_MARGIN = 8
+MAX_SIDE_WIDTH = 280
+WHITE_THRESHOLD = 245
 
 
 def load_bank() -> list[dict]:
@@ -191,12 +194,71 @@ def slots_for_item(item: dict) -> list[BubbleSlot]:
     return ordered
 
 
+def _side_bbox(image: Image.Image, side: str) -> tuple[int, int, int, int]:
+    gray = image.convert("L")
+    w, h = gray.size
+    x_start, x_end = (0, w // 2) if side == "left" else (w // 2, w)
+    px = gray.load()
+    coords: list[tuple[int, int]] = []
+    for y in range(h):
+        for x in range(x_start, x_end):
+            if px[x, y] < WHITE_THRESHOLD:
+                coords.append((x, y))
+    if not coords:
+        raise RuntimeError(f"Could not locate {side} speaker in raw scene.")
+    xs = [x for x, _ in coords]
+    ys = [y for _, y in coords]
+    pad = 2
+    return (
+        max(0, min(xs) - pad),
+        max(0, min(ys) - pad),
+        min(w - 1, max(xs) + pad),
+        min(h - 1, max(ys) + pad),
+    )
+
+
+def _extract_rgba_crop(image: Image.Image, bbox: tuple[int, int, int, int]) -> Image.Image:
+    crop = image.crop((bbox[0], bbox[1], bbox[2] + 1, bbox[3] + 1)).convert("RGBA")
+    lum = crop.convert("L")
+    alpha = lum.point(lambda p: max(0, min(255, int((255 - p) * 1.4))))
+    crop.putalpha(alpha)
+    return crop
+
+
+def reposition_speakers(image: Image.Image) -> Image.Image:
+    base = Image.new("RGBA", image.size, (255, 255, 255, 255))
+    left_bbox = _side_bbox(image, "left")
+    right_bbox = _side_bbox(image, "right")
+
+    for side, bbox in (("left", left_bbox), ("right", right_bbox)):
+        crop = _extract_rgba_crop(image, bbox)
+        crop_w, crop_h = crop.size
+        scale = min(1.0, MAX_SIDE_WIDTH / crop_w)
+        if scale < 1.0:
+            new_size = (max(1, round(crop_w * scale)), max(1, round(crop_h * scale)))
+            crop = crop.resize(new_size, Image.Resampling.LANCZOS)
+            crop_w, crop_h = crop.size
+
+        if side == "left":
+            x = EDGE_MARGIN
+        else:
+            x = image.width - EDGE_MARGIN - crop_w
+
+        # Preserve the original ground line as closely as possible.
+        original_bottom = bbox[3]
+        y = max(0, original_bottom - crop_h + 1)
+        base.alpha_composite(crop, (x, y))
+
+    return base
+
+
 def render_item(item: dict, out_dir: Path, font_path: Path, scene_dir: Path) -> Path:
     scene_path = scene_dir / f"{item['id']}-scene.png"
     if not scene_path.exists():
         raise RuntimeError(f"Missing generated scene: {scene_path}")
 
     image = Image.open(scene_path).convert("RGBA")
+    image = reposition_speakers(image)
     for turn, slot in zip(item["turns"], slots_for_item(item)):
         draw_bubble(image, slot, turn["text"], font_path)
 
