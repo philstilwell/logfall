@@ -6780,7 +6780,7 @@ function buildDialogueAssessmentIndexPage() {
 
     <section class="detail-section">
       <p class="eyebrow">Assessment</p>
-      <h2 class="detail-title">A difficult 10-dialogue test of where the fallacy is, if it is there at all.</h2>
+      <h2 class="detail-title">A challenging 10-dialogue test of where the fallacy is, if it is there at all.</h2>
       <p class="detail-deck">
         Each set draws from a bank of 40 difficult six-turn dialogues. In every item, there is at most one fallacy or no fallacy at all.
         Your task is to decide whether the mistake is on the left, on the right, or nowhere, and whether it is formal or informal.
