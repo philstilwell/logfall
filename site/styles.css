@@ -1163,6 +1163,56 @@ img {
   margin-top: 20px;
 }
 
+.assessment-outcome-summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 18px;
+}
+
+.assessment-outcome-group {
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 14px 16px;
+  background: #fff;
+}
+
+.assessment-outcome-group h4 {
+  margin: 0 0 10px;
+}
+
+.assessment-outcome-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.assessment-outcome-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 46px;
+  padding: 8px 10px;
+  border-radius: 999px;
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.assessment-outcome-chip-correct {
+  background: #e9f7ef;
+  color: #166534;
+}
+
+.assessment-outcome-chip-incorrect {
+  background: #fcebea;
+  color: #b91c1c;
+}
+
+.assessment-outcome-empty {
+  color: var(--ink-soft);
+  font-weight: 700;
+}
+
 .assessment-score-title {
   margin: 8px 0 10px;
   font-size: clamp(1.45rem, 2.3vw, 1.9rem);
@@ -1394,6 +1444,16 @@ img {
 .dialogue-option-kind {
   color: var(--ink);
   font-weight: 800;
+}
+
+.assessment-question-correct {
+  border-color: #86d4a2;
+  box-shadow: 0 0 0 1px rgba(22, 101, 52, 0.08);
+}
+
+.assessment-question-incorrect {
+  border-color: #f0b6b3;
+  box-shadow: 0 0 0 1px rgba(185, 28, 28, 0.08);
 }
 
 .repair-checklist {
@@ -1681,6 +1741,10 @@ img {
   .dialogue-answer-guide,
   .dialogue-options-row {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .assessment-outcome-summary {
+    grid-template-columns: 1fr;
   }
 }
 

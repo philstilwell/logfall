@@ -655,7 +655,7 @@ const dialogueAssessmentBank = [
       "It did spike last night.",
       "That certainly means something unusual happened.",
       "Then the dataset was manipulated.",
-      "That conclusion uses the warning sign as if it settled the cause.",
+      "A spike narrows the field, but it does not name the culprit by itself.",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -671,7 +671,7 @@ const dialogueAssessmentBank = [
       "The grant was not renewed.",
       "So that route is closed.",
       "Then the field season cannot go ahead.",
-      "That treats the grant as if it were the only possible condition for going.",
+      "Losing that grant hurts, but why think every other route is closed too?",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -687,7 +687,7 @@ const dialogueAssessmentBank = [
       "Procurement definitely had access to the draft.",
       "That keeps procurement in the running.",
       "Then it wasn't legal.",
-      "Only if the original either-or excluded overlap, which you have not shown.",
+      "Why assume those two possibilities could not both be part of the story?",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -703,7 +703,7 @@ const dialogueAssessmentBank = [
       "This fellowship dossier was reviewed by the dean yesterday.",
       "Yes, it was.",
       "Then it must be a tenure file.",
-      "Having the same reviewer does not make the two kinds of file identical.",
+      "A dean reviews lots of things; why treat that as a unique fingerprint?",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -719,7 +719,7 @@ const dialogueAssessmentBank = [
       "The timestamps are bunched together.",
       "So the log definitely changed somehow.",
       "Then the archival script reran overnight.",
-      "You are reading one possible effect as if it proved the specific cause.",
+      "Clustered timestamps tell us something happened, but why leap straight to that script?",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -735,7 +735,7 @@ const dialogueAssessmentBank = [
       "The varnish never blistered.",
       "So that sign is absent.",
       "Then the solvent was not contaminated.",
-      "That conclusion assumes contamination could show up in no other way.",
+      "No blistering helps your case, but why treat one missing sign as the whole story?",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -751,7 +751,7 @@ const dialogueAssessmentBank = [
       "You know Professor Hale, and Hale understands the archive extremely well.",
       "I agree with that much.",
       "So Hale could not have been the anonymous reviewer.",
-      "Your knowledge of Hale under one description does not settle identity under another description.",
+      "Knowing Hale that way still does not tell us who was behind the anonymous review.",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -767,7 +767,7 @@ const dialogueAssessmentBank = [
       "This conference series assigns DOIs to its papers.",
       "It does.",
       "Then the conference series is indexed.",
-      "Sharing that feature does not prove it belongs to the indexed class.",
+      "Lots of publications assign DOIs; why think that settles the indexing question?",
     ],
   }),
 
@@ -784,7 +784,7 @@ const dialogueAssessmentBank = [
       "People who have never built anything always imagine disaster.",
       "That still leaves the exploit path itself unanswered.",
       "If she were a serious engineer, maybe I would listen.",
-      "That is moving the weight onto Mira rather than onto the evidence she gave.",
+      "You still have not told me what is wrong with her numbers.",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -800,7 +800,7 @@ const dialogueAssessmentBank = [
       "Delaying is just a slower way of conceding failure.",
       "It could also mean the argument needs one more round of evidence.",
       "No, the choice is really publish now or admit the whole effort collapsed.",
-      "That forces the situation into two boxes when more than two live options remain.",
+      "Why treat the choice as exhausted when other live options are still on the table?",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -816,7 +816,7 @@ const dialogueAssessmentBank = [
       "Because those are the months after the rollout, and they show the effect cleanly.",
       "They also sit inside a year that otherwise trends downward.",
       "The important point is that the rollout produced two excellent quarters of evidence.",
-      "Not if the omitted quarters substantially change what the pattern means overall.",
+      "Before we call it a recovery, should we not look at the quarters you left out?",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -832,7 +832,7 @@ const dialogueAssessmentBank = [
       "People at that level would not put their names on a weak policy.",
       "Distinguished people can still overreach outside the exact point at issue.",
       "I think their standing settles enough of the matter for practical purposes.",
-      "Their standing may count for something, but it does not do the policy analysis by itself.",
+      "Expertise matters, but where is the argument about this policy itself?",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -848,7 +848,7 @@ const dialogueAssessmentBank = [
       "That kind of commitment is why the public trusts this institution.",
       "Trust and dedication are still not an accounting explanation.",
       "My point is that no one here has lacked seriousness or love for the mission.",
-      "That may be true, but it steers us away from the financial question rather than answering it.",
+      "Maybe, but I am still waiting for an answer to the budget question.",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -864,7 +864,7 @@ const dialogueAssessmentBank = [
       "It shows what the format invites once students are out of sight.",
       "It may show a real risk, but not what every remote exam amounts to.",
       "After seeing those two cases, I do not see why anyone would trust the whole format.",
-      "Those cases may justify caution, but they do not by themselves license the general conclusion.",
+      "Two ugly cases are not yet the same thing as a broad pattern.",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -880,7 +880,7 @@ const dialogueAssessmentBank = [
       "A manipulation is still a manipulation.",
       "That description is too thin to carry the equivalence you are claiming.",
       "Once you alter the text, the ethical line has already been crossed in the same way.",
-      "No, the similarity is too shallow to erase the much more important difference in kind and consequence.",
+      "A hospital and a household budget may rhyme in one respect, but do they work the same way where it matters?",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -896,7 +896,7 @@ const dialogueAssessmentBank = [
       "People do not raise these alarms unless there is something to gain from them.",
       "Sometimes they do, but that still would not answer whether the data are sound.",
       "I think the bargaining motive tells us enough about how seriously to take the report.",
-      "It tells you something about possible incentives, not whether the report's reasoning succeeds.",
+      "Possible incentives are worth noting, but what do they show about the report's actual case?",
     ],
   }),
 
@@ -911,7 +911,7 @@ const dialogueAssessmentBank = [
       "Exactly. I am not saying the report is false, only that the burden of independent confirmation is now higher.",
       "Then the relevant question becomes whether the numbers still hold once we audit them ourselves.",
       "Yes, and if they do hold, the report can still stand despite the conflict.",
-      "That distinguishes credibility caution from simply dismissing the argument because of the person.",
+      "Then let us keep the concern tied to trust and evidence, not turn it into a personal dismissal.",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -925,7 +925,7 @@ const dialogueAssessmentBank = [
       "Right. In theory there were more options months ago, but at this stage those have already dropped out procedurally.",
       "Then the narrow choice is coming from the situation, not from argumentative compression.",
       "Exactly. I would be making a stronger claim only if I said no other routes had ever been possible.",
-      "As stated, this sounds constrained rather than fallacious.",
+      "Good; then the objection is about a real procedural limit, not about smuggling in a caricature.",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -939,7 +939,7 @@ const dialogueAssessmentBank = [
       "Yes. Their expertise gives us a reason to start with their view, not a reason to stop examining the data.",
       "So authority is functioning as a defeasible guide, not a substitute for evidence.",
       "Exactly, and if the model turned out to be weak, their prestige would not rescue it.",
-      "That keeps the appeal to expertise within its proper lane.",
+      "Then the expert is being used for what she actually knows, not as a magic stamp.",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -953,7 +953,7 @@ const dialogueAssessmentBank = [
       "Not at all. The analogy is just meant to justify staged rollout, not to transfer every feature from one domain to the other.",
       "Then the conclusion is modest and tied to the relevant similarity.",
       "Exactly. If someone tried to import efficacy standards or consent rules wholesale, the analogy would be doing too much.",
-      "As used here, it sounds disciplined rather than sloppy.",
+      "So the low base rate stays in view instead of disappearing behind one dramatic detail.",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -967,7 +967,7 @@ const dialogueAssessmentBank = [
       "Exactly. I am saying it raises a question, not that one story settles the issue.",
       "Then the next step is to look for broader records and rates.",
       "Yes, because the anecdote can motivate inquiry even when it cannot carry the final conclusion.",
-      "That keeps the example from pretending to be more than it is.",
+      "Fine, as long as the example stays an example and not a stand-in for the whole population.",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -981,7 +981,7 @@ const dialogueAssessmentBank = [
       "Exactly. We would still need timing, mechanism, and some way of addressing likely confounders.",
       "Then the correlation is being handled cautiously rather than inflated into cause.",
       "Right. It is enough to motivate a better study, not enough to close the case.",
-      "That sounds like good methodological restraint.",
+      "Then we are treating uncertainty as uncertainty, not pretending it settles more than it does.",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -995,7 +995,7 @@ const dialogueAssessmentBank = [
       "Exactly. If the figures survive scrutiny, the claim may still be sound regardless of the incentive behind it.",
       "Then you are separating the reliability question from the truth question.",
       "Yes. Incentives can justify vigilance without acting as magical disproof.",
-      "That distinction keeps the motive point from turning into a fallacy charge.",
+      "Good; then the motive point is just context unless it connects back to the reasoning itself.",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -1009,7 +1009,7 @@ const dialogueAssessmentBank = [
       "Right. Some warnings were available, but hindsight still makes the pattern look cleaner than it did at the time.",
       "So the caution is about not smuggling our later knowledge back into their decision setting.",
       "Exactly. The goal is historical fairness, not automatic absolution.",
-      "That sounds like a careful guard against distortion rather than a distortion itself.",
+      "Fair enough; then the quote is helping with context instead of twisting what was meant.",
     ],
   }),
 
@@ -1026,7 +1026,7 @@ const dialogueAssessmentBank = [
       "That says something about his biography, not yet about the interpretation.",
       "People who have never managed a real payroll should not lecture firms on contract risk.",
       "But the question was whether the clause survives judicial review.",
-      "And your reply keeps circling Lin rather than the clause.",
+      "Then let us go back to the clause itself and see whether it can carry the claim.",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -1042,7 +1042,7 @@ const dialogueAssessmentBank = [
       "I might prefer a narrower policy, not no policy.",
       "In practice it is really one or the other: comprehensive monitoring or chaos.",
       "That seems to leave out several live intermediate designs.",
-      "Yes, the framing sounds tighter than the actual option space.",
+      "So maybe the choice is not as boxed-in as you first made it sound.",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -1058,7 +1058,7 @@ const dialogueAssessmentBank = [
       "Why those six rather than the full state?",
       "Because they show what the policy can achieve when it is working properly.",
       "But the statewide record includes many counties moving the other way.",
-      "Then the selected counties are carrying more argumentative weight than they can honestly bear.",
+      "Then maybe we should ask whether the rest of the counties tell the same story.",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -1074,7 +1074,7 @@ const dialogueAssessmentBank = [
       "Her view may matter, but what about the benchmarks?",
       "Someone at that level has already done the thinking for us.",
       "That sounds stronger than the public evidence justifies.",
-      "Yes, the endorsement is being asked to substitute for the argument rather than support it modestly.",
+      "That endorsement may matter, but it still does not do the arguing for us.",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -1090,7 +1090,7 @@ const dialogueAssessmentBank = [
       "Its public service record is admirable, but the question was about the bidding procedure.",
       "People here have saved thousands of lives over the past decade.",
       "That does not tell us whether the bid was handled properly.",
-      "Right, the reply changes the subject rather than resolving it.",
+      "Then let us return to the safety question instead of wandering into the mayor's record.",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -1106,7 +1106,7 @@ const dialogueAssessmentBank = [
       "That sounds broader than the case can support.",
       "You only need one clear example to see the type.",
       "Not if the claim is about the whole field rather than about one contractor.",
-      "Exactly; the sample is being stretched farther than it can hold.",
+      "Then the next question is whether that small sample can really bear that much weight.",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -1122,7 +1122,7 @@ const dialogueAssessmentBank = [
       "Both modify the record, but that does not make them equivalent in kind.",
       "Once the record is touched, the ethical distinction collapses.",
       "That seems to flatten a major difference for the sake of a clean slogan.",
-      "Yes, the similarity is too shallow to support the equivalence.",
+      "Shared labels are easy; the harder question is whether the relevant structure matches too.",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -1138,7 +1138,7 @@ const dialogueAssessmentBank = [
       "That is a long chain; what makes those later steps inevitable?",
       "That is simply how these things always go once the first exception is made.",
       "I still do not hear the mechanism that connects this pilot to the final outcome.",
-      "Then the warning is doing more predictive work than its support currently earns.",
+      "Then show me why each step follows, not just why the ending sounds alarming.",
     ],
   }),
 
@@ -1155,7 +1155,7 @@ const dialogueAssessmentBank = [
       "Could the ink test fail for any reason other than forgery?",
       "Perhaps, but the conditional already gives us the answer.",
       "No, it gives one route to failure, not the only route.",
-      "Exactly; the sign is being treated as if it singled out a unique cause.",
+      "A failed ink test is suggestive, but why treat it as a signed confession?",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -1171,7 +1171,7 @@ const dialogueAssessmentBank = [
       "That only rules out one route to layoffs.",
       "It rules out the route we identified in advance.",
       "Yes, but not every possible route.",
-      "So the conclusion is stronger than the conditional support allows.",
+      "Blocking that path matters, but why think it was the only road to layoffs?",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -1187,7 +1187,7 @@ const dialogueAssessmentBank = [
       "That would follow only if the two possibilities could not both be present.",
       "I took the either-or to settle that.",
       "But you have not shown that it was exclusive rather than merely listing live candidates.",
-      "So the negative conclusion is arriving too quickly.",
+      "Why read 'either-or' as if the door had to close on the other side?",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -1203,7 +1203,7 @@ const dialogueAssessmentBank = [
       "That only shows the charter shares one feature with amendments.",
       "A defining feature, though.",
       "Not necessarily a unique one.",
-      "Right, the common middle term was never broad enough to force the conclusion.",
+      "Requiring ratification narrows it a bit, but why think that feature belongs only to amendments?",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -1219,7 +1219,7 @@ const dialogueAssessmentBank = [
       "That conclusion assumes that how you know Singh settles who the anonymous reviewer was.",
       "If Singh hates jargon, surely that is enough.",
       "It may bear on likelihood, but it does not settle identity.",
-      "So the inference from description to non-identity is too strong.",
+      "That tells us something about how you picture Singh, not necessarily about who wrote the report.",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -1235,7 +1235,7 @@ const dialogueAssessmentBank = [
       "Could the same profile appear under a different condition?",
       "Possibly, but the profile still matches syndrome X.",
       "Matching one condition does not prove no other condition could fit.",
-      "Exactly; the argument reads possibility as exclusivity.",
+      "Matching the profile matters, but does it point only to syndrome X?",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -1251,7 +1251,7 @@ const dialogueAssessmentBank = [
       "That shows one path is blocked, not every path.",
       "It was the path we expected.",
       "Expected is not the same as necessary.",
-      "So the impossibility claim goes beyond what the original premise licensed.",
+      "Missing today's signature matters, but why turn that into impossibility?",
     ],
   }),
   buildDialogueAssessmentItem({
@@ -1267,7 +1267,7 @@ const dialogueAssessmentBank = [
       "That conclusion feels imported rather than derived.",
       "Why? The two premises draw the boundary pretty sharply.",
       "They draw two negative boundaries, but they do not by themselves generate that affirmative conclusion.",
-      "So the structure is doing less work than the conclusion demands.",
+      "Those premises draw lines, yes, but where did the positive conclusion come from?",
     ],
   }),
 ];

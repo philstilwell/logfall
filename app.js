@@ -620,6 +620,12 @@ for (const shell of document.querySelectorAll("[data-dialogue-assessment-shell]"
 
   function renderResults(score, answeredCount) {
     const total = currentSet.length;
+    const correctItems = currentSet
+      .map((item, index) => ({ item, index }))
+      .filter(({ item }) => item._isCorrect);
+    const incorrectItems = currentSet
+      .map((item, index) => ({ item, index }))
+      .filter(({ item }) => !item._isCorrect);
     const reviewLinks = currentSet
       .map((item, index) => {
         const diagnosis = formatDialogueDiagnosis(item);
@@ -632,11 +638,37 @@ for (const shell of document.querySelectorAll("[data-dialogue-assessment-shell]"
         return `<li>Question ${index + 1}: ${escapeHtmlText(diagnosis)}</li>`;
       })
       .join("");
+    const correctSummary = correctItems.length
+      ? correctItems
+          .map(
+            ({ item, index }) =>
+              `<span class="assessment-outcome-chip assessment-outcome-chip-correct">Q${index + 1}</span>`,
+          )
+          .join("")
+      : `<span class="assessment-outcome-empty">None</span>`;
+    const incorrectSummary = incorrectItems.length
+      ? incorrectItems
+          .map(
+            ({ item, index }) =>
+              `<span class="assessment-outcome-chip assessment-outcome-chip-incorrect">Q${index + 1}</span>`,
+          )
+          .join("")
+      : `<span class="assessment-outcome-empty">None</span>`;
 
     resultsNode.innerHTML = `
       <p class="eyebrow">Assessment results</p>
       <h3 class="assessment-score-title">Score: ${score}/${total}</h3>
       <p class="muted">You answered ${answeredCount} of ${total} questions and identified ${score} correctly. Review the per-question feedback above, then open the accordion below to study the correct diagnoses from this exact set, including the no-fallacy controls.</p>
+      <div class="assessment-outcome-summary">
+        <div class="assessment-outcome-group">
+          <h4>Correct</h4>
+          <div class="assessment-outcome-row">${correctSummary}</div>
+        </div>
+        <div class="assessment-outcome-group">
+          <h4>Missed</h4>
+          <div class="assessment-outcome-row">${incorrectSummary}</div>
+        </div>
+      </div>
       <details class="assessment-review-accordion">
         <summary>Review the 10 correct diagnoses from this set</summary>
         <ul class="assessment-review-links">
@@ -660,10 +692,14 @@ for (const shell of document.querySelectorAll("[data-dialogue-assessment-shell]"
       const selectedChoice = dialogueAssessmentChoiceByKey.get(selectedValue);
       const answerChoice = dialogueAssessmentChoiceByKey.get(item.answerKey);
       const isCorrect = selectedValue === item.answerKey;
+      item._isCorrect = isCorrect;
 
       if (selectedValue) answeredCount += 1;
       if (isCorrect) score += 1;
       if (!feedback) return;
+
+      card.classList.remove("assessment-question-correct", "assessment-question-incorrect");
+      card.classList.add(isCorrect ? "assessment-question-correct" : "assessment-question-incorrect");
 
       const answerLine =
         item.answerKey === "none"
