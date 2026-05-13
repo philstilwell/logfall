@@ -17,7 +17,12 @@ const socialImagePath = "assets/logo.jpg";
 const socialImageType = "image/jpeg";
 const socialImageWidth = 124;
 const socialImageHeight = 124;
-const buildDate = new Date().toISOString().split("T")[0];
+const buildDate = new Intl.DateTimeFormat("en-CA", {
+  timeZone: "America/New_York",
+  year: "numeric",
+  month: "2-digit",
+  day: "2-digit",
+}).format(new Date());
 const copyrightNotice = "Copyright © Phil Stilwell";
 const cloudflareWebAnalyticsTag =
   `<!-- Cloudflare Web Analytics --><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "798a30777a6d424f9c4055a02e7bde91"}'></script><!-- End Cloudflare Web Analytics -->`;
@@ -411,7 +416,198 @@ const theoryArticleDefinitions = [
     intro:
       "This article shows how teachers can use collaborative AI-agent design to teach fallacy recognition, comparison, scoring, rebuttal, and repair without surrendering judgment to the model.",
   },
+  {
+    slug: "how-to-distinguish-fallacies-from-cognitive-biases",
+    title: "How to Distinguish Fallacies from Cognitive Biases",
+    description:
+      "A practical guide to telling the difference between bad arguments in public form and the background mental habits that often help produce them.",
+    intro:
+      "This article shows why fallacies and cognitive biases overlap, why they are not the same thing, and how to teach the difference without turning either topic into mush.",
+  },
+  {
+    slug: "when-not-to-call-something-a-fallacy",
+    title: "When Not to Call Something a Fallacy",
+    description:
+      "A restraint-focused guide to false positives, overlabeling, and the discipline of withholding a fallacy charge when the fit is weak.",
+    intro:
+      "This article argues that a good critical thinker needs a working brake pedal as well as an accelerator: sometimes the wisest move is not to reach for a fallacy label.",
+  },
+  {
+    slug: "near-neighbors-how-to-tell-similar-fallacies-apart",
+    title: "Near Neighbors: How to Tell Similar Fallacies Apart",
+    description:
+      "A comparison guide to the fallacies students and readers most often collapse together, with exact splits and memorable examples.",
+    intro:
+      "This article is built for the moment when a student says, 'Wait, how is that not just a red herring?' That moment is where real understanding begins.",
+  },
+  {
+    slug: "how-to-repair-a-fallacious-argument",
+    title: "How to Repair a Fallacious Argument",
+    description:
+      "A constructive guide to turning a bad argument into a better one by narrowing claims, adding evidence, clarifying terms, and fixing the inference.",
+    intro:
+      "This article treats fallacy diagnosis as the beginning of the job rather than the end. Spotting the damage matters, but rebuilding the argument matters more.",
+  },
+  {
+    slug: "formal-informal-causal-and-statistical-kinds-of-reasoning-failure",
+    title: "Formal, Informal, Causal, and Statistical Kinds of Reasoning Failure",
+    description:
+      "An accessible taxonomy of different kinds of reasoning breakdowns and why they should not all be taught or diagnosed in the same way.",
+    intro:
+      "This article explains why some errors are structural, some are evidential, some are causal, and some are statistical, and why lumping them all together makes students dumber than they need to be.",
+  },
+  {
+    slug: "why-true-conclusions-can-still-have-bad-arguments",
+    title: "Why True Conclusions Can Still Have Bad Arguments",
+    description:
+      "A foundational article on why argument quality and conclusion truth come apart, and why that distinction is central to serious critical thinking.",
+    intro:
+      "This article explains one of the first shocks of logic class: a claim can be right for embarrassingly bad reasons, and that still matters.",
+  },
+  {
+    slug: "how-probability-and-statistics-clarify-logical-fallacies",
+    title: "How Probability and Statistics Clarify Logical Fallacies",
+    description:
+      "A practical article on how base rates, sample size, uncertainty, regression, and causal design make many fallacies easier to diagnose.",
+    intro:
+      "This article shows that probability and statistics are not side dishes to fallacy study. In many cases, they are the flashlight.",
+  },
+  {
+    slug: "how-to-use-fallacy-language-without-becoming-insufferable",
+    title: "How to Use Fallacy Language Without Becoming Insufferable",
+    description:
+      "A guide to using fallacy vocabulary with humility, precision, charity, and enough restraint to remain useful in actual conversation.",
+    intro:
+      "This article is for anyone who wants to think clearly without becoming the conversational equivalent of a smoke alarm taped to a trumpet.",
+  },
+  {
+    slug: "argument-maps-for-common-fallacies",
+    title: "Argument Maps for Common Fallacies",
+    description:
+      "A guide to using argument maps to surface hidden premises, show exactly where support fails, and teach fallacies visually.",
+    intro:
+      "This article treats argument maps as x-rays for reasoning. They do not replace judgment, but they do make the fractures easier to see.",
+  },
+  {
+    slug: "teaching-fallacies-through-debate-editorials-and-news-analysis",
+    title: "Teaching Fallacies Through Debate, Editorials, and News Analysis",
+    description:
+      "A classroom article on how to teach fallacies through live rhetorical materials rather than canned examples alone.",
+    intro:
+      "This article focuses on the practical side of teaching: prompts, assignments, rubrics, and activity types built around real debates and public argument.",
+  },
+  {
+    slug: "the-role-of-analogy-in-rational-criticism",
+    title: "The Role of Analogy in Rational Criticism",
+    description:
+      "A wider theory article on why analogy is one of the most powerful tools in criticism, teaching, and argument repair when used carefully.",
+    intro:
+      "This article widens the lens from fallacy rebuttal alone and asks why analogy, at its best, is one of reason's favorite crowbars.",
+  },
+  {
+    slug: "fallacies-in-the-age-of-algorithmic-media",
+    title: "Fallacies in the Age of Algorithmic Media",
+    description:
+      "An article on how feeds, clipping, outrage incentives, virality, and attention economies change which fallacies thrive in public discourse.",
+    intro:
+      "This article explores what happens when bad arguments are no longer merely spoken or printed, but optimized for velocity, salience, and engagement.",
+  },
 ];
+
+const theorySourceCatalog = {
+  fallaciesSep: {
+    title: "Fallacies (Stanford Encyclopedia of Philosophy)",
+    url: "https://plato.stanford.edu/entries/fallacies/",
+  },
+  fallaciesIep: {
+    title: "Fallacies (Internet Encyclopedia of Philosophy)",
+    url: "https://iep.utm.edu/fallacy/",
+  },
+  criticalThinkingIep: {
+    title: "Critical Thinking (Internet Encyclopedia of Philosophy)",
+    url: "https://iep.utm.edu/critical-thinking/",
+  },
+  argumentSep: {
+    title: "Argument and Argumentation (Stanford Encyclopedia of Philosophy)",
+    url: "https://plato.stanford.edu/entries/argument/",
+  },
+  analogySep: {
+    title: "Analogy and Analogical Reasoning (Stanford Encyclopedia of Philosophy)",
+    url: "https://plato.stanford.edu/entries/reasoning-analogy/",
+  },
+  inductionSep: {
+    title: "The Problem of Induction (Stanford Encyclopedia of Philosophy)",
+    url: "https://plato.stanford.edu/entries/induction-problem/",
+  },
+  logicInductiveSep: {
+    title: "Inductive Logic (Stanford Encyclopedia of Philosophy)",
+    url: "https://plato.stanford.edu/entries/logic-inductive/",
+  },
+  statisticsSep: {
+    title: "Philosophy of Statistics (Stanford Encyclopedia of Philosophy)",
+    url: "https://plato.stanford.edu/entries/statistics/",
+  },
+  boundedRationalitySep: {
+    title: "Bounded Rationality (Stanford Encyclopedia of Philosophy)",
+    url: "https://plato.stanford.edu/entries/bounded-rationality/",
+  },
+  openstaxBiases: {
+    title: "Overcoming Cognitive Biases and Engaging in Critical Reflection (OpenStax)",
+    url: "https://openstax.org/books/introduction-philosophy/pages/2-2-overcoming-cognitive-biases-and-engaging-in-critical-reflection",
+  },
+  openstaxArguments: {
+    title: "Arguments (OpenStax Introduction to Philosophy)",
+    url: "https://openstax.org/books/introduction-philosophy/pages/5-3-arguments",
+  },
+  openstaxInferences: {
+    title: "Types of Inferences (OpenStax Introduction to Philosophy)",
+    url: "https://openstax.org/books/introduction-philosophy/pages/5-4-types-of-inferences",
+  },
+  openstaxFallacies: {
+    title: "Informal Fallacies (OpenStax Introduction to Philosophy)",
+    url: "https://openstax.org/books/introduction-philosophy/pages/5-5-informal-fallacies",
+  },
+  argumentMapsStudy: {
+    title: "Argument Maps Improve Critical Thinking (Twardy, Teaching Philosophy)",
+    url: "https://philpapers.org/archive/TWAAMI.pdf",
+  },
+  rationaleOnline: {
+    title: "Rationale: Teaching Critical Thinking with Argument Maps",
+    url: "https://www.rationaleonline.com/",
+  },
+  waltonCriticalQuestions: {
+    title: "Advances in the Theory of Argumentation Schemes and Critical Questions (Informal Logic)",
+    url: "https://informallogic.ca/index.php/informal_logic/article/view/485",
+  },
+  gemsTips: {
+    title: "Tips for Creating Custom Gems (Gemini Apps Help)",
+    url: "https://support.google.com/gemini/answer/15235603?hl=en",
+  },
+  gemsUse: {
+    title: "Use Gems in Gemini Apps (Gemini Apps Help)",
+    url: "https://support.google.com/gemini/answer/15146780",
+  },
+  pewSocialMediaUse: {
+    title: "Americans’ Social Media Use (Pew Research Center, 2024)",
+    url: "https://www.pewresearch.org/internet/2024/01/31/americans-social-media-use/",
+  },
+  pewNewsSocial: {
+    title: "Many Americans Find Value in Getting News on Social Media, but Concerns About Inaccuracy Have Risen (Pew Research Center, 2024)",
+    url: "https://www.pewresearch.org/short-reads/2024/02/07/many-americans-find-value-in-getting-news-on-social-media-but-concerns-about-inaccuracy-have-risen/",
+  },
+  pewTechCompanies: {
+    title: "How Americans View Big Tech in 2024 (Pew Research Center)",
+    url: "https://www.pewresearch.org/internet/2024/04/29/americans-views-of-technology-companies-2/",
+  },
+  explainableFallacyDetection: {
+    title: "Robust and Explainable Identification of Logical Fallacies in Natural Language Arguments (arXiv, 2022)",
+    url: "https://arxiv.org/abs/2212.07425",
+  },
+  logicalFallacyDetection: {
+    title: "Logical Fallacy Detection (Findings of ACL EMNLP 2022)",
+    url: "https://aclanthology.org/2022.findings-emnlp.532.pdf",
+  },
+};
 
 const analogyResponseOverrides = {
   "Absence of evidence fallacy":
@@ -3297,6 +3493,90 @@ function renderTheoryArticleCard(article, prefix) {
   </article>`;
 }
 
+function theoryInternalLink(pathname, label) {
+  return `<a class="inline-link" href="../../${pathname}">${escapeHtml(label)}</a>`;
+}
+
+function theoryExternalLink(url, label) {
+  return `<a class="inline-link" href="${escapeHtml(url)}">${escapeHtml(label)}</a>`;
+}
+
+function renderTheoryPanels(items, layoutClass = "two-column compact-columns") {
+  return `<div class="${layoutClass}">
+    ${items
+      .map(
+        (item) => `<article class="note-panel ${item.cardClass || ""}">
+          <h4>${escapeHtml(item.title)}</h4>
+          <p class="muted">${item.html}</p>
+          ${item.extraHtml || ""}
+        </article>`,
+      )
+      .join("")}
+  </div>`;
+}
+
+function renderTheorySection(section) {
+  const layoutClass =
+    section.layout === "grid"
+      ? "category-grid theory-family-grid"
+      : section.layout === "prompt-grid"
+        ? "prompt-grid two-column compact-columns"
+        : "two-column compact-columns";
+  return `<section class="section-block">
+    <div class="section-header">
+      <div>
+        <h3 class="section-title">${escapeHtml(section.title)}</h3>
+        <p class="section-copy">${escapeHtml(section.copy)}</p>
+      </div>
+    </div>
+    ${section.callout ? `<div class="detail-section theory-callout"><p class="theory-formula">${section.callout}</p></div>` : ""}
+    ${section.bodyHtml || renderTheoryPanels(section.items || [], layoutClass)}
+  </section>`;
+}
+
+function renderTheoryReferencesSection(references) {
+  return `<section class="section-block">
+    <div class="section-header">
+      <div>
+        <h3 class="section-title">References and further reading</h3>
+        <p class="section-copy">Sources that ground the article or push the discussion further.</p>
+      </div>
+    </div>
+    ${renderTheoryPanels(
+      references.map((reference) => ({
+        title: reference.title,
+        html: `${theoryExternalLink(reference.url, reference.linkLabel || reference.title)}${reference.note ? ` — ${reference.note}` : ""}`,
+      })),
+      "two-column compact-columns",
+    )}
+  </section>`;
+}
+
+function buildStructuredTheoryArticleContent(article, spec) {
+  return `
+    <div class="breadcrumbs">
+      <a href="../../">Home</a><span>/</span><a href="../">Theory</a><span>/</span><strong>${escapeHtml(article.title)}</strong>
+    </div>
+
+    <section class="detail-section">
+      <p class="eyebrow">Theory article</p>
+      <h2 class="detail-title">${escapeHtml(article.title)}</h2>
+      <p class="detail-deck">${spec.deck}</p>
+      ${spec.introPanels ? renderTheoryPanels(spec.introPanels, "two-column compact-columns section-block") : ""}
+    </section>
+
+    ${spec.sections.map((section) => renderTheorySection(section)).join("")}
+
+    <section class="detail-section section-block">
+      <p class="eyebrow">Takeaway</p>
+      <h3 class="section-title">${escapeHtml(spec.takeaway.title)}</h3>
+      <p class="section-copy">${spec.takeaway.html}</p>
+    </section>
+
+    ${renderTheoryReferencesSection(spec.references)}
+  `;
+}
+
 function buildTheoryIndexPage() {
   const content = `
     <div class="breadcrumbs">
@@ -3614,6 +3894,13 @@ function buildRebuttalsTheoryArticleContent(article) {
         remember it.
       </p>
     </section>
+
+    ${renderTheoryReferencesSection([
+      { ...theorySourceCatalog.analogySep, note: "The core philosophical reference on analogical reasoning and its evaluation." },
+      { ...theorySourceCatalog.argumentSep, note: "Useful on analogical argument as a general mode of support." },
+      { ...theorySourceCatalog.fallaciesSep, note: "Helpful on modern fallacy theory and the place of informal analysis." },
+      { ...theorySourceCatalog.waltonCriticalQuestions, note: "Useful for moving from label-first criticism to question-guided evaluation." },
+    ])}
   `;
 }
 
@@ -3955,6 +4242,13 @@ function buildTeachingCurriculumTheoryArticleContent(article) {
         That is how fallacy study becomes part of a genuine critical thinking course rather than a clever side topic.
       </p>
     </section>
+
+    ${renderTheoryReferencesSection([
+      { ...theorySourceCatalog.criticalThinkingIep, note: "Strong background on critical thinking as a broader rational practice." },
+      { ...theorySourceCatalog.openstaxArguments, note: "Useful on premises, conclusions, and argument structure in an introductory classroom." },
+      { ...theorySourceCatalog.openstaxFallacies, note: "Accessible treatment of informal fallacy types for classroom use." },
+      { ...theorySourceCatalog.argumentMapsStudy, note: "Helpful if the curriculum includes mapping and structural visualization." },
+    ])}
   `;
 }
 
@@ -4331,18 +4625,1243 @@ function buildAiGemsTheoryArticleContent(article) {
         the agent what to look for, how to quote, how to compare close labels, how to score responsibly, and how to answer a fallacy in plain language once it is found.
       </p>
     </section>
+
+    ${renderTheoryReferencesSection([
+      { ...theorySourceCatalog.gemsTips, note: "Google's own guidance on writing clearer, more detailed Gem instructions." },
+      { ...theorySourceCatalog.gemsUse, note: "Overview of how Gems operate as repeatable custom instruction agents." },
+      { ...theorySourceCatalog.logicalFallacyDetection, note: "Foundational NLP paper on logical fallacy detection as a model task." },
+      { ...theorySourceCatalog.explainableFallacyDetection, note: "Useful on explainable, staged fallacy identification in natural-language arguments." },
+    ])}
   `;
 }
 
+function buildBiasesVsFallaciesTheoryArticleContent(article) {
+  return buildStructuredTheoryArticleContent(article, {
+    deck:
+      "The cleanest first distinction is this: a fallacy is usually something you can point to in an argument on the page, while a cognitive bias is usually a tendency in the thinker behind it. They often travel together like bad roommates, but they are not the same thing, and teaching them as if they were the same thing quickly turns a critical thinking class into conceptual soup.",
+    introPanels: [
+      {
+        title: "Quick distinction",
+        html: "A fallacy is a defect in reasoning as presented. A bias is a recurring tendency in judgment, attention, memory, or evaluation that can make such defects more likely.",
+      },
+      {
+        title: "Why the confusion happens",
+        html: "Biases often help produce fallacies, and fallacies often reveal the fingerprints of bias. But one lives mainly in the structure of the argument, while the other lives mainly in the habits of the mind that produced or accepted it.",
+      },
+    ],
+    sections: [
+      {
+        title: "A fast rule of thumb",
+        copy: "Ask whether you are diagnosing the argument, the thinker, or both.",
+        items: [
+          {
+            title: "Fallacy",
+            html: "If you can quote the passage and say, 'Right there, that is where the conclusion outruns the support,' you are usually dealing with a fallacy.",
+          },
+          {
+            title: "Bias",
+            html: "If you are explaining why a person was tempted to notice some evidence, ignore other evidence, or cling to a preferred story, you are usually talking about bias.",
+          },
+          {
+            title: "Both at once",
+            html: `A writer may show confirmation bias and commit ${theoryInternalLink("fallacies/cherry-picking/", "Cherry picking")} in the same paragraph. The bias helps explain the selection; the fallacy describes the argumentative result.`,
+          },
+          {
+            title: "Neither term solves everything",
+            html: "Some bad reasoning is just careless, vague, poorly sourced, or underdeveloped. Not every weak sentence deserves an honorary medical degree in either fallacies or biases.",
+          },
+        ],
+      },
+      {
+        title: "Worked contrasts",
+        copy: "The best way to see the difference is to compare close-looking cases.",
+        layout: "grid",
+        items: [
+          {
+            title: "Confirmation bias vs. Cherry picking",
+            html: `Confirmation bias is the tendency to notice and privilege evidence that supports a preferred view. ${theoryInternalLink("fallacies/cherry-picking/", "Cherry picking")} is the public argumentative move where only the friendly evidence is shown, as if the missing evidence had politely excused itself from the room.`,
+          },
+          {
+            title: "Availability bias vs. Anecdotal fallacy",
+            html: `Availability bias makes vivid cases feel more representative than they are. ${theoryInternalLink("fallacies/anecdotal-fallacy/", "Anecdotal fallacy")} happens when that vivid case is then used as if it carried the evidential weight of a broader sample.`,
+          },
+          {
+            title: "Status quo bias vs. Appeal to tradition",
+            html: `Status quo bias is a preference for keeping things as they are because change feels risky or costly. ${theoryInternalLink("fallacies/appeal-to-tradition/", "Appeal to tradition")} is the argument that oldness or inherited practice itself counts as support.`,
+          },
+          {
+            title: "Motivated reasoning vs. No True Scotsman",
+            html: `Motivated reasoning is the broader habit of protecting a valued identity or conclusion. ${theoryInternalLink("fallacies/no-true-scotsman/", "No True Scotsman")} is one tidy argumentative way of doing that: redefine the category after the counterexample arrives so the preferred claim survives untouched.`,
+          },
+        ],
+      },
+      {
+        title: "How to teach the distinction",
+        copy: "Students usually learn this faster when they are forced to speak in two voices.",
+        items: [
+          {
+            title: "Voice one: argument diagnosis",
+            html: "Have students point to the exact sentence where the reasoning fails and explain the failure without mentioning psychology at all.",
+          },
+          {
+            title: "Voice two: bias hypothesis",
+            html: "Then ask what background tendency might have made the mistake tempting: salience, identity-protection, status-quo comfort, overconfidence, or something else.",
+          },
+          {
+            title: "Keep the burden of proof separate",
+            html: "The fallacy claim should be judged by the text. The bias claim should be treated more cautiously, since students rarely have full access to the writer's inner machinery.",
+          },
+          {
+            title: "End with self-application",
+            html: "The class becomes much less smug and much more useful when students ask which biases most often feed the fallacies they themselves commit under speed, irritation, or team loyalty.",
+          },
+        ],
+      },
+    ],
+    takeaway: {
+      title: "Fallacies are usually the visible crack in the argument; biases are often the hidden pressure behind the wall.",
+      html: "Teach students to separate the public reasoning failure from the private or background tendency that may have helped produce it. When they can do both, their diagnosis becomes sharper and their humility improves at roughly the same rate.",
+    },
+    references: [
+      { ...theorySourceCatalog.fallaciesSep, note: "Useful on the argument conception of fallacies and on how biases can feed fallacious reasoning." },
+      { ...theorySourceCatalog.boundedRationalitySep, note: "Helpful on heuristics, bias traditions, and the standards used to judge human reasoning." },
+      { ...theorySourceCatalog.openstaxBiases, note: "Accessible teaching material on cognitive biases and reflective correction." },
+      { ...theorySourceCatalog.criticalThinkingIep, note: "Good bridge source on critical thinking, fallacies, and rational evaluation." },
+    ],
+  });
+}
+
+function buildWhenNotToCallFallacyTheoryArticleContent(article) {
+  return buildStructuredTheoryArticleContent(article, {
+    deck:
+      "One of the underrated virtues in critical thinking is restraint. If every weak claim becomes a fallacy charge, the vocabulary loses precision, the conversation gets hotter than it gets clearer, and the critic starts sounding like a vending machine that only dispenses the word 'fallacy.' This article is about not doing that.",
+    introPanels: [
+      {
+        title: "The central principle",
+        html: "Do not call something a fallacy unless you can quote the relevant move, explain the exact reasoning failure, and say why nearby labels fit less well.",
+      },
+      {
+        title: "Why overlabeling is costly",
+        html: "False positives make the critic look lazy, make students distrust the vocabulary, and blur the difference between genuine reasoning failure and mere disagreement.",
+      },
+    ],
+    sections: [
+      {
+        title: "Four things that are not yet a fallacy",
+        copy: "A fallacy label usually needs more than irritation, falsity, or suspicion.",
+        items: [
+          {
+            title: "A false conclusion",
+            html: "A claim can be false without the argument for it matching any specific named fallacy. Sometimes it is just wrong, unsupported, or underexplained.",
+          },
+          {
+            title: "A rude tone",
+            html: `A speaker may be arrogant, sarcastic, or exhausting while still not committing ${theoryInternalLink("fallacies/ad-hominem/", "Ad hominem")}. Bad manners are not automatically bad logic.`,
+          },
+          {
+            title: "A weak source",
+            html: `Questioning a witness, publication, or data source is not automatically fallacious. It becomes a problem only when source talk replaces relevant engagement or pretends to settle what the evidence itself still leaves open.`,
+          },
+          {
+            title: "A claim you simply dislike",
+            html: "Disagreement is not diagnosis. The fact that a conclusion strikes you as implausible, politically noxious, or aesthetically hideous does not yet tell you what went wrong in the reasoning.",
+          },
+        ],
+      },
+      {
+        title: "Common false positives",
+        copy: "These are the classroom classics for overreach.",
+        layout: "grid",
+        items: [
+          {
+            title: "Not every source challenge is Ad hominem",
+            html: `If the source's credibility is directly relevant, then asking whether the source is informed, biased, paid, or methodologically careful may be perfectly fair. ${theoryInternalLink("fallacies/ad-hominem/", "Ad hominem")} begins when the personal fact is doing argumentative work it has not earned.`,
+          },
+          {
+            title: "Not every hard choice is a False dilemma",
+            html: `Sometimes the live institutional options really are narrow. ${theoryInternalLink("fallacies/false-dilemma/", "False dilemma")} requires that real alternatives are being erased or hidden, not merely that the situation is unpleasantly constrained.`,
+          },
+          {
+            title: "Not every comparison is a False analogy",
+            html: `An analogy is allowed to be imperfect. To refute it, you need a relevant disanalogy, not just a theatrical announcement that two things are not identical because, astonishingly, the universe contains more than one object.`,
+          },
+          {
+            title: "Not every emotional sentence is Appeal to emotion",
+            html: `Emotion becomes fallacious when it tries to do the evidential work. Strong feeling can be completely appropriate if it is tied to facts, harms, stakes, or testimony rather than replacing them.`,
+          },
+        ],
+      },
+      {
+        title: "Questions to ask before you label",
+        copy: "These questions slow the critic down in the right way.",
+        items: [
+          {
+            title: "What is the exact conclusion?",
+            html: "If you cannot state the conclusion clearly, you probably are not yet ready to classify the failure clearly either.",
+          },
+          {
+            title: "What quotation carries the problem?",
+            html: "The charge should be tied to a line, not to a vibe. If the best evidence you have is the general mood of the passage, keep digging.",
+          },
+          {
+            title: "What is the strongest nearby alternative?",
+            html: `Ask whether the passage is better classified as ${theoryInternalLink("fallacies/red-herring/", "Red herring")} rather than ${theoryInternalLink("fallacies/straw-man-argument/", "Straw man argument")}, or as ${theoryInternalLink("fallacies/appeal-to-motive/", "Appeal to motive")} rather than ${theoryInternalLink("fallacies/ad-hominem/", "Ad hominem")}.`,
+          },
+          {
+            title: "Could a caveat save the claim?",
+            html: "If one missing sentence of qualification would fix the problem, say so. A good critic should know the difference between a wreck and a bent fender.",
+          },
+        ],
+      },
+    ],
+    takeaway: {
+      title: "A fallacy label is a precision tool, not a confetti cannon.",
+      html: "Use it when it clarifies a specific reasoning defect, not when it merely expresses impatience. The critic who can withhold a label well usually applies one better too.",
+    },
+    references: [
+      { ...theorySourceCatalog.fallaciesIep, note: "Especially useful for the reminder that a fallacy charge carries a burden of justification." },
+      { ...theorySourceCatalog.fallaciesSep, note: "Good on the diversity of fallacy conceptions and why the category is more complex than textbook folklore suggests." },
+      { ...theorySourceCatalog.waltonCriticalQuestions, note: "Helpful on using critical questions and dialogical standards instead of reflex labeling." },
+      { ...theorySourceCatalog.openstaxArguments, note: "Useful for students who need a clean distinction between claims, reasons, and conclusions before diagnosis begins." },
+    ],
+  });
+}
+
+function buildNearNeighborsTheoryArticleContent(article) {
+  return buildStructuredTheoryArticleContent(article, {
+    deck:
+      "Most students do not fail because they know nothing. They fail because two or three labels feel close enough that they blur together. This article is about sharpening those boundaries. If fallacy study is birdwatching, these are the species that keep getting mistaken for one another through smudged binoculars.",
+    introPanels: [
+      {
+        title: "Why confusion is normal",
+        html: "Close fallacies often share topic, tone, or surface symptoms. The split usually appears only when you ask exactly where the support goes off the rails.",
+      },
+      {
+        title: "The classroom trick",
+        html: "Always compare at least two nearby alternatives before settling on a label. Students who only learn to match names to examples become confident too early and accurate too late.",
+      },
+    ],
+    sections: [
+      {
+        title: "The most useful comparison clusters",
+        copy: "These are the pairs and trios most worth drilling repeatedly.",
+        layout: "grid",
+        items: [
+          {
+            title: "Straw man vs. Red herring",
+            html: `${theoryInternalLink("fallacies/straw-man-argument/", "Straw man argument")} misrepresents the opponent's view so it becomes easier to attack. ${theoryInternalLink("fallacies/red-herring/", "Red herring")} changes the subject or shifts the attention away from the real issue.`,
+          },
+          {
+            title: "Ad hominem vs. Appeal to motive",
+            html: `${theoryInternalLink("fallacies/ad-hominem/", "Ad hominem")} attacks the person in a way that is supposed to discredit the argument. ${theoryInternalLink("fallacies/appeal-to-motive/", "Appeal to motive")} focuses more specifically on alleged intent or hidden incentives as if that settled the reasoning itself.`,
+          },
+          {
+            title: "False analogy vs. False equivalence",
+            html: `${theoryInternalLink("fallacies/false-analogy/", "False analogy")} stretches a comparison beyond what relevant similarities can bear. ${theoryInternalLink("fallacies/false-equivalence/", "False equivalence")} flattens meaningful differences and treats two things as if they carry equal weight, guilt, or evidential standing.`,
+          },
+          {
+            title: "Hasty generalization vs. Anecdotal fallacy",
+            html: `${theoryInternalLink("fallacies/hasty-generalization/", "Hasty generalization")} moves from too little evidence to too broad a conclusion. ${theoryInternalLink("fallacies/anecdotal-fallacy/", "Anecdotal fallacy")} relies especially on vivid personal cases or isolated stories as though they could do the work of broader evidence.`,
+          },
+          {
+            title: "Correlation is not causation vs. Post hoc",
+            html: `${theoryInternalLink("fallacies/correlation-is-not-causation/", "Correlation is not causation")} warns that co-variation alone is insufficient for causal inference. ${theoryInternalLink("fallacies/post-hoc-ergo-propter-hoc/", "Post hoc ergo propter hoc")} is the more specific leap from sequence in time to causation.`,
+          },
+          {
+            title: "Begging the question vs. Bare assertion",
+            html: `${theoryInternalLink("fallacies/begging-the-question/", "Begging the question")} smuggles the conclusion into the support. ${theoryInternalLink("fallacies/bare-assertion-fallacy/", "Bare assertion fallacy")} just states the claim repeatedly or confidently without meaningful support at all.`,
+          },
+        ],
+      },
+      {
+        title: "Questions that force the exact split",
+        copy: "Each cluster has a diagnostic question that does disproportionate work.",
+        items: [
+          {
+            title: "Did the speaker distort the view or merely dodge it?",
+            html: "That question splits straw man from red herring surprisingly well.",
+          },
+          {
+            title: "Is the comparison overloaded or is the difference erased?",
+            html: "That question helps separate false analogy from false equivalence.",
+          },
+          {
+            title: "Is the evidence too thin, or is it vivid in a misleading way?",
+            html: "That question helps distinguish hasty generalization from anecdotal fallacy.",
+          },
+          {
+            title: "Is the leap from timing or from co-occurrence?",
+            html: "That question often reveals whether post hoc or correlation-not-causation is the more exact label.",
+          },
+        ],
+      },
+      {
+        title: "A teaching habit worth keeping",
+        copy: "Never let the winning label walk into class alone.",
+        items: [
+          {
+            title: "Teach labels in clusters",
+            html: "Introduce a fallacy alongside its nearest rivals, not as an isolated specimen pinned to velvet.",
+          },
+          {
+            title: "Require negative explanation",
+            html: "Ask students not only why the chosen label fits, but why two close labels do not fit.",
+          },
+          {
+            title: "Use short quoted passages",
+            html: "The shorter the passage, the harder it is for students to hide behind tone or context fog.",
+          },
+          {
+            title: "Return to the same cluster later",
+            html: "The second and third comparison usually matter more than the first. Discrimination is learned by recurrence.",
+          },
+        ],
+      },
+    ],
+    takeaway: {
+      title: "The real test is not whether a student can name a fallacy, but whether they can separate it from its nearest impostors.",
+      html: "If the exact split is clear, the label becomes sturdy. If the split is fuzzy, the label is probably being carried around like a decorative license plate.",
+    },
+    references: [
+      { ...theorySourceCatalog.fallaciesSep, note: "Strong background on the range of formal and informal fallacy treatments." },
+      { ...theorySourceCatalog.fallaciesIep, note: "Useful for surveying many labels and keeping comparison grounded in standard descriptions." },
+      { ...theorySourceCatalog.openstaxFallacies, note: "Helpful teaching taxonomy for relevance, weak induction, assumption, and diversion." },
+      { ...theorySourceCatalog.argumentSep, note: "Valuable for broader context on argument types and analogical forms of support." },
+    ],
+  });
+}
+
+function buildRepairTheoryArticleContent(article) {
+  return buildStructuredTheoryArticleContent(article, {
+    deck:
+      "Spotting a fallacy is not the finish line. If all you can do is name the wound, you are halfway to being medically interesting but not yet medically useful. Repair asks a harder and better question: what would this argument need to become fairer, narrower, and more honestly supported?",
+    introPanels: [
+      {
+        title: "The constructive mindset",
+        html: "Repair starts by preserving as much of the speaker's core concern as possible. The aim is not to leave the argument in a crater, but to rebuild it on beams that can actually hold weight.",
+      },
+      {
+        title: "Why students need this",
+        html: "Without repair work, fallacy study becomes mostly punitive. With repair work, students learn what better reasoning sounds like in practice.",
+      },
+    ],
+    sections: [
+      {
+        title: "The basic repair sequence",
+        copy: "Most repair tasks can be handled with a small, repeatable procedure.",
+        callout:
+          "<strong>Repair pattern:</strong> preserve the live concern → identify the exact overreach → narrow the claim → add the missing support → retest the conclusion.",
+        items: [
+          {
+            title: "Preserve the live concern",
+            html: "Start by asking what the speaker is worried about, trying to protect, or hoping to establish. The concern is often more salvageable than the argument that currently carries it.",
+          },
+          {
+            title: "Find the exact overreach",
+            html: "Do not just say 'this goes too far.' Say how: too little evidence, missing mechanism, false choice, verbal shift, or irrelevant attack.",
+          },
+          {
+            title: "Narrow the conclusion",
+            html: "A large fraction of repair work is simply replacing a sweeping claim with one the available support can honestly bear.",
+          },
+          {
+            title: "Add what is missing",
+            html: "Sometimes the claim can survive if more data, a causal mechanism, a comparison class, or a caveat is supplied. That difference matters.",
+          },
+        ],
+      },
+      {
+        title: "Common repair moves",
+        copy: "Different fallacies call for different kinds of reconstruction.",
+        layout: "grid",
+        items: [
+          {
+            title: "For False dilemma",
+            html: `Add the missing live options, then restate the argument more modestly. See ${theoryInternalLink("fallacies/false-dilemma/", "False dilemma")} for the classic compressed-choice pattern.`,
+          },
+          {
+            title: "For Cherry picking",
+            html: `Restore the missing evidence set, then ask whether the conclusion survives when the full record is back on the table. That is the repair demanded by ${theoryInternalLink("fallacies/cherry-picking/", "Cherry picking")}.`,
+          },
+          {
+            title: "For Correlation mistakes",
+            html: `State the correlation more carefully, then add causal alternatives, time-order questions, or mechanism requirements before drawing stronger lessons. That is the repair space around ${theoryInternalLink("fallacies/correlation-is-not-causation/", "Correlation is not causation")}.`,
+          },
+          {
+            title: "For Ad hominem",
+            html: `Strip away the personal shot and restate the evidential or logical objection directly. If no objection remains, the original move was mostly theater with a necktie.`,
+          },
+          {
+            title: "For Hasty generalization",
+            html: `Shrink the scope of the claim or enlarge the evidence base. Often the repair is as simple as changing 'people are' into 'in this small sample, several people were.'`,
+          },
+          {
+            title: "For Equivocation",
+            html: `Fix the key term, define it once, and keep that meaning stable. Many slippery arguments become embarrassingly ordinary once the word is nailed to the floor.`,
+          },
+        ],
+      },
+      {
+        title: "Mini-examples of repair",
+        copy: "A repaired argument should sound stronger, not merely safer.",
+        items: [
+          {
+            title: "From False dilemma to honest tradeoff",
+            html: "Bad version: 'Either we ban AI in class or students stop thinking.' Better version: 'Some AI uses can short-circuit student thinking, so the class needs specific rules about when AI may be used and how the work must still show human reasoning.'",
+          },
+          {
+            title: "From Anecdote to qualified concern",
+            html: "Bad version: 'My cousin was harmed by this treatment, so the treatment is unsafe.' Better version: 'This case raises a safety concern that needs broader outcome data and comparative rates before stronger conclusions are drawn.'",
+          },
+          {
+            title: "From Ad hominem to evidence challenge",
+            html: "Bad version: 'Ignore his inflation argument; he is a billionaire.' Better version: 'His argument relies on a selective data window and does not address wage, housing, or regional price variation.'",
+          },
+          {
+            title: "From Slippery slope to contingent warning",
+            html: `Bad version: 'If we permit X, we will inevitably end at disaster Z.' Better version: 'If X is adopted without guardrails A, B, and C, it may create pressures that move policy toward Y or Z.' The difference is the difference between prophecy and analysis.`,
+          },
+        ],
+      },
+    ],
+    takeaway: {
+      title: "Repair is where critical thinking becomes generous without becoming soft.",
+      html: "A repaired argument says only what its support has earned, but it still tries to preserve what was worth saying in the first place. That is a much better classroom habit than turning every fallacy into roadkill for applause.",
+    },
+    references: [
+      { ...theorySourceCatalog.argumentSep, note: "Good background on argument structure and different kinds of support." },
+      { ...theorySourceCatalog.criticalThinkingIep, note: "Helpful on evaluation, reconstruction, and the norms of critical thinking." },
+      { ...theorySourceCatalog.waltonCriticalQuestions, note: "Useful for turning diagnosis into the kinds of questions that guide repair." },
+      { ...theorySourceCatalog.openstaxInferences, note: "Accessible for students who need a quick refresher on deductive, inductive, and abductive support." },
+    ],
+  });
+}
+
+function buildKindsOfReasoningFailureTheoryArticleContent(article) {
+  return buildStructuredTheoryArticleContent(article, {
+    deck:
+      "People often talk as if a logical fallacy were a single species of badness. It is not. Some mistakes are structural, some are evidential, some are causal, and some are statistical. Throwing them all into one bucket is a bit like teaching students that bones, blood sugar, and broken eyeglasses are all just 'health problems' and then acting surprised when treatment becomes vague.",
+    introPanels: [
+      {
+        title: "Why the distinctions matter",
+        html: "Different reasoning failures call for different questions, different teaching moves, and different repairs. A causal blunder is not corrected the same way as a formal invalidity or a sampling mistake.",
+      },
+      {
+        title: "Traditional and site-specific taxonomies",
+        html: `Traditional logic often contrasts formal and informal fallacies. LogFall keeps that insight but also uses more teaching-friendly families such as evidential, causal, statistical, linguistic, and relevance-based failures.`,
+      },
+    ],
+    sections: [
+      {
+        title: "Four large kinds of failure",
+        copy: "These are not the only categories, but they are the most pedagogically useful first cuts.",
+        layout: "grid",
+        items: [
+          {
+            title: "Formal or structural",
+            html: `The support fails because the conclusion does not follow from the shape of the argument. Cases like ${theoryInternalLink("fallacies/affirming-the-consequent/", "Affirming the consequent")} and ${theoryInternalLink("fallacies/denying-the-antecedent/", "Denying the antecedent")} belong here.`,
+          },
+          {
+            title: "Evidential",
+            html: `The speaker misuses, selects, or overreads the evidence. ${theoryInternalLink("fallacies/cherry-picking/", "Cherry picking")} and ${theoryInternalLink("fallacies/absence-of-evidence-fallacy/", "Absence of evidence fallacy")} are classic cases.`,
+          },
+          {
+            title: "Causal or explanatory",
+            html: `The problem concerns what caused what, what mechanism is missing, or what explanation is too thin. ${theoryInternalLink("fallacies/post-hoc-ergo-propter-hoc/", "Post hoc ergo propter hoc")} lives here, as does ${theoryInternalLink("fallacies/wrong-causal-direction/", "Wrong causal direction")}.`,
+          },
+          {
+            title: "Statistical",
+            html: `The failure lies in rates, samples, distributions, uncertainty, or comparison classes. ${theoryInternalLink("fallacies/base-rate-fallacy/", "Base rate fallacy")} and ${theoryInternalLink("fallacies/survivorship-bias/", "Survivorship bias")} are good examples.`,
+          },
+        ],
+      },
+      {
+        title: "What each kind needs from the teacher",
+        copy: "A good class changes the tool to match the failure.",
+        items: [
+          {
+            title: "Formal errors need structure made visible",
+            html: "Students need short premises, short conclusions, and often a map or symbolic skeleton. Long political prose is a terrible first home for teaching invalid form.",
+          },
+          {
+            title: "Evidential errors need comparison sets",
+            html: "Ask what evidence is missing, selected, exaggerated, or treated as sufficient. The cure here is often not formal notation but a fuller record.",
+          },
+          {
+            title: "Causal errors need alternative explanations",
+            html: "Students should be trained to ask about sequence, mechanism, reverse causation, third variables, and counterfactual alternatives.",
+          },
+          {
+            title: "Statistical errors need numerical humility",
+            html: "Base rates, sample size, variance, regression, and uncertainty language usually matter more here than rhetoric does. The math does not have to be fancy; it just has to be present.",
+          },
+        ],
+      },
+      {
+        title: "Common category mistakes",
+        copy: "Misclassification produces weak teaching and weak criticism.",
+        items: [
+          {
+            title: "Treating every informal mistake as 'emotional'",
+            html: "Some arguments are vivid or heated, but their deepest problem may be sampling, category confusion, or causal overreach rather than emotional pressure.",
+          },
+          {
+            title: "Treating every causal mistake as a formal mistake",
+            html: "A causal argument may be invalid in some abstract rendering, but that often hides the more teachable point: the mechanism or evidence is inadequate.",
+          },
+          {
+            title: "Forgetting that one passage can host multiple kinds",
+            html: `A speech can mix ${theoryInternalLink("fallacies/ad-hominem/", "Ad hominem")} with ${theoryInternalLink("fallacies/cherry-picking/", "Cherry picking")} and a statistical overreach in the same paragraph. Bad reasoning is perfectly capable of multitasking.`,
+          },
+          {
+            title: "Using family labels as if they were verdicts",
+            html: "A family label should point students toward the right diagnostic questions. It should not replace the more specific diagnosis.",
+          },
+        ],
+      },
+    ],
+    takeaway: {
+      title: "Different reasoning failures need different lenses.",
+      html: "If you teach every bad argument with the same voice and the same tool, students will learn the vocabulary while missing the craft. The categories matter because the remedies matter.",
+    },
+    references: [
+      { ...theorySourceCatalog.fallaciesSep, note: "Strong background on formal and informal distinctions and on modern fallacy theory." },
+      { ...theorySourceCatalog.openstaxFallacies, note: "Useful teaching taxonomy for relevance, weak induction, unwarranted assumption, and diversion." },
+      { ...theorySourceCatalog.logicInductiveSep, note: "Helpful on strong and weak inductive support, especially where probability enters the picture." },
+      { ...theorySourceCatalog.statisticsSep, note: "Useful for the statistical side of evidence, inference, and methodological reasoning." },
+    ],
+  });
+}
+
+function buildTrueConclusionsBadArgumentsTheoryArticleContent(article) {
+  return buildStructuredTheoryArticleContent(article, {
+    deck:
+      "One of the first ideas that irritates beginners in a useful way is that a conclusion can be true while the argument for it is still bad. Logic does not ask only, 'Did you land on the right answer?' It also asks, 'Did you get there by a route that actually supports the answer?' Guessing the right password is not the same as knowing it.",
+    introPanels: [
+      {
+        title: "Truth and support come apart",
+        html: "A conclusion can be true because reality cooperates, coincidence intervenes, or the speaker got lucky. None of that magically upgrades weak support into strong support.",
+      },
+      {
+        title: "Why this matters",
+        html: "If students collapse truth into good argument, they become easy prey for rhetoric that reaches a welcome conclusion by terrible means.",
+      },
+    ],
+    sections: [
+      {
+        title: "How the split works",
+        copy: "The quickest way to understand the point is through cases.",
+        items: [
+          {
+            title: "Lucky guess",
+            html: "Suppose someone says, 'The bridge is unsafe because the architect has ugly shoes,' and it turns out the bridge really is unsafe. The conclusion happens to be true; the support is still nonsense.",
+          },
+          {
+            title: "Right conclusion, wrong route",
+            html: `A debater might correctly suspect fraud, corruption, or methodological weakness, yet defend that suspicion with ${theoryInternalLink("fallacies/bare-assertion-fallacy/", "Bare assertion")} or ${theoryInternalLink("fallacies/cherry-picking/", "Cherry picking")}. Being accidentally right is not the same as arguing well.`,
+          },
+          {
+            title: "The seductive shortcut",
+            html: "People often forgive a bad argument when they already like the conclusion. That is understandable, but it is one of the shortest roads from clear thinking to tribal thinking.",
+          },
+          {
+            title: "The reverse case also matters",
+            html: "A conclusion can be false even when the argument for it is carefully structured, because one or more premises are false. Good reasoning is not a miracle cure for bad starting materials.",
+          },
+        ],
+      },
+      {
+        title: "Examples students remember",
+        copy: "Vivid examples do a lot of the philosophical lifting here.",
+        layout: "grid",
+        items: [
+          {
+            title: "The broken clock",
+            html: "A stopped clock gives the right time twice a day. Nobody concludes from that that the clock is reliable. The same charity should not be extended to arguments simply because they happen to land on a true conclusion.",
+          },
+          {
+            title: "The bad map that still gets you home",
+            html: "If a map has the river in the wrong place, the roads mislabeled, and the scale warped, but you still make it to the bakery, you do not frame the map and teach cartography from it.",
+          },
+          {
+            title: "The suspicious prosecutor",
+            html: "A prosecutor may correctly suspect guilt while still presenting irrelevant, prejudicial, or insufficient reasoning. Courts, at least in principle, care about both truth and support.",
+          },
+          {
+            title: "The student's uncanny hunch",
+            html: "A student may sense that an op-ed is weak while giving the wrong diagnosis. The hunch may be useful, but the course still needs the diagnosis to become precise.",
+          },
+        ],
+      },
+      {
+        title: "What this changes in the classroom",
+        copy: "Once the split is clear, the whole subject becomes cleaner.",
+        items: [
+          {
+            title: "Students stop treating fallacy labels as ideological weapons",
+            html: "The focus shifts from 'Which side is right?' to 'What support has been earned?' That is a healthier axis for critical thinking.",
+          },
+          {
+            title: "Repair becomes possible",
+            html: "If the conclusion may still be salvageable, then the class can ask what would count as better support rather than treating the entire position as radioactive waste.",
+          },
+          {
+            title: "Humility increases",
+            html: "Students realize they too may sometimes believe true things for weak reasons. That realization is annoying in exactly the right educational way.",
+          },
+          {
+            title: "Evidence regains its dignity",
+            html: "The class learns that desirable outcomes, moral alignment, or ideological familiarity do not substitute for warranted support.",
+          },
+        ],
+      },
+    ],
+    takeaway: {
+      title: "A true conclusion does not retroactively bless a bad argument.",
+      html: "Teach students to separate truth, validity, strength, and justification. Once that habit sticks, they become much harder to impress with arguments that happen to be correct by accident, intuition, or luck.",
+    },
+    references: [
+      { ...theorySourceCatalog.argumentSep, note: "Useful on the nature of arguments, conclusions, and support relations." },
+      { ...theorySourceCatalog.fallaciesSep, note: "Helpful for keeping fallacy diagnosis tied to argumentative failure rather than to mere falsity." },
+      { ...theorySourceCatalog.openstaxArguments, note: "Accessible on arguments, premises, and conclusions." },
+      { ...theorySourceCatalog.openstaxInferences, note: "Useful for the difference between deductive and inductive support." },
+    ],
+  });
+}
+
+function buildProbabilityStatisticsTheoryArticleContent(article) {
+  return buildStructuredTheoryArticleContent(article, {
+    deck:
+      "A surprising number of fallacies become easier to see the moment probability and statistics enter the room. Base rates, sample sizes, regression, uncertainty, and causal alternatives do not make public argument glamorous, but they do make it less likely to wander around wearing someone else's shoes and calling them evidence.",
+    introPanels: [
+      {
+        title: "The central claim",
+        html: "Many notorious fallacies are really badly handled uncertainty problems in disguise. The logic is weak because the numbers, samples, or comparison classes are weak.",
+      },
+      {
+        title: "The teaching upside",
+        html: "You do not need advanced mathematics to improve fallacy diagnosis. You need a few durable habits: ask about rates, ask about samples, ask about alternatives, and stop pretending that confidence is a substitute for proportion.",
+      },
+    ],
+    sections: [
+      {
+        title: "Five statistical habits that clarify fallacies",
+        copy: "These habits pay rent across dozens of cases.",
+        layout: "grid",
+        items: [
+          {
+            title: "Check the base rate",
+            html: `This is the cure for ${theoryInternalLink("fallacies/base-rate-fallacy/", "Base rate fallacy")} and a quiet assistant in many medical, legal, and policy arguments.`,
+          },
+          {
+            title: "Ask how large and how representative the sample is",
+            html: `That habit exposes ${theoryInternalLink("fallacies/hasty-generalization/", "Hasty generalization")}, ${theoryInternalLink("fallacies/anecdotal-fallacy/", "Anecdotal fallacy")}, and many forms of pundit confidence dressed as evidence.`,
+          },
+          {
+            title: "Ask what the missing comparison class is",
+            html: "Many claims look forceful only because they are not being compared with the wider field in which they belong.",
+          },
+          {
+            title: "Expect regression and noise",
+            html: `Without that expectation, people invent dramatic explanations for normal fluctuation and end up in ${theoryInternalLink("fallacies/regression-fallacy/", "Regression fallacy")} territory.`,
+          },
+          {
+            title: "Separate correlation from cause",
+            html: `This does not just guard against ${theoryInternalLink("fallacies/correlation-is-not-causation/", "Correlation is not causation")}; it also disciplines explanations more broadly by forcing alternative causes back into view.`,
+          },
+        ],
+      },
+      {
+        title: "Fallacy families that become clearer with statistical thinking",
+        copy: "The numbers do not solve everything, but they do reveal a lot.",
+        items: [
+          {
+            title: "Sampling failures",
+            html: `Arguments based on small, skewed, or unusually vivid cases often feel persuasive because human attention is not a random sample generator. That is why ${theoryInternalLink("fallacies/survivorship-bias/", "Survivorship bias")} and ${theoryInternalLink("fallacies/spotlight-fallacy/", "Spotlight fallacy")} are classroom gold.`,
+          },
+          {
+            title: "Causal overconfidence",
+            html: `Once students learn to ask about confounders, reverse causation, and regression to the mean, several causal fallacies stop looking like deep mysteries and start looking like premature announcements.`,
+          },
+          {
+            title: "Probability-free certainty",
+            html: `Overstated confidence often hides behind emotionally charged rhetoric. Statistical literacy is one way of putting uncertainty back into a conversation that has illegally evicted it.`,
+          },
+          {
+            title: "Policy theater",
+            html: "Public arguments often compare raw counts where rates are needed, cite outliers where distributions matter, and treat one datapoint like a choir. Statistical habits make those moves much easier to resist.",
+          },
+        ],
+      },
+      {
+        title: "Simple classroom moves",
+        copy: "You can bring statistics into a fallacy unit without turning the class into a spreadsheet cult.",
+        items: [
+          {
+            title: "Ask for the denominator",
+            html: "When a student presents a dramatic number, ask: out of how many? That one question exposes a remarkable amount of nonsense.",
+          },
+          {
+            title: "Make them compare two formulations",
+            html: "For example: 'Three people I know had side effects' versus 'three out of ten thousand patients had side effects.' Same numerator, very different reasoning atmosphere.",
+          },
+          {
+            title: "Require uncertainty language",
+            html: "Push students to choose among words like suggests, indicates, raises concern, supports strongly, or does not yet justify. Precision in modality is half of intellectual adulthood.",
+          },
+          {
+            title: "Map the causal alternatives",
+            html: "Before accepting a cause claim, have students name at least two rival explanations. This is cheaper than a semester of statistical inference and often pedagogically better.",
+          },
+        ],
+      },
+    ],
+    takeaway: {
+      title: "Probability and statistics do not replace fallacy study; they sharpen it.",
+      html: "The student who asks about rates, samples, uncertainty, and causal alternatives is already harder to fool. In that sense, statistical literacy is one of logic's most useful sidekicks.",
+    },
+    references: [
+      { ...theorySourceCatalog.statisticsSep, note: "Strong philosophical background on statistical inference and evidence." },
+      { ...theorySourceCatalog.inductionSep, note: "Useful on induction, probability, and the logic of projecting beyond the data." },
+      { ...theorySourceCatalog.logicInductiveSep, note: "Helpful on strong and weak inductive support." },
+      { ...theorySourceCatalog.openstaxInferences, note: "Accessible on deductive, inductive, and abductive reasoning." },
+    ],
+  });
+}
+
+function buildInsufferableFallacyTalkTheoryArticleContent(article) {
+  return buildStructuredTheoryArticleContent(article, {
+    deck:
+      "Fallacy language can make a person sound sharper than they are, faster than they deserve, and more unbearable than anyone asked for. There is a specific species of critical thinker who can identify a straw man from thirty yards away but cannot identify the social consequences of saying so like a hall monitor with a philosophy minor. This article is a small public service.",
+    introPanels: [
+      {
+        title: "The problem",
+        html: "A good vocabulary can become a bad personality if it is used mainly for scoring points, displaying superiority, or avoiding the patient work of explanation.",
+      },
+      {
+        title: "The better aim",
+        html: "Use fallacy language to clarify, compare, repair, and self-correct. If it mainly makes the other person feel clubbed, the technique is probably being misused.",
+      },
+    ],
+    sections: [
+      {
+        title: "Better habits of fallacy talk",
+        copy: "These habits make the vocabulary more humane and more accurate at the same time.",
+        layout: "grid",
+        items: [
+          {
+            title: "Quote before you classify",
+            html: "Point to the line that carries the problem. Diagnosis anchored in text feels less like posturing and more like analysis.",
+          },
+          {
+            title: "Explain before you Latinize",
+            html: "Plain language should do the first job. The technical label can arrive after the reasoning slip is already visible.",
+          },
+          {
+            title: "Offer a repair",
+            html: "If you can say how the argument could be made stronger, you sound like a collaborator in truth-seeking rather than a referee who enjoys the whistle too much.",
+          },
+          {
+            title: "Use caveats",
+            html: "Say when the label is strong, when it is tentative, and what would change your mind. Precision is more impressive than swagger, though admittedly less cinematic.",
+          },
+          {
+            title: "Turn the tool inward",
+            html: "The best antidote to smugness is remembering how many of these moves you yourself can commit when tired, rushed, angry, or pleased with your own paragraph.",
+          },
+          {
+            title: "Know when not to label",
+            html: "Sometimes the better move is simply: 'This needs more evidence,' 'That term is doing too much work,' or 'I think two different issues are being run together here.'",
+          },
+        ],
+      },
+      {
+        title: "What bad fallacy talk often sounds like",
+        copy: "You will know the tone when you hear it, but it helps to name the pattern.",
+        items: [
+          {
+            title: "The drive-by label",
+            html: "Someone says 'straw man' or 'ad hominem' and then vanishes like a morally disappointed bat. No explanation, no quotation, no repair, just airborne self-satisfaction.",
+          },
+          {
+            title: "The encyclopedia dump",
+            html: "A student names six possible fallacies for one sentence, as if uncertainty were best handled by unloading the whole museum at once.",
+          },
+          {
+            title: "The ideological boomerang",
+            html: "Labels are applied lavishly to enemies and timidly to allies. At that point the vocabulary has stopped functioning as analysis and started moonlighting as tribal decoration.",
+          },
+          {
+            title: "The conversation derailment",
+            html: "Sometimes the fallacy label itself becomes a relevance problem because it interrupts the substantive point instead of clarifying it. Irony, as always, works overtime.",
+          },
+        ],
+      },
+      {
+        title: "Better replacement phrases",
+        copy: "A classroom should train students in wording that opens rather than closes inquiry.",
+        items: [
+          {
+            title: "Instead of 'That's a fallacy,' try",
+            html: "'I think the conclusion is moving faster than the evidence here.'",
+          },
+          {
+            title: "Instead of 'That's ad hominem,' try",
+            html: "'That targets the person more than the actual support for the claim.'",
+          },
+          {
+            title: "Instead of 'False dilemma,' try",
+            html: "'Are those really the only live options, or have some alternatives been left out?'",
+          },
+          {
+            title: "Instead of 'Begging the question,' try",
+            html: "'It sounds as if the conclusion is already built into the support.'",
+          },
+        ],
+      },
+    ],
+    takeaway: {
+      title: "Good fallacy language should make reasoning clearer, not make the speaker harder to sit next to.",
+      html: "If the vocabulary increases explanation, repair, charity, and self-audit, keep it. If it mainly increases superiority theater, turn the volume down until the logic is audible again.",
+    },
+    references: [
+      { ...theorySourceCatalog.fallaciesIep, note: "Especially good on the burden carried by any fallacy accusation." },
+      { ...theorySourceCatalog.criticalThinkingIep, note: "Useful on critical evaluation and responsible reasoning practices." },
+      { ...theorySourceCatalog.fallaciesSep, note: "Helpful on the diversity of fallacy conceptions and why careless labeling is easy." },
+      { ...theorySourceCatalog.waltonCriticalQuestions, note: "A reminder that evaluation often works better as questioning than as slogan." },
+    ],
+  });
+}
+
+function buildArgumentMapsTheoryArticleContent(article) {
+  return buildStructuredTheoryArticleContent(article, {
+    deck:
+      "Argument maps help because they force reasons to stand where everyone can see them. Once premises, assumptions, and conclusions are drawn out, some fallacies stop looking mysterious and start looking like plumbing failures. Water is being routed somewhere it cannot actually go, and the map makes that harder to miss.",
+    introPanels: [
+      {
+        title: "What a map does well",
+        html: "It slows the argument down, separates claims from support, and reveals hidden premises that prose lets sneak around in dark glasses.",
+      },
+      {
+        title: "What a map does not do",
+        html: "It does not replace judgment. A beautiful map can still represent a weak argument, but at least the weakness becomes inspectable rather than atmospheric.",
+      },
+    ],
+    sections: [
+      {
+        title: "The basic parts of an argument map",
+        copy: "Students do not need elaborate software to learn the essentials.",
+        items: [
+          {
+            title: "Conclusion",
+            html: "What is the claim being supported? If that cannot be stated clearly, the map will wobble before the fallacy even arrives.",
+          },
+          {
+            title: "Stated premises",
+            html: "These are the reasons explicitly offered in the passage. They should be written in simple sentence form, not copied as a tangled paragraph vine.",
+          },
+          {
+            title: "Hidden assumptions",
+            html: "These are the unspoken bridges the argument needs in order to move from the premises to the conclusion. Fallacies often live here rent-free.",
+          },
+          {
+            title: "Failure point",
+            html: "Mark the exact arrow, premise, or assumption where the support breaks. This is where the diagnosis becomes more than a label.",
+          },
+        ],
+      },
+      {
+        title: "Common fallacies become easier to see on a map",
+        copy: "Different maps expose different failure points.",
+        layout: "grid",
+        items: [
+          {
+            title: "Straw man",
+            html: `A map shows that the rebutted claim is not actually the opponent's original conclusion. The attacked node is a replacement mannequin, not the real person. See ${theoryInternalLink("fallacies/straw-man-argument/", "Straw man argument")}.`,
+          },
+          {
+            title: "False dilemma",
+            html: `The map reveals a hidden premise that only two options exist. Once that premise is written down, students can test it instead of letting it pass in formalwear. See ${theoryInternalLink("fallacies/false-dilemma/", "False dilemma")}.`,
+          },
+          {
+            title: "Affirming the consequent",
+            html: `The structure becomes stark: If P then Q; Q; therefore P. In prose this may feel plausible. On a map it begins to look like a ladder missing a rung while still expecting applause. See ${theoryInternalLink("fallacies/affirming-the-consequent/", "Affirming the consequent")}.`,
+          },
+          {
+            title: "Correlation errors",
+            html: `A map lets you write the observed association separately from the stronger causal conclusion, making the unsupported jump visible. See ${theoryInternalLink("fallacies/correlation-is-not-causation/", "Correlation is not causation")}.`,
+          },
+          {
+            title: "Begging the question",
+            html: `The map often reveals that the supposed support contains the conclusion in paraphrased clothing. Once drawn, the circle looks less majestic and more dizzy.`,
+          },
+          {
+            title: "Red herring",
+            html: `The map shows that a new branch of material is being developed that never reconnects to the original conclusion under dispute. It is a side quest dressed as progress.`,
+          },
+        ],
+      },
+      {
+        title: "How to use maps in class",
+        copy: "Mapping works best when it is lightweight and frequent.",
+        items: [
+          {
+            title: "Map short passages first",
+            html: "One sentence or one paragraph is enough. Long editorials can wait until students know how to separate branches and assumptions without panic.",
+          },
+          {
+            title: "Ask for competing maps",
+            html: "Different students will sometimes reconstruct the same argument differently. That disagreement is not a bug; it is the seminar finally doing something interesting.",
+          },
+          {
+            title: "Pair mapping with repair",
+            html: "Once the failure point is marked, ask students to redraw the map so the conclusion is supported properly or reduced to a narrower, honest form.",
+          },
+          {
+            title: "Use maps to compare near neighbors",
+            html: "Two arguments can sound alike but differ structurally. A map makes the difference between misrepresentation, diversion, and weak support easier to explain.",
+          },
+        ],
+      },
+    ],
+    takeaway: {
+      title: "Argument maps do not replace logic; they make logic visible enough to teach.",
+      html: "If students can draw where the support is supposed to go, they become far better at seeing where it actually fails. That is why maps are such useful companions to fallacy study.",
+    },
+    references: [
+      { ...theorySourceCatalog.argumentMapsStudy, note: "A classic argument for the pedagogical value of argument mapping." },
+      { ...theorySourceCatalog.rationaleOnline, note: "Practical teaching resource on argument mapping and classroom use." },
+      { ...theorySourceCatalog.waltonCriticalQuestions, note: "Useful for pairing maps with critical questions and scheme evaluation." },
+      { ...theorySourceCatalog.argumentSep, note: "Helpful for the general structure of arguments and analogical argument forms." },
+    ],
+  });
+}
+
+function buildDebateEditorialNewsTheoryArticleContent(article) {
+  return buildStructuredTheoryArticleContent(article, {
+    deck:
+      "If students learn fallacies only from toy examples, they may perform well on worksheets while missing the moves completely in real life. Editorials, debate exchanges, campaign statements, interviews, and news-adjacent commentary solve that problem because they contain the mess that real reasoning always brings along: speed, framing, emotion, selective quoting, audience targeting, and strategic omission.",
+    introPanels: [
+      {
+        title: "Why live materials matter",
+        html: "Students need to see fallacies where they actually live: in public argument shaped by time pressure, persuasion, identity, and incomplete evidence.",
+      },
+      {
+        title: "Why they also need guardrails",
+        html: "Real materials are richer but also noisier. That means the class needs clear quoting rules, comparison rules, and a strong norm against partisan point-scoring masquerading as analysis.",
+      },
+    ],
+    sections: [
+      {
+        title: "A strong assignment pattern",
+        copy: "The same basic sequence works across debates, editorials, and news analysis.",
+        callout:
+          "<strong>Recommended workflow:</strong> select a short passage → quote the key lines → identify the best label → rule out two nearby labels → rebut or repair the claim.",
+        items: [
+          {
+            title: "Keep the source short",
+            html: "A paragraph, exchange, or clip transcript is often better than a full article because it forces close attention to the specific move under inspection.",
+          },
+          {
+            title: "Require sufficient quotation",
+            html: "Students should quote enough of the original to make the misstep visible. Otherwise the analysis floats free of the source and becomes a vibe review.",
+          },
+          {
+            title: "Make comparison mandatory",
+            html: "Insist that students name at least one nearby label and explain why it fits less well. This is where superficial confidence usually goes to be corrected.",
+          },
+          {
+            title: "End with repair",
+            html: "Ask students to rewrite the claim or paragraph into a stronger form. That one step changes the assignment from taxidermy into instruction.",
+          },
+        ],
+      },
+      {
+        title: "Good activity types",
+        copy: "Not every classroom task needs to look like a quiz.",
+        layout: "grid",
+        items: [
+          {
+            title: "Debate clip diagnosis",
+            html: "Use a short debate exchange and ask students to mark the exact line where the shift or overreach occurs.",
+          },
+          {
+            title: "Editorial autopsy",
+            html: "Take one op-ed paragraph and have students identify the claim, the support, the hidden assumption, and the likely fallacy if any.",
+          },
+          {
+            title: "Headline vs. body comparison",
+            html: "Compare the headline's implication to what the article body actually supports. This is a fertile site for contextomy, overreach, and false balance.",
+          },
+          {
+            title: "Two-source comparison",
+            html: "Give students two differently framed reports on the same issue and ask which reasoning moves are shared, which differ, and where each overstates the case.",
+          },
+          {
+            title: "Live repair workshop",
+            html: "Project a fallacious paragraph and have groups compete to produce the strongest repaired version rather than the fastest label.",
+          },
+          {
+            title: "Caveat drill",
+            html: "Give students a plausible label and make them state the strongest caveat against applying it too quickly. This teaches restraint as a classroom skill, not as a mood.",
+          },
+        ],
+      },
+      {
+        title: "What to grade",
+        copy: "Rubrics should reward reasoning quality, not performative certainty.",
+        items: [
+          {
+            title: "Accuracy of the quoted evidence",
+            html: "Did the student quote the right lines, or did they gesture vaguely at the source and hope everyone would be too polite to notice?",
+          },
+          {
+            title: "Precision of the label",
+            html: "Does the chosen label fit better than the nearby alternatives? If not, the answer is incomplete even if it sounds fluent.",
+          },
+          {
+            title: "Depth of explanation",
+            html: "A strong explanation tells how the reasoning moves from premise to conclusion and where the support fails, not just that it fails.",
+          },
+          {
+            title: "Quality of the repair",
+            html: "Can the student salvage the central concern and rewrite the argument into a stronger, narrower, fairer form?",
+          },
+        ],
+      },
+    ],
+    takeaway: {
+      title: "Real materials make fallacy study messier, and that is exactly why they make it better.",
+      html: "If students can quote, compare, diagnose, and repair reasoning in debate clips, editorials, and public rhetoric, they are much closer to genuine critical thinking than if they can only recognize museum-grade textbook specimens.",
+    },
+    references: [
+      { ...theorySourceCatalog.openstaxFallacies, note: "Useful starting point for course-level examples and categories." },
+      { ...theorySourceCatalog.criticalThinkingIep, note: "Helpful on evaluation standards and rational appraisal." },
+      { ...theorySourceCatalog.pewNewsSocial, note: "Useful context for how many students encounter argument through social and news feeds." },
+      { ...theorySourceCatalog.waltonCriticalQuestions, note: "Good for turning public-source analysis into structured evaluation rather than free-floating opinion." },
+    ],
+  });
+}
+
+function buildAnalogyRoleTheoryArticleContent(article) {
+  return buildStructuredTheoryArticleContent(article, {
+    deck:
+      "Analogy is one of reason's most useful devices because it lets us test a pattern in a cleaner setting. It can illuminate, compare, restrain, criticize, and occasionally rescue an argument from its own melodrama. It can also mislead badly when the comparison is superficial. That is why analogy deserves both trust and supervision.",
+    introPanels: [
+      {
+        title: "Why analogy matters",
+        html: "Analogy helps us see structure by carrying it into a less noisy case. That is why it is so powerful in teaching, criticism, law, science, and ordinary conversation.",
+      },
+      {
+        title: "Why it needs discipline",
+        html: "A flashy analogy can seduce people into thinking two cases are similar where the relevant structure is not. The goal is not similarity in general, but similarity where the reasoning lives.",
+      },
+    ],
+    sections: [
+      {
+        title: "What analogy can do in criticism",
+        copy: "Its uses are broader than merely naming bad arguments.",
+        items: [
+          {
+            title: "Expose structure",
+            html: "A parallel case can reveal a hidden leap, missing mechanism, or erased alternative more quickly than a technical lecture can.",
+          },
+          {
+            title: "Lower rhetorical temperature",
+            html: "By moving the same reasoning form into a neutral setting, analogy can reduce defensiveness and make the issue inspectable rather than tribal.",
+          },
+          {
+            title: "Test proportionality",
+            html: "Analogies are excellent for asking whether the response, comparison, or inference is wildly out of scale with the facts.",
+          },
+          {
+            title: "Support repair",
+            html: "A strong analogy can show not only why the current move fails, but what a more careful version would have to keep or surrender.",
+          },
+        ],
+      },
+      {
+        title: "What makes an analogy strong",
+        copy: "The key test is relevance, not decorative cleverness.",
+        layout: "grid",
+        items: [
+          {
+            title: "Relevant similarity",
+            html: "The shared features have to matter to the conclusion. Two things can be alike in color, chronology, or drama while differing exactly where the argument needs them to align.",
+          },
+          {
+            title: "Visible disanalogies",
+            html: `A good critic should state the important differences too. Otherwise the analogy begins auditioning for ${theoryInternalLink("fallacies/false-analogy/", "False analogy")}.`,
+          },
+          {
+            title: "A modest conclusion",
+            html: "The weaker and more disciplined the analogical conclusion, the stronger the move tends to be. When analogy tries to do too much, it usually tears a muscle.",
+          },
+          {
+            title: "Structural over surface similarity",
+            html: "The best analogies preserve the relations that matter rather than merely sharing a few eye-catching details. Costume similarity is not conceptual similarity.",
+          },
+        ],
+      },
+      {
+        title: "How analogy can go wrong",
+        copy: "Because analogy is powerful, its failures are worth teaching explicitly.",
+        items: [
+          {
+            title: "False analogy",
+            html: `This is the direct failure mode: the comparison looks helpful until the missing relevant similarity becomes obvious. See ${theoryInternalLink("fallacies/false-analogy/", "False analogy")}.`,
+          },
+          {
+            title: "Decorative analogy",
+            html: "The comparison is vivid and quotable but adds no genuine inferential support. It is basically rhetorical garnish wearing a fake ID.",
+          },
+          {
+            title: "Heat-seeking analogy",
+            html: "Some comparisons are designed less to clarify than to inflame. These are often memorable for all the wrong reasons and distort judgment more than they help it.",
+          },
+          {
+            title: "Overextended analogy",
+            html: "A decent initial comparison is stretched far beyond the point where its structure can responsibly carry the conclusion.",
+          },
+        ],
+      },
+    ],
+    takeaway: {
+      title: "Analogy is one of criticism's best tools when it preserves structure and one of its worst when it merely performs resemblance.",
+      html: "The right question is never 'Are these things identical?' The right question is 'Are they similar in the respects that matter for the conclusion at issue?' That is where rational criticism either sharpens or wanders off in costume.",
+    },
+    references: [
+      { ...theorySourceCatalog.analogySep, note: "The major reference point for evaluating analogical reasoning and its criteria." },
+      { ...theorySourceCatalog.argumentSep, note: "Useful on analogical arguments as a general form of support." },
+      { ...theorySourceCatalog.fallaciesSep, note: "Helpful for linking analogy to fallacy theory and informal evaluation." },
+      { ...theorySourceCatalog.waltonCriticalQuestions, note: "Useful for the larger scheme-and-question approach to evaluating informal reasoning." },
+    ],
+  });
+}
+
+function buildAlgorithmicMediaTheoryArticleContent(article) {
+  return buildStructuredTheoryArticleContent(article, {
+    deck:
+      "Algorithmic media changes the ecology of bad reasoning. Arguments now compete not just for truth or coherence, but for clicks, retention, shares, clips, outrage, and emotional memorability. Under those incentives, some fallacies become especially fit. They are not always the most rational; they are simply the most reproductively successful in the feed.",
+    introPanels: [
+      {
+        title: "The medium matters",
+        html: "A clipped headline, a short video segment, and a feed optimized for engagement do not merely transport reasoning. They reshape what kinds of reasoning get noticed, repeated, and rewarded.",
+      },
+      {
+        title: "The classroom implication",
+        html: "Students should not learn fallacies as though they belong only to formal debate or old-fashioned essays. The feed has its own favorite distortions, and they need to be taught in that habitat.",
+      },
+    ],
+    sections: [
+      {
+        title: "Fallacies algorithmic media tends to favor",
+        copy: "Not because they are good, but because they are sticky.",
+        layout: "grid",
+        items: [
+          {
+            title: "Cherry picking",
+            html: `Clips, screenshots, and isolated anecdotes are almost purpose-built for ${theoryInternalLink("fallacies/cherry-picking/", "Cherry picking")}. The feed loves fragments because fragments travel faster than context.`,
+          },
+          {
+            title: "Contextomy",
+            html: `Short clips invite ${theoryInternalLink("fallacies/contextomy/", "Contextomy")}: extract the line, remove the setting, and let the audience infer the rest with confidence that would be comic if it were not so efficient.`,
+          },
+          {
+            title: "False dilemma",
+            html: `Binary framing performs well online because it is easy to caption, easy to sort by tribe, and easy to share. That makes ${theoryInternalLink("fallacies/false-dilemma/", "False dilemma")} unusually vigorous in the wild.`,
+          },
+          {
+            title: "Appeal to emotion",
+            html: `Content optimized for fear, disgust, or triumph predictably rewards ${theoryInternalLink("fallacies/appeal-to-emotion/", "Appeal to emotion")} and its close relatives.`,
+          },
+          {
+            title: "False balance",
+            html: `When platforms flatten expertise and treat every take as just another tile in the feed, ${theoryInternalLink("fallacies/false-balance/", "False balance")} can start to feel like fairness instead of distortion.`,
+          },
+          {
+            title: "Misleading vividness",
+            html: `Highly memorable single cases can dominate public attention and create the impression that salience itself is evidence. That is exactly the climate in which ${theoryInternalLink("fallacies/misleading-vividness/", "Misleading vividness")} thrives.`,
+          },
+        ],
+      },
+      {
+        title: "Why these fallacies travel well",
+        copy: "The answer usually lies in incentive design rather than in abstract logic alone.",
+        items: [
+          {
+            title: "Speed beats completeness",
+            html: "Short, vivid, morally legible fragments travel farther than nuanced evidential comparison. That is not a bug in the feed; it is often the business model with nicer shoes.",
+          },
+          {
+            title: "Emotion boosts memory",
+            html: "If the content is frightening, enraging, or identity-affirming, it is easier to recall and easier to share, even when the reasoning is brittle.",
+          },
+          {
+            title: "Audiences meet arguments out of order",
+            html: "People often see reactions before sources, clips before full interviews, and conclusions before premises. That disorder creates lovely conditions for confusion and overreach.",
+          },
+          {
+            title: "Correction is slower than distortion",
+            html: "A misleading clip can travel widely before a careful reconstruction catches up. By then the feed has usually moved on to fresh mischief.",
+          },
+        ],
+      },
+      {
+        title: "What teachers can do with this",
+        copy: "A modern critical thinking class should treat the feed as a case environment, not as background wallpaper.",
+        items: [
+          {
+            title: "Use clip-to-context exercises",
+            html: "Show the short clip first, then the full source. Ask students which fallacies became easier or harder to detect once the missing context was restored.",
+          },
+          {
+            title: "Compare headline, body, and repost commentary",
+            html: "The reasoning often mutates across those layers. That mutation itself is an excellent teaching object.",
+          },
+          {
+            title: "Ask what the platform is rewarding",
+            html: "Students should learn to ask not only whether a claim is weak, but what feature of the environment makes that weakness profitable.",
+          },
+          {
+            title: "Teach self-defense, not just external critique",
+            html: "The feed does not merely contain fallacies; it trains appetites for them. Students should learn where their own attention is easiest to hijack.",
+          },
+        ],
+      },
+    ],
+    takeaway: {
+      title: "Algorithmic media does not create fallacies from nothing, but it does cultivate the ones that are fastest, loudest, and easiest to share.",
+      html: "Teaching fallacies today means teaching the conditions that amplify them. Otherwise students may become good at naming old textbook specimens while walking straight past the live ones glowing in their own pockets.",
+    },
+    references: [
+      { ...theorySourceCatalog.pewSocialMediaUse, note: "Useful baseline on how deeply social media is woven into ordinary information habits." },
+      { ...theorySourceCatalog.pewNewsSocial, note: "Helpful on the value people find in social news feeds and the growing concern about inaccuracy." },
+      { ...theorySourceCatalog.pewTechCompanies, note: "Useful context on public concerns about large technology platforms and influence." },
+      { ...theorySourceCatalog.fallaciesSep, note: "Helpful for connecting media-specific cases back to general fallacy theory." },
+    ],
+  });
+}
+
 function buildTheoryArticlePage(article) {
-  const content =
-    article.slug === "fallacy-rebuttals-without-fallacy-naming"
-      ? buildRebuttalsTheoryArticleContent(article)
-      : article.slug === "teaching-logical-fallacies-a-classroom-process-and-curriculum"
-        ? buildTeachingCurriculumTheoryArticleContent(article)
-        : article.slug === "teaching-logical-fallacies-with-ai-gems-and-prompted-agents"
-          ? buildAiGemsTheoryArticleContent(article)
-          : buildRebuttalsTheoryArticleContent(article);
+  const theoryArticleBuilders = {
+    "fallacy-rebuttals-without-fallacy-naming": buildRebuttalsTheoryArticleContent,
+    "teaching-logical-fallacies-a-classroom-process-and-curriculum": buildTeachingCurriculumTheoryArticleContent,
+    "teaching-logical-fallacies-with-ai-gems-and-prompted-agents": buildAiGemsTheoryArticleContent,
+    "how-to-distinguish-fallacies-from-cognitive-biases": buildBiasesVsFallaciesTheoryArticleContent,
+    "when-not-to-call-something-a-fallacy": buildWhenNotToCallFallacyTheoryArticleContent,
+    "near-neighbors-how-to-tell-similar-fallacies-apart": buildNearNeighborsTheoryArticleContent,
+    "how-to-repair-a-fallacious-argument": buildRepairTheoryArticleContent,
+    "formal-informal-causal-and-statistical-kinds-of-reasoning-failure": buildKindsOfReasoningFailureTheoryArticleContent,
+    "why-true-conclusions-can-still-have-bad-arguments": buildTrueConclusionsBadArgumentsTheoryArticleContent,
+    "how-probability-and-statistics-clarify-logical-fallacies": buildProbabilityStatisticsTheoryArticleContent,
+    "how-to-use-fallacy-language-without-becoming-insufferable": buildInsufferableFallacyTalkTheoryArticleContent,
+    "argument-maps-for-common-fallacies": buildArgumentMapsTheoryArticleContent,
+    "teaching-fallacies-through-debate-editorials-and-news-analysis": buildDebateEditorialNewsTheoryArticleContent,
+    "the-role-of-analogy-in-rational-criticism": buildAnalogyRoleTheoryArticleContent,
+    "fallacies-in-the-age-of-algorithmic-media": buildAlgorithmicMediaTheoryArticleContent,
+  };
+  const content = (theoryArticleBuilders[article.slug] || buildRebuttalsTheoryArticleContent)(article);
 
   return pageShell({
     title: `${article.title} | LogFall Theory`,
@@ -4353,10 +5872,11 @@ function buildTheoryArticlePage(article) {
     ogType: "article",
     keywords: [
       article.title,
-      "fallacy rebuttal",
-      "logical fallacy analogy",
-      "critical thinking pedagogy",
-      "argument rebuttal without jargon",
+      "logical fallacies",
+      "critical thinking",
+      "argument analysis",
+      "reasoning pedagogy",
+      "theory article",
     ],
     structuredData: [
       breadcrumbSchema([
@@ -4381,11 +5901,11 @@ function buildTheoryArticlePage(article) {
         name: article.title,
         path: `theory/${article.slug}/`,
         description: theoryArticleSeoDescription(article),
-        about: ["logical fallacies", "fallacy rebuttals", "critical thinking pedagogy"],
-        teaches: ["how to rebut fallacies without leading with jargon", "how to build clarifying analogies"],
+        about: ["logical fallacies", "critical thinking", "argument analysis"],
+        teaches: ["how to analyze reasoning failures", "how to compare, rebut, and repair arguments"],
         learningResourceType: ["Article", "Teaching resource"],
         educationalUse: ["teaching", "self-study"],
-        keywords: [article.title, "fallacy rebuttal", "logical fallacy analogy", "critical thinking pedagogy"],
+        keywords: [article.title, "logical fallacies", "critical thinking", "argument analysis", "reasoning pedagogy"],
       }),
     ],
     content,
