@@ -14,6 +14,7 @@ ROOT = Path(__file__).resolve().parents[1]
 ASSESSMENT_HTML = ROOT / "assessment" / "index.html"
 SCENE_DIR = ROOT / "output" / "imagegen" / "dialogue-assessment-scenes"
 ASSET_DIR = ROOT / "assets" / "assessment-dialogues"
+CROP_HEIGHT = 940
 
 FONT_CANDIDATES = [
     Path("/System/Library/Fonts/MarkerFelt.ttc"),
@@ -190,14 +191,18 @@ def slots_for_item(item: dict) -> list[BubbleSlot]:
     return ordered
 
 
-def render_item(item: dict, out_dir: Path, font_path: Path) -> Path:
-    scene_path = SCENE_DIR / f"{item['id']}-scene.png"
+def render_item(item: dict, out_dir: Path, font_path: Path, scene_dir: Path) -> Path:
+    scene_path = scene_dir / f"{item['id']}-scene.png"
     if not scene_path.exists():
         raise RuntimeError(f"Missing generated scene: {scene_path}")
 
     image = Image.open(scene_path).convert("RGBA")
     for turn, slot in zip(item["turns"], slots_for_item(item)):
         draw_bubble(image, slot, turn["text"], font_path)
+
+    if image.height > CROP_HEIGHT:
+        top = max(0, (image.height - CROP_HEIGHT) // 2)
+        image = image.crop((0, top, image.width, top + CROP_HEIGHT))
 
     out_dir.mkdir(parents=True, exist_ok=True)
     out_path = out_dir / f"{item['id']}.png"
@@ -210,6 +215,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--ids", nargs="*", help="Optional subset of assessment item ids to render.")
     parser.add_argument("--out-dir", default=str(ASSET_DIR), help="Directory to write rendered panels to.")
     parser.add_argument("--font-path", help="Optional explicit font path to use for dialogue rendering.")
+    parser.add_argument("--scene-dir", default=str(SCENE_DIR), help="Directory containing <id>-scene.png files.")
     return parser.parse_args()
 
 
@@ -227,8 +233,9 @@ def main() -> int:
             raise RuntimeError(f"Unknown assessment ids: {', '.join(sorted(missing))}")
 
     out_dir = Path(args.out_dir)
+    scene_dir = Path(args.scene_dir)
     for item in bank:
-        out_path = render_item(item, out_dir, font_path)
+        out_path = render_item(item, out_dir, font_path, scene_dir)
         print(out_path)
     return 0
 
