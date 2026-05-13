@@ -4,6 +4,7 @@ from __future__ import annotations
 from html import escape
 import json
 import math
+import random
 import re
 from pathlib import Path
 
@@ -32,6 +33,7 @@ COLUMN_WIDTH = (CONTENT_WIDTH - COLUMN_GAP) / 2
 IMAGE_RATIO = 940 / 1536  # height / width
 TOTAL_PAGES = 40
 ITEMS_PER_PAGE = 2
+PDF_SHUFFLE_SEED = 20260513
 
 CHOICE_LABELS = {
     "left-formal": ("Left", "Formal"),
@@ -55,6 +57,12 @@ def load_bank() -> list[dict]:
     if len(bank) != 40:
         raise RuntimeError(f"Expected 40 dialogue assessment items, found {len(bank)}")
     return bank
+
+
+def shuffled_bank(bank: list[dict]) -> list[dict]:
+    order = list(bank)
+    random.Random(PDF_SHUFFLE_SEED).shuffle(order)
+    return order
 
 
 def styles() -> dict[str, ParagraphStyle]:
@@ -345,6 +353,7 @@ def build_pdf(bank: list[dict]) -> None:
 
 def main() -> int:
     bank = load_bank()
+    bank = shuffled_bank(bank)
     missing = [item["id"] for item in bank if not item_image_path(item).exists()]
     if missing:
         raise RuntimeError(f"Missing assessment dialogue images for: {', '.join(missing)}")
