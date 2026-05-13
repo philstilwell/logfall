@@ -5417,6 +5417,38 @@ function buildInsufferableFallacyTalkTheoryArticleContent(article) {
             title: "Instead of 'Begging the question,' try",
             html: "'It sounds as if the conclusion is already built into the support.'",
           },
+          {
+            title: "Instead of 'That's a straw man,' try",
+            html: "'I think that rephrases the position into a weaker version than the one actually being defended.'",
+          },
+          {
+            title: "Instead of 'That's a red herring,' try",
+            html: "'That may be interesting, but I don't yet see how it answers the original point under dispute.'",
+          },
+          {
+            title: "Instead of 'That's cherry picking,' try",
+            html: "'Those examples may matter, but what happens when we bring the missing evidence back into the picture too?'",
+          },
+          {
+            title: "Instead of 'That's hasty generalization,' try",
+            html: "'That sounds broader than the sample can really support as it stands.'",
+          },
+          {
+            title: "Instead of 'That's appeal to authority,' try",
+            html: "'Expertise may be relevant here, but we still need to know whether the evidence and reasoning actually support the claim.'",
+          },
+          {
+            title: "Instead of 'That's slippery slope,' try",
+            html: "'Can you show the steps that would connect this first move to the later outcome, rather than just assuming the slide?'",
+          },
+          {
+            title: "Instead of 'Correlation is not causation,' try",
+            html: "'That pattern is interesting, but what rules out coincidence, reverse direction, or a third factor?'",
+          },
+          {
+            title: "Instead of 'That's equivocation,' try",
+            html: "'I think the key term may be shifting meaning as the argument moves forward.'",
+          },
         ],
       },
     ],
