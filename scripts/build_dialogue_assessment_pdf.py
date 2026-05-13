@@ -2,15 +2,15 @@
 from __future__ import annotations
 
 import json
+import math
 import re
 from pathlib import Path
 
 from reportlab.lib import colors
 from reportlab.lib.enums import TA_CENTER
-from reportlab.lib.pagesizes import letter
+from reportlab.lib.pagesizes import landscape, letter
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import inch
-from reportlab.pdfbase.pdfmetrics import stringWidth
 from reportlab.pdfgen import canvas
 from reportlab.platypus import Paragraph
 
@@ -19,16 +19,18 @@ ROOT = Path(__file__).resolve().parents[1]
 ASSESSMENT_HTML = ROOT / "assessment" / "index.html"
 OUTPUT_DIR = ROOT / "output" / "pdf"
 OUTPUT_PATH = OUTPUT_DIR / "logfall-dialogue-assessment.pdf"
+ASSET_DIR = ROOT / "assets" / "assessment-dialogues"
 
-PAGE_WIDTH, PAGE_HEIGHT = letter
-MARGIN_X = 0.58 * inch
-MARGIN_TOP = 0.62 * inch
-MARGIN_BOTTOM = 0.58 * inch
+PAGE_WIDTH, PAGE_HEIGHT = landscape(letter)
+MARGIN_X = 0.45 * inch
+MARGIN_TOP = 0.42 * inch
+MARGIN_BOTTOM = 0.42 * inch
+COLUMN_GAP = 0.32 * inch
 CONTENT_WIDTH = PAGE_WIDTH - (2 * MARGIN_X)
-LEFT_X = MARGIN_X
-RIGHT_X = PAGE_WIDTH / 2 + 0.12 * inch
-BUBBLE_WIDTH = (CONTENT_WIDTH / 2) - 0.12 * inch
-TOTAL_PAGES = 80
+COLUMN_WIDTH = (CONTENT_WIDTH - COLUMN_GAP) / 2
+IMAGE_RATIO = 1024 / 1536  # height / width
+TOTAL_PAGES = 40
+ITEMS_PER_PAGE = 2
 
 CHOICE_LABELS = {
     "left-formal": ("Left", "Formal"),
@@ -37,8 +39,6 @@ CHOICE_LABELS = {
     "right-informal": ("Right", "Informal"),
     "right-formal": ("Right", "Formal"),
 }
-
-LINK_BASE = "https://logfall.com/fallacies/"
 
 
 def load_bank() -> list[dict]:
@@ -56,115 +56,98 @@ def load_bank() -> list[dict]:
     return bank
 
 
-def make_styles():
-    styles = getSampleStyleSheet()
+def styles() -> dict[str, ParagraphStyle]:
+    sample = getSampleStyleSheet()
     return {
+        "part": ParagraphStyle(
+            "part",
+            parent=sample["BodyText"],
+            fontName="Helvetica-Bold",
+            fontSize=9.2,
+            leading=11,
+            textColor=colors.HexColor("#145a8d"),
+        ),
         "title": ParagraphStyle(
             "title",
-            parent=styles["Heading1"],
+            parent=sample["Heading1"],
             fontName="Helvetica-Bold",
-            fontSize=19,
-            leading=22,
+            fontSize=18,
+            leading=20,
             textColor=colors.HexColor("#111111"),
-            spaceAfter=4,
         ),
         "subtitle": ParagraphStyle(
             "subtitle",
-            parent=styles["BodyText"],
+            parent=sample["BodyText"],
             fontName="Helvetica",
-            fontSize=10.5,
-            leading=13.5,
+            fontSize=10,
+            leading=12.5,
             textColor=colors.HexColor("#4b5563"),
         ),
-        "part": ParagraphStyle(
-            "part",
-            parent=styles["BodyText"],
+        "item_label": ParagraphStyle(
+            "item_label",
+            parent=sample["BodyText"],
             fontName="Helvetica-Bold",
             fontSize=9,
             leading=11,
             textColor=colors.HexColor("#145a8d"),
         ),
-        "turn_label": ParagraphStyle(
-            "turn_label",
-            parent=styles["BodyText"],
+        "item_title": ParagraphStyle(
+            "item_title",
+            parent=sample["BodyText"],
             fontName="Helvetica-Bold",
-            fontSize=8.5,
-            leading=10,
-            textColor=colors.HexColor("#475569"),
-        ),
-        "turn_text": ParagraphStyle(
-            "turn_text",
-            parent=styles["BodyText"],
-            fontName="Helvetica",
-            fontSize=9.8,
-            leading=13.5,
-            textColor=colors.HexColor("#111827"),
-        ),
-        "prompt": ParagraphStyle(
-            "prompt",
-            parent=styles["BodyText"],
-            fontName="Helvetica-Bold",
-            fontSize=10,
-            leading=12,
-            textColor=colors.HexColor("#111111"),
-        ),
-        "choice_top": ParagraphStyle(
-            "choice_top",
-            parent=styles["BodyText"],
-            fontName="Helvetica-Bold",
-            fontSize=7.6,
-            leading=9,
-            textColor=colors.HexColor("#64748b"),
-            alignment=TA_CENTER,
-        ),
-        "choice_bottom": ParagraphStyle(
-            "choice_bottom",
-            parent=styles["BodyText"],
-            fontName="Helvetica-Bold",
-            fontSize=9.4,
-            leading=11,
-            textColor=colors.HexColor("#111827"),
-            alignment=TA_CENTER,
-        ),
-        "answer_bar": ParagraphStyle(
-            "answer_bar",
-            parent=styles["BodyText"],
-            fontName="Helvetica-Bold",
-            fontSize=10.2,
-            leading=13,
-            textColor=colors.white,
-        ),
-        "body": ParagraphStyle(
-            "body",
-            parent=styles["BodyText"],
-            fontName="Helvetica",
-            fontSize=10,
-            leading=13.5,
-            textColor=colors.HexColor("#1f2937"),
-        ),
-        "body_bold": ParagraphStyle(
-            "body_bold",
-            parent=styles["BodyText"],
-            fontName="Helvetica-Bold",
-            fontSize=10,
-            leading=13.5,
+            fontSize=12.2,
+            leading=14.2,
             textColor=colors.HexColor("#111111"),
         ),
         "small": ParagraphStyle(
             "small",
-            parent=styles["BodyText"],
+            parent=sample["BodyText"],
             fontName="Helvetica",
-            fontSize=8.7,
-            leading=11.5,
+            fontSize=8.3,
+            leading=10.4,
             textColor=colors.HexColor("#4b5563"),
+        ),
+        "answer": ParagraphStyle(
+            "answer",
+            parent=sample["BodyText"],
+            fontName="Helvetica-Bold",
+            fontSize=9.7,
+            leading=12,
+            textColor=colors.white,
+        ),
+        "body": ParagraphStyle(
+            "body",
+            parent=sample["BodyText"],
+            fontName="Helvetica",
+            fontSize=9.4,
+            leading=12,
+            textColor=colors.HexColor("#1f2937"),
         ),
         "link": ParagraphStyle(
             "link",
-            parent=styles["BodyText"],
+            parent=sample["BodyText"],
             fontName="Helvetica",
-            fontSize=9.2,
-            leading=12,
+            fontSize=8.6,
+            leading=10.8,
             textColor=colors.HexColor("#145a8d"),
+        ),
+        "choice_top": ParagraphStyle(
+            "choice_top",
+            parent=sample["BodyText"],
+            fontName="Helvetica-Bold",
+            fontSize=6.6,
+            leading=8.2,
+            alignment=TA_CENTER,
+            textColor=colors.HexColor("#64748b"),
+        ),
+        "choice_bottom": ParagraphStyle(
+            "choice_bottom",
+            parent=sample["BodyText"],
+            fontName="Helvetica-Bold",
+            fontSize=8.2,
+            leading=9.8,
+            alignment=TA_CENTER,
+            textColor=colors.HexColor("#111827"),
         ),
     }
 
@@ -176,189 +159,170 @@ def draw_paragraph(pdf: canvas.Canvas, text: str, style: ParagraphStyle, x: floa
     return y_top - height
 
 
-def draw_page_header(pdf: canvas.Canvas, page_num: int, title: str, subtitle: str, part_label: str, styles: dict) -> float:
+def draw_header(pdf: canvas.Canvas, page_num: int, part_label: str, title: str, subtitle: str, styleset: dict[str, ParagraphStyle]) -> float:
     y = PAGE_HEIGHT - MARGIN_TOP
-    pdf.setStrokeColor(colors.HexColor("#cbd5e1"))
-    pdf.line(MARGIN_X, y + 7, PAGE_WIDTH - MARGIN_X, y + 7)
-    y = draw_paragraph(pdf, part_label, styles["part"], MARGIN_X, y, CONTENT_WIDTH)
-    y -= 6
-    y = draw_paragraph(pdf, title, styles["title"], MARGIN_X, y, CONTENT_WIDTH)
+    pdf.setStrokeColor(colors.HexColor("#d8dee8"))
+    pdf.line(MARGIN_X, y + 6, PAGE_WIDTH - MARGIN_X, y + 6)
+    y = draw_paragraph(pdf, part_label, styleset["part"], MARGIN_X, y, CONTENT_WIDTH)
+    y -= 4
+    y = draw_paragraph(pdf, title, styleset["title"], MARGIN_X, y, CONTENT_WIDTH)
     y -= 2
-    y = draw_paragraph(pdf, subtitle, styles["subtitle"], MARGIN_X, y, CONTENT_WIDTH)
-
-    page_label = f"Page {page_num} of {TOTAL_PAGES}"
+    y = draw_paragraph(pdf, subtitle, styleset["subtitle"], MARGIN_X, y, CONTENT_WIDTH)
     pdf.setFillColor(colors.HexColor("#64748b"))
-    pdf.setFont("Helvetica-Bold", 8.5)
-    pdf.drawRightString(PAGE_WIDTH - MARGIN_X, PAGE_HEIGHT - MARGIN_TOP + 2, page_label)
-    return y - 14
+    pdf.setFont("Helvetica-Bold", 8.2)
+    pdf.drawRightString(PAGE_WIDTH - MARGIN_X, PAGE_HEIGHT - MARGIN_TOP + 2, f"Page {page_num} of {TOTAL_PAGES}")
+    return y - 10
 
 
-def draw_turn(pdf: canvas.Canvas, turn: dict, turn_number: int, y_top: float, styles: dict) -> float:
-    x = LEFT_X if turn["side"] == "left" else RIGHT_X
-    label = f"{'Left' if turn['side'] == 'left' else 'Right'} {turn_number}"
-    fill = colors.HexColor("#eef6ff") if turn["side"] == "left" else colors.HexColor("#fff4ef")
-    stroke = colors.HexColor("#bfdcf3") if turn["side"] == "left" else colors.HexColor("#f0c9b9")
-
-    label_text = Paragraph(label, styles["turn_label"])
-    _, label_h = label_text.wrap(BUBBLE_WIDTH - 20, PAGE_HEIGHT)
-    turn_text = Paragraph(turn["text"], styles["turn_text"])
-    _, text_h = turn_text.wrap(BUBBLE_WIDTH - 20, PAGE_HEIGHT)
-    bubble_h = label_h + text_h + 20
-
-    pdf.setFillColor(fill)
-    pdf.setStrokeColor(stroke)
-    pdf.roundRect(x, y_top - bubble_h, BUBBLE_WIDTH, bubble_h, 12, stroke=1, fill=1)
-    label_text.drawOn(pdf, x + 10, y_top - 10 - label_h)
-    turn_text.drawOn(pdf, x + 10, y_top - 16 - label_h - text_h)
-    return y_top - bubble_h - 8
-
-
-def draw_dialogue(pdf: canvas.Canvas, item: dict, y_top: float, styles: dict) -> float:
-    current_y = y_top
-    left_count = 0
-    right_count = 0
-    for turn in item["turns"]:
-      if turn["side"] == "left":
-          left_count += 1
-          turn_number = left_count
-      else:
-          right_count += 1
-          turn_number = right_count
-      current_y = draw_turn(pdf, turn, turn_number, current_y, styles)
-    return current_y
+def draw_choice_row(pdf: canvas.Canvas, x: float, y_top: float, width: float, styleset: dict[str, ParagraphStyle], *, show_answer: str | None = None) -> float:
+    gap = 6
+    box_w = (width - (gap * 4)) / 5
+    box_h = 34
+    order = ["left-formal", "left-informal", "none", "right-informal", "right-formal"]
+    cursor_x = x
+    for key in order:
+        top, bottom = CHOICE_LABELS[key]
+        selected = show_answer == key
+        pdf.setFillColor(colors.HexColor("#e9f7ef") if selected else colors.white)
+        pdf.setStrokeColor(colors.HexColor("#22a06b") if selected else colors.HexColor("#d5dbe4"))
+        pdf.roundRect(cursor_x, y_top - box_h, box_w, box_h, 10, fill=1, stroke=1)
+        top_p = Paragraph(top, styleset["choice_top"])
+        bottom_p = Paragraph(bottom, styleset["choice_bottom"])
+        _, top_h = top_p.wrap(box_w - 10, PAGE_HEIGHT)
+        _, bottom_h = bottom_p.wrap(box_w - 10, PAGE_HEIGHT)
+        top_p.drawOn(pdf, cursor_x + 5, y_top - 8 - top_h)
+        bottom_p.drawOn(pdf, cursor_x + 5, y_top - 12 - top_h - bottom_h)
+        if not selected:
+            pdf.setStrokeColor(colors.HexColor("#64748b"))
+            pdf.circle(cursor_x + 10, y_top - 10, 4, stroke=1, fill=0)
+        cursor_x += box_w + gap
+    return y_top - box_h
 
 
-def draw_choices_row(pdf: canvas.Canvas, y_top: float, styles: dict) -> float:
-    pdf.setFont("Helvetica-Bold", 10, leading=None)
-    pdf.setFillColor(colors.HexColor("#111111"))
-    pdf.drawString(MARGIN_X, y_top, "Mark one choice:")
-    y = y_top - 10
-    gap = 8
-    box_w = (CONTENT_WIDTH - (gap * 4)) / 5
-    box_h = 42
-    x = MARGIN_X
-    for key in ["left-formal", "left-informal", "none", "right-informal", "right-formal"]:
-        side, kind = CHOICE_LABELS[key]
-        pdf.setFillColor(colors.white)
-        pdf.setStrokeColor(colors.HexColor("#cbd5e1"))
-        pdf.roundRect(x, y - box_h, box_w, box_h, 10, stroke=1, fill=1)
-        pdf.circle(x + 12, y - (box_h / 2), 5, stroke=1, fill=0)
-        top = Paragraph(side, styles["choice_top"])
-        bottom = Paragraph(kind, styles["choice_bottom"])
-        _, top_h = top.wrap(box_w - 28, 40)
-        _, bottom_h = bottom.wrap(box_w - 28, 40)
-        top.drawOn(pdf, x + 20, y - 11 - top_h)
-        bottom.drawOn(pdf, x + 20, y - 15 - top_h - bottom_h)
-        x += box_w + gap
-    return y - box_h - 8
+def image_height(width: float) -> float:
+    return width * IMAGE_RATIO
 
 
-def draw_answer_summary(pdf: canvas.Canvas, item: dict, y_top: float, styles: dict) -> float:
-    if item["answerKey"] == "none":
-        summary = "Correct diagnosis: None"
+def item_image_path(item: dict) -> Path:
+    return ASSET_DIR / f"{item['id']}.png"
+
+
+def draw_test_item(pdf: canvas.Canvas, item: dict, item_number: int, x: float, y_top: float, styleset: dict[str, ParagraphStyle]) -> None:
+    y = y_top
+    y = draw_paragraph(pdf, f"Assessment Item {item_number} of 40", styleset["item_label"], x, y, COLUMN_WIDTH)
+    y -= 2
+    y = draw_paragraph(pdf, "Where is the fallacy, if anywhere?", styleset["item_title"], x, y, COLUMN_WIDTH)
+    y -= 8
+
+    img_path = item_image_path(item)
+    img_h = image_height(COLUMN_WIDTH)
+    pdf.setStrokeColor(colors.HexColor("#d5dbe4"))
+    pdf.setFillColor(colors.white)
+    pdf.roundRect(x, y - img_h, COLUMN_WIDTH, img_h, 16, fill=1, stroke=1)
+    pdf.drawImage(str(img_path), x, y - img_h, width=COLUMN_WIDTH, height=img_h, preserveAspectRatio=True, mask="auto")
+    y -= img_h + 10
+
+    y = draw_paragraph(pdf, "Mark one choice:", styleset["small"], x, y, COLUMN_WIDTH)
+    y -= 8
+    draw_choice_row(pdf, x, y, COLUMN_WIDTH, styleset)
+
+
+def draw_answer_item(pdf: canvas.Canvas, item: dict, item_number: int, x: float, y_top: float, styleset: dict[str, ParagraphStyle]) -> None:
+    y = y_top
+    y = draw_paragraph(pdf, f"Answer Key Item {item_number} of 40", styleset["item_label"], x, y, COLUMN_WIDTH)
+    y -= 2
+    title = item.get("fallacyName") or "No fallacy"
+    y = draw_paragraph(pdf, title, styleset["item_title"], x, y, COLUMN_WIDTH)
+    y -= 8
+
+    img_path = item_image_path(item)
+    img_h = image_height(COLUMN_WIDTH)
+    pdf.setStrokeColor(colors.HexColor("#d5dbe4"))
+    pdf.setFillColor(colors.white)
+    pdf.roundRect(x, y - img_h, COLUMN_WIDTH, img_h, 16, fill=1, stroke=1)
+    pdf.drawImage(str(img_path), x, y - img_h, width=COLUMN_WIDTH, height=img_h, preserveAspectRatio=True, mask="auto")
+    y -= img_h + 10
+
+    answer_label = (
+        "Correct answer: None"
+        if item["answerKey"] == "none"
+        else f"Correct answer: {item['answerKey'].replace('-', ' ').title()}"
+    )
+    bar_h = 24
+    pdf.setFillColor(colors.HexColor("#0f172a"))
+    pdf.roundRect(x, y - bar_h, COLUMN_WIDTH, bar_h, 10, fill=1, stroke=0)
+    draw_paragraph(pdf, answer_label, styleset["answer"], x + 10, y - 4, COLUMN_WIDTH - 20)
+    y -= bar_h + 10
+
+    y = draw_paragraph(pdf, item["explanation"], styleset["body"], x, y, COLUMN_WIDTH)
+    y -= 8
+    if item.get("fallacyUrl"):
+        draw_paragraph(pdf, f"LogFall reference: {item['fallacyUrl']}", styleset["link"], x, y, COLUMN_WIDTH)
     else:
-        choice = " ".join(CHOICE_LABELS[item["answerKey"]])
-        summary = f"Correct diagnosis: {choice} - {item['fallacyName']}"
-
-    bar_h = 26
-    pdf.setFillColor(colors.HexColor("#1e293b"))
-    pdf.setStrokeColor(colors.HexColor("#1e293b"))
-    pdf.roundRect(MARGIN_X, y_top - bar_h, CONTENT_WIDTH, bar_h, 12, stroke=0, fill=1)
-    draw_paragraph(pdf, summary, styles["answer_bar"], MARGIN_X + 12, y_top - 5, CONTENT_WIDTH - 24)
-    return y_top - bar_h - 12
+        draw_paragraph(pdf, "This is a control item with no fallacy.", styleset["small"], x, y, COLUMN_WIDTH)
 
 
-def draw_footer(pdf: canvas.Canvas):
-    footer_y = MARGIN_BOTTOM - 6
-    pdf.setStrokeColor(colors.HexColor("#e2e8f0"))
-    pdf.line(MARGIN_X, footer_y + 12, PAGE_WIDTH - MARGIN_X, footer_y + 12)
-    pdf.setFont("Helvetica", 8.3)
-    pdf.setFillColor(colors.HexColor("#64748b"))
-    pdf.drawString(MARGIN_X, footer_y, "LogFall printable assessment")
-    pdf.drawRightString(PAGE_WIDTH - MARGIN_X, footer_y, "Copyright © Phil Stilwell")
-
-
-def render_question_page(pdf: canvas.Canvas, item: dict, index: int, styles: dict):
-    y = draw_page_header(
-        pdf,
-        index + 1,
-        f"Assessment Item {index + 1} of 40",
-        "Read the full exchange, then decide whether the fallacy is on the left, on the right, or nowhere.",
-        "Part I - Dialogue assessment items",
-        styles,
-    )
-    y = draw_dialogue(pdf, item, y, styles)
-    y -= 4
-    y = draw_choices_row(pdf, y, styles)
-    draw_paragraph(
-        pdf,
-        "Reminder: there is at most one fallacy in the exchange, and some items contain none at all.",
-        styles["small"],
-        MARGIN_X,
-        y,
-        CONTENT_WIDTH,
-    )
-    draw_footer(pdf)
-    pdf.showPage()
-
-
-def render_answer_page(pdf: canvas.Canvas, item: dict, index: int, styles: dict):
-    y = draw_page_header(
-        pdf,
-        40 + index + 1,
-        f"Answer Guide {index + 1} of 40",
-        "Use the diagnosis and commentary below to see exactly why this dialogue counts as left formal, left informal, none, right informal, or right formal.",
-        "Part II - Correct answers and commentary",
-        styles,
-    )
-    y = draw_answer_summary(pdf, item, y, styles)
-    y = draw_dialogue(pdf, item, y, styles)
-    y -= 4
-    y = draw_paragraph(pdf, "<b>Commentary</b>", styles["body_bold"], MARGIN_X, y, CONTENT_WIDTH)
-    y -= 4
-    y = draw_paragraph(pdf, item["explanation"], styles["body"], MARGIN_X, y, CONTENT_WIDTH)
-    y -= 10
-    if item.get("fallacySlug"):
-        link = f'{LINK_BASE}{item["fallacySlug"]}/'
-        draw_paragraph(
-            pdf,
-            f'<b>LogFall reference</b>: <link href="{link}" color="#145a8d">{link}</link>',
-            styles["link"],
-            MARGIN_X,
-            y,
-            CONTENT_WIDTH,
-        )
-    else:
-        draw_paragraph(
-            pdf,
-            "<b>LogFall reference</b>: No fallacy page is linked here because this dialogue is a control item with no fallacy.",
-            styles["small"],
-            MARGIN_X,
-            y,
-            CONTENT_WIDTH,
-        )
-    draw_footer(pdf)
-    pdf.showPage()
-
-
-def build_pdf():
+def build_pdf(bank: list[dict]) -> None:
     OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
-    bank = load_bank()
-    styles = make_styles()
-    pdf = canvas.Canvas(str(OUTPUT_PATH), pagesize=letter)
+    styleset = styles()
+    pdf = canvas.Canvas(str(OUTPUT_PATH), pagesize=landscape(letter))
     pdf.setTitle("LogFall Dialogue Assessment")
     pdf.setAuthor("Phil Stilwell")
-    pdf.setSubject("40-item dialogue assessment with answers and commentary")
-    pdf.setCreator("LogFall build_dialogue_assessment_pdf.py")
+    pdf.setSubject("40-item dialogue assessment with illustrated items and answer commentary")
 
-    for index, item in enumerate(bank):
-        render_question_page(pdf, item, index, styles)
-    for index, item in enumerate(bank):
-        render_answer_page(pdf, item, index, styles)
+    test_pages = math.ceil(len(bank) / ITEMS_PER_PAGE)
+
+    # Test half
+    page_num = 1
+    for page_index in range(test_pages):
+        y_top = draw_header(
+            pdf,
+            page_num,
+            "Part I",
+            "Illustrated dialogue assessment",
+            "Choose whether the fallacy is on the left, on the right, or nowhere, and whether it is formal or informal.",
+            styleset,
+        )
+        first_index = page_index * 2
+        left_item = bank[first_index]
+        draw_test_item(pdf, left_item, first_index + 1, MARGIN_X, y_top, styleset)
+        if first_index + 1 < len(bank):
+            right_item = bank[first_index + 1]
+            draw_test_item(pdf, right_item, first_index + 2, MARGIN_X + COLUMN_WIDTH + COLUMN_GAP, y_top, styleset)
+        pdf.showPage()
+        page_num += 1
+
+    # Answer half
+    for page_index in range(test_pages):
+        y_top = draw_header(
+            pdf,
+            page_num,
+            "Part II",
+            "Answers and commentary",
+            "Each illustrated item is shown again with the correct diagnosis and a short explanation of why it fits.",
+            styleset,
+        )
+        first_index = page_index * 2
+        left_item = bank[first_index]
+        draw_answer_item(pdf, left_item, first_index + 1, MARGIN_X, y_top, styleset)
+        if first_index + 1 < len(bank):
+            right_item = bank[first_index + 1]
+            draw_answer_item(pdf, right_item, first_index + 2, MARGIN_X + COLUMN_WIDTH + COLUMN_GAP, y_top, styleset)
+        pdf.showPage()
+        page_num += 1
 
     pdf.save()
+
+
+def main() -> int:
+    bank = load_bank()
+    missing = [item["id"] for item in bank if not item_image_path(item).exists()]
+    if missing:
+        raise RuntimeError(f"Missing assessment dialogue images for: {', '.join(missing)}")
+    build_pdf(bank)
     print(OUTPUT_PATH)
+    return 0
 
 
 if __name__ == "__main__":
-    build_pdf()
+    raise SystemExit(main())

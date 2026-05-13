@@ -6752,6 +6752,7 @@ function buildDialogueAssessmentIndexPage() {
   const bankPayload = dialogueAssessmentBank.map((item) => ({
     ...item,
     fallacyUrl: item.fallacySlug ? `../fallacies/${item.fallacySlug}/` : "",
+    imagePath: `../assets/assessment-dialogues/${item.id}.png`,
   }));
 
   const answerGuide = dialogueAssessmentChoices

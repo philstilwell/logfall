@@ -585,20 +585,47 @@ for (const shell of document.querySelectorAll("[data-dialogue-assessment-shell]"
             <h3 class="assessment-question-title">Where is the fallacy, if anywhere?</h3>
             <div class="quiz-example-shell dialogue-example-shell">
               <p class="quiz-example-label">Six-turn dialogue</p>
-              <p class="quiz-example-text">Read the full exchange before answering.</p>
+              <p class="quiz-example-text">Read the full illustrated exchange before answering.</p>
               <p class="quiz-example-note">At most one speaker commits one fallacy. Some dialogues contain no fallacy at all.</p>
             </div>
-            <div class="dialogue-transcript" role="group" aria-label="Dialogue for question ${item.questionNumber}">
-              ${item.turns
-                .map(
-                  (turn, turnIndex) => `
-                    <div class="dialogue-turn dialogue-turn-${turn.side}">
-                      <div class="dialogue-turn-label">${turn.side === "left" ? "Left" : "Right"} ${Math.floor(turnIndex / 2) + 1}</div>
-                      <div class="dialogue-turn-bubble">${escapeHtmlText(turn.text)}</div>
-                    </div>`,
-                )
-                .join("")}
-            </div>
+            ${
+              item.imagePath
+                ? `
+                  <div class="dialogue-illustration-shell">
+                    <img
+                      class="dialogue-assessment-image"
+                      src="${escapeHtmlText(item.imagePath)}"
+                      alt="Illustrated six-turn dialogue for question ${item.questionNumber}. Left and right speakers alternate three turns each."
+                      loading="lazy"
+                    />
+                  </div>
+                  <details class="dialogue-transcript-toggle">
+                    <summary>Show transcript text</summary>
+                    <div class="dialogue-transcript" role="group" aria-label="Dialogue transcript for question ${item.questionNumber}">
+                      ${item.turns
+                        .map(
+                          (turn, turnIndex) => `
+                            <div class="dialogue-turn dialogue-turn-${turn.side}">
+                              <div class="dialogue-turn-label">${turn.side === "left" ? "Left" : "Right"} ${Math.floor(turnIndex / 2) + 1}</div>
+                              <div class="dialogue-turn-bubble">${escapeHtmlText(turn.text)}</div>
+                            </div>`,
+                        )
+                        .join("")}
+                    </div>
+                  </details>`
+                : `
+                  <div class="dialogue-transcript" role="group" aria-label="Dialogue for question ${item.questionNumber}">
+                    ${item.turns
+                      .map(
+                        (turn, turnIndex) => `
+                          <div class="dialogue-turn dialogue-turn-${turn.side}">
+                            <div class="dialogue-turn-label">${turn.side === "left" ? "Left" : "Right"} ${Math.floor(turnIndex / 2) + 1}</div>
+                            <div class="dialogue-turn-bubble">${escapeHtmlText(turn.text)}</div>
+                          </div>`,
+                      )
+                      .join("")}
+                  </div>`
+            }
             <p class="dialogue-prompt">Choose the best diagnosis for this exchange.</p>
             <div class="dialogue-options-row" role="radiogroup" aria-label="Answer choices for question ${item.questionNumber}">
               ${dialogueAssessmentChoices

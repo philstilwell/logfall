@@ -1353,10 +1353,43 @@ img {
   margin-bottom: 18px;
 }
 
+.dialogue-illustration-shell {
+  margin-bottom: 18px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  padding: 12px;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+}
+
+.dialogue-assessment-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  background: #fff;
+}
+
+.dialogue-transcript-toggle {
+  margin: 0 0 18px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  padding: 14px 16px;
+  background: #fff;
+}
+
+.dialogue-transcript-toggle summary {
+  cursor: pointer;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.dialogue-transcript-toggle[open] summary {
+  margin-bottom: 14px;
+}
+
 .dialogue-transcript {
   display: grid;
   gap: 12px;
-  margin-bottom: 18px;
 }
 
 .dialogue-turn {
