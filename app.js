@@ -626,7 +626,7 @@ for (const shell of document.querySelectorAll("[data-dialogue-assessment-shell]"
                       .join("")}
                   </div>`
             }
-            <p class="dialogue-prompt">Choose the best diagnosis for this exchange.</p>
+            <p class="dialogue-prompt">Choose one: Left Formal, Left Informal, No Fallacy, Right Informal, or Right Formal.</p>
             <div class="dialogue-options-row" role="radiogroup" aria-label="Answer choices for question ${item.questionNumber}">
               ${dialogueAssessmentChoices
                 .map(

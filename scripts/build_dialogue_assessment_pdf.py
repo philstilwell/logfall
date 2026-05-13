@@ -211,7 +211,14 @@ def draw_test_item(pdf: canvas.Canvas, item: dict, item_number: int, x: float, y
     y = y_top
     y = draw_paragraph(pdf, f"Assessment Item {item_number} of 40", styleset["item_label"], x, y, COLUMN_WIDTH)
     y -= 2
-    y = draw_paragraph(pdf, "Where is the fallacy, if anywhere?", styleset["item_title"], x, y, COLUMN_WIDTH)
+    y = draw_paragraph(
+        pdf,
+        "Choose one: Left Formal, Left Informal, No Fallacy, Right Informal, or Right Formal.",
+        styleset["item_title"],
+        x,
+        y,
+        COLUMN_WIDTH,
+    )
     y -= 8
 
     img_path = item_image_path(item)
