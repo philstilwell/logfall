@@ -6781,18 +6781,9 @@ function buildDialogueAssessmentIndexPage() {
         Each set draws from a bank of 40 difficult six-turn dialogues. In every item, there is at most one fallacy or no fallacy at all.
         Your task is to decide whether the mistake is on the left, on the right, or nowhere, and whether it is formal or informal.
       </p>
-      <div class="two-column compact-columns">
-        <div class="note-panel">
-          <h4>Answer structure</h4>
-          <p class="muted">Every 10-item set is balanced by design: 2 Left Formal, 2 Left Informal, 2 None, 2 Right Informal, and 2 Right Formal.</p>
-          <div class="dialogue-answer-guide">
-            ${answerGuide}
-          </div>
-        </div>
-        <div class="note-panel">
-          <h4>How to read the dialogue</h4>
-          <p class="muted">Each speaker gets three turns. Read the whole exchange before deciding. Some items are traps for overdiagnosis, so <strong>None</strong> is a real answer and should be used when the reasoning holds up.</p>
-        </div>
+      <div class="note-panel">
+        <h4>How to read the dialogue</h4>
+        <p class="muted">Each speaker gets three turns. Read the whole exchange before deciding. Some items are traps for overdiagnosis, so <strong>None</strong> is a real answer and should be used when the reasoning holds up.</p>
       </div>
     </section>
 
