@@ -480,6 +480,17 @@ img {
   text-wrap: balance;
 }
 
+.family-anchor {
+  color: inherit;
+  text-decoration: none;
+  transition: color 160ms ease;
+}
+
+.family-anchor:hover,
+.family-anchor:focus-visible {
+  color: var(--red);
+}
+
 .family-slash {
   opacity: 0.72;
 }
@@ -520,6 +531,10 @@ img {
   color: var(--ink-soft);
   font-size: 0.96rem;
   line-height: 1.55;
+}
+
+.family-link-row {
+  margin: 12px 0 0;
 }
 
 .gauge-section {
@@ -1059,6 +1074,20 @@ img {
   padding: 20px;
 }
 
+.family-guide-card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  transition: transform 160ms ease, box-shadow 160ms ease, border-color 160ms ease;
+}
+
+.family-guide-card-link:hover,
+.family-guide-card-link:focus-visible {
+  transform: translateY(-2px);
+  border-color: rgba(21, 91, 143, 0.28);
+  box-shadow: 0 18px 40px rgba(18, 18, 18, 0.08);
+}
+
 .family-guide-top {
   display: flex;
   align-items: flex-start;
@@ -1083,6 +1112,20 @@ img {
   color: #1c5e89;
   font-size: 0.88rem;
   font-weight: 700;
+}
+
+.family-guide-link-label {
+  margin: 14px 0 0;
+  color: #155b8f;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+  transition: color 160ms ease;
+}
+
+.family-guide-card-link:hover .family-guide-link-label,
+.family-guide-card-link:focus-visible .family-guide-link-label {
+  color: var(--red);
 }
 
 .button-compact {

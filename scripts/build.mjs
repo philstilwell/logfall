@@ -84,6 +84,27 @@ const familyDescriptions = {
     "The argument leans on emotional, social, or rhetorical force where evidence or reasoning should do the work.",
 };
 
+const familyDiagnosticPrompts = {
+  "Formal/Structural Fallacy":
+    "If the premises were true, would this form still fail to support the conclusion?",
+  "Evidential/Methodological Fallacy":
+    "What evidence is missing, cherry-picked, stretched, or treated as stronger than it is?",
+  "Causal/Explanatory Fallacy":
+    "What causal or explanatory link is being assumed rather than actually shown?",
+  "Statistical/Sampling Fallacy":
+    "What sample, base rate, probability, or distribution is being mishandled here?",
+  "Linguistic/Definition Fallacy":
+    "What shift in wording, meaning, or definition is doing the hidden work?",
+  "Conceptual/Framing Fallacy":
+    "What bad category, rigid frame, or confused boundary is distorting the claim?",
+  "Comparison/Generalization Fallacy":
+    "What comparison, stereotype, or thin slice of experience is being overextended?",
+  "Relevance/Distraction Fallacy":
+    "What rhetorically nearby move is distracting from the real issue?",
+  "Persuasive/Appeal Fallacy":
+    "What emotional, social, or rhetorical pressure is standing in for actual support?",
+};
+
 const diagnosticPrompts = {
   Formal: "If the premises were true, would the conclusion still fail to follow?",
   Mathematical: "What numbers, rates, or probabilities are being ignored or mishandled?",
@@ -2910,6 +2931,29 @@ function familyDescriptionForName(family) {
   return familyDescriptions[family] || "This family groups fallacies by the main kind of reasoning mistake they make.";
 }
 
+function familyPathForName(family) {
+  return `families/${slugify(family)}/`;
+}
+
+function familyPromptForName(family) {
+  return familyDiagnosticPrompts[family] || "Ask what kind of reasoning mistake is doing most of the damage.";
+}
+
+function buildFamilyProfiles(records) {
+  const counts = records.reduce((map, record) => {
+    const family = record.family || "Unspecified";
+    map.set(family, (map.get(family) || 0) + 1);
+    return map;
+  }, new Map());
+
+  return Object.entries(familyDescriptions).map(([name, description]) => ({
+    name,
+    description,
+    slug: slugify(name),
+    count: counts.get(name) || 0,
+  }));
+}
+
 function familyLabelHtml(family = "") {
   return String(family || "")
     .split("/")
@@ -2917,30 +2961,34 @@ function familyLabelHtml(family = "") {
     .join('<span class="family-slash">/</span><wbr>');
 }
 
-function renderFamilyPanel(record) {
+function renderFamilyPanel(record, prefix = "../") {
   const family = record.family || "Unspecified";
+  const familyHref = familyDescriptions[family] ? `${prefix}${familyPathForName(family)}` : "";
+  const familyLabel = familyHref
+    ? `<a class="family-anchor" href="${familyHref}">${familyLabelHtml(family)}</a>`
+    : familyLabelHtml(family);
   return `<div class="note-panel">
       <h4>Family</h4>
-      <p class="muted"><strong class="family-name">${familyLabelHtml(family)}</strong></p>
+      <p class="muted"><strong class="family-name">${familyLabel}</strong></p>
       <p class="family-note">${escapeHtml(familyDescriptionForName(family))}</p>
+      ${
+        familyHref
+          ? `<p class="family-link-row"><a class="text-link" href="${familyHref}">View all members of this family</a></p>`
+          : ""
+      }
     </div>`;
 }
 
-function renderFamilyGuide(records) {
-  const counts = records.reduce((map, record) => {
-    const family = record.family || "Unspecified";
-    map.set(family, (map.get(family) || 0) + 1);
-    return map;
-  }, new Map());
-
-  const cards = Object.entries(familyDescriptions).map(
-    ([family, description]) => `<article class="note-panel family-guide-card">
+function renderFamilyGuide(familyProfiles, familyBasePath = "../families/") {
+  const cards = familyProfiles.map(
+    (profile) => `<a class="note-panel family-guide-card family-guide-card-link" href="${familyBasePath}${escapeHtml(profile.slug)}/">
         <div class="family-guide-top">
-          <h4 class="family-heading">${familyLabelHtml(family)}</h4>
-          <span class="family-guide-count">${counts.get(family) || 0}</span>
+          <h4 class="family-heading">${familyLabelHtml(profile.name)}</h4>
+          <span class="family-guide-count">${profile.count}</span>
         </div>
-        <p class="muted">${escapeHtml(description)}</p>
-      </article>`,
+        <p class="muted">${escapeHtml(profile.description)}</p>
+        <p class="family-guide-link-label">View all ${profile.count} members</p>
+      </a>`,
   );
 
   return `<section class="panel family-guide-panel">
@@ -3115,7 +3163,7 @@ function renderAnalogyRebuttalSection(record) {
 
 function renderReferenceMeta(record, prompts) {
   return `<div class="meta-grid reference-meta-grid">
-    ${renderFamilyPanel(record)}
+    ${renderFamilyPanel(record, "../../")}
     ${
       record.aliases.length
         ? `<div class="note-panel">
@@ -6997,7 +7045,7 @@ function buildAllFallaciesPage(records, categories) {
       </div>
     </section>
 
-    ${renderFamilyGuide(records)}
+    ${renderFamilyGuide(buildFamilyProfiles(records))}
 
     <section class="section-block">
       <div class="fallacy-grid" data-fallacy-grid>
@@ -7047,6 +7095,144 @@ function buildAllFallaciesPage(records, categories) {
         learningResourceType: ["Glossary", "Reference"],
         educationalUse: ["teaching", "self-study"],
         keywords: ["logical fallacies list", "fallacy index", "critical thinking glossary"],
+      }),
+    ],
+    content,
+  });
+}
+
+function buildFamiliesIndexPage(familyProfiles) {
+  const content = `
+    <div class="breadcrumbs">
+      <a href="../">Home</a><span>/</span><strong>Families</strong>
+    </div>
+
+    ${renderFamilyGuide(familyProfiles, "")}
+  `;
+
+  return pageShell({
+    title: "Logical Fallacy Families and Member Lists | LogFall",
+    description: "Browse LogFall families of logical fallacies, from formal and causal mistakes to evidential, linguistic, and persuasive ones.",
+    prefix: "../",
+    currentSection: "fallacies",
+    canonicalPath: "families/",
+    keywords: [
+      "logical fallacy families",
+      "fallacy families",
+      "types of fallacy families",
+      "reasoning error families",
+    ],
+    structuredData: [
+      breadcrumbSchema([
+        { name: "Home", path: "" },
+        { name: "Families", path: "families/" },
+      ]),
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: "Logical Fallacy Families",
+        url: absoluteUrl("families/"),
+        description:
+          "Browse LogFall families of logical fallacies, from formal and causal mistakes to evidential, linguistic, and persuasive ones.",
+        publisher: publisherSchema(),
+        hasPart: familyProfiles.map((profile) => ({
+          "@type": "CreativeWork",
+          name: profile.name,
+          url: absoluteUrl(`families/${profile.slug}/`),
+          description: profile.description,
+        })),
+      },
+      learningResourceSchema({
+        name: "Logical Fallacy Families",
+        path: "families/",
+        description:
+          "Browse LogFall families of logical fallacies, from formal and causal mistakes to evidential, linguistic, and persuasive ones.",
+        about: ["logical fallacies", "fallacy families", "critical thinking"],
+        teaches: ["families of logical fallacies", "comparison of reasoning mistakes"],
+        learningResourceType: ["Taxonomy", "Reference"],
+        educationalUse: ["teaching", "self-study"],
+        keywords: ["logical fallacy families", "fallacy families", "reasoning error families"],
+      }),
+    ],
+    content,
+  });
+}
+
+function buildFamilyPage(familyProfile, records) {
+  const members = records.filter((record) => record.family === familyProfile.name);
+  const content = `
+    <div class="breadcrumbs">
+      <a href="../../">Home</a><span>/</span><a href="../">Families</a><span>/</span><strong>${escapeHtml(familyProfile.name)}</strong>
+    </div>
+
+    <section class="detail-section">
+      <p class="eyebrow">Family</p>
+      <h2 class="detail-title">${escapeHtml(familyProfile.name)}</h2>
+      <p class="detail-deck">${escapeHtml(familyProfile.description)}</p>
+      <div class="meta-grid section-block">
+        <div class="note-panel">
+          <h4>Entries</h4>
+          <p class="muted">${familyProfile.count} fallacies in this family.</p>
+        </div>
+        <div class="note-panel">
+          <h4>Quick family question</h4>
+          <p class="muted">${escapeHtml(familyPromptForName(familyProfile.name))}</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="fallacy-grid">
+        ${members.map((record) => renderFallacyCard(record, "../../")).join("")}
+      </div>
+    </section>
+  `;
+
+  return pageShell({
+    title: `${familyProfile.name}: Logical Fallacy Family | LogFall`,
+    description: `Browse all ${familyProfile.count} members of the ${familyProfile.name} family, with definitions, examples, and related reasoning mistakes.`,
+    prefix: "../../",
+    currentSection: "fallacies",
+    canonicalPath: `families/${familyProfile.slug}/`,
+    keywords: [
+      `${familyProfile.name} logical fallacies`,
+      `${familyProfile.name.toLowerCase()} family`,
+      "logical fallacy family",
+      "critical thinking",
+    ],
+    structuredData: [
+      breadcrumbSchema([
+        { name: "Home", path: "" },
+        { name: "Families", path: "families/" },
+        { name: familyProfile.name, path: `families/${familyProfile.slug}/` },
+      ]),
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: `${familyProfile.name} Logical Fallacies`,
+        url: absoluteUrl(`families/${familyProfile.slug}/`),
+        description: `Browse all ${familyProfile.count} members of the ${familyProfile.name} family, with definitions, examples, and related reasoning mistakes.`,
+        publisher: publisherSchema(),
+        mainEntity: {
+          "@type": "ItemList",
+          numberOfItems: members.length,
+          itemListElement: members.map((record, index) => ({
+            "@type": "ListItem",
+            position: index + 1,
+            name: record.name,
+            url: absoluteUrl(`fallacies/${record.slug}/`),
+          })),
+        },
+      },
+      learningResourceSchema({
+        name: `${familyProfile.name} Logical Fallacies`,
+        path: `families/${familyProfile.slug}/`,
+        description: `Browse all ${familyProfile.count} members of the ${familyProfile.name} family, with definitions, examples, and related reasoning mistakes.`,
+        about: [familyProfile.name, "logical fallacies", "critical thinking"],
+        teaches: [`${familyProfile.name} logical fallacies`, "comparison of reasoning mistakes"],
+        learningResourceType: ["Family page", "Reference"],
+        educationalUse: ["teaching", "self-study"],
+        keywords: [`${familyProfile.name} logical fallacies`, `${familyProfile.name.toLowerCase()} family`, "critical thinking"],
       }),
     ],
     content,
@@ -7250,7 +7436,7 @@ function buildDetailPage(record, records, categoryProfiles, posterAssets) {
           : `<aside class="detail-section">
         <p class="eyebrow">Reference</p>
         <div class="meta-grid reference-meta-grid">
-          ${renderFamilyPanel(record)}
+          ${renderFamilyPanel(record, "../../")}
           ${
             record.aliases.length
               ? `<div class="note-panel">
@@ -7644,6 +7830,7 @@ async function main() {
     ...category,
     description: categoryDescriptions[category.name] || "A reasoning category in the LogFall taxonomy.",
   }));
+  const familyProfiles = buildFamilyProfiles(records);
   const posterAssets = new Set(
     (await fs.readdir(path.join(distRoot, "assets")).catch(() => []))
       .filter((name) => /^fallacy-.*-poster\.(webp|png|jpe?g)$/i.test(name)),
@@ -7651,6 +7838,7 @@ async function main() {
 
   await pruneGeneratedDirectories(path.join(distRoot, "fallacies"), new Set(records.map((record) => record.slug)));
   await pruneGeneratedDirectories(path.join(distRoot, "categories"), new Set(categories.map((category) => category.slug)));
+  await pruneGeneratedDirectories(path.join(distRoot, "families"), new Set(familyProfiles.map((profile) => profile.slug)));
   await pruneGeneratedDirectories(path.join(distRoot, "paths"), new Set(teachingPathDefinitions.map((pathDefinition) => pathDefinition.slug)));
   await pruneGeneratedDirectories(path.join(distRoot, "theory"), new Set(theoryArticleDefinitions.map((article) => article.slug)));
   await pruneGeneratedDirectories(path.join(distRoot, "check-yourself"), new Set());
@@ -7666,6 +7854,7 @@ async function main() {
   await writeText("theory/index.html", buildTheoryIndexPage());
   await writeText("fallacies/index.html", buildAllFallaciesPage(records, categories));
   await writeText("categories/index.html", buildCategoriesIndexPage(categories));
+  await writeText("families/index.html", buildFamiliesIndexPage(familyProfiles));
   await writeText("paths/index.html", buildTeachingPathsIndexPage(records));
   await writeText("404.html", build404Page());
   const sitemapEntries = [
@@ -7677,8 +7866,10 @@ async function main() {
     { path: "theory/" },
     { path: "fallacies/" },
     { path: "categories/" },
+    { path: "families/" },
     { path: "paths/" },
     ...categories.map((category) => ({ path: `categories/${category.slug}/` })),
+    ...familyProfiles.map((profile) => ({ path: `families/${profile.slug}/` })),
     ...teachingPathDefinitions.map((pathDefinition) => ({ path: `paths/${pathDefinition.slug}/` })),
     ...theoryArticleDefinitions.map((article) => ({ path: `theory/${article.slug}/` })),
     ...records.map((record) => ({ path: `fallacies/${record.slug}/` })),
@@ -7688,6 +7879,10 @@ async function main() {
 
   for (const category of categories) {
     await writeText(`categories/${category.slug}/index.html`, buildCategoryPage(category, records));
+  }
+
+  for (const familyProfile of familyProfiles) {
+    await writeText(`families/${familyProfile.slug}/index.html`, buildFamilyPage(familyProfile, records));
   }
 
   for (const pathDefinition of teachingPathDefinitions) {
@@ -7712,7 +7907,7 @@ async function main() {
       {
         distRoot,
         pageCount:
-          9 + categories.length + teachingPathDefinitions.length + theoryArticleDefinitions.length + records.length,
+          10 + categories.length + familyProfiles.length + teachingPathDefinitions.length + theoryArticleDefinitions.length + records.length,
         recordCount: records.length,
         workbookOutPath,
       },
