@@ -2995,7 +2995,7 @@ function renderFamilyGuide(familyProfiles, familyBasePath = "../families/") {
       <div class="section-header">
         <div>
           <h2 class="section-title">Family guide</h2>
-          <p class="section-copy">These family labels group fallacies by the main kind of reasoning mistake they make.</p>
+          <p class="section-copy">Families are the broad one-home groupings. Categories are narrower diagnostic tags, so a fallacy can belong to several categories but only one family.</p>
         </div>
       </div>
       <div class="family-guide-grid">
@@ -7178,6 +7178,10 @@ function buildFamilyPage(familyProfile, records) {
           <h4>Quick family question</h4>
           <p class="muted">${escapeHtml(familyPromptForName(familyProfile.name))}</p>
         </div>
+        <div class="note-panel">
+          <h4>Family vs. category</h4>
+          <p class="muted">A family is the broad umbrella that gives a fallacy its main home. Categories are the narrower diagnostic tags, so the same fallacy can appear in multiple categories while still belonging to one family.</p>
+        </div>
       </div>
     </section>
 
@@ -7249,7 +7253,7 @@ function buildCategoriesIndexPage(categories) {
       <div class="section-header">
         <div>
           <h2 class="section-title">Taxonomy categories</h2>
-          <p class="section-copy">Each category groups fallacies by the main way reasoning goes wrong, not by topic or ideology.</p>
+          <p class="section-copy">Categories are diagnostic tags for the main way reasoning goes wrong, not topic labels or ideologies. Unlike families, they are not exclusive, so one fallacy can sit in several categories at once.</p>
         </div>
       </div>
       <div class="category-grid">
@@ -7332,6 +7336,10 @@ function buildCategoryPage(category, records) {
         <div class="note-panel">
           <h4>Diagnostic prompt</h4>
           <p class="muted">${escapeHtml(diagnosticPrompts[category.name])}</p>
+        </div>
+        <div class="note-panel">
+          <h4>Category vs. family</h4>
+          <p class="muted">A category is a diagnostic lens, so a fallacy may appear in more than one category. A family is the broader umbrella that gives the fallacy its single main home.</p>
         </div>
       </div>
     </section>
