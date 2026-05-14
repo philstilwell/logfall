@@ -93,6 +93,27 @@
         "Investment talk routinely showcases the funds, traders, and backtests that survived long enough to look impressive while the dead funds and broken strategies quietly disappear."
       ],
       "editorialStatus": "added-2026-completeness-pass"
+    },
+    {
+      "name": "Motte and bailey fallacy",
+      "family": "Linguistic/Definition Fallacy",
+      "categories": [
+        "Tactical",
+        "Linguistic",
+        "Conceptual"
+      ],
+      "aliases": [
+        "motte-and-bailey doctrine",
+        "motte and bailey doctrine"
+      ],
+      "definition": "Occurs when someone advances a bold, controversial claim, retreats under criticism to a weaker and easier-to-defend claim, and then returns to the stronger claim as if the weaker claim had defended it",
+      "example": "A commentator says, 'Anyone who questions this school policy is against student safety.' When challenged, he retreats to, 'I only mean safety should matter in the discussion,' then later talks as if the first charge still stands.",
+      "notes": "People are allowed to clarify, narrow, or abandon an overstatement. The fallacy appears when the safer fallback is used as a shelter for the stronger claim, so criticism is dodged without actually giving up the original claim.",
+      "caseStudies": [
+        "An influencer says, 'Video games are basically training kids to be violent.' When critics push back, she retreats to, 'I only mean that some games can affect mood,' then soon speaks again as if the sweeping original accusation survived the criticism.",
+        "A company representative says, 'Our chatbot truly understands customers.' When pressed, he retreats to, 'I only mean it recognizes patterns and gives useful replies,' then returns to marketing language that treats human-like understanding as already established."
+      ],
+      "editorialStatus": "added-2026-completeness-pass"
     }
   ]
 }

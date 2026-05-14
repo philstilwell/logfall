@@ -5,7 +5,7 @@
   "supplementalSource": "data/supplemental_fallacies.json",
   "rationalityEnrichmentSource": "data/rationality_enrichment.json",
   "caseStudyLibrarySource": "data/case_study_library.json",
-  "recordCount": 143,
+  "recordCount": 144,
   "categories": [
     {
       "name": "Formal",
@@ -65,7 +65,7 @@
     {
       "name": "Linguistic",
       "slug": "linguistic",
-      "count": 15,
+      "count": 16,
       "members": [
         "Contextomy",
         "Continuum fallacy",
@@ -76,6 +76,7 @@
         "Fallacy of necessity",
         "Genetic fallacy",
         "Intentional fallacy",
+        "Motte and bailey fallacy",
         "No True Scotsman",
         "Overwhelming exception",
         "Proof by verbosity",
@@ -87,7 +88,7 @@
     {
       "name": "Conceptual",
       "slug": "conceptual",
-      "count": 51,
+      "count": 52,
       "members": [
         "Abstraction denial",
         "Abstraction fallacy",
@@ -119,6 +120,7 @@
         "Inconsistent comparison",
         "Is-ought problem",
         "Linearity fallacy",
+        "Motte and bailey fallacy",
         "Naturalistic fallacy",
         "Nirvana fallacy",
         "No True Scotsman",
@@ -255,7 +257,7 @@
     {
       "name": "Tactical",
       "slug": "tactical",
-      "count": 30,
+      "count": 31,
       "members": [
         "Ad hominem",
         "Appeal to accomplishment",
@@ -276,6 +278,7 @@
         "If-by-whiskey",
         "Judgmental language",
         "Misleading vividness",
+        "Motte and bailey fallacy",
         "Moving the goalpost",
         "Perverted analogy",
         "Poisoning the well",
@@ -5005,6 +5008,51 @@
       "feedbackLogic": "The app marks the point where the discussion stopped tracking the truth of the original claim.",
       "repairPrompts": "Vivid cases matter, especially when they reveal harms abstract statistics can hide. The fallacy arises when memorable exceptions are used as if they were the normal pattern.",
       "warningSigns": "Warning signs: misleading vividness often appears when a discussion uses tactical pressure to accelerate belief. Look for a move from a weaker observation to a stronger conclusion."
+    },
+    {
+      "name": "Motte and bailey fallacy",
+      "slug": "motte-and-bailey-fallacy",
+      "categories": [
+        "Tactical",
+        "Linguistic",
+        "Conceptual"
+      ],
+      "originalNumber": "",
+      "family": "Linguistic/Definition Fallacy",
+      "subCategory": "",
+      "subSubCategory": "",
+      "aliases": [
+        "motte-and-bailey doctrine",
+        "motte and bailey doctrine"
+      ],
+      "definition": "Occurs when someone advances a bold, controversial claim, retreats under criticism to a weaker and easier-to-defend claim, and then returns to the stronger claim as if the weaker claim had defended it.",
+      "example": "A commentator says, 'Anyone who questions this school policy is against student safety.' When challenged, he retreats to, 'I only mean safety should matter in the discussion,' then later talks as if the first charge still stands.",
+      "notes": "People are allowed to clarify, narrow, or abandon an overstatement. The fallacy appears when the safer fallback is used as a shelter for the stronger claim, so criticism is dodged without actually giving up the original claim.",
+      "caseStudies": [
+        {
+          "summary": "An influencer says, 'Video games are basically training kids to be violent.' When critics push back, she retreats to, 'I only mean that some games can affect mood,' then soon speaks again as if the sweeping original accusation survived the criticism. The fallacy here is Motte and bailey fallacy: someone advances a bold, controversial claim, retreats under criticism to a weaker and easier-to-defend claim, and then returns to the stronger claim as if the weaker claim had defended it. That matters here because people are allowed to clarify, narrow, or abandon an overstatement. That is the exact slip in this case: the safer fallback is used as a shelter for the stronger claim, so criticism is dodged without actually giving up the original claim.",
+          "source": "",
+          "title": "",
+          "date": "",
+          "url": ""
+        },
+        {
+          "summary": "A company representative says, 'Our chatbot truly understands customers.' When pressed, he retreats to, 'I only mean it recognizes patterns and gives useful replies,' then returns to marketing language that treats human-like understanding as already established. The fallacy here is Motte and bailey fallacy: someone advances a bold, controversial claim, retreats under criticism to a weaker and easier-to-defend claim, and then returns to the stronger claim as if the weaker claim had defended it. That matters here because people are allowed to clarify, narrow, or abandon an overstatement. That is the exact slip in this case: the safer fallback is used as a shelter for the stronger claim, so criticism is dodged without actually giving up the original claim.",
+          "source": "",
+          "title": "",
+          "date": "",
+          "url": ""
+        }
+      ],
+      "editorialStatus": "added-2026-completeness-pass",
+      "rationalityDanger": "Motte and bailey fallacy threatens rationality because someone advances a bold, controversial claim, retreats under criticism to a weaker and easier-to-defend claim, and then returns to the stronger claim as if the weaker claim had defended it.",
+      "mainReasoningProblem": "Someone advances a bold, controversial claim, retreats under criticism to a weaker and easier-to-defend claim, and then returns to the stronger claim as if the weaker claim had defended it.",
+      "dynamicsToNotice": "Watch the trigger, the shortcut, and the payoff. Trigger: the claim enters under the Tactical frame with secondary pressure from Linguistic, Conceptual. Shortcut: It moves attention away from the original claim's evidential status by swapping in a safer fallback that sounds related but is easier to defend. Payoff: the stronger claim survives criticism without actually being defended.",
+      "interactiveMechanic": "Claim-switch tracker: use the row's example as the initial scenario, then force the user to separate the bold claim, the safe fallback, and the moment the speaker slides between them.",
+      "userAction": "Mark the controversial claim, identify the weaker retreat position, and test whether the speaker ever really defended the original statement.",
+      "feedbackLogic": "The app highlights the switch point and shows that defending the weaker fallback does not rescue the stronger original claim.",
+      "repairPrompts": "People are allowed to clarify, narrow, or even abandon an overstatement. The fallacy appears only when the weaker claim is used as a shield and the stronger claim is quietly resumed as if it had already been justified.",
+      "warningSigns": "Warning signs: motte and bailey fallacy often appears when a discussion uses tactical pressure to accelerate belief. Look for a bold claim, a retreat to a safer wording under criticism, and then a return to the original claim once the pressure passes. Also watch for aliases or nearby labels: motte-and-bailey doctrine, motte and bailey doctrine."
     },
     {
       "name": "Moving the goalpost",

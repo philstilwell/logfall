@@ -1530,6 +1530,8 @@ const auditedAnalogyResponseOverrides = {
     "That's like saying, 'I know my neighbor, but I don't know who is wearing the mascot costume, so the mascot cannot be my neighbor.' Identity cannot always be substituted transparently inside belief or knowledge contexts.",
   "Misleading vividness":
     "That's like letting one shark-attack headline rewrite your picture of the whole ocean. A dramatic case is being treated as if it were representative frequency.",
+  "Motte and bailey fallacy":
+    "That's like advertising a castle on open ground, then retreating into a small stone bunker whenever anyone attacks it, and later bragging that the castle itself survived the challenge. Defending the safer fallback does not prove the stronger original claim.",
   "Naturalistic fallacy":
     "That's like saying muddy stream water must be healthier than filtered water because it came straight from nature. 'Natural' is being treated as if it settled what is good or preferable.",
   "Negative proof fallacy":
@@ -1925,6 +1927,8 @@ const caveatMisuseOverrides = {
     "Do not use this label whenever two things are compared. Comparison is legitimate when the similarities really do bear on the point at issue.",
   "Hasty generalization":
     "Do not use this label every time someone draws a general conclusion from limited evidence. Sometimes the sample really is enough for a modest claim; the problem is overreaching beyond what the sample can support.",
+  "Motte and bailey fallacy":
+    "Do not use this label whenever someone honestly clarifies, narrows, or abandons an overstatement. The fallacy appears only when the weaker fallback is used as cover and the stronger claim is later resumed as if it had been defended.",
   "No True Scotsman":
     "Do not use this label every time someone insists on real criteria for a category. Categories can have genuine standards; the fallacy appears when the standards are improvised only to block a counterexample.",
   "Red herring":
