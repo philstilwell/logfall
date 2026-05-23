@@ -114,16 +114,14 @@ img {
 }
 
 .masthead-tools {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
   gap: 18px;
   margin-top: 20px;
 }
 
 .top-nav {
   display: flex;
-  flex: 1 1 auto;
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 0;
@@ -149,8 +147,8 @@ img {
   display: flex;
   align-items: center;
   gap: 10px;
-  flex: 0 1 360px;
   width: min(100%, 360px);
+  justify-self: end;
 }
 
 .site-search-input {
@@ -1930,8 +1928,7 @@ img {
   }
 
   .masthead-tools {
-    flex-direction: column;
-    align-items: stretch;
+    justify-items: stretch;
   }
 
   .masthead-inner,
@@ -1966,7 +1963,7 @@ img {
 
   .site-search-form {
     width: 100%;
-    flex-basis: auto;
+    justify-self: stretch;
   }
 
   .audit-step-list {
