@@ -2923,7 +2923,20 @@ function pageShell({
               </div>
             </div>
           </div>
-          <nav class="top-nav" aria-label="Primary">${nav}</nav>
+          <div class="masthead-tools">
+            <nav class="top-nav" aria-label="Primary">${nav}</nav>
+            <form class="site-search-form" role="search" action="${prefix}fallacies/" method="get">
+              <input
+                class="site-search-input"
+                type="search"
+                name="q"
+                placeholder="Search fallacies..."
+                aria-label="Search fallacies"
+                data-site-search-input
+              />
+              <button class="site-search-button" type="submit">Search</button>
+            </form>
+          </div>
         </div>
       </header>
       <main class="page-wrap">${content}</main>

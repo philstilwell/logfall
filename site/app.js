@@ -6,6 +6,7 @@ const resetButton = document.querySelector("[data-search-reset]");
 const cards = Array.from(document.querySelectorAll("[data-fallacy-card]"));
 const countNode = document.querySelector("[data-search-count]");
 const emptyState = document.querySelector("[data-search-empty]");
+const siteSearchInputs = Array.from(document.querySelectorAll("[data-site-search-input]"));
 const totalCount = cards.length;
 const countSingular = countNode?.dataset.searchUnitSingular || "fallacy";
 const countPlural = countNode?.dataset.searchUnitPlural || "fallacies";
@@ -55,6 +56,13 @@ function hydrateFiltersFromUrl() {
   if (categoryFilter) categoryFilter.value = category;
   if (difficultyFilter) difficultyFilter.value = difficulty;
   if (classroomFilter) classroomFilter.value = classroom;
+  if (query) {
+    siteSearchInputs.forEach((input) => {
+      if (!input.value) {
+        input.value = query;
+      }
+    });
+  }
 }
 
 function applyFilters() {
