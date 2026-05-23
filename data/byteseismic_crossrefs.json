@@ -1,0 +1,2925 @@
+[
+  {
+    "fallacy": "Absence of evidence fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/absence-of-evidence-fallacy/",
+    "category": "evidence and proof",
+    "suggestedRefs": [
+      {
+        "title": "Extraordinary Claims",
+        "path": "/epistemology/extraordinary-claims/",
+        "why": "extraordinary-claims page for claims that outstrip normal evidential defaults"
+      },
+      {
+        "title": "What is Evidence?",
+        "path": "/epistemology/what-is-evidence/",
+        "why": "evidence page for what should actually count in support of a claim"
+      }
+    ]
+  },
+  {
+    "fallacy": "Abstraction denial",
+    "logfallUrl": "https://logfall.com/fallacies/abstraction-denial/",
+    "category": "abstraction and generalization",
+    "suggestedRefs": [
+      {
+        "title": "Common Sense Blunders",
+        "path": "/philosophical-inquiry/common-sense-blunders/",
+        "why": "page on intuitive errors that feel obvious until examined"
+      },
+      {
+        "title": "What is Science?",
+        "path": "/philosophy-of-science/what-is-science/",
+        "why": "science page for error-correction, method, and public standards"
+      }
+    ]
+  },
+  {
+    "fallacy": "Abstraction fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/abstraction-fallacy/",
+    "category": "abstraction and generalization",
+    "suggestedRefs": [
+      {
+        "title": "Logic",
+        "path": "/epistemology/logic/",
+        "why": "logic page for formal structure, invalid inference, and paradox pressure"
+      },
+      {
+        "title": "Common Sense Blunders",
+        "path": "/philosophical-inquiry/common-sense-blunders/",
+        "why": "page on intuitive errors that feel obvious until examined"
+      }
+    ]
+  },
+  {
+    "fallacy": "Ad hominem",
+    "logfallUrl": "https://logfall.com/fallacies/ad-hominem/",
+    "category": "rhetorical attack",
+    "suggestedRefs": [
+      {
+        "title": "Avoiding Logical Fallacies",
+        "path": "/rational-thought/avoiding-logical-fallacies/",
+        "why": "broad survey page that already teaches multiple classic fallacy forms"
+      },
+      {
+        "title": "Charitable Engagement",
+        "path": "/philosophical-inquiry/charitable-engagement/",
+        "why": "charitable-reading page for not misrepresenting an opponent"
+      },
+      {
+        "title": "The Motive Fallacy",
+        "path": "/rational-thought/the-motive-fallacy/",
+        "why": "direct page on attacking motives instead of claims"
+      }
+    ]
+  },
+  {
+    "fallacy": "Affirmative conclusion from a negative premise",
+    "logfallUrl": "https://logfall.com/fallacies/affirmative-conclusion-from-a-negative-premise/",
+    "category": "formal logic",
+    "suggestedRefs": [
+      {
+        "title": "What are Syllogisms?",
+        "path": "/epistemology/what-are-syllogisms/",
+        "why": "syllogism page for premise-distribution and conclusion-form mistakes"
+      },
+      {
+        "title": "Deduction: Utility and Issues",
+        "path": "/epistemology/deduction-utility-and-issues/",
+        "why": "deduction page for validity, premise form, and formal breakdowns"
+      }
+    ]
+  },
+  {
+    "fallacy": "Affirming a disjunct",
+    "logfallUrl": "https://logfall.com/fallacies/affirming-a-disjunct/",
+    "category": "formal logic",
+    "suggestedRefs": [
+      {
+        "title": "Logic",
+        "path": "/epistemology/logic/",
+        "why": "logic page for formal structure, invalid inference, and paradox pressure"
+      },
+      {
+        "title": "Deduction: Utility and Issues",
+        "path": "/epistemology/deduction-utility-and-issues/",
+        "why": "deduction page for validity, premise form, and formal breakdowns"
+      }
+    ]
+  },
+  {
+    "fallacy": "Affirming the consequent",
+    "logfallUrl": "https://logfall.com/fallacies/affirming-the-consequent/",
+    "category": "formal logic",
+    "suggestedRefs": [
+      {
+        "title": "Logic",
+        "path": "/epistemology/logic/",
+        "why": "logic page for formal structure, invalid inference, and paradox pressure"
+      },
+      {
+        "title": "Deduction: Utility and Issues",
+        "path": "/epistemology/deduction-utility-and-issues/",
+        "why": "deduction page for validity, premise form, and formal breakdowns"
+      },
+      {
+        "title": "Types of Reasoning",
+        "path": "/epistemology/types-of-reasoning/",
+        "why": "reasoning-types page for separating deductive, inductive, and abductive moves"
+      }
+    ]
+  },
+  {
+    "fallacy": "All or nothing fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/all-or-nothing-fallacy/",
+    "category": "framing and false contrast",
+    "suggestedRefs": [
+      {
+        "title": "Where Framing Goes Awry",
+        "path": "/rational-thought/where-framing-goes-awry/",
+        "why": "page on wording, framing, and distorted comparisons"
+      },
+      {
+        "title": "Shades of Certainty",
+        "path": "/epistemology/shades-of-certainty/",
+        "why": "certainty-gradient page against binary overconfidence"
+      },
+      {
+        "title": "Common Sense Blunders",
+        "path": "/philosophical-inquiry/common-sense-blunders/",
+        "why": "page on intuitive errors that feel obvious until examined"
+      }
+    ]
+  },
+  {
+    "fallacy": "Anecdotal fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/anecdotal-fallacy/",
+    "category": "evidence and proof",
+    "suggestedRefs": [
+      {
+        "title": "What is Evidence?",
+        "path": "/epistemology/what-is-evidence/",
+        "why": "evidence page for what should actually count in support of a claim"
+      },
+      {
+        "title": "The Value of Surveys",
+        "path": "/philosophy-of-science/the-value-of-surveys/",
+        "why": "survey page for interpreting aggregate evidence carefully"
+      },
+      {
+        "title": "The Power of Statistics",
+        "path": "/rational-thought/the-power-of-statistics/",
+        "why": "statistics page for how quantitative evidence clarifies and misleads"
+      }
+    ]
+  },
+  {
+    "fallacy": "Appeal to accomplishment",
+    "logfallUrl": "https://logfall.com/fallacies/appeal-to-accomplishment/",
+    "category": "authority and status",
+    "suggestedRefs": [
+      {
+        "title": "Deflecting to Experts",
+        "path": "/rational-thought/deflecting-to-experts/",
+        "why": "direct page on authority misuse and expertise deflection"
+      },
+      {
+        "title": "Assessing Arguments",
+        "path": "/rational-thought/assessing-arguments/",
+        "why": "argument-evaluation page that helps a reader test the structure instead of just naming the error"
+      }
+    ]
+  },
+  {
+    "fallacy": "Appeal to authority",
+    "logfallUrl": "https://logfall.com/fallacies/appeal-to-authority/",
+    "category": "authority and status",
+    "suggestedRefs": [
+      {
+        "title": "Deflecting to Experts",
+        "path": "/rational-thought/deflecting-to-experts/",
+        "why": "direct page on authority misuse and expertise deflection"
+      },
+      {
+        "title": "Assessing Arguments",
+        "path": "/rational-thought/assessing-arguments/",
+        "why": "argument-evaluation page that helps a reader test the structure instead of just naming the error"
+      },
+      {
+        "title": "Avoiding Logical Fallacies",
+        "path": "/rational-thought/avoiding-logical-fallacies/",
+        "why": "broad survey page that already teaches multiple classic fallacy forms"
+      }
+    ]
+  },
+  {
+    "fallacy": "Appeal to consequences",
+    "logfallUrl": "https://logfall.com/fallacies/appeal-to-consequences/",
+    "category": "pragmatic vs epistemic warrant",
+    "suggestedRefs": [
+      {
+        "title": "Pragmatic Considerations vs Epistemic Assessments",
+        "path": "/epistemology/pragmatic-considerations-vs-epistemic-assessments/",
+        "why": "page separating pragmatic usefulness from epistemic warrant"
+      },
+      {
+        "title": "What is Belief?",
+        "path": "/epistemology/what-is-belief/",
+        "why": "belief page for confidence, commitment, and action-guidance"
+      },
+      {
+        "title": "Recommendations vs Moral Claims",
+        "path": "/ethics/recommendations-vs-moral-claims/",
+        "why": "page distinguishing advice, preference, and obligation"
+      }
+    ]
+  },
+  {
+    "fallacy": "Appeal to emotion",
+    "logfallUrl": "https://logfall.com/fallacies/appeal-to-emotion/",
+    "category": "emotion and manipulation",
+    "suggestedRefs": [
+      {
+        "title": "The Primacy of Emotions",
+        "path": "/rational-thought/the-primacy-of-emotions/",
+        "why": "page on emotional pressure steering judgment"
+      },
+      {
+        "title": "Dangers: Ideologies of Emotion",
+        "path": "/philosophical-inquiry/dangers-ideologies-of-emotion/",
+        "why": "page on collective emotional systems short-circuiting inquiry"
+      },
+      {
+        "title": "Avoiding Logical Fallacies",
+        "path": "/rational-thought/avoiding-logical-fallacies/",
+        "why": "broad survey page that already teaches multiple classic fallacy forms"
+      }
+    ]
+  },
+  {
+    "fallacy": "Appeal to fear",
+    "logfallUrl": "https://logfall.com/fallacies/appeal-to-fear/",
+    "category": "emotion and manipulation",
+    "suggestedRefs": [
+      {
+        "title": "Dangers: Ideologies of Emotion",
+        "path": "/philosophical-inquiry/dangers-ideologies-of-emotion/",
+        "why": "page on collective emotional systems short-circuiting inquiry"
+      },
+      {
+        "title": "The Primacy of Emotions",
+        "path": "/rational-thought/the-primacy-of-emotions/",
+        "why": "page on emotional pressure steering judgment"
+      },
+      {
+        "title": "Avoiding Logical Fallacies",
+        "path": "/rational-thought/avoiding-logical-fallacies/",
+        "why": "broad survey page that already teaches multiple classic fallacy forms"
+      }
+    ]
+  },
+  {
+    "fallacy": "Appeal to flattery",
+    "logfallUrl": "https://logfall.com/fallacies/appeal-to-flattery/",
+    "category": "emotion and manipulation",
+    "suggestedRefs": [
+      {
+        "title": "Avoiding Logical Fallacies",
+        "path": "/rational-thought/avoiding-logical-fallacies/",
+        "why": "broad survey page that already teaches multiple classic fallacy forms"
+      },
+      {
+        "title": "The Motive Fallacy",
+        "path": "/rational-thought/the-motive-fallacy/",
+        "why": "direct page on attacking motives instead of claims"
+      }
+    ]
+  },
+  {
+    "fallacy": "Appeal to motive",
+    "logfallUrl": "https://logfall.com/fallacies/appeal-to-motive/",
+    "category": "motive and person-based attack",
+    "suggestedRefs": [
+      {
+        "title": "The Motive Fallacy",
+        "path": "/rational-thought/the-motive-fallacy/",
+        "why": "direct page on attacking motives instead of claims"
+      },
+      {
+        "title": "Charitable Engagement",
+        "path": "/philosophical-inquiry/charitable-engagement/",
+        "why": "charitable-reading page for not misrepresenting an opponent"
+      },
+      {
+        "title": "Assessing Arguments",
+        "path": "/rational-thought/assessing-arguments/",
+        "why": "argument-evaluation page that helps a reader test the structure instead of just naming the error"
+      }
+    ]
+  },
+  {
+    "fallacy": "Appeal to nature",
+    "logfallUrl": "https://logfall.com/fallacies/appeal-to-nature/",
+    "category": "nature and normativity",
+    "suggestedRefs": [
+      {
+        "title": "“Is” vs “Ought”",
+        "path": "/ethics/is-vs-ought/",
+        "why": "direct page on the descriptive/normative gap"
+      },
+      {
+        "title": "Methodological Naturalism",
+        "path": "/philosophy-of-science/methodological-naturalism/",
+        "why": "page on naturalistic method without metaphysical overreach"
+      }
+    ]
+  },
+  {
+    "fallacy": "Appeal to novelty",
+    "logfallUrl": "https://logfall.com/fallacies/appeal-to-novelty/",
+    "category": "tradition/novelty pressure",
+    "suggestedRefs": [
+      {
+        "title": "Technology Outpaces Theory",
+        "path": "/philosophy-of-science/technology-outpaces-theory/",
+        "why": "page on novelty outrunning understanding"
+      },
+      {
+        "title": "Characteristics of Science Denial",
+        "path": "/rational-thought/characteristics-of-science-denial/",
+        "why": "page on denial patterns that shelter bad arguments"
+      },
+      {
+        "title": "What is Science?",
+        "path": "/philosophy-of-science/what-is-science/",
+        "why": "science page for error-correction, method, and public standards"
+      }
+    ]
+  },
+  {
+    "fallacy": "Appeal to pity",
+    "logfallUrl": "https://logfall.com/fallacies/appeal-to-pity/",
+    "category": "emotion and manipulation",
+    "suggestedRefs": [
+      {
+        "title": "The Primacy of Emotions",
+        "path": "/rational-thought/the-primacy-of-emotions/",
+        "why": "page on emotional pressure steering judgment"
+      },
+      {
+        "title": "Assessing Arguments",
+        "path": "/rational-thought/assessing-arguments/",
+        "why": "argument-evaluation page that helps a reader test the structure instead of just naming the error"
+      }
+    ]
+  },
+  {
+    "fallacy": "Appeal to poverty",
+    "logfallUrl": "https://logfall.com/fallacies/appeal-to-poverty/",
+    "category": "emotion and manipulation",
+    "suggestedRefs": [
+      {
+        "title": "The Primacy of Emotions",
+        "path": "/rational-thought/the-primacy-of-emotions/",
+        "why": "page on emotional pressure steering judgment"
+      },
+      {
+        "title": "Assessing Arguments",
+        "path": "/rational-thought/assessing-arguments/",
+        "why": "argument-evaluation page that helps a reader test the structure instead of just naming the error"
+      }
+    ]
+  },
+  {
+    "fallacy": "Appeal to probability",
+    "logfallUrl": "https://logfall.com/fallacies/appeal-to-probability/",
+    "category": "probability and credence",
+    "suggestedRefs": [
+      {
+        "title": "Reasoned Probabilities and Decisions",
+        "path": "/epistemology/reasoned-probabilities-and-decisions/",
+        "why": "page on probabilistic judgment in live decisions"
+      },
+      {
+        "title": "Shades of Certainty",
+        "path": "/epistemology/shades-of-certainty/",
+        "why": "certainty-gradient page against binary overconfidence"
+      },
+      {
+        "title": "Extraordinary Claims",
+        "path": "/epistemology/extraordinary-claims/",
+        "why": "extraordinary-claims page for claims that outstrip normal evidential defaults"
+      }
+    ]
+  },
+  {
+    "fallacy": "Appeal to ridicule",
+    "logfallUrl": "https://logfall.com/fallacies/appeal-to-ridicule/",
+    "category": "rhetorical attack",
+    "suggestedRefs": [
+      {
+        "title": "Avoiding Logical Fallacies",
+        "path": "/rational-thought/avoiding-logical-fallacies/",
+        "why": "broad survey page that already teaches multiple classic fallacy forms"
+      },
+      {
+        "title": "Charitable Engagement",
+        "path": "/philosophical-inquiry/charitable-engagement/",
+        "why": "charitable-reading page for not misrepresenting an opponent"
+      }
+    ]
+  },
+  {
+    "fallacy": "Appeal to spite",
+    "logfallUrl": "https://logfall.com/fallacies/appeal-to-spite/",
+    "category": "emotion and manipulation",
+    "suggestedRefs": [
+      {
+        "title": "The Primacy of Emotions",
+        "path": "/rational-thought/the-primacy-of-emotions/",
+        "why": "page on emotional pressure steering judgment"
+      },
+      {
+        "title": "The Motive Fallacy",
+        "path": "/rational-thought/the-motive-fallacy/",
+        "why": "direct page on attacking motives instead of claims"
+      }
+    ]
+  },
+  {
+    "fallacy": "Appeal to tradition",
+    "logfallUrl": "https://logfall.com/fallacies/appeal-to-tradition/",
+    "category": "tradition/novelty pressure",
+    "suggestedRefs": [
+      {
+        "title": "Characteristics of Science Denial",
+        "path": "/rational-thought/characteristics-of-science-denial/",
+        "why": "page on denial patterns that shelter bad arguments"
+      },
+      {
+        "title": "What is Science?",
+        "path": "/philosophy-of-science/what-is-science/",
+        "why": "science page for error-correction, method, and public standards"
+      },
+      {
+        "title": "Meta-Ethics",
+        "path": "/ethics/meta-ethics/",
+        "why": "page on the main metaethical distinctions behind many normative fallacies"
+      }
+    ]
+  },
+  {
+    "fallacy": "Appeal to wealth",
+    "logfallUrl": "https://logfall.com/fallacies/appeal-to-wealth/",
+    "category": "authority and status",
+    "suggestedRefs": [
+      {
+        "title": "Deflecting to Experts",
+        "path": "/rational-thought/deflecting-to-experts/",
+        "why": "direct page on authority misuse and expertise deflection"
+      },
+      {
+        "title": "Assessing Arguments",
+        "path": "/rational-thought/assessing-arguments/",
+        "why": "argument-evaluation page that helps a reader test the structure instead of just naming the error"
+      }
+    ]
+  },
+  {
+    "fallacy": "Argument from fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/argument-from-fallacy/",
+    "category": "meta-argument mistakes",
+    "suggestedRefs": [
+      {
+        "title": "Assessing Arguments",
+        "path": "/rational-thought/assessing-arguments/",
+        "why": "argument-evaluation page that helps a reader test the structure instead of just naming the error"
+      },
+      {
+        "title": "Logic",
+        "path": "/epistemology/logic/",
+        "why": "logic page for formal structure, invalid inference, and paradox pressure"
+      }
+    ]
+  },
+  {
+    "fallacy": "Argument from ignorance",
+    "logfallUrl": "https://logfall.com/fallacies/argument-from-ignorance/",
+    "category": "evidence and proof",
+    "suggestedRefs": [
+      {
+        "title": "Extraordinary Claims",
+        "path": "/epistemology/extraordinary-claims/",
+        "why": "extraordinary-claims page for claims that outstrip normal evidential defaults"
+      },
+      {
+        "title": "The Burden of Proof",
+        "path": "/epistemology/the-burden-of-proof/",
+        "why": "burden-of-proof page for support obligations and improper challenge-shifting"
+      },
+      {
+        "title": "What is Evidence?",
+        "path": "/epistemology/what-is-evidence/",
+        "why": "evidence page for what should actually count in support of a claim"
+      }
+    ]
+  },
+  {
+    "fallacy": "Argument from incredulity",
+    "logfallUrl": "https://logfall.com/fallacies/argument-from-incredulity/",
+    "category": "evidence and proof",
+    "suggestedRefs": [
+      {
+        "title": "Extraordinary Claims",
+        "path": "/epistemology/extraordinary-claims/",
+        "why": "extraordinary-claims page for claims that outstrip normal evidential defaults"
+      },
+      {
+        "title": "What is Belief?",
+        "path": "/epistemology/what-is-belief/",
+        "why": "belief page for confidence, commitment, and action-guidance"
+      },
+      {
+        "title": "Logic",
+        "path": "/epistemology/logic/",
+        "why": "logic page for formal structure, invalid inference, and paradox pressure"
+      }
+    ]
+  },
+  {
+    "fallacy": "Argument from repetition",
+    "logfallUrl": "https://logfall.com/fallacies/argument-from-repetition/",
+    "category": "public discourse and persuasion",
+    "suggestedRefs": [
+      {
+        "title": "Assessing Arguments",
+        "path": "/rational-thought/assessing-arguments/",
+        "why": "argument-evaluation page that helps a reader test the structure instead of just naming the error"
+      },
+      {
+        "title": "Dangers: Siloed Ideologies",
+        "path": "/philosophical-inquiry/dangers-siloed-ideologies/",
+        "why": "ideology page for how communities preserve bad reasoning"
+      }
+    ]
+  },
+  {
+    "fallacy": "Argument from silence",
+    "logfallUrl": "https://logfall.com/fallacies/argument-from-silence/",
+    "category": "evidence and proof",
+    "suggestedRefs": [
+      {
+        "title": "What is Evidence?",
+        "path": "/epistemology/what-is-evidence/",
+        "why": "evidence page for what should actually count in support of a claim"
+      },
+      {
+        "title": "The Burden of Proof",
+        "path": "/epistemology/the-burden-of-proof/",
+        "why": "burden-of-proof page for support obligations and improper challenge-shifting"
+      },
+      {
+        "title": "History as Forensic Science",
+        "path": "/philosophy-of-science/history-as-forensic-science/",
+        "why": "page on historical inference as evidence-guided reconstruction"
+      }
+    ]
+  },
+  {
+    "fallacy": "Argumentum ad baculum",
+    "logfallUrl": "https://logfall.com/fallacies/argumentum-ad-baculum/",
+    "category": "coercion and discourse",
+    "suggestedRefs": [
+      {
+        "title": "Dangers: Ideologies of Emotion",
+        "path": "/philosophical-inquiry/dangers-ideologies-of-emotion/",
+        "why": "page on collective emotional systems short-circuiting inquiry"
+      },
+      {
+        "title": "Dangers: Siloed Ideologies",
+        "path": "/philosophical-inquiry/dangers-siloed-ideologies/",
+        "why": "ideology page for how communities preserve bad reasoning"
+      }
+    ]
+  },
+  {
+    "fallacy": "Argumentum ad populum",
+    "logfallUrl": "https://logfall.com/fallacies/argumentum-ad-populum/",
+    "category": "social proof and group pressure",
+    "suggestedRefs": [
+      {
+        "title": "Personal Truth?",
+        "path": "/philosophical-inquiry/personal-truth/",
+        "why": "page on the slide from objective claim to subjective insulation"
+      },
+      {
+        "title": "Dangers: Siloed Ideologies",
+        "path": "/philosophical-inquiry/dangers-siloed-ideologies/",
+        "why": "ideology page for how communities preserve bad reasoning"
+      },
+      {
+        "title": "Assessing Arguments",
+        "path": "/rational-thought/assessing-arguments/",
+        "why": "argument-evaluation page that helps a reader test the structure instead of just naming the error"
+      }
+    ]
+  },
+  {
+    "fallacy": "Artificial negation",
+    "logfallUrl": "https://logfall.com/fallacies/artificial-negation/",
+    "category": "formal logic",
+    "suggestedRefs": [
+      {
+        "title": "Logic",
+        "path": "/epistemology/logic/",
+        "why": "logic page for formal structure, invalid inference, and paradox pressure"
+      },
+      {
+        "title": "Deduction: Utility and Issues",
+        "path": "/epistemology/deduction-utility-and-issues/",
+        "why": "deduction page for validity, premise form, and formal breakdowns"
+      }
+    ]
+  },
+  {
+    "fallacy": "Association fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/association-fallacy/",
+    "category": "motive and person-based attack",
+    "suggestedRefs": [
+      {
+        "title": "The Motive Fallacy",
+        "path": "/rational-thought/the-motive-fallacy/",
+        "why": "direct page on attacking motives instead of claims"
+      },
+      {
+        "title": "Charitable Engagement",
+        "path": "/philosophical-inquiry/charitable-engagement/",
+        "why": "charitable-reading page for not misrepresenting an opponent"
+      },
+      {
+        "title": "Avoiding Logical Fallacies",
+        "path": "/rational-thought/avoiding-logical-fallacies/",
+        "why": "broad survey page that already teaches multiple classic fallacy forms"
+      }
+    ]
+  },
+  {
+    "fallacy": "Bare assertion fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/bare-assertion-fallacy/",
+    "category": "evidence and proof",
+    "suggestedRefs": [
+      {
+        "title": "The Burden of Proof",
+        "path": "/epistemology/the-burden-of-proof/",
+        "why": "burden-of-proof page for support obligations and improper challenge-shifting"
+      },
+      {
+        "title": "What is Evidence?",
+        "path": "/epistemology/what-is-evidence/",
+        "why": "evidence page for what should actually count in support of a claim"
+      },
+      {
+        "title": "Extraordinary Claims",
+        "path": "/epistemology/extraordinary-claims/",
+        "why": "extraordinary-claims page for claims that outstrip normal evidential defaults"
+      }
+    ]
+  },
+  {
+    "fallacy": "Base rate fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/base-rate-fallacy/",
+    "category": "probability and credence",
+    "suggestedRefs": [
+      {
+        "title": "What is Bayes Theorem?",
+        "path": "/epistemology/what-is-bayes-theorem/",
+        "why": "page on updating by probabilities and prior information"
+      },
+      {
+        "title": "Reasoned Probabilities and Decisions",
+        "path": "/epistemology/reasoned-probabilities-and-decisions/",
+        "why": "page on probabilistic judgment in live decisions"
+      },
+      {
+        "title": "The Power of Statistics",
+        "path": "/rational-thought/the-power-of-statistics/",
+        "why": "statistics page for how quantitative evidence clarifies and misleads"
+      }
+    ]
+  },
+  {
+    "fallacy": "Begging the question",
+    "logfallUrl": "https://logfall.com/fallacies/begging-the-question/",
+    "category": "circularity and self-validation",
+    "suggestedRefs": [
+      {
+        "title": "The Domain of “Proof”",
+        "path": "/epistemology/the-domain-of-proof/",
+        "why": "page clarifying where proof belongs and where it is being misapplied"
+      },
+      {
+        "title": "The Abuse of “Self-Evident”",
+        "path": "/epistemology/the-abuse-of-self-evident/",
+        "why": "page on misusing self-evidence as a stopping point"
+      },
+      {
+        "title": "Logic",
+        "path": "/epistemology/logic/",
+        "why": "logic page for formal structure, invalid inference, and paradox pressure"
+      }
+    ]
+  },
+  {
+    "fallacy": "Bottom-up condemnation",
+    "logfallUrl": "https://logfall.com/fallacies/bottom-up-condemnation/",
+    "category": "comparison and generalization",
+    "suggestedRefs": [
+      {
+        "title": "Metrics for Cultural Comparisons",
+        "path": "/political-philosophy/metrics-for-cultural-comparisons/",
+        "why": "page on apples-to-oranges comparison in public reasoning"
+      },
+      {
+        "title": "False Equivalencies",
+        "path": "/rational-thought/false-equivalencies/",
+        "why": "direct page on treating unlike things as if they were equivalent"
+      },
+      {
+        "title": "Assessing Arguments",
+        "path": "/rational-thought/assessing-arguments/",
+        "why": "argument-evaluation page that helps a reader test the structure instead of just naming the error"
+      }
+    ]
+  },
+  {
+    "fallacy": "Bottom-up justification",
+    "logfallUrl": "https://logfall.com/fallacies/bottom-up-justification/",
+    "category": "comparison and generalization",
+    "suggestedRefs": [
+      {
+        "title": "The Domain of “Proof”",
+        "path": "/epistemology/the-domain-of-proof/",
+        "why": "page clarifying where proof belongs and where it is being misapplied"
+      },
+      {
+        "title": "What is Evidence?",
+        "path": "/epistemology/what-is-evidence/",
+        "why": "evidence page for what should actually count in support of a claim"
+      },
+      {
+        "title": "Assessing Arguments",
+        "path": "/rational-thought/assessing-arguments/",
+        "why": "argument-evaluation page that helps a reader test the structure instead of just naming the error"
+      }
+    ]
+  },
+  {
+    "fallacy": "Broken window fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/broken-window-fallacy/",
+    "category": "economics and unseen costs",
+    "suggestedRefs": [
+      {
+        "title": "What are Moral Hazards?",
+        "path": "/economics/what-are-moral-hazards/",
+        "why": "page on incentives, hidden costs, and distortive side-effects"
+      },
+      {
+        "title": "Government Interventions",
+        "path": "/economics/government-interventions/",
+        "why": "page on policy side-effects and unintended consequences"
+      },
+      {
+        "title": "The Power of Statistics",
+        "path": "/rational-thought/the-power-of-statistics/",
+        "why": "statistics page for how quantitative evidence clarifies and misleads"
+      }
+    ]
+  },
+  {
+    "fallacy": "Cherry picking",
+    "logfallUrl": "https://logfall.com/fallacies/cherry-picking/",
+    "category": "science and selection effects",
+    "suggestedRefs": [
+      {
+        "title": "Detecting Bad Science",
+        "path": "/rational-thought/detecting-bad-science/",
+        "why": "page on spotting weak scientific inference"
+      },
+      {
+        "title": "P-Value Issues",
+        "path": "/philosophy-of-science/p-value-issues/",
+        "why": "page on misuse of statistical significance"
+      },
+      {
+        "title": "Characteristics of Science Denial",
+        "path": "/rational-thought/characteristics-of-science-denial/",
+        "why": "page on denial patterns that shelter bad arguments"
+      }
+    ]
+  },
+  {
+    "fallacy": "Chronological snobbery",
+    "logfallUrl": "https://logfall.com/fallacies/chronological-snobbery/",
+    "category": "history and misplaced dismissal",
+    "suggestedRefs": [
+      {
+        "title": "The Fantastical & Historical Truth",
+        "path": "/miscellany/the-fantastical-historical-truth/",
+        "why": "page on historical truth, myth, and interpretive drift"
+      },
+      {
+        "title": "Characteristics of Science Denial",
+        "path": "/rational-thought/characteristics-of-science-denial/",
+        "why": "page on denial patterns that shelter bad arguments"
+      },
+      {
+        "title": "What is Science?",
+        "path": "/philosophy-of-science/what-is-science/",
+        "why": "science page for error-correction, method, and public standards"
+      }
+    ]
+  },
+  {
+    "fallacy": "Circular cause and consequence",
+    "logfallUrl": "https://logfall.com/fallacies/circular-cause-and-consequence/",
+    "category": "causation",
+    "suggestedRefs": [
+      {
+        "title": "Causal Chains",
+        "path": "/philosophy-of-science/causal-chains/",
+        "why": "page on multi-step causal explanation rather than single-link projection"
+      },
+      {
+        "title": "Correlation and Causation",
+        "path": "/philosophy-of-science/correlation-and-causation/",
+        "why": "page on how these two ideas relate without collapsing"
+      }
+    ]
+  },
+  {
+    "fallacy": "Composition fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/composition-fallacy/",
+    "category": "comparison and generalization",
+    "suggestedRefs": [
+      {
+        "title": "Metrics for Cultural Comparisons",
+        "path": "/political-philosophy/metrics-for-cultural-comparisons/",
+        "why": "page on apples-to-oranges comparison in public reasoning"
+      },
+      {
+        "title": "Logic",
+        "path": "/epistemology/logic/",
+        "why": "logic page for formal structure, invalid inference, and paradox pressure"
+      }
+    ]
+  },
+  {
+    "fallacy": "Confidence as a validator",
+    "logfallUrl": "https://logfall.com/fallacies/confidence-as-a-validator/",
+    "category": "certainty and self-validation",
+    "suggestedRefs": [
+      {
+        "title": "Shades of Certainty",
+        "path": "/epistemology/shades-of-certainty/",
+        "why": "certainty-gradient page against binary overconfidence"
+      },
+      {
+        "title": "What is Belief?",
+        "path": "/epistemology/what-is-belief/",
+        "why": "belief page for confidence, commitment, and action-guidance"
+      },
+      {
+        "title": "The Abuse of “Self-Evident”",
+        "path": "/epistemology/the-abuse-of-self-evident/",
+        "why": "page on misusing self-evidence as a stopping point"
+      }
+    ]
+  },
+  {
+    "fallacy": "Conjunction fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/conjunction-fallacy/",
+    "category": "probability and credence",
+    "suggestedRefs": [
+      {
+        "title": "What is Bayes Theorem?",
+        "path": "/epistemology/what-is-bayes-theorem/",
+        "why": "page on updating by probabilities and prior information"
+      },
+      {
+        "title": "Reasoned Probabilities and Decisions",
+        "path": "/epistemology/reasoned-probabilities-and-decisions/",
+        "why": "page on probabilistic judgment in live decisions"
+      },
+      {
+        "title": "The Power of Statistics",
+        "path": "/rational-thought/the-power-of-statistics/",
+        "why": "statistics page for how quantitative evidence clarifies and misleads"
+      }
+    ]
+  },
+  {
+    "fallacy": "Contextomy",
+    "logfallUrl": "https://logfall.com/fallacies/contextomy/",
+    "category": "quotation and context",
+    "suggestedRefs": [
+      {
+        "title": "Charitable Engagement",
+        "path": "/philosophical-inquiry/charitable-engagement/",
+        "why": "charitable-reading page for not misrepresenting an opponent"
+      },
+      {
+        "title": "Factual Disagreements vs Semantic Misunderstandings",
+        "path": "/rational-thought/factual-disagreements-vs-semantic-misunderstandings/",
+        "why": "page separating factual conflict from merely verbal conflict"
+      },
+      {
+        "title": "Avoiding Logical Fallacies",
+        "path": "/rational-thought/avoiding-logical-fallacies/",
+        "why": "broad survey page that already teaches multiple classic fallacy forms"
+      }
+    ]
+  },
+  {
+    "fallacy": "Continuum fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/continuum-fallacy/",
+    "category": "language and boundaries",
+    "suggestedRefs": [
+      {
+        "title": "Connotative Equivocation",
+        "path": "/philosophy-of-language/connotative-equivocation/",
+        "why": "language page on meaning-shift, connotation, and verbal slide"
+      },
+      {
+        "title": "Where Framing Goes Awry",
+        "path": "/rational-thought/where-framing-goes-awry/",
+        "why": "page on wording, framing, and distorted comparisons"
+      },
+      {
+        "title": "Factual Disagreements vs Semantic Misunderstandings",
+        "path": "/rational-thought/factual-disagreements-vs-semantic-misunderstandings/",
+        "why": "page separating factual conflict from merely verbal conflict"
+      }
+    ]
+  },
+  {
+    "fallacy": "Correlation is not causation",
+    "logfallUrl": "https://logfall.com/fallacies/correlation-is-not-causation/",
+    "category": "causation",
+    "suggestedRefs": [
+      {
+        "title": "Correlation Is Not Causation",
+        "path": "/philosophy-of-science/correlation-is-not-causation/",
+        "why": "direct page on the classic causal-inference warning"
+      },
+      {
+        "title": "Correlation and Causation",
+        "path": "/philosophy-of-science/correlation-and-causation/",
+        "why": "page on how these two ideas relate without collapsing"
+      },
+      {
+        "title": "Confounding Variables",
+        "path": "/philosophy-of-science/confounding-variables/",
+        "why": "page on hidden variables that distort causal stories"
+      }
+    ]
+  },
+  {
+    "fallacy": "Definist fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/definist-fallacy/",
+    "category": "language and definitions",
+    "suggestedRefs": [
+      {
+        "title": "Connotative Equivocation",
+        "path": "/philosophy-of-language/connotative-equivocation/",
+        "why": "language page on meaning-shift, connotation, and verbal slide"
+      },
+      {
+        "title": "Factual Disagreements vs Semantic Misunderstandings",
+        "path": "/rational-thought/factual-disagreements-vs-semantic-misunderstandings/",
+        "why": "page separating factual conflict from merely verbal conflict"
+      },
+      {
+        "title": "What is Etymology?",
+        "path": "/philosophy-of-language/what-is-etymology/",
+        "why": "page showing why word origin does not settle present meaning"
+      }
+    ]
+  },
+  {
+    "fallacy": "Demanding a mechanism",
+    "logfallUrl": "https://logfall.com/fallacies/demanding-a-mechanism/",
+    "category": "explanation and scientific method",
+    "suggestedRefs": [
+      {
+        "title": "What is “Explanation”?",
+        "path": "/philosophy-of-science/definitions-of-explanation/",
+        "why": "page clarifying what does and does not count as explanation"
+      },
+      {
+        "title": "What is Science?",
+        "path": "/philosophy-of-science/what-is-science/",
+        "why": "science page for error-correction, method, and public standards"
+      },
+      {
+        "title": "Causal Chains",
+        "path": "/philosophy-of-science/causal-chains/",
+        "why": "page on multi-step causal explanation rather than single-link projection"
+      }
+    ]
+  },
+  {
+    "fallacy": "Demanding negative proof",
+    "logfallUrl": "https://logfall.com/fallacies/demanding-negative-proof/",
+    "category": "evidence and proof",
+    "suggestedRefs": [
+      {
+        "title": "The Burden of Proof",
+        "path": "/epistemology/the-burden-of-proof/",
+        "why": "burden-of-proof page for support obligations and improper challenge-shifting"
+      },
+      {
+        "title": "Extraordinary Claims",
+        "path": "/epistemology/extraordinary-claims/",
+        "why": "extraordinary-claims page for claims that outstrip normal evidential defaults"
+      },
+      {
+        "title": "What is Evidence?",
+        "path": "/epistemology/what-is-evidence/",
+        "why": "evidence page for what should actually count in support of a claim"
+      }
+    ]
+  },
+  {
+    "fallacy": "Denial of the epistemic gradient",
+    "logfallUrl": "https://logfall.com/fallacies/denial-of-the-epistemic-gradient/",
+    "category": "certainty and self-validation",
+    "suggestedRefs": [
+      {
+        "title": "Shades of Certainty",
+        "path": "/epistemology/shades-of-certainty/",
+        "why": "certainty-gradient page against binary overconfidence"
+      },
+      {
+        "title": "What is Belief?",
+        "path": "/epistemology/what-is-belief/",
+        "why": "belief page for confidence, commitment, and action-guidance"
+      },
+      {
+        "title": "Operational Epistemic Rigor",
+        "path": "/epistemology/operational-epistemic-rigor/",
+        "why": "practical rigor page for keeping standards stable under pressure"
+      }
+    ]
+  },
+  {
+    "fallacy": "Denying a remote hypothetical",
+    "logfallUrl": "https://logfall.com/fallacies/denying-a-remote-hypothetical/",
+    "category": "probability and credence",
+    "suggestedRefs": [
+      {
+        "title": "Reasoned Probabilities and Decisions",
+        "path": "/epistemology/reasoned-probabilities-and-decisions/",
+        "why": "page on probabilistic judgment in live decisions"
+      },
+      {
+        "title": "Sample Size & Margin of Error",
+        "path": "/rational-thought/sample-size-margin-of-error/",
+        "why": "page on sample size, uncertainty, and overconfidence"
+      },
+      {
+        "title": "Common Sense Blunders",
+        "path": "/philosophical-inquiry/common-sense-blunders/",
+        "why": "page on intuitive errors that feel obvious until examined"
+      }
+    ]
+  },
+  {
+    "fallacy": "Denying the antecedent",
+    "logfallUrl": "https://logfall.com/fallacies/denying-the-antecedent/",
+    "category": "formal logic",
+    "suggestedRefs": [
+      {
+        "title": "Logic",
+        "path": "/epistemology/logic/",
+        "why": "logic page for formal structure, invalid inference, and paradox pressure"
+      },
+      {
+        "title": "Deduction: Utility and Issues",
+        "path": "/epistemology/deduction-utility-and-issues/",
+        "why": "deduction page for validity, premise form, and formal breakdowns"
+      }
+    ]
+  },
+  {
+    "fallacy": "Denying the correlative",
+    "logfallUrl": "https://logfall.com/fallacies/denying-the-correlative/",
+    "category": "formal logic",
+    "suggestedRefs": [
+      {
+        "title": "Logic",
+        "path": "/epistemology/logic/",
+        "why": "logic page for formal structure, invalid inference, and paradox pressure"
+      },
+      {
+        "title": "Connotative Equivocation",
+        "path": "/philosophy-of-language/connotative-equivocation/",
+        "why": "language page on meaning-shift, connotation, and verbal slide"
+      }
+    ]
+  },
+  {
+    "fallacy": "Division fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/division-fallacy/",
+    "category": "comparison and generalization",
+    "suggestedRefs": [
+      {
+        "title": "Metrics for Cultural Comparisons",
+        "path": "/political-philosophy/metrics-for-cultural-comparisons/",
+        "why": "page on apples-to-oranges comparison in public reasoning"
+      },
+      {
+        "title": "Logic",
+        "path": "/epistemology/logic/",
+        "why": "logic page for formal structure, invalid inference, and paradox pressure"
+      }
+    ]
+  },
+  {
+    "fallacy": "Ecological fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/ecological-fallacy/",
+    "category": "statistics and aggregation",
+    "suggestedRefs": [
+      {
+        "title": "The Value of Surveys",
+        "path": "/philosophy-of-science/the-value-of-surveys/",
+        "why": "survey page for interpreting aggregate evidence carefully"
+      },
+      {
+        "title": "The Power of Statistics",
+        "path": "/rational-thought/the-power-of-statistics/",
+        "why": "statistics page for how quantitative evidence clarifies and misleads"
+      },
+      {
+        "title": "Sample Size & Margin of Error",
+        "path": "/rational-thought/sample-size-margin-of-error/",
+        "why": "page on sample size, uncertainty, and overconfidence"
+      }
+    ]
+  },
+  {
+    "fallacy": "Empty refutation",
+    "logfallUrl": "https://logfall.com/fallacies/empty-refutation/",
+    "category": "argument structure",
+    "suggestedRefs": [
+      {
+        "title": "Assessing Arguments",
+        "path": "/rational-thought/assessing-arguments/",
+        "why": "argument-evaluation page that helps a reader test the structure instead of just naming the error"
+      },
+      {
+        "title": "Charitable Engagement",
+        "path": "/philosophical-inquiry/charitable-engagement/",
+        "why": "charitable-reading page for not misrepresenting an opponent"
+      }
+    ]
+  },
+  {
+    "fallacy": "Epistemic/ontological conflation",
+    "logfallUrl": "https://logfall.com/fallacies/epistemic-ontological-conflation/",
+    "category": "epistemology vs metaphysics",
+    "suggestedRefs": [
+      {
+        "title": "What is Evidence?",
+        "path": "/epistemology/what-is-evidence/",
+        "why": "evidence page for what should actually count in support of a claim"
+      },
+      {
+        "title": "What is Truth?",
+        "path": "/philosophical-inquiry/what-is-truth/",
+        "why": "truth page for keeping claims answerable to reality rather than rhetoric"
+      },
+      {
+        "title": "What is Belief?",
+        "path": "/epistemology/what-is-belief/",
+        "why": "belief page for confidence, commitment, and action-guidance"
+      }
+    ]
+  },
+  {
+    "fallacy": "Equivocation",
+    "logfallUrl": "https://logfall.com/fallacies/equivocation/",
+    "category": "language and definitions",
+    "suggestedRefs": [
+      {
+        "title": "Connotative Equivocation",
+        "path": "/philosophy-of-language/connotative-equivocation/",
+        "why": "language page on meaning-shift, connotation, and verbal slide"
+      },
+      {
+        "title": "Equivocation on “Wrong”",
+        "path": "/ethics/equivocation-on-wrong/",
+        "why": "moral-language page on one word sliding across distinct meanings"
+      },
+      {
+        "title": "Factual Disagreements vs Semantic Misunderstandings",
+        "path": "/rational-thought/factual-disagreements-vs-semantic-misunderstandings/",
+        "why": "page separating factual conflict from merely verbal conflict"
+      }
+    ]
+  },
+  {
+    "fallacy": "Equivocation fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/equivocation-fallacy/",
+    "category": "language and definitions",
+    "suggestedRefs": [
+      {
+        "title": "Connotative Equivocation",
+        "path": "/philosophy-of-language/connotative-equivocation/",
+        "why": "language page on meaning-shift, connotation, and verbal slide"
+      },
+      {
+        "title": "Equivocation on “Wrong”",
+        "path": "/ethics/equivocation-on-wrong/",
+        "why": "moral-language page on one word sliding across distinct meanings"
+      },
+      {
+        "title": "Factual Disagreements vs Semantic Misunderstandings",
+        "path": "/rational-thought/factual-disagreements-vs-semantic-misunderstandings/",
+        "why": "page separating factual conflict from merely verbal conflict"
+      }
+    ]
+  },
+  {
+    "fallacy": "Etymological fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/etymological-fallacy/",
+    "category": "language and definitions",
+    "suggestedRefs": [
+      {
+        "title": "What is Etymology?",
+        "path": "/philosophy-of-language/what-is-etymology/",
+        "why": "page showing why word origin does not settle present meaning"
+      },
+      {
+        "title": "Connotative Equivocation",
+        "path": "/philosophy-of-language/connotative-equivocation/",
+        "why": "language page on meaning-shift, connotation, and verbal slide"
+      }
+    ]
+  },
+  {
+    "fallacy": "Exclusive premises",
+    "logfallUrl": "https://logfall.com/fallacies/exclusive-premises/",
+    "category": "formal logic",
+    "suggestedRefs": [
+      {
+        "title": "What are Syllogisms?",
+        "path": "/epistemology/what-are-syllogisms/",
+        "why": "syllogism page for premise-distribution and conclusion-form mistakes"
+      },
+      {
+        "title": "Deduction: Utility and Issues",
+        "path": "/epistemology/deduction-utility-and-issues/",
+        "why": "deduction page for validity, premise form, and formal breakdowns"
+      }
+    ]
+  },
+  {
+    "fallacy": "Existential fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/existential-fallacy/",
+    "category": "formal logic",
+    "suggestedRefs": [
+      {
+        "title": "What are Syllogisms?",
+        "path": "/epistemology/what-are-syllogisms/",
+        "why": "syllogism page for premise-distribution and conclusion-form mistakes"
+      },
+      {
+        "title": "Deduction: Utility and Issues",
+        "path": "/epistemology/deduction-utility-and-issues/",
+        "why": "deduction page for validity, premise form, and formal breakdowns"
+      }
+    ]
+  },
+  {
+    "fallacy": "Fallacy of many questions",
+    "logfallUrl": "https://logfall.com/fallacies/fallacy-of-many-questions/",
+    "category": "question framing",
+    "suggestedRefs": [
+      {
+        "title": "Assessing Arguments",
+        "path": "/rational-thought/assessing-arguments/",
+        "why": "argument-evaluation page that helps a reader test the structure instead of just naming the error"
+      },
+      {
+        "title": "Charitable Engagement",
+        "path": "/philosophical-inquiry/charitable-engagement/",
+        "why": "charitable-reading page for not misrepresenting an opponent"
+      }
+    ]
+  },
+  {
+    "fallacy": "Fallacy of necessity",
+    "logfallUrl": "https://logfall.com/fallacies/fallacy-of-necessity/",
+    "category": "formal logic",
+    "suggestedRefs": [
+      {
+        "title": "Logic",
+        "path": "/epistemology/logic/",
+        "why": "logic page for formal structure, invalid inference, and paradox pressure"
+      },
+      {
+        "title": "Deduction: Utility and Issues",
+        "path": "/epistemology/deduction-utility-and-issues/",
+        "why": "deduction page for validity, premise form, and formal breakdowns"
+      }
+    ]
+  },
+  {
+    "fallacy": "False analogy",
+    "logfallUrl": "https://logfall.com/fallacies/false-analogy/",
+    "category": "analogy and comparison",
+    "suggestedRefs": [
+      {
+        "title": "The Power of Analogy",
+        "path": "/philosophy-of-language/the-power-of-analogy/",
+        "why": "page on when analogy illuminates and when it misleads"
+      },
+      {
+        "title": "Assessing Arguments",
+        "path": "/rational-thought/assessing-arguments/",
+        "why": "argument-evaluation page that helps a reader test the structure instead of just naming the error"
+      }
+    ]
+  },
+  {
+    "fallacy": "False attribution",
+    "logfallUrl": "https://logfall.com/fallacies/false-attribution/",
+    "category": "history and representation",
+    "suggestedRefs": [
+      {
+        "title": "The Fantastical & Historical Truth",
+        "path": "/miscellany/the-fantastical-historical-truth/",
+        "why": "page on historical truth, myth, and interpretive drift"
+      },
+      {
+        "title": "Charitable Engagement",
+        "path": "/philosophical-inquiry/charitable-engagement/",
+        "why": "charitable-reading page for not misrepresenting an opponent"
+      }
+    ]
+  },
+  {
+    "fallacy": "False balance",
+    "logfallUrl": "https://logfall.com/fallacies/false-balance/",
+    "category": "public discourse and media framing",
+    "suggestedRefs": [
+      {
+        "title": "Maintaining Scientific Credibility",
+        "path": "/political-philosophy/maintaining-scientific-credibility/",
+        "why": "page on credibility, trust, and evidence in public life"
+      },
+      {
+        "title": "Characteristics of Science Denial",
+        "path": "/rational-thought/characteristics-of-science-denial/",
+        "why": "page on denial patterns that shelter bad arguments"
+      },
+      {
+        "title": "False Equivalencies",
+        "path": "/rational-thought/false-equivalencies/",
+        "why": "direct page on treating unlike things as if they were equivalent"
+      }
+    ]
+  },
+  {
+    "fallacy": "False compromise",
+    "logfallUrl": "https://logfall.com/fallacies/false-compromise/",
+    "category": "comparison and framing",
+    "suggestedRefs": [
+      {
+        "title": "False Equivalencies",
+        "path": "/rational-thought/false-equivalencies/",
+        "why": "direct page on treating unlike things as if they were equivalent"
+      },
+      {
+        "title": "Where Framing Goes Awry",
+        "path": "/rational-thought/where-framing-goes-awry/",
+        "why": "page on wording, framing, and distorted comparisons"
+      }
+    ]
+  },
+  {
+    "fallacy": "False dilemma",
+    "logfallUrl": "https://logfall.com/fallacies/false-dilemma/",
+    "category": "framing and false contrast",
+    "suggestedRefs": [
+      {
+        "title": "Where Framing Goes Awry",
+        "path": "/rational-thought/where-framing-goes-awry/",
+        "why": "page on wording, framing, and distorted comparisons"
+      },
+      {
+        "title": "Shades of Certainty",
+        "path": "/epistemology/shades-of-certainty/",
+        "why": "certainty-gradient page against binary overconfidence"
+      },
+      {
+        "title": "Dangers: Logical Fallacies",
+        "path": "/philosophical-inquiry/dangers-logical-fallacies/",
+        "why": "page with public examples of familiar fallacy patterns"
+      }
+    ]
+  },
+  {
+    "fallacy": "False equivalence",
+    "logfallUrl": "https://logfall.com/fallacies/false-equivalence/",
+    "category": "comparison and framing",
+    "suggestedRefs": [
+      {
+        "title": "False Equivalencies",
+        "path": "/rational-thought/false-equivalencies/",
+        "why": "direct page on treating unlike things as if they were equivalent"
+      },
+      {
+        "title": "Metrics for Cultural Comparisons",
+        "path": "/political-philosophy/metrics-for-cultural-comparisons/",
+        "why": "page on apples-to-oranges comparison in public reasoning"
+      },
+      {
+        "title": "Where Framing Goes Awry",
+        "path": "/rational-thought/where-framing-goes-awry/",
+        "why": "page on wording, framing, and distorted comparisons"
+      }
+    ]
+  },
+  {
+    "fallacy": "False surrender",
+    "logfallUrl": "https://logfall.com/fallacies/false-surrender/",
+    "category": "framing and false contrast",
+    "suggestedRefs": [
+      {
+        "title": "Where Framing Goes Awry",
+        "path": "/rational-thought/where-framing-goes-awry/",
+        "why": "page on wording, framing, and distorted comparisons"
+      },
+      {
+        "title": "Dangers: Siloed Ideologies",
+        "path": "/philosophical-inquiry/dangers-siloed-ideologies/",
+        "why": "ideology page for how communities preserve bad reasoning"
+      }
+    ]
+  },
+  {
+    "fallacy": "Faulty generalization",
+    "logfallUrl": "https://logfall.com/fallacies/faulty-generalization/",
+    "category": "statistics and aggregation",
+    "suggestedRefs": [
+      {
+        "title": "Sample Size & Margin of Error",
+        "path": "/rational-thought/sample-size-margin-of-error/",
+        "why": "page on sample size, uncertainty, and overconfidence"
+      },
+      {
+        "title": "The Power of Statistics",
+        "path": "/rational-thought/the-power-of-statistics/",
+        "why": "statistics page for how quantitative evidence clarifies and misleads"
+      },
+      {
+        "title": "Assessing Arguments",
+        "path": "/rational-thought/assessing-arguments/",
+        "why": "argument-evaluation page that helps a reader test the structure instead of just naming the error"
+      }
+    ]
+  },
+  {
+    "fallacy": "For the sake of argument denial",
+    "logfallUrl": "https://logfall.com/fallacies/for-the-sake-of-argument-denial/",
+    "category": "meta-argument mistakes",
+    "suggestedRefs": [
+      {
+        "title": "Assessing Arguments",
+        "path": "/rational-thought/assessing-arguments/",
+        "why": "argument-evaluation page that helps a reader test the structure instead of just naming the error"
+      },
+      {
+        "title": "Logic",
+        "path": "/epistemology/logic/",
+        "why": "logic page for formal structure, invalid inference, and paradox pressure"
+      }
+    ]
+  },
+  {
+    "fallacy": "Four terms fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/four-terms-fallacy/",
+    "category": "formal logic",
+    "suggestedRefs": [
+      {
+        "title": "What are Syllogisms?",
+        "path": "/epistemology/what-are-syllogisms/",
+        "why": "syllogism page for premise-distribution and conclusion-form mistakes"
+      },
+      {
+        "title": "Deduction: Utility and Issues",
+        "path": "/epistemology/deduction-utility-and-issues/",
+        "why": "deduction page for validity, premise form, and formal breakdowns"
+      }
+    ]
+  },
+  {
+    "fallacy": "Gambler's fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/gambler-s-fallacy/",
+    "category": "probability and credence",
+    "suggestedRefs": [
+      {
+        "title": "Reasoned Probabilities and Decisions",
+        "path": "/epistemology/reasoned-probabilities-and-decisions/",
+        "why": "page on probabilistic judgment in live decisions"
+      },
+      {
+        "title": "What is Bayes Theorem?",
+        "path": "/epistemology/what-is-bayes-theorem/",
+        "why": "page on updating by probabilities and prior information"
+      },
+      {
+        "title": "The Power of Statistics",
+        "path": "/rational-thought/the-power-of-statistics/",
+        "why": "statistics page for how quantitative evidence clarifies and misleads"
+      }
+    ]
+  },
+  {
+    "fallacy": "Genetic fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/genetic-fallacy/",
+    "category": "source vs claim",
+    "suggestedRefs": [
+      {
+        "title": "The Motive Fallacy",
+        "path": "/rational-thought/the-motive-fallacy/",
+        "why": "direct page on attacking motives instead of claims"
+      },
+      {
+        "title": "Charitable Engagement",
+        "path": "/philosophical-inquiry/charitable-engagement/",
+        "why": "charitable-reading page for not misrepresenting an opponent"
+      },
+      {
+        "title": "The Fantastical & Historical Truth",
+        "path": "/miscellany/the-fantastical-historical-truth/",
+        "why": "page on historical truth, myth, and interpretive drift"
+      }
+    ]
+  },
+  {
+    "fallacy": "Hasty generalization",
+    "logfallUrl": "https://logfall.com/fallacies/hasty-generalization/",
+    "category": "statistics and aggregation",
+    "suggestedRefs": [
+      {
+        "title": "Sample Size & Margin of Error",
+        "path": "/rational-thought/sample-size-margin-of-error/",
+        "why": "page on sample size, uncertainty, and overconfidence"
+      },
+      {
+        "title": "The Power of Statistics",
+        "path": "/rational-thought/the-power-of-statistics/",
+        "why": "statistics page for how quantitative evidence clarifies and misleads"
+      },
+      {
+        "title": "Assessing Arguments",
+        "path": "/rational-thought/assessing-arguments/",
+        "why": "argument-evaluation page that helps a reader test the structure instead of just naming the error"
+      }
+    ]
+  },
+  {
+    "fallacy": "Historian's fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/historian-s-fallacy/",
+    "category": "history and hindsight",
+    "suggestedRefs": [
+      {
+        "title": "The Fantastical & Historical Truth",
+        "path": "/miscellany/the-fantastical-historical-truth/",
+        "why": "page on historical truth, myth, and interpretive drift"
+      },
+      {
+        "title": "History as Forensic Science",
+        "path": "/philosophy-of-science/history-as-forensic-science/",
+        "why": "page on historical inference as evidence-guided reconstruction"
+      }
+    ]
+  },
+  {
+    "fallacy": "Homunculus fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/homunculus-fallacy/",
+    "category": "explanation and regress",
+    "suggestedRefs": [
+      {
+        "title": "What is “Explanation”?",
+        "path": "/philosophy-of-science/definitions-of-explanation/",
+        "why": "page clarifying what does and does not count as explanation"
+      },
+      {
+        "title": "Logic",
+        "path": "/epistemology/logic/",
+        "why": "logic page for formal structure, invalid inference, and paradox pressure"
+      }
+    ]
+  },
+  {
+    "fallacy": "Human standard fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/human-standard-fallacy/",
+    "category": "science and standards",
+    "suggestedRefs": [
+      {
+        "title": "What is Science?",
+        "path": "/philosophy-of-science/what-is-science/",
+        "why": "science page for error-correction, method, and public standards"
+      },
+      {
+        "title": "Maintaining Scientific Credibility",
+        "path": "/political-philosophy/maintaining-scientific-credibility/",
+        "why": "page on credibility, trust, and evidence in public life"
+      }
+    ]
+  },
+  {
+    "fallacy": "If-by-whiskey",
+    "logfallUrl": "https://logfall.com/fallacies/if-by-whiskey/",
+    "category": "language and definitions",
+    "suggestedRefs": [
+      {
+        "title": "Factual Disagreements vs Semantic Misunderstandings",
+        "path": "/rational-thought/factual-disagreements-vs-semantic-misunderstandings/",
+        "why": "page separating factual conflict from merely verbal conflict"
+      },
+      {
+        "title": "Connotative Equivocation",
+        "path": "/philosophy-of-language/connotative-equivocation/",
+        "why": "language page on meaning-shift, connotation, and verbal slide"
+      },
+      {
+        "title": "Where Framing Goes Awry",
+        "path": "/rational-thought/where-framing-goes-awry/",
+        "why": "page on wording, framing, and distorted comparisons"
+      }
+    ]
+  },
+  {
+    "fallacy": "Illicit major",
+    "logfallUrl": "https://logfall.com/fallacies/illicit-major/",
+    "category": "formal logic",
+    "suggestedRefs": [
+      {
+        "title": "What are Syllogisms?",
+        "path": "/epistemology/what-are-syllogisms/",
+        "why": "syllogism page for premise-distribution and conclusion-form mistakes"
+      },
+      {
+        "title": "Deduction: Utility and Issues",
+        "path": "/epistemology/deduction-utility-and-issues/",
+        "why": "deduction page for validity, premise form, and formal breakdowns"
+      }
+    ]
+  },
+  {
+    "fallacy": "Impotent logical space",
+    "logfallUrl": "https://logfall.com/fallacies/impotent-logical-space/",
+    "category": "formal logic",
+    "suggestedRefs": [
+      {
+        "title": "Logic",
+        "path": "/epistemology/logic/",
+        "why": "logic page for formal structure, invalid inference, and paradox pressure"
+      },
+      {
+        "title": "Types of Reasoning",
+        "path": "/epistemology/types-of-reasoning/",
+        "why": "reasoning-types page for separating deductive, inductive, and abductive moves"
+      }
+    ]
+  },
+  {
+    "fallacy": "Incomplete comparison",
+    "logfallUrl": "https://logfall.com/fallacies/incomplete-comparison/",
+    "category": "comparison and framing",
+    "suggestedRefs": [
+      {
+        "title": "Metrics for Cultural Comparisons",
+        "path": "/political-philosophy/metrics-for-cultural-comparisons/",
+        "why": "page on apples-to-oranges comparison in public reasoning"
+      },
+      {
+        "title": "False Equivalencies",
+        "path": "/rational-thought/false-equivalencies/",
+        "why": "direct page on treating unlike things as if they were equivalent"
+      },
+      {
+        "title": "Where Framing Goes Awry",
+        "path": "/rational-thought/where-framing-goes-awry/",
+        "why": "page on wording, framing, and distorted comparisons"
+      }
+    ]
+  },
+  {
+    "fallacy": "Inconsistent comparison",
+    "logfallUrl": "https://logfall.com/fallacies/inconsistent-comparison/",
+    "category": "comparison and framing",
+    "suggestedRefs": [
+      {
+        "title": "Metrics for Cultural Comparisons",
+        "path": "/political-philosophy/metrics-for-cultural-comparisons/",
+        "why": "page on apples-to-oranges comparison in public reasoning"
+      },
+      {
+        "title": "False Equivalencies",
+        "path": "/rational-thought/false-equivalencies/",
+        "why": "direct page on treating unlike things as if they were equivalent"
+      },
+      {
+        "title": "Where Framing Goes Awry",
+        "path": "/rational-thought/where-framing-goes-awry/",
+        "why": "page on wording, framing, and distorted comparisons"
+      }
+    ]
+  },
+  {
+    "fallacy": "Intentional fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/intentional-fallacy/",
+    "category": "interpretation and authorial intent",
+    "suggestedRefs": [
+      {
+        "title": "Charitable Engagement",
+        "path": "/philosophical-inquiry/charitable-engagement/",
+        "why": "charitable-reading page for not misrepresenting an opponent"
+      },
+      {
+        "title": "The Fantastical & Historical Truth",
+        "path": "/miscellany/the-fantastical-historical-truth/",
+        "why": "page on historical truth, myth, and interpretive drift"
+      }
+    ]
+  },
+  {
+    "fallacy": "Is-ought problem",
+    "logfallUrl": "https://logfall.com/fallacies/is-ought-problem/",
+    "category": "nature and normativity",
+    "suggestedRefs": [
+      {
+        "title": "“Is” vs “Ought”",
+        "path": "/ethics/is-vs-ought/",
+        "why": "direct page on the descriptive/normative gap"
+      },
+      {
+        "title": "Recommendations vs Moral Claims",
+        "path": "/ethics/recommendations-vs-moral-claims/",
+        "why": "page distinguishing advice, preference, and obligation"
+      },
+      {
+        "title": "Meta-Ethics",
+        "path": "/ethics/meta-ethics/",
+        "why": "page on the main metaethical distinctions behind many normative fallacies"
+      }
+    ]
+  },
+  {
+    "fallacy": "Judgmental language",
+    "logfallUrl": "https://logfall.com/fallacies/judgmental-language/",
+    "category": "language and rhetorical loading",
+    "suggestedRefs": [
+      {
+        "title": "Charitable Engagement",
+        "path": "/philosophical-inquiry/charitable-engagement/",
+        "why": "charitable-reading page for not misrepresenting an opponent"
+      },
+      {
+        "title": "Equivocation on “Wrong”",
+        "path": "/ethics/equivocation-on-wrong/",
+        "why": "moral-language page on one word sliding across distinct meanings"
+      },
+      {
+        "title": "The Primacy of Emotions",
+        "path": "/rational-thought/the-primacy-of-emotions/",
+        "why": "page on emotional pressure steering judgment"
+      }
+    ]
+  },
+  {
+    "fallacy": "Linearity fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/linearity-fallacy/",
+    "category": "causation and complexity",
+    "suggestedRefs": [
+      {
+        "title": "Avoiding Single-Cause Dogmatism",
+        "path": "/epistemology/avoiding-single-cause-dogmatism/",
+        "why": "page resisting monocausal explanations"
+      },
+      {
+        "title": "Causal Chains",
+        "path": "/philosophy-of-science/causal-chains/",
+        "why": "page on multi-step causal explanation rather than single-link projection"
+      },
+      {
+        "title": "Common Sense Blunders",
+        "path": "/philosophical-inquiry/common-sense-blunders/",
+        "why": "page on intuitive errors that feel obvious until examined"
+      }
+    ]
+  },
+  {
+    "fallacy": "Luddite fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/luddite-fallacy/",
+    "category": "technology and progress narratives",
+    "suggestedRefs": [
+      {
+        "title": "Technology Outpaces Theory",
+        "path": "/philosophy-of-science/technology-outpaces-theory/",
+        "why": "page on novelty outrunning understanding"
+      },
+      {
+        "title": "Characteristics of Science Denial",
+        "path": "/rational-thought/characteristics-of-science-denial/",
+        "why": "page on denial patterns that shelter bad arguments"
+      },
+      {
+        "title": "What is Science?",
+        "path": "/philosophy-of-science/what-is-science/",
+        "why": "science page for error-correction, method, and public standards"
+      }
+    ]
+  },
+  {
+    "fallacy": "Masked man fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/masked-man-fallacy/",
+    "category": "formal logic",
+    "suggestedRefs": [
+      {
+        "title": "Logic",
+        "path": "/epistemology/logic/",
+        "why": "logic page for formal structure, invalid inference, and paradox pressure"
+      },
+      {
+        "title": "Deduction: Utility and Issues",
+        "path": "/epistemology/deduction-utility-and-issues/",
+        "why": "deduction page for validity, premise form, and formal breakdowns"
+      }
+    ]
+  },
+  {
+    "fallacy": "Misleading vividness",
+    "logfallUrl": "https://logfall.com/fallacies/misleading-vividness/",
+    "category": "statistics and salience",
+    "suggestedRefs": [
+      {
+        "title": "The Value of Surveys",
+        "path": "/philosophy-of-science/the-value-of-surveys/",
+        "why": "survey page for interpreting aggregate evidence carefully"
+      },
+      {
+        "title": "The Power of Statistics",
+        "path": "/rational-thought/the-power-of-statistics/",
+        "why": "statistics page for how quantitative evidence clarifies and misleads"
+      },
+      {
+        "title": "The Primacy of Emotions",
+        "path": "/rational-thought/the-primacy-of-emotions/",
+        "why": "page on emotional pressure steering judgment"
+      }
+    ]
+  },
+  {
+    "fallacy": "Motte and bailey fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/motte-and-bailey-fallacy/",
+    "category": "ideology and rhetorical retreat",
+    "suggestedRefs": [
+      {
+        "title": "Dangers: Siloed Ideologies",
+        "path": "/philosophical-inquiry/dangers-siloed-ideologies/",
+        "why": "ideology page for how communities preserve bad reasoning"
+      },
+      {
+        "title": "Where Framing Goes Awry",
+        "path": "/rational-thought/where-framing-goes-awry/",
+        "why": "page on wording, framing, and distorted comparisons"
+      },
+      {
+        "title": "What is Truth?",
+        "path": "/philosophical-inquiry/what-is-truth/",
+        "why": "truth page for keeping claims answerable to reality rather than rhetoric"
+      }
+    ]
+  },
+  {
+    "fallacy": "Moving the goalpost",
+    "logfallUrl": "https://logfall.com/fallacies/moving-the-goalpost/",
+    "category": "evidence and standards",
+    "suggestedRefs": [
+      {
+        "title": "The Burden of Proof",
+        "path": "/epistemology/the-burden-of-proof/",
+        "why": "burden-of-proof page for support obligations and improper challenge-shifting"
+      },
+      {
+        "title": "Operational Epistemic Rigor",
+        "path": "/epistemology/operational-epistemic-rigor/",
+        "why": "practical rigor page for keeping standards stable under pressure"
+      },
+      {
+        "title": "Assessing Arguments",
+        "path": "/rational-thought/assessing-arguments/",
+        "why": "argument-evaluation page that helps a reader test the structure instead of just naming the error"
+      }
+    ]
+  },
+  {
+    "fallacy": "Naturalistic fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/naturalistic-fallacy/",
+    "category": "nature and normativity",
+    "suggestedRefs": [
+      {
+        "title": "“Is” vs “Ought”",
+        "path": "/ethics/is-vs-ought/",
+        "why": "direct page on the descriptive/normative gap"
+      },
+      {
+        "title": "Recommendations vs Moral Claims",
+        "path": "/ethics/recommendations-vs-moral-claims/",
+        "why": "page distinguishing advice, preference, and obligation"
+      },
+      {
+        "title": "Meta-Ethics",
+        "path": "/ethics/meta-ethics/",
+        "why": "page on the main metaethical distinctions behind many normative fallacies"
+      }
+    ]
+  },
+  {
+    "fallacy": "Negative proof fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/negative-proof-fallacy/",
+    "category": "evidence and proof",
+    "suggestedRefs": [
+      {
+        "title": "The Burden of Proof",
+        "path": "/epistemology/the-burden-of-proof/",
+        "why": "burden-of-proof page for support obligations and improper challenge-shifting"
+      },
+      {
+        "title": "Extraordinary Claims",
+        "path": "/epistemology/extraordinary-claims/",
+        "why": "extraordinary-claims page for claims that outstrip normal evidential defaults"
+      },
+      {
+        "title": "The Domain of “Proof”",
+        "path": "/epistemology/the-domain-of-proof/",
+        "why": "page clarifying where proof belongs and where it is being misapplied"
+      }
+    ]
+  },
+  {
+    "fallacy": "Nirvana fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/nirvana-fallacy/",
+    "category": "perfect-solution thinking",
+    "suggestedRefs": [
+      {
+        "title": "Where Framing Goes Awry",
+        "path": "/rational-thought/where-framing-goes-awry/",
+        "why": "page on wording, framing, and distorted comparisons"
+      },
+      {
+        "title": "What is Science?",
+        "path": "/philosophy-of-science/what-is-science/",
+        "why": "science page for error-correction, method, and public standards"
+      },
+      {
+        "title": "What are Moral Hazards?",
+        "path": "/economics/what-are-moral-hazards/",
+        "why": "page on incentives, hidden costs, and distortive side-effects"
+      }
+    ]
+  },
+  {
+    "fallacy": "No True Scotsman",
+    "logfallUrl": "https://logfall.com/fallacies/no-true-scotsman/",
+    "category": "group identity and definitional retreat",
+    "suggestedRefs": [
+      {
+        "title": "Dangers: Siloed Ideologies",
+        "path": "/philosophical-inquiry/dangers-siloed-ideologies/",
+        "why": "ideology page for how communities preserve bad reasoning"
+      },
+      {
+        "title": "What is Truth?",
+        "path": "/philosophical-inquiry/what-is-truth/",
+        "why": "truth page for keeping claims answerable to reality rather than rhetoric"
+      },
+      {
+        "title": "Assessing Arguments",
+        "path": "/rational-thought/assessing-arguments/",
+        "why": "argument-evaluation page that helps a reader test the structure instead of just naming the error"
+      }
+    ]
+  },
+  {
+    "fallacy": "Overwhelming exception",
+    "logfallUrl": "https://logfall.com/fallacies/overwhelming-exception/",
+    "category": "statistics and salience",
+    "suggestedRefs": [
+      {
+        "title": "The Power of Statistics",
+        "path": "/rational-thought/the-power-of-statistics/",
+        "why": "statistics page for how quantitative evidence clarifies and misleads"
+      },
+      {
+        "title": "Sample Size & Margin of Error",
+        "path": "/rational-thought/sample-size-margin-of-error/",
+        "why": "page on sample size, uncertainty, and overconfidence"
+      },
+      {
+        "title": "Where Framing Goes Awry",
+        "path": "/rational-thought/where-framing-goes-awry/",
+        "why": "page on wording, framing, and distorted comparisons"
+      }
+    ]
+  },
+  {
+    "fallacy": "Package-deal fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/package-deal-fallacy/",
+    "category": "language and bundling",
+    "suggestedRefs": [
+      {
+        "title": "Where Framing Goes Awry",
+        "path": "/rational-thought/where-framing-goes-awry/",
+        "why": "page on wording, framing, and distorted comparisons"
+      },
+      {
+        "title": "Connotative Equivocation",
+        "path": "/philosophy-of-language/connotative-equivocation/",
+        "why": "language page on meaning-shift, connotation, and verbal slide"
+      },
+      {
+        "title": "Factual Disagreements vs Semantic Misunderstandings",
+        "path": "/rational-thought/factual-disagreements-vs-semantic-misunderstandings/",
+        "why": "page separating factual conflict from merely verbal conflict"
+      }
+    ]
+  },
+  {
+    "fallacy": "Pathetic fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/pathetic-fallacy/",
+    "category": "emotion and language",
+    "suggestedRefs": [
+      {
+        "title": "The Primacy of Emotions",
+        "path": "/rational-thought/the-primacy-of-emotions/",
+        "why": "page on emotional pressure steering judgment"
+      },
+      {
+        "title": "Connotative Equivocation",
+        "path": "/philosophy-of-language/connotative-equivocation/",
+        "why": "language page on meaning-shift, connotation, and verbal slide"
+      }
+    ]
+  },
+  {
+    "fallacy": "Perfect solution fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/perfect-solution-fallacy/",
+    "category": "perfect-solution thinking",
+    "suggestedRefs": [
+      {
+        "title": "What is Science?",
+        "path": "/philosophy-of-science/what-is-science/",
+        "why": "science page for error-correction, method, and public standards"
+      },
+      {
+        "title": "What are Moral Hazards?",
+        "path": "/economics/what-are-moral-hazards/",
+        "why": "page on incentives, hidden costs, and distortive side-effects"
+      },
+      {
+        "title": "Where Framing Goes Awry",
+        "path": "/rational-thought/where-framing-goes-awry/",
+        "why": "page on wording, framing, and distorted comparisons"
+      }
+    ]
+  },
+  {
+    "fallacy": "Perfect standard",
+    "logfallUrl": "https://logfall.com/fallacies/perfect-standard/",
+    "category": "perfect-solution thinking",
+    "suggestedRefs": [
+      {
+        "title": "What is Science?",
+        "path": "/philosophy-of-science/what-is-science/",
+        "why": "science page for error-correction, method, and public standards"
+      },
+      {
+        "title": "Where Framing Goes Awry",
+        "path": "/rational-thought/where-framing-goes-awry/",
+        "why": "page on wording, framing, and distorted comparisons"
+      },
+      {
+        "title": "What are Moral Hazards?",
+        "path": "/economics/what-are-moral-hazards/",
+        "why": "page on incentives, hidden costs, and distortive side-effects"
+      }
+    ]
+  },
+  {
+    "fallacy": "Perverted analogy",
+    "logfallUrl": "https://logfall.com/fallacies/perverted-analogy/",
+    "category": "analogy and comparison",
+    "suggestedRefs": [
+      {
+        "title": "The Power of Analogy",
+        "path": "/philosophy-of-language/the-power-of-analogy/",
+        "why": "page on when analogy illuminates and when it misleads"
+      },
+      {
+        "title": "False Equivalencies",
+        "path": "/rational-thought/false-equivalencies/",
+        "why": "direct page on treating unlike things as if they were equivalent"
+      }
+    ]
+  },
+  {
+    "fallacy": "Piggy-back assumption",
+    "logfallUrl": "https://logfall.com/fallacies/piggy-back-assumption/",
+    "category": "unstated premise",
+    "suggestedRefs": [
+      {
+        "title": "Assessing Arguments",
+        "path": "/rational-thought/assessing-arguments/",
+        "why": "argument-evaluation page that helps a reader test the structure instead of just naming the error"
+      },
+      {
+        "title": "Logic",
+        "path": "/epistemology/logic/",
+        "why": "logic page for formal structure, invalid inference, and paradox pressure"
+      }
+    ]
+  },
+  {
+    "fallacy": "Poisoning the well",
+    "logfallUrl": "https://logfall.com/fallacies/poisoning-the-well/",
+    "category": "pre-emptive rhetorical attack",
+    "suggestedRefs": [
+      {
+        "title": "The Motive Fallacy",
+        "path": "/rational-thought/the-motive-fallacy/",
+        "why": "direct page on attacking motives instead of claims"
+      },
+      {
+        "title": "Charitable Engagement",
+        "path": "/philosophical-inquiry/charitable-engagement/",
+        "why": "charitable-reading page for not misrepresenting an opponent"
+      },
+      {
+        "title": "Dangers: Siloed Ideologies",
+        "path": "/philosophical-inquiry/dangers-siloed-ideologies/",
+        "why": "ideology page for how communities preserve bad reasoning"
+      }
+    ]
+  },
+  {
+    "fallacy": "Post hoc ergo propter hoc",
+    "logfallUrl": "https://logfall.com/fallacies/post-hoc-ergo-propter-hoc/",
+    "category": "causation",
+    "suggestedRefs": [
+      {
+        "title": "Correlation Is Not Causation",
+        "path": "/philosophy-of-science/correlation-is-not-causation/",
+        "why": "direct page on the classic causal-inference warning"
+      },
+      {
+        "title": "Attributions of Causation",
+        "path": "/rational-thought/attributions-of-causation/",
+        "why": "page on everyday causal ascription and its hazards"
+      },
+      {
+        "title": "Causal Chains",
+        "path": "/philosophy-of-science/causal-chains/",
+        "why": "page on multi-step causal explanation rather than single-link projection"
+      }
+    ]
+  },
+  {
+    "fallacy": "Proof by example",
+    "logfallUrl": "https://logfall.com/fallacies/proof-by-example/",
+    "category": "evidence and proof",
+    "suggestedRefs": [
+      {
+        "title": "What is Evidence?",
+        "path": "/epistemology/what-is-evidence/",
+        "why": "evidence page for what should actually count in support of a claim"
+      },
+      {
+        "title": "The Power of Statistics",
+        "path": "/rational-thought/the-power-of-statistics/",
+        "why": "statistics page for how quantitative evidence clarifies and misleads"
+      },
+      {
+        "title": "The Value of Surveys",
+        "path": "/philosophy-of-science/the-value-of-surveys/",
+        "why": "survey page for interpreting aggregate evidence carefully"
+      }
+    ]
+  },
+  {
+    "fallacy": "Proof by verbosity",
+    "logfallUrl": "https://logfall.com/fallacies/proof-by-verbosity/",
+    "category": "evidence and proof",
+    "suggestedRefs": [
+      {
+        "title": "The Domain of “Proof”",
+        "path": "/epistemology/the-domain-of-proof/",
+        "why": "page clarifying where proof belongs and where it is being misapplied"
+      },
+      {
+        "title": "Assessing Arguments",
+        "path": "/rational-thought/assessing-arguments/",
+        "why": "argument-evaluation page that helps a reader test the structure instead of just naming the error"
+      },
+      {
+        "title": "Operational Epistemic Rigor",
+        "path": "/epistemology/operational-epistemic-rigor/",
+        "why": "practical rigor page for keeping standards stable under pressure"
+      }
+    ]
+  },
+  {
+    "fallacy": "Prosecutor's fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/prosecutor-s-fallacy/",
+    "category": "probability and evidence standards",
+    "suggestedRefs": [
+      {
+        "title": "What is Bayes Theorem?",
+        "path": "/epistemology/what-is-bayes-theorem/",
+        "why": "page on updating by probabilities and prior information"
+      },
+      {
+        "title": "Reasoned Probabilities and Decisions",
+        "path": "/epistemology/reasoned-probabilities-and-decisions/",
+        "why": "page on probabilistic judgment in live decisions"
+      },
+      {
+        "title": "The Burden of Proof",
+        "path": "/epistemology/the-burden-of-proof/",
+        "why": "burden-of-proof page for support obligations and improper challenge-shifting"
+      }
+    ]
+  },
+  {
+    "fallacy": "Psychologist's fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/psychologist-s-fallacy/",
+    "category": "mind-reading and subjectivity",
+    "suggestedRefs": [
+      {
+        "title": "Science vs Subjectivity",
+        "path": "/philosophy-of-science/science-vs-subjectivity/",
+        "why": "page on subjectivity pressure inside apparently objective judgment"
+      },
+      {
+        "title": "Attributions of Causation",
+        "path": "/rational-thought/attributions-of-causation/",
+        "why": "page on everyday causal ascription and its hazards"
+      },
+      {
+        "title": "Dangers: Cognitive Biases",
+        "path": "/philosophical-inquiry/dangers-cognitive-biases/",
+        "why": "bias page for cognitive distortions that often travel with the fallacy"
+      }
+    ]
+  },
+  {
+    "fallacy": "Red herring",
+    "logfallUrl": "https://logfall.com/fallacies/red-herring/",
+    "category": "argument diversion",
+    "suggestedRefs": [
+      {
+        "title": "Assessing Arguments",
+        "path": "/rational-thought/assessing-arguments/",
+        "why": "argument-evaluation page that helps a reader test the structure instead of just naming the error"
+      },
+      {
+        "title": "Charitable Engagement",
+        "path": "/philosophical-inquiry/charitable-engagement/",
+        "why": "charitable-reading page for not misrepresenting an opponent"
+      },
+      {
+        "title": "Dangers: Logical Fallacies",
+        "path": "/philosophical-inquiry/dangers-logical-fallacies/",
+        "why": "page with public examples of familiar fallacy patterns"
+      }
+    ]
+  },
+  {
+    "fallacy": "Redeeming illogic with evidence",
+    "logfallUrl": "https://logfall.com/fallacies/redeeming-illogic-with-evidence/",
+    "category": "logic/evidence mismatch",
+    "suggestedRefs": [
+      {
+        "title": "Logic",
+        "path": "/epistemology/logic/",
+        "why": "logic page for formal structure, invalid inference, and paradox pressure"
+      },
+      {
+        "title": "What is Evidence?",
+        "path": "/epistemology/what-is-evidence/",
+        "why": "evidence page for what should actually count in support of a claim"
+      },
+      {
+        "title": "Operational Epistemic Rigor",
+        "path": "/epistemology/operational-epistemic-rigor/",
+        "why": "practical rigor page for keeping standards stable under pressure"
+      }
+    ]
+  },
+  {
+    "fallacy": "Regression fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/regression-fallacy/",
+    "category": "statistics and causal overreach",
+    "suggestedRefs": [
+      {
+        "title": "The Power of Statistics",
+        "path": "/rational-thought/the-power-of-statistics/",
+        "why": "statistics page for how quantitative evidence clarifies and misleads"
+      },
+      {
+        "title": "Attributions of Causation",
+        "path": "/rational-thought/attributions-of-causation/",
+        "why": "page on everyday causal ascription and its hazards"
+      },
+      {
+        "title": "What is Bayes Theorem?",
+        "path": "/epistemology/what-is-bayes-theorem/",
+        "why": "page on updating by probabilities and prior information"
+      }
+    ]
+  },
+  {
+    "fallacy": "Reification",
+    "logfallUrl": "https://logfall.com/fallacies/reification/",
+    "category": "turning abstractions into things",
+    "suggestedRefs": [
+      {
+        "title": "Connotative Equivocation",
+        "path": "/philosophy-of-language/connotative-equivocation/",
+        "why": "language page on meaning-shift, connotation, and verbal slide"
+      },
+      {
+        "title": "Logic",
+        "path": "/epistemology/logic/",
+        "why": "logic page for formal structure, invalid inference, and paradox pressure"
+      },
+      {
+        "title": "Common Sense Blunders",
+        "path": "/philosophical-inquiry/common-sense-blunders/",
+        "why": "page on intuitive errors that feel obvious until examined"
+      }
+    ]
+  },
+  {
+    "fallacy": "Retrospective determinism",
+    "logfallUrl": "https://logfall.com/fallacies/retrospective-determinism/",
+    "category": "history and hindsight",
+    "suggestedRefs": [
+      {
+        "title": "The Fantastical & Historical Truth",
+        "path": "/miscellany/the-fantastical-historical-truth/",
+        "why": "page on historical truth, myth, and interpretive drift"
+      },
+      {
+        "title": "Causal Chains",
+        "path": "/philosophy-of-science/causal-chains/",
+        "why": "page on multi-step causal explanation rather than single-link projection"
+      },
+      {
+        "title": "Common Sense Blunders",
+        "path": "/philosophical-inquiry/common-sense-blunders/",
+        "why": "page on intuitive errors that feel obvious until examined"
+      }
+    ]
+  },
+  {
+    "fallacy": "Semantic pixelization",
+    "logfallUrl": "https://logfall.com/fallacies/semantic-pixelization/",
+    "category": "language and overprecision",
+    "suggestedRefs": [
+      {
+        "title": "Connotative Equivocation",
+        "path": "/philosophy-of-language/connotative-equivocation/",
+        "why": "language page on meaning-shift, connotation, and verbal slide"
+      },
+      {
+        "title": "Factual Disagreements vs Semantic Misunderstandings",
+        "path": "/rational-thought/factual-disagreements-vs-semantic-misunderstandings/",
+        "why": "page separating factual conflict from merely verbal conflict"
+      },
+      {
+        "title": "Where Framing Goes Awry",
+        "path": "/rational-thought/where-framing-goes-awry/",
+        "why": "page on wording, framing, and distorted comparisons"
+      }
+    ]
+  },
+  {
+    "fallacy": "Sentimental fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/sentimental-fallacy/",
+    "category": "emotion and manipulation",
+    "suggestedRefs": [
+      {
+        "title": "The Primacy of Emotions",
+        "path": "/rational-thought/the-primacy-of-emotions/",
+        "why": "page on emotional pressure steering judgment"
+      },
+      {
+        "title": "Dangers: Ideologies of Emotion",
+        "path": "/philosophical-inquiry/dangers-ideologies-of-emotion/",
+        "why": "page on collective emotional systems short-circuiting inquiry"
+      }
+    ]
+  },
+  {
+    "fallacy": "Sharpshooter fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/sharpshooter-fallacy/",
+    "category": "science and selection effects",
+    "suggestedRefs": [
+      {
+        "title": "Detecting Bad Science",
+        "path": "/rational-thought/detecting-bad-science/",
+        "why": "page on spotting weak scientific inference"
+      },
+      {
+        "title": "P-Value Issues",
+        "path": "/philosophy-of-science/p-value-issues/",
+        "why": "page on misuse of statistical significance"
+      },
+      {
+        "title": "The Power of Statistics",
+        "path": "/rational-thought/the-power-of-statistics/",
+        "why": "statistics page for how quantitative evidence clarifies and misleads"
+      }
+    ]
+  },
+  {
+    "fallacy": "Single cause fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/single-cause-fallacy/",
+    "category": "causation and complexity",
+    "suggestedRefs": [
+      {
+        "title": "Avoiding Single-Cause Dogmatism",
+        "path": "/epistemology/avoiding-single-cause-dogmatism/",
+        "why": "page resisting monocausal explanations"
+      },
+      {
+        "title": "Causal Chains",
+        "path": "/philosophy-of-science/causal-chains/",
+        "why": "page on multi-step causal explanation rather than single-link projection"
+      },
+      {
+        "title": "Correlation Is Not Causation",
+        "path": "/philosophy-of-science/correlation-is-not-causation/",
+        "why": "direct page on the classic causal-inference warning"
+      }
+    ]
+  },
+  {
+    "fallacy": "Slippery slope",
+    "logfallUrl": "https://logfall.com/fallacies/slippery-slope/",
+    "category": "slope reasoning",
+    "suggestedRefs": [
+      {
+        "title": "The Steppingstone Fallacy",
+        "path": "/rational-thought/the-steppingstone-fallacy/",
+        "why": "direct page on slope-style overprojection"
+      },
+      {
+        "title": "Where Framing Goes Awry",
+        "path": "/rational-thought/where-framing-goes-awry/",
+        "why": "page on wording, framing, and distorted comparisons"
+      },
+      {
+        "title": "Dangers: Logical Fallacies",
+        "path": "/philosophical-inquiry/dangers-logical-fallacies/",
+        "why": "page with public examples of familiar fallacy patterns"
+      }
+    ]
+  },
+  {
+    "fallacy": "Special pleading",
+    "logfallUrl": "https://logfall.com/fallacies/special-pleading/",
+    "category": "double standards",
+    "suggestedRefs": [
+      {
+        "title": "The Burden of Proof",
+        "path": "/epistemology/the-burden-of-proof/",
+        "why": "burden-of-proof page for support obligations and improper challenge-shifting"
+      },
+      {
+        "title": "Operational Epistemic Rigor",
+        "path": "/epistemology/operational-epistemic-rigor/",
+        "why": "practical rigor page for keeping standards stable under pressure"
+      },
+      {
+        "title": "Dangers: Siloed Ideologies",
+        "path": "/philosophical-inquiry/dangers-siloed-ideologies/",
+        "why": "ideology page for how communities preserve bad reasoning"
+      }
+    ]
+  },
+  {
+    "fallacy": "Spotlight fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/spotlight-fallacy/",
+    "category": "salience distortion",
+    "suggestedRefs": [
+      {
+        "title": "Dangers: Cognitive Biases",
+        "path": "/philosophical-inquiry/dangers-cognitive-biases/",
+        "why": "bias page for cognitive distortions that often travel with the fallacy"
+      },
+      {
+        "title": "The Power of Statistics",
+        "path": "/rational-thought/the-power-of-statistics/",
+        "why": "statistics page for how quantitative evidence clarifies and misleads"
+      }
+    ]
+  },
+  {
+    "fallacy": "Square logic",
+    "logfallUrl": "https://logfall.com/fallacies/square-logic/",
+    "category": "formal logic",
+    "suggestedRefs": [
+      {
+        "title": "Logic",
+        "path": "/epistemology/logic/",
+        "why": "logic page for formal structure, invalid inference, and paradox pressure"
+      },
+      {
+        "title": "Deduction: Utility and Issues",
+        "path": "/epistemology/deduction-utility-and-issues/",
+        "why": "deduction page for validity, premise form, and formal breakdowns"
+      }
+    ]
+  },
+  {
+    "fallacy": "Straw man argument",
+    "logfallUrl": "https://logfall.com/fallacies/straw-man-argument/",
+    "category": "misrepresentation",
+    "suggestedRefs": [
+      {
+        "title": "Charitable Engagement",
+        "path": "/philosophical-inquiry/charitable-engagement/",
+        "why": "charitable-reading page for not misrepresenting an opponent"
+      },
+      {
+        "title": "Avoiding Logical Fallacies",
+        "path": "/rational-thought/avoiding-logical-fallacies/",
+        "why": "broad survey page that already teaches multiple classic fallacy forms"
+      },
+      {
+        "title": "Assessing Arguments",
+        "path": "/rational-thought/assessing-arguments/",
+        "why": "argument-evaluation page that helps a reader test the structure instead of just naming the error"
+      }
+    ]
+  },
+  {
+    "fallacy": "Style over substance fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/style-over-substance-fallacy/",
+    "category": "rhetorical surface vs argument",
+    "suggestedRefs": [
+      {
+        "title": "Assessing Arguments",
+        "path": "/rational-thought/assessing-arguments/",
+        "why": "argument-evaluation page that helps a reader test the structure instead of just naming the error"
+      },
+      {
+        "title": "Charitable Engagement",
+        "path": "/philosophical-inquiry/charitable-engagement/",
+        "why": "charitable-reading page for not misrepresenting an opponent"
+      }
+    ]
+  },
+  {
+    "fallacy": "Suppressed correlative",
+    "logfallUrl": "https://logfall.com/fallacies/suppressed-correlative/",
+    "category": "language and hidden alternatives",
+    "suggestedRefs": [
+      {
+        "title": "Connotative Equivocation",
+        "path": "/philosophy-of-language/connotative-equivocation/",
+        "why": "language page on meaning-shift, connotation, and verbal slide"
+      },
+      {
+        "title": "Factual Disagreements vs Semantic Misunderstandings",
+        "path": "/rational-thought/factual-disagreements-vs-semantic-misunderstandings/",
+        "why": "page separating factual conflict from merely verbal conflict"
+      },
+      {
+        "title": "Logic",
+        "path": "/epistemology/logic/",
+        "why": "logic page for formal structure, invalid inference, and paradox pressure"
+      }
+    ]
+  },
+  {
+    "fallacy": "Survivorship bias",
+    "logfallUrl": "https://logfall.com/fallacies/survivorship-bias/",
+    "category": "selection effects",
+    "suggestedRefs": [
+      {
+        "title": "The Power of Statistics",
+        "path": "/rational-thought/the-power-of-statistics/",
+        "why": "statistics page for how quantitative evidence clarifies and misleads"
+      },
+      {
+        "title": "Sample Size & Margin of Error",
+        "path": "/rational-thought/sample-size-margin-of-error/",
+        "why": "page on sample size, uncertainty, and overconfidence"
+      },
+      {
+        "title": "Dangers: Cognitive Biases",
+        "path": "/philosophical-inquiry/dangers-cognitive-biases/",
+        "why": "bias page for cognitive distortions that often travel with the fallacy"
+      }
+    ]
+  },
+  {
+    "fallacy": "Teleological fallacy",
+    "logfallUrl": "https://logfall.com/fallacies/teleological-fallacy/",
+    "category": "explanation and purpose-talk",
+    "suggestedRefs": [
+      {
+        "title": "What is “Explanation”?",
+        "path": "/philosophy-of-science/definitions-of-explanation/",
+        "why": "page clarifying what does and does not count as explanation"
+      },
+      {
+        "title": "What is Science?",
+        "path": "/philosophy-of-science/what-is-science/",
+        "why": "science page for error-correction, method, and public standards"
+      },
+      {
+        "title": "Methodological Naturalism",
+        "path": "/philosophy-of-science/methodological-naturalism/",
+        "why": "page on naturalistic method without metaphysical overreach"
+      }
+    ]
+  },
+  {
+    "fallacy": "Thought-terminating cliché",
+    "logfallUrl": "https://logfall.com/fallacies/thought-terminating-clich/",
+    "category": "ideology and inquiry shutdown",
+    "suggestedRefs": [
+      {
+        "title": "Dangers: Siloed Ideologies",
+        "path": "/philosophical-inquiry/dangers-siloed-ideologies/",
+        "why": "ideology page for how communities preserve bad reasoning"
+      },
+      {
+        "title": "What is Truth?",
+        "path": "/philosophical-inquiry/what-is-truth/",
+        "why": "truth page for keeping claims answerable to reality rather than rhetoric"
+      },
+      {
+        "title": "Operational Epistemic Rigor",
+        "path": "/epistemology/operational-epistemic-rigor/",
+        "why": "practical rigor page for keeping standards stable under pressure"
+      }
+    ]
+  },
+  {
+    "fallacy": "Top-down condemnation",
+    "logfallUrl": "https://logfall.com/fallacies/top-down-condemnation/",
+    "category": "comparison and generalization",
+    "suggestedRefs": [
+      {
+        "title": "Metrics for Cultural Comparisons",
+        "path": "/political-philosophy/metrics-for-cultural-comparisons/",
+        "why": "page on apples-to-oranges comparison in public reasoning"
+      },
+      {
+        "title": "False Equivalencies",
+        "path": "/rational-thought/false-equivalencies/",
+        "why": "direct page on treating unlike things as if they were equivalent"
+      },
+      {
+        "title": "Assessing Arguments",
+        "path": "/rational-thought/assessing-arguments/",
+        "why": "argument-evaluation page that helps a reader test the structure instead of just naming the error"
+      }
+    ]
+  },
+  {
+    "fallacy": "Top-down faulty generalization",
+    "logfallUrl": "https://logfall.com/fallacies/top-down-faulty-generalization/",
+    "category": "comparison and generalization",
+    "suggestedRefs": [
+      {
+        "title": "Sample Size & Margin of Error",
+        "path": "/rational-thought/sample-size-margin-of-error/",
+        "why": "page on sample size, uncertainty, and overconfidence"
+      },
+      {
+        "title": "The Power of Statistics",
+        "path": "/rational-thought/the-power-of-statistics/",
+        "why": "statistics page for how quantitative evidence clarifies and misleads"
+      },
+      {
+        "title": "Metrics for Cultural Comparisons",
+        "path": "/political-philosophy/metrics-for-cultural-comparisons/",
+        "why": "page on apples-to-oranges comparison in public reasoning"
+      }
+    ]
+  },
+  {
+    "fallacy": "Top-down justification",
+    "logfallUrl": "https://logfall.com/fallacies/top-down-justification/",
+    "category": "comparison and generalization",
+    "suggestedRefs": [
+      {
+        "title": "The Domain of “Proof”",
+        "path": "/epistemology/the-domain-of-proof/",
+        "why": "page clarifying where proof belongs and where it is being misapplied"
+      },
+      {
+        "title": "What is Evidence?",
+        "path": "/epistemology/what-is-evidence/",
+        "why": "evidence page for what should actually count in support of a claim"
+      },
+      {
+        "title": "Assessing Arguments",
+        "path": "/rational-thought/assessing-arguments/",
+        "why": "argument-evaluation page that helps a reader test the structure instead of just naming the error"
+      }
+    ]
+  },
+  {
+    "fallacy": "Track-record reset",
+    "logfallUrl": "https://logfall.com/fallacies/track-record-reset/",
+    "category": "credibility and selective memory",
+    "suggestedRefs": [
+      {
+        "title": "Operational Epistemic Rigor",
+        "path": "/epistemology/operational-epistemic-rigor/",
+        "why": "practical rigor page for keeping standards stable under pressure"
+      },
+      {
+        "title": "Maintaining Scientific Credibility",
+        "path": "/political-philosophy/maintaining-scientific-credibility/",
+        "why": "page on credibility, trust, and evidence in public life"
+      },
+      {
+        "title": "The Burden of Proof",
+        "path": "/epistemology/the-burden-of-proof/",
+        "why": "burden-of-proof page for support obligations and improper challenge-shifting"
+      }
+    ]
+  },
+  {
+    "fallacy": "Tu quoque",
+    "logfallUrl": "https://logfall.com/fallacies/tu-quoque/",
+    "category": "person-based reply",
+    "suggestedRefs": [
+      {
+        "title": "Tu Quoque or “You too!”",
+        "path": "/rational-thought/tu-quoque-or-you-too/",
+        "why": "direct page on the you-too move and its limits"
+      },
+      {
+        "title": "The Motive Fallacy",
+        "path": "/rational-thought/the-motive-fallacy/",
+        "why": "direct page on attacking motives instead of claims"
+      },
+      {
+        "title": "Avoiding Logical Fallacies",
+        "path": "/rational-thought/avoiding-logical-fallacies/",
+        "why": "broad survey page that already teaches multiple classic fallacy forms"
+      }
+    ]
+  },
+  {
+    "fallacy": "Two wrongs make a right",
+    "logfallUrl": "https://logfall.com/fallacies/two-wrongs-make-a-right/",
+    "category": "retaliatory reasoning",
+    "suggestedRefs": [
+      {
+        "title": "Tu Quoque or “You too!”",
+        "path": "/rational-thought/tu-quoque-or-you-too/",
+        "why": "direct page on the you-too move and its limits"
+      },
+      {
+        "title": "Assessing Arguments",
+        "path": "/rational-thought/assessing-arguments/",
+        "why": "argument-evaluation page that helps a reader test the structure instead of just naming the error"
+      },
+      {
+        "title": "Meta-Ethics",
+        "path": "/ethics/meta-ethics/",
+        "why": "page on the main metaethical distinctions behind many normative fallacies"
+      }
+    ]
+  },
+  {
+    "fallacy": "Undistributed middle",
+    "logfallUrl": "https://logfall.com/fallacies/undistributed-middle/",
+    "category": "formal logic",
+    "suggestedRefs": [
+      {
+        "title": "What are Syllogisms?",
+        "path": "/epistemology/what-are-syllogisms/",
+        "why": "syllogism page for premise-distribution and conclusion-form mistakes"
+      },
+      {
+        "title": "Deduction: Utility and Issues",
+        "path": "/epistemology/deduction-utility-and-issues/",
+        "why": "deduction page for validity, premise form, and formal breakdowns"
+      }
+    ]
+  },
+  {
+    "fallacy": "Vague insulators",
+    "logfallUrl": "https://logfall.com/fallacies/vague-insulators/",
+    "category": "language and insulation",
+    "suggestedRefs": [
+      {
+        "title": "Connotative Equivocation",
+        "path": "/philosophy-of-language/connotative-equivocation/",
+        "why": "language page on meaning-shift, connotation, and verbal slide"
+      },
+      {
+        "title": "Dangers: Siloed Ideologies",
+        "path": "/philosophical-inquiry/dangers-siloed-ideologies/",
+        "why": "ideology page for how communities preserve bad reasoning"
+      },
+      {
+        "title": "What is Truth?",
+        "path": "/philosophical-inquiry/what-is-truth/",
+        "why": "truth page for keeping claims answerable to reality rather than rhetoric"
+      }
+    ]
+  },
+  {
+    "fallacy": "Wishful thinking",
+    "logfallUrl": "https://logfall.com/fallacies/wishful-thinking/",
+    "category": "desire and belief formation",
+    "suggestedRefs": [
+      {
+        "title": "Extraordinary Claims",
+        "path": "/epistemology/extraordinary-claims/",
+        "why": "extraordinary-claims page for claims that outstrip normal evidential defaults"
+      },
+      {
+        "title": "What is Belief?",
+        "path": "/epistemology/what-is-belief/",
+        "why": "belief page for confidence, commitment, and action-guidance"
+      },
+      {
+        "title": "Shades of Certainty",
+        "path": "/epistemology/shades-of-certainty/",
+        "why": "certainty-gradient page against binary overconfidence"
+      }
+    ]
+  },
+  {
+    "fallacy": "Witness chain",
+    "logfallUrl": "https://logfall.com/fallacies/witness-chain/",
+    "category": "testimony and transmission",
+    "suggestedRefs": [
+      {
+        "title": "What is Evidence?",
+        "path": "/epistemology/what-is-evidence/",
+        "why": "evidence page for what should actually count in support of a claim"
+      },
+      {
+        "title": "History as Forensic Science",
+        "path": "/philosophy-of-science/history-as-forensic-science/",
+        "why": "page on historical inference as evidence-guided reconstruction"
+      },
+      {
+        "title": "The Burden of Proof",
+        "path": "/epistemology/the-burden-of-proof/",
+        "why": "burden-of-proof page for support obligations and improper challenge-shifting"
+      }
+    ]
+  },
+  {
+    "fallacy": "Wrong causal direction",
+    "logfallUrl": "https://logfall.com/fallacies/wrong-causal-direction/",
+    "category": "causation",
+    "suggestedRefs": [
+      {
+        "title": "Correlation and Causation",
+        "path": "/philosophy-of-science/correlation-and-causation/",
+        "why": "page on how these two ideas relate without collapsing"
+      },
+      {
+        "title": "Causal Chains",
+        "path": "/philosophy-of-science/causal-chains/",
+        "why": "page on multi-step causal explanation rather than single-link projection"
+      },
+      {
+        "title": "Attributions of Causation",
+        "path": "/rational-thought/attributions-of-causation/",
+        "why": "page on everyday causal ascription and its hazards"
+      }
+    ]
+  }
+]

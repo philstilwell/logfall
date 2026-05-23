@@ -8,11 +8,13 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, "..");
 const dataPath = path.join(projectRoot, "data", "fallacies.json");
+const byteseismicCrossrefsPath = path.join(projectRoot, "data", "byteseismic_crossrefs.json");
 const siteRoot = path.join(projectRoot, "site");
 const distRoot = projectRoot;
 const dataOutDir = path.join(distRoot, "data");
 const workbookOutPath = path.join(distRoot, "logfall-root-edition.xlsx");
 const siteUrl = "https://logfall.com/";
+const byteseismicSiteUrl = "https://byteseismic.com/";
 const socialImagePath = "assets/logo.jpg";
 const socialImageType = "image/jpeg";
 const socialImageWidth = 124;
@@ -1837,6 +1839,55 @@ function renderCaseStudy(item) {
   </blockquote>`;
 }
 
+function normalizeByteseismicCrossrefs(entries = []) {
+  return new Map(
+    entries
+      .filter((entry) => entry && entry.fallacy)
+      .map((entry) => [
+        entry.fallacy,
+        {
+          category: entry.category || "",
+          suggestedRefs: Array.isArray(entry.suggestedRefs)
+            ? entry.suggestedRefs
+                .filter((ref) => ref && ref.title && ref.path)
+                .slice(0, 3)
+                .map((ref) => ({
+                  title: ref.title,
+                  path: ref.path,
+                  why: ref.why || "",
+                }))
+            : [],
+        },
+      ]),
+  );
+}
+
+function renderByteseismicCrossrefsSection(record, byteseismicCrossrefs) {
+  const entry = byteseismicCrossrefs.get(record.name);
+  if (!entry?.suggestedRefs?.length) return "";
+
+  return `<section class="section-block">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">Related reading on Byteseismic</h3>
+          <p class="section-copy">These companion articles widen the philosophical or methodological frame around this fallacy without interrupting the main lesson on this page.</p>
+        </div>
+      </div>
+      <div class="two-column compact-columns">
+        ${entry.suggestedRefs
+          .map((ref) => {
+            const href = absoluteByteseismicUrl(ref.path);
+            return `<article class="note-panel">
+                <p class="eyebrow">Byteseismic</p>
+                <h4><a href="${escapeHtml(href)}">${escapeHtml(ref.title)}</a></h4>
+                ${ref.why ? `<p class="muted"><strong>Why it helps:</strong> ${escapeHtml(ensureSentence(ref.why))}</p>` : ""}
+              </article>`;
+          })
+          .join("")}
+      </div>
+    </section>`;
+}
+
 function renderTabGroup(tabKey, items) {
   const buttons = items
     .map(
@@ -2676,6 +2727,10 @@ function normalizeRecordCategories(record) {
 
 function absoluteUrl(relativePath = "") {
   return new URL(relativePath, siteUrl).toString();
+}
+
+function absoluteByteseismicUrl(relativePath = "") {
+  return new URL(relativePath, byteseismicSiteUrl).toString();
 }
 
 function buildSitemap(entries) {
@@ -7406,7 +7461,7 @@ function buildCategoryPage(category, records) {
   });
 }
 
-function buildDetailPage(record, records, categoryProfiles, posterAssets) {
+function buildDetailPage(record, records, categoryProfiles, posterAssets, byteseismicCrossrefs) {
   const related = relatedFallacies(record, records);
   const prompts = record.categories.map((category) => diagnosticPrompts[category]).filter(Boolean);
   const hasPosterIllustration = Boolean(resolvePosterAssetForRecord(record, posterAssets));
@@ -7532,6 +7587,8 @@ function buildDetailPage(record, records, categoryProfiles, posterAssets) {
     </section>`
         : ""
     }
+
+    ${renderByteseismicCrossrefsSection(record, byteseismicCrossrefs)}
 
     ${
       related.length
@@ -7833,10 +7890,14 @@ async function main() {
   await ensureCleanDist();
 
   const payload = JSON.parse(await fs.readFile(dataPath, "utf8"));
+  const byteseismicCrossrefsPayload = JSON.parse(
+    await fs.readFile(byteseismicCrossrefsPath, "utf8").catch(() => "[]"),
+  );
   const records = payload.records.map((record) => ({
     ...record,
     categories: normalizeRecordCategories(record),
   }));
+  const byteseismicCrossrefs = normalizeByteseismicCrossrefs(byteseismicCrossrefsPayload);
   const categoryProfiles = payload.categoryProfiles || {};
   const categories = payload.categories.map((category) => ({
     ...category,
@@ -7908,7 +7969,7 @@ async function main() {
   for (const record of records) {
     await writeText(
       `fallacies/${record.slug}/index.html`,
-      buildDetailPage(record, records, categoryProfiles, posterAssets),
+      buildDetailPage(record, records, categoryProfiles, posterAssets, byteseismicCrossrefs),
     );
   }
 
