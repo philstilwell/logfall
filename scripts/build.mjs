@@ -2922,9 +2922,6 @@ function pageShell({
                 <p class="brand-subtitle">A practical logical-fallacies reference with clear explanations, usable examples, and teaching tools.</p>
               </div>
             </div>
-          </div>
-          <div class="masthead-tools">
-            <nav class="top-nav" aria-label="Primary">${nav}</nav>
             <form class="site-search-form" role="search" action="${prefix}fallacies/" method="get">
               <input
                 class="site-search-input"
@@ -2937,6 +2934,7 @@ function pageShell({
               <button class="site-search-button" type="submit">Search</button>
             </form>
           </div>
+          <nav class="top-nav" aria-label="Primary">${nav}</nav>
         </div>
       </header>
       <main class="page-wrap">${content}</main>

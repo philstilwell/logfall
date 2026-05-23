@@ -73,7 +73,7 @@ img {
 
 .brand-row {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 24px;
 }
@@ -82,6 +82,8 @@ img {
   display: flex;
   align-items: center;
   gap: 18px;
+  flex: 1 1 auto;
+  min-width: 0;
 }
 
 .brand-logo {
@@ -113,18 +115,11 @@ img {
   max-width: 56ch;
 }
 
-.masthead-tools {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 18px;
-  margin-top: 20px;
-}
-
 .top-nav {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 0;
+  margin-top: 18px;
 }
 
 .top-nav a,
@@ -145,10 +140,11 @@ img {
 
 .site-search-form {
   display: flex;
-  align-items: center;
+  align-items: stretch;
   gap: 10px;
-  width: min(100%, 360px);
-  justify-self: end;
+  flex: 0 0 335px;
+  width: min(100%, 335px);
+  margin-top: 6px;
 }
 
 .site-search-input {
@@ -156,10 +152,11 @@ img {
   min-width: 0;
   border: 1px solid rgba(255, 255, 255, 0.18);
   border-radius: 999px;
-  padding: 11px 15px;
+  padding: 9px 14px;
   background: rgba(255, 255, 255, 0.08);
   color: #fff;
   font: inherit;
+  font-size: 0.92rem;
 }
 
 .site-search-input::placeholder {
@@ -175,10 +172,11 @@ img {
 .site-search-button {
   border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 999px;
-  padding: 11px 16px;
+  padding: 9px 14px;
   background: #fff;
   color: var(--ink);
   font: inherit;
+  font-size: 0.92rem;
   font-weight: 700;
   cursor: pointer;
   transition: transform 160ms ease, box-shadow 160ms ease, background 160ms ease;
@@ -1927,10 +1925,6 @@ img {
     align-items: flex-start;
   }
 
-  .masthead-tools {
-    justify-items: stretch;
-  }
-
   .masthead-inner,
   .page-wrap,
   .footer-inner {
@@ -1963,7 +1957,8 @@ img {
 
   .site-search-form {
     width: 100%;
-    justify-self: stretch;
+    flex-basis: auto;
+    margin-top: 0;
   }
 
   .audit-step-list {
