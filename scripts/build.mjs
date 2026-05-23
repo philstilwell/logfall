@@ -7389,25 +7389,40 @@ function buildCategoriesIndexPage(categories) {
 
 function buildCategoryPage(category, records) {
   const members = records.filter((record) => record.categories.includes(category.name));
+  const featuredMembers = members
+    .slice(0, 5)
+    .map(
+      (record) =>
+        `<a class="path-link-chip" href="../../fallacies/${record.slug}/">${escapeHtml(record.name)}</a>`,
+    )
+    .join("");
+  const overflowCount = Math.max(members.length - 5, 0);
   const content = `
     <div class="breadcrumbs">
       <a href="../../">Home</a><span>/</span><a href="../">Categories</a><span>/</span><strong>${escapeHtml(category.name)}</strong>
     </div>
 
-    <section class="detail-section">
+    <section class="detail-section category-hero-panel">
       <p class="eyebrow">Category</p>
       <h2 class="detail-title">${escapeHtml(category.name)}</h2>
       <p class="detail-deck">${escapeHtml(category.description)}</p>
-      <div class="meta-grid section-block">
-        <div class="note-panel">
-          <h4>Entries</h4>
-          <p class="muted">${category.count} fallacies in this category.</p>
+      <div class="category-primer-grid section-block">
+        <div class="note-panel category-primer-main">
+          <div class="category-primer-top">
+            <div>
+              <h4>How to spot it</h4>
+              <p class="category-primer-stat">${members.length} fallacies in this category.</p>
+            </div>
+            <span class="category-count-badge" aria-label="${members.length} entries">${members.length}</span>
+          </div>
+          <p class="muted category-primer-question">${escapeHtml(diagnosticPrompts[category.name])}</p>
+          <div class="category-member-preview">
+            <p class="category-member-label">Examples in this category</p>
+            <div class="path-link-row">${featuredMembers}</div>
+            ${overflowCount ? `<p class="category-member-note">+${overflowCount} more listed below.</p>` : ""}
+          </div>
         </div>
-        <div class="note-panel">
-          <h4>Diagnostic prompt</h4>
-          <p class="muted">${escapeHtml(diagnosticPrompts[category.name])}</p>
-        </div>
-        <div class="note-panel">
+        <div class="note-panel category-primer-side">
           <h4>Category vs. family</h4>
           <p class="muted">A category is a diagnostic lens, so a fallacy may appear in more than one category. A family is the broader umbrella that gives the fallacy its single main home.</p>
         </div>
