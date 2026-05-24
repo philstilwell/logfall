@@ -2376,19 +2376,19 @@ function rhetoricGaugesForRecord(record) {
   const gauges = {
     common: {
       title: "Common in today's rhetoric",
-      value: clampNumber(Math.round(common / 5) * 5, 15, 95),
+      value: clampNumber(Math.round(common), 15, 95),
       lowLabel: "Rare",
       highLabel: "Frequent",
     },
     spot: {
       title: "Easy to spot",
-      value: clampNumber(Math.round(spot / 5) * 5, 15, 95),
+      value: clampNumber(Math.round(spot), 15, 95),
       lowLabel: "Hidden",
       highLabel: "Obvious",
     },
     innocent: {
       title: "Easy to innocently commit",
-      value: clampNumber(Math.round(innocent / 5) * 5, 15, 95),
+      value: clampNumber(Math.round(innocent), 15, 95),
       lowLabel: "Low risk",
       highLabel: "Easy slip",
     },
