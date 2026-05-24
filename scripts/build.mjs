@@ -1773,6 +1773,32 @@ const gaugeCategoryProfiles = {
   Tactical: { common: 82, spot: 70, innocent: 48 },
   Emotional: { common: 80, spot: 66, innocent: 66 },
 };
+
+const difficultyCategoryProfiles = {
+  Formal: 78,
+  Mathematical: 74,
+  Causal: 56,
+  Linguistic: 66,
+  Conceptual: 60,
+  Evidential: 48,
+  Perceptual: 40,
+  Perspectival: 62,
+  Epistemic: 68,
+  Tactical: 44,
+  Emotional: 40,
+};
+
+const difficultyFamilyModifiers = {
+  "Formal/Structural Fallacy": 6,
+  "Statistical/Sampling Fallacy": 5,
+  "Linguistic/Definition Fallacy": 4,
+  "Conceptual/Framing Fallacy": 3,
+  "Causal/Explanatory Fallacy": 2,
+  "Comparison/Generalization Fallacy": 1,
+  "Evidential/Methodological Fallacy": -1,
+  "Relevance/Distraction Fallacy": -4,
+  "Persuasive/Appeal Fallacy": -6,
+};
 const rhetoricGaugeOverrides = {
   "Absence of evidence fallacy": { common: 68, spot: 42, innocent: 76 },
   "Ad hominem": { common: 90, spot: 88, innocent: 72 },
@@ -2135,29 +2161,69 @@ function domainTagForRecord(record) {
   return "Critical thinking / philosophy";
 }
 
+function weightedDifficultyBase(record) {
+  const weights = [0.56, 0.29, 0.15];
+  let total = 0;
+  let weightTotal = 0;
+
+  record.categories.forEach((category, index) => {
+    const profile = difficultyCategoryProfiles[category];
+    if (!profile) return;
+    const weight = weights[index] || 0.1;
+    total += profile * weight;
+    weightTotal += weight;
+  });
+
+  return weightTotal ? total / weightTotal : 52;
+}
+
+function difficultyScoreForRecord(record) {
+  const teachingPathSlugs = new Set(
+    teachingPathDefinitions
+      .filter((path) => path.names.includes(record.name))
+      .map((path) => path.slug),
+  );
+
+  let score = weightedDifficultyBase(record);
+  score += Math.max(0, (record.categories?.length || 0) - 1) * 4;
+  score += record.subCategory ? 3 : 0;
+  score += record.subSubCategory ? 2 : 0;
+  score += difficultyFamilyModifiers[record.family] || 0;
+
+  const notesLength = (record.notes || "").length;
+  if (notesLength > 320) score += 5;
+  else if (notesLength > 240) score += 3;
+  else if (notesLength > 160) score += 1;
+
+  const aliasCount = Array.isArray(record.aliases) ? record.aliases.length : 0;
+  if (aliasCount >= 2) score -= 1;
+  if (aliasCount >= 4) score -= 1;
+
+  const caseStudyCount = Array.isArray(record.caseStudies) ? record.caseStudies.length : 0;
+  if (caseStudyCount >= 4) score -= 1;
+
+  if (featuredNames.includes(record.name)) score -= 2;
+  if (foundationalNames.has(record.name)) score -= 8;
+  if (teachingPathSlugs.has("start-here")) score -= 6;
+  if (teachingPathSlugs.has("public-debate")) score -= 2;
+  if (teachingPathSlugs.has("often-confused")) score += 4;
+
+  return clampNumber(Math.round(score), 18, 92);
+}
+
 function difficultyForRecord(record) {
-  if (foundationalNames.has(record.name)) return "Foundational";
-
-  let score = 0;
-  const categories = new Set(record.categories);
-  if (categories.has("Formal") || categories.has("Mathematical")) score += 3;
-  if (categories.has("Epistemic") || categories.has("Linguistic") || categories.has("Perspectival")) score += 2;
-  if (categories.has("Causal") || categories.has("Conceptual")) score += 1;
-  if (record.subCategory || record.subSubCategory) score += 1;
-  if ((record.notes || "").length > 260) score += 1;
-
-  if (score <= 1) return "Foundational";
-  if (score <= 3) return "Intermediate";
+  const score = difficultyScoreForRecord(record);
+  if (score <= 44) return "Foundational";
+  if (score <= 69) return "Intermediate";
   return "Advanced";
 }
 
-function classroomLevelForRecord(record, difficulty = "") {
-  if (difficulty === "Foundational") return "Middle school+";
-  if (difficulty === "Intermediate") return "High school";
-  if (record.categories.includes("Formal") || record.categories.includes("Mathematical") || record.categories.includes("Epistemic")) {
-    return "Advanced undergraduate";
-  }
-  return "Intro college";
+function classroomLevelForRecord(record, difficulty = "", difficultyScore = null) {
+  const score = difficultyScore ?? difficultyScoreForRecord(record);
+  if (score <= 38) return "Middle school+";
+  if (score <= 56) return "High school";
+  if (score <= 74) return "Intro college";
+  return "Advanced undergraduate";
 }
 
 const pedagogyCache = new Map();
@@ -2166,14 +2232,16 @@ const rhetoricGaugeCache = new Map();
 function pedagogyForRecord(record) {
   if (pedagogyCache.has(record.slug)) return pedagogyCache.get(record.slug);
 
+  const difficultyScore = difficultyScoreForRecord(record);
   const difficulty = difficultyForRecord(record);
-  const classroomLevel = classroomLevelForRecord(record, difficulty);
+  const classroomLevel = classroomLevelForRecord(record, difficulty, difficultyScore);
   const domainTag = domainTagForRecord(record);
   const teachingPaths = teachingPathDefinitions
     .filter((path) => path.names.includes(record.name))
     .map((path) => ({ slug: path.slug, title: path.title }));
 
   const meta = {
+    difficultyScore,
     difficulty,
     classroomLevel,
     domainTag,
@@ -2228,6 +2296,22 @@ function innocentGaugeNarrative(score) {
   return "Usually feels more deliberate than accidental.";
 }
 
+function difficultyGaugeNarrative(score) {
+  if (score >= 82) {
+    return "Best taught after students are already comfortable with slower argument reconstruction and more technical distinctions.";
+  }
+  if (score >= 68) {
+    return "Usually easier once readers already have some practice with evidence, framing, or analytic structure.";
+  }
+  if (score >= 54) {
+    return "Teachable at the high school or intro-college level with a bit of scaffolding and comparison.";
+  }
+  if (score >= 40) {
+    return "Usually accessible fairly early once students have a few clear examples in view.";
+  }
+  return "One of the easier fallacies to introduce in an early lesson.";
+}
+
 function gaugeBandLabel(metric, score) {
   if (metric === "common") {
     if (score >= 85) return "Near-constant";
@@ -2256,6 +2340,7 @@ function rhetoricGaugesForRecord(record) {
   const pedagogy = pedagogyForRecord(record);
   const teachingPathSlugs = new Set(pedagogy.teachingPaths.map((item) => item.slug));
   const difficulty = pedagogy.difficulty;
+  const difficultyScore = pedagogy.difficultyScore;
   const foundational = foundationalNames.has(record.name);
   const aliasesBoost = record.aliases.length ? Math.min(4, record.aliases.length * 2) : 0;
 
@@ -2309,7 +2394,7 @@ function rhetoricGaugesForRecord(record) {
     },
     difficulty: {
       title: "Difficulty",
-      value: difficulty === "Foundational" ? 25 : difficulty === "Intermediate" ? 55 : 85,
+      value: difficultyScore,
       lowLabel: "Foundational",
       highLabel: "Advanced",
     },
@@ -2322,12 +2407,7 @@ function rhetoricGaugesForRecord(record) {
   gauges.innocent.band = gaugeBandLabel("innocent", gauges.innocent.value);
   gauges.innocent.summary = innocentGaugeNarrative(gauges.innocent.value);
   gauges.difficulty.band = difficulty;
-  gauges.difficulty.summary =
-    difficulty === "Foundational"
-      ? "Usually approachable without much prior logic background."
-      : difficulty === "Intermediate"
-        ? "Needs some practice with categories, evidence, or debate structure."
-        : "Usually easier to teach once readers already have some logic or analytic background.";
+  gauges.difficulty.summary = difficultyGaugeNarrative(gauges.difficulty.value);
   gauges.difficulty.extraMarkup = `<div class="teaching-pill-row gauge-pill-row">
       ${pedagogy.classroomTags.map((tag) => `<span class="teaching-pill">${escapeHtml(tag)}</span>`).join("")}
     </div>`;
