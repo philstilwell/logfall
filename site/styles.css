@@ -1102,6 +1102,10 @@ img {
   margin: 0;
 }
 
+.case-summary + .case-summary {
+  margin-top: 12px;
+}
+
 .case-title {
   margin: 0 0 10px;
   font-size: 0.98rem;

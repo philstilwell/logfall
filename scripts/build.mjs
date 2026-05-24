@@ -65,6 +65,51 @@ const categoryDescriptions = {
   Emotional: "Arguments that make feeling do the evidential work reasoning should have done.",
 };
 
+const mapDimensions = [
+  {
+    slug: "common",
+    label: "Common in today's rhetoric",
+    shortLabel: "Common",
+    lowLabel: "Rare",
+    highLabel: "Frequent",
+  },
+  {
+    slug: "spot",
+    label: "Easy to spot",
+    shortLabel: "Easy to spot",
+    lowLabel: "Hidden",
+    highLabel: "Obvious",
+  },
+  {
+    slug: "innocent",
+    label: "Easy to innocently commit",
+    shortLabel: "Easy to commit",
+    lowLabel: "Low risk",
+    highLabel: "Easy slip",
+  },
+  {
+    slug: "difficulty",
+    label: "Difficulty",
+    shortLabel: "Difficulty",
+    lowLabel: "Foundational",
+    highLabel: "Advanced",
+  },
+];
+
+const mapCategoryPalette = {
+  Formal: "#1f5f9d",
+  Mathematical: "#53627b",
+  Causal: "#d06a4c",
+  Linguistic: "#16889e",
+  Conceptual: "#846277",
+  Evidential: "#e63b34",
+  Perceptual: "#7d8fa8",
+  Perspectival: "#8a6f3f",
+  Epistemic: "#5267a8",
+  Tactical: "#111111",
+  Emotional: "#c44e36",
+};
+
 const familyDescriptions = {
   "Formal/Structural Fallacy":
     "The argument fails because its internal structure does not validly carry the premises to the conclusion.",
@@ -1815,6 +1860,25 @@ function formatCaseStudyCell(item) {
   return parts.join("\n");
 }
 
+function renderCaseStudySummary(summary = "") {
+  const cleaned = String(summary || "").trim();
+  if (!cleaned) return "";
+
+  const sentences = cleaned.split(/(?<=[.!?])\s+/).filter(Boolean);
+  if (sentences.length < 3 || cleaned.length < 260) {
+    return `<p class="case-summary">${escapeHtml(cleaned)}</p>`;
+  }
+
+  const splitIndex = sentences.length >= 4 ? 2 : 1;
+  const first = sentences.slice(0, splitIndex).join(" ").trim();
+  const second = sentences.slice(splitIndex).join(" ").trim();
+
+  return [first, second]
+    .filter(Boolean)
+    .map((paragraph) => `<p class="case-summary">${escapeHtml(paragraph)}</p>`)
+    .join("");
+}
+
 function renderCaseStudy(item) {
   const study = normalizeCaseStudy(item);
   const titleLine = study.title
@@ -1834,7 +1898,7 @@ function renderCaseStudy(item) {
 
   return `<blockquote class="case-item">
     ${titleLine}
-    <p class="case-summary">${escapeHtml(study.summary)}</p>
+    ${renderCaseStudySummary(study.summary)}
     ${sourceLine ? `<p class="case-source">${sourceLine}</p>` : ""}
   </blockquote>`;
 }
@@ -2848,6 +2912,7 @@ function pageShell({
     { href: homeHref, label: "Home", key: "home" },
     { href: `${prefix}fallacies/`, label: "All Fallacies", key: "fallacies" },
     { href: `${prefix}categories/`, label: "Categories", key: "categories" },
+    { href: `${prefix}map/`, label: "Map", key: "map" },
     { href: `${prefix}check-yourself/`, label: "Check Yourself", key: "check-yourself" },
     { href: `${prefix}assessment/`, label: "Assessment", key: "assessment" },
     { href: `${prefix}prompts/`, label: "Fun AI Prompts", key: "prompts" },
@@ -7069,6 +7134,198 @@ function buildAssessmentPage(record, records) {
   });
 }
 
+function mapCompactDefinition(record) {
+  const definition = String(record.definition || record.notes || "").trim();
+  if (!definition) return "A reasoning pattern in the LogFall fallacy library.";
+  return definition.length > 250 ? `${definition.slice(0, 247).trimEnd()}...` : definition;
+}
+
+function buildMapData(records, categories) {
+  const points = records
+    .filter((record) => record && record.name && record.slug)
+    .map((record) => {
+      const gauges = rhetoricGaugesForRecord(record);
+      const primaryCategory = (record.categories || [])[0] || "Uncategorized";
+      const pedagogy = pedagogyForRecord(record);
+      const values = Object.fromEntries(
+        mapDimensions.map((dimension) => [dimension.slug, gauges[dimension.slug].value]),
+      );
+      const dimensionNotes = Object.fromEntries(
+        mapDimensions.map((dimension) => [
+          dimension.slug,
+          {
+            band: gauges[dimension.slug].band,
+            summary: gauges[dimension.slug].summary,
+          },
+        ]),
+      );
+
+      return {
+        slug: record.slug,
+        name: record.name,
+        href: `../fallacies/${record.slug}/`,
+        definition: mapCompactDefinition(record),
+        categories: record.categories || [],
+        category: primaryCategory,
+        categorySlug: slugify(primaryCategory),
+        color: mapCategoryPalette[primaryCategory] || "#53627b",
+        values,
+        dimensionNotes,
+        classroomTags: pedagogy.classroomTags,
+      };
+    })
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  return {
+    generatedAt: new Date().toISOString(),
+    defaultAxes: { x: "common", y: "difficulty" },
+    dimensions: mapDimensions,
+    categories: categories.map((category) => ({
+      name: category.name,
+      slug: category.slug,
+      color: mapCategoryPalette[category.name] || "#53627b",
+      count: category.count,
+      description: category.description,
+    })),
+    points,
+  };
+}
+
+function buildMapPage(records, categories) {
+  const mapData = buildMapData(records, categories);
+  const description =
+    "Use the interactive LogFall map to compare logical fallacies by commonness, visibility, accidental risk, and teaching difficulty.";
+  const content = `
+    <div class="breadcrumbs">
+      <a href="../">Home</a><span>/</span><strong>Map</strong>
+    </div>
+
+    <section class="hero fallacy-map-hero">
+      <div class="hero-panel fallacy-map-hero-panel">
+        <p class="eyebrow">Interactive map</p>
+        <h2 class="hero-title">Plot fallacies by classroom traits.</h2>
+        <p class="hero-lead">Choose any two teaching gauges, filter by category, and inspect how a fallacy behaves before opening the full LogFall entry.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="#fallacy-map">Explore the map</a>
+          <a class="button ghost" href="../fallacies/">Browse all fallacies</a>
+        </div>
+      </div>
+      <aside class="note-panel fallacy-map-primer" aria-label="Available dimensions">
+        <p class="eyebrow">Four dimensions</p>
+        <h3>Use the map as a comparison lens, not a measurement instrument.</h3>
+        <p>The dots use the same editorial 0-100 teaching gauges already shown on LogFall entries.</p>
+        <div class="fallacy-map-dimension-list">
+          ${mapDimensions
+            .map(
+              (dimension) =>
+                `<span>${escapeHtml(dimension.label)} <small>${escapeHtml(dimension.lowLabel)} to ${escapeHtml(dimension.highLabel)}</small></span>`,
+            )
+            .join("")}
+        </div>
+      </aside>
+    </section>
+
+    <section class="detail-section fallacy-map-section" id="fallacy-map" data-logfall-map-shell>
+      <div class="fallacy-map-heading">
+        <div>
+          <p class="eyebrow">Scatter plot</p>
+          <h2>Interactive fallacy map</h2>
+          <p>Hover, focus, or click a dot to inspect it. Choose any two dimensions, isolate one category, or find a specific fallacy.</p>
+        </div>
+        <span class="fallacy-map-count" data-map-count>Loading fallacies...</span>
+      </div>
+
+      <div class="fallacy-map-controls" aria-label="Map controls">
+        <label>
+          <span>Search</span>
+          <input type="search" data-map-search placeholder="Find a fallacy..." />
+        </label>
+        <label>
+          <span>X axis</span>
+          <select data-map-x-axis></select>
+        </label>
+        <label>
+          <span>Y axis</span>
+          <select data-map-y-axis></select>
+        </label>
+        <label>
+          <span>Category</span>
+          <select data-map-category></select>
+        </label>
+        <button type="button" class="fallacy-map-reset" data-map-reset>Reset map</button>
+      </div>
+
+      <div class="fallacy-map-layout">
+        <div class="fallacy-map-card">
+          <svg class="fallacy-map-plot" data-map-plot role="img" aria-label="Interactive scatter plot of logical fallacies"></svg>
+          <div class="fallacy-map-legend" data-map-legend aria-label="Category legend"></div>
+        </div>
+        <aside class="fallacy-map-detail" data-map-detail aria-live="polite"></aside>
+      </div>
+    </section>
+  `;
+
+  return pageShell({
+    title: "Interactive Logical Fallacy Map | LogFall",
+    description,
+    prefix: "../",
+    currentSection: "map",
+    canonicalPath: "map/",
+    keywords: [
+      "interactive logical fallacy map",
+      "logical fallacy scatter plot",
+      "fallacy comparison tool",
+      "critical thinking map",
+    ],
+    socialImageAlt: "Interactive LogFall map",
+    extraHeadHtml: `
+    <link rel="stylesheet" href="../map/logfall-map.css" />
+    <script type="application/json" id="logfall-map-data">${safeJsonForScript(mapData)}</script>
+    <script defer src="../map/logfall-map.js"></script>
+    ${cloudflareWebAnalyticsTag}
+    `,
+    structuredData: [
+      breadcrumbSchema([
+        { name: "Home", path: "" },
+        { name: "Map", path: "map/" },
+      ]),
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: "Interactive Logical Fallacy Map",
+        url: absoluteUrl("map/"),
+        description,
+        publisher: publisherSchema(),
+        hasPart: mapData.points.map((point) => ({
+          "@type": "DefinedTerm",
+          name: point.name,
+          url: absoluteUrl(`fallacies/${point.slug}/`),
+          description: point.definition,
+        })),
+      },
+      learningResourceSchema({
+        name: "Interactive Logical Fallacy Map",
+        path: "map/",
+        description,
+        about: ["logical fallacies", "critical thinking", "argument comparison"],
+        teaches: [
+          "how common fallacies are in modern rhetoric",
+          "which fallacies are easier to spot",
+          "which fallacies are easier to commit accidentally",
+        ],
+        learningResourceType: ["Interactive map", "Reference", "Visualization"],
+        educationalUse: ["teaching", "self-study", "comparison"],
+        keywords: [
+          "interactive logical fallacy map",
+          "fallacy comparison tool",
+          "critical thinking visualization",
+        ],
+      }),
+    ],
+    content,
+  });
+}
+
 function buildAllFallaciesPage(records, categories) {
   const difficultyOptions = ["Foundational", "Intermediate", "Advanced"]
     .map((value) => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`)
@@ -7944,11 +8201,15 @@ async function main() {
 
   await fs.copyFile(path.join(siteRoot, "styles.css"), path.join(distRoot, "styles.css"));
   await fs.copyFile(path.join(siteRoot, "app.js"), path.join(distRoot, "app.js"));
+  await fs.mkdir(path.join(distRoot, "map"), { recursive: true });
+  await fs.copyFile(path.join(siteRoot, "logfall-map.css"), path.join(distRoot, "map", "logfall-map.css"));
+  await fs.copyFile(path.join(siteRoot, "logfall-map.js"), path.join(distRoot, "map", "logfall-map.js"));
 
   await writeText("index.html", buildHomePage(records, categories));
   await writeText("about/index.html", buildAboutPage());
   await writeText("check-yourself/index.html", buildAssessmentIndexPage(records, categories));
   await writeText("assessment/index.html", buildDialogueAssessmentIndexPage());
+  await writeText("map/index.html", buildMapPage(records, categories));
   await writeText("prompts/index.html", buildPromptsPage());
   await writeText("theory/index.html", buildTheoryIndexPage());
   await writeText("fallacies/index.html", buildAllFallaciesPage(records, categories));
@@ -7961,6 +8222,7 @@ async function main() {
     { path: "about/" },
     { path: "check-yourself/" },
     { path: "assessment/" },
+    { path: "map/" },
     { path: "prompts/" },
     { path: "theory/" },
     { path: "fallacies/" },
