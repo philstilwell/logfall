@@ -44,7 +44,8 @@
   function visiblePoints() {
     var query = normalize(state.query);
     return (data.points || []).filter(function (point) {
-      var matchesCategory = state.category === "all" || point.categorySlug === state.category;
+      var pointCategorySlugs = Array.isArray(point.categorySlugs) ? point.categorySlugs : point.categorySlug ? [point.categorySlug] : [];
+      var matchesCategory = state.category === "all" || pointCategorySlugs.indexOf(state.category) !== -1;
       if (!matchesCategory) return false;
       if (!query) return true;
       var haystack = [point.name, point.definition, point.category, (point.categories || []).join(" ")].join(" ").toLowerCase();

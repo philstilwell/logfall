@@ -7246,6 +7246,7 @@ function buildMapData(records, categories) {
         href: `../fallacies/${record.slug}/`,
         definition: mapCompactDefinition(record),
         categories: record.categories || [],
+        categorySlugs: (record.categories || []).map((category) => slugify(category)),
         category: primaryCategory,
         categorySlug: slugify(primaryCategory),
         color: mapCategoryPalette[primaryCategory] || "#53627b",
