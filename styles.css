@@ -379,6 +379,58 @@ img {
   font-size: 0.98rem;
 }
 
+.fallacy-card-main {
+  min-width: 0;
+}
+
+.fallacy-card-with-poster {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 149px;
+  gap: 22px;
+  align-items: start;
+}
+
+.fallacy-card-poster-shell {
+  justify-self: end;
+}
+
+.fallacy-card-poster {
+  display: block;
+  width: 149px;
+  height: 224px;
+  border-radius: 18px;
+  object-fit: cover;
+  object-position: center top;
+  background: #111111;
+  box-shadow: 0 16px 28px rgba(18, 18, 18, 0.14);
+}
+
+.fallacy-card-main {
+  min-width: 0;
+}
+
+.fallacy-card-with-poster {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 149px;
+  gap: 22px;
+  align-items: start;
+}
+
+.fallacy-card-poster-shell {
+  justify-self: end;
+}
+
+.fallacy-card-poster {
+  display: block;
+  width: 149px;
+  height: 224px;
+  border-radius: 18px;
+  object-fit: cover;
+  object-position: center top;
+  background: #111111;
+  box-shadow: 0 16px 28px rgba(18, 18, 18, 0.14);
+}
+
 .teaching-pill-row,
 .path-link-row {
   display: flex;
@@ -2026,6 +2078,24 @@ img {
   .category-card,
   .fallacy-card {
     padding: 18px;
+  }
+
+  .fallacy-card-with-poster {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .fallacy-card-poster-shell {
+    justify-self: end;
+  }
+
+  .fallacy-card-with-poster {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .fallacy-card-poster-shell {
+    justify-self: end;
   }
 
   .detail-illustration-shell {

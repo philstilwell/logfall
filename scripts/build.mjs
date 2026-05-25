@@ -3219,13 +3219,26 @@ function renderFamilyGuide(familyProfiles, familyBasePath = "../families/") {
     </section>`;
 }
 
-function renderFallacyCard(record, prefix) {
+function renderFallacyCard(record, prefix, options = {}) {
   const pedagogy = pedagogyForRecord(record);
   const aliases = record.aliases.join(" ");
   const caseStudyText = record.caseStudies.map((item) => normalizeCaseStudy(item).summary).join(" ");
   const body = `${record.definition} ${record.example} ${record.notes} ${caseStudyText} ${pedagogy.classroomTags.join(" ")} ${pedagogy.teachingPaths.map((item) => item.title).join(" ")}`;
+  const posterAsset = options.posterAssets ? resolvePosterAssetForRecord(record, options.posterAssets) : null;
+  const showPoster = Boolean(options.showPoster && posterAsset);
+  const posterMarkup = showPoster
+    ? `
+    <div class="fallacy-card-poster-shell">
+      <img
+        class="fallacy-card-poster"
+        src="${prefix}assets/${posterAsset}"
+        alt="${escapeHtml(posterAltTextForRecord(record))}"
+        loading="lazy"
+      />
+    </div>`
+    : "";
   return `<article
-    class="fallacy-card"
+    class="fallacy-card${showPoster ? " fallacy-card-with-poster" : ""}"
     data-fallacy-card
     data-name="${escapeHtml(record.name)}"
     data-aliases="${escapeHtml(aliases)}"
@@ -3234,10 +3247,13 @@ function renderFallacyCard(record, prefix) {
     data-classroom="${escapeHtml(pedagogy.classroomLevel)}"
     data-body="${escapeHtml(body)}"
   >
-    <h3><a href="${prefix}fallacies/${record.slug}/">${escapeHtml(record.name)}</a></h3>
-    <p class="card-copy">${escapeHtml(truncate(record.definition, 170))}</p>
-    ${renderPills(record.categories)}
-    ${renderTeacherPills(record)}
+    <div class="fallacy-card-main">
+      <h3><a href="${prefix}fallacies/${record.slug}/">${escapeHtml(record.name)}</a></h3>
+      <p class="card-copy">${escapeHtml(truncate(record.definition, 170))}</p>
+      ${renderPills(record.categories)}
+      ${renderTeacherPills(record)}
+    </div>
+    ${posterMarkup}
   </article>`;
 }
 
@@ -7407,7 +7423,7 @@ function buildMapPage(records, categories) {
   });
 }
 
-function buildAllFallaciesPage(records, categories) {
+function buildAllFallaciesPage(records, categories, posterAssets) {
   const difficultyOptions = ["Foundational", "Intermediate", "Advanced"]
     .map((value) => `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`)
     .join("");
@@ -7457,7 +7473,7 @@ function buildAllFallaciesPage(records, categories) {
 
     <section class="section-block">
       <div class="fallacy-grid" data-fallacy-grid>
-        ${records.map((record) => renderFallacyCard(record, "../")).join("")}
+        ${records.map((record) => renderFallacyCard(record, "../", { showPoster: true, posterAssets })).join("")}
       </div>
     </section>
   `;
@@ -7566,7 +7582,7 @@ function buildFamiliesIndexPage(familyProfiles) {
   });
 }
 
-function buildFamilyPage(familyProfile, records) {
+function buildFamilyPage(familyProfile, records, posterAssets) {
   const members = records.filter((record) => record.family === familyProfile.name);
   const content = `
     <div class="breadcrumbs">
@@ -7595,7 +7611,7 @@ function buildFamilyPage(familyProfile, records) {
 
     <section class="section-block">
       <div class="fallacy-grid">
-        ${members.map((record) => renderFallacyCard(record, "../../")).join("")}
+        ${members.map((record) => renderFallacyCard(record, "../../", { showPoster: true, posterAssets })).join("")}
       </div>
     </section>
   `;
@@ -7725,7 +7741,7 @@ function buildCategoriesIndexPage(categories) {
   });
 }
 
-function buildCategoryPage(category, records) {
+function buildCategoryPage(category, records, posterAssets) {
   const members = records.filter((record) => record.categories.includes(category.name));
   const featuredMembers = members
     .slice(0, 5)
@@ -7769,7 +7785,7 @@ function buildCategoryPage(category, records) {
 
     <section class="section-block">
       <div class="fallacy-grid">
-        ${members.map((record) => renderFallacyCard(record, "../../")).join("")}
+        ${members.map((record) => renderFallacyCard(record, "../../", { showPoster: true, posterAssets })).join("")}
       </div>
     </section>
   `;
@@ -8293,7 +8309,7 @@ async function main() {
   await writeText("map/index.html", buildMapPage(records, categories));
   await writeText("prompts/index.html", buildPromptsPage());
   await writeText("theory/index.html", buildTheoryIndexPage());
-  await writeText("fallacies/index.html", buildAllFallaciesPage(records, categories));
+  await writeText("fallacies/index.html", buildAllFallaciesPage(records, categories, posterAssets));
   await writeText("categories/index.html", buildCategoriesIndexPage(categories));
   await writeText("families/index.html", buildFamiliesIndexPage(familyProfiles));
   await writeText("paths/index.html", buildTeachingPathsIndexPage(records));
@@ -8320,11 +8336,11 @@ async function main() {
   await writeText("robots.txt", `User-agent: *\nAllow: /\nSitemap: ${absoluteUrl("sitemap.xml")}\n`);
 
   for (const category of categories) {
-    await writeText(`categories/${category.slug}/index.html`, buildCategoryPage(category, records));
+    await writeText(`categories/${category.slug}/index.html`, buildCategoryPage(category, records, posterAssets));
   }
 
   for (const familyProfile of familyProfiles) {
-    await writeText(`families/${familyProfile.slug}/index.html`, buildFamilyPage(familyProfile, records));
+    await writeText(`families/${familyProfile.slug}/index.html`, buildFamilyPage(familyProfile, records, posterAssets));
   }
 
   for (const pathDefinition of teachingPathDefinitions) {
