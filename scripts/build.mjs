@@ -9,6 +9,7 @@ const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, "..");
 const dataPath = path.join(projectRoot, "data", "fallacies.json");
 const byteseismicCrossrefsPath = path.join(projectRoot, "data", "byteseismic_crossrefs.json");
+const posterCaptionsPath = path.join(projectRoot, "data", "poster_captions.json");
 const siteRoot = path.join(projectRoot, "site");
 const distRoot = projectRoot;
 const dataOutDir = path.join(distRoot, "data");
@@ -35,6 +36,8 @@ const baseSiteKeywords = [
   "reasoning errors",
   "logic",
 ];
+
+let posterCaptionOverrides = {};
 
 const featuredNames = [
   "Ad hominem",
@@ -3313,6 +3316,9 @@ function lowercaseFirst(value = "") {
 }
 
 function posterExplanationForRecord(record) {
+  const override = posterCaptionOverrides[record.slug];
+  if (override) return override;
+
   const example = stripTrailingPunctuation(record.example || "");
   const definition = stripTrailingPunctuation(
     String(record.definition || "")
@@ -8273,6 +8279,10 @@ async function main() {
   const byteseismicCrossrefsPayload = JSON.parse(
     await fs.readFile(byteseismicCrossrefsPath, "utf8").catch(() => "[]"),
   );
+  const posterCaptionsPayload = JSON.parse(
+    await fs.readFile(posterCaptionsPath, "utf8").catch(() => '{"captions": {}}'),
+  );
+  posterCaptionOverrides = posterCaptionsPayload.captions || {};
   const records = payload.records.map((record) => ({
     ...record,
     categories: normalizeRecordCategories(record),
