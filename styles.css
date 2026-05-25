@@ -424,7 +424,7 @@ img {
   display: block;
   width: 149px;
   height: 224px;
-  border-radius: 18px;
+  border-radius: 0;
   object-fit: cover;
   object-position: center top;
   background: #111111;
