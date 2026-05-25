@@ -3307,7 +3307,7 @@ function posterExplanationForRecord(record) {
   const parts = [];
 
   if (example) {
-    parts.push(`This image turns the fallacy into a concrete scene: ${example}.`);
+    parts.push(`${example}.`);
   }
 
   if (definition) {
