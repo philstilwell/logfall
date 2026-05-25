@@ -3128,11 +3128,11 @@ function renderRhetoricGaugeCard(gauge) {
   </article>`;
 }
 
-function renderRhetoricGaugeSection(record) {
+function renderRhetoricGaugeSection(record, prefix) {
   const gauges = rhetoricGaugesForRecord(record);
   return `<div class="section-block gauge-section">
     <p class="detail-card-label">Teaching gauges</p>
-    <p class="muted gauge-note">These 0-100 gauges are teaching aids for comparing fallacies. They are editorial classroom estimates, not measured statistics.</p>
+    <p class="muted gauge-note">These 0-100 gauges are teaching aids for comparing fallacies. They are editorial classroom estimates, not measured statistics. <a class="text-link" href="${prefix}map/">View these on the Map</a>.</p>
     <div class="gauge-grid">
       ${renderRhetoricGaugeCard(gauges.common)}
       ${renderRhetoricGaugeCard(gauges.spot)}
@@ -7858,7 +7858,7 @@ function buildDetailPage(record, records, categoryProfiles, posterAssets, bytese
             <p class="detail-card-value">${escapeHtml(record.example)}</p>
           </div>
         </div>
-        ${renderRhetoricGaugeSection(record)}${profileReferenceMarkup}
+        ${renderRhetoricGaugeSection(record, "../../")}${profileReferenceMarkup}
       </article>
 
       ${
