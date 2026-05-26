@@ -1520,6 +1520,64 @@ img {
   gap: 10px;
 }
 
+.feature-headline-shell {
+  background:
+    linear-gradient(135deg, rgba(20, 168, 215, 0.06), transparent 45%),
+    linear-gradient(225deg, rgba(230, 59, 52, 0.06), transparent 40%),
+    #fff;
+}
+
+.feature-headline {
+  margin: 4px 0 10px;
+  font-family: "Baskerville", "Georgia", serif;
+  font-size: clamp(1.5rem, 2.6vw, 2.2rem);
+  line-height: 1.08;
+}
+
+.feature-source-line {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.feature-question-list {
+  margin: 16px 0 0;
+  padding-left: 20px;
+  display: grid;
+  gap: 10px;
+}
+
+.feature-reveal + .feature-reveal {
+  margin-top: 14px;
+}
+
+.feature-reveal {
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 16px 18px;
+  background: #fff;
+  box-shadow: var(--shadow);
+}
+
+.feature-reveal summary {
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 1.08rem;
+}
+
+.feature-reveal[open] summary {
+  margin-bottom: 14px;
+}
+
+.feature-reveal-body p {
+  margin: 0;
+  color: var(--ink-soft);
+}
+
+.feature-diagnosis-meta {
+  margin: 12px 0 0;
+  color: var(--ink);
+}
+
 .quiz-example-shell {
   margin: 0 0 16px;
   border: 1px solid var(--line);

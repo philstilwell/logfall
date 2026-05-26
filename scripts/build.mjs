@@ -585,6 +585,17 @@ const theoryArticleDefinitions = [
   },
 ];
 
+const featureArticleDefinitions = [
+  {
+    slug: "how-one-alabama-map-headline-invites-several-fallacies",
+    title: "How One Alabama Map Headline Invites Several Fallacies",
+    description:
+      "A headline-level feature on how compressed legal and political wording can invite single-cause, false-dilemma, correlation-causation, equivocation, and cherry-picking mistakes.",
+    intro:
+      "This feature takes a current headline and asks a sharper question than 'Do I agree with it?' It asks what reasoning shortcuts a reader can slide into if a short headline is treated like a full explanation.",
+  },
+];
+
 const theorySourceCatalog = {
   fallaciesSep: {
     title: "Fallacies (Stanford Encyclopedia of Philosophy)",
@@ -2996,6 +3007,7 @@ function pageShell({
     { href: `${prefix}fallacies/`, label: "All Fallacies", key: "fallacies" },
     { href: `${prefix}categories/`, label: "Categories", key: "categories" },
     { href: `${prefix}map/`, label: "Map", key: "map" },
+    { href: `${prefix}features/`, label: "Features", key: "features" },
     { href: `${prefix}check-yourself/`, label: "Check Yourself", key: "check-yourself" },
     { href: `${prefix}assessment/`, label: "Assessment", key: "assessment" },
     { href: `${prefix}prompts/`, label: "Fun AI Prompts", key: "prompts" },
@@ -3826,6 +3838,14 @@ function theoryArticleSeoDescription(article) {
   return article.description;
 }
 
+function featuresSeoDescription() {
+  return "Read feature pages that use current headlines and public rhetoric to show how logical fallacies appear in live media language.";
+}
+
+function featureArticleSeoDescription(article) {
+  return article.description;
+}
+
 function pathSeoDescription(pathDefinition, memberCount) {
   return `${pathDefinition.title}: a ${memberCount}-fallacy teaching path for ${pathDefinition.audience.toLowerCase()}, built for comparison, discussion, and critical thinking instruction.`;
 }
@@ -4473,6 +4493,15 @@ function renderTheoryArticleCard(article, prefix) {
   </article>`;
 }
 
+function renderFeatureArticleCard(article, prefix) {
+  return `<article class="category-card theory-article-card">
+    <h3><a href="${prefix}features/${article.slug}/">${escapeHtml(article.title)}</a></h3>
+    <p class="card-copy">${escapeHtml(article.description)}</p>
+    <p class="theory-article-intro">${escapeHtml(article.intro)}</p>
+    <p class="assessment-card-link"><a class="inline-link" href="${prefix}features/${article.slug}/">Read feature</a></p>
+  </article>`;
+}
+
 function theoryInternalLink(pathname, label) {
   return `<a class="inline-link" href="../../${pathname}">${escapeHtml(label)}</a>`;
 }
@@ -4629,6 +4658,103 @@ function buildTheoryIndexPage() {
         learningResourceType: ["Article hub", "Teaching resource"],
         educationalUse: ["teaching", "self-study"],
         keywords: ["logical fallacy theory", "fallacy pedagogy", "rebutting fallacies"],
+      }),
+    ],
+    content,
+  });
+}
+
+function buildFeaturesIndexPage() {
+  const content = `
+    <div class="breadcrumbs">
+      <a href="../">Home</a><span>/</span><strong>Features</strong>
+    </div>
+
+    <section class="detail-section">
+      <p class="eyebrow">Features</p>
+      <h2 class="detail-title">Current headlines examined for the reasoning mistakes they can trigger.</h2>
+      <p class="detail-deck">
+        These feature pages use live headlines, political language, and public argument to show how readers can slide into fallacious interpretations.
+        The goal is not to shout “fallacy” at every headline. It is to slow the reading process down, let visitors try the diagnosis first, and then reveal the most defensible fallacy lenses.
+      </p>
+    </section>
+
+    <section class="section-block">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">Current features</h3>
+          <p class="section-copy">Each feature starts with a real headline, invites the reader to spot the fallacies before any labels appear, and then reveals the reasoning mistakes one by one.</p>
+        </div>
+      </div>
+      <div class="category-grid theory-article-grid">
+        ${featureArticleDefinitions.map((article) => renderFeatureArticleCard(article, "../")).join("")}
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">Weekly scouting process</h3>
+          <p class="section-copy">A GitHub workflow now scans a recent headline corpus each week and produces a short candidate report for manual review. It does not auto-publish diagnoses; it gives you a disciplined shortlist to curate into future feature pages.</p>
+        </div>
+      </div>
+      <div class="two-column compact-columns">
+        <article class="note-panel">
+          <h4>What the workflow does</h4>
+          <p class="muted">It fetches a cross-source RSS corpus, scores headlines for likely fallacy triggers such as oversimplified cause, false dilemma, and loaded proof language, and writes a dated review file plus a refreshed latest report inside the repo.</p>
+        </article>
+        <article class="note-panel">
+          <h4>Why the human still matters</h4>
+          <p class="muted">Headlines are short, strategic, and context-sensitive. A workflow can flag candidates, but a careful writer still has to decide whether the fallacy is in the headline itself, in a common reader inference, or only in later commentary.</p>
+        </article>
+      </div>
+    </section>
+  `;
+
+  return pageShell({
+    title: "Features: Current Headlines and Logical Fallacies | LogFall",
+    description: featuresSeoDescription(),
+    prefix: "../",
+    currentSection: "features",
+    canonicalPath: "features/",
+    keywords: [
+      "logical fallacies in headlines",
+      "headline fallacies",
+      "news headline analysis",
+      "current rhetoric analysis",
+    ],
+    structuredData: [
+      breadcrumbSchema([
+        { name: "Home", path: "" },
+        { name: "Features", path: "features/" },
+      ]),
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        name: "Features",
+        url: absoluteUrl("features/"),
+        description: featuresSeoDescription(),
+        publisher: publisherSchema(),
+        hasPart: featureArticleDefinitions.map((article) => ({
+          "@type": "Article",
+          headline: article.title,
+          url: absoluteUrl(`features/${article.slug}/`),
+          description: article.description,
+          author: {
+            "@type": "Person",
+            name: "Phil Stilwell",
+          },
+        })),
+      },
+      learningResourceSchema({
+        name: "Features: Current Headlines and Logical Fallacies",
+        path: "features/",
+        description: featuresSeoDescription(),
+        about: ["logical fallacies", "news headlines", "media rhetoric"],
+        teaches: ["how to analyze headline framing", "how to resist headline-driven fallacies"],
+        learningResourceType: ["Feature hub", "Teaching resource"],
+        educationalUse: ["teaching", "self-study"],
+        keywords: ["logical fallacies in headlines", "headline fallacies", "news rhetoric analysis"],
       }),
     ],
     content,
@@ -6855,6 +6981,204 @@ function buildAlgorithmicMediaTheoryArticleContent(article) {
   });
 }
 
+function renderFeatureReveal({ title, fallacyLabel, fallacySlug, bodyHtml }) {
+  const referenceHtml = fallacySlug
+    ? `<p class="feature-diagnosis-meta"><strong>Closest LogFall entry:</strong> <a class="inline-link" href="../../fallacies/${fallacySlug}/">${escapeHtml(fallacyLabel)}</a></p>`
+    : "";
+  return `<details class="feature-reveal">
+    <summary>${escapeHtml(title)}</summary>
+    <div class="feature-reveal-body">
+      <p>${bodyHtml}</p>
+      ${referenceHtml}
+    </div>
+  </details>`;
+}
+
+function buildAlabamaMapHeadlineFeatureContent(article) {
+  const reveals = [
+    renderFeatureReveal({
+      title: "Reveal 1: Single cause fallacy",
+      fallacyLabel: "Single cause fallacy",
+      fallacySlug: "single-cause-fallacy",
+      bodyHtml:
+        `The headline can nudge a reader toward a one-variable story: the map was blocked <em>because</em> it had only one majority-Black district. That is a tempting shortcut, but it flattens a larger legal argument into one visible feature. A fuller reading has to ask what broader pattern of district design, vote dilution claims, remedial history, and court reasoning sat behind the ruling before one descriptor is treated as the whole cause.`,
+    }),
+    renderFeatureReveal({
+      title: "Reveal 2: Correlation is not causation",
+      fallacyLabel: "Correlation is not causation",
+      fallacySlug: "correlation-is-not-causation",
+      bodyHtml:
+        `In Alabama politics, race and party voting behavior often overlap in the same districts. A quick reaction can therefore jump from <em>majority-Black</em> to <em>Democratic</em> and then to a clean causal story about what the court was really doing. But overlap by itself does not settle whether race, party, legal standards, or some combination of them is carrying the explanatory weight in this specific ruling.`,
+    }),
+    renderFeatureReveal({
+      title: "Reveal 3: Equivocation",
+      fallacyLabel: "Equivocation",
+      fallacySlug: "equivocation",
+      bodyHtml:
+        `The phrase <em>majority-Black district</em> can do several jobs at once: it can identify a district demographically, suggest a voting pattern, or sound like an explanation of the court’s intervention. Sliding between those meanings creates an illusion of clarity. A label that describes a district is not automatically the same thing as the reason a court accepted or rejected a map.`,
+    }),
+    renderFeatureReveal({
+      title: "Reveal 4: False dilemma",
+      fallacyLabel: "False dilemma",
+      fallacySlug: "false-dilemma",
+      bodyHtml:
+        `Public reactions often harden into an either-or: either the case was really about race or it was really about party. That framing is cleaner than the underlying reality. Real redistricting disputes can involve overlapping race-and-party evidence, plus a separate legal question about what the governing standard actually requires, so forcing the issue into only two boxes can hide the most important third and fourth factors.`,
+    }),
+    renderFeatureReveal({
+      title: "Reveal 5: Cherry picking",
+      fallacyLabel: "Cherry picking",
+      fallacySlug: "cherry-picking",
+      bodyHtml:
+        `A reader can seize on the most vivid phrase in the headline — <em>1 majority-Black district</em> — and let that stand in for the whole case. That leaves out the wider record: prior litigation, the court’s explanation, the state’s remedial attempts, and the structure of the voting-rights analysis. Once one salient phrase is treated as the whole dispute, the evidence base has already been thinned.`,
+    }),
+  ].join("");
+
+  return `
+    <div class="breadcrumbs">
+      <a href="../../">Home</a><span>/</span><a href="../">Features</a><span>/</span><strong>${escapeHtml(article.title)}</strong>
+    </div>
+
+    <section class="detail-section">
+      <p class="eyebrow">Headline feature</p>
+      <h2 class="detail-title">${escapeHtml(article.title)}</h2>
+      <p class="detail-deck">
+        A short headline does not have room to carry a full court opinion on its back. The important question is not only whether the wording is fair, but
+        what reasoning slips a reader can make if the compressed phrasing is treated as a full explanation of the case.
+      </p>
+    </section>
+
+    <section class="section-block">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">Spot it first</h3>
+          <p class="section-copy">Read the headline, pause, and see whether you can name the likely reasoning mistakes before opening the reveal boxes below.</p>
+        </div>
+      </div>
+      <div class="detail-section feature-headline-shell">
+        <p class="eyebrow">Headline under review</p>
+        <h3 class="feature-headline">“Court blocks Alabama from using congressional map with 1 majority-Black district”</h3>
+        <p class="feature-source-line">
+          Source:
+          <a class="inline-link" href="https://www.cbsnews.com/news/court-alabama-congressional-district-midterms/">CBS News — Melissa Quinn — May 26, 2026</a>
+        </p>
+        <ul class="feature-question-list">
+          <li>What exactly does the headline state, and what does it merely invite the reader to infer?</li>
+          <li>Does it tempt you to explain a legally messy ruling with just one visible variable?</li>
+          <li>Are race, party voting behavior, and legal standards being collapsed into one cause?</li>
+          <li>Would a more careful reader distinguish between a demographic description and an explanation of the ruling?</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">Reveal the likely fallacies</h3>
+          <p class="section-copy">These are not all guaranteed to be in the headline itself as a deliberate move. They are the main reasoning traps the headline can trigger in a fast reader or partisan commentator.</p>
+        </div>
+      </div>
+      ${reveals}
+    </section>
+
+    <section class="section-block">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">A more careful reading</h3>
+          <p class="section-copy">The safer takeaway is not “the map was blocked because it was Black” and not “the map was blocked only because it was Democratic.” The safer takeaway is that a compressed headline about a race-and-representation case can invite both kinds of oversimplification if the reader turns one descriptive phrase into the whole causal story.</p>
+        </div>
+      </div>
+      <div class="two-column compact-columns">
+        <article class="note-panel">
+          <h4>What the headline does well</h4>
+          <p class="muted">It identifies the immediate public-facing fact that will matter to many readers: the map had just one majority-Black district and the court stopped it from being used. That makes it newsworthy and legible quickly.</p>
+        </article>
+        <article class="note-panel">
+          <h4>What the reader still has to supply carefully</h4>
+          <p class="muted">The causal explanation. A headline can describe the surface of a dispute without settling why the court ruled, what legal standard was applied, or how race and party overlap in the underlying geography.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="detail-section section-block">
+      <p class="eyebrow">Teaching note</p>
+      <h3 class="section-title">Why this works as a weekly feature model</h3>
+      <p class="section-copy">This is the kind of headline that works well for recurring fallacy analysis: short, vivid, politically charged, and just compressed enough to invite overconfident explanations. The point of the feature is not to sneer at headline writers. It is to help readers notice when their own reasoning outruns what the words on the page actually establish.</p>
+    </section>
+
+    ${renderTheoryReferencesSection([
+      {
+        title: "CBS News: Court blocks Alabama from using congressional map with 1 majority-Black district",
+        url: "https://www.cbsnews.com/news/court-alabama-congressional-district-midterms/",
+        note: "The specific headline used for this first feature page.",
+      },
+      {
+        title: "AP: Federal court blocks Alabama plan for new congressional districts that could help Republicans",
+        url: "https://apnews.com/article/b67125657b36e9b915ea9bc5d587d08c",
+        note: "Useful comparison because it frames the same ruling differently.",
+      },
+      {
+        title: "All About Redistricting: Singleton v. Allen",
+        url: "https://redistricting.lls.edu/case/singleton-v-allen/",
+        note: "Helpful background on the larger case context and timeline.",
+      },
+    ])}
+  `;
+}
+
+function buildFeatureArticlePage(article) {
+  const featureArticleBuilders = {
+    "how-one-alabama-map-headline-invites-several-fallacies": buildAlabamaMapHeadlineFeatureContent,
+  };
+  const content = (featureArticleBuilders[article.slug] || buildAlabamaMapHeadlineFeatureContent)(article);
+
+  return pageShell({
+    title: `${article.title} | LogFall Features`,
+    description: featureArticleSeoDescription(article),
+    prefix: "../../",
+    currentSection: "features",
+    canonicalPath: `features/${article.slug}/`,
+    ogType: "article",
+    keywords: [
+      article.title,
+      "logical fallacies in headlines",
+      "headline analysis",
+      "news rhetoric",
+      "current events",
+    ],
+    structuredData: [
+      breadcrumbSchema([
+        { name: "Home", path: "" },
+        { name: "Features", path: "features/" },
+        { name: article.title, path: `features/${article.slug}/` },
+      ]),
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        headline: article.title,
+        description: featureArticleSeoDescription(article),
+        url: absoluteUrl(`features/${article.slug}/`),
+        author: {
+          "@type": "Person",
+          name: "Phil Stilwell",
+        },
+        publisher: publisherSchema(),
+        dateModified: buildDate,
+      },
+      learningResourceSchema({
+        name: article.title,
+        path: `features/${article.slug}/`,
+        description: featureArticleSeoDescription(article),
+        about: ["logical fallacies", "news headlines", "media rhetoric"],
+        teaches: ["how to test headline inferences", "how to slow down causal and framing mistakes in current events"],
+        learningResourceType: ["Article", "Feature", "Teaching resource"],
+        educationalUse: ["teaching", "self-study"],
+        keywords: [article.title, "headline fallacies", "news rhetoric", "critical thinking"],
+      }),
+    ],
+    content,
+  });
+}
+
 function buildTheoryArticlePage(article) {
   const theoryArticleBuilders = {
     "fallacy-rebuttals-without-fallacy-naming": buildRebuttalsTheoryArticleContent,
@@ -8303,6 +8627,7 @@ async function main() {
   await pruneGeneratedDirectories(path.join(distRoot, "categories"), new Set(categories.map((category) => category.slug)));
   await pruneGeneratedDirectories(path.join(distRoot, "families"), new Set(familyProfiles.map((profile) => profile.slug)));
   await pruneGeneratedDirectories(path.join(distRoot, "paths"), new Set(teachingPathDefinitions.map((pathDefinition) => pathDefinition.slug)));
+  await pruneGeneratedDirectories(path.join(distRoot, "features"), new Set(featureArticleDefinitions.map((article) => article.slug)));
   await pruneGeneratedDirectories(path.join(distRoot, "theory"), new Set(theoryArticleDefinitions.map((article) => article.slug)));
   await pruneGeneratedDirectories(path.join(distRoot, "check-yourself"), new Set());
 
@@ -8317,6 +8642,7 @@ async function main() {
   await writeText("check-yourself/index.html", buildAssessmentIndexPage(records, categories));
   await writeText("assessment/index.html", buildDialogueAssessmentIndexPage());
   await writeText("map/index.html", buildMapPage(records, categories));
+  await writeText("features/index.html", buildFeaturesIndexPage());
   await writeText("prompts/index.html", buildPromptsPage());
   await writeText("theory/index.html", buildTheoryIndexPage());
   await writeText("fallacies/index.html", buildAllFallaciesPage(records, categories, posterAssets));
@@ -8330,6 +8656,7 @@ async function main() {
     { path: "check-yourself/" },
     { path: "assessment/" },
     { path: "map/" },
+    { path: "features/" },
     { path: "prompts/" },
     { path: "theory/" },
     { path: "fallacies/" },
@@ -8339,6 +8666,7 @@ async function main() {
     ...categories.map((category) => ({ path: `categories/${category.slug}/` })),
     ...familyProfiles.map((profile) => ({ path: `families/${profile.slug}/` })),
     ...teachingPathDefinitions.map((pathDefinition) => ({ path: `paths/${pathDefinition.slug}/` })),
+    ...featureArticleDefinitions.map((article) => ({ path: `features/${article.slug}/` })),
     ...theoryArticleDefinitions.map((article) => ({ path: `theory/${article.slug}/` })),
     ...records.map((record) => ({ path: `fallacies/${record.slug}/` })),
   ];
@@ -8355,6 +8683,10 @@ async function main() {
 
   for (const pathDefinition of teachingPathDefinitions) {
     await writeText(`paths/${pathDefinition.slug}/index.html`, buildTeachingPathPage(pathDefinition, records));
+  }
+
+  for (const article of featureArticleDefinitions) {
+    await writeText(`features/${article.slug}/index.html`, buildFeatureArticlePage(article));
   }
 
   for (const article of theoryArticleDefinitions) {
@@ -8375,7 +8707,7 @@ async function main() {
       {
         distRoot,
         pageCount:
-          10 + categories.length + familyProfiles.length + teachingPathDefinitions.length + theoryArticleDefinitions.length + records.length,
+          11 + categories.length + familyProfiles.length + teachingPathDefinitions.length + featureArticleDefinitions.length + theoryArticleDefinitions.length + records.length,
         recordCount: records.length,
         workbookOutPath,
       },
