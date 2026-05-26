@@ -1527,6 +1527,20 @@ img {
     #fff;
 }
 
+.feature-card-date,
+.feature-page-date {
+  margin: 2px 0 0;
+  color: var(--ink-soft);
+  font-size: 0.92rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.feature-page-date {
+  margin-top: 8px;
+}
+
 .feature-headline {
   margin: 4px 0 10px;
   font-family: "Baskerville", "Georgia", serif;

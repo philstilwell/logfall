@@ -589,6 +589,7 @@ const featureArticleDefinitions = [
   {
     slug: "how-one-alabama-map-headline-invites-several-fallacies",
     title: "How One Alabama Map Headline Invites Several Fallacies",
+    date: "2026-05-26",
     description:
       "A headline-level feature on how compressed legal and political wording can invite single-cause, false-dilemma, correlation-causation, equivocation, and cherry-picking mistakes.",
     intro:
@@ -4496,6 +4497,7 @@ function renderTheoryArticleCard(article, prefix) {
 function renderFeatureArticleCard(article, prefix) {
   return `<article class="category-card theory-article-card">
     <h3><a href="${prefix}features/${article.slug}/">${escapeHtml(article.title)}</a></h3>
+    <p class="feature-card-date">${escapeHtml(article.date || "")}</p>
     <p class="card-copy">${escapeHtml(article.description)}</p>
     <p class="theory-article-intro">${escapeHtml(article.intro)}</p>
     <p class="assessment-card-link"><a class="inline-link" href="${prefix}features/${article.slug}/">Read feature</a></p>
@@ -4694,18 +4696,18 @@ function buildFeaturesIndexPage() {
     <section class="section-block">
       <div class="section-header">
         <div>
-          <h3 class="section-title">Weekly scouting process</h3>
-          <p class="section-copy">A GitHub workflow now scans a recent headline corpus each week and produces a short candidate report for manual review. It does not auto-publish diagnoses; it gives you a disciplined shortlist to curate into future feature pages.</p>
+          <h3 class="section-title">How new features are chosen</h3>
+          <p class="section-copy">Each week, recent headlines are screened for compressed causal wording, false binaries, and other patterns that can invite overconfident reasoning. The result is a shortlist for editorial review, not an automatic fallacy verdict.</p>
         </div>
       </div>
       <div class="two-column compact-columns">
         <article class="note-panel">
-          <h4>What the workflow does</h4>
-          <p class="muted">It fetches a cross-source RSS corpus, scores headlines for likely fallacy triggers such as oversimplified cause, false dilemma, and loaded proof language, and writes a dated review file plus a refreshed latest report inside the repo.</p>
+          <h4>What gets flagged</h4>
+          <p class="muted">The strongest candidates are usually short, vivid headlines that compress a legal, political, or social dispute into one apparent cause, one stark opposition, or one decisive proof claim.</p>
         </article>
         <article class="note-panel">
-          <h4>Why the human still matters</h4>
-          <p class="muted">Headlines are short, strategic, and context-sensitive. A workflow can flag candidates, but a careful writer still has to decide whether the fallacy is in the headline itself, in a common reader inference, or only in later commentary.</p>
+          <h4>Why human judgment still matters</h4>
+          <p class="muted">A strong feature page has to distinguish between a fallacy in the headline itself, a fallacy the headline tempts readers to infer, and a fallacy that only appears deeper in the article or later commentary.</p>
         </article>
       </div>
     </section>
@@ -7041,6 +7043,7 @@ function buildAlabamaMapHeadlineFeatureContent(article) {
     <section class="detail-section">
       <p class="eyebrow">Headline feature</p>
       <h2 class="detail-title">${escapeHtml(article.title)}</h2>
+      <p class="feature-page-date">${escapeHtml(article.date || "")}</p>
       <p class="detail-deck">
         A short headline does not have room to carry a full court opinion on its back. The important question is not only whether the wording is fair, but
         what reasoning slips a reader can make if the compressed phrasing is treated as a full explanation of the case.
@@ -7067,6 +7070,20 @@ function buildAlabamaMapHeadlineFeatureContent(article) {
           <li>Are race, party voting behavior, and legal standards being collapsed into one cause?</li>
           <li>Would a more careful reader distinguish between a demographic description and an explanation of the ruling?</li>
         </ul>
+      </div>
+    </section>
+
+    <section class="section-block">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">A cleaner rewrite</h3>
+          <p class="section-copy">Here is a version that keeps the news value while doing less hidden explanatory work.</p>
+        </div>
+      </div>
+      <div class="detail-section feature-headline-shell">
+        <p class="eyebrow">Possible rewrite</p>
+        <h3 class="feature-headline">“Court blocks Alabama from using current congressional map in dispute over Black voter representation”</h3>
+        <p class="feature-source-line">Why this is cleaner: it still states the court action and the subject of the dispute, but it avoids implying that one visible district characteristic by itself fully explains the ruling.</p>
       </div>
     </section>
 
