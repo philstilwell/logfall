@@ -1,5 +1,5 @@
 {
-  "generated": "2026-05-26T16:41:22.896223+00:00",
+  "generated": "2026-05-26T17:44:08.884171+00:00",
   "days": 7,
   "feeds": [
     {
@@ -53,22 +53,6 @@
       "why_flagged": [
         "Headline leans on compact causal framing.",
         "Headline sounds more conclusive than the underlying evidence may warrant."
-      ]
-    },
-    {
-      "title": "Dana White: \u2018Legacy Doesn\u2019t Mean Shit to Me\u2019 - Rolling Stone",
-      "url": "https://news.google.com/rss/articles/CBMiqAFBVV95cUxOZUZTNFlvWmRPOTBWOHJxRnNVU056VW4xb0lIOUJ4ZlAyNmktVzVfSnprWVFjei1sUnA4NEc2cnUyNVVFOVphc3FKLTJBcWQtb3RlcjJCVWw2TkhudXViNzFZdjMta2JyMEY0TXhpQ1JlOTNIenBSUVU3RXJIZzFIODVXZFVIRVNDZkxMTGRLM0pGWWRQMmdfT0N5N0tWSGxnT0JYYkIzWDI?oc=5",
-      "source": "Rolling Stone",
-      "published": "2026-05-26",
-      "score": 7,
-      "likely_fallacies": [
-        "Correlation is not causation",
-        "Group-label overreach / proxy reasoning"
-      ],
-      "why_flagged": [
-        "Headline suggests causation in a compressed form.",
-        "Group label could invite overgeneralized or proxy reasoning.",
-        "Two-part headline structure may hide a jump from setup to conclusion."
       ]
     },
     {
@@ -158,20 +142,6 @@
       ]
     },
     {
-      "title": "2026 AMAs full coverage: BTS wins Artist of the Year as New Kids on the Block and Keith Urban bring the nostalgia - Yahoo",
-      "url": "https://news.google.com/rss/articles/CBMihAJBVV95cUxOZGRRZHdfSG0yc2VlaXNrSDJ6UGRlakU2Wi1jNTF0UGVUTWpnd1k1TEtTM24wYXlGTDh1enlwTFZicWZuTHV0UjZUVFd0THZCdG82ZFFEelFJN1pBM1JSbFBJQ0NIVnI0aVVITGsxTzg3S0Z5aHA1UGxiQjZlRHp5WEFfRHhFWExjM3VNZXdsbXN0d2J5UF9XZFF1YVppbV91eUUxWHNFQ3dnUzIwdVp2MThvNlhIbFJjdkx5dE01bk1lVTNGSGZRUTdob3FxUXp3WjhsV3MxZGVDWFA2ZFpMSnRDd1l3QjlwNURGMUZKTlc2OHJ5ck1IOHpLS1EzQmFUUWRmcA?oc=5",
-      "source": "Yahoo",
-      "published": "2026-05-26",
-      "score": 5,
-      "likely_fallacies": [
-        "Single cause fallacy"
-      ],
-      "why_flagged": [
-        "Headline leans on compact causal framing.",
-        "Two-part headline structure may hide a jump from setup to conclusion."
-      ]
-    },
-    {
       "title": "Justice Ketanji Brown Jackson warns Supreme Court 'perceived' as political - ABC News - Breaking News, Latest News and Videos",
       "url": "https://news.google.com/rss/articles/CBMiqwFBVV95cUxQbElBQTJFMnZMVU1jQmpHSjJORmtud181V3ZXbzJLSXR1Z2xjY1p1TTVNazFtYkNlTTdlQm1NZ211S1pNbDJUeUV4YllzdlNxcUJYS1B6SVlzLW5GMm1nY1V4WDNCMFlaUHBPZWMtUnFMNVVLNkRPbG8yWnNhVTJaVGl0V1BQTWpFczlBc2xpMHVSZlppQ05CRUducnV6X1NsY1BNbFpJbVFIaTDSAbABQVVfeXFMTnFHZnhzX3BDUklfSzFFOUxmTjVCV3hGVFVkdVZNX0t6MnNvQU9OQ3JvdWlUU3hIVmUwUnlmZEJ4RjVvZlhoWlNIa1ZiY1hGUXg5Ynl0NnBwUFFIblVtMGxFbnNPanpqbWE0cE9OMjZ3bVRleUx1R3hjZ2s4eWlSYUswbUx6THFteGlxMi1IbXQyRkNiWUNBVXMzR3JCVkE2UFpjMHlyWEZNcGxYMEQxcGw?oc=5",
       "source": "ABC News - Breaking News, Latest News and Videos",
@@ -198,9 +168,9 @@
       ]
     },
     {
-      "title": "New Pemex CEO seen as boosting financial focus, reinforcing political control - S&P Global",
-      "url": "https://news.google.com/rss/articles/CBMi6gFBVV95cUxQc3JlTkxMWmNhZTE2aWdlaHV0SFR3UjJMQTRVejN3YzEzMU1GZjRQaWJJZk1sV2JVOC0wSS1LRTNDLVlBS1RQM3U1UXhESXNYX24ySUNVZkZfSGtVSnBGQ3dfMktvZlMwdFJmYmk0NzdHc1FZWG1uVng0dDF6UU1jT1ZtSXBSZW9Kb1lvUHQtNEZTdHV2bjRJS3JBcW9UYjdxa0tiYXdxLWxhZ1ZTRzJjMXptVGhvaTFxSzR2SUdFVVZjaTg3aHlpOFhocXE3Zk9rdHJvUTN1Y2R3dDNUWTh3OGJzaTRMbUZTbXc?oc=5",
-      "source": "S&P Global",
+      "title": "Senate advances bill aimed at ending Iran war as Cassidy, after primary loss, flips to support it - PBS",
+      "url": "https://news.google.com/rss/articles/CBMizgFBVV95cUxOUXV1M29NWERNeV9HR2s5ZGJOSkxJMlJrNUpTSHNEdWttMGJfN1NjTFRWTVpTSXZ6SGw1X2RaQUtEZUtRWC0weGJoOE92UjFwV2g2emlvemZxaW1VM1BDQjI3YmFDenZ6Vm44azJ2c0NCRFAtbk1iOHJGcFR2T0NiZ2xkYzRsQUdaN05pTXpvUkZBSmZWWXJSY2tiY0JHWG9DVV9vVnhZYWhqTTJVdkhfbkVzOU1BdDVLbEJJZ255QlROdnJyYkJKdnVuSm1nUdIB0wFBVV95cUxQaEdOZTl2VDZfR1ZHRFZKQ2NKOXB6dWJvc1FJNEc4dTJSQ19HaTNheXM4eF9ZT05zblc5ZXBkLWpMX2xDUVZLSDk4eGtEb0RsZjVQQjktN3BlalBBMk1HRXpkclRVX1lsUWR6Rkg0VmJyaEY2X3h6QzMyWHRmNVNGVzJhZmtUWi1CTEl6V21LTlYyaElPMEVvTHFJNHZsTzMwdnFOR0Nua3diR3I0TWNBaFJIcmtfQjR1ZmR2dW5KTGZkVXdxV3RfUjFVQ2JJeXFWU01V?oc=5",
+      "source": "PBS",
       "published": "2026-05-19",
       "score": 4,
       "likely_fallacies": [
@@ -234,19 +204,6 @@
       ],
       "why_flagged": [
         "Headline suggests causation in a compressed form."
-      ]
-    },
-    {
-      "title": "Clackamas County public safety levy poised to fail after election night - Oregon Public Broadcasting - OPB",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxQTVk2aGVvRGkyOFJERVp3WXNrRFd3aHF1NlMtbWJyT01qSjNUUm9rLV9QRG8wOW5oM3NhWThLRDJ3YVdxMnZCX3psRF94bTNlRTVMQ250LVFMV0dSYVNQSkFwblJKbXBjUjhJUlliZ3dURUE1Sm94cmpscWZXNDhtQVNKUzc2SjR0TG9NN1dDTFNGX3pnbkdhOWd0TUFxQmIyTUZ0dlpmYjM2X1VM?oc=5",
-      "source": "Oregon Public Broadcasting - OPB",
-      "published": "2026-05-20",
-      "score": 4,
-      "likely_fallacies": [
-        "Single cause fallacy"
-      ],
-      "why_flagged": [
-        "Headline leans on compact causal framing."
       ]
     },
     {
@@ -289,10 +246,23 @@
       ]
     },
     {
-      "title": "Hightower wins re-election as Warren County sheriff in landslide victory - WBKO",
-      "url": "https://news.google.com/rss/articles/CBMioAFBVV95cUxPaUljVlJPcUx3TDlIc0JqYUZkQWFITWJCbGFfbzNUX2xaRW9hb044b0NhTEE1X2NaUHVUUTlSNGZHVHJ1cDlFQTR6dXpDVVhTU1VISzM3S2JtWm1QbjFQaGN4WWVpTWNJNVNkZEJEdGt6WmJBT2xmUXd1X2N4QW16MzBoaVVYSTduX0J4dGNuOXBqdkRYeklPQ2g5b01kUGF20gG0AUFVX3lxTE91a1A5WmF3akVkYUlhUjZMbllxWWFyM2k2V0xwNHlNNWNXRVVnV2xVMnA0d3MwT1NudFpzSXdMY0NGUjR1WEp2Z3hiRHgtQm9PZDJqNVFISnBCcWVEYnRybUR6ZHRTcjJJQXdHVzFjYmlacXJVeUVCRUdxQl81V0dTajdZNFp1d0hoMG5INU01NjE1RmVSSDBUb3RuY1dzUFhBX19jZ0lTR2lNSmFxV0xDajBDRQ?oc=5",
-      "source": "WBKO",
-      "published": "2026-05-20",
+      "title": "Federal court decides not to scrap Mendenhall Glacier Visitor Center improvement plan after legal violation - Alaska Public Media",
+      "url": "https://news.google.com/rss/articles/CBMi7gFBVV95cUxNb1NNNVpwN0FZMTZNbkh2ZndPNDZLSGlxSjdUaTlickRaUmZNMUg2bFpwd3pnY29JV1lMY2Vsb1p4dUwzQVhDQnlKb3BrWUlyaTBXR01JY25hNmlKQWEwck5ZQzhKWUpFXzFlVnZad0VWV08tZWsyMUY3UDZleExUbTJCbHNxdkRIYUJaanUwUnBXUy1oQTB4UjFIckVrSS1La29TTTA1SnVodDExZXFLU3hubUZIam5mV1pIaFlfZUd6SS1zeV9rM202ZkpxcGVsT21GdXdlWUxSMWk4MGh3UnpxV1VNWUQxdUE5RlVn?oc=5",
+      "source": "Alaska Public Media",
+      "published": "2026-05-21",
+      "score": 4,
+      "likely_fallacies": [
+        "Single cause fallacy"
+      ],
+      "why_flagged": [
+        "Headline leans on compact causal framing."
+      ]
+    },
+    {
+      "title": "Democrats finally release 2024 election autopsy after criticism - Axios",
+      "url": "https://news.google.com/rss/articles/CBMickFVX3lxTE5aX0pnMTR5YzZIelBoS2hrMDJNdkJ1WllmYk5WUkRNUkdJdDR1dzZmQkRTdFQyOTgwMGd2X3RqbUhFckRKZTNjbXU1SDVQT0xzTWxyTUk2NkJqcmJkaGxiM0dvZ2ZKVG9NUW5veGRMN2Nwdw?oc=5",
+      "source": "Axios",
+      "published": "2026-05-21",
       "score": 4,
       "likely_fallacies": [
         "Single cause fallacy"

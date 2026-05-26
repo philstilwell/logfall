@@ -4679,7 +4679,7 @@ function buildFeaturesIndexPage() {
       <h2 class="detail-title">A running index of current headline cases, with the newest investigation first.</h2>
       <p class="detail-deck">
         These Fallacy Detective pages update each week and use live headlines, political language, and public argument to show how readers can slide into fallacious interpretations.
-        The goal is not to shout “fallacy” at every headline. It is to slow the reading process down, let visitors try the diagnosis first, and then reveal the most defensible fallacy lenses.
+        The goal is not to shout “fallacy” at every headline. It is to slow the reading process down, let visitors try the diagnosis first, notice how their political sympathies pull them toward or away from certain labels, and then reveal the most defensible fallacy lenses.
       </p>
     </section>
 
@@ -4687,7 +4687,7 @@ function buildFeaturesIndexPage() {
       <div class="section-header">
         <div>
           <h3 class="section-title">Running index</h3>
-          <p class="section-copy">The most recent case appears first. A new case is added each week. Each case starts with a real headline, invites the reader to spot the fallacies before any labels appear, and then reveals the reasoning mistakes one by one.</p>
+          <p class="section-copy">The most recent case appears first. A new case is added each week. Each case starts with a real headline, invites the reader to spot the fallacies before any labels appear, and asks the reader to notice where agreement, resentment, or tribal loyalty may be steering the diagnosis.</p>
         </div>
       </div>
       <div class="category-grid theory-article-grid">
@@ -4699,7 +4699,7 @@ function buildFeaturesIndexPage() {
       <div class="section-header">
         <div>
           <h3 class="section-title">How new features are chosen</h3>
-          <p class="section-copy">Each week, recent headlines are screened for compressed causal wording, false binaries, and other patterns that can invite overconfident reasoning. The result is a shortlist for editorial review, not an automatic fallacy verdict.</p>
+          <p class="section-copy">Each week, recent headlines are screened for compressed causal wording, false binaries, and other patterns that can invite overconfident reasoning. The point is not just to catch bad arguments in public. It is also to build the habit of noticing when our own political commitments make us eager to call something a fallacy or reluctant to do so.</p>
         </div>
       </div>
       <div class="two-column compact-columns">
@@ -4708,8 +4708,8 @@ function buildFeaturesIndexPage() {
           <p class="muted">The strongest candidates are usually short, vivid headlines that compress a legal, political, or social dispute into one apparent cause, one stark opposition, or one decisive proof claim.</p>
         </article>
         <article class="note-panel">
-          <h4>Why human judgment still matters</h4>
-          <p class="muted">A strong feature page has to distinguish between a fallacy in the headline itself, a fallacy the headline tempts readers to infer, and a fallacy that only appears deeper in the article or later commentary.</p>
+          <h4>Why self-control still matters</h4>
+          <p class="muted">A strong feature page has to distinguish between a fallacy in the headline itself, a fallacy the headline tempts readers to infer, and a fallacy that a partisan reader is simply too eager or too resistant to see because the issue already feels settled.</p>
         </article>
       </div>
     </section>
@@ -7048,19 +7048,23 @@ function buildAlabamaMapHeadlineFeatureContent(article) {
       },
       {
         title: "Before the reveal",
-        html: "Show only the headline first. Ask students to write two short sentences: one stating exactly what the headline explicitly says, and one naming the strongest additional claim they feel pulled to infer from it.",
+        html: "Show only the headline first. Ask students to write two short sentences: one stating exactly what the headline explicitly says, and one naming the strongest additional claim they feel pulled to infer from it. Then have them add a third line: <em>What about this issue makes me want that inference to be true or false?</em>",
       },
       {
         title: "Core distinction to teach",
         html: "Keep pressing the difference between a demographic description, a voting pattern, a causal explanation, and a legal standard. Much of the confusion in this case comes from treating those as if they were interchangeable.",
       },
       {
+        title: "Self-knowledge checkpoint",
+        html: "Ask students whether they felt a stronger urge to call the headline misleading because they dislike the outlet or the politics around race, or a stronger urge to excuse it because they agree with its likely audience. That pause is part of the lesson, not a side note.",
+      },
+      {
         title: "Best discussion sequence",
-        html: "Start with the single-cause issue, move to the race-party overlap problem, then ask whether the class has started forcing the case into a false either-or. Only after that should you introduce the ideas of equivocation and cherry picking.",
+        html: "Start with the single-cause issue, move to the race-party overlap problem, then ask where students felt political pull in one direction or the other, and only then ask whether the class has started forcing the case into a false either-or. After that introduce equivocation and cherry picking.",
       },
       {
         title: "Where students often slip",
-        html: "Students may overcorrect and say the headline itself is automatically dishonest. The better lesson is more careful: a headline can be factually compact yet still invite bad inferences if readers treat a descriptive phrase as the whole causal story.",
+        html: "Students may overcorrect and say the headline itself is automatically dishonest, or undercorrect because criticism of the wording feels like criticism of their side. The better lesson is more careful: a headline can be factually compact yet still invite bad inferences if readers treat a descriptive phrase as the whole causal story.",
       },
     ],
     "two-column compact-columns",
@@ -7085,7 +7089,7 @@ function buildAlabamaMapHeadlineFeatureContent(article) {
       <div class="section-header">
         <div>
           <h3 class="section-title">Spot it first</h3>
-          <p class="section-copy">Read the headline, pause, and see whether you can name the likely reasoning mistakes before opening the reveal boxes below.</p>
+          <p class="section-copy">Read the headline, pause, and see whether you can name the likely reasoning mistakes before opening the reveal boxes below. Just as important, notice whether your politics make you quicker to accuse the headline of distortion or quicker to defend it.</p>
         </div>
       </div>
       <div class="detail-section feature-headline-shell">
@@ -7100,6 +7104,7 @@ function buildAlabamaMapHeadlineFeatureContent(article) {
           <li>Does it tempt you to explain a legally messy ruling with just one visible variable?</li>
           <li>Are race, party voting behavior, and legal standards being collapsed into one cause?</li>
           <li>Would a more careful reader distinguish between a demographic description and an explanation of the ruling?</li>
+          <li>If the wording already feels obviously fair or obviously deceptive to you, what prior political assumption is helping produce that certainty?</li>
         </ul>
       </div>
     </section>
@@ -7122,7 +7127,7 @@ function buildAlabamaMapHeadlineFeatureContent(article) {
       <div class="section-header">
         <div>
           <h3 class="section-title">Reveal the likely fallacies</h3>
-          <p class="section-copy">These are not all guaranteed to be in the headline itself as a deliberate move. They are the main reasoning traps the headline can trigger in a fast reader or partisan commentator.</p>
+          <p class="section-copy">These are not all guaranteed to be in the headline itself as a deliberate move. They are the main reasoning traps the headline can trigger in a fast reader or partisan commentator, especially when agreement or hostility is already in place before the analysis begins.</p>
         </div>
       </div>
       ${reveals}
@@ -7132,7 +7137,7 @@ function buildAlabamaMapHeadlineFeatureContent(article) {
       <div class="section-header">
         <div>
           <h3 class="section-title">A more careful reading</h3>
-          <p class="section-copy">The safer takeaway is not “the map was blocked because it was Black” and not “the map was blocked only because it was Democratic.” The safer takeaway is that a compressed headline about a race-and-representation case can invite both kinds of oversimplification if the reader turns one descriptive phrase into the whole causal story.</p>
+          <p class="section-copy">The safer takeaway is not “the map was blocked because it was Black” and not “the map was blocked only because it was Democratic.” The safer takeaway is that a compressed headline about a race-and-representation case can invite both kinds of oversimplification if the reader turns one descriptive phrase into the whole causal story. Part of the discipline here is logical, and part is personal: can you keep your political loyalties from doing the reading for you?</p>
         </div>
       </div>
       <div class="two-column compact-columns">
@@ -7150,28 +7155,28 @@ function buildAlabamaMapHeadlineFeatureContent(article) {
     <section class="detail-section section-block">
       <p class="eyebrow">Teaching note</p>
       <h3 class="section-title">Why this works as a weekly feature model</h3>
-      <p class="section-copy">This is the kind of headline that works well for recurring fallacy analysis: short, vivid, politically charged, and just compressed enough to invite overconfident explanations. The point of the feature is not to sneer at headline writers. It is to help readers notice when their own reasoning outruns what the words on the page actually establish.</p>
+      <p class="section-copy">This is the kind of headline that works well for recurring fallacy analysis: short, vivid, politically charged, and just compressed enough to invite overconfident explanations. The point of the feature is not to sneer at headline writers. It is to help readers notice when their own reasoning outruns what the words on the page actually establish, and when political identity makes that overreach easier to miss.</p>
     </section>
 
     <section class="section-block">
       <div class="section-header">
         <div>
           <h3 class="section-title">Teacher’s guide</h3>
-          <p class="section-copy">Use this weekly case as a structured classroom exercise rather than a one-shot diagnosis. The best outcome is not that students memorize labels, but that they learn to separate description, inference, and explanation more carefully.</p>
+          <p class="section-copy">Use this weekly case as a structured classroom exercise rather than a one-shot diagnosis. The best outcome is not that students memorize labels, but that they learn to separate description, inference, and explanation more carefully while also noticing how agreement, anger, resentment, or tribal loyalty tug the diagnosis around.</p>
         </div>
       </div>
       <div class="detail-section theory-callout">
-        <p class="theory-formula"><strong>Suggested classroom rhythm:</strong> headline only → private diagnosis → pair discussion → reveal one fallacy at a time → compare with the cleaner rewrite → short written reflection.</p>
+        <p class="theory-formula"><strong>Suggested classroom rhythm:</strong> headline only → private diagnosis → private bias check → pair discussion → reveal one fallacy at a time → compare with the cleaner rewrite → short written reflection on both logic and self-control.</p>
       </div>
       ${teacherGuidePanels}
       <div class="two-column compact-columns section-block">
         <article class="note-panel">
           <h4>Useful board prompt</h4>
-          <p class="muted">Write these three columns on the board: <strong>explicitly stated</strong>, <strong>strongly implied</strong>, and <strong>not yet justified</strong>. Then have the class place pieces of their interpretation into the right column before any fallacy labels appear.</p>
+          <p class="muted">Write these four columns on the board: <strong>explicitly stated</strong>, <strong>strongly implied</strong>, <strong>not yet justified</strong>, and <strong>my side wants this to mean</strong>. Then have the class place pieces of their interpretation into the right column before any fallacy labels appear.</p>
         </article>
         <article class="note-panel">
           <h4>Short writing task</h4>
-          <p class="muted">Ask students to rewrite the headline in one sentence and then explain, in three to five sentences, which reasoning trap they were most tempted by and how their rewrite avoids it.</p>
+          <p class="muted">Ask students to rewrite the headline in one sentence and then explain, in three to five sentences, which reasoning trap they were most tempted by, what political instinct strengthened that temptation, and how their rewrite avoids both problems.</p>
         </article>
       </div>
     </section>

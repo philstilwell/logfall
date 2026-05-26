@@ -248,8 +248,10 @@ def render_markdown(candidates: list[Candidate], days: int) -> str:
             "## How to use this report",
             "",
             "1. Open the headline and ask what it explicitly states versus what it tempts the reader to infer.",
-            "2. Read at least enough of the article to check whether the apparent fallacy is in the headline itself or only in a common reaction to it.",
-            "3. Prefer feature pages built around 3 to 5 defensible fallacy lenses rather than a single overconfident diagnosis.",
+            "2. Before diagnosing anything, ask what about the issue might make a reader especially eager or especially reluctant to call the wording fallacious.",
+            "3. Read at least enough of the article to check whether the apparent fallacy is in the headline itself or only in a common reaction to it.",
+            "4. Prefer feature pages built around 3 to 5 defensible fallacy lenses rather than a single overconfident diagnosis.",
+            "5. Treat self-knowledge as part of the editorial test: the best weekly cases are not just public reasoning failures, but cases that expose how political sympathy or hostility can distort the reader's own judgment.",
             "",
         ]
     )
