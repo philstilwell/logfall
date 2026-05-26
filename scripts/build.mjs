@@ -36,6 +36,7 @@ const baseSiteKeywords = [
   "reasoning errors",
   "logic",
 ];
+const featuresSectionLabel = "Fallacy Detective";
 
 let posterCaptionOverrides = {};
 
@@ -3008,7 +3009,7 @@ function pageShell({
     { href: `${prefix}fallacies/`, label: "All Fallacies", key: "fallacies" },
     { href: `${prefix}categories/`, label: "Categories", key: "categories" },
     { href: `${prefix}map/`, label: "Map", key: "map" },
-    { href: `${prefix}features/`, label: "Features", key: "features" },
+    { href: `${prefix}features/`, label: featuresSectionLabel, key: "features" },
     { href: `${prefix}check-yourself/`, label: "Check Yourself", key: "check-yourself" },
     { href: `${prefix}assessment/`, label: "Assessment", key: "assessment" },
     { href: `${prefix}prompts/`, label: "Fun AI Prompts", key: "prompts" },
@@ -3840,7 +3841,7 @@ function theoryArticleSeoDescription(article) {
 }
 
 function featuresSeoDescription() {
-  return "Read feature pages that use current headlines and public rhetoric to show how logical fallacies appear in live media language.";
+  return "Read Fallacy Detective cases that use current headlines and public rhetoric to show how logical fallacies appear in live media language.";
 }
 
 function featureArticleSeoDescription(article) {
@@ -4500,7 +4501,7 @@ function renderFeatureArticleCard(article, prefix) {
     <p class="feature-card-date">${escapeHtml(article.date || "")}</p>
     <p class="card-copy">${escapeHtml(article.description)}</p>
     <p class="theory-article-intro">${escapeHtml(article.intro)}</p>
-    <p class="assessment-card-link"><a class="inline-link" href="${prefix}features/${article.slug}/">Read feature</a></p>
+    <p class="assessment-card-link"><a class="inline-link" href="${prefix}features/${article.slug}/">Open case</a></p>
   </article>`;
 }
 
@@ -4667,16 +4668,17 @@ function buildTheoryIndexPage() {
 }
 
 function buildFeaturesIndexPage() {
+  const orderedFeatures = [...featureArticleDefinitions].sort((a, b) => String(b.date || "").localeCompare(String(a.date || "")));
   const content = `
     <div class="breadcrumbs">
-      <a href="../">Home</a><span>/</span><strong>Features</strong>
+      <a href="../">Home</a><span>/</span><strong>${featuresSectionLabel}</strong>
     </div>
 
     <section class="detail-section">
-      <p class="eyebrow">Features</p>
-      <h2 class="detail-title">Current headlines examined for the reasoning mistakes they can trigger.</h2>
+      <p class="eyebrow">${featuresSectionLabel}</p>
+      <h2 class="detail-title">A running index of current headline cases, with the newest investigation first.</h2>
       <p class="detail-deck">
-        These feature pages use live headlines, political language, and public argument to show how readers can slide into fallacious interpretations.
+        These Fallacy Detective pages update each week and use live headlines, political language, and public argument to show how readers can slide into fallacious interpretations.
         The goal is not to shout “fallacy” at every headline. It is to slow the reading process down, let visitors try the diagnosis first, and then reveal the most defensible fallacy lenses.
       </p>
     </section>
@@ -4684,12 +4686,12 @@ function buildFeaturesIndexPage() {
     <section class="section-block">
       <div class="section-header">
         <div>
-          <h3 class="section-title">Current features</h3>
-          <p class="section-copy">Each feature starts with a real headline, invites the reader to spot the fallacies before any labels appear, and then reveals the reasoning mistakes one by one.</p>
+          <h3 class="section-title">Running index</h3>
+          <p class="section-copy">The most recent case appears first. A new case is added each week. Each case starts with a real headline, invites the reader to spot the fallacies before any labels appear, and then reveals the reasoning mistakes one by one.</p>
         </div>
       </div>
       <div class="category-grid theory-article-grid">
-        ${featureArticleDefinitions.map((article) => renderFeatureArticleCard(article, "../")).join("")}
+        ${orderedFeatures.map((article) => renderFeatureArticleCard(article, "../")).join("")}
       </div>
     </section>
 
@@ -4714,7 +4716,7 @@ function buildFeaturesIndexPage() {
   `;
 
   return pageShell({
-    title: "Features: Current Headlines and Logical Fallacies | LogFall",
+    title: `${featuresSectionLabel}: Current Headlines and Logical Fallacies | LogFall`,
     description: featuresSeoDescription(),
     prefix: "../",
     currentSection: "features",
@@ -4728,16 +4730,16 @@ function buildFeaturesIndexPage() {
     structuredData: [
       breadcrumbSchema([
         { name: "Home", path: "" },
-        { name: "Features", path: "features/" },
+        { name: featuresSectionLabel, path: "features/" },
       ]),
       {
         "@context": "https://schema.org",
         "@type": "CollectionPage",
-        name: "Features",
+        name: featuresSectionLabel,
         url: absoluteUrl("features/"),
         description: featuresSeoDescription(),
         publisher: publisherSchema(),
-        hasPart: featureArticleDefinitions.map((article) => ({
+        hasPart: orderedFeatures.map((article) => ({
           "@type": "Article",
           headline: article.title,
           url: absoluteUrl(`features/${article.slug}/`),
@@ -4749,7 +4751,7 @@ function buildFeaturesIndexPage() {
         })),
       },
       learningResourceSchema({
-        name: "Features: Current Headlines and Logical Fallacies",
+        name: `${featuresSectionLabel}: Current Headlines and Logical Fallacies`,
         path: "features/",
         description: featuresSeoDescription(),
         about: ["logical fallacies", "news headlines", "media rhetoric"],
@@ -7034,14 +7036,43 @@ function buildAlabamaMapHeadlineFeatureContent(article) {
         `A reader can seize on the most vivid phrase in the headline — <em>1 majority-Black district</em> — and let that stand in for the whole case. That leaves out the wider record: prior litigation, the court’s explanation, the state’s remedial attempts, and the structure of the voting-rights analysis. Once one salient phrase is treated as the whole dispute, the evidence base has already been thinned.`,
     }),
   ].join("");
+  const teacherGuidePanels = renderTheoryPanels(
+    [
+      {
+        title: "Recommended level and timing",
+        html: "Best for upper high school, intro college, civics, rhetoric, media literacy, or critical thinking classes. A strong first pass is 20 to 30 minutes; a fuller discussion-and-writing version works well in 40 to 55 minutes.",
+      },
+      {
+        title: "Teaching goal",
+        html: "Help students distinguish between <em>what a headline says</em>, <em>what it tempts them to infer</em>, and <em>what the fuller article or legal context may actually justify</em>.",
+      },
+      {
+        title: "Before the reveal",
+        html: "Show only the headline first. Ask students to write two short sentences: one stating exactly what the headline explicitly says, and one naming the strongest additional claim they feel pulled to infer from it.",
+      },
+      {
+        title: "Core distinction to teach",
+        html: "Keep pressing the difference between a demographic description, a voting pattern, a causal explanation, and a legal standard. Much of the confusion in this case comes from treating those as if they were interchangeable.",
+      },
+      {
+        title: "Best discussion sequence",
+        html: "Start with the single-cause issue, move to the race-party overlap problem, then ask whether the class has started forcing the case into a false either-or. Only after that should you introduce the ideas of equivocation and cherry picking.",
+      },
+      {
+        title: "Where students often slip",
+        html: "Students may overcorrect and say the headline itself is automatically dishonest. The better lesson is more careful: a headline can be factually compact yet still invite bad inferences if readers treat a descriptive phrase as the whole causal story.",
+      },
+    ],
+    "two-column compact-columns",
+  );
 
   return `
     <div class="breadcrumbs">
-      <a href="../../">Home</a><span>/</span><a href="../">Features</a><span>/</span><strong>${escapeHtml(article.title)}</strong>
+      <a href="../../">Home</a><span>/</span><a href="../">${featuresSectionLabel}</a><span>/</span><strong>${escapeHtml(article.title)}</strong>
     </div>
 
     <section class="detail-section">
-      <p class="eyebrow">Headline feature</p>
+      <p class="eyebrow">${featuresSectionLabel}</p>
       <h2 class="detail-title">${escapeHtml(article.title)}</h2>
       <p class="feature-page-date">${escapeHtml(article.date || "")}</p>
       <p class="detail-deck">
@@ -7122,6 +7153,29 @@ function buildAlabamaMapHeadlineFeatureContent(article) {
       <p class="section-copy">This is the kind of headline that works well for recurring fallacy analysis: short, vivid, politically charged, and just compressed enough to invite overconfident explanations. The point of the feature is not to sneer at headline writers. It is to help readers notice when their own reasoning outruns what the words on the page actually establish.</p>
     </section>
 
+    <section class="section-block">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">Teacher’s guide</h3>
+          <p class="section-copy">Use this weekly case as a structured classroom exercise rather than a one-shot diagnosis. The best outcome is not that students memorize labels, but that they learn to separate description, inference, and explanation more carefully.</p>
+        </div>
+      </div>
+      <div class="detail-section theory-callout">
+        <p class="theory-formula"><strong>Suggested classroom rhythm:</strong> headline only → private diagnosis → pair discussion → reveal one fallacy at a time → compare with the cleaner rewrite → short written reflection.</p>
+      </div>
+      ${teacherGuidePanels}
+      <div class="two-column compact-columns section-block">
+        <article class="note-panel">
+          <h4>Useful board prompt</h4>
+          <p class="muted">Write these three columns on the board: <strong>explicitly stated</strong>, <strong>strongly implied</strong>, and <strong>not yet justified</strong>. Then have the class place pieces of their interpretation into the right column before any fallacy labels appear.</p>
+        </article>
+        <article class="note-panel">
+          <h4>Short writing task</h4>
+          <p class="muted">Ask students to rewrite the headline in one sentence and then explain, in three to five sentences, which reasoning trap they were most tempted by and how their rewrite avoids it.</p>
+        </article>
+      </div>
+    </section>
+
     ${renderTheoryReferencesSection([
       {
         title: "CBS News: Court blocks Alabama from using congressional map with 1 majority-Black district",
@@ -7149,7 +7203,7 @@ function buildFeatureArticlePage(article) {
   const content = (featureArticleBuilders[article.slug] || buildAlabamaMapHeadlineFeatureContent)(article);
 
   return pageShell({
-    title: `${article.title} | LogFall Features`,
+    title: `${article.title} | LogFall ${featuresSectionLabel}`,
     description: featureArticleSeoDescription(article),
     prefix: "../../",
     currentSection: "features",
@@ -7165,7 +7219,7 @@ function buildFeatureArticlePage(article) {
     structuredData: [
       breadcrumbSchema([
         { name: "Home", path: "" },
-        { name: "Features", path: "features/" },
+        { name: featuresSectionLabel, path: "features/" },
         { name: article.title, path: `features/${article.slug}/` },
       ]),
       {
