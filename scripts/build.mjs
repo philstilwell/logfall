@@ -9,6 +9,7 @@ const __dirname = path.dirname(__filename);
 const projectRoot = path.resolve(__dirname, "..");
 const dataPath = path.join(projectRoot, "data", "fallacies.json");
 const byteseismicCrossrefsPath = path.join(projectRoot, "data", "byteseismic_crossrefs.json");
+const slugfesterCrossrefsPath = path.join(projectRoot, "data", "slugfester_crossrefs.json");
 const posterCaptionsPath = path.join(projectRoot, "data", "poster_captions.json");
 const siteRoot = path.join(projectRoot, "site");
 const distRoot = projectRoot;
@@ -1968,6 +1969,21 @@ function normalizeByteseismicCrossrefs(entries = []) {
   );
 }
 
+function normalizeSlugfesterCrossrefs(entries = []) {
+  return new Map(
+    entries
+      .filter((entry) => entry && entry.fallacy && entry.url)
+      .map((entry) => [
+        entry.fallacy,
+        {
+          title: entry.title || "",
+          url: entry.url,
+          why: entry.why || "",
+        },
+      ]),
+  );
+}
+
 function renderByteseismicCrossrefsSection(record, byteseismicCrossrefs) {
   const entry = byteseismicCrossrefs.get(record.name);
   if (!entry?.suggestedRefs?.length) return "";
@@ -1990,6 +2006,32 @@ function renderByteseismicCrossrefsSection(record, byteseismicCrossrefs) {
               </article>`;
           })
           .join("")}
+      </div>
+    </section>`;
+}
+
+function renderSlugfesterCrossrefsSection(record, slugfesterCrossrefs) {
+  const entry = slugfesterCrossrefs.get(record.name);
+  if (!entry?.url) return "";
+
+  const title = entry.title || `View ${record.name} on Slugfester`;
+  const why =
+    entry.why ||
+    "Slugfester is a compact fallacy-reference site. This link gives you an external comparison point for how another project defines and frames the same mistake.";
+
+  return `<section class="section-block">
+      <div class="section-header">
+        <div>
+          <h3 class="section-title">Special feature: Slugfester cross-reference</h3>
+          <p class="section-copy">This companion link introduces Slugfester as another fallacy-reference project and lets readers compare how the same fallacy is explained elsewhere.</p>
+        </div>
+      </div>
+      <div class="two-column compact-columns">
+        <article class="note-panel">
+          <p class="eyebrow">Slugfester</p>
+          <h4><a href="${escapeHtml(entry.url)}">${escapeHtml(title)}</a></h4>
+          <p class="muted"><strong>Why visit:</strong> ${escapeHtml(ensureSentence(why))}</p>
+        </article>
       </div>
     </section>`;
 }
@@ -8247,7 +8289,7 @@ function buildCategoryPage(category, records, posterAssets) {
   });
 }
 
-function buildDetailPage(record, records, categoryProfiles, posterAssets, byteseismicCrossrefs) {
+function buildDetailPage(record, records, categoryProfiles, posterAssets, byteseismicCrossrefs, slugfesterCrossrefs) {
   const related = relatedFallacies(record, records);
   const prompts = record.categories.map((category) => diagnosticPrompts[category]).filter(Boolean);
   const hasPosterIllustration = Boolean(resolvePosterAssetForRecord(record, posterAssets));
@@ -8373,6 +8415,8 @@ function buildDetailPage(record, records, categoryProfiles, posterAssets, bytese
     </section>`
         : ""
     }
+
+    ${renderSlugfesterCrossrefsSection(record, slugfesterCrossrefs)}
 
     ${renderByteseismicCrossrefsSection(record, byteseismicCrossrefs)}
 
@@ -8679,6 +8723,9 @@ async function main() {
   const byteseismicCrossrefsPayload = JSON.parse(
     await fs.readFile(byteseismicCrossrefsPath, "utf8").catch(() => "[]"),
   );
+  const slugfesterCrossrefsPayload = JSON.parse(
+    await fs.readFile(slugfesterCrossrefsPath, "utf8").catch(() => "[]"),
+  );
   const posterCaptionsPayload = JSON.parse(
     await fs.readFile(posterCaptionsPath, "utf8").catch(() => '{"captions": {}}'),
   );
@@ -8688,6 +8735,7 @@ async function main() {
     categories: normalizeRecordCategories(record),
   }));
   const byteseismicCrossrefs = normalizeByteseismicCrossrefs(byteseismicCrossrefsPayload);
+  const slugfesterCrossrefs = normalizeSlugfesterCrossrefs(slugfesterCrossrefsPayload);
   const categoryProfiles = payload.categoryProfiles || {};
   const categories = payload.categories.map((category) => ({
     ...category,
@@ -8772,7 +8820,7 @@ async function main() {
   for (const record of records) {
     await writeText(
       `fallacies/${record.slug}/index.html`,
-      buildDetailPage(record, records, categoryProfiles, posterAssets, byteseismicCrossrefs),
+      buildDetailPage(record, records, categoryProfiles, posterAssets, byteseismicCrossrefs, slugfesterCrossrefs),
     );
   }
 
