@@ -3031,6 +3031,12 @@ function learningResourceSchema({
   };
 }
 
+function normalizeMetaDate(value = "") {
+  const raw = String(value || "").trim();
+  if (!raw) return "";
+  return raw.includes("T") ? raw : `${raw}T00:00:00Z`;
+}
+
 function pageShell({
   title,
   description,
@@ -3044,6 +3050,8 @@ function pageShell({
   structuredData = [],
   socialImageAlt = "LogFall logo",
   keywords = [],
+  publishedTime = "",
+  modifiedTime = "",
 }) {
   const homeHref = prefix || "./";
   const navItems = [
@@ -3069,6 +3077,8 @@ function pageShell({
   const socialImageUrl = absoluteUrl(socialImagePath);
   const structuredDataHead = jsonLdMarkup(structuredData);
   const keywordContent = mergeKeywords(baseSiteKeywords, keywords).join(", ");
+  const normalizedPublishedTime = normalizeMetaDate(publishedTime);
+  const normalizedModifiedTime = normalizeMetaDate(modifiedTime);
 
   return `<!doctype html>
 <html lang="en">
@@ -3077,7 +3087,7 @@ function pageShell({
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>${escapeHtml(title)}</title>
     <meta name="description" content="${escapeHtml(description)}" />
-    <meta name="robots" content="${escapeHtml(robots)}" />
+    <meta name="robots" content="${escapeHtml(robots)},max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
     <meta name="author" content="Phil Stilwell" />
     <meta name="creator" content="Phil Stilwell" />
     <meta name="application-name" content="LogFall" />
@@ -3103,6 +3113,10 @@ function pageShell({
     <meta property="og:image:width" content="${socialImageWidth}" />
     <meta property="og:image:height" content="${socialImageHeight}" />
     <meta property="og:image:alt" content="${escapeHtml(socialImageAlt)}" />
+    ${ogType === "article" ? '<meta property="article:author" content="Phil Stilwell" />' : ""}
+    ${normalizedPublishedTime && ogType === "article" ? `<meta property="article:published_time" content="${escapeHtml(normalizedPublishedTime)}" />` : ""}
+    ${normalizedModifiedTime && ogType === "article" ? `<meta property="article:modified_time" content="${escapeHtml(normalizedModifiedTime)}" />` : ""}
+    ${normalizedModifiedTime ? `<meta property="og:updated_time" content="${escapeHtml(normalizedModifiedTime)}" />` : ""}
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:title" content="${escapeHtml(title)}" />
     <meta name="twitter:description" content="${escapeHtml(description)}" />
@@ -3802,7 +3816,7 @@ function renderTeachingPathCard(pathDefinition, records, prefix) {
 }
 
 function homeSeoDescription() {
-  return "Explore logical fallacies with clear definitions, examples, case studies, teaching paths, AI prompts, and classroom-ready critical thinking tools.";
+  return "Explore logical fallacies with clear definitions, examples, case studies, classroom tools, an interactive map, AI prompts, and weekly headline analysis.";
 }
 
 function fallaciesIndexSeoDescription(recordCount) {
@@ -3814,7 +3828,7 @@ function categorySeoDescription(category) {
 }
 
 function promptsSeoDescription() {
-  return "Copy AI prompts for identifying logical fallacies in passages, debates, media, and argument maps, with direct links back to LogFall.";
+  return "Copy AI prompts for identifying logical fallacies in passages, debates, headlines, media clips, and argument maps, with direct links back to LogFall.";
 }
 
 function assessmentIndexSeoDescription(recordCount) {
@@ -3822,7 +3836,7 @@ function assessmentIndexSeoDescription(recordCount) {
 }
 
 function dialogueAssessmentIndexSeoDescription() {
-  return "Take a difficult 10-item dialogue assessment that distinguishes left vs right and formal vs informal fallacies, with balanced answer types and no-fallacy control cases.";
+  return "Take a challenging 10-dialogue logical fallacy assessment that distinguishes left vs right and formal vs informal errors, with a printable 40-item PDF and answer commentary.";
 }
 
 function seoFallacyName(record) {
@@ -3871,11 +3885,11 @@ function safeJsonForScript(value) {
 }
 
 function aboutSeoDescription() {
-  return "Meet Phil Stilwell and learn how LogFall grew from university critical-thinking classes into a teaching-focused logical fallacies reference.";
+  return "Meet Phil Stilwell and learn how LogFall grew from university critical-thinking classes into a teaching-focused logical fallacies reference and classroom resource.";
 }
 
 function theorySeoDescription() {
-  return "Read theory articles on how to teach, rebut, compare, and explain logical fallacies without flattening them into slogans.";
+  return "Read theory articles on teaching, comparing, rebutting, repairing, and explaining logical fallacies in classrooms, debates, media, and AI workflows.";
 }
 
 function theoryArticleSeoDescription(article) {
@@ -3883,11 +3897,11 @@ function theoryArticleSeoDescription(article) {
 }
 
 function featuresSeoDescription() {
-  return "Read Fallacy Detective cases that use current headlines and public rhetoric to show how logical fallacies appear in live media language.";
+  return "Read Fallacy Detective, a weekly headline-analysis series that uses current news and public rhetoric to show how logical fallacies and partisan reasoning traps appear in live media language.";
 }
 
 function featureArticleSeoDescription(article) {
-  return article.description;
+  return "A Fallacy Detective case on a current news headline, with reveal-first fallacy analysis, a cleaner rewrite, and a classroom-ready teacher's guide.";
 }
 
 function pathSeoDescription(pathDefinition, memberCount) {
@@ -3900,7 +3914,7 @@ function fallacySeoTitle(record) {
 
 function fallacySeoDescription(record) {
   return truncate(
-    `Learn ${seoFallacyName(record)} with a clear definition, example, case studies, related fallacies, and teaching tools for critical thinking.`,
+    `Learn ${seoFallacyName(record)} with a clear definition, example, case studies, teaching gauges, and related fallacies for critical thinking.`,
     158,
   );
 }
@@ -4758,7 +4772,7 @@ function buildFeaturesIndexPage() {
   `;
 
   return pageShell({
-    title: `${featuresSectionLabel}: Current Headlines and Logical Fallacies | LogFall`,
+    title: `${featuresSectionLabel}: Weekly Headline Fallacy Analysis | LogFall`,
     description: featuresSeoDescription(),
     prefix: "../",
     currentSection: "features",
@@ -4793,7 +4807,7 @@ function buildFeaturesIndexPage() {
         })),
       },
       learningResourceSchema({
-        name: `${featuresSectionLabel}: Current Headlines and Logical Fallacies`,
+        name: `${featuresSectionLabel}: Weekly Headline Fallacy Analysis`,
         path: "features/",
         description: featuresSeoDescription(),
         about: ["logical fallacies", "news headlines", "media rhetoric"],
@@ -7256,6 +7270,8 @@ function buildFeatureArticlePage(article) {
     currentSection: "features",
     canonicalPath: `features/${article.slug}/`,
     ogType: "article",
+    publishedTime: article.date,
+    modifiedTime: buildDate,
     keywords: [
       article.title,
       "logical fallacies in headlines",
@@ -7275,11 +7291,14 @@ function buildFeatureArticlePage(article) {
         headline: article.title,
         description: featureArticleSeoDescription(article),
         url: absoluteUrl(`features/${article.slug}/`),
+        mainEntityOfPage: absoluteUrl(`features/${article.slug}/`),
         author: {
           "@type": "Person",
           name: "Phil Stilwell",
         },
         publisher: publisherSchema(),
+        articleSection: featuresSectionLabel,
+        datePublished: article.date || undefined,
         dateModified: buildDate,
       },
       learningResourceSchema({
@@ -7324,6 +7343,7 @@ function buildTheoryArticlePage(article) {
     currentSection: "theory",
     canonicalPath: `theory/${article.slug}/`,
     ogType: "article",
+    modifiedTime: buildDate,
     keywords: [
       article.title,
       "logical fallacies",
@@ -7344,11 +7364,13 @@ function buildTheoryArticlePage(article) {
         headline: article.title,
         description: theoryArticleSeoDescription(article),
         url: absoluteUrl(`theory/${article.slug}/`),
+        mainEntityOfPage: absoluteUrl(`theory/${article.slug}/`),
         author: {
           "@type": "Person",
           name: "Phil Stilwell",
         },
         publisher: publisherSchema(),
+        articleSection: "Theory",
         dateModified: buildDate,
       },
       learningResourceSchema({
@@ -7553,7 +7575,7 @@ function buildDialogueAssessmentIndexPage() {
   `;
 
   return pageShell({
-    title: "Assessment: difficult dialogue-based logical fallacy test | LogFall",
+    title: "Assessment: challenging dialogue-based logical fallacy test | LogFall",
     description: dialogueAssessmentIndexSeoDescription(),
     prefix: "../",
     currentSection: "assessment",
@@ -7811,7 +7833,7 @@ function buildMapPage(records, categories) {
   `;
 
   return pageShell({
-    title: "Interactive Logical Fallacy Map | LogFall",
+    title: "Interactive Logical Fallacy Map and Scatter Plot | LogFall",
     description,
     prefix: "../",
     currentSection: "map",
@@ -8445,6 +8467,7 @@ function buildDetailPage(record, records, categoryProfiles, posterAssets, bytese
     canonicalPath: `fallacies/${record.slug}/`,
     ogType: "article",
     extraHeadHtml: cloudflareWebAnalyticsTag,
+    modifiedTime: buildDate,
     keywords: [
       record.name,
       seoFallacyKeyword(record),
