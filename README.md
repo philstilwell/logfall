@@ -1,26 +1,27 @@
-# logfall
+# LogFall
 
-Logical Fallacies repository and GitHub Pages site generator.
+Logical fallacies reference, teaching site, and GitHub Pages generator.
 
 ## Current Structure
 
 - Published site files live at the repository root for GitHub Pages.
-- Clean source data lives in [data/fallacies.json](/Users/philstilwell/Documents/Codex/2026-05-09/install-ghostscript/logfall-repo/data/fallacies.json).
-- Build scripts live in [scripts](/Users/philstilwell/Documents/Codex/2026-05-09/install-ghostscript/logfall-repo/scripts).
-- Visual source assets live in [site](/Users/philstilwell/Documents/Codex/2026-05-09/install-ghostscript/logfall-repo/site).
+- Clean source data lives in [data/fallacies.json](data/fallacies.json).
+- Build scripts live in [scripts](scripts).
+- Visual source assets live in [site](site).
 
-## Source Rules
+## Project Handoff
 
-- Content source: `ROOT` tab from the legacy workbook.
-- Inclusion rule: only fallacies that also appeared on the legacy WordPress site are included.
-- Logo retained from the original LogFall assets.
+- [PROJECT_BRIEF.md](PROJECT_BRIEF.md) summarizes the project state and major sections.
+- [WORKFLOW.md](WORKFLOW.md) records common edit, rebuild, and verification tasks.
+- [ASSET_INVENTORY.md](ASSET_INVENTORY.md) identifies tracked public assets and local-only artifacts.
 
 ## Build
 
-1. Refresh the cleaned data:
-   - `python3 scripts/extract_root.py`
-2. Rebuild the site and workbook:
-   - `node scripts/build.mjs`
+Rebuild the site and workbook:
+
+```bash
+node scripts/build.mjs
+```
 
 ## Outputs
 
