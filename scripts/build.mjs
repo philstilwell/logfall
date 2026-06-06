@@ -3285,12 +3285,11 @@ function renderFamilyGuide(familyProfiles, familyBasePath = "../families/", opti
         <summary>
           <span class="family-guide-summary-text">
             <span class="family-guide-summary-title">Family guide</span>
-            <span class="family-guide-summary-copy">Families are broad one-home groupings; categories are narrower diagnostic tags.</span>
+            <span class="family-guide-summary-copy">Families are broad one-home groupings. Categories are narrower diagnostic tags; a fallacy can have several categories but only one family.</span>
           </span>
-          <span class="family-guide-summary-action">Open guide</span>
+          <span class="family-guide-summary-action"><span class="family-guide-open-label">Open guide</span><span class="family-guide-close-label">Close guide</span></span>
         </summary>
         <div class="family-guide-accordion-body">
-          <p class="section-copy">Families are the broad one-home groupings. Categories are narrower diagnostic tags, so a fallacy can belong to several categories but only one family.</p>
           <div class="family-guide-grid">
             ${cards.join("")}
           </div>

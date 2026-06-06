@@ -1258,12 +1258,13 @@ img {
 }
 
 .family-guide-accordion-panel {
+  margin-top: 16px;
   padding: 0;
   overflow: hidden;
 }
 
 .family-guide-accordion {
-  padding: 18px 20px;
+  padding: 18px 20px 20px;
 }
 
 .family-guide-accordion summary {
@@ -1281,12 +1282,13 @@ img {
 
 .family-guide-summary-text {
   display: grid;
-  gap: 4px;
+  gap: 6px;
+  max-width: 780px;
 }
 
 .family-guide-summary-title {
   font-family: var(--font-display);
-  font-size: clamp(1.75rem, 3vw, 2.55rem);
+  font-size: clamp(1.6rem, 2.5vw, 2.25rem);
   line-height: 0.95;
   color: var(--ink);
 }
@@ -1294,6 +1296,7 @@ img {
 .family-guide-summary-copy {
   color: var(--ink-soft);
   font-size: 1rem;
+  line-height: 1.45;
 }
 
 .family-guide-summary-action {
@@ -1315,6 +1318,10 @@ img {
   line-height: 1;
 }
 
+.family-guide-close-label {
+  display: none;
+}
+
 .family-guide-accordion summary:hover .family-guide-summary-action,
 .family-guide-accordion summary:focus-visible .family-guide-summary-action {
   transform: translateY(-1px);
@@ -1326,8 +1333,16 @@ img {
   content: "-";
 }
 
+.family-guide-accordion[open] .family-guide-open-label {
+  display: none;
+}
+
+.family-guide-accordion[open] .family-guide-close-label {
+  display: inline;
+}
+
 .family-guide-accordion-body {
-  margin-top: 18px;
+  margin-top: 20px;
 }
 
 .family-guide-grid {
