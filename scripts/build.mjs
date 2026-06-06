@@ -3267,7 +3267,7 @@ function renderFamilyPanel(record, prefix = "../") {
     </div>`;
 }
 
-function renderFamilyGuide(familyProfiles, familyBasePath = "../families/") {
+function renderFamilyGuide(familyProfiles, familyBasePath = "../families/", options = {}) {
   const cards = familyProfiles.map(
     (profile) => `<a class="note-panel family-guide-card family-guide-card-link" href="${familyBasePath}${escapeHtml(profile.slug)}/">
         <div class="family-guide-top">
@@ -3278,6 +3278,26 @@ function renderFamilyGuide(familyProfiles, familyBasePath = "../families/") {
         <p class="family-guide-link-label">View all ${profile.count} members</p>
       </a>`,
   );
+
+  if (options.collapsed) {
+    return `<section class="panel family-guide-panel family-guide-accordion-panel">
+      <details class="family-guide-accordion">
+        <summary>
+          <span class="family-guide-summary-text">
+            <span class="family-guide-summary-title">Family guide</span>
+            <span class="family-guide-summary-copy">Families are broad one-home groupings; categories are narrower diagnostic tags.</span>
+          </span>
+          <span class="family-guide-summary-action">Open guide</span>
+        </summary>
+        <div class="family-guide-accordion-body">
+          <p class="section-copy">Families are the broad one-home groupings. Categories are narrower diagnostic tags, so a fallacy can belong to several categories but only one family.</p>
+          <div class="family-guide-grid">
+            ${cards.join("")}
+          </div>
+        </div>
+      </details>
+    </section>`;
+  }
 
   return `<section class="panel family-guide-panel">
       <div class="section-header">
@@ -7939,13 +7959,13 @@ function buildAllFallaciesPage(records, categories, posterAssets) {
       </div>
     </section>
 
+    ${renderFamilyGuide(buildFamilyProfiles(records), "../families/", { collapsed: true })}
+
     <section class="section-block">
       <div class="fallacy-grid" data-fallacy-grid>
         ${records.map((record) => renderFallacyCard(record, "../", { showPoster: true, posterAssets })).join("")}
       </div>
     </section>
-
-    ${renderFamilyGuide(buildFamilyProfiles(records))}
   `;
 
   return pageShell({
