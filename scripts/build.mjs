@@ -7939,13 +7939,13 @@ function buildAllFallaciesPage(records, categories, posterAssets) {
       </div>
     </section>
 
-    ${renderFamilyGuide(buildFamilyProfiles(records))}
-
     <section class="section-block">
       <div class="fallacy-grid" data-fallacy-grid>
         ${records.map((record) => renderFallacyCard(record, "../", { showPoster: true, posterAssets })).join("")}
       </div>
     </section>
+
+    ${renderFamilyGuide(buildFamilyProfiles(records))}
   `;
 
   return pageShell({
