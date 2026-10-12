@@ -1,6 +1,6 @@
 # LogFall headline scout report
 
-- Generated: 2026-10-05
+- Generated: 2026-10-12
 - Corpus window: last 7 days
 - Feeds scanned: 5
 - Candidates surfaced: 20
@@ -9,165 +9,165 @@
 
 ## Strongest candidates
 
-### 1. [Why top Texas election denier Ken Paxton could cause chaos if he loses his Senate race - Democracy Docket](https://news.google.com/rss/articles/CBMiywFBVV95cUxPOXo1Zk56cHFRVHM2U0J6OF9STl9hLVVOZEJMSmM4QklEcm5XeXNpV3FmVXdGUHJFWjdyaVNmQ25wUUx2eWtKODhYajhMQUc5MmpVYjlzNmR3WmtNOXYyY3JlaWsxd3BoRmdLVFN2S2VnTDZ5ZUROcG5VakVTakZ3dTdYRHJIMHpwM0pyc1dDcEpWaWNqbkYwTXZidDVaM3dCSFNyOGJYYktmUTR5ZmhHR0hPZldwVGJrcnRaWEI2bS1nMW9tNkdNZzRUaw?oc=5)
+### 1. [WA Supreme Court candidates make their case as high-profile election nears - Washington State Standard](https://news.google.com/rss/articles/CBMivwFBVV95cUxPMGFFb0JpdlRZNHpJaEE0UktKLUh3QWlsdHEyTUJ0ZGxyOGxCUkxCRGZhSzgtSUlUaklVMUpGSmJTZGY3NDNKZjVmaUJZMnJyVTlFNlNfZ1I2YU5ydEFYMnh1ZHNNU19POW8tZ21rak1vamNtbF9UOWdmdE1pVUVPdVc2ME1wRHBTZUx4anE3UG1kMXplbGdzTS1aZmx3UGo0Z3JlSDdfa3BfMXpnSVEwZGVvcHU1VThzZlRVdDdiVQ?oc=5)
 
-- Source: Democracy Docket
-- Published: 2026-10-01
-- Scout score: 10
-- Likely fallacy lenses: Single cause fallacy, Correlation is not causation, Appeal to emotion / loaded framing
-- Why it was flagged: Headline leans on compact causal framing.; Headline suggests causation in a compressed form.; Headline uses emotionally forceful language that may outrun the reasoning.
-
-### 2. [As private equity, politics and prediction markets reshape sports, is the press box up to the task? - The Conversation](https://news.google.com/rss/articles/CBMiywFBVV95cUxPcFFqaldZX3hULWRoVVZxVkV6eHB3dEZVZHFYd2Y3aG5FYTdwTG9CVEptYUVIeG1HWnZaRmFoNGliV0ltZzI1Sy00aENCU09SanlUTWV5bWhITHdSb1haUUtFZDlWZHdkOFBvYXY0VEJ1aUVXQkkzeGZ6WUk5R1FJQV9lbHhUaW9pSGtMdWEtLVMzQUNwbzRINUJHWUhRYnkxZkFOaDI5UzQ0NlU1VVg2RnRyMFFGdzROWkVUVEdqRUNvNzhEb1FZcjJ5dw?oc=5)
-
-- Source: The Conversation
-- Published: 2026-10-01
+- Source: Washington State Standard
+- Published: 2026-10-06
 - Scout score: 8
 - Likely fallacy lenses: Single cause fallacy, Correlation is not causation
 - Why it was flagged: Headline leans on compact causal framing.; Headline suggests causation in a compressed form.
 
-### 3. [Inside Larry Ellison's Wide Web of Power, Money and Politics, As Oracle's Data Centers Claim Force Majeure - Vanity Fair](https://news.google.com/rss/articles/CBMiZEFVX3lxTE1rMXpaMW81YjNxQUdvd0RDaklJR0JRQVlNZm1ZZXZyVi1RQWFFNFZvdGZ0VklpV0ZuejZiYUo5WkI2bFEyYmlGd1pkZWFiTnc0OE1MeGVjX0FKMmlLZ3dta2RPbGE?oc=5)
-
-- Source: Vanity Fair
-- Published: 2026-10-01
-- Scout score: 8
-- Likely fallacy lenses: Single cause fallacy, Correlation is not causation
-- Why it was flagged: Headline leans on compact causal framing.; Headline suggests causation in a compressed form.
-
-### 4. [How Brazil's election winner could reshape its institutions as vacancies mount - Reuters](https://news.google.com/rss/articles/CBMiwwFBVV95cUxQbVhHSXMyV3BDSjItenVNWF8wOWI5VVBXMGVzajRtMjd3Vzh4Tl9TcF9NOEdDVWJsOGVFWXA2ckFWeHR2aWk2Ynk0WHRBNzZpb3YtRld2Wk95TDJnd0d6TXhlTEwxNVA4amdYaEVXM19uTWI3SjVWc2x2blZpQkZvMUpGbHZZVFVURXFkSGZabk1GVDF3ME9JcC1oVUVfZWdiQlVIS3d2dEFmMDFZSTdJRU9vci1CblhvMGMyUEk3ZVZfN1E?oc=5)
+### 2. [Why India's tens of millions of voter deletions have led to widespread protests - Reuters](https://news.google.com/rss/articles/CBMiuwFBVV95cUxNWldiLVRFbjdWTWYwMmxkakpIcUh6TzJWVTA4MTVnZXJIZzZNdGhIYjNfdHdQdWNGSzBBNFJ1cTl2OEEyN1pNOFFVWVBXM3Y5M0J4WVpSbUZWRV9ZZGVzNjhwVjYtY3ZsRXduN0RILWJ6emNKZ1ExVGs2OUxVZVBTaUVFRy1tZEhTc3FRMmR3OFE5VVRtVlhqZm5BbzB6YzhuaG9EZDVHQVVMcFRpMkx4NWoyYzl6VHRrX093?oc=5)
 
 - Source: Reuters
-- Published: 2026-10-02
+- Published: 2026-10-09
 - Scout score: 8
 - Likely fallacy lenses: Single cause fallacy, Correlation is not causation
 - Why it was flagged: Headline leans on compact causal framing.; Headline suggests causation in a compressed form.
 
-### 5. [Why is a Republican super PAC diverting millions to Kansas?](https://www.cbsnews.com/video/why-is-a-republican-super-pac-diverting-millions-to-kansas/)
+### 3. [Mamdani orders NYPD to review use-of-force policies after teen's death - Spectrum News NY1](https://news.google.com/rss/articles/CBMiuwFBVV95cUxOUTJUYjcxNDFzSW5ZTzJpRjEtM2MxeGhqYkVWVVJOeVZXVWVkWFUxd0x1alU1YnNYOVdyTi1Wck1yNk5mQW1xcXZIeGlDamxoN0poQ2JkTVRNWTFQS1RvdEQ5RkR2OUNYeXNUNjJwd2ZMTjY2Q3g1bFJPcTlUU1JTZ3VfV1lWQzVRb3duWnAyQUljSmJ2eWR3OXd5cXJESTlpTWV1OWtabVY4UEc4eW55bEU3VGZrZ0hHbjB3?oc=5)
+
+- Source: Spectrum News NY1
+- Published: 2026-10-12
+- Scout score: 8
+- Likely fallacy lenses: Single cause fallacy, Correlation is not causation
+- Why it was flagged: Headline leans on compact causal framing.; Headline suggests causation in a compressed form.
+
+### 4. [Fake scenes, real politics: Republican candidates have embraced AI. Will it backfire? - Dallas News](https://news.google.com/rss/articles/CBMiqAFBVV95cUxQdGtMcWE5Q3BPUVRLck56M2lFbTVwWUVxbmN0QWs0Y2JnOXlRY1c1WmQ0T25PUmxNY1F1eGo0SFFvdUJwN2F0Ui1FMVFLWWpMck10azR1c2pwYkt6ZUFhNWdacU03OVVhM3JhSzhyZWVfTjBtTlhDV1Rua3FjVG9JMmpUUEprUFA4TEdDZmNPSjFuOXctWHo4dFhsWFl1THJCalRmWTZiNzQ?oc=5)
+
+- Source: Dallas News
+- Published: 2026-10-09
+- Scout score: 7
+- Likely fallacy lenses: Correlation is not causation, Group-label overreach / proxy reasoning
+- Why it was flagged: Headline suggests causation in a compressed form.; Group label could invite overgeneralized or proxy reasoning.; Two-part headline structure may hide a jump from setup to conclusion.
+
+### 5. [Adieu aux ‘Enfants Rouges’: Tears and shock as fire destroys Paris’s oldest covered food market - France 24](https://news.google.com/rss/articles/CBMixgFBVV95cUxPdjVTYk9DYVhCbkZ2RjhQaWdiUGRGVF9Lb25XNVE2T3djVmNwbVZRLVJWamRjaG5qOG9iYkZyUFdJZ2J2c3plUWFYSXhWejdxN3AxUjJZOVpmNUNNazNPT2hoVzk1cTlhRVNobjVnZnBiWHFsdTJSRWducFNUbGZjaU9yRkF3RXpsaEpBcW1QU0h2eXdWenVvX1lGb0RQYzRHVGpQRXZHc2xRRndvQW4zM3RaSG44UmM1OXk3aG1WekNETjNmYnc?oc=5)
+
+- Source: France 24
+- Published: 2026-10-12
+- Scout score: 7
+- Likely fallacy lenses: Single cause fallacy, Appeal to emotion / loaded framing
+- Why it was flagged: Headline leans on compact causal framing.; Headline uses emotionally forceful language that may outrun the reasoning.; Two-part headline structure may hide a jump from setup to conclusion.
+
+### 6. [Republican megadonors dominate 2026 midterm election as crypto and AI money surges, CNBC analysis finds - CNBC](https://news.google.com/rss/articles/CBMieEFVX3lxTE1XNzh3Tlk2SV9sYWZZTXMyNWtlQWtZWGFlNjNYS0hyRHFUd0otMGdqeVNOaUZDeUN2S3NKMmZtMHl6UVlWZ2hmUC1SUG1MUU1OZmdQQmVycXlCelhhcVZHVExIWWEwNk5QbjNraTVtVWx1dG5oQXdkS9IBfkFVX3lxTE9sQzlSejEwZ0RYaDRhbW1keHZsTElRVzJTNkxPSkJqS2VjTTB2UkVYbWZaSHlRV2NpdnhmREFQdGNTNW9JS3JGci1NcWhTTEZOR1V5TzVFNEd2SGN3UEU2VTMyazhqelVZOG5LTllSVWtBYmxsSVNNMlFIbzUydw?oc=5)
+
+- Source: CNBC
+- Published: 2026-10-08
+- Scout score: 6
+- Likely fallacy lenses: Single cause fallacy, Group-label overreach / proxy reasoning
+- Why it was flagged: Headline leans on compact causal framing.; Group label could invite overgeneralized or proxy reasoning.
+
+### 7. [Trump names com­men­tator Katie Zacharia of his media company as next White House press secretary - Spectrum News](https://news.google.com/rss/articles/CBMitgFBVV95cUxPUmRhVXBxVGhRYUxyM1ZtajRuZ2RTdHhMYVJreTFSSUJQS1BfWVlQd0U3VlFrYjhPMlAxYkU5SW1PeVN2SXZCT0ZZVzBJNklDaVdnV2R5ODRCRFRxc3VfdXozNkcxYXQ5VXVDZnlPUXVVR3g3MkUxSGluQnJGX0o1dFNMM01pYUJ4Tk1sNnJTSTN2TmZTRUlReG1fUzY0TjU5MTRJaVZPbjVNdEY5bERWdEkyRWItdw?oc=5)
+
+- Source: Spectrum News
+- Published: 2026-10-09
+- Scout score: 6
+- Likely fallacy lenses: Single cause fallacy, Group-label overreach / proxy reasoning
+- Why it was flagged: Headline leans on compact causal framing.; Group label could invite overgeneralized or proxy reasoning.
+
+### 8. [Katie Bailey tapped as new White House legislative director](https://www.cbsnews.com/news/katie-bailey-new-head-of-white-house-office-of-legislative-affairs-sources/)
 
 - Source: CBS News Latest
-- Published: 2026-10-05
+- Published: 2026-10-10
 - Scout score: 6
 - Likely fallacy lenses: Single cause fallacy, Group-label overreach / proxy reasoning
 - Why it was flagged: Headline leans on compact causal framing.; Group label could invite overgeneralized or proxy reasoning.
 
-### 6. [After redistricting, a Black community in Louisiana faces a future without a champion in Congress - PBS](https://news.google.com/rss/articles/CBMizwFBVV95cUxQQ0YwSGc5MF8ySFVBR09BeEVBZWNYMXM4NUxSZ0pPTzlYajNYX0l1aUhSdm9PZ0w4a01EZG9GRVZ0c2pHR3ZBZS1md0NQc3Y5UHJxSG9DUzQ4cGRVNEpkZVNmZGpwRmI3aFVyYUtrM1ZidkhseTA0Wkp3RXNxQlZqWEVwdWpoSndaWV9fRXk3TVVaSUFWQXpUVHZUUTZqT2d2UHVfeXlVdUdFbW5FdVRiaER5V25fdWZNc1YtaTJuTzZzTlBSbDE2bG94YnpyTUXSAdQBQVVfeXFMTUl4SkVIQ05oejhGdjBSdjJnNTNMaDNNSkttT1NjZld6cWs4UjBMMlV1aWw4YjZTYzAteUwyODE2Q2x1bVR2bGVySnJELVdWcVlQODdkUFM2VHZFVVRTd2NMN1kxcXlwUUpTWWNmSm5qOHhuYkpyeFozMldQcEMyTWZkWmk2YmFJTFpwRV90ejNsYnNMT3ZqQ1I4dEVOUkdOSzRRTkEzcmM0ckRhbEswSEFKcEhaQm9vNTczWjgwdXdVUVdtcExlblRaN3I3QkJWelN0QjQ?oc=5)
+### 9. [Watch Sam Cosmi Kick Pylon in Trending Video After Commanders' Stunning Tie vs. Giants - Bleacher Report](https://news.google.com/rss/articles/CBMixAFBVV95cUxPbk8wNmE3N2dJZXo5QzlKd0t3ZDFGa3Y1cVdObE9NYkVnZHk5aVBfNlAwb29kbGRtTkxfbHlwa2VaT1JwRjVZVkhDYkt6Mnk5T1ZHMVA2SVJLdXdZaVRFcGJRdEd0WWtpQkNnMDhFUWtyT3lmeGFfMkQ1R3M4akFUeWFjX2xmbFAteHJxX1pmRnZxZG9uNmZWbzNYS05RaUljSThKaUtaejFZdjFxeUh2YUc1dzZGYUtwWmFneHZuR2FIbXNt?oc=5)
+
+- Source: Bleacher Report
+- Published: 2026-10-12
+- Scout score: 6
+- Likely fallacy lenses: Single cause fallacy, False equivalence / incomplete comparison
+- Why it was flagged: Headline leans on compact causal framing.; Headline may invite a comparison without enough qualifying context.
+
+### 10. [Suspected gunman barricades self on Philadelphia bus after killing 2 women, police say](https://www.cbsnews.com/video/suspected-gunman-barricades-self-philadelphia-bus-after-killing-2-women-police/)
+
+- Source: CBS News Latest
+- Published: 2026-10-12
+- Scout score: 6
+- Likely fallacy lenses: Single cause fallacy, Group-label overreach / proxy reasoning
+- Why it was flagged: Headline leans on compact causal framing.; Group label could invite overgeneralized or proxy reasoning.
+
+### 11. [Shane Gillis’ ‘SNL’ monologue slammed as sexist for comments about women - NBC News](https://news.google.com/rss/articles/CBMirAFBVV95cUxNTHJYU1BvNEZfRkZ6Q1plcWUxNXREdkV1WFVFU3JsU09yQW1SR04yTk92OTltdmFPNngtaDllTEZwNEdEU0dzTWF6Q0l6Ui1YcXRaaW93eWRRVVRnYjRNdlR4cFVsMEZtOERsM182YUxjaENMS3dTMEs1R1Y4dGpEZUVsQ2FxUXQ3THlrWGRNUFM2ZGVDTnhGblEzRW41WHNRTUc0aUI2X1ZURlJw?oc=5)
+
+- Source: NBC News
+- Published: 2026-10-12
+- Scout score: 6
+- Likely fallacy lenses: Single cause fallacy, Group-label overreach / proxy reasoning
+- Why it was flagged: Headline leans on compact causal framing.; Group label could invite overgeneralized or proxy reasoning.
+
+### 12. [House Democratic leaders condemn the search of congresswoman's home as an 'abuse of power' - PBS](https://news.google.com/rss/articles/CBMiyAFBVV95cUxNT25uaWVXeEQxME5kcXRYNjd1djYxUFNQZVNTSHJIREZWNGFaTll0U0NOYl9VUlBFX2dIVXY0MlBFdXhHcXBIUmNHRU83LU1td3R1YTdJcjFQM2JnRUlGYlF6b0ZEYnFBV0VzYVZySVVnQldyUWg4SWFjdzJTaE81X0hOemJjVk9wSFFnSUhMSGpxS1VMMmlGcWI3bzlqYnVIejMtRUItMUhmcUx5UWlBV3RKZnRERGVYSFpnVGFKY19IX0tMLTBCctIByAFBVV95cUxNT25uaWVXeEQxME5kcXRYNjd1djYxUFNQZVNTSHJIREZWNGFaTll0U0NOYl9VUlBFX2dIVXY0MlBFdXhHcXBIUmNHRU83LU1td3R1YTdJcjFQM2JnRUlGYlF6b0ZEYnFBV0VzYVZySVVnQldyUWg4SWFjdzJTaE81X0hOemJjVk9wSFFnSUhMSGpxS1VMMmlGcWI3bzlqYnVIejMtRUItMUhmcUx5UWlBV3RKZnRERGVYSFpnVGFKY19IX0tMLTBCcg?oc=5)
 
 - Source: PBS
-- Published: 2026-10-05
+- Published: 2026-10-12
 - Scout score: 6
 - Likely fallacy lenses: Single cause fallacy, Group-label overreach / proxy reasoning
 - Why it was flagged: Headline leans on compact causal framing.; Group label could invite overgeneralized or proxy reasoning.
 
-### 7. [Trump fights on home turf as Democratic midterm hopes rise - cnn.com](https://news.google.com/rss/articles/CBMiggFBVV95cUxPaXRXSWFlNjUxNmF4S2pveExyZXYxUW9lX1FCMlN2WUtUQldwbEJVOWo5Rm9qUnQwXy1fZ0NQSUotZ1FNbGtCZ0VxTzVfMWVyMUJhRzRiYjRac3l1LWFkbVJuRTE1M25UbF81cEVpdTMzbHhxRG1Cc3FSeEFtMS1DTkF3?oc=5)
-
-- Source: cnn.com
-- Published: 2026-10-05
-- Scout score: 6
-- Likely fallacy lenses: Single cause fallacy, Group-label overreach / proxy reasoning
-- Why it was flagged: Headline leans on compact causal framing.; Group label could invite overgeneralized or proxy reasoning.
-
-### 8. [Poll Tracker: Brazil’s 2026 Presidential Election - AS/COA](https://news.google.com/rss/articles/CBMihgFBVV95cUxPajRZX25tMVdpMkdUcFRpR1hZRjRQZmZsQWEwaW9hcUttMzFobjExS2VfOE1WRmZSNnhieHkyaVdiZjZQZDYxTTRJeTFFS3VHOTEyTi1HeVNBVWVFLTFYYUk0MEpkWEMwN1o5eFU3Y0VnSnhDN2ZDX09qVTdlbDBoUUhFR3BjQQ?oc=5)
-
-- Source: AS/COA
-- Published: 2026-10-02
-- Scout score: 5
-- Likely fallacy lenses: Single cause fallacy
-- Why it was flagged: Headline leans on compact causal framing.; Two-part headline structure may hide a jump from setup to conclusion.
-
-### 9. [Israel election double standard: Arab leader forced out, far right cleared - Al Jazeera](https://news.google.com/rss/articles/CBMiswFBVV95cUxPNEVmdTRMc043eU9jM3d1cmFrRFlhWldCVzBzV1lLcEtqVU80WE5lUk5LVWlfVHd4Tnk0QUFtNEFkY0V0cUROdGlKOG9UZldTQ2dJNjVQdzVpOTlDOUFZOHI4Q1pzbGlfc1NjM2c3cFBjYnJWZGF4SUtkZXBXbHZ1WGlLT2JqN2JXb0tfYklOdzV3WGdvRlVDTnl6SXh1aUdRYlFOWnZYSVBrOVJob0hxU3RIc9IBuAFBVV95cUxNUGhZM0h1aUsyUWFuOUZOOURQLW1KZTVRTHY3NS1xR3ZLTVNxY1h3S2FqWEtIclZkSlJmMElaVG13M2pLVl8zZWROWU1Kd3dSaVZJN2dOTVNBUW5oal9mNEF0azFiWjI4T3BRNGsyaTZjWkNQU1hVRjdHb0VNcXhRMHdFUTlYOE1ZZUhBbC1pNWtrUGtXbWVhcjVZNVUzTnpWc05ZY2U1QzZHR1hkSG5TMnE1c21pRkRo?oc=5)
+### 13. [Italian law to give election winners bonus seats: Why that’s controversial - Al Jazeera](https://news.google.com/rss/articles/CBMiswFBVV95cUxQakNIX00yWXpydlF4dGRoS1VzUzUtWVZYTkUzcnRpX0V1eF9RWHJNZ3ZZLXpEM1BYTzVrdjM1eUE0M1RUYjBObGpkZzJnWVJOVHdFZEk4d3AwUUZzRVlVU2hRblR4WEhobUJoSzYyRjdXTjdiMGtya1d1RlR5eTRCZWo4MTV4dFRIcGZqanhjSHJucGtOU2N1MEM5RURjLWRrY1JhMERTeER2WHVvd0NtN2dJQdIBuAFBVV95cUxNYWpvTVAwYWJFRFZxckV0VzBzb0xraGVfZ3lXd00tOEFPXzAydmtLb2stM1lIanpOWmxsakd6QmZKdkJoekN3ZDMwRkhma2s2UmZWZFdCQi11Yks0SFl6RHJzVmhhQjc5OUJQdm5ud2lIWm1mRF9oRUJzZEVycTF1S0tmNVVxWWRkQ0tGNHZ2SDRrbVl5Z3lkOW1DRk9EWFE4RFRoUUdxdHdhS3pLMGN4eEtpSU9kajZX?oc=5)
 
 - Source: Al Jazeera
-- Published: 2026-10-03
-- Scout score: 5
-- Likely fallacy lenses: Correlation is not causation
-- Why it was flagged: Headline suggests causation in a compressed form.; Two-part headline structure may hide a jump from setup to conclusion.
-
-### 10. [Lula or Bolsonaro: Wall Street braces for two wildly different results in Brazil election - cnbc.com](https://news.google.com/rss/articles/CBMiwwFBVV95cUxOSjRDcGpXeEtrQWd2bjdtSFRXM3d5YVU1WVVIVXg2U2I4VFlldUt2UGtsRjhHSU1UZnhEUjFIY3JORm9yNXRtQ3pmM1VnVjlVa0RjLXR1MEtadDgtT1ZGUW5xTlhkbXRzNUxSOVBaUmFzOGlXdUIyQldXSTRoN1pvS1hKYnQ1RjR0UFRCMUtpU0pwY1ltMExwajZUNFM1WjduQXRXNS1Ka1dfQWpESWdnOWNIcF9nRlljSWtORFAtTHVNUkHSAcgBQVVfeXFMUFQ3NUZ6SzhXY08xYXlYLVpzbUM5Qmc2NzlGLVZuam5tZWpvR1FIS2FXdldEWmlSRnE3Q3FaLV9mWGpsQ2FLcjdnakJhdElqMGY2YXI4UDlFanVOR3pHX005RklqMWJ6MXphOEEwMjVHdzVYQ3I4bjl6aVdfS05GZ2RBWnNjYWZDdGcyRU9DdnlTUkVsekhDNmd5eVJNaGlzSXY5ZDg4cGNhQ09UM2ExZGdCdjlqZlEwdlBEMHJTczNHUzFiX0FaY1U?oc=5)
-
-- Source: cnbc.com
-- Published: 2026-10-03
-- Scout score: 5
-- Likely fallacy lenses: Correlation is not causation
-- Why it was flagged: Headline suggests causation in a compressed form.; Two-part headline structure may hide a jump from setup to conclusion.
-
-### 11. [Commentary: Debates used to mean something in Arkansas politics. Now they’re an afterthought. - Arkansas Advocate](https://news.google.com/rss/articles/CBMiuwFBVV95cUxNWXd6dnBURy15bV9lMDhBeVRoT0J2Y3JSNnhaYXhod2ZhOWxEb29EZzV0SklTNlV4RUVPaVhWUk4zTUdvSTNLNDlyZTFqZTljSk9VWDJtU1pQcm5UcGJzOGZRMzZFLUFtVFdPNlJYa0pvc0JkTjk1OU9BOVJrMmM0a3pTWTBUTE1ESUNNTnVpTjN5Tk9jaE1ZWERsczBYT1JCYVRXbU1BWFBaZ0dYQlJ2R3B1dEhoenlSMVJr?oc=5)
-
-- Source: Arkansas Advocate
-- Published: 2026-10-04
-- Scout score: 5
-- Likely fallacy lenses: Correlation is not causation
-- Why it was flagged: Headline suggests causation in a compressed form.; Two-part headline structure may hide a jump from setup to conclusion.
-
-### 12. [Israel’s election: What will it mean for neighbours and allies? - Chatham House](https://news.google.com/rss/articles/CBMisAFBVV95cUxPaHJ2ejkxeVZ4QWlEclc1TmJ1bWh6YlFTcjJKVE14bzRBbzFkOVZoQ0pzVnRPdFBjQlVoRXJtRTNiU3A5SDZBWUt2TXJfQnl3REp2SU9nOHZvYmtNZjNYNUw3Ti1fckZGRkRibGZiUE9jOGNIc3ViNDFmMzZDb3dBOUJYcmYwRlNCMFhweXFMTG9aQTJ6X216dXhSeExvNGUyUUhFeHlGNUxBSnVnMEF5Rg?oc=5)
-
-- Source: Chatham House
-- Published: 2026-10-05
-- Scout score: 5
-- Likely fallacy lenses: Correlation is not causation
-- Why it was flagged: Headline suggests causation in a compressed form.; Two-part headline structure may hide a jump from setup to conclusion.
-
-### 13. [Trump's nemesis in Europe: Why Spain's Sanchez is calling a snap election - cnbc.com](https://news.google.com/rss/articles/CBMiiAFBVV95cUxQMGVaVS1odzRPeUdjMzlEX01zRXVRMDh5YjkyZGpaY1VDM0U2cjFrcUJoNzJkUWQ3SEN4UjMzTV9ReDlCSUlfdTlZNWJCZ1dUQnFkRnBiNmxyWW9VZGJxeVNZcm9pdGl3c0R3Ql9hR0hkUnlRT3VKMkV6ckN2WjdSRHZVNDZIbmFQ0gGOAUFVX3lxTE92UEtqYzcyaEk2MmRaZFYyNnJyNm9ZQkY1cXcxZzQxNllHb0FJdXVZWHM1U3ZhcnZ6SGlGLVNLYUF5VjBJSmg1Y1hVTWZndnEyQm1YY0U3czgyazNOMmxoNHo3MzJ5bWhmRTVqQkNzdF9uYjdleHJOdGZfakh0azhVUVNCVzZkQmZyNlUzcnc?oc=5)
-
-- Source: cnbc.com
-- Published: 2026-10-05
+- Published: 2026-10-08
 - Scout score: 5
 - Likely fallacy lenses: Single cause fallacy
 - Why it was flagged: Headline leans on compact causal framing.; Two-part headline structure may hide a jump from setup to conclusion.
 
-### 14. [Spain’s snap election: Why Sánchez called it and what comes next - epc.eu](https://news.google.com/rss/articles/CBMimgFBVV95cUxQbTliaWN3ZTlEYlZ5ekJHeEI4VW5uWk1rZVFRMGctbHZ2ZXBidXJBMU1ta1dhTF8zQTRjUUpwczBqWWRSZ21pT2NxNm5kYXJBbC03VVQ4NHNxRXhjVG53M1BoT29OcVBuaWRLbmdZZkdHa1NlSDhHOUR4V2RLZXFtUTh3b3VLRlNNR2g5TkI5YWNWYV9aTEtMb2xn?oc=5)
+### 14. [Q&A: Special Forces vet talks politics and family - Hillsdale Collegian](https://news.google.com/rss/articles/CBMikAFBVV95cUxPa3FzTjQ0NlN5R3JEb2lqWk9xWVVNWUxaVnNuckhBUERLY200MXJSZ19vZnhmOXc3TURDQk1yVXdMTzZGMnVGUTgyUmJmVWduRlhLM2hsdU5STjdDU2xoZHRtcV9QYWlpTG41M244QVNJM0pfeVVZZWQ0MUktUjNmZ3RTamRZNEo5cXNuQkFQUkI?oc=5)
 
-- Source: epc.eu
-- Published: 2026-10-05
-- Scout score: 5
-- Likely fallacy lenses: Single cause fallacy
-- Why it was flagged: Headline leans on compact causal framing.; Two-part headline structure may hide a jump from setup to conclusion.
-
-### 15. [Inside Iowa Politics: the five-day flurry that led to $1.5 billion taxpayer commitment for proposed $15 billion Iowa steel plant - ktiv.com](https://news.google.com/rss/articles/CBMi3wFBVV95cUxPMjQ1a3ZuTFVCMHc3Y2xJNFdXcFJjX1pRMTRfRFlXd0dTYmZpdXNnMUFMVHJJaTJjOEpxNWFMMm0yUkFzdlFtY21BNkk1V2tUWGUzR3VrSEVLTVVOVmRKcXVRaFNXV2RlQnpRTmVLeHlHREZSaVlVWU1OYjlteGFzYndkWkZHd25xQ29hckpzaHdYMmQ5b0oxVzgwMmxjRWZ5cnZpUzA4THR4LWFJTjhPdTRUcC1QdTNfM2c2bHVKVnJ6WkZJbWtkejNwNjVVQWtaQTE1NmNENEpodVg5LWlN0gHzAUFVX3lxTE40a1k4aDBKNGJ2SjVRVGZ1YnBaUTZMWlRUV1hPdWhSWk5UNVBwOWhEU2wyTEptbVFmQmJPQ05mcHdEVmUyaDE5b19WSDhoaGM5VVlSVjQtOW9rTW5sWjFDdUJaM3BkaUdFeGt1bzF6RE1xMUR4eE4tYlRsZzRMQy1BeW5xSWhOUS00NXB1RktPbjVpd0s2TEF6dHE5TDBQYlVQYUw1aGNEUTZsazh6OW8zQ1U5LWxOMDBrWEUyR2c0ZEZnLW9HdDFzRWdUdVUySG5USmRkZmZIWVI5U0t3cU9RT3o5SlVqNUQyam5lQ09xZDBiYw?oc=5)
-
-- Source: ktiv.com
-- Published: 2026-10-05
+- Source: Hillsdale Collegian
+- Published: 2026-10-08
 - Scout score: 5
 - Likely fallacy lenses: Correlation is not causation
 - Why it was flagged: Headline suggests causation in a compressed form.; Two-part headline structure may hide a jump from setup to conclusion.
 
-### 16. [Georgia election board asks for Trump admin to help go after state’s voting machines - Democracy Docket](https://news.google.com/rss/articles/CBMixwFBVV95cUxPRWdHaGJGU09iTzVZc1BFcDJZbi1WYTQteDJ5Zlo2SFl3eDJ5aGl5RW4zNUNXX3NyWUV1d1M0ZEZSYnZKS2Rqc041cGc2aHZuZzJ5WTVIeTl5YXpmMHhrY2hkYXFvVi1tMTV1TGtOaUdoeHZKVlE2UEZic0QwZ19Nc3dsb0I3NU1YcGN5aG5QV0dXQjJmVFluTm44M2RBQ09NR1BZNmR6YXJSVlRpVXNlamxyMW50QS1DNzRtcWgydG5mTjdBMUtF?oc=5)
+### 15. [Poll Tracker: Brazil’s 2026 Presidential Election - AS/COA](https://news.google.com/rss/articles/CBMihgFBVV95cUxPajRZX25tMVdpMkdUcFRpR1hZRjRQZmZsQWEwaW9hcUttMzFobjExS2VfOE1WRmZSNnhieHkyaVdiZjZQZDYxTTRJeTFFS3VHOTEyTi1HeVNBVWVFLTFYYUk0MEpkWEMwN1o5eFU3Y0VnSnhDN2ZDX09qVTdlbDBoUUhFR3BjQQ?oc=5)
 
-- Source: Democracy Docket
-- Published: 2026-09-28
-- Scout score: 4
+- Source: AS/COA
+- Published: 2026-10-09
+- Scout score: 5
 - Likely fallacy lenses: Single cause fallacy
-- Why it was flagged: Headline leans on compact causal framing.
+- Why it was flagged: Headline leans on compact causal framing.; Two-part headline structure may hide a jump from setup to conclusion.
 
-### 17. [New laws make incremental tweaks to California’s mental health court, while bigger changes nixed - CalMatters](https://news.google.com/rss/articles/CBMiiAFBVV95cUxQNURTX0ZYRFl6R054OU9HMHBnN3k1M243SXNlTmUwU2F2VTFnclQ3NFpCd0gtdlJvQTRSZmRuZG8tNHhMbG9QTTJaUURhTXpQcE10UFN1N250Ynlxa293dXY5TnZoUjl1TDZrbk9nLUNqSHU5b01mUG1lTF9KMV9wZWVvVEpzalc5?oc=5)
-
-- Source: CalMatters
-- Published: 2026-09-29
-- Scout score: 4
-- Likely fallacy lenses: Correlation is not causation
-- Why it was flagged: Headline suggests causation in a compressed form.
-
-### 18. [Rodneyse Bichotte Hermelyn backs Nikki Lucas as Brooklyn Dems chair - City & State New York](https://news.google.com/rss/articles/CBMivAFBVV95cUxQcGJzMFQ1X3lnT3pUbms5YTlxQlkwZ1dldUZ3dC1SWGdLM0NMNnFrRVBMdUFkMy1uc0FSWDhqMjVwYXZ1SGJUdUt4WVZoS0MwbDh4ZmJKWDZGb21jazZVSTcxMWtzcnVvRTkzX25EVjJFZVFXS3dhOUlyMndEc0xFSDBEeVBzbHlxTGQwMVRCT3JuUDNuQzRvYm53YUE5OFh2RVRSd0poYXdUQkZDdmVCcElLVnJKQzUyWTRZUg?oc=5)
-
-- Source: City & State New York
-- Published: 2026-09-29
-- Scout score: 4
-- Likely fallacy lenses: Single cause fallacy
-- Why it was flagged: Headline leans on compact causal framing.
-
-### 19. [Election denier Kurt Olsen leaves DOJ after failing to find evidence of stolen election - Democracy Docket](https://news.google.com/rss/articles/CBMizAFBVV95cUxOa3FHVnhNTlBMNmZrV2JiM0dfMWpHalh4M3ZBR0ZYYVUzMThlOFJ0SUlQZExzQWp2dVFvQ2pxYlBzZVcwa2NpMHBHaGRyNnU5dVpyc091OU1pTURUZkhIZXMxTUstSE52aXg5R1VSeHRjcXdJcnoxaHdPNFotb1pNVENtUzN4WjNTMUJzSnhaVmVGNVRZamhkZlhwbHl4eU9pR0hpUGNuVDhONmt1VW1Qa0FXT3hLVkhOT0o3cEgteDhDdHVZeUdmOHFxQTY?oc=5)
-
-- Source: Democracy Docket
-- Published: 2026-09-29
-- Scout score: 4
-- Likely fallacy lenses: Single cause fallacy
-- Why it was flagged: Headline leans on compact causal framing.
-
-### 20. [Using old election playbook, Netanyahu projects image as Israel's protector despite Hamas attack - Reuters](https://news.google.com/rss/articles/CBMizAFBVV95cUxNaGhLcllsckhTZ1ZsYzVwdzc1V2p5UWhmZFpSa2xJbVhmNTJXckNxVTE2ckkzcGl0N25US0JaTjFId1hMZHFSelBoUWx0Y0VvNEZlVWstOWp1b2F0Wm5fOEZVNW1GRkIwbHYyaE1QSmRkSnpuNVo2UkJ5SHZpT094a0xkcmFKaE5GLU53U3hPTlVqWjFoNjRMUWY5cWRyN0pxa3BhUGU3My0tNEN4bTE1MTVVZXVKQTNTTG1FYl9oNE1MLVBUUkVCSHRIcS0?oc=5)
+### 16. [EXCLUSIVE: US imposes sanctions on ICC hours after former judge wins Nobel Peace Prize - Reuters](https://news.google.com/rss/articles/CBMivgFBVV95cUxOLXU4YU9BUnl0d1dlTGlaSmdhcFBDcS1lRDFaeGRhbjNPaVFXU0NCQVlabFRhMXRFVVJER2gtclFYWE5hdHR4bXM1N245MWNKeS0yVkNkWFE0S0d5aDFaNmptQUlGWEtCZk4ySXJfWjU1ODczRTUxd2VwS19lTHc5ZTlMQ0hyZ09kOFRPUkVfcUdja3pjY0hGUXZvdWNiS1NEYms3c0I5UlpRX3Q4LUV2Z3d5QkkydkZiRmxXMUZB?oc=5)
 
 - Source: Reuters
-- Published: 2026-09-29
-- Scout score: 4
+- Published: 2026-10-09
+- Scout score: 5
 - Likely fallacy lenses: Single cause fallacy
-- Why it was flagged: Headline leans on compact causal framing.
+- Why it was flagged: Headline leans on compact causal framing.; Two-part headline structure may hide a jump from setup to conclusion.
+
+### 17. [Politics chat: Trump announces fuel deal with Russia. What does it mean for sanctions? - NPR](https://news.google.com/rss/articles/CBMixwFBVV95cUxNR3JWeWxYVzZpcGtRNUY3R3RFWU11V3RLNmRPZm9sZDJhV1JiS09fa29qeEJLVWRDWmxYV1Z4b01wSEdZY21EcDBhNVJvX0hmbXI5X1hZZEJRMW9uQzk1YUNpZzBtQmdScjViaEN4ajlOQVhqVzRWMVhnS3hyUDQzMUhyYjNJS05xTTVrZC1BdUNoNTlQQjlqN3YyWFdISW5kakFYdEc3N2pERFVsMWRZdlEyRVQtOVFDVlpoXzhkV2JaUG1USnJF?oc=5)
+
+- Source: NPR
+- Published: 2026-10-11
+- Scout score: 5
+- Likely fallacy lenses: Correlation is not causation
+- Why it was flagged: Headline suggests causation in a compressed form.; Two-part headline structure may hide a jump from setup to conclusion.
+
+### 18. [Trump defends Russia diesel deal after bipartisan pushback: 'I made the right choice' - CNBC](https://news.google.com/rss/articles/CBMib0FVX3lxTE93UFZXd1Y1dHhaYXhibC1rWWp2V2Fwai1TanhZN1loN0d2cklLVUJxWkxTMkN1bXFpUGZsTGY3Z2d0UkstaHZ3cTdFeTV3a3FyYVRKa3VtZlY4R2hxUFVERXhEYnkxX05oa29MN2NYNNIBdEFVX3lxTE9EaVNwZm1QVE1BT0s2dzduTXlSd3NnTENSQW8tQUlLSng5UE1hT2JWbGs5c0NEUUx5b1BuTkFFVzMzUmlOMU1tcm5IdmZsdmRBVW5HbDF5ZERiRmNmenBlb3Z1aTRpNHQwSGhQbFNYRjljUldf?oc=5)
+
+- Source: CNBC
+- Published: 2026-10-12
+- Scout score: 5
+- Likely fallacy lenses: Single cause fallacy
+- Why it was flagged: Headline leans on compact causal framing.; Two-part headline structure may hide a jump from setup to conclusion.
+
+### 19. [Sean ‘Diddy’ Combs rushed from New Jersey prison to hospital due to head injury: report - New York Post](https://news.google.com/rss/articles/CBMivwFBVV95cUxOeTFFeHhzNUt4VjRKbjFWV01icGRsb25OQWd3X3V3aTJzLWdIWFFIMzBXZDUwSmE5b2lzOEVfcUZtM3NlQXpjMURnZFF4SGZRRXNLNHBmdmlPUHFpRGdOOXlvYjM4TnMzY2FtTnlYSGVsVS1lRGVYaDlxX1BQejE0T2xCUC0wVTVQbjFxM3ZzRWhrQ2ZyWkdlTFc1Tk1Bc1BoRU9EZGwtdjBZdEEwZWVTZDFaSHpKV1VJNjJmMGR0RQ?oc=5)
+
+- Source: New York Post
+- Published: 2026-10-12
+- Scout score: 5
+- Likely fallacy lenses: Single cause fallacy
+- Why it was flagged: Headline leans on compact causal framing.; Two-part headline structure may hide a jump from setup to conclusion.
+
+### 20. [AP report: Trump, Rubio weigh firing Kimberly Guilfoyle after mounting reports of improper conduct - PBS](https://news.google.com/rss/articles/CBMiywFBVV95cUxOczdaUlpwMDZ2TEJLRFlrdFRRLXBGSnc4cl9Yckt2eWxnYk1NWnZBWVNrdmhoUTFjc3RudThrel95ZjFqRUVBOHFxYkcxTVphRjVoVWZWU1VZWS1FMjI1YThtMjhseENZNnR2cElfUU9zT2haRldJeUxUbzBRbkZqbkYwV2xGT2RrUE9ySy04Wl9rZ0hja2JTWnpEcEpHUXdGUVg4R01hSm9OTVVMQmxsaFVEbWhVbTBSbHJGMGMyQV9SUDFudUIyYWtVY9IB0AFBVV95cUxNY1hZS3h4VXNZWjRuSXRhdzFXcmU3aElFdW14cExGZmhkdzh2cUxsdlhjRk01S3U3d3Nqb3A4RFJmbEdNaU9DQUtXNTR3RUVZT2V4R2NVWlF6bG5Nd0Z4RFlMd1A0eXhCYmZLNWRYazBGYi01SkRIXzVubjJlMG83emhUV2xPTXlvM2xiSnBSdVhtYmgxRkpramJJYm5jOGNVbzVFeEhvUThsNEYzNWQ2c0ZIcmhUdUJoQWxGcS1wdWlENzVyYV9nT2lpbDF3NlQw?oc=5)
+
+- Source: PBS
+- Published: 2026-10-12
+- Scout score: 5
+- Likely fallacy lenses: Single cause fallacy
+- Why it was flagged: Headline leans on compact causal framing.; Two-part headline structure may hide a jump from setup to conclusion.
 
 ## How to use this report
 
