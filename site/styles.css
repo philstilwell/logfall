@@ -1608,6 +1608,10 @@ img {
   gap: 10px;
 }
 
+.feature-article .section-title {
+  margin-bottom: 18px;
+}
+
 .feature-headline-shell {
   background:
     linear-gradient(135deg, rgba(20, 168, 215, 0.06), transparent 45%),

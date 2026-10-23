@@ -7078,7 +7078,9 @@ function buildFeatureArticlePage(article) {
       <p class="feature-page-date">Published <time datetime="${article.date}">${article.date}</time> · Revised <time datetime="${article.updated}">${article.updated}</time></p>
       <p class="detail-deck">${escapeHtml(article.intro)}</p>
     </section>
-    ${article.contentHtml}
+    <div class="feature-article">
+      ${article.contentHtml}
+    </div>
   `;
 
   return pageShell({
