@@ -1,5 +1,6 @@
 fallacy_rationality_tool.zip
 output/imagegen/
 scripts/__pycache__/
+tests/__pycache__/
 tmp/
 

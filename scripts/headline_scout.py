@@ -1,87 +1,67 @@
 #!/usr/bin/env python3
+"""Collect leads for reading. Wording signals are never fallacy diagnoses."""
 from __future__ import annotations
 
 import argparse
 import json
 import re
-import ssl
 import sys
 import urllib.request
 import xml.etree.ElementTree as ET
-from dataclasses import asdict, dataclass
+from collections import Counter
+from dataclasses import asdict, dataclass, field
 from datetime import datetime, timedelta, timezone
 from email.utils import parsedate_to_datetime
 from pathlib import Path
-from typing import Iterable
+from urllib.parse import parse_qsl, urlencode, urlsplit, urlunsplit
 
-
-USER_AGENT = "LogFallHeadlineScout/1.0 (+https://logfall.com)"
-
+USER_AGENT = "LogFallHeadlineScout/2.0 (+https://logfall.com)"
 FEEDS = [
     {"name": "Google News Top Stories", "url": "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en"},
     {"name": "Google News Politics", "url": "https://news.google.com/rss/search?q=politics+when:7d&hl=en-US&gl=US&ceid=US:en"},
-    {"name": "Google News Courts", "url": "https://news.google.com/rss/search?q=court+when:7d&hl=en-US&gl=US&ceid=US:en"},
-    {"name": "Google News Elections", "url": "https://news.google.com/rss/search?q=election+when:7d&hl=en-US&gl=US&ceid=US:en"},
-    {"name": "CBS News Latest", "url": "https://www.cbsnews.com/latest/rss/main"},
+    {"name": "Google News Business", "url": "https://news.google.com/rss/search?q=economy+business+when:7d&hl=en-US&gl=US&ceid=US:en"},
+    {"name": "Google News Science", "url": "https://news.google.com/rss/search?q=science+health+technology+when:7d&hl=en-US&gl=US&ceid=US:en"},
+    {"name": "CBS News", "url": "https://www.cbsnews.com/latest/rss/main"},
+    {"name": "BBC News", "url": "https://feeds.bbci.co.uk/news/rss.xml"},
+    {"name": "NPR", "url": "https://feeds.npr.org/1001/rss.xml"},
+    {"name": "Fox News", "url": "https://moxie.foxnews.com/google-publisher/latest.xml"},
+    {"name": "The Guardian", "url": "https://www.theguardian.com/world/rss"},
 ]
-
-CAUSE_PATTERNS = [
-    (re.compile(r"\b(because|due to|after|as|since|why)\b", re.I), "Single cause fallacy", 4, "Headline leans on compact causal framing."),
-    (re.compile(r"\b(causes?|caused|led to|leads to|drives?|driven by|forces?|forced|results? in|turns? into|makes?|means?|signals?|reveals?|transforms?|reshapes?|haunts?|backfires?)\b", re.I), "Correlation is not causation", 4, "Headline suggests causation in a compressed form."),
+# These cues prioritize reading, not accusations. Temporal words such as "after",
+# group names, and punctuation do not earn points.
+CUES = [
+    (r"\b(because|due to|causes?|caused|leads? to|led to|responsible for)\b", 2,
+     "What evidence supports the causal claim, and what alternative explanations were tested?"),
+    (r"\b(either|only option|no choice|must choose|choice between)\b", 2,
+     "Are the stated alternatives exhaustive, and does the source actually claim they are?"),
+    (r"\b(proves?|debunks?|confirms?|settles|always|never)\b", 2,
+     "Does the evidence justify the strength and scope of the conclusion?"),
+    (r"\b(everyone|no one|all voters|all scientists|all experts)\b", 2,
+     "Is the generalization supported by representative evidence?"),
+    (r"\b(slams?|blasts?|destroys?|humiliates?|outrage|disaster)\b", 1,
+     "Is the language merely expressive, or is emotion replacing support for a conclusion?"),
+    (r"\b(same as|just like|worse than|better than)\b", 1,
+     "Are the relevant similarities, differences, and comparison baseline supplied?"),
 ]
-
-BINARY_PATTERNS = [
-    (re.compile(r"\b(either|only|just|nothing but|must choose|choice between|two paths|no choice)\b", re.I), "False dilemma", 3, "Headline may collapse the issue into too few live options."),
-]
-
-GROUP_PATTERNS = [
-    (re.compile(r"\b(black|white|democrat|democratic|republican|immigrant|students|teachers|men|women|parents|voters)\b", re.I), "Category or group label may be doing too much explanatory work.", 2, "Group label could invite overgeneralized or proxy reasoning."),
-]
-
-PROOF_PATTERNS = [
-    (re.compile(r"\b(proves?|debunks?|confirms?|exposes?|shows once and for all|settles)\b", re.I), "Bare assertion / evidential overclaim", 3, "Headline sounds more conclusive than the underlying evidence may warrant."),
-]
-
-EMOTIONAL_PATTERNS = [
-    (re.compile(r"\b(slams?|blasts?|destroys?|humiliates?|shocks?|chaos|panic|outrage|disaster)\b", re.I), "Appeal to emotion / loaded framing", 2, "Headline uses emotionally forceful language that may outrun the reasoning."),
-]
-
-COMPARISON_PATTERNS = [
-    (re.compile(r"\b(vs\.?|same as|just like|worse than|better than)\b", re.I), "False equivalence / incomplete comparison", 2, "Headline may invite a comparison without enough qualifying context."),
-]
-
 
 @dataclass
 class Candidate:
     title: str
     url: str
     source: str
+    publisher_url: str
     published: str
-    score: int
-    likely_fallacies: list[str]
-    why_flagged: list[str]
+    selection_score: int
+    review_questions: list[str]
+    surfaced_in: list[str] = field(default_factory=list)
+    status: str = "unreviewed_lead"
 
 
 def fetch_xml(url: str) -> bytes:
     request = urllib.request.Request(url, headers={"User-Agent": USER_AGENT})
-    try:
-        with urllib.request.urlopen(request, timeout=20) as response:
-            return response.read()
-    except Exception as exc:
-        if "CERTIFICATE_VERIFY_FAILED" not in str(exc):
-            raise
-        insecure_context = ssl._create_unverified_context()
-        with urllib.request.urlopen(request, timeout=20, context=insecure_context) as response:
-            return response.read()
-
-
-def text_or_empty(element: ET.Element | None, tag: str) -> str:
-    if element is None:
-        return ""
-    child = element.find(tag)
-    if child is not None and child.text:
-        return child.text.strip()
-    return ""
+    # Keep certificate verification enabled. A failed source is reported explicitly.
+    with urllib.request.urlopen(request, timeout=20) as response:
+        return response.read(5_000_001)
 
 
 def normalize_whitespace(text: str) -> str:
@@ -89,202 +69,185 @@ def normalize_whitespace(text: str) -> str:
 
 
 def parse_datetime(raw: str) -> datetime | None:
-    raw = normalize_whitespace(raw)
-    if not raw:
-        return None
-    try:
-        dt = parsedate_to_datetime(raw)
-        if dt.tzinfo is None:
-            dt = dt.replace(tzinfo=timezone.utc)
-        return dt.astimezone(timezone.utc)
-    except Exception:
-        pass
-    iso = raw.replace("Z", "+00:00")
-    try:
-        dt = datetime.fromisoformat(iso)
-        if dt.tzinfo is None:
-            dt = dt.replace(tzinfo=timezone.utc)
-        return dt.astimezone(timezone.utc)
-    except Exception:
-        return None
+    for parser in (parsedate_to_datetime, lambda value: datetime.fromisoformat(value.replace("Z", "+00:00"))):
+        try:
+            dt = parser(normalize_whitespace(raw))
+            if dt.tzinfo is None:
+                dt = dt.replace(tzinfo=timezone.utc)
+            return dt.astimezone(timezone.utc)
+        except (ValueError, TypeError, OverflowError):
+            continue
+    return None
 
 
-def iter_items(xml_bytes: bytes, fallback_source: str) -> Iterable[dict[str, str]]:
+def safe_url(url: str) -> str:
+    try:
+        parts = urlsplit(url.strip())
+        return url.strip() if parts.scheme in ("https", "http") and parts.netloc and not parts.username else ""
+    except ValueError:
+        return ""
+
+
+def canonical_url(url: str) -> str:
+    parts = urlsplit(url)
+    query = [(key, value) for key, value in parse_qsl(parts.query, keep_blank_values=True)
+             if not key.lower().startswith("utm_") and key.lower() not in {"fbclid", "gclid"}]
+    return urlunsplit((parts.scheme.lower(), parts.netloc.lower(), parts.path, urlencode(query), ""))
+
+
+def iter_items(xml_bytes: bytes, fallback_source: str):
+    if len(xml_bytes) > 5_000_000:
+        raise ValueError("Feed exceeds 5 MB limit")
     root = ET.fromstring(xml_bytes)
     channel = root.find("channel")
     if channel is not None:
         for item in channel.findall("item"):
-            title = normalize_whitespace(text_or_empty(item, "title"))
-            link = normalize_whitespace(text_or_empty(item, "link"))
-            pub = normalize_whitespace(text_or_empty(item, "pubDate"))
-            source = normalize_whitespace(text_or_empty(item, "source")) or fallback_source
-            if title and link:
-                yield {"title": title, "url": link, "published": pub, "source": source}
+            source_el = item.find("source")
+            yield {
+                "title": normalize_whitespace(item.findtext("title", "")),
+                "url": safe_url(item.findtext("link", "")),
+                "published": item.findtext("pubDate", ""),
+                "source": normalize_whitespace(source_el.text or "") if source_el is not None else fallback_source,
+                "publisher_url": safe_url(source_el.get("url", "")) if source_el is not None else "",
+            }
         return
-
-    namespace = "{http://www.w3.org/2005/Atom}"
-    for entry in root.findall(f"{namespace}entry"):
-        title = normalize_whitespace(text_or_empty(entry, f"{namespace}title"))
-        published = normalize_whitespace(text_or_empty(entry, f"{namespace}updated") or text_or_empty(entry, f"{namespace}published"))
-        link = ""
-        for link_el in entry.findall(f"{namespace}link"):
-            href = link_el.attrib.get("href", "").strip()
-            if href:
-                link = href
-                break
-        if title and link:
-            yield {"title": title, "url": link, "published": published, "source": fallback_source}
+    ns = "{http://www.w3.org/2005/Atom}"
+    for entry in root.findall(f"{ns}entry"):
+        links = [el for el in entry.findall(f"{ns}link") if el.get("rel", "alternate") == "alternate"]
+        yield {
+            "title": normalize_whitespace(entry.findtext(f"{ns}title", "")),
+            "url": safe_url(links[0].get("href", "")) if links else "",
+            "published": entry.findtext(f"{ns}published", "") or entry.findtext(f"{ns}updated", ""),
+            "source": fallback_source, "publisher_url": "",
+        }
 
 
-def score_title(title: str) -> tuple[int, list[str], list[str]]:
-    score = 0
-    fallacies: list[str] = []
-    reasons: list[str] = []
-    checks = CAUSE_PATTERNS + BINARY_PATTERNS + PROOF_PATTERNS + EMOTIONAL_PATTERNS + COMPARISON_PATTERNS
-
-    for pattern, label, points, reason in checks:
-        if pattern.search(title):
-            score += points
-            if label not in fallacies:
-                fallacies.append(label)
-            reasons.append(reason)
-
-    for pattern, label, points, reason in GROUP_PATTERNS:
-        if pattern.search(title):
-            score += points
-            if "Group-label overreach / proxy reasoning" not in fallacies:
-                fallacies.append("Group-label overreach / proxy reasoning")
-            reasons.append(reason)
-
-    if ":" in title or ";" in title:
-        score += 1
-        reasons.append("Two-part headline structure may hide a jump from setup to conclusion.")
-
-    if len(title.split()) <= 6:
-        score += 1
-        reasons.append("Very short headline may be too compressed for the claim it makes.")
-
-    fallacies = fallacies[:4]
-    reasons = list(dict.fromkeys(reasons))
-    return score, fallacies, reasons
+def score_title(title: str) -> tuple[int, list[str]]:
+    hits = [(points, question) for pattern, points, question in CUES if re.search(pattern, title, re.I)]
+    return sum(points for points, _ in hits), [question for _, question in hits]
 
 
-def collect_candidates(days: int, limit: int) -> list[Candidate]:
-    now = datetime.now(timezone.utc)
+def collect_candidates(days: int, limit: int, *, now: datetime | None = None, feeds=None, per_source: int = 3):
+    now = now or datetime.now(timezone.utc)
     cutoff = now - timedelta(days=days)
-    seen: set[str] = set()
-    candidates: list[Candidate] = []
-
-    for feed in FEEDS:
+    feeds = FEEDS if feeds is None else feeds
+    candidates: dict[str, Candidate] = {}
+    urls: dict[str, str] = {}
+    feed_results = []
+    skipped = Counter()
+    for feed in feeds:
         try:
-            xml_bytes = fetch_xml(feed["url"])
+            items = list(iter_items(fetch_xml(feed["url"]), feed["name"]))
+            feed_results.append({"name": feed["name"], "status": "ok", "items": len(items)})
         except Exception as exc:
-            print(f"[warn] failed to fetch {feed['name']}: {exc}", file=sys.stderr)
+            feed_results.append({"name": feed["name"], "status": "error", "error": str(exc)[:240]})
+            print(f"[warn] {feed['name']}: {exc}", file=sys.stderr)
             continue
-
-        for item in iter_items(xml_bytes, feed["name"]):
-            url = item["url"]
-            if not url or url in seen:
+        for item in items:
+            published = parse_datetime(item["published"])
+            if not published:
+                skipped["missing_or_invalid_date"] += 1
                 continue
-            seen.add(url)
-            published_dt = parse_datetime(item["published"])
-            if published_dt and published_dt < cutoff:
+            if published < cutoff or published > now:
+                skipped["outside_window"] += 1
                 continue
-            score, fallacies, reasons = score_title(item["title"])
-            if score < 2:
+            if not item["title"] or not item["url"]:
+                skipped["missing_title_or_safe_url"] += 1
                 continue
-            candidates.append(
-                Candidate(
-                    title=item["title"],
-                    url=url,
-                    source=item["source"] or feed["name"],
-                    published=published_dt.date().isoformat() if published_dt else "unknown",
-                    score=score,
-                    likely_fallacies=fallacies,
-                    why_flagged=reasons,
-                )
-            )
+            source = item["source"] or feed["name"]
+            title = item["title"]
+            # Google appends the publisher name; remove only a matching suffix.
+            suffix = f" - {source}"
+            if title.endswith(suffix):
+                title = title[:-len(suffix)]
+            url = canonical_url(item["url"])
+            key = source.casefold() + ":" + re.sub(r"\W+", " ", title.casefold()).strip()
+            key = urls.get(url, key)
+            urls[url] = key
+            if key in candidates:
+                if feed["name"] not in candidates[key].surfaced_in:
+                    candidates[key].surfaced_in.append(feed["name"])
+                # Prefer the publisher's direct URL over a Google aggregator URL.
+                if urlsplit(candidates[key].url).netloc == "news.google.com" and urlsplit(url).netloc != "news.google.com":
+                    candidates[key].url = url
+                skipped["duplicate"] += 1
+                continue
+            score, questions = score_title(title)
+            candidates[key] = Candidate(title, url, source, item["publisher_url"], published.isoformat(), score,
+                questions or ["What argument, if any, is made? Is there enough accessible evidence to evaluate it?"], [feed["name"]])
+    if not any(result["status"] == "ok" for result in feed_results):
+        raise RuntimeError("All feeds failed; no current research input was collected.")
+    ranked = sorted(candidates.values(), key=lambda item: (-item.selection_score, -datetime.fromisoformat(item.published).timestamp(), item.source, item.title))
+    selected = []
+    counts = Counter()
+    for candidate in ranked:
+        if counts[candidate.source.casefold()] >= per_source:
+            continue
+        selected.append(candidate)
+        counts[candidate.source.casefold()] += 1
+        if len(selected) >= limit:
+            break
+    return selected, feed_results, dict(skipped), len(candidates)
 
-    candidates.sort(key=lambda item: (-item.score, item.published, item.source, item.title))
-    return candidates[:limit]
+
+def markdown_text(value: str) -> str:
+    return value.replace("\\", "\\\\").replace("[", "\\[").replace("]", "\\]").replace("<", "&lt;").replace(">", "&gt;")
 
 
-def render_markdown(candidates: list[Candidate], days: int) -> str:
-    today = datetime.now(timezone.utc).date().isoformat()
-    lines = [
-        f"# LogFall headline scout report",
-        "",
-        f"- Generated: {today}",
-        f"- Corpus window: last {days} days",
-        f"- Feeds scanned: {len(FEEDS)}",
-        f"- Candidates surfaced: {len(candidates)}",
-        "",
-        "> This report is a curation aid, not an auto-diagnosis engine. Every flagged headline still needs human review before it becomes a LogFall feature page.",
-        "",
-        "## Strongest candidates",
-        "",
-    ]
-
-    if not candidates:
-        lines.append("No candidates crossed the scoring threshold this run.")
-        return "\n".join(lines) + "\n"
-
-    for index, candidate in enumerate(candidates, start=1):
-        lines.extend(
-            [
-                f"### {index}. [{candidate.title}]({candidate.url})",
-                "",
-                f"- Source: {candidate.source}",
-                f"- Published: {candidate.published}",
-                f"- Scout score: {candidate.score}",
-                f"- Likely fallacy lenses: {', '.join(candidate.likely_fallacies) if candidate.likely_fallacies else 'None'}",
-                f"- Why it was flagged: {'; '.join(candidate.why_flagged)}",
-                "",
-            ]
-        )
-
-    lines.extend(
-        [
-            "## How to use this report",
-            "",
-            "1. Open the headline and ask what it explicitly states versus what it tempts the reader to infer.",
-            "2. Before diagnosing anything, ask what about the issue might make a reader especially eager or especially reluctant to call the wording fallacious.",
-            "3. Read at least enough of the article to check whether the apparent fallacy is in the headline itself or only in a common reaction to it.",
-            "4. Prefer feature pages built around 3 to 5 defensible fallacy lenses rather than a single overconfident diagnosis.",
-            "5. Treat self-knowledge as part of the editorial test: the best weekly cases are not just public reasoning failures, but cases that expose how political sympathy or hostility can distort the reader's own judgment.",
-            "",
-        ]
-    )
-
+def render_markdown(report: dict) -> str:
+    ok = sum(result["status"] == "ok" for result in report["feed_results"])
+    lines = ["# LogFall research leads", "", f"- Generated: {report['generated']}",
+        f"- Window: {report['window_start']} to {report['generated']}",
+        f"- Feeds read successfully: {ok}/{len(report['feed_results'])}",
+        f"- Eligible unique leads: {report['eligible_count']}", f"- Shortlist: {len(report['candidates'])}", "",
+        "> These are unreviewed leads, not accusations. Selection scores reflect wording cues only; they do not measure fallacy likelihood, truth, bias, or public importance.", "",
+        "Full-article reading and independent evidence are required. Do not copy a headline into a published accusation because it appears here.", ""]
+    if not report["candidates"]:
+        lines.extend(["No eligible recent leads. This is not a finding that the news contains no reasoning errors.", ""])
+    for i, item in enumerate(report["candidates"], 1):
+        lines.extend([f"## {i}. [{markdown_text(item['title'])}](<{item['url']}>)", "",
+            f"- Publisher: {markdown_text(item['source'])}", f"- Feed timestamp (verify on article): {item['published']}",
+            f"- Reading-priority score: {item['selection_score']}",
+            f"- Found in: {', '.join(item['surfaced_in'])}",
+            "- Status: unreviewed lead; attribution, relevance, and reasoning not yet checked.", ""])
+        lines.extend(f"- {question}" for question in item["review_questions"])
+        lines.append("")
+    lines.extend(["## Collection health", ""])
+    for result in report["feed_results"]:
+        lines.append(f"- {result['name']}: {result['status']}" + (f" — {result['error']}" if result['status'] == 'error' else f" ({result['items']} items)"))
+    lines.extend(["", "## Editorial next step", "", "Follow `FALLACY_DETECTIVE.md`: verify dates and publisher URLs, assess salience, read the full argument, distinguish the speaker from the outlet, test a charitable reading, and reject weak cases. Do not target a fixed number of fallacies. Save drafts for review; this collector never publishes an investigation.", ""])
     return "\n".join(lines)
 
 
+def positive_int(value: str) -> int:
+    number = int(value)
+    if number < 1:
+        raise argparse.ArgumentTypeError("must be at least 1")
+    return number
+
+
 def main() -> int:
-    parser = argparse.ArgumentParser(description="Generate a weekly LogFall headline scouting report.")
-    parser.add_argument("--days", type=int, default=7, help="How many recent days to scan.")
-    parser.add_argument("--limit", type=int, default=20, help="Maximum number of candidates to keep.")
-    parser.add_argument("--out", type=Path, required=True, help="Markdown output path.")
-    parser.add_argument("--json-out", type=Path, required=True, help="JSON output path.")
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--days", type=positive_int, default=7)
+    parser.add_argument("--limit", type=positive_int, default=20)
+    parser.add_argument("--per-source", type=positive_int, default=3)
+    parser.add_argument("--out", type=Path, required=True)
+    parser.add_argument("--json-out", type=Path, required=True)
     args = parser.parse_args()
-
-    candidates = collect_candidates(days=args.days, limit=args.limit)
-    args.out.parent.mkdir(parents=True, exist_ok=True)
-    args.json_out.parent.mkdir(parents=True, exist_ok=True)
-
-    args.out.write_text(render_markdown(candidates, args.days), encoding="utf8")
-    args.json_out.write_text(
-        json.dumps(
-            {
-                "generated": datetime.now(timezone.utc).isoformat(),
-                "days": args.days,
-                "feeds": FEEDS,
-                "candidates": [asdict(candidate) for candidate in candidates],
-            },
-            indent=2,
-        )
-        + "\n",
-        encoding="utf8",
-    )
+    now = datetime.now(timezone.utc)
+    try:
+        candidates, results, skipped, eligible_count = collect_candidates(args.days, args.limit, now=now, per_source=args.per_source)
+    except RuntimeError as exc:
+        print(f"[error] {exc}", file=sys.stderr)
+        return 1
+    report = {"schema_version": 2, "generated": now.isoformat(), "window_start": (now - timedelta(days=args.days)).isoformat(),
+        "days": args.days, "feeds": FEEDS, "feed_results": results, "skipped": skipped, "eligible_count": eligible_count,
+        "candidates": [asdict(candidate) for candidate in candidates]}
+    for output in (args.out, args.json_out):
+        output.parent.mkdir(parents=True, exist_ok=True)
+    args.out.write_text(render_markdown(report), encoding="utf8")
+    args.json_out.write_text(json.dumps(report, indent=2, ensure_ascii=False) + "\n", encoding="utf8")
+    print(f"Saved {len(candidates)} unreviewed leads; {sum(r['status'] == 'ok' for r in results)}/{len(results)} feeds available.")
     return 0
 
 

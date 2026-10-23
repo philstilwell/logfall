@@ -25,7 +25,11 @@ jobs:
         with:
           python-version: "3.12"
 
+      - name: Check collector behavior
+        run: python -m unittest discover -s tests -p 'test_*.py'
+
       - name: Generate headline scout report
+        # This gathers unreviewed leads. The Codex schedule performs full-source research.
         run: |
           python scripts/headline_scout.py \
             --days 7 \

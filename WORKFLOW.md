@@ -37,7 +37,9 @@ node scripts/build.mjs
 
 ### Update Fallacy Detective
 
-- Feature article definitions live in `scripts/build.mjs`.
+- Feature metadata lives in `data/features.json`; article bodies live in `site/features/<slug>.html`.
+- Read `FALLACY_DETECTIVE.md` for the research, attribution, and publication standards.
+- Rebuild existing cases with `node scripts/build.mjs --features-only` (no workbook dependency). New cases also require the full build to update the sitemap.
 - Public pages live under `/features/` after rebuild.
 - Weekly headline scouting is supported by:
 

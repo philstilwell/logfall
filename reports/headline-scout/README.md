@@ -11,7 +11,7 @@ The workflow runs the local script:
 Purpose:
 
 - scan a recent RSS-based headline corpus
-- flag likely candidates for fallacy-oriented feature pages
+- surface unreviewed reading leads without diagnosing fallacies
 - produce a human-review shortlist rather than auto-publishing diagnoses
 
 Important:
@@ -22,3 +22,7 @@ Important:
   - a fallacy in the headline itself
   - a fallacy a fast reader is likely to infer from the headline
   - a fallacy that only appears deeper in the article or later commentary
+
+The reading-priority score measures wording cues only. It does not measure public importance, truth, bias, or fallacy likelihood. Reports include collection failures and skip undated, future, and stale feed items.
+
+Full-source investigation follows [the editorial workflow](../../FALLACY_DETECTIVE.md). The separate Codex schedule saves private research and drafts outside this public repository for review. Historical reports retain the older format and should not be treated as editorial verdicts.
