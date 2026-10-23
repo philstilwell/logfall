@@ -1,0 +1,398 @@
+{
+  "schema_version": 2,
+  "generated": "2026-10-23T14:23:46.459486+00:00",
+  "window_start": "2026-10-16T14:23:46.459486+00:00",
+  "days": 7,
+  "feeds": [
+    {
+      "name": "Google News Top Stories",
+      "url": "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "name": "Google News Politics",
+      "url": "https://news.google.com/rss/search?q=politics+when:7d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "name": "Google News Business",
+      "url": "https://news.google.com/rss/search?q=economy+business+when:7d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "name": "Google News Science",
+      "url": "https://news.google.com/rss/search?q=science+health+technology+when:7d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "name": "CBS News",
+      "url": "https://www.cbsnews.com/latest/rss/main"
+    },
+    {
+      "name": "BBC News",
+      "url": "https://feeds.bbci.co.uk/news/rss.xml"
+    },
+    {
+      "name": "NPR",
+      "url": "https://feeds.npr.org/1001/rss.xml"
+    },
+    {
+      "name": "Fox News",
+      "url": "https://moxie.foxnews.com/google-publisher/latest.xml"
+    },
+    {
+      "name": "The Guardian",
+      "url": "https://www.theguardian.com/world/rss"
+    }
+  ],
+  "feed_results": [
+    {
+      "name": "Google News Top Stories",
+      "status": "ok",
+      "items": 38
+    },
+    {
+      "name": "Google News Politics",
+      "status": "ok",
+      "items": 100
+    },
+    {
+      "name": "Google News Business",
+      "status": "ok",
+      "items": 100
+    },
+    {
+      "name": "Google News Science",
+      "status": "ok",
+      "items": 63
+    },
+    {
+      "name": "CBS News",
+      "status": "ok",
+      "items": 30
+    },
+    {
+      "name": "BBC News",
+      "status": "ok",
+      "items": 33
+    },
+    {
+      "name": "NPR",
+      "status": "ok",
+      "items": 10
+    },
+    {
+      "name": "Fox News",
+      "status": "ok",
+      "items": 25
+    },
+    {
+      "name": "The Guardian",
+      "status": "ok",
+      "items": 45
+    }
+  ],
+  "skipped": {
+    "outside_window": 2,
+    "duplicate": 1
+  },
+  "eligible_count": 441,
+  "candidates": [
+    {
+      "title": "Why a California DA is holding parents responsible for kids' electric motorcycle accidents",
+      "url": "https://www.cbsnews.com/video/why-california-da-holding-parents-responsible-kids-electric-motorcycle-accidents/",
+      "source": "CBS News",
+      "publisher_url": "",
+      "published": "2026-10-23T13:58:12+00:00",
+      "selection_score": 2,
+      "review_questions": [
+        "What evidence supports the causal claim, and what alternative explanations were tested?"
+      ],
+      "surfaced_in": [
+        "CBS News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Beyond cigarettes: Uncovering the causes of lung cancer in nonsmokers",
+      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNd1dJVFd0X0lOTldCT2ZGNk83ajctdE12dmdodndXLUVnNWlPd2RzQjBZRV9iVFQzZFdROGFsSW5wMGthTFBVdHdlT0FxT2d6d191aUxDSmxzby02RlFmUGFfb1FhQ0RBUW9ERmc0cGUyQjgzaV8zREV0UDluVVBuZDdnNzVGQkR6TG1IREZpNzdrUlBoRU9rSzZZMVY0UWtpTFh2TV9BSXI2aUhU?oc=5",
+      "source": "The Washington Post",
+      "publisher_url": "https://www.washingtonpost.com",
+      "published": "2026-10-23T13:37:09+00:00",
+      "selection_score": 2,
+      "review_questions": [
+        "What evidence supports the causal claim, and what alternative explanations were tested?"
+      ],
+      "surfaced_in": [
+        "Google News Top Stories"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Samsung confirms a list of Galaxy phones and tablets getting Android 17 updates",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQRmhOVWkxVzdDOTBIbVdWajdnc2xkSlVyeFJRYno1VlRndHlOWC1keWpBM3ljSHZfUUs4V2NCNUVULVgycHlFVnJrOUxMbEE3TXAyRUR1SDhTU0ZnNGVZSDNUblVWQWJnS095OVIydmRWRzVfY3hzV2pBUEJIdll5dGNPRmR1bkNuVFE?oc=5",
+      "source": "9to5Google",
+      "publisher_url": "https://9to5google.com",
+      "published": "2026-10-23T11:15:00+00:00",
+      "selection_score": 2,
+      "review_questions": [
+        "Does the evidence justify the strength and scope of the conclusion?"
+      ],
+      "surfaced_in": [
+        "Google News Top Stories"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Joe Burrow has never hidden his political beliefs",
+      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNQnNsaW8zY0xXZEx6bVU4Rkk3TVlLN25PWGdtUFRYZjFIWVVNRTRrSElvblhOSmRkT0dGNDJIZnFScE5tMUhkcW9iWkY0WjFrN1c1VnZLM21wamNvX0hnY1lPSEFyRmYwVExBZVFENHFCWW13ZUNaMXpudGhrR0JWSjNVR2xXRlFVamc?oc=5",
+      "source": "Yahoo Sports",
+      "publisher_url": "https://sports.yahoo.com",
+      "published": "2026-10-22T18:44:17+00:00",
+      "selection_score": 2,
+      "review_questions": [
+        "Does the evidence justify the strength and scope of the conclusion?"
+      ],
+      "surfaced_in": [
+        "Google News Politics"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Nigeria confirms Ebola case as outbreak spreads into western Africa",
+      "url": "https://www.theguardian.com/world/2026/oct/21/nigeria-first-ebola-case-africa-outbreak-latest",
+      "source": "The Guardian",
+      "publisher_url": "",
+      "published": "2026-10-21T00:14:55+00:00",
+      "selection_score": 2,
+      "review_questions": [
+        "Does the evidence justify the strength and scope of the conclusion?"
+      ],
+      "surfaced_in": [
+        "The Guardian"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Stanford’s new microscope reveals living cells like never before",
+      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9nXy1UaVJSdzF3bmloUUxZSHFvcTBpZVdsZlV6Uml6d2pfS0ZOYm5wLS0xR3FwQm11cUdsNWVHOExoZDNXbmpKeGNuX3dpeFdmOWZITlNKZ19aRGFsZG1nMkg3WGlrSWRtUnoxdTFZcw?oc=5",
+      "source": "Science Daily",
+      "publisher_url": "https://www.sciencedaily.com",
+      "published": "2026-10-17T01:07:51+00:00",
+      "selection_score": 2,
+      "review_questions": [
+        "Does the evidence justify the strength and scope of the conclusion?"
+      ],
+      "surfaced_in": [
+        "Google News Science"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Melania Trump brokers truce for Ukraine city 'on brink of disaster', White House says",
+      "url": "https://www.bbc.co.uk/news/articles/c6vgxkvl4w5eo?at_medium=RSS&at_campaign=rss",
+      "source": "BBC News",
+      "publisher_url": "",
+      "published": "2026-10-23T14:13:33+00:00",
+      "selection_score": 1,
+      "review_questions": [
+        "Is the language merely expressive, or is emotion replacing support for a conclusion?"
+      ],
+      "surfaced_in": [
+        "BBC News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "AOC campaigns for Troy Jackson in Maine and slams Susan Collins",
+      "url": "https://www.cbsnews.com/video/aoc-campaigns-for-troy-jackson-in-maine-and-slams-susan-collins/",
+      "source": "CBS News",
+      "publisher_url": "",
+      "published": "2026-10-23T13:09:07+00:00",
+      "selection_score": 1,
+      "review_questions": [
+        "Is the language merely expressive, or is emotion replacing support for a conclusion?"
+      ],
+      "surfaced_in": [
+        "CBS News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "White House blasts Biden border policies ahead of Trump Florida visit, citing brutal hammer killing",
+      "url": "https://www.foxnews.com/politics/white-house-blasts-biden-border-policies-ahead-trump-florida-visit-citing-brutal-hammer-killing",
+      "source": "Fox News",
+      "publisher_url": "",
+      "published": "2026-10-23T11:00:04+00:00",
+      "selection_score": 1,
+      "review_questions": [
+        "Is the language merely expressive, or is emotion replacing support for a conclusion?"
+      ],
+      "surfaced_in": [
+        "Fox News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Microsoft says its AI tool is better than doctors at diagnosing conditions",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOamtUNVg3S1hZVlF1RGZ4akg3NThwTERFbWpQaUcyMmQ1LVdXM21CYU1mbUhEd28tS2ZicXp1TTBwUlB5Q0xtZllvdkl3WW5sdFZrUXdYRHV4Sk10X3pMWXpBYWhsT1ljQ3BRLUZ3ZXpXeElFX2VqWXRjcm9NYV9vU3hTb1NZM0tCNTJLNnBNaW5XVTJTd2ZyNkxpYlQ4aFpUZDc3MXBmUzZySkdRa0drQnZVdDBqcmc0aUl4QnpaUkRGYUE0UnQzMHdZMVpGRmRuWmc?oc=5",
+      "source": "The Verge",
+      "publisher_url": "https://www.theverge.com",
+      "published": "2026-10-22T18:00:00+00:00",
+      "selection_score": 1,
+      "review_questions": [
+        "Are the relevant similarities, differences, and comparison baseline supplied?"
+      ],
+      "surfaced_in": [
+        "Google News Science"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Andrew Hastie blasts One Nation’s ‘MAGA-style politics’ after cartoon mocking Jacqui Lambie’s vaginal prolapse",
+      "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQOUxTNTRSeDEyZHM1NGdVV0dUbXF3M0RtWGRWZlk2T2c0QzhqeXNzcGRaaUxRU19oc1o1SDdPSWJfb0VqT053YnpVSFVFZ0NDWlhLWmJBUkU2QjNGeGdfaG03ZXdwZXpPdUhNVm5hMkRTYUF0aVZkMldrbVFDTU94MjRfd2JGaHdadV83V1NlODZxRFQ1NVIzTDc2Nnk4U2JfaDNlQm9SeGI5MnpNMzVrVUJOX25wTFo1MnFmdTUwa1RDcHQyYzlFNDl0Y3ZFSEFNcF9OcHh3aU5BMkcxU0VzM0FMRlBnZ2M3Q2w2aQ?oc=5",
+      "source": "Politico",
+      "publisher_url": "https://www.politico.com",
+      "published": "2026-10-19T04:58:00+00:00",
+      "selection_score": 1,
+      "review_questions": [
+        "Is the language merely expressive, or is emotion replacing support for a conclusion?"
+      ],
+      "surfaced_in": [
+        "Google News Politics"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "A couple bought a mansion locals called cursed, then tragedy struck",
+      "url": "https://www.cbsnews.com/video/a-couple-bought-a-mansion-locals-called-cursed-then-tragedy-struck/",
+      "source": "CBS News",
+      "publisher_url": "",
+      "published": "2026-10-23T14:19:46+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "CBS News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Deadly shooting near Paris investigated as 'crime of terrorism', minister says",
+      "url": "https://www.bbc.co.uk/news/articles/c6ev38dj1g8zo?at_medium=RSS&at_campaign=rss",
+      "source": "BBC News",
+      "publisher_url": "",
+      "published": "2026-10-23T14:15:23+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "BBC News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "College football team draws embarrassingly small crowd for what turns into Thursday night thriller",
+      "url": "https://www.foxnews.com/outkick-sports/college-football-team-draws-embarrassingly-small-crowd-thursday-night-thriller",
+      "source": "Fox News",
+      "publisher_url": "",
+      "published": "2026-10-23T14:14:43+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "Fox News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Jackson again publicly breaks with Supreme Court as justices side with GOP in last-minute voter ID fight",
+      "url": "https://www.foxnews.com/politics/jackson-publicly-breaks-supreme-court-justices-side-gop-last-minute-voter-id-fight",
+      "source": "Fox News",
+      "publisher_url": "",
+      "published": "2026-10-23T14:11:24+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "Fox News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Arsenal fear Saka could be out for two months",
+      "url": "https://www.bbc.co.uk/sport/football/articles/cmwyql6v5q82o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC News",
+      "publisher_url": "",
+      "published": "2026-10-23T14:09:36+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "BBC News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Reader Q&A: what’s next for France? Ask our Europe columnists – live",
+      "url": "https://www.theguardian.com/world/live/2026/oct/21/france-riots-protests-reader-questions-rokhaya-dallio-alexander-hurst",
+      "source": "The Guardian",
+      "publisher_url": "",
+      "published": "2026-10-23T14:04:47+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "The Guardian"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Local farmers look for solutions to improve ag economy",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPY25PeWVSOW85ZHkxVWNRclBNSEFUYVNqU2o3WUlLanBuM1F3a0pNYXBjTVdjSkV3Q19aS3ptUjdWc0EtWElyZ28yQWV2UWFLS01leHFmaWJxZy1pbWxEQ3Q2QTBIcXVPZFRWZHNpWFNoeF9qSlpJQnRRTUpDR3k3Qjl4a3N0NE5aZi1iRjVPNA?oc=5",
+      "source": "Quad Cities Business Journal",
+      "publisher_url": "https://quadcitiesbusiness.com",
+      "published": "2026-10-23T14:01:29+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "Google News Business"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Mystery over source of Ebola infection in Nigeria fuels concern about spread of virus",
+      "url": "https://www.theguardian.com/world/2026/oct/23/ebola-swiss-patient-nigeria-dr-congo-concerns-virus-spread",
+      "source": "The Guardian",
+      "publisher_url": "",
+      "published": "2026-10-23T13:57:11+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "The Guardian"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Nick Coffey, Jon Echols clash over how to handle cases, partisan politics in Oklahoma AG debate",
+      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNb0lJV204aUhNTEhGVkZPbkxpSmNJanBNNEpDMVhtNEU0NHZiWUdQTWNDX3RsMXBab1BDbUwxeXBjUHV3cmFlRlZyNmFYUzllQ28wWXd1M1dsMFAxSTc5bkdOLTdlSEt1WG1laE1GXzNDeFNFbDB1dW9raUhJNkZxWjREc2syOWVRUFhldmJCQ0hkSmIwMGFEMVhXNWhlT0Jwb2pmLWdJUm8zbDBIcGZ0NjBHYm1SVVZKN3p6bmxPSFNoQQ?oc=5",
+      "source": "NonDoc Media",
+      "publisher_url": "https://nondoc.com",
+      "published": "2026-10-23T13:53:00+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "Google News Politics"
+      ],
+      "status": "unreviewed_lead"
+    }
+  ]
+}
