@@ -9,7 +9,7 @@ Research current, consequential reasoning in mainstream news. Produce an evidenc
 1. The existing GitHub workflow collects a weekly shortlist from public news feeds. It runs on Mondays at 13:00 UTC (9 a.m. Eastern during daylight saving time; 8 a.m. during standard time). Scheduled GitHub runs can be delayed. Its output is explicitly unreviewed and remains in `reports/headline-scout/`.
 2. The Codex research schedule runs Mondays at 9 a.m. America/New_York, returns to the setup chat, and reads articles and primary sources. It can collect fresh leads itself, so it does not depend on the GitHub run finishing. The Mac and Codex app must be running. Its private research and drafts belong in the LOGFALL workspace's `research/YYYY-MM-DD/`, outside this public repository.
 
-Current publication policy: save future investigations for review. Do not publish or push drafts. The revised Alabama case is the published example. Research frequency is not a promise to publish a new case every week.
+Current publication policy: save future investigations for review. Do not publish or push drafts. Approved, published cases are listed in `data/features.json`. Research frequency is not a promise to publish a new case every week.
 
 ## Research process
 

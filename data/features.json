@@ -7,5 +7,14 @@
     "kind": "Headline interpretation",
     "description": "Does a short headline commit a fallacy, or do readers supply the faulty argument? Test an Alabama redistricting headline against the court record.",
     "intro": "A source-checked case with a try-it-first exercise, a qualified verdict, three hypothetical reasoning traps, and a correction to our original analysis."
+  },
+  {
+    "slug": "voting-screen-wrong-name-does-that-establish-rigging",
+    "title": "A Voting Screen Shows the Wrong Name. Does That Establish Rigging?",
+    "date": "2026-10-23",
+    "updated": "2026-10-23",
+    "kind": "Qualified interpretation",
+    "description": "Do reported touchscreen voting problems establish deliberate election rigging? Separate the experience, possible causes, and the scope of the claim.",
+    "intro": "Examine a reported warning, reconstruct its strongest reading, and test the gap between a voting-screen problem and a claim of intentional rigging."
   }
 ]
