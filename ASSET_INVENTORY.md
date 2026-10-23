@@ -3,6 +3,8 @@
 ## Tracked Public Assets
 
 - `assets/fallacy-*-poster.webp`: 144 web-optimized fallacy poster illustrations.
+- `assets/comics/preview/*.webp`: 144 smaller comic previews for the detail pages.
+- `assets/comics/full/*.webp`: 144 lossless, full-resolution comic originals, loaded when readers open the viewer.
 - `assets/assessment-dialogues/*.png`: 40 grayscale dialogue panels used by the Assessment page and PDF.
 - `assets/logo.jpg` and favicon files: shared branding and browser icons.
 - `assets/phil-stilwell-profile.png`: About page portrait.

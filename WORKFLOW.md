@@ -35,6 +35,14 @@ node scripts/build.mjs
 - Captions should identify concrete visual elements, name what is being inferred, and explain the contrast between what is visible and what is not justified.
 - Rebuild with `node scripts/build.mjs`.
 
+### Update Comic Illustrations
+
+- Each fallacy's reviewed comic is mapped by slug in `data/comic_illustrations.json`.
+- Import a reviewed local collection with `python3 scripts/import_comics.py /path/to/LOGFALL` (requires `cwebp`). It creates smaller previews and lossless 1024 × 1536 originals without modifying the source PNGs.
+- Comics appear below the existing poster caption in the black right column. “Why it misleads” belongs to the left column.
+- Rebuild just the fallacy detail pages and shared assets with `node scripts/build.mjs --fallacies-only`; this does not rebuild the workbook or unrelated sections.
+- Check desktop/mobile layout, full-size viewing, Escape/Close behavior, and keyboard focus before publishing.
+
 ### Update Fallacy Detective
 
 - Feature metadata lives in `data/features.json`; article bodies live in `site/features/<slug>.html`.

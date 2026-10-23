@@ -11,6 +11,31 @@ const totalCount = cards.length;
 const countSingular = countNode?.dataset.searchUnitSingular || "fallacy";
 const countPlural = countNode?.dataset.searchUnitPlural || "fallacies";
 
+// Keep the image link usable without JavaScript; enhance it with a full-size viewer.
+document.querySelectorAll("[data-comic-open]").forEach((link) => {
+  const viewer = link.closest("figure")?.querySelector("[data-comic-viewer]");
+  if (!viewer || typeof viewer.showModal !== "function") return;
+  const fullImage = viewer.querySelector("[data-comic-full]");
+  link.addEventListener("click", (event) => {
+    if (event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    if (!fullImage.getAttribute("src")) fullImage.src = fullImage.dataset.src;
+    viewer.showModal();
+    viewer.querySelector(".comic-viewer-scroll").scrollTop = 0;
+    document.body.classList.add("comic-viewer-open");
+  });
+  viewer.querySelector("[data-comic-close]").addEventListener("click", () => viewer.close());
+  viewer.addEventListener("click", (event) => {
+    if (event.target !== viewer) return;
+    const box = viewer.getBoundingClientRect();
+    if (event.clientX < box.left || event.clientX > box.right || event.clientY < box.top || event.clientY > box.bottom) viewer.close();
+  });
+  viewer.addEventListener("close", () => {
+    document.body.classList.remove("comic-viewer-open");
+    link.focus({ preventScroll: true });
+  });
+});
+
 function escapeHtmlText(value = "") {
   return String(value)
     .replaceAll("&", "&amp;")

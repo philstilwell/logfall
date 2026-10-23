@@ -10,6 +10,7 @@ const dataPath = path.join(projectRoot, "data", "fallacies.json");
 const byteseismicCrossrefsPath = path.join(projectRoot, "data", "byteseismic_crossrefs.json");
 const slugfesterCrossrefsPath = path.join(projectRoot, "data", "slugfester_crossrefs.json");
 const posterCaptionsPath = path.join(projectRoot, "data", "poster_captions.json");
+const comicIllustrationsPath = path.join(projectRoot, "data", "comic_illustrations.json");
 const siteRoot = path.join(projectRoot, "site");
 const distRoot = projectRoot;
 const dataOutDir = path.join(distRoot, "data");
@@ -39,6 +40,7 @@ const baseSiteKeywords = [
 const featuresSectionLabel = "Fallacy Detective";
 
 let posterCaptionOverrides = {};
+let comicIllustrations = {};
 
 const featuredNames = [
   "Ad hominem",
@@ -3528,7 +3530,52 @@ function renderPosterIllustration(record, prefix, posterAssets) {
       <p class="detail-illustration-label">What this image shows</p>
       <p class="detail-illustration-text">${escapeHtml(posterExplanationForRecord(record))}</p>
     </div>
+    ${renderComicIllustration(record, prefix)}
   </aside>`;
+}
+
+function renderComicIllustration(record, prefix) {
+  const comic = comicIllustrations[record.slug];
+  if (!comic) return "";
+  const full = `${prefix}${escapeHtml(comic.full)}`;
+  const title = `${escapeHtml(record.name)} — comic`;
+  return `<figure class="detail-comic">
+    <figcaption>
+      <p class="detail-illustration-label">The fallacy in a comic</p>
+      <p class="detail-comic-hint">Click or tap the comic to read it at full size.</p>
+    </figcaption>
+    <a class="detail-comic-link" href="${full}" data-comic-open aria-label="Read the ${escapeHtml(record.name)} comic at full size">
+      <img class="detail-comic-image" src="${prefix}${escapeHtml(comic.preview)}"
+        width="${comic.previewWidth}" height="${comic.previewHeight}" loading="lazy" decoding="async"
+        alt="Color manga comic illustrating ${escapeHtml(record.name)}" />
+    </a>
+    <dialog class="comic-viewer" data-comic-viewer aria-labelledby="comic-viewer-title">
+      <div class="comic-viewer-toolbar">
+        <h2 id="comic-viewer-title">${title}</h2>
+        <a href="${full}" target="_blank" rel="noopener">Open original</a>
+        <button type="button" data-comic-close autofocus>Close ×</button>
+      </div>
+      <div class="comic-viewer-scroll">
+        <img data-comic-full data-src="${full}" width="${comic.width}" height="${comic.height}"
+          alt="Full-size color manga comic illustrating ${escapeHtml(record.name)}" />
+      </div>
+    </dialog>
+  </figure>`;
+}
+
+function renderWhyItMisleads(record) {
+  if (!record.notes) return "";
+  return `<section class="section-block detail-why-section" aria-labelledby="why-it-misleads">
+    <div class="section-header">
+      <div>
+        <h3 class="section-title" id="why-it-misleads">Why it misleads</h3>
+        <p class="section-copy">A fuller explanation of how the fallacy works and why it can look persuasive.</p>
+      </div>
+    </div>
+    <article class="detail-section">
+      <p>${escapeHtml(record.notes)}</p>
+    </article>
+  </section>`;
 }
 
 function relatedFallacies(record, records) {
@@ -8149,6 +8196,7 @@ function buildDetailPage(record, records, categoryProfiles, posterAssets, bytese
     </div>
 
     <section class="detail-hero${hasPosterIllustration ? " detail-hero-with-illustration" : ""}">
+      <div class="detail-main-column">
       <article class="detail-section">
         <p class="eyebrow">Fallacy profile</p>
         <h2 class="detail-title">${escapeHtml(record.name)}</h2>
@@ -8166,6 +8214,8 @@ function buildDetailPage(record, records, categoryProfiles, posterAssets, bytese
         </div>
         ${renderRhetoricGaugeSection(record, "../../")}${profileReferenceMarkup}
       </article>
+      ${renderWhyItMisleads(record)}
+      </div>
 
       ${
         hasPosterIllustration
@@ -8190,22 +8240,6 @@ function buildDetailPage(record, records, categoryProfiles, posterAssets, bytese
       </aside>`
       }
     </section>
-
-    ${
-      record.notes
-        ? `<section class="section-block">
-      <div class="section-header">
-        <div>
-          <h3 class="section-title">Why it misleads</h3>
-          <p class="section-copy">A fuller explanation of how the fallacy works and why it can look persuasive.</p>
-        </div>
-      </div>
-      <article class="detail-section">
-        <p>${escapeHtml(record.notes)}</p>
-      </article>
-    </section>`
-        : ""
-    }
 
     ${renderAnalogyRebuttalSection(record)}
 
@@ -8562,7 +8596,9 @@ async function writeText(relativePath, contents) {
 
 async function main() {
   const args = process.argv.slice(2);
-  if (args.some((arg) => arg !== "--features-only")) throw new Error("Supported option: --features-only");
+  if (args.length > 1 || args.some((arg) => !["--features-only", "--fallacies-only"].includes(arg))) {
+    throw new Error("Supported options: --features-only or --fallacies-only");
+  }
   if (args.includes("--features-only")) {
     await writeText("features/index.html", buildFeaturesIndexPage());
     for (const article of featureArticleDefinitions) {
@@ -8585,6 +8621,7 @@ async function main() {
     await fs.readFile(posterCaptionsPath, "utf8").catch(() => '{"captions": {}}'),
   );
   posterCaptionOverrides = posterCaptionsPayload.captions || {};
+  comicIllustrations = JSON.parse(await fs.readFile(comicIllustrationsPath, "utf8"));
   const records = payload.records.map((record) => ({
     ...record,
     categories: normalizeRecordCategories(record),
@@ -8601,6 +8638,17 @@ async function main() {
     (await fs.readdir(path.join(distRoot, "assets")).catch(() => []))
       .filter((name) => /^fallacy-.*-poster\.(webp|png|jpe?g)$/i.test(name)),
   );
+
+  if (args.includes("--fallacies-only")) {
+    for (const record of records) {
+      await writeText(`fallacies/${record.slug}/index.html`,
+        buildDetailPage(record, records, categoryProfiles, posterAssets, byteseismicCrossrefs, slugfesterCrossrefs));
+    }
+    await fs.copyFile(path.join(siteRoot, "styles.css"), path.join(distRoot, "styles.css"));
+    await fs.copyFile(path.join(siteRoot, "app.js"), path.join(distRoot, "app.js"));
+    console.log(`Built ${records.length} fallacy detail pages and shared styles/scripts.`);
+    return;
+  }
 
   await pruneGeneratedDirectories(path.join(distRoot, "fallacies"), new Set(records.map((record) => record.slug)));
   await pruneGeneratedDirectories(path.join(distRoot, "categories"), new Set(categories.map((category) => category.slug)));
