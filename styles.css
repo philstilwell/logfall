@@ -217,6 +217,74 @@ img {
   align-self: start;
 }
 
+.hero-main {
+  display: grid;
+  gap: 26px;
+  min-width: 0;
+}
+
+.book-promo {
+  display: grid;
+  grid-template-columns: 180px minmax(0, 1fr);
+  align-items: center;
+  gap: 26px;
+  padding: 28px;
+  background: linear-gradient(135deg, #fffaf0, #fff 75%);
+  border: 1px solid #dfd4be;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.book-promo-cover {
+  width: 100%;
+  height: auto;
+  border-radius: 3px;
+  box-shadow: 0 12px 24px rgba(17, 17, 17, 0.18);
+}
+
+.book-promo .eyebrow {
+  margin: 0 0 12px;
+  background: #f0e5cf;
+  color: #574122;
+}
+
+.book-promo h2 {
+  margin: 0;
+  font-family: "Baskerville", "Georgia", serif;
+  font-size: 2.1rem;
+  line-height: 1.08;
+}
+
+.book-promo-author {
+  margin: 8px 0 0;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+
+.book-promo-description {
+  margin: 12px 0 0;
+  color: var(--ink-soft);
+}
+
+.book-promo-formats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.book-promo-formats .button {
+  flex: 1 1 auto;
+  padding: 10px 12px;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}
+
+.book-promo-formats .button:focus-visible {
+  outline: 3px solid #14718f;
+  outline-offset: 4px;
+}
+
 .hero-title {
   margin: 0;
   font-family: "Baskerville", "Georgia", serif;
@@ -1218,6 +1286,24 @@ body.comic-viewer-open {
 @media (max-width: 1100px) {
   .theory-article-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 600px) {
+  .book-promo {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    gap: 24px;
+    padding: 24px 18px;
+    text-align: center;
+  }
+
+  .book-promo-cover {
+    width: 160px;
+  }
+
+  .book-promo h2 {
+    font-size: 1.9rem;
   }
 }
 
