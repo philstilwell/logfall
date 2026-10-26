@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "generated": "2026-10-23T14:23:46.459486+00:00",
-  "window_start": "2026-10-16T14:23:46.459486+00:00",
+  "generated": "2026-10-26T19:08:01.967039+00:00",
+  "window_start": "2026-10-19T19:08:01.967039+00:00",
   "days": 7,
   "feeds": [
     {
@@ -60,7 +60,7 @@
     {
       "name": "Google News Science",
       "status": "ok",
-      "items": 63
+      "items": 49
     },
     {
       "name": "CBS News",
@@ -70,7 +70,7 @@
     {
       "name": "BBC News",
       "status": "ok",
-      "items": 33
+      "items": 35
     },
     {
       "name": "NPR",
@@ -89,77 +89,47 @@
     }
   ],
   "skipped": {
-    "outside_window": 2,
-    "duplicate": 1
+    "duplicate": 2,
+    "outside_window": 2
   },
-  "eligible_count": 441,
+  "eligible_count": 428,
   "candidates": [
     {
-      "title": "Why a California DA is holding parents responsible for kids' electric motorcycle accidents",
-      "url": "https://www.cbsnews.com/video/why-california-da-holding-parents-responsible-kids-electric-motorcycle-accidents/",
-      "source": "CBS News",
-      "publisher_url": "",
-      "published": "2026-10-23T13:58:12+00:00",
-      "selection_score": 2,
-      "review_questions": [
-        "What evidence supports the causal claim, and what alternative explanations were tested?"
-      ],
-      "surfaced_in": [
-        "CBS News"
-      ],
-      "status": "unreviewed_lead"
-    },
-    {
-      "title": "Beyond cigarettes: Uncovering the causes of lung cancer in nonsmokers",
-      "url": "https://news.google.com/rss/articles/CBMirAFBVV95cUxNd1dJVFd0X0lOTldCT2ZGNk83ajctdE12dmdodndXLUVnNWlPd2RzQjBZRV9iVFQzZFdROGFsSW5wMGthTFBVdHdlT0FxT2d6d191aUxDSmxzby02RlFmUGFfb1FhQ0RBUW9ERmc0cGUyQjgzaV8zREV0UDluVVBuZDdnNzVGQkR6TG1IREZpNzdrUlBoRU9rSzZZMVY0UWtpTFh2TV9BSXI2aUhU?oc=5",
-      "source": "The Washington Post",
-      "publisher_url": "https://www.washingtonpost.com",
-      "published": "2026-10-23T13:37:09+00:00",
-      "selection_score": 2,
-      "review_questions": [
-        "What evidence supports the causal claim, and what alternative explanations were tested?"
-      ],
-      "surfaced_in": [
-        "Google News Top Stories"
-      ],
-      "status": "unreviewed_lead"
-    },
-    {
-      "title": "Samsung confirms a list of Galaxy phones and tablets getting Android 17 updates",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxQRmhOVWkxVzdDOTBIbVdWajdnc2xkSlVyeFJRYno1VlRndHlOWC1keWpBM3ljSHZfUUs4V2NCNUVULVgycHlFVnJrOUxMbEE3TXAyRUR1SDhTU0ZnNGVZSDNUblVWQWJnS095OVIydmRWRzVfY3hzV2pBUEJIdll5dGNPRmR1bkNuVFE?oc=5",
-      "source": "9to5Google",
-      "publisher_url": "https://9to5google.com",
-      "published": "2026-10-23T11:15:00+00:00",
-      "selection_score": 2,
-      "review_questions": [
-        "Does the evidence justify the strength and scope of the conclusion?"
-      ],
-      "surfaced_in": [
-        "Google News Top Stories"
-      ],
-      "status": "unreviewed_lead"
-    },
-    {
-      "title": "Joe Burrow has never hidden his political beliefs",
-      "url": "https://news.google.com/rss/articles/CBMiigFBVV95cUxNQnNsaW8zY0xXZEx6bVU4Rkk3TVlLN25PWGdtUFRYZjFIWVVNRTRrSElvblhOSmRkT0dGNDJIZnFScE5tMUhkcW9iWkY0WjFrN1c1VnZLM21wamNvX0hnY1lPSEFyRmYwVExBZVFENHFCWW13ZUNaMXpudGhrR0JWSjNVR2xXRlFVamc?oc=5",
-      "source": "Yahoo Sports",
-      "publisher_url": "https://sports.yahoo.com",
-      "published": "2026-10-22T18:44:17+00:00",
-      "selection_score": 2,
-      "review_questions": [
-        "Does the evidence justify the strength and scope of the conclusion?"
-      ],
-      "surfaced_in": [
-        "Google News Politics"
-      ],
-      "status": "unreviewed_lead"
-    },
-    {
-      "title": "Nigeria confirms Ebola case as outbreak spreads into western Africa",
-      "url": "https://www.theguardian.com/world/2026/oct/21/nigeria-first-ebola-case-africa-outbreak-latest",
+      "title": "Major clean-up under way after two storms cause havoc in Britain",
+      "url": "https://www.theguardian.com/uk-news/2026/oct/26/power-cuts-storm-boelo-austen-uk",
       "source": "The Guardian",
       "publisher_url": "",
-      "published": "2026-10-21T00:14:55+00:00",
+      "published": "2026-10-26T18:25:07+00:00",
+      "selection_score": 2,
+      "review_questions": [
+        "What evidence supports the causal claim, and what alternative explanations were tested?"
+      ],
+      "surfaced_in": [
+        "The Guardian"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "US taxpayer dollars allegedly fueled left-wing political causes in Latin America",
+      "url": "https://www.foxnews.com/politics/us-taxpayer-dollars-allegedly-fueled-left-wing-political-causes-latin-america",
+      "source": "Fox News",
+      "publisher_url": "",
+      "published": "2026-10-26T17:34:35+00:00",
+      "selection_score": 2,
+      "review_questions": [
+        "What evidence supports the causal claim, and what alternative explanations were tested?"
+      ],
+      "surfaced_in": [
+        "Fox News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "‘Democracy always’: Lula vows no return to dictatorship in Brazil after election win",
+      "url": "https://www.theguardian.com/world/2026/oct/26/brazil-lula-vow-democracy-always-election-win",
+      "source": "The Guardian",
+      "publisher_url": "",
+      "published": "2026-10-26T15:51:18+00:00",
       "selection_score": 2,
       "review_questions": [
         "Does the evidence justify the strength and scope of the conclusion?"
@@ -170,62 +140,77 @@
       "status": "unreviewed_lead"
     },
     {
-      "title": "Stanford’s new microscope reveals living cells like never before",
-      "url": "https://news.google.com/rss/articles/CBMib0FVX3lxTE9nXy1UaVJSdzF3bmloUUxZSHFvcTBpZVdsZlV6Uml6d2pfS0ZOYm5wLS0xR3FwQm11cUdsNWVHOExoZDNXbmpKeGNuX3dpeFdmOWZITlNKZ19aRGFsZG1nMkg3WGlrSWRtUnoxdTFZcw?oc=5",
-      "source": "Science Daily",
-      "publisher_url": "https://www.sciencedaily.com",
-      "published": "2026-10-17T01:07:51+00:00",
+      "title": "Poland’s GDP ‘losing billions’ due to drought-related crop losses",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOLWs5LXZuTElXdjZybUk0S0dZZFl1cklCWHhuV1ZLelhvU3pnYzdLeE5UZm9ULW9jMnJ5UElhS0dtN1BYM1R2cm5IUFpUd0dYOFFIbE42dm5kVF8yVWVxM1h5YmN0UzJzR0FnTUpsWmpqTWZfSUhkaTJwaUNYMjJUazNmanRxdUtMNmpvaQ?oc=5",
+      "source": "TVP World",
+      "publisher_url": "https://tvpworld.com",
+      "published": "2026-10-26T14:11:00+00:00",
       "selection_score": 2,
       "review_questions": [
-        "Does the evidence justify the strength and scope of the conclusion?"
+        "What evidence supports the causal claim, and what alternative explanations were tested?"
       ],
       "surfaced_in": [
-        "Google News Science"
+        "Google News Business"
       ],
       "status": "unreviewed_lead"
     },
     {
-      "title": "Melania Trump brokers truce for Ukraine city 'on brink of disaster', White House says",
-      "url": "https://www.bbc.co.uk/news/articles/c6vgxkvl4w5eo?at_medium=RSS&at_campaign=rss",
-      "source": "BBC News",
+      "title": "Sudan paramilitary drone strikes cause mass power cuts in eastern states",
+      "url": "https://www.theguardian.com/world/2026/oct/26/sudan-paramilitary-drone-strikes-rapid-support-forces-power-cuts-eastern-states",
+      "source": "The Guardian",
       "publisher_url": "",
-      "published": "2026-10-23T14:13:33+00:00",
-      "selection_score": 1,
+      "published": "2026-10-26T09:59:27+00:00",
+      "selection_score": 2,
       "review_questions": [
-        "Is the language merely expressive, or is emotion replacing support for a conclusion?"
+        "What evidence supports the causal claim, and what alternative explanations were tested?"
       ],
       "surfaced_in": [
-        "BBC News"
+        "The Guardian"
       ],
       "status": "unreviewed_lead"
     },
     {
-      "title": "AOC campaigns for Troy Jackson in Maine and slams Susan Collins",
-      "url": "https://www.cbsnews.com/video/aoc-campaigns-for-troy-jackson-in-maine-and-slams-susan-collins/",
-      "source": "CBS News",
-      "publisher_url": "",
-      "published": "2026-10-23T13:09:07+00:00",
-      "selection_score": 1,
+      "title": "Netanyahu's crypto plan could cause 'irreversible damage' to Israeli economy, business leaders warn",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1MRlVIMkwtR3FkQ290Zm40RDF6YWIxWVZ1ODVqcHR1OXRYMW9XbjN0NjNTWHdoUHRUaTgtaVNGSTF5NldjNW0wRWJEakZyMmVpVW1GSDJkeW1kSThJY3BKbHZIOFREQzZXVmpIaQ?oc=5",
+      "source": "The Jerusalem Post",
+      "publisher_url": "https://www.jpost.com",
+      "published": "2026-10-25T13:05:37+00:00",
+      "selection_score": 2,
       "review_questions": [
-        "Is the language merely expressive, or is emotion replacing support for a conclusion?"
+        "What evidence supports the causal claim, and what alternative explanations were tested?"
       ],
       "surfaced_in": [
-        "CBS News"
+        "Google News Business"
       ],
       "status": "unreviewed_lead"
     },
     {
-      "title": "White House blasts Biden border policies ahead of Trump Florida visit, citing brutal hammer killing",
-      "url": "https://www.foxnews.com/politics/white-house-blasts-biden-border-policies-ahead-trump-florida-visit-citing-brutal-hammer-killing",
+      "title": "Fines coming after Green Bay Packers put NFL officiating on blast for questionable calls in loss to Lions",
+      "url": "https://www.foxnews.com/outkick-sports/fines-coming-green-bay-packers-put-nfl-officiating-blast-questionable-calls-loss-lions",
       "source": "Fox News",
       "publisher_url": "",
-      "published": "2026-10-23T11:00:04+00:00",
+      "published": "2026-10-26T16:08:20+00:00",
       "selection_score": 1,
       "review_questions": [
         "Is the language merely expressive, or is emotion replacing support for a conclusion?"
       ],
       "surfaced_in": [
         "Fox News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "'Cutting doubles would destroy careers' - angry players urge ATP rethink",
+      "url": "https://www.bbc.co.uk/sport/tennis/articles/cr78pxd66d47o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC News",
+      "publisher_url": "",
+      "published": "2026-10-26T16:07:20+00:00",
+      "selection_score": 1,
+      "review_questions": [
+        "Is the language merely expressive, or is emotion replacing support for a conclusion?"
+      ],
+      "surfaced_in": [
+        "BBC News"
       ],
       "status": "unreviewed_lead"
     },
@@ -245,26 +230,11 @@
       "status": "unreviewed_lead"
     },
     {
-      "title": "Andrew Hastie blasts One Nation’s ‘MAGA-style politics’ after cartoon mocking Jacqui Lambie’s vaginal prolapse",
-      "url": "https://news.google.com/rss/articles/CBMi7AFBVV95cUxQOUxTNTRSeDEyZHM1NGdVV0dUbXF3M0RtWGRWZlk2T2c0QzhqeXNzcGRaaUxRU19oc1o1SDdPSWJfb0VqT053YnpVSFVFZ0NDWlhLWmJBUkU2QjNGeGdfaG03ZXdwZXpPdUhNVm5hMkRTYUF0aVZkMldrbVFDTU94MjRfd2JGaHdadV83V1NlODZxRFQ1NVIzTDc2Nnk4U2JfaDNlQm9SeGI5MnpNMzVrVUJOX25wTFo1MnFmdTUwa1RDcHQyYzlFNDl0Y3ZFSEFNcF9OcHh3aU5BMkcxU0VzM0FMRlBnZ2M3Q2w2aQ?oc=5",
-      "source": "Politico",
-      "publisher_url": "https://www.politico.com",
-      "published": "2026-10-19T04:58:00+00:00",
-      "selection_score": 1,
-      "review_questions": [
-        "Is the language merely expressive, or is emotion replacing support for a conclusion?"
-      ],
-      "surfaced_in": [
-        "Google News Politics"
-      ],
-      "status": "unreviewed_lead"
-    },
-    {
-      "title": "A couple bought a mansion locals called cursed, then tragedy struck",
-      "url": "https://www.cbsnews.com/video/a-couple-bought-a-mansion-locals-called-cursed-then-tragedy-struck/",
+      "title": "Iran shrugs off Trump's attack threats, says diplomacy ongoing",
+      "url": "https://www.cbsnews.com/live-updates/iran-war-trump-us-diplomacy-oil-prices-strait-of-hormuz/",
       "source": "CBS News",
       "publisher_url": "",
-      "published": "2026-10-23T14:19:46+00:00",
+      "published": "2026-10-26T19:00:03+00:00",
       "selection_score": 0,
       "review_questions": [
         "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
@@ -275,26 +245,26 @@
       "status": "unreviewed_lead"
     },
     {
-      "title": "Deadly shooting near Paris investigated as 'crime of terrorism', minister says",
-      "url": "https://www.bbc.co.uk/news/articles/c6ev38dj1g8zo?at_medium=RSS&at_campaign=rss",
-      "source": "BBC News",
-      "publisher_url": "",
-      "published": "2026-10-23T14:15:23+00:00",
+      "title": "Stock Market Today: Stocks Surge to Begin Busy Week of Tech Earnings, Fed Rate Decision; AI Stocks Gain on Enthusiam for Anthropic IPO",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNWmljNF84dWk1MUdZWVhRaHcyNWpGZmJBZWluYWQyUjNURUw5MG1ZcG5SVkJDWTRyZDdqajJ4QXJTcHdrdVBhVzE4WGFyaXczUzM4ZEJVSG9ibXZoNGVrTFdObUN1Zk4zYVM5WTJwN252Sm9pdllsR1NtZGZmTzdmWUZ3Y29RLXJxbnB3cXg0QS0?oc=5",
+      "source": "Investopedia",
+      "publisher_url": "https://www.investopedia.com",
+      "published": "2026-10-26T18:56:37+00:00",
       "selection_score": 0,
       "review_questions": [
         "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
       ],
       "surfaced_in": [
-        "BBC News"
+        "Google News Top Stories"
       ],
       "status": "unreviewed_lead"
     },
     {
-      "title": "College football team draws embarrassingly small crowd for what turns into Thursday night thriller",
-      "url": "https://www.foxnews.com/outkick-sports/college-football-team-draws-embarrassingly-small-crowd-thursday-night-thriller",
+      "title": "Omar’s menacing message hidden in seemingly innocent tweet exposed: 'Crushed the enemy'",
+      "url": "https://www.foxnews.com/politics/omars-menacing-message-hidden-seemingly-innocent-tweet-exposed-crushed-enemy",
       "source": "Fox News",
       "publisher_url": "",
-      "published": "2026-10-23T14:14:43+00:00",
+      "published": "2026-10-26T18:50:40+00:00",
       "selection_score": 0,
       "review_questions": [
         "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
@@ -305,26 +275,11 @@
       "status": "unreviewed_lead"
     },
     {
-      "title": "Jackson again publicly breaks with Supreme Court as justices side with GOP in last-minute voter ID fight",
-      "url": "https://www.foxnews.com/politics/jackson-publicly-breaks-supreme-court-justices-side-gop-last-minute-voter-id-fight",
-      "source": "Fox News",
-      "publisher_url": "",
-      "published": "2026-10-23T14:11:24+00:00",
-      "selection_score": 0,
-      "review_questions": [
-        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
-      ],
-      "surfaced_in": [
-        "Fox News"
-      ],
-      "status": "unreviewed_lead"
-    },
-    {
-      "title": "Arsenal fear Saka could be out for two months",
-      "url": "https://www.bbc.co.uk/sport/football/articles/cmwyql6v5q82o?at_medium=RSS&at_campaign=rss",
+      "title": "Pope's South American trip to go ahead as planned after lung cancer surgery",
+      "url": "https://www.bbc.co.uk/news/articles/cjr4y5rq46p2o?at_medium=RSS&at_campaign=rss",
       "source": "BBC News",
       "publisher_url": "",
-      "published": "2026-10-23T14:09:36+00:00",
+      "published": "2026-10-26T18:46:19+00:00",
       "selection_score": 0,
       "review_questions": [
         "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
@@ -335,62 +290,107 @@
       "status": "unreviewed_lead"
     },
     {
-      "title": "Reader Q&A: what’s next for France? Ask our Europe columnists – live",
-      "url": "https://www.theguardian.com/world/live/2026/oct/21/france-riots-protests-reader-questions-rokhaya-dallio-alexander-hurst",
-      "source": "The Guardian",
+      "title": "Trump administration pushes for food assistance card upgrade to fight fraud",
+      "url": "https://www.npr.org/2026/10/26/nx-s1-6017810/snap-benefits-ebt-card-chip-usda-rule",
+      "source": "NPR",
       "publisher_url": "",
-      "published": "2026-10-23T14:04:47+00:00",
+      "published": "2026-10-26T18:41:43+00:00",
       "selection_score": 0,
       "review_questions": [
         "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
       ],
       "surfaced_in": [
-        "The Guardian"
+        "NPR"
       ],
       "status": "unreviewed_lead"
     },
     {
-      "title": "Local farmers look for solutions to improve ag economy",
-      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxPY25PeWVSOW85ZHkxVWNRclBNSEFUYVNqU2o3WUlLanBuM1F3a0pNYXBjTVdjSkV3Q19aS3ptUjdWc0EtWElyZ28yQWV2UWFLS01leHFmaWJxZy1pbWxEQ3Q2QTBIcXVPZFRWZHNpWFNoeF9qSlpJQnRRTUpDR3k3Qjl4a3N0NE5aZi1iRjVPNA?oc=5",
-      "source": "Quad Cities Business Journal",
-      "publisher_url": "https://quadcitiesbusiness.com",
-      "published": "2026-10-23T14:01:29+00:00",
+      "title": "Anthropic IPO live updates: AI lab expects to spend at least $542B on data centers in coming years",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOZWZMZ2Q4QkpJSThNQ2c1Q18xeTRFZThMTC1VLWFrRFduLU1CblkydnRpaFUzSTRNaFl6VGRDS1J3TlBKWVo0Q1kwMnhVYmdNejg4Zk1pT3lUUVNCdmtmT0pJa3pJR1FrckFHTHRSTDVVaVFsMnlWZXVWMjFmb2l4eUlhRdIBiAFBVV95cUxNYzZaOTF1NUlmTXdqSEVYTXRNd2Yybm8wcTlKUDhMWEJmbXVhcDM0UW0zbDNqbzRyMUdBMGFFMjFIcUFpS0ZwYWpLTE5tQ1hxamg0NGdLWmdncW9yeUJyTWk1dFhjSkpfMHd3bm1DcXJ0RGdfcGItWm5RNHBGS0hjUmtRMGFwVzhN?oc=5",
+      "source": "CNBC",
+      "publisher_url": "https://www.cnbc.com",
+      "published": "2026-10-26T18:40:00+00:00",
       "selection_score": 0,
       "review_questions": [
         "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
       ],
       "surfaced_in": [
-        "Google News Business"
+        "Google News Top Stories"
       ],
       "status": "unreviewed_lead"
     },
     {
-      "title": "Mystery over source of Ebola infection in Nigeria fuels concern about spread of virus",
-      "url": "https://www.theguardian.com/world/2026/oct/23/ebola-swiss-patient-nigeria-dr-congo-concerns-virus-spread",
-      "source": "The Guardian",
+      "title": "Serbian students surge to power with defeat of strongman leader Aleksandar Vucic",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxORGg3em1IdVYyMmdVdUtxRm1LUXpwanNXVWhpOHdtZVlIRmlpYTNRYTBDYV9jdXJxejZDYWNIVTlJU0J3bTk3RTRtR1dIM3lRUjhpTkxVa3ZMRnN3N0U2MlRlZFNSV0trNDgzZk5Ed2d0Wm40U1VVRUdUd3ExLTdXN1NvRUN3VXFWVkVQcE9rbk1sUHRZNXJTaXFmY3c4V3VKVDVtQUVMb1ZZMl8yUEpKNkUxZWtRQjFjbXlSdUZGbmo?oc=5",
+      "source": "The Washington Post",
+      "publisher_url": "https://www.washingtonpost.com",
+      "published": "2026-10-26T18:38:57+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "Google News Top Stories"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Judge says DOJ illegally fired the daughter of former FBI director Comey",
+      "url": "https://www.npr.org/2026/10/26/g-s1-149960/judge-maurene-comey-illegal-dismissal",
+      "source": "NPR",
       "publisher_url": "",
-      "published": "2026-10-23T13:57:11+00:00",
+      "published": "2026-10-26T18:38:01+00:00",
       "selection_score": 0,
       "review_questions": [
         "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
       ],
       "surfaced_in": [
-        "The Guardian"
+        "NPR"
       ],
       "status": "unreviewed_lead"
     },
     {
-      "title": "Nick Coffey, Jon Echols clash over how to handle cases, partisan politics in Oklahoma AG debate",
-      "url": "https://news.google.com/rss/articles/CBMiwgFBVV95cUxNb0lJV204aUhNTEhGVkZPbkxpSmNJanBNNEpDMVhtNEU0NHZiWUdQTWNDX3RsMXBab1BDbUwxeXBjUHV3cmFlRlZyNmFYUzllQ28wWXd1M1dsMFAxSTc5bkdOLTdlSEt1WG1laE1GXzNDeFNFbDB1dW9raUhJNkZxWjREc2syOWVRUFhldmJCQ0hkSmIwMGFEMVhXNWhlT0Jwb2pmLWdJUm8zbDBIcGZ0NjBHYm1SVVZKN3p6bmxPSFNoQQ?oc=5",
-      "source": "NonDoc Media",
-      "publisher_url": "https://nondoc.com",
-      "published": "2026-10-23T13:53:00+00:00",
+      "title": "Star Trek actor Walter Koenig, who played Pavel Chekov, dies aged 90",
+      "url": "https://www.bbc.co.uk/news/articles/cv0ldjzg9xppo?at_medium=RSS&at_campaign=rss",
+      "source": "BBC News",
+      "publisher_url": "",
+      "published": "2026-10-26T18:34:15+00:00",
       "selection_score": 0,
       "review_questions": [
         "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
       ],
       "surfaced_in": [
-        "Google News Politics"
+        "BBC News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Microsoft offers buyouts to 60,000 workers as it invests more in AI",
+      "url": "https://www.cbsnews.com/news/microsoft-buyouts-60000-workers-artificial-intelligence-layoffs/",
+      "source": "CBS News",
+      "publisher_url": "",
+      "published": "2026-10-26T18:07:06+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "CBS News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "New poll shows why Democrats, Republicans are voting in the midterm elections",
+      "url": "https://www.cbsnews.com/video/new-poll-shows-why-democrats-republicans-are-voting-in-the-midterm-elections/",
+      "source": "CBS News",
+      "publisher_url": "",
+      "published": "2026-10-26T18:05:29+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "CBS News"
       ],
       "status": "unreviewed_lead"
     }

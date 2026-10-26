@@ -1,0 +1,398 @@
+{
+  "schema_version": 2,
+  "generated": "2026-10-26T19:08:01.967039+00:00",
+  "window_start": "2026-10-19T19:08:01.967039+00:00",
+  "days": 7,
+  "feeds": [
+    {
+      "name": "Google News Top Stories",
+      "url": "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "name": "Google News Politics",
+      "url": "https://news.google.com/rss/search?q=politics+when:7d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "name": "Google News Business",
+      "url": "https://news.google.com/rss/search?q=economy+business+when:7d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "name": "Google News Science",
+      "url": "https://news.google.com/rss/search?q=science+health+technology+when:7d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "name": "CBS News",
+      "url": "https://www.cbsnews.com/latest/rss/main"
+    },
+    {
+      "name": "BBC News",
+      "url": "https://feeds.bbci.co.uk/news/rss.xml"
+    },
+    {
+      "name": "NPR",
+      "url": "https://feeds.npr.org/1001/rss.xml"
+    },
+    {
+      "name": "Fox News",
+      "url": "https://moxie.foxnews.com/google-publisher/latest.xml"
+    },
+    {
+      "name": "The Guardian",
+      "url": "https://www.theguardian.com/world/rss"
+    }
+  ],
+  "feed_results": [
+    {
+      "name": "Google News Top Stories",
+      "status": "ok",
+      "items": 38
+    },
+    {
+      "name": "Google News Politics",
+      "status": "ok",
+      "items": 100
+    },
+    {
+      "name": "Google News Business",
+      "status": "ok",
+      "items": 100
+    },
+    {
+      "name": "Google News Science",
+      "status": "ok",
+      "items": 49
+    },
+    {
+      "name": "CBS News",
+      "status": "ok",
+      "items": 30
+    },
+    {
+      "name": "BBC News",
+      "status": "ok",
+      "items": 35
+    },
+    {
+      "name": "NPR",
+      "status": "ok",
+      "items": 10
+    },
+    {
+      "name": "Fox News",
+      "status": "ok",
+      "items": 25
+    },
+    {
+      "name": "The Guardian",
+      "status": "ok",
+      "items": 45
+    }
+  ],
+  "skipped": {
+    "duplicate": 2,
+    "outside_window": 2
+  },
+  "eligible_count": 428,
+  "candidates": [
+    {
+      "title": "Major clean-up under way after two storms cause havoc in Britain",
+      "url": "https://www.theguardian.com/uk-news/2026/oct/26/power-cuts-storm-boelo-austen-uk",
+      "source": "The Guardian",
+      "publisher_url": "",
+      "published": "2026-10-26T18:25:07+00:00",
+      "selection_score": 2,
+      "review_questions": [
+        "What evidence supports the causal claim, and what alternative explanations were tested?"
+      ],
+      "surfaced_in": [
+        "The Guardian"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "US taxpayer dollars allegedly fueled left-wing political causes in Latin America",
+      "url": "https://www.foxnews.com/politics/us-taxpayer-dollars-allegedly-fueled-left-wing-political-causes-latin-america",
+      "source": "Fox News",
+      "publisher_url": "",
+      "published": "2026-10-26T17:34:35+00:00",
+      "selection_score": 2,
+      "review_questions": [
+        "What evidence supports the causal claim, and what alternative explanations were tested?"
+      ],
+      "surfaced_in": [
+        "Fox News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "‘Democracy always’: Lula vows no return to dictatorship in Brazil after election win",
+      "url": "https://www.theguardian.com/world/2026/oct/26/brazil-lula-vow-democracy-always-election-win",
+      "source": "The Guardian",
+      "publisher_url": "",
+      "published": "2026-10-26T15:51:18+00:00",
+      "selection_score": 2,
+      "review_questions": [
+        "Does the evidence justify the strength and scope of the conclusion?"
+      ],
+      "surfaced_in": [
+        "The Guardian"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Poland’s GDP ‘losing billions’ due to drought-related crop losses",
+      "url": "https://news.google.com/rss/articles/CBMijAFBVV95cUxOLWs5LXZuTElXdjZybUk0S0dZZFl1cklCWHhuV1ZLelhvU3pnYzdLeE5UZm9ULW9jMnJ5UElhS0dtN1BYM1R2cm5IUFpUd0dYOFFIbE42dm5kVF8yVWVxM1h5YmN0UzJzR0FnTUpsWmpqTWZfSUhkaTJwaUNYMjJUazNmanRxdUtMNmpvaQ?oc=5",
+      "source": "TVP World",
+      "publisher_url": "https://tvpworld.com",
+      "published": "2026-10-26T14:11:00+00:00",
+      "selection_score": 2,
+      "review_questions": [
+        "What evidence supports the causal claim, and what alternative explanations were tested?"
+      ],
+      "surfaced_in": [
+        "Google News Business"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Sudan paramilitary drone strikes cause mass power cuts in eastern states",
+      "url": "https://www.theguardian.com/world/2026/oct/26/sudan-paramilitary-drone-strikes-rapid-support-forces-power-cuts-eastern-states",
+      "source": "The Guardian",
+      "publisher_url": "",
+      "published": "2026-10-26T09:59:27+00:00",
+      "selection_score": 2,
+      "review_questions": [
+        "What evidence supports the causal claim, and what alternative explanations were tested?"
+      ],
+      "surfaced_in": [
+        "The Guardian"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Netanyahu's crypto plan could cause 'irreversible damage' to Israeli economy, business leaders warn",
+      "url": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1MRlVIMkwtR3FkQ290Zm40RDF6YWIxWVZ1ODVqcHR1OXRYMW9XbjN0NjNTWHdoUHRUaTgtaVNGSTF5NldjNW0wRWJEakZyMmVpVW1GSDJkeW1kSThJY3BKbHZIOFREQzZXVmpIaQ?oc=5",
+      "source": "The Jerusalem Post",
+      "publisher_url": "https://www.jpost.com",
+      "published": "2026-10-25T13:05:37+00:00",
+      "selection_score": 2,
+      "review_questions": [
+        "What evidence supports the causal claim, and what alternative explanations were tested?"
+      ],
+      "surfaced_in": [
+        "Google News Business"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Fines coming after Green Bay Packers put NFL officiating on blast for questionable calls in loss to Lions",
+      "url": "https://www.foxnews.com/outkick-sports/fines-coming-green-bay-packers-put-nfl-officiating-blast-questionable-calls-loss-lions",
+      "source": "Fox News",
+      "publisher_url": "",
+      "published": "2026-10-26T16:08:20+00:00",
+      "selection_score": 1,
+      "review_questions": [
+        "Is the language merely expressive, or is emotion replacing support for a conclusion?"
+      ],
+      "surfaced_in": [
+        "Fox News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "'Cutting doubles would destroy careers' - angry players urge ATP rethink",
+      "url": "https://www.bbc.co.uk/sport/tennis/articles/cr78pxd66d47o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC News",
+      "publisher_url": "",
+      "published": "2026-10-26T16:07:20+00:00",
+      "selection_score": 1,
+      "review_questions": [
+        "Is the language merely expressive, or is emotion replacing support for a conclusion?"
+      ],
+      "surfaced_in": [
+        "BBC News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Microsoft says its AI tool is better than doctors at diagnosing conditions",
+      "url": "https://news.google.com/rss/articles/CBMi0gFBVV95cUxOamtUNVg3S1hZVlF1RGZ4akg3NThwTERFbWpQaUcyMmQ1LVdXM21CYU1mbUhEd28tS2ZicXp1TTBwUlB5Q0xtZllvdkl3WW5sdFZrUXdYRHV4Sk10X3pMWXpBYWhsT1ljQ3BRLUZ3ZXpXeElFX2VqWXRjcm9NYV9vU3hTb1NZM0tCNTJLNnBNaW5XVTJTd2ZyNkxpYlQ4aFpUZDc3MXBmUzZySkdRa0drQnZVdDBqcmc0aUl4QnpaUkRGYUE0UnQzMHdZMVpGRmRuWmc?oc=5",
+      "source": "The Verge",
+      "publisher_url": "https://www.theverge.com",
+      "published": "2026-10-22T18:00:00+00:00",
+      "selection_score": 1,
+      "review_questions": [
+        "Are the relevant similarities, differences, and comparison baseline supplied?"
+      ],
+      "surfaced_in": [
+        "Google News Science"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Iran shrugs off Trump's attack threats, says diplomacy ongoing",
+      "url": "https://www.cbsnews.com/live-updates/iran-war-trump-us-diplomacy-oil-prices-strait-of-hormuz/",
+      "source": "CBS News",
+      "publisher_url": "",
+      "published": "2026-10-26T19:00:03+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "CBS News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Stock Market Today: Stocks Surge to Begin Busy Week of Tech Earnings, Fed Rate Decision; AI Stocks Gain on Enthusiam for Anthropic IPO",
+      "url": "https://news.google.com/rss/articles/CBMikAFBVV95cUxNWmljNF84dWk1MUdZWVhRaHcyNWpGZmJBZWluYWQyUjNURUw5MG1ZcG5SVkJDWTRyZDdqajJ4QXJTcHdrdVBhVzE4WGFyaXczUzM4ZEJVSG9ibXZoNGVrTFdObUN1Zk4zYVM5WTJwN252Sm9pdllsR1NtZGZmTzdmWUZ3Y29RLXJxbnB3cXg0QS0?oc=5",
+      "source": "Investopedia",
+      "publisher_url": "https://www.investopedia.com",
+      "published": "2026-10-26T18:56:37+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "Google News Top Stories"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Omar’s menacing message hidden in seemingly innocent tweet exposed: 'Crushed the enemy'",
+      "url": "https://www.foxnews.com/politics/omars-menacing-message-hidden-seemingly-innocent-tweet-exposed-crushed-enemy",
+      "source": "Fox News",
+      "publisher_url": "",
+      "published": "2026-10-26T18:50:40+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "Fox News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Pope's South American trip to go ahead as planned after lung cancer surgery",
+      "url": "https://www.bbc.co.uk/news/articles/cjr4y5rq46p2o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC News",
+      "publisher_url": "",
+      "published": "2026-10-26T18:46:19+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "BBC News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Trump administration pushes for food assistance card upgrade to fight fraud",
+      "url": "https://www.npr.org/2026/10/26/nx-s1-6017810/snap-benefits-ebt-card-chip-usda-rule",
+      "source": "NPR",
+      "publisher_url": "",
+      "published": "2026-10-26T18:41:43+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "NPR"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Anthropic IPO live updates: AI lab expects to spend at least $542B on data centers in coming years",
+      "url": "https://news.google.com/rss/articles/CBMigwFBVV95cUxOZWZMZ2Q4QkpJSThNQ2c1Q18xeTRFZThMTC1VLWFrRFduLU1CblkydnRpaFUzSTRNaFl6VGRDS1J3TlBKWVo0Q1kwMnhVYmdNejg4Zk1pT3lUUVNCdmtmT0pJa3pJR1FrckFHTHRSTDVVaVFsMnlWZXVWMjFmb2l4eUlhRdIBiAFBVV95cUxNYzZaOTF1NUlmTXdqSEVYTXRNd2Yybm8wcTlKUDhMWEJmbXVhcDM0UW0zbDNqbzRyMUdBMGFFMjFIcUFpS0ZwYWpLTE5tQ1hxamg0NGdLWmdncW9yeUJyTWk1dFhjSkpfMHd3bm1DcXJ0RGdfcGItWm5RNHBGS0hjUmtRMGFwVzhN?oc=5",
+      "source": "CNBC",
+      "publisher_url": "https://www.cnbc.com",
+      "published": "2026-10-26T18:40:00+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "Google News Top Stories"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Serbian students surge to power with defeat of strongman leader Aleksandar Vucic",
+      "url": "https://news.google.com/rss/articles/CBMiwAFBVV95cUxORGg3em1IdVYyMmdVdUtxRm1LUXpwanNXVWhpOHdtZVlIRmlpYTNRYTBDYV9jdXJxejZDYWNIVTlJU0J3bTk3RTRtR1dIM3lRUjhpTkxVa3ZMRnN3N0U2MlRlZFNSV0trNDgzZk5Ed2d0Wm40U1VVRUdUd3ExLTdXN1NvRUN3VXFWVkVQcE9rbk1sUHRZNXJTaXFmY3c4V3VKVDVtQUVMb1ZZMl8yUEpKNkUxZWtRQjFjbXlSdUZGbmo?oc=5",
+      "source": "The Washington Post",
+      "publisher_url": "https://www.washingtonpost.com",
+      "published": "2026-10-26T18:38:57+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "Google News Top Stories"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Judge says DOJ illegally fired the daughter of former FBI director Comey",
+      "url": "https://www.npr.org/2026/10/26/g-s1-149960/judge-maurene-comey-illegal-dismissal",
+      "source": "NPR",
+      "publisher_url": "",
+      "published": "2026-10-26T18:38:01+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "NPR"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Star Trek actor Walter Koenig, who played Pavel Chekov, dies aged 90",
+      "url": "https://www.bbc.co.uk/news/articles/cv0ldjzg9xppo?at_medium=RSS&at_campaign=rss",
+      "source": "BBC News",
+      "publisher_url": "",
+      "published": "2026-10-26T18:34:15+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "BBC News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Microsoft offers buyouts to 60,000 workers as it invests more in AI",
+      "url": "https://www.cbsnews.com/news/microsoft-buyouts-60000-workers-artificial-intelligence-layoffs/",
+      "source": "CBS News",
+      "publisher_url": "",
+      "published": "2026-10-26T18:07:06+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "CBS News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "New poll shows why Democrats, Republicans are voting in the midterm elections",
+      "url": "https://www.cbsnews.com/video/new-poll-shows-why-democrats-republicans-are-voting-in-the-midterm-elections/",
+      "source": "CBS News",
+      "publisher_url": "",
+      "published": "2026-10-26T18:05:29+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "CBS News"
+      ],
+      "status": "unreviewed_lead"
+    }
+  ]
+}
