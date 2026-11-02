@@ -4436,6 +4436,13 @@ function buildAboutPage() {
       </div>
     </section>
 
+    <section class="detail-section section-block" id="slugfester">
+      <p class="eyebrow">From reference to public debate</p>
+      <h2 class="detail-title about-origin-title">Practice argument analysis with Slugfester</h2>
+      <p class="detail-deck"><a class="text-link" href="https://slugfester.com/">Slugfester</a>, another project by Phil Stilwell, uses AI-assisted scorecards to examine claims, evidence and replies in public debates. Its source links let you compare a critique with the original exchange rather than accept a fallacy label on authority.</p>
+      <p class="muted">Start with <a class="text-link" href="https://slugfester.com/insights/debate-evidence/">what Slugfester’s debate assessments reveal about evidence</a>. Then choose an argument and ask whether the stated conclusion follows, whether its premises are adequately supported, and whether the response addresses it. A low evidence score is not automatically a logical fallacy; the diagnosis must identify the actual defect.</p>
+    </section>
+
     <section class="detail-section section-block">
       <p class="eyebrow">How To Use This Knowledge</p>
       <h2 class="detail-title about-origin-title">Fallacy study works best when it is aimed inward first.</h2>
@@ -8614,8 +8621,13 @@ async function writeText(relativePath, contents) {
 
 async function main() {
   const args = process.argv.slice(2);
-  if (args.length > 1 || args.some((arg) => !["--features-only", "--fallacies-only"].includes(arg))) {
-    throw new Error("Supported options: --features-only or --fallacies-only");
+  if (args.length > 1 || args.some((arg) => !["--features-only", "--fallacies-only", "--about-only"].includes(arg))) {
+    throw new Error("Supported options: --features-only, --fallacies-only or --about-only");
+  }
+  if (args.includes("--about-only")) {
+    await writeText("about/index.html", buildAboutPage());
+    console.log("Built About page.");
+    return;
   }
   if (args.includes("--features-only")) {
     await writeText("features/index.html", buildFeaturesIndexPage());

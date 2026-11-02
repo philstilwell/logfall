@@ -81,3 +81,5 @@ For fallacy-page changes, spot-check:
 rg -n "False dilemma|Teaching gauges|What this image shows" fallacies/false-dilemma/index.html
 ```
 
+
+For About-page-only copy and related-resource links, rebuild just that page with `node scripts/build.mjs --about-only`. The full build continues to generate it as usual.
