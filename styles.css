@@ -1810,6 +1810,20 @@ body.comic-viewer-open {
   margin-bottom: 18px;
 }
 
+.feature-article .inline-link {
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  font-size: inherit;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.feature-article .inline-link:hover {
+  background: transparent;
+  transform: none;
+}
+
 .feature-headline-shell {
   background:
     linear-gradient(135deg, rgba(20, 168, 215, 0.06), transparent 45%),
