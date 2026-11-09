@@ -1,0 +1,398 @@
+{
+  "schema_version": 2,
+  "generated": "2026-11-09T22:56:33.761751+00:00",
+  "window_start": "2026-11-02T22:56:33.761751+00:00",
+  "days": 7,
+  "feeds": [
+    {
+      "name": "Google News Top Stories",
+      "url": "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "name": "Google News Politics",
+      "url": "https://news.google.com/rss/search?q=politics+when:7d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "name": "Google News Business",
+      "url": "https://news.google.com/rss/search?q=economy+business+when:7d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "name": "Google News Science",
+      "url": "https://news.google.com/rss/search?q=science+health+technology+when:7d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "name": "CBS News",
+      "url": "https://www.cbsnews.com/latest/rss/main"
+    },
+    {
+      "name": "BBC News",
+      "url": "https://feeds.bbci.co.uk/news/rss.xml"
+    },
+    {
+      "name": "NPR",
+      "url": "https://feeds.npr.org/1001/rss.xml"
+    },
+    {
+      "name": "Fox News",
+      "url": "https://moxie.foxnews.com/google-publisher/latest.xml"
+    },
+    {
+      "name": "The Guardian",
+      "url": "https://www.theguardian.com/world/rss"
+    }
+  ],
+  "feed_results": [
+    {
+      "name": "Google News Top Stories",
+      "status": "ok",
+      "items": 38
+    },
+    {
+      "name": "Google News Politics",
+      "status": "ok",
+      "items": 100
+    },
+    {
+      "name": "Google News Business",
+      "status": "ok",
+      "items": 75
+    },
+    {
+      "name": "Google News Science",
+      "status": "ok",
+      "items": 32
+    },
+    {
+      "name": "CBS News",
+      "status": "ok",
+      "items": 30
+    },
+    {
+      "name": "BBC News",
+      "status": "ok",
+      "items": 33
+    },
+    {
+      "name": "NPR",
+      "status": "ok",
+      "items": 10
+    },
+    {
+      "name": "Fox News",
+      "status": "ok",
+      "items": 25
+    },
+    {
+      "name": "The Guardian",
+      "status": "ok",
+      "items": 45
+    }
+  ],
+  "skipped": {
+    "outside_window": 16,
+    "duplicate": 2
+  },
+  "eligible_count": 370,
+  "candidates": [
+    {
+      "title": "Todd Russell, Beaconsfield mine collapse survivor, dies aged 54 due to illness",
+      "url": "https://www.theguardian.com/australia-news/2026/nov/10/todd-russell-dies-beaconsfield-mine-collapse-survivor-death-illness-aged-54",
+      "source": "The Guardian",
+      "publisher_url": "",
+      "published": "2026-11-09T22:26:31+00:00",
+      "selection_score": 2,
+      "review_questions": [
+        "What evidence supports the causal claim, and what alternative explanations were tested?"
+      ],
+      "surfaced_in": [
+        "The Guardian"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Mass Killing in Poland Becomes Cause for a Political Fight",
+      "url": "https://news.google.com/rss/articles/CBMikwFBVV95cUxORUE0TXJPQ3I1d1BrNkNYdXZFNjFrZXZKLUpCWlZtcUhHcjIzQXk4dDlPODI0dkV1eGVrMkdjZWM4bER6M1NsZmNXeUZicFdXYjl5RVVvaXZaWHdKZmVkNmdSeFVBX05DWVZ1OC1fX2x1LTUzdmZJOTM0ZTNMcXJ4Vko1b1dvS09Xa3hEeXEtTHcxbVk?oc=5",
+      "source": "The New York Times",
+      "publisher_url": "https://www.nytimes.com",
+      "published": "2026-11-09T22:08:35+00:00",
+      "selection_score": 2,
+      "review_questions": [
+        "What evidence supports the causal claim, and what alternative explanations were tested?"
+      ],
+      "surfaced_in": [
+        "Google News Politics"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Zoe Kleinman: Nvidia CEO's affair will cause ripples across US and beyond",
+      "url": "https://www.bbc.co.uk/news/articles/cj3vqv3nee72o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC News",
+      "publisher_url": "",
+      "published": "2026-11-09T21:52:28+00:00",
+      "selection_score": 2,
+      "review_questions": [
+        "What evidence supports the causal claim, and what alternative explanations were tested?"
+      ],
+      "surfaced_in": [
+        "BBC News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Electrical items caused fatal fire, inquest hears",
+      "url": "https://www.bbc.co.uk/news/articles/cm4g1gd275g4o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC News",
+      "publisher_url": "",
+      "published": "2026-11-09T15:35:33+00:00",
+      "selection_score": 2,
+      "review_questions": [
+        "What evidence supports the causal claim, and what alternative explanations were tested?"
+      ],
+      "surfaced_in": [
+        "BBC News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "South Africa’s Politics May Never Be the Same Again",
+      "url": "https://news.google.com/rss/articles/CBMiogFBVV95cUxPMkJtT3RGTW5fM0lzYXZEbldtTkFhRTVrc2ZpeE1FbXdLLXV0aW1pM3VpSzZPclMzbENYSXBWWEVONDU0ZzBPb2hlMEZBTGR1eVVHS1E1aGlpMTlQTFhZazVLWG1fSk95VkYzUTFlTzlSMFYyZzVUNV83NWRrLVo5T1hDNGxWMFVSVTFFeDJxVkZqZHhEMnFfb0JSVk4wdUUtT1E?oc=5",
+      "source": "The New York Times",
+      "publisher_url": "https://www.nytimes.com",
+      "published": "2026-11-08T05:01:24+00:00",
+      "selection_score": 2,
+      "review_questions": [
+        "Does the evidence justify the strength and scope of the conclusion?"
+      ],
+      "surfaced_in": [
+        "Google News Politics"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Phones to be banned from pupils' bags or pockets under stricter rules for schools in England",
+      "url": "https://www.bbc.co.uk/news/articles/c51kdk422w8jo?at_medium=RSS&at_campaign=rss",
+      "source": "BBC News",
+      "publisher_url": "",
+      "published": "2026-11-09T22:51:09+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "BBC News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "UK's Russell Brand sentenced to 10-and-a-half years in jail for rape, sexual assault",
+      "url": "https://news.google.com/rss/articles/CBMiuAFBVV95cUxPbmk4dlVnT1E1bFJGb01tRkZvLVFXSkt0bTRsY2t4RzMzRDVGb2RzLUJTblJPQ1EwZFhlSUZXOTR3VlF2UTU0V29tVjd5dWwtOFZpUGNxSE1uRW5JNF94a0RmRV9SRWgyZ3dCaDNJZmR2M05ZRHMzam9EVkF0OUJ3bnloSGdkNVZZU3QyODdKei14dU9nalBDSmwxOFpCNUJHUDFTbnFLTVp2UTJfaGlPQ1htNGxvbjRB?oc=5",
+      "source": "Reuters",
+      "publisher_url": "https://www.reuters.com",
+      "published": "2026-11-09T22:45:14+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "Google News Top Stories"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Trump says FBI is investigating Nvidia CEO Jensen Huang",
+      "url": "https://www.cbsnews.com/video/trump-says-fbi-is-investigating-nvidia-ceo-jensen-huang/",
+      "source": "CBS News",
+      "publisher_url": "",
+      "published": "2026-11-09T22:43:07+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "CBS News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Trump admin proposes stricter unemployment work search rules",
+      "url": "https://www.cbsnews.com/news/trump-work-search-rules-unemployment-benefits/",
+      "source": "CBS News",
+      "publisher_url": "",
+      "published": "2026-11-09T22:41:27+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "CBS News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Watch: Trump gives post-midterm press briefing, alongside Dana White",
+      "url": "https://www.cbsnews.com/video/trump-gives-white-house-press-briefing-midterms-dana-white-speaks-reporters/",
+      "source": "CBS News",
+      "publisher_url": "",
+      "published": "2026-11-09T22:39:59+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "CBS News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "A Capitol Hill vibe shift: From the Politics Desk",
+      "url": "https://news.google.com/rss/articles/CBMimwFBVV95cUxNcUtrclJ3SXZYdnpHVjJ3MWVoeVBoVjM5cE1ucXlpTzd4ZllDU3l6V3RaaUU3bnl2MUVuY0w2emhQdDNtaXNVUGxGWUxGcHRDY2N6bTkwZHpOOHRIcnJRUWRwcFh1djJ3WkFrS2lrSXRWdjF0Z2RsWWRZSVNCVEFGalNzUzMzX0kxbWZpRDdPZldVSllkNHQzMFJERQ?oc=5",
+      "source": "NBC News",
+      "publisher_url": "https://www.nbcnews.com",
+      "published": "2026-11-09T22:39:52+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "Google News Politics"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "How the National Debt Raises Costs for Households, Businesses, and Younger Americans",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxQTVpqUk1hV2Jfd1hyRjY2NnQ5SjM5V0M2blBncFJ6V2dqanhLdnpiNF9fZDQ5cUM3cGtkNi1UTEdPcWdtbktwVVFscHJqZEdWX05USEZkTjBndlVIal8zRmswVGs1eE9Ka3p1VFJXRkF2SFliZnYtTUstRGhaaVBfVDRTcHBBb28tV3NSUm1FRkozNnJsbXRFSHVTR24takl6TndTSVJqOTZUVzVyM0czT3FB?oc=5",
+      "source": "Peter G. Peterson Foundation",
+      "publisher_url": "https://www.pgpf.org",
+      "published": "2026-11-09T22:39:45+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "Google News Business"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Stock Market Today: Dow Pushes 1000 Points Higher, Nvidia Stock Slides Over Jensen Huang Affair Probe",
+      "url": "https://news.google.com/rss/articles/CBMihwFBVV95cUxPSV9fWHdCZGw4OGdCbVpVMVJreGluVnp1TVhmT1JkemQ0RGdWQTZfNFNuODhETWJUQUt6NTVlUlRGY0NwNkRXOVd6VFlLSWFlTERpMEJWODJraHlyX3ZtRnFpSjUtVzhmOVVKNkRfS0RPZ3l4WHBnWEdwTTRRaVVDdmM3TEhxR0k?oc=5",
+      "source": "WSJ",
+      "publisher_url": "https://www.wsj.com",
+      "published": "2026-11-09T22:35:00+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "Google News Top Stories"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Donald Trump doubles down on defense of Pete Hegseth and attacks fresh effort to impeach him – live",
+      "url": "https://www.theguardian.com/us-news/live/2026/nov/09/donald-trump-stephen-miller-immigration-midterms-iran-qatar-economy-latest-news-updates",
+      "source": "The Guardian",
+      "publisher_url": "",
+      "published": "2026-11-09T22:31:03+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "The Guardian"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "France accuses Iran of cyber 'sabotage' in fridge attacks",
+      "url": "https://www.npr.org/2026/11/09/g-s1-152724/france-iran-cyber-sabotage-fridge-attacks",
+      "source": "NPR",
+      "publisher_url": "",
+      "published": "2026-11-09T22:30:49+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "NPR"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Dana White takes questions at podium during White House briefing with Trump",
+      "url": "https://www.foxnews.com/politics/dana-white-takes-questions-podium-during-white-house-briefing-trump",
+      "source": "Fox News",
+      "publisher_url": "",
+      "published": "2026-11-09T22:24:33+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "Fox News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "School of Science & Technology Invites 5th Graders to Compete in Math Competition and Win Prizes!",
+      "url": "https://news.google.com/rss/articles/CBMijwFBVV95cUxNdWZwTHFONWpVYmtFYUJnNlFFMHBEdmlPVzdZa3RpUjhBM3YzaEpmM3E4anFfU1JMYlRjWmFORWxUUW1uNW9BS0FtS0owUHhUSkUyYkRYaVF6UlpGX2dTNGppdUdneE05bHpBRTB1N0w3ZlhhRS1KaXNTUWRkWHRZX2JrVG1UWWQ1YjNVamJXTQ?oc=5",
+      "source": "Yahoo",
+      "publisher_url": "https://www.yahoo.com",
+      "published": "2026-11-09T22:21:09+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "Google News Science"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Texas politics add 'sand in the gears' for CoreWeave, says MoffettNathanson's Nick Del Deo",
+      "url": "https://news.google.com/rss/articles/CBMiyAFBVV95cUxPaHJwN05XTWZFM2dOTDBCWDl4SWV6TWZURFpnbGZsTXlWNWFmWVZ4a2xJQlh4UkVjUklpaVBDM2hkWUNBLVRiMXFLRnhnbXREVHFGVjBVcmhBNmozUC1XWldyalo2RktmQ0x5QXNhcUZjQWR1NnZWWHliTC1TWTBlYTFyZlZWM2xXUG5qek9LTVVIV0R6NExDSzBSMHBERGVxaVVUdFNBc0tIYzZ4VExMbmU0Vl8wLWwtaVV0c0daN0h5UUJjZ3pZNQ?oc=5",
+      "source": "CNBC",
+      "publisher_url": "https://www.cnbc.com",
+      "published": "2026-11-09T22:19:34+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "Google News Politics"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Jeffries vows Democrats won’t ‘give a dime’ to Trump’s deportation efforts",
+      "url": "https://www.foxnews.com/politics/jeffries-vows-democrats-wont-give-dime-trumps-deportation-efforts",
+      "source": "Fox News",
+      "publisher_url": "",
+      "published": "2026-11-09T22:09:59+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "Fox News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "The real size of South Africa’s gig economy",
+      "url": "https://news.google.com/rss/articles/CBMimAFBVV95cUxQWVVlUTVieTJwVkkxcnNfb3FJS2htV25TV3k2ZGxubmVRMThDbjY0c1lCeG5jNTdGVDVKdl9hUE9JY3VkM1dBOFhsbll2ckZnOTVqVjV0MzFzVW5RSjBwczJIRVFXQlpVOVBYMDlmTUw0TTVFX19TTWZ1ck5ZV1ZfTEpYbE11V241Y2JZSE5QQkh0a1RjTUZfNQ?oc=5",
+      "source": "Financial Mail",
+      "publisher_url": "https://currencynews.co.za",
+      "published": "2026-11-09T22:09:40+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "Google News Business"
+      ],
+      "status": "unreviewed_lead"
+    }
+  ]
+}
