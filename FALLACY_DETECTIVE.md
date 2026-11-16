@@ -9,7 +9,7 @@ Research current, consequential reasoning in mainstream news. Produce an evidenc
 1. The existing GitHub workflow collects a weekly shortlist from public news feeds. It runs on Mondays at 13:00 UTC (9 a.m. Eastern during daylight saving time; 8 a.m. during standard time). Scheduled GitHub runs can be delayed. Its output is explicitly unreviewed and remains in `reports/headline-scout/`.
 2. The Codex research schedule runs Mondays at 9 a.m. America/New_York, returns to the setup chat, and reads articles and primary sources. It can collect fresh leads itself, so it does not depend on the GitHub run finishing. The Mac and Codex app must be running. Its private research and drafts belong in the LOGFALL workspace's `research/YYYY-MM-DD/`, outside this public repository.
 
-Current publication policy: save future investigations for review. Do not publish or push drafts. Approved, published cases are listed in `data/features.json`. Research frequency is not a promise to publish a new case every week.
+Current publication policy: bring every completed draft to Phil in this chat for review and obtain his explicit approval for that specific draft before publishing, committing, or pushing it. Keep unapproved drafts outside the public repository. Approval of an earlier case does not authorize a later investigation. Approved, published cases are listed in `data/features.json`. Research frequency is not a promise to publish a new case every week.
 
 ## Research process
 
@@ -28,6 +28,27 @@ Current publication policy: save future investigations for review. Do not publis
 Create `research/YYYY-MM-DD/research.md` in the workspace with the date/window, outlet coverage, candidate table, salience evidence, source access notes, argument reconstruction, strongest defense, verdict, confidence, rejection reasons, and links. Save the best draft as `draft.md` only if warranted. Update `research/ledger.json` with canonical source URLs, topic, outcome, and paths so later runs can avoid repeats or explicitly revisit materially changed stories. If these outputs already exist, resume without duplicating them.
 
 A draft should contain a clear title; publication and event dates; a short neutral introduction; the sourced passage; try-it-first questions; a qualified verdict; the premises and conclusion; evidence for the diagnosis; a charitable alternative reading; a better version of the argument; a political-symmetry check when relevant; a short classroom exercise; and a source trail. Aim for 800–1,200 words, adjusted to the case. Mark draft status prominently. Do not imply Phil has reviewed it.
+
+## Standard article format
+
+Phil selected the November 16, 2026 article [Welfare Reform: Are We Refuting the Other Side’s Position?](https://logfall.com/features/welfare-reform-are-we-refuting-the-other-sides-position/) as the format for future posts. Use `site/features/welfare-reform-are-we-refuting-the-other-sides-position.html` as the layout reference, adapting its analysis to the evidence in each new case rather than copying its verdict.
+
+Use this sequence:
+
+1. Clear question title, publication/revision dates, brief introduction, and section navigation.
+2. Case dates and scope, neutral context, the exact attributed passage, and source links.
+3. Try-it-first questions before the verdict.
+4. A qualified verdict inside native `<details>`/`<summary>`, closed initially.
+5. Explicit premises, conclusion, and the unsupported step; identify editorial reconstructions.
+6. The strongest reasonable defense and counterevidence.
+7. Limits of the conclusion and confidence.
+8. A repaired argument clearly identified as LogFall’s suggested wording.
+9. A political-symmetry check and short classroom exercise, including a check on the reader’s own sympathies.
+10. Linked sources and access/scope limitations.
+
+**Suspected statements in red:** apply `feature-suspect-claim` only to the statement or quotation being examined for a suspected logical fallacy, for example `<blockquote class="feature-headline feature-suspect-claim">…</blockquote>` or `<span class="feature-suspect-claim">…</span>`. The shared stylesheet provides readable dark red text. Keep supporting quotations, counterevidence, repaired arguments, and ordinary reporting in their normal colors. Do not style every quotation red. For hypothetical examples, retain the explicit hypothetical label. Red identifies a passage under examination; it does not establish the verdict. Preserve textual attribution and scope so meaning does not depend on color alone.
+
+Keep the existing space below section headings and natural inline-link punctuation. Preserve this format in the review draft’s structure; publication formatting does not replace the requirement to obtain Phil’s approval for each draft.
 
 Notify the user only for a worthwhile new draft, a material correction to a published case, or a failure requiring attention. Stay quiet for unchanged or non-actionable results. Do not email or message anyone, buy access, add subscriptions, generate images, or use paid APIs. If additional charges would be required, first give an estimate and stop that dependent step. Ordinary research uses the existing Codex allowance or configured credits.
 

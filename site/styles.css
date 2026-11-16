@@ -1891,6 +1891,11 @@ body.comic-viewer-open {
   color: var(--ink-soft);
 }
 
+.feature-article .feature-suspect-claim,
+.feature-article .feature-suspect-claim p {
+  color: #b91c1c;
+}
+
 .feature-diagnosis-meta {
   margin: 12px 0 0;
   color: var(--ink);
