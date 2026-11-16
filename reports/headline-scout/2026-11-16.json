@@ -1,0 +1,398 @@
+{
+  "schema_version": 2,
+  "generated": "2026-11-16T22:49:13.164916+00:00",
+  "window_start": "2026-11-09T22:49:13.164916+00:00",
+  "days": 7,
+  "feeds": [
+    {
+      "name": "Google News Top Stories",
+      "url": "https://news.google.com/rss?hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "name": "Google News Politics",
+      "url": "https://news.google.com/rss/search?q=politics+when:7d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "name": "Google News Business",
+      "url": "https://news.google.com/rss/search?q=economy+business+when:7d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "name": "Google News Science",
+      "url": "https://news.google.com/rss/search?q=science+health+technology+when:7d&hl=en-US&gl=US&ceid=US:en"
+    },
+    {
+      "name": "CBS News",
+      "url": "https://www.cbsnews.com/latest/rss/main"
+    },
+    {
+      "name": "BBC News",
+      "url": "https://feeds.bbci.co.uk/news/rss.xml"
+    },
+    {
+      "name": "NPR",
+      "url": "https://feeds.npr.org/1001/rss.xml"
+    },
+    {
+      "name": "Fox News",
+      "url": "https://moxie.foxnews.com/google-publisher/latest.xml"
+    },
+    {
+      "name": "The Guardian",
+      "url": "https://www.theguardian.com/world/rss"
+    }
+  ],
+  "feed_results": [
+    {
+      "name": "Google News Top Stories",
+      "status": "ok",
+      "items": 38
+    },
+    {
+      "name": "Google News Politics",
+      "status": "ok",
+      "items": 100
+    },
+    {
+      "name": "Google News Business",
+      "status": "error",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "name": "Google News Science",
+      "status": "error",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "name": "CBS News",
+      "status": "ok",
+      "items": 30
+    },
+    {
+      "name": "BBC News",
+      "status": "ok",
+      "items": 27
+    },
+    {
+      "name": "NPR",
+      "status": "ok",
+      "items": 10
+    },
+    {
+      "name": "Fox News",
+      "status": "ok",
+      "items": 25
+    },
+    {
+      "name": "The Guardian",
+      "status": "ok",
+      "items": 45
+    }
+  ],
+  "skipped": {
+    "duplicate": 5,
+    "outside_window": 4
+  },
+  "eligible_count": 266,
+  "candidates": [
+    {
+      "title": "WATCH: 'You never notice broken windows, obviously,' Trump tells Black reporter",
+      "url": "https://news.google.com/rss/articles/CBMisgFBVV95cUxPNktVWFBZTEZrU2c1Qms4aHpfZEs5ZDdyLTdpdTZjNXBjeWI0M2tGWERRXzVTc2EzOGk3UDZzY0ZheVBfaVBUQ3NOQmhnQ243RXlVaHZyVmxESl9tNlp4WVdOYVBXRV9Cb204SEtaTjkxcVZvOWhoMlplZkF5M2NiLXhiUmlKVGJkaFlyOGQ2VlZhSzRUekx4eFJuRjZLUzlIM3B3NFdOdjRkNUlfSGRCWlVn0gG3AUFVX3lxTE01VXRTcjBVXzNWQ0puOWs4ZnAzM3htVXViellVSjVUWnRsdVlVUHE2dklqVTl0WUpVT2ZiOExGWmtvVXVwUWh3VTBsSm1IM015T1IzeWtmZVdSWUttTkdZWi1xMVBFUG93ZDhyNWhESlE4TFRpMW9aYTFDaEZPaUJmaEtjNk9vN0N5YUg1a2xJRlYxZ0FSVzczWEh2VVpKemRCajBaRTZBaVRCRmdtdU5NdlhMcHIwbw?oc=5",
+      "source": "PBS",
+      "publisher_url": "https://www.pbs.org",
+      "published": "2026-11-16T21:34:29+00:00",
+      "selection_score": 2,
+      "review_questions": [
+        "Does the evidence justify the strength and scope of the conclusion?"
+      ],
+      "surfaced_in": [
+        "Google News Politics"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "What to know about the Arkansas router that led to the FAA groundings",
+      "url": "https://news.google.com/rss/articles/CBMieEFVX3lxTE5pUHBYaXBJM0FMUl9vSW1ITkMtcjhVTGVDQ0RBUThadDREQWZPMFZPRkFRYW1uZEFxcmhLUFBIZ2hvX2NrTlVZNjBCdVhGS0Zjek1FRTV2NFBldnB3OWh5SzYwVzhzUl96dlVnWnE0b1RZekdqVk9BZdIBfkFVX3lxTE1fc1hrSzNjR2J2REpCTVFycXdnaFF5LTFqcUlaYmRvMGdEaklLQ2huTEpkbUd4MGs3eHAxUkx1M2VseXhGSHhCbkVJRm44VEpsTU45QzM1R2FOYUU5VlhkWkpWVlBUZ05TUEVlSGRSWEtXMlBSeUFQVzlESFl2QQ?oc=5",
+      "source": "The Hill",
+      "publisher_url": "https://thehill.com",
+      "published": "2026-11-16T17:23:00+00:00",
+      "selection_score": 2,
+      "review_questions": [
+        "What evidence supports the causal claim, and what alternative explanations were tested?"
+      ],
+      "surfaced_in": [
+        "Google News Top Stories"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Ken Urker’s Cause of Death Confirmed by Louisiana Coroner’s Office",
+      "url": "https://news.google.com/rss/articles/CBMitAFBVV95cUxPeWRxY0VrX1NqMklHUEphOWdDUFBSUkhtY1ZSNWIteEFVWDFXZU9xSkpxeFZTbE5DdmFDSXlXcC1ocUtwaXBYTGlFUUJRQV9NdnRMQUJiRHhyNEh5VjlJcDctZzQ4UFlNcEY0M3ZXOE5jZnZCLTFtemM0Qm5GOFFuNEsxaGdpT0ltSENGd3EzazU2LW44NkNrcUx1SzRtWFA2dGVqQXFwckdmNzVnQzRfSjNkcFM?oc=5",
+      "source": "TODAY.com",
+      "publisher_url": "https://www.today.com",
+      "published": "2026-11-16T15:57:56+00:00",
+      "selection_score": 2,
+      "review_questions": [
+        "What evidence supports the causal claim, and what alternative explanations were tested?"
+      ],
+      "surfaced_in": [
+        "Google News Top Stories"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Ratcliffe's Ineos settles £180m boat claim with Ainslie",
+      "url": "https://www.bbc.co.uk/sport/sailing/articles/cwg5r2q5dz3zo?at_medium=RSS&at_campaign=rss",
+      "source": "BBC News",
+      "publisher_url": "",
+      "published": "2026-11-16T14:28:00+00:00",
+      "selection_score": 2,
+      "review_questions": [
+        "Does the evidence justify the strength and scope of the conclusion?"
+      ],
+      "surfaced_in": [
+        "BBC News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Storm Charles causes floods and flight cancellations across southern Europe",
+      "url": "https://www.theguardian.com/environment/2026/nov/13/storm-charles-floods-flight-cancellations-southern-europe-weather",
+      "source": "The Guardian",
+      "publisher_url": "",
+      "published": "2026-11-13T08:49:19+00:00",
+      "selection_score": 2,
+      "review_questions": [
+        "What evidence supports the causal claim, and what alternative explanations were tested?"
+      ],
+      "surfaced_in": [
+        "The Guardian"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "T-Mobile Black Friday deals: Get an iPhone 18 Pro for $0 upfront and $500 off Google Pixel Watch 5",
+      "url": "https://www.foxnews.com/deals/t-mobile-black-friday-deals",
+      "source": "Fox News",
+      "publisher_url": "",
+      "published": "2026-11-16T22:37:23+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "Fox News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Boston Globe compares Dianna Russini to Bob Woodward amid Vrabel-sourcing scandal",
+      "url": "https://www.foxnews.com/outkick-sports/boston-globe-compares-dianna-russini-bob-woodward-amid-vrabel-sourcing-scandal",
+      "source": "Fox News",
+      "publisher_url": "",
+      "published": "2026-11-16T22:36:31+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "Fox News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Pocognoli wants patience but Scotland 'don't have time' says Robertson",
+      "url": "https://www.bbc.co.uk/sport/football/articles/cwnv432qy0l1o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC News",
+      "publisher_url": "",
+      "published": "2026-11-16T22:36:26+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "BBC News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "United Airlines says it's experiencing a system outage",
+      "url": "https://www.cbsnews.com/news/united-airlines-system-outage-departing-flights/",
+      "source": "CBS News",
+      "publisher_url": "",
+      "published": "2026-11-16T22:36:00+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "CBS News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Trump defends commerce secretary Lutnick for allegedly slow-walking Nvidia chip export restrictions – live",
+      "url": "https://www.theguardian.com/us-news/live/2026/nov/16/donald-trump-asia-visit-democrats-republicans-elizabeth-warren-faa-air-disruption-latest-news-updates",
+      "source": "The Guardian",
+      "publisher_url": "",
+      "published": "2026-11-16T22:33:02+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "The Guardian"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "'Complete system reset' needed to get 440,000 young people into work, says major review",
+      "url": "https://www.bbc.co.uk/news/articles/c38xzy980924o?at_medium=RSS&at_campaign=rss",
+      "source": "BBC News",
+      "publisher_url": "",
+      "published": "2026-11-16T22:32:47+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "BBC News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Alan Milburn urges Burnham to spend billions on ‘new deal’ for young people",
+      "url": "https://www.theguardian.com/society/2026/nov/16/alan-milburn-urges-burnham-spend-billions-new-deal-young-people-youth-jobs-crisis-welfare-employment",
+      "source": "The Guardian",
+      "publisher_url": "",
+      "published": "2026-11-16T22:30:55+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "The Guardian"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Major U.S. banks report widespread service outages",
+      "url": "https://www.cbsnews.com/news/banks-online-service-outages-jpmorgan-chase-bank-of-america-wells-fargo/",
+      "source": "CBS News",
+      "publisher_url": "",
+      "published": "2026-11-16T22:27:40+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "CBS News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "NFL promoting that Raiders coaches and players spoke to Francisco Mendoza in Spanish is a virtue signal stunt",
+      "url": "https://www.foxnews.com/outkick-sports/nfl-promoting-raiders-coaches-players-spoke-francisco-mendoza-spanish-virtue-signal-stunt",
+      "source": "Fox News",
+      "publisher_url": "",
+      "published": "2026-11-16T22:26:31+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "Fox News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Ex-staffers claim lack of enforcement, \"chaos\" under Lutnick",
+      "url": "https://www.cbsnews.com/news/howard-lutnick-commerce-department-chips-chaos-former-employees/",
+      "source": "CBS News",
+      "publisher_url": "",
+      "published": "2026-11-16T22:21:21+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "CBS News"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "An early look at the 2028 Senate map: From the Politics Desk",
+      "url": "https://news.google.com/rss/articles/CBMinwFBVV95cUxNVFVkMW5VTzlMRS1VcG9tYlJpb1haT1RSckdFc08zLWVud1l3SEFBREJncFdMa05pcXh3MnJ2dXNjSDBmWDBxN19GNVZOeTRjSi1GQk92U1N0ZTRfcG5SZThrb0xWSkYwX2J5LTdHQ0NsSEk5WHFDanktUkpqUjlMWmFERV9VX1FTUnBONFR4a2ZEWnNRQU9oTFZ0NFBQRFk?oc=5",
+      "source": "NBC News",
+      "publisher_url": "https://www.nbcnews.com",
+      "published": "2026-11-16T22:18:08+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "Google News Politics"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Riceland Foods has $333 million in member equity",
+      "url": "https://news.google.com/rss/articles/CBMiiAFBVV95cUxNeXo5eWZ0ZkdnUHJOdVROTHMtaFdVTlZ6VTRpZC1ndmRkSFNWVXZOSTNEaC1UWThzc21Vd3RUVHNoMXhtR0UwcENvajRfN0NlQUF6bXdnUlhNYWJfcUJncjR3b0t0RUdBU0dzRzRHYnRWOThlYkZ3TGNVdkRsVjh4MlZIYjdCRV9v?oc=5",
+      "source": "Talk Business & Politics",
+      "publisher_url": "https://talkbusiness.net",
+      "published": "2026-11-16T22:11:05+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "Google News Politics"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "California sues OpenAI over hacking risks",
+      "url": "https://www.npr.org/2026/11/16/nx-s1-6042920/california-sues-openai-hugging-face-hacking-incident",
+      "source": "NPR",
+      "publisher_url": "",
+      "published": "2026-11-16T22:06:22+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "NPR"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Senator Wicker’s International Political Prisoners Resolution Approved by the Senate",
+      "url": "https://news.google.com/rss/articles/CBMiwwFBVV95cUxQdFBValdXdl9KQ2RhU2huNUQ0cDc0RjJHX2N4NHQ4R01KQnR4a1hsazdoQ2MzdkNuNThDbDk0SENsWGhhbEVUUlRYeGZCS1RDMDVRVnRIcExSQ2NvMTQzaFFPZzRWQktrM0k2SDJzMmNKTTRZbWtZbHU3bHpkbndhWjFMbEtHbTkzdjNwTHQ1dDlXUWRFdzlwOGpjd1YySjlBeFE3MkN0UGVFQTJGWDh3Tlp1WFBXVmZIUE1uUVpJZDd6dlE?oc=5",
+      "source": "U.S. Senator Roger Wicker (.gov)",
+      "publisher_url": "https://www.wicker.senate.gov",
+      "published": "2026-11-16T21:54:57+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "Google News Politics"
+      ],
+      "status": "unreviewed_lead"
+    },
+    {
+      "title": "Grammy Awards 2027: The Full List of Nominees",
+      "url": "https://news.google.com/rss/articles/CBMigAFBVV95cUxPVnlxVDVDdXpNaVFVY25mb3UtNzNkaGFKdm1ZTFUxTms2WXNQOE1KM2xtcGhHMGthR185clhSZVFKSGdWMWs3RjRrbEZLYWFxcHdoSU13WmVzeVFMVFdPWGNTNUcxRlpMb0tzYU84SFVXMG5LNmJUTEFVWUozeEdSZQ?oc=5",
+      "source": "The New York Times",
+      "publisher_url": "https://www.nytimes.com",
+      "published": "2026-11-16T21:42:08+00:00",
+      "selection_score": 0,
+      "review_questions": [
+        "What argument, if any, is made? Is there enough accessible evidence to evaluate it?"
+      ],
+      "surfaced_in": [
+        "Google News Top Stories"
+      ],
+      "status": "unreviewed_lead"
+    }
+  ]
+}
